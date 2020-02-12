@@ -1,0 +1,36 @@
+{
+    "app_name": "CircuitSimulator",
+    "description": "Circuit Simulator version 1.2.0",
+    "main": "index.html",
+    "name": "circuitjs1",
+    "version": "1.2.0",
+    "webexe_settings": {
+        "blacklist": "",
+        "custom_script": "",
+        "download_dir": "",
+        "export_dir": "output",
+        "force_download": false,
+        "linux-x32": false,
+        "linux-x64": false,
+        "mac-x64": false,
+        "nw_compression_level": 0,
+        "nw_version": "0.17.0",
+        "output_pattern": "",
+        "sdk_build": false,
+        "uncompressed_folder": false,
+        "whitelist": "",
+        "windows-x32": false,
+        "windows-x64": true
+    },
+    "webkit": {},
+    "window": {
+        "exe_icon": "icon.png",
+        "frame": true,
+        "icon": "icon.png",
+        "id": "circuitjs1",
+        "mac_icon": "icon.png",
+        "min_height": 450,
+        "min_width": 630,
+        "title": "Circuit Simulator 1.2.0"
+    }
+}
