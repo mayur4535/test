@@ -129,7 +129,7 @@ function clear_field(field) {
 
 
 
-	digit0 = '+/- 1000 ppm/Celsius'
+	digit0 = '+/- 1000 ppm/&#8451;'
 
 	digit1 = 0;
 
@@ -340,11 +340,11 @@ input.btn {
 }
 
 p {
- border-radius: 25px;
+ border-radius: 15px;
   background-color: ;
   width: 70px;
   border: 2px solid green;
-  height: 40px;
+  height: 35px;
   margin: 2px;
 }
 
@@ -410,18 +410,18 @@ Tol.</div></td>
 <td valign="top">
 
 <TABLE>
+ 
+<tr><td><p style=background-color:black; ><input type="radio" id="bands_1" name="band0" onClick="digit0 = '+/- 1000 ppm/&#8451;';computeForm(this.form)" CHECKED><label style="color:#ffffff00;size:70px;" for="bands_1">11111111111111111111111</label></p></td></tr>
 
-<tr><td><p style=background-color:black; ><input type="radio" id="bands_1" name="band0" onClick="digit0 = '+/- 1000 ppm/Celsius';computeForm(this.form)" CHECKED><label style="color:#ffffff00;size:70px;" for="bands_1">11111111111111111111111</label></p></td></tr>
+<tr><td><p style=background-color:brown; ><input type="radio" name="band0" id="bands_2" onClick="digit0 = '+/- 500 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_2">11111111111111111111111</label></p></td></tr>
 
-<tr><td><p style=background-color:brown; ><input type="radio" name="band0" id="bands_2" onClick="digit0 = '+/- 500 ppm/Celsius';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_2">11111111111111111111111</label></p></td></tr>
+<tr><td><p style=background-color:red; ><input type="radio" name="band0" id="bands_3" onClick="digit0 = '+/- 200 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_3">11111111111111111111111</label></td></tr>
 
-<tr><td><p style=background-color:red; ><input type="radio" name="band0" id="bands_3" onClick="digit0 = '+/- 200 ppm/Celsius';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_3">11111111111111111111111</label></td></tr>
+<tr><td><p style=background-color:orange; ><input type="radio" name="band0" id="bands_4" onClick="digit0 = '+/- 100 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_4">11111111111111111111111</label></td></tr>
 
-<tr><td><p style=background-color:orange; ><input type="radio" name="band0" id="bands_4" onClick="digit0 = '+/- 100 ppm/Celsius';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_4">11111111111111111111111</label></td></tr>
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band0" id="bands_5" onClick="digit0 = '-20 to +100 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_5">11111111111111111111111</label></td></tr>
 
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band0" id="bands_5" onClick="digit0 = '-20 to +100 ppm/Celsius';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_5">11111111111111111111111</label></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band0" id="bands_6" onClick="digit0 = '0 to +70 ppm/Celsius';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_6">11111111111111111111111</label></td></tr>
+<tr><td><p style=background-color:green; ><input type="radio" name="band0" id="bands_6" onClick="digit0 = '0 to +70 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_6">11111111111111111111111</label></td></tr>
 
 </TABLE>
 
@@ -488,29 +488,31 @@ Tol.</div></td>
 
 <TABLE>
 
-<tr><td><p><input type="radio" name="band3" onClick="digit3 = 0;computeForm(this.form)" CHECKED>Black</td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 1;computeForm(this.form)">Brown</td></tr>
+<tr><td><p style=background-color:black; ><input type="radio" name="band1" id="bands_27" onClick="digit3 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_27">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 2;computeForm(this.form)">Red</td></tr>
+<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_28" onClick="digit3 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_28">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 3;computeForm(this.form)">Orange</td></tr>
+<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_29" onClick="digit3 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_29">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 4;computeForm(this.form)">Yellow</td></tr>
+<tr><td><p style=background-color:orange; ><input type="radio" name="band1"  id="bands_30" onClick="digit3 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_30">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 5;computeForm(this.form)">Green</td></tr>
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band1"  id="bands_31" onClick="digit3 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_31">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 6;computeForm(this.form)">Blue</td></tr>
+<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_32" onClick="digit3 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_32">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 7;computeForm(this.form)">Purple</td></tr>
+<tr><td><p style=background-color:blue; ><input type="radio" name="band1"  id="bands_33" onClick="digit3 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_33">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 8;computeForm(this.form)">Grey</td></tr>
+<tr><td><p style=background-color:purple; ><input type="radio" name="band1"  id="bands_34" onClick="digit3 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_34">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 9;computeForm(this.form)">White</td></tr>
+<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_35" onClick="digit3 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_35">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 0.1;computeForm(this.form)">Gold</td></tr>
+<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_36" onClick="digit3 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_36">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band3" onClick="digit3 = 0.01;computeForm(this.form)">Silver</td></tr>
+<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_37" onClick="digit3 = 0.1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_37">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_38" onClick="digit3 = 0.01;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_38">11111111111111111111111</label></p></td></tr>
+
 
 </TABLE>
 
@@ -519,18 +521,20 @@ Tol.</div></td>
 <td valign="top">
 
 <TABLE>
+<tr><td><p style=background-color:black; ><input type="radio" name="band1"  id="bands_39" onClick="digit4 = '+/- 20%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_39">11111111111111111111111</label></p></td></tr>
 
-<tr><td><p><input type="radio" name="band4" onClick="digit4 = '+/- 20%';computeForm(this.form)" CHECKED>Black</td></tr>
+<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_40" onClick="digit4 = '+/-  1%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_40">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band4" onClick="digit4 = '+/-  1%';computeForm(this.form)">Brown</td></tr>
+<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_41" onClick="digit4 = '+/-  2%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_41">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band4" onClick="digit4 = '+/-  2%';computeForm(this.form)">Red</td></tr>
+<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_42" onClick="digit4 = '+/-  5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_42">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band4" onClick="digit4 = '+/-  5%';computeForm(this.form)">Green</td></tr>
+<tr><td><p style=background-color:#daa520; ><input type="radio" name="band1"  id="bands_43" onClick="digit4 = '+/- .5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_43">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band4" onClick="digit4 = '+/- .5%';computeForm(this.form)">Gold</td></tr>
+<tr><td><p style=background-color:silver; ><input type="radio" name="band1"  id="bands_44" onClick="digit4 = '+/- 10%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_44">11111111111111111111111</label></p></td></tr>
 
-<tr><td><input type="radio" name="band4" onClick="digit4 = '+/- 10%';computeForm(this.form)">Silver</td></tr>
+
+
 
 </TABLE>
 
