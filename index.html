@@ -1,151 +1,663 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<body>
+mica capecitor
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
+<HTML>
+<!--   HTML coding exclusively with the CoffeeCup HTML 2006 Editor --> 
+<!--          http://www.coffeecup.com                             --> 
+<!--   First online in September 1977 as part of the ARPAnet group --> 
+<!--   Brewed on December 6 1994 1:09:21 PM                        --> 
+<!--   Updated on September 6 2001 4:18:12 AM                      --> 
+<!--   Updated on December 9 2004 8:22:45 PM                       --> 
+<!--   Created by Dr. Gene Davis - Computer Support Group          --> 
+<HEAD>
+<title>Ceramic Class I 5 Dot Capacitor Value Calculator</title>
+<META NAME="Title" CONTENT="CSGNetwork Ceramic Class I 5 Dot Capacitor Value Calculator">
+<META NAME="Author" CONTENT="For CSGNetwork.Com, Computer Support Group - Dr. Gene Davis">
+<META NAME="Subject" CONTENT="CSGNetwork public use calculator">
+<META NAME="Description" CONTENT="Ceramic Class I 5 Dot Capacitor Value Calculator, Palm Springs, Cathedral City, Palm Desert, La Quinta, Desert Hot Springs, Indio, Thermal, Thousand Palms, Rancho Mirage, Coachella Valley, Southern California, computer service, requires JavaScript">
+<META NAME="Keywords" CONTENT="class 1, ceramic, 5 dot, capacitor, capacitance, sphere, vacuum,calculator.">
+<META NAME="Language" CONTENT="English">
+<META NAME="Expires" CONTENT="Never">
+<META NAME="Copyright" CONTENT="© 1977 - 2006 Computer Support Group - CSGNetwork and CSGNetwork.Com are registered trademarks with the US Patent and Trademark Office">
+<META NAME="Designer" CONTENT="Dr. Gene Davis">
+<META NAME="Publisher" CONTENT="Computer Support Group, Inc.">
+<META NAME="Revisit-After" CONTENT="14 Days">
+<META NAME="Distribution" CONTENT="Global">
+<META NAME="Robots" CONTENT="All">
+<title>Ceramic Class I 5 Dot Capacitor Value Calculator</title>
+
+<META name="keywords" content="Ceramic Class I 5 Dot Capacitor Value Calculator, Palm Springs, California">
+
+<META name="description" Content="Provided for your use by CSGNetwork.Com and Computer Support Group">
+
+<script language="JavaScript">
+
+<!--
 
 
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+// CED subroutine for cleaning up JavaScript rounding errors 
+
+// to any reasonable number of decimal places 5/5/1997 last mod 2/19/2004
+
+// round for decimal of (value of precision) places, default is 3
+
+// This routine can be used to pass a number and a number for precision
+
+// or just a number only, that is to be rounded to a set number of decimal
+
+// places. This routine supports leading and trailing zeros, leading and
+
+// trailing spaces, and padding. To prevent errors, pass variables as a string.
+
+
+
+function perRound(num, precision) {
+
+	var precision = 3; //default value if not passed from caller, change if desired
+
+	// remark if passed from caller
+
+	precision = parseInt(precision); // make certain the decimal precision is an integer
+
+    var result1 = num * Math.pow(10, precision);
+
+    var result2 = Math.round(result1);
+
+    var result3 = result2 / Math.pow(10, precision);
+
+    return zerosPad(result3, precision);
+
 }
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
-    <!-- Properties can be specified to influence deferred binding -->
-    <meta name='gwt:property' content='locale=en_UK'>
 
+function zerosPad(rndVal, decPlaces) {
 
-    <!-- Titles are optional, but useful -->
-    <title></title>
+    var valStrg = rndVal.toString(); // Convert the number to a string
 
-<style>
-.disabled {
-    color: lightgray;
-}
-.topSpace {
-    margin-top: 12px;
-}
-.cursorPointer {
-   cursor: default;
-}
-.cursorCross {
-   cursor: crosshair;
-}
+    var decLoc = valStrg.indexOf("."); // Locate the decimal point
 
-.cursorSplitter {
-   cursor: row-resize;
-}
+    // check for a decimal 
 
-.gwt-MenuItem-disabled {
-    color: lightgray;
-}
-.offScreen {
-    position: absolute;
-    right: 101%;
-    overflow: auto;
-}
-.gwt-Frame{
-    scrolling="no";
-  border: 0px !important;
-}
+    if (decLoc == -1) {
 
-.gwt-MenuItem {
-    font-size: 12px !important;
-}
+        decPartLen = 0; // If no decimal, then all decimal places will be padded with 0s
 
-.gwt-MenuBar-horizontal {
-    font-size: 12px !important;
+        // If decPlaces is greater than zero, add a decimal point
+
+        valStrg += decPlaces > 0 ? "." : "";
+
     }
 
-.gwt-Label-selected {
-    font-size: 1.3em;
-    font-weight: 400;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-.gwt-Label-1off {
-    color: DarkGray;
+    else {
+
+        decPartLen = valStrg.length - decLoc - 1; // If there is a decimal already, only the needed decimal places will be padded with 0s
+
+    }
+
+     var totalPad = decPlaces - decPartLen;    // Calculate the number of decimal places that need to be padded with 0s
+
+    if (totalPad > 0) {
+
+        // Pad the string with 0s
+
+        for (var cntrVal = 1; cntrVal <= totalPad; cntrVal++) 
+
+            valStrg += "0";
+
+        }
+
+    return valStrg;
+
 }
 
-.gwt-Label-2off {
-    font-size:0.8em;
-    color: LightGray;
+// send the value in as "num" in a variable
+
+
+
+// clears field of default value
+
+function clear_field(field) {
+
+		if (field.value==field.defaultValue) {
+
+			field.value=''
+
+		}
+
+	}
+
+
+
+	digit0 = '+/- 1000 ppm/Celsius'
+
+	digit1 = 0;
+
+	digit2 = 0;
+
+	digit3 = 0;
+
+	digit4 = '+/- 20%';
+
+
+
+// generic object maker prepares an empty array of n items
+
+
+
+function makeArray(n) {
+
+	this.length = n
+
+	for (var i=1; i <= n; i++)
+
+		this[i] = null
+
 }
 
-.gwt-Label-current {
+
+
+// calculate capacitance value
+
+
+
+function calcCap(d1, d2, d3) {
+
+      var farads = 0
+
+      var i = 0
+
+      multiplier = 1
+
+	if ((d3 != .1) && (d3 != .01))
+
+	{
+
+        for (i = 0; i < d3; ++i)
+
+            multiplier *= 10
+
+	  var farads = ((d1 * 10) + d2) * multiplier
+
+	}
+
+	else {
+
+		 var farads = ((d1 * 10)* d3 + d2 * d3)
+
+	     }
+
+
+
+	farads = format(farads)
+
+	return farads
+
 }
 
-.topButton-red {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left:5px;
-    padding: 5px 7px;
-    text-decoration: none;
-    color: #ffffff;
-    cursor: pointer;
-    cursor: hand;
-    font-size: small;
-    background-color: #ff0000;
-    border: 1px solid #bbb;
-    border-bottom: 1px solid #a0a0a0;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
+
+
+// format capacitance values for output
+
+
+
+function format(faradval) {
+
+	var result = ""
+
+	if (faradval >= 10e9) 
+
+	{
+
+		faradval /= 10e8
+
+		result = "  " + faradval + " mF"
+
+		return result
+
+	}
+
+	else if (faradval >= 10e6) 
+
+		{
+
+		  faradval /= 10e5
+
+ 		  result = "  " + faradval + " uF"
+
+		  return result
+
+		}
+
+		else if (faradval >= 10e3) 
+
+			{
+
+		  	  faradval /= 10e2
+
+ 		  	  result = "  " + faradval + " nF"
+
+		  	  return result
+
+			}
+
+			else {
+
+
+
+				  result = "  " + faradval + " pF"
+
+				  return result
+
+	      	     }
+
 }
 
-.topButton {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left:5px;
-    padding: 5px 7px;
-    text-decoration: none;
-    cursor: pointer;
-    cursor: hand;
-    font-size: small;
-    background-color: #e7e7e7;
-    border: 1px solid #bbb;
-    border-bottom: 1px solid #a0a0a0;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-}
-</style>
 
-<script>
-nw.Window.get().maximize();
-nw.Window.get().leaveFullscreen();
+
+// the main function that displays new colors and calculates values
+
+
+
+function computeForm(form) {
+
+	var cappic = ""
+
+	// show the Temperature Coefficient
+
+	form.tcval.value = digit0
+
+      // calculate the capacitance
+
+      form.capval.value = calcCap(digit1, digit2, digit3)
+
+      // show the tolerance
+
+      form.tolval.value = digit4
+
+      return 0
+
+}
+
+
+
+function clearForm(form)
+
+{
+
+    digit1 = 0
+
+    digit2 = 0
+
+    digit3 = 0
+
+//    digit4 = "+/- 5%"
+
+
+
+    form.tcval.value = ""
+
+    form.capval.value = ""
+
+    form.tolval.value = "" 
+
+}
+
+
+
+//-->
+
 </script>
 
-<script src="help/js/jquery-1.12.4.min.js"></script>
-<script src="help/jQuery.scrollSpeed.js"></script>
-<!--<script src="help/js/syscmds.js"></script>-->
- 
-<script>
-    $(function() {
-        $('div').delay(1000).fadeOut(400);
-        $.scrollSpeed(100, 800);
-    });
-    </script>
-<!--  This script takes care of scrolling. If this script does not exist,
-  then at random scrolling with the mouse wheel the program will lagging.-->
 </head>
-  <body>
 
-  
-  <!-- Include the next line to allow support for dropbox import/export. You will need your own app key. -->
-  <!--<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="YOUR_KEY"></script>-->
+<center>
+
+<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+
+<BODY BGCOLOR=FFFFFF TEXT=000000 LINK=0000FF VLINK=800080>
 
 
-    <!-- This script tag is what actually loads the GWT module.  The -->
-    <!-- 'nocache.js' file (also called a "selection script") is     -->
-    <!-- produced by the GWT compiler in the module output directory -->
-    <!-- or generated automatically in development mode.             -->
-    <script language="javascript" src="circuitjs1/circuitjs1.nocache.js"></script>
-    <div id="google_translate_element"></div>
-    <!-- Include a history iframe to enable full GWT history support -->
-    <!-- (the id must be exactly as shown)                           -->
-    
-    <iframe src="javascript:''" id="__gwt_historyFrame" tabindex="-1" style="width:0;height:0;border:0"></iframe>
-    
-  </body>
- </html>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<STYLE TYPE="text/css">
+<!--
+body { font-family: Tahoma, Verdana; }
+input.btn {
+  color:black;
+  font: bold 75% 'tahoma',helvetica,sans-serif;
+  background-color:#ffd148;
+  border: 2px solid;
+  border-color: #c7c5c8;
+ }
+ 
+ input.btn2 {
+  color:black;
+  font: bold 95% 'tahoma',helvetica,sans-serif;
+  background-color:#ffd148;
+  border: 2px solid;
+  border-color: #c7c5c8;
+ 
+}
+
+p {
+  background-color: ;
+  width: 200px;
+  border: 2px solid green;
+  height: 25px;
+  margin: 20px;
+}
+
+</STYLE>
+<meta name="viewport" content="width=100%, initial-scale=1">
+
+
+ 
+
+
+
+
+
+
+
+
+<form name="capacitor">
+
+<center>
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+
+
+
+<center>
+
+<TABLE ALIGN="center"  width="100%"BGCOLOR=#FFFFFF BORDER= CELLPADDING=5>
+
+<tr>
+
+<td><div align="center"><B>Temperature<br>
+
+Coefficient</B></div></td>
+
+<td><div align="center"><B>First<br>
+
+Significant<br>
+
+Figure</B></div></td>
+
+<td><div align="center"><B>Second<br>
+
+Significant<br>
+
+Figure</B></div></td>
+
+<td><div align="center"><B>Multiplier<br>
+
+Dot</B></div></td>
+
+<td><div align="center"><B>Percentage<br>
+
+Tolerance<br>
+
+Dot</B></div></td>
+
+</tr>
+
+<tr></tr>
+
+<tr>
+
+<td valign="top">
+
+<TABLE>
+
+<tr><td><p style=background-color:black; ><input type="radio" id="bands_1" name="band0" onClick="digit0 = '+/- 1000 ppm/Celsius';computeForm(this.form)" CHECKED><label style="color:#ffffff00;size:70px;" for="bands_1">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band0" id="bands_2" onClick="digit0 = '+/- 500 ppm/Celsius';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_2">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band0" onClick="digit0 = '+/- 200 ppm/Celsius';computeForm(this.form)">Red</td></tr>
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band0" onClick="digit0 = '+/- 100 ppm/Celsius';computeForm(this.form)">Orange</td></tr>
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band0" onClick="digit0 = '-20 to +100 ppm/Celsius';computeForm(this.form)">Yellow</td></tr>
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band0" onClick="digit0 = '0 to +70 ppm/Celsius';computeForm(this.form)">Green</td></tr>
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+<tr><td><p ><input type="radio" name="band1" id="bands_4" onClick="digit1 = 0;computeForm(this.form)" CHECKED/><label for="bands_4">black</label></P></td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 1;computeForm(this.form)">Brown</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 2;computeForm(this.form)">Red</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 3;computeForm(this.form)">Orange</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 4;computeForm(this.form)">Yellow</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 5;computeForm(this.form)">Green</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 6;computeForm(this.form)">Blue</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 7;computeForm(this.form)">Purple</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 8;computeForm(this.form)">Grey</td></tr>
+
+<tr><td><input type="radio" name="band1" onClick="digit1 = 9;computeForm(this.form)">White</td></tr>
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+<tr><td><p><input type="radio" name="band2" onClick="digit2 = 0;computeForm(this.form)" CHECKED>Black</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 1;computeForm(this.form)">Brown</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 2;computeForm(this.form)">Red</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 3;computeForm(this.form)">Orange</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 4;computeForm(this.form)">Yellow</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 5;computeForm(this.form)">Green</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 6;computeForm(this.form)">Blue</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 7;computeForm(this.form)">Purple</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 8;computeForm(this.form)">Grey</td></tr>
+
+<tr><td><input type="radio" name="band2" onClick="digit2 = 9;computeForm(this.form)">White</td></tr>
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+<tr><td><p><input type="radio" name="band3" onClick="digit3 = 0;computeForm(this.form)" CHECKED>Black</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 1;computeForm(this.form)">Brown</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 2;computeForm(this.form)">Red</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 3;computeForm(this.form)">Orange</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 4;computeForm(this.form)">Yellow</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 5;computeForm(this.form)">Green</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 6;computeForm(this.form)">Blue</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 7;computeForm(this.form)">Purple</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 8;computeForm(this.form)">Grey</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 9;computeForm(this.form)">White</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 0.1;computeForm(this.form)">Gold</td></tr>
+
+<tr><td><input type="radio" name="band3" onClick="digit3 = 0.01;computeForm(this.form)">Silver</td></tr>
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+<tr><td><p><input type="radio" name="band4" onClick="digit4 = '+/- 20%';computeForm(this.form)" CHECKED>Black</td></tr>
+
+<tr><td><input type="radio" name="band4" onClick="digit4 = '+/-  1%';computeForm(this.form)">Brown</td></tr>
+
+<tr><td><input type="radio" name="band4" onClick="digit4 = '+/-  2%';computeForm(this.form)">Red</td></tr>
+
+<tr><td><input type="radio" name="band4" onClick="digit4 = '+/-  5%';computeForm(this.form)">Green</td></tr>
+
+<tr><td><input type="radio" name="band4" onClick="digit4 = '+/- .5%';computeForm(this.form)">Gold</td></tr>
+
+<tr><td><input type="radio" name="band4" onClick="digit4 = '+/- 10%';computeForm(this.form)">Silver</td></tr>
+
+</TABLE>
+
+</td>
+
+</tr>
+
+</TABLE>
+
+<CENTER>
+<br />
+
+<TABLE ALIGN="center" BORDER=5  BGCOLOR=#FFFFFF CELLPADDING=5>
+
+
+
+<td colspan="2" align="center">
+
+<b><h2>&nbsp;&nbsp;Result&nbsp;&nbsp;</h2></b>
+
+</td>
+
+</tr>
+
+
+
+<TR BGCOLOR=#B6D4D2>
+
+<TD align="center" colspan="2">
+
+Calculated Results
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Temperature Coefficient</td>
+
+<td><input type="text" name="tcval" size="26" value="" readonly></td>
+
+</tr>
+
+<tr>
+
+<td>Capacitance Value</td>
+
+<td><input type="text" name="capval" size="26" value="" readonly></td>
+
+</tr>
+
+<tr>
+
+<td>Tolerance Percentage</td>
+
+<td><input type="text" name="tolval" size="26" value="" readonly>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2" align="center">
+
+<input type="reset" value="Clear Values" onClick="clearForm(this.form)">
+
+</td>
+
+</tr>
+
+</TABLE>
+
+</CENTER>
+
+</td>
+
+</tr>
+
+</TABLE>
+
+</CENTER>
+
+</FORM>
+
+</CENTER>
+
+</center>
+
+</center>
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</td>
+
+</tr>
+
+</table>
+
+
+
+</center>
+
+</td>
+
+
+
+</table>
+
+</center>
+
+</center>
+
