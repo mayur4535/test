@@ -1,4 +1,4 @@
-mica capecitor
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
 <HTML>
 <!--   HTML coding exclusively with the CoffeeCup HTML 2006 Editor --> 
@@ -129,7 +129,7 @@ function clear_field(field) {
 
 
 
-	digit0 = '+/- 1000 ppm/&#8451;'
+	digit0 = '&plusmn; 1000 ppm/&#8451;'
 
 	digit1 = 0;
 
@@ -137,7 +137,7 @@ function clear_field(field) {
 
 	digit3 = 0;
 
-	digit4 = '+/- 20%';
+	digit4 = '&plusmn; 20%';
 
 
 
@@ -291,9 +291,9 @@ function clearForm(form)
 
     digit3 = 0
 
-//    digit4 = "+/- 5%"
+//    digit4 = "&plusmn; 5%"
 
-
+ 
 
     form.tcval.value = ""
 
@@ -362,215 +362,13 @@ p {
 
 
 <form name="capacitor">
-
-<center>
-
-
-
-
-
-
-
-
-
-
-
-
-<center>
-
-
-
-
-<center>
-
-<TABLE ALIGN="center"  BORDER=0 >
-
-<tr>
-
-<td><div align="center"><B>Temp<br>
-
-</B></div></td>
-
-<td><div align="center"><B>1</div></td>
-
-<td><div align="center"><B>2</div></td>
-
-<td><div align="center"><B>Mult.</div></td>
-
-<td><div align="center"><B>%<br>
-
-Tol.</div></td>
-
-</tr>
-
-<tr></tr>
-
-<tr>
-
-<td valign="top">
-
-<TABLE>
- 
-<tr><td><p style=background-color:black; ><input type="radio" id="bands_1" name="band0" onClick="digit0 = '+/- 1000 ppm/&#8451;';computeForm(this.form)" CHECKED><label style="color:#ffffff00;size:70px;" for="bands_1">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band0" id="bands_2" onClick="digit0 = '+/- 500 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_2">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band0" id="bands_3" onClick="digit0 = '+/- 200 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_3">11111111111111111111111</label></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band0" id="bands_4" onClick="digit0 = '+/- 100 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_4">11111111111111111111111</label></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band0" id="bands_5" onClick="digit0 = '-20 to +100 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_5">11111111111111111111111</label></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band0" id="bands_6" onClick="digit0 = '0 to +70 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_6">11111111111111111111111</label></td></tr>
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-
-<tr><td><p style=background-color:black; ><input type="radio" name="band1" id="bands_7" onClick="digit1 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_7">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_8" onClick="digit1 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_8">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_9" onClick="digit1 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_9">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band1"  id="bands_10" onClick="digit1 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_10">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band1"  id="bands_11" onClick="digit1 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_11">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_12" onClick="digit1 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_12">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:blue; ><input type="radio" name="band1"  id="bands_13" onClick="digit1 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_13">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:purple; ><input type="radio" name="band1"  id="bands_14" onClick="digit1 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_14">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_15" onClick="digit1 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_15">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_16" onClick="digit1 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_16">11111111111111111111111</label></p></td></tr>
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-
-
-<tr><td><p style=background-color:black; ><input type="radio" name="band1" id="bands_17" onClick="digit2 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_17">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_18" onClick="digit2 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_18">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_19" onClick="digit2 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_19">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band1"  id="bands_20" onClick="digit2 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_20">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band1"  id="bands_21" onClick="digit2 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_21">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_22" onClick="digit2 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_22">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:blue; ><input type="radio" name="band1"  id="bands_23" onClick="digit2 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_23">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:purple; ><input type="radio" name="band1"  id="bands_24" onClick="digit2 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_24">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_25" onClick="digit2 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_25">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_26" onClick="digit2 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_26">11111111111111111111111</label></p></td></tr>
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-
-
-<tr><td><p style=background-color:black; ><input type="radio" name="band1" id="bands_27" onClick="digit3 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_27">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_28" onClick="digit3 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_28">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_29" onClick="digit3 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_29">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band1"  id="bands_30" onClick="digit3 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_30">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band1"  id="bands_31" onClick="digit3 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_31">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_32" onClick="digit3 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_32">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:blue; ><input type="radio" name="band1"  id="bands_33" onClick="digit3 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_33">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:purple; ><input type="radio" name="band1"  id="bands_34" onClick="digit3 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_34">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_35" onClick="digit3 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_35">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_36" onClick="digit3 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_36">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_37" onClick="digit3 = 0.1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_37">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_38" onClick="digit3 = 0.01;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_38">11111111111111111111111</label></p></td></tr>
-
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-<tr><td><p style=background-color:black; ><input type="radio" name="band1"  id="bands_39" onClick="digit4 = '+/- 20%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_39">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_40" onClick="digit4 = '+/-  1%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_40">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_41" onClick="digit4 = '+/-  2%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_41">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_42" onClick="digit4 = '+/-  5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_42">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:#daa520; ><input type="radio" name="band1"  id="bands_43" onClick="digit4 = '+/- .5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_43">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:silver; ><input type="radio" name="band1"  id="bands_44" onClick="digit4 = '+/- 10%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_44">11111111111111111111111</label></p></td></tr>
-
-
-
-
-</TABLE>
-
-</td>
-
-</tr>
-
-</TABLE>
-
 <CENTER>
 <br />
 
-<TABLE ALIGN="center" BORDER=5  BGCOLOR=#FFFFFF CELLPADDING=5>
-
-
-
-<td colspan="2" align="center">
-
-<b><h2>&nbsp;&nbsp;Result&nbsp;&nbsp;</h2></b>
-
-</td>
+<TABLE ALIGN="center" border   >
+<tr>
 
 </tr>
-
-
-
-<TR BGCOLOR=#B6D4D2>
-
-<TD align="center" colspan="2">
-
-Calculated Results
-
-</td>
-
-</tr>
-
 <tr>
 
 <td>Temperature Coefficient</td>
@@ -610,6 +408,189 @@ Calculated Results
 </TABLE>
 
 </CENTER>
+<center>
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+
+
+
+
+<center>
+
+<TABLE ALIGN="center"  BORDER=0 >
+
+<tr>
+
+
+
+</B></div></td>
+
+<td><div align="center"><B>1</div></td>
+
+<td><div align="center"><B>2</div></td>
+
+<td><div align="center"><B>Mult.</div></td>
+
+<td><div align="center"><B>%<br>
+
+Tol.</div></td>
+<td><div align="center"><B>Temp<br>
+
+</tr>
+
+<tr></tr>
+
+<tr>
+
+
+
+<td valign="top">
+
+<TABLE>
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band1" id="bands_7" onClick="digit1 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_7">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band1"  id="bands_8" onClick="digit1 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_8">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band1"  id="bands_9" onClick="digit1 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_9">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band1"  id="bands_10" onClick="digit1 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_10">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band1"  id="bands_11" onClick="digit1 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_11">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band1"  id="bands_12" onClick="digit1 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_12">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:blue; ><input type="radio" name="band1"  id="bands_13" onClick="digit1 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_13">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:purple; ><input type="radio" name="band1"  id="bands_14" onClick="digit1 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_14">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band1"  id="bands_15" onClick="digit1 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_15">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band1"  id="bands_16" onClick="digit1 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_16">11111111111111111111111</label></p></td></tr>
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band2" id="bands_17" onClick="digit2 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_17">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band2"  id="bands_18" onClick="digit2 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_18">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band2"  id="bands_19" onClick="digit2 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_19">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band2"  id="bands_20" onClick="digit2 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_20">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band2"  id="bands_21" onClick="digit2 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_21">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band2"  id="bands_22" onClick="digit2 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_22">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:blue; ><input type="radio" name="band2"  id="bands_23" onClick="digit2 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_23">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:purple; ><input type="radio" name="band2"  id="bands_24" onClick="digit2 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_24">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band2"  id="bands_25" onClick="digit2 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_25">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band2"  id="bands_26" onClick="digit2 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_26">11111111111111111111111</label></p></td></tr>
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band3" id="bands_27" onClick="digit3 = 0;computeForm(this.form)" CHECKED/><label style="color:#ffffff00;size:70px;" for="bands_27">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band3"  id="bands_28" onClick="digit3 = 1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_28">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band3"  id="bands_29" onClick="digit3 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_29">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band3"  id="bands_30" onClick="digit3 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_30">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band3"  id="bands_31" onClick="digit3 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_31">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band3"  id="bands_32" onClick="digit3 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_32">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:blue; ><input type="radio" name="band3"  id="bands_33" onClick="digit3 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_33">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:purple; ><input type="radio" name="band3"  id="bands_34" onClick="digit3 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_34">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band3"  id="bands_35" onClick="digit3 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_35">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band3"  id="bands_36" onClick="digit3 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_36">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band3"  id="bands_37" onClick="digit3 = 0.1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_37">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band3"  id="bands_38" onClick="digit3 = 0.01;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_38">11111111111111111111111</label></p></td></tr>
+
+
+</TABLE>
+
+</td>
+
+<td valign="top"> 
+
+<TABLE>
+<tr><td><p style=background-color:black; ><input type="radio" name="band4"  id="bands_39" onClick="digit4 = '&plusmn; 20%';computeForm(this.form)" CHECKED><label style="color:#ffffff00;size:70px;" for="bands_39">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band4"  id="bands_40" onClick="digit4 = '&plusmn;  1%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_40">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band4"  id="bands_41" onClick="digit4 = '&plusmn;  2%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_41">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band4"  id="bands_42" onClick="digit4 = '&plusmn;  5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_42">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:#daa520; ><input type="radio" name="band4"  id="bands_43" onClick="digit4 = '&plusmn; .5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_43">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:silver; ><input type="radio" name="band4"  id="bands_44" onClick="digit4 = '&plusmn; 10%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_44">11111111111111111111111</label></p></td></tr>
+
+
+
+
+</TABLE>
+
+</td>
+<td valign="top">
+
+<TABLE>
+ 
+<tr><td><p style=background-color:black; ><input type="radio" id="bands_1" name="band0" onClick="digit0 = '&plusmn; 1000 ppm/&#8451;';computeForm(this.form)" CHECKED><label style="color:#ffffff00;size:70px;" for="bands_1">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band0" id="bands_2" onClick="digit0 = '&plusmn; 500 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_2">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band0" id="bands_3" onClick="digit0 = '&plusmn; 200 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_3">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band0" id="bands_4" onClick="digit0 = '&plusmn; 100 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_4">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band0" id="bands_5" onClick="digit0 = '-20 to +100 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_5">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band0" id="bands_6" onClick="digit0 = '0 to +70 ppm/&#8451;';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_6">11111111111111111111111</label></p></td></tr>
+
+</TABLE>
+
+</td>
+</tr>
+
+</TABLE>
+
+
 
 </td>
 
