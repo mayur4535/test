@@ -44,8 +44,10 @@
 				background-color: #f2f2f2;
 			}
 			._content_block {
+                              
 				width: auto;
 				max-width: 98%;
+                               
 				margin: 20px auto;
 				padding: 20px;
 				background-color: #e6e6e6;
@@ -183,6 +185,7 @@
 				font-size: 200px;
 				font-weight: 700;
 				background-color: #d2a679;
+                                align: center;
 			}
 			 
 			._smd_capacitor_value {
@@ -205,7 +208,7 @@
 			
 			._value_result {
 				display: none;
-				font-size: 100px;
+				font-size: 50px;
 				text-align: center;
 				color: #1abc9c;
 			}
@@ -252,6 +255,23 @@ input[id=capacitance]{
     border-color:dodgerBlue;
     box-shadow:0 0 8px 0 dodgerBlue;
   }
+h10{ margin-left:170px;
+     margin:0;
+        
+    
+  }
+input[name="capacitance_unit"]{
+  background-color: #167A04 ;
+  border: 1;
+  color: white;
+  padding: 80px 300px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 </style>
 <script>
@@ -331,7 +351,7 @@ input[id=capacitance]{
 
 <div class="_content_block">
 <div class="_content_title">
-<h3 style="text-align: center;">Convert codes to values</h3>
+<h3 style="text-align: center; font-size:70px;">Convert codes to values</h3>
 </div>
 
 <div class="_list_specifications" id="_content_sub_block">
@@ -341,14 +361,14 @@ input[id=capacitance]{
 <div class="_smd_component">
 <div class="_smd_component_grey_left"> </div>
 
-<div class="_smd_component_brown"><input class="_smd_capacitor_value" id="code_value" maxlength="3" onkeyup="calcCode(this)" type="text" value="000" /></div>
+<div class="_smd_component_brown"><input class="_smd_capacitor_value" id="code_value" maxlength="3" onkeyup="calcCode(this)" type="text" placeholder="103" /></div>
 
 <div class="_smd_component_grey_right"> </div>
 </div>
 </div>
 <br>
 <div class="_result">
-<div class="_value_result" id="code_value_result"><p1 style="border-radius: 25px; border: 4px solid #73AD21;   width: 100%; height: 150px;"><b id="value_uF">10uF</b> = <b id="value_nF">100nF</b> = <b id="value_pF">1000pF</b></div>
+<div class="_value_result" id="code_value_result"><p1 style="border-radius: 25px; border: 4px solid #73AD21;   width:100%; height:100%;"><b id="value_uF">10uF</b> = <b id="value_nF">100nF</b> = <b id="value_pF">1000pF</b></div>
 </p1>
 <div class="_invalid_value" id="code_invalid_value">That's not a valid code</div>
 </div>
@@ -357,15 +377,29 @@ input[id=capacitance]{
 
 <div class="_content_block">
 <div class="_content_title">
-<h3 style="text-align: center;">Convert values to codes</h3>
+<h3 style="text-align: center; font-size:70px;">Convert values to codes</h3>
 </div>
 
 <div class="_list_specifications" id="_content_sub_block">
 <div class="_list">
 <h4 class="_list_title"></h4>
 
-<div class="_input_value"><input class="_capacitance_input" id="capacitance" name="capacitance" onkeyup="calcCapacitance()" type="text" value="" /> <input name="capacitance_unit" type="hidden" value="uF" /> <a class="_list_item" href="javascript:void(0)" id="unit_uF" onclick="calcCapacitance('uF'); return false;">uF</a> <a class="_list_item" data-toggle="collapse" href="javascript:void(0)" id="unit_nF" onclick="calcCapacitance('nF'); return false;">nF</a> <a class="_list_item" data-toggle="collapse" href="javascript:void(0)" id="unit_pF" onclick="calcCapacitance('pF'); return false;">pF</a></div>
+<div class="_input_value"><input class="_capacitance_input" id="capacitance" name="capacitance"  type="text" value="" /> <input name="capacitance_unit" type="hidden" value="uF" />
+
+ <h1>
+<h10>
+<a style=" background-color: #167A04 ; border: 1; color: white; padding: 10px 100px; text-align: center;  
+               font-size: 70px; "class="_list_item" href="javascript:void(0)" id="unit_uF" onclick="calcCapacitance('uF'); return false;">uF</a> 
+<a style=" background-color: #167A04 ; border: 1; color: white; padding: 10px 100px; text-align: center;  
+               font-size: 70px; "class="_list_item" data-toggle="collapse" href="javascript:void(0)" id="unit_nF" onclick="calcCapacitance('nF'); return false;">nF</a> 
+<a style=" background-color: #167A04 ; border: 1; color: white; padding: 10px 100px; text-align: center;  
+               font-size: 70px; "class="_list_item" data-toggle="collapse" href="javascript:void(0)" id="unit_pF" onclick="calcCapacitance('pF'); return false;">pF</a></div>
 </div>
+</h10>
+
+
+
+
 
 <div class="_result">
 <div class="_value_result" id="capacitance_value_result">The code is: <b id="value_code"></b></div>
