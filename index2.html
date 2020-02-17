@@ -1,0 +1,549 @@
+
+<HTML>
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">
+
+<!--
+
+
+
+// CED subroutine for cleaning up JavaScript rounding errors 
+
+// to any reasonable number of decimal places 5/5/1997 last mod 2/19/2004
+
+// round for decimal of (value of precision) places, default is 3
+
+// This routine can be used to pass a number and a number for precision
+
+// or just a number only, that is to be rounded to a set number of decimal
+
+// places. This routine supports leading and training zeros, leading and
+
+// trailing spaces, and padding. To prevent errors, pass variables as a string.
+
+
+
+function perRound(num, precision) {
+
+	var precision = 3; //default value if not passed from caller, change if desired
+
+	// remark if passed from caller
+
+	precision = parseInt(precision); // make certain the decimal precision is an integer
+
+    var result1 = num * Math.pow(10, precision);
+
+    var result2 = Math.round(result1);
+
+    var result3 = result2 / Math.pow(10, precision);
+
+    return zerosPad(result3, precision);
+
+}
+
+
+
+function zerosPad(rndVal, decPlaces) {
+
+    var valStrg = rndVal.toString(); // Convert the number to a string
+
+    var decLoc = valStrg.indexOf("."); // Locate the decimal point
+
+    // check for a decimal 
+
+    if (decLoc == -1) {
+
+        decPartLen = 0; // If no decimal, then all decimal places will be padded with 0s
+
+        // If decPlaces is greater than zero, add a decimal point
+
+        valStrg += decPlaces > 0 ? "." : "";
+
+    }
+
+    else {
+
+        decPartLen = valStrg.length - decLoc - 1; // If there is a decimal already, only the needed decimal places will be padded with 0s
+
+    }
+
+     var totalPad = decPlaces - decPartLen;    // Calculate the number of decimal places that need to be padded with 0s
+
+    if (totalPad > 0) {
+
+        // Pad the string with 0s
+
+        for (var cntrVal = 1; cntrVal <= totalPad; cntrVal++) 
+
+            valStrg += "0";
+
+        }
+
+    return valStrg;
+
+}
+
+// send the value in as "num" in a variable
+
+
+
+// clears field of default value
+
+function clear_field(field) {
+
+		if (field.value==field.defaultValue) {
+
+			field.value=''
+
+		}
+
+	}
+
+
+
+	digit00 = 0;
+
+	digit01 = 0;
+
+	digit1 = 0;
+
+	digit2 = 0;
+
+	digit3 = 0;
+
+	digit4 = '+/- 20%';
+
+
+
+// generic object maker prepares an empty array of n items
+
+
+
+function makeArray(n) {
+
+	this.length = n
+
+	for (var i=1; i <= n; i++)
+
+		this[i] = null
+
+}
+
+
+
+// calculate capacitance value
+
+
+
+function calcCap(d1, d2, d3) {
+
+      var farads = 0
+
+      var i = 0
+
+      multiplier = 1
+
+	if ((d3 != .1) && (d3 != .01))
+
+	{
+
+        for (i = 0; i < d3; ++i)
+
+            multiplier *= 10
+
+	  var farads = ((d1 * 10) + d2) * multiplier
+
+	}
+
+	else {
+
+		 var farads = ((d1 * 10)* d3 + d2 * d3)
+
+	     }
+
+
+
+	farads = format(farads)
+
+	return farads
+
+}
+
+
+
+// format capacitance values for output
+
+
+
+function format(faradval) {
+
+	var result = ""
+
+	if (faradval >= 10e9) 
+
+	{
+
+		faradval /= 10e8
+
+		result = "  " + faradval + " mF"
+
+		return result
+
+	}
+
+	else if (faradval >= 10e6) 
+
+		{
+
+		  faradval /= 10e5
+
+ 		  result = "  " + faradval + " uF"
+
+		  return result
+
+		}
+
+		else if (faradval >= 10e3) 
+
+			{
+
+		  	  faradval /= 10e2
+
+ 		  	  result = "  " + faradval + " nF"
+
+		  	  return result
+
+			}
+
+			else {
+
+				  result = "  " + faradval + " pF"
+
+				  return result
+
+	      	     }
+
+}
+
+
+
+// the main function that displays new colors and calculates values
+
+
+
+function computeForm(form) {
+
+      // calculate the capacitance
+
+      form.capval.value = calcCap(digit1, digit2, digit3)
+
+      // show the tolerance
+
+      form.tolval.value = digit4
+
+      return 0
+
+}
+
+
+
+function clearForm(form)
+
+{
+
+    digit1 = 0
+
+    digit2 = 0
+
+    digit3 = 0
+
+    form.capval.value = ""
+
+    form.tolval.value = "" 
+
+}
+
+
+
+//-->
+
+</script>
+
+</head>
+
+<center>
+
+<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+
+<BODY BGCOLOR=FFFFFF TEXT=000000 LINK=0000FF VLINK=800080>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<STYLE TYPE="text/css">
+<!--
+body { font-family: Tahoma, Verdana; }
+input.btn {
+  color:black;
+  font: bold 75% 'tahoma',helvetica,sans-serif;
+  background-color:#ffd148;
+  border: 2px solid;
+  border-color: #c7c5c8;
+ }
+ 
+ input.btn2 {
+  color:black;
+  font: bold 95% 'tahoma',helvetica,sans-serif;
+  background-color:#ffd148;
+  border: 2px solid;
+  border-color: #c7c5c8;
+ 
+}
+p {
+ border-radius: 15px;
+  background-color: ;
+  width: 65px;
+  border: 2px solid green;
+  height: 27px;
+  margin: -0.5px;
+  margin-left: -7px;
+  
+}
+</STYLE>
+
+<meta name="viewport" content="width=100%, initial-scale=1">
+<form name="capacitor">
+<CENTER>
+
+
+<TABLE ALIGN="center"    >
+<td valign="top">
+
+<TABLE>
+<img src="https://www.radiomuseum.org/forumdata/users/14211/codes/sm_stamp_1.png" alt="Paris" width="150" height="100">
+</table>
+</td>
+
+
+<td valign="top">
+
+<TABLE>
+<tr>
+
+<td><input type="text" name="capval"  style= " color:#7e7e81; font-weight: bold; text:bold; font-size: 25px; border:2px solid #ffffff00;"  placeholder="0 nf"  value="" readonly></td>
+
+
+</tr>
+
+
+
+<tr>
+
+
+
+<td><input type="text" name="tolval"  style= "color:#7e7e81; font-size: 15px; border:2px solid #ffffff00;" value="" placeholder="&plusmn; 00%" readonly>
+
+</td>
+
+</tr>
+
+
+</table>
+</td>
+
+</TABLE>
+
+</CENTER>
+
+
+<td valign="top" width="160px">
+<TABLE ALIGN="center" >
+
+
+<td><div align="center"><B>1
+
+</div></td>
+
+<td><div align="center"><B>2</B></div></td>
+
+<td><div align="center"><B>Multi.</div></td>
+
+<td><div align="center"><B>%</B></div></td>
+
+</tr>
+
+<tr></tr>
+
+<tr>
+
+<td valign="top">
+
+<TABLE>
+<tr><td><p style=background-color:black; ><input type="radio" name="band2" id="bands_7" onClick="digit1 = 0;computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_7">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band2"  id="bands_8" onClick="digit1 = 1;computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_8">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band2"  id="bands_9" onClick="digit1 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_9">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band2"  id="bands_10" onClick="digit1 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_10">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band2"  id="bands_11" onClick="digit1 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_11">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band2"  id="bands_12" onClick="digit1 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_12">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:blue; ><input type="radio" name="band2"  id="bands_13" onClick="digit1 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_13">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:purple; ><input type="radio" name="band2"  id="bands_14" onClick="digit1 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_14">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band2"  id="bands_15" onClick="digit1 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_15">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band2"  id="bands_16" onClick="digit1 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_16">11111111111111111111111</label></p></td></tr>
+
+
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+
+
+<tr><td><p style=background-color:black; ><input type="radio" name="band3" id="bands_17" onClick="digit2 = 0;computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_17">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band3"  id="bands_18" onClick="digit2 = 1;computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_18">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band3"  id="bands_19" onClick="digit2 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_19">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band3"  id="bands_20" onClick="digit2 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_20">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band3"  id="bands_21" onClick="digit2 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_21">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band3"  id="bands_22" onClick="digit2 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_22">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:blue; ><input type="radio" name="band3"  id="bands_23" onClick="digit2 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_23">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:purple; ><input type="radio" name="band3"  id="bands_24" onClick="digit2 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_24">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band3"  id="bands_25" onClick="digit2 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_25">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band3"  id="bands_26" onClick="digit2 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_26">11111111111111111111111</label></p></td></tr>
+
+
+
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+<tr><td><p style=background-color:black; ><input type="radio" name="band4" id="bands_27" onClick="digit3 = 0;computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_27">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band4"  id="bands_28" onClick="digit3 = 1;computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_28">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band4"  id="bands_29" onClick="digit3 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_29">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:orange; ><input type="radio" name="band4"  id="bands_30" onClick="digit3 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_30">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:yellow; ><input type="radio" name="band4"  id="bands_31" onClick="digit3 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_31">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band4"  id="bands_32" onClick="digit3 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_32">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:blue; ><input type="radio" name="band4"  id="bands_33" onClick="digit3 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_33">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:purple; ><input type="radio" name="band4"  id="bands_34" onClick="digit3 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_34">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:grey; ><input type="radio" name="band4"  id="bands_35" onClick="digit3 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_35">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:white; ><input type="radio" name="band4"  id="bands_36" onClick="digit3 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_36">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:gold; ><input type="radio" name="band4"  id="bands_37" onClick="digit3 = 0.1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_37">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:silver; ><input type="radio" name="band4"  id="bands_38" onClick="digit3 = 0.01;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_38">11111111111111111111111</label></p></td></tr>
+
+
+</TABLE>
+
+</td>
+
+<td valign="top">
+
+<TABLE>
+<tr><td><p style=background-color:black; ><input type="radio" name="band5"  id="bands_39" onClick="digit4 = '&plusmn; 20%';computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_39">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:brown; ><input type="radio" name="band5"  id="bands_40" onClick="digit4 = '&plusmn;  1%';computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_40">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:red; ><input type="radio" name="band5"  id="bands_41" onClick="digit4 = '&plusmn;  2%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_41">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:green; ><input type="radio" name="band5"  id="bands_42" onClick="digit4 = '&plusmn;  5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_42">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:#daa520; ><input type="radio" name="band5"  id="bands_43" onClick="digit4 = '&plusmn; .5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_43">11111111111111111111111</label></p></td></tr>
+
+<tr><td><p style=background-color:silver; ><input type="radio" name="band5"  id="bands_44" onClick="digit4 = '&plusmn; 10%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_44">11111111111111111111111</label></p></td></tr>
+
+
+</TABLE>
+
+</td>
+
+</tr>
+
+</TABLE>
+
+
+</CENTER>
+
+</td>
+
+</tr>
+
+</TABLE>
+
+</CENTER>
+
+</FORM>
+
+</CENTER>
+
+</center>
+
+</center>
+
+</td>
+
+</tr>
+
+</table>
+
+</form>
+
+</td>
+
+</tr>
+
+</table>
+
+Version 1.4.2
+
+</center>
+
+</td>
+
+</tr>
+
+</table>
+
+</center>
+
+</center>
+
