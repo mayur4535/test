@@ -223,7 +223,7 @@ function c() {
 }
 .cal {
   position: absolute;
-  top: 80px;
+  top: 450px;
   left: 85px;
   
 }
@@ -266,6 +266,7 @@ img {
 
 <div class="_content_block">
 <form name="ccc"> 
+<p id="rcorners2">
 <div class="container">
   <img src="https://github.com/mayur4535/test/blob/master/electrolytic-capacitor-line-icon-electronic-compon.png?raw=true" alt="Snow" style="width:50%; height:60%;">
   
@@ -297,7 +298,7 @@ img {
 </select></div>
 
 
-  <div class="sec"><select style="height:70px; width:412px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+  <div class="sec"><select style="height:70px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
     class="greenText"   name="second">
 
 <option class="blackText">Black</option> 
@@ -325,7 +326,7 @@ img {
 </select>
 </div>
   <div class="mul">
-<select style="height:70px; width:412px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+<select style="height:70px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
     class="greenText" name="mult">
 
 <option class="greyText"> Grey</option>
@@ -340,7 +341,7 @@ img {
 
 
 </select></div>
-  <div class="toll"><select style="height:50px; width:412px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+  <div class="toll"><select style="height:50px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
     class="greenText" name="tol">
 
 
@@ -353,7 +354,7 @@ img {
 
 
 </select></div>
-  <div class="vol"><select style="height:50px; width:412px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+  <div class="vol"><select style="height:50px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
     class="greenText"name="volt">
 
 <option class="whiteText" > white</option>
@@ -380,7 +381,8 @@ img {
 
 
 
-<div class="cal"><input type="button" value="Calculate" OnClick="c()"></div>
+<div class="cal"><input type="button" style=" background-color: #167A04 ; border: 1; border-radius: 10px;color: white;  text-align: center; text-decoration: none; display: inline-block;
+               font-size: 70px; margin: 4px 2px;"value="Calculate" OnClick="c()"></div>
 </div>
 <div class="res"><input type="text" name="capval" size="100%" value="0" readonly></div>
 </div>
@@ -398,5 +400,5 @@ img {
 
 
 
-
+</p>
 </form>
