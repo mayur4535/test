@@ -217,19 +217,19 @@ function c() {
 }
 .vol {
   position: absolute;
-  top: 387px;
+  top: 398px;
   left: 70px;
   
 }
 .cal {
   position: absolute;
-  top: 450px;
-  left: 85px;
+  top: 470px;
+  left: 120px;
   
 }
 .res {
   position: absolute;
-  top: 700px;
+  top: 950px;
   left: 85px;
   
 }
@@ -272,7 +272,7 @@ img {
 
   <div class="FRS">
 <select style="height:70px; width:412px; border-radius: 10px; font-size:10px;" onchange="this.className=this.options[this.selectedIndex].className"
-    class="greenText"    name="first">
+    class="greyText"    name="first">
 
 <option class="blackText">Black</option> 
 
@@ -294,11 +294,11 @@ img {
 
 <option class="whiteText"> White</option>
 
-</select></div>
+</select><font face="Arial"><font size="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>First Band</font></div>
 
 
   <div class="sec"><select style="height:70px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
-    class="greenText"   name="second">
+    class="redText"   name="second">
 
 <option class="blackText">Black</option> 
 
@@ -323,10 +323,10 @@ img {
 
 
 </select>
-</div>
+<font face="Arial"><font size="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Second Band</font></div>
   <div class="mul">
 <select style="height:70px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
-    class="greenText" name="mult">
+    class="whiteText" name="mult">
 
 <option class="greyText"> Grey</option>
 
@@ -339,9 +339,9 @@ img {
 <option class="redText">Red</option>
 
 
-</select></div>
+</select><font face="Arial"><font size="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Multiplier</font></div>
   <div class="toll"><select style="height:50px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
-    class="greenText" name="tol">
+    class="yellowText" name="tol">
 
 
 <option class="brownText"> Brown</option>
@@ -352,9 +352,9 @@ img {
 <option class="greenText" > Green</option>
 
 
-</select></div>
+</select><font face="Arial"><font size="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>% / Tolerance</font></div>
   <div class="vol"><select style="height:50px; width:412px;  font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
-    class="greenText"name="volt">
+    class="pinkText"name="volt">
 
 <option class="whiteText" > white</option>
 <option class="yellowText"> Yellow</option>
@@ -373,7 +373,7 @@ img {
 
 
 
-</select></div>
+</select><font face="Arial"><font size="70">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Max. Voltage</font></div>
 
 
 
@@ -383,7 +383,7 @@ img {
 <div class="cal"><input type="button" style=" background-color: #167A04 ; border: 1; border-radius: 10px;color: white;  text-align: center; text-decoration: none; display: inline-block;
                font-size: 70px; margin: 4px 2px;"value="Calculate" OnClick="c()"></div>
 </div>
-<div class="res"><input type="text" name="capval" size="100%" value="0" readonly></div>
+<div class="res"><input type="text" style= "font-size:60px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" name="capval"  value="0" readonly></div>
 </div>
 
 
