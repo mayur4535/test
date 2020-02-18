@@ -1,4 +1,3 @@
-
 <script language="JavaScript">
 
 <!--
@@ -194,14 +193,44 @@ function c() {
 <style>
 .FRS {
   position: absolute;
-  bottom: 298px;
+  bottom: 294px;
   left: 70px;
   
 }
 .sec {
   position: absolute;
-  bottom: 280px;
+  bottom: 243px;
   left: 70px;
+  
+}
+.mul {
+  position: absolute;
+  bottom: 192px;
+  left: 70px;
+  
+}
+.toll {
+  position: absolute;
+  bottom: 141px;
+  left: 70px;
+  
+}
+.vol {
+  position: absolute;
+  bottom: 80px;
+  left: 85px;
+  
+}
+.cal {
+  position: absolute;
+  bottom: 80px;
+  left: 85px;
+  
+}
+.res {
+  position: absolute;
+  bottom: 60px;
+  left: 85px;
   
 }
 img {
@@ -228,6 +257,7 @@ img {
 .violetText{ background-color:violet; }
 .greyText{ background-color:grey; }
 .whiteText{ background-color:white; }
+.pinkText{ background-color:pink; }
 </style>
 
 
@@ -239,7 +269,7 @@ img {
   
 
   <div class="FRS">
-<select style="height:50px; width:211px; border-radius: 10px; font-size:10px;" onchange="this.className=this.options[this.selectedIndex].className"
+<select style="height:50px; width:192px; border-radius: 10px; font-size:10px;" onchange="this.className=this.options[this.selectedIndex].className"
     class="greenText"    name="first">
 
 <option class="blackText">Black</option> 
@@ -265,7 +295,8 @@ img {
 </select></div>
 
 
-  <div class="sec"><select name="second">
+  <div class="sec"><select style="height:50px; width:192px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+    class="greenText"   name="second">
 
 <option class="blackText">Black</option> 
 
@@ -291,9 +322,59 @@ img {
 
 </select>
 </div>
-  <div class="top-right">Top Right</div>
-  <div class="bottom-right">Bottom Right</div>
-  <div class="centered">Centered</div>
+  <div class="mul">
+<select style="height:50px; width:192px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+    class="greenText" name="mult">
+
+<option class="greyText"> Grey</option>
+
+<option class="whiteText" > white</option> 
+
+<option class="blackText"> Black</option> 
+
+<option class="brownText"> Brown</option>
+
+<option class="redText">Red</option>
+
+
+</select></div>
+  <div class="toll"><select style="height:50px; width:192px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+    class="greenText" name="tol">
+
+
+<option class="brownText"> Brown</option>
+
+
+<option class="whiteText" > white</option> 
+
+<option class="greenText" > Green</option>
+
+
+</select></div>
+  <div class="vol"><select style="height:50px; width:160px; border-radius: 10px; font-size:10px;"onchange="this.className=this.options[this.selectedIndex].className"
+    class="greenText"name="volt">
+
+<option class="whiteText" > white</option>
+<option class="yellowText"> Yellow</option>
+
+<option class="blackText">Black</option>
+
+
+<option class="greenText" > Green</option>
+
+<option class="blueText"> Blue</option>
+
+<option class="greyText"> Grey</option>
+
+
+<option class="pinkText" > pink</option>
+
+
+
+</select></div>
+<div class="cal"><input type="button" value="Calculate" OnClick="c()"></div>
+</div>
+<div class="res"><input type="text" name="capval"  value="0" readonly></div>
 </div>
 
 
@@ -303,54 +384,10 @@ img {
 
 
 
-<select name="mult">
 
-<option> Grey
 
-<option> White
 
-<option> Black
 
-<option> Brown
-
-<option> Red
-
-<option selected> Select Color Value
-
-</select>
-<select name="tol">
-
-<option> Black
-
-<option> White
-
-<option> Green
-
-<option selected> Select Color Value
-
-</select>
-<select name="volt">
-
-<option> White
-
-<option> Yellow
-
-<option> Black
-
-<option> Green
-
-<option> Blue
-
-<option> Grey
-
-<option> Pink
-
-<option selected> Select Color Value
-
-</select>
-
-<input type="button" value="Calculate" OnClick="c()">
-<input type="text" name="capval" size="45" value="0" readonly>
 
 
 
