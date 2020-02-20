@@ -198,33 +198,7 @@ function CreateSmoothBG(color1, color2, obj) {
 	obj.addColorStop(1, color1);
 }
 function CreateImage() {
-	ctxCanvas.beginPath();
-	ctxCanvas.moveTo(0, 20);
-	ctxCanvas.lineTo(30, 20);
-	ctxCanvas.moveTo(50, 0);
-	ctxCanvas.lineTo(60, 0);
-	ctxCanvas.quadraticCurveTo(80, 0, 75, 20);
-	ctxCanvas.quadraticCurveTo(80, 40, 60, 40);
-	ctxCanvas.lineTo(50, 40);
-	ctxCanvas.quadraticCurveTo(30, 40, 30, 20);
-	ctxCanvas.quadraticCurveTo(30, 0, 50, 0);
-
-	ctxCanvas.moveTo(76, 6);
-	ctxCanvas.lineTo(154, 6);
-	ctxCanvas.lineTo(154, 34);
-	ctxCanvas.lineTo(76, 34);
-	ctxCanvas.lineTo(76, 6);
-
-	ctxCanvas.moveTo(170, 0);
-	ctxCanvas.lineTo(180, 0);
-	ctxCanvas.quadraticCurveTo(200, 0, 200, 20);
-	ctxCanvas.quadraticCurveTo(200, 40, 180, 40);
-	ctxCanvas.lineTo(170, 40);
-	ctxCanvas.quadraticCurveTo(150, 40, 155, 20);
-	ctxCanvas.quadraticCurveTo(150, 0, 170, 0);
-	ctxCanvas.moveTo(200, 20);
-	ctxCanvas.lineTo(230, 20);
-
+	
 	var lgSample = ctxCanvas.createLinearGradient(0, 0, 0, 50);
 	lgSample.addColorStop(0, "darkgreen");
 	lgSample.addColorStop(0.2, "lightgreen");
@@ -584,10 +558,20 @@ function setTol(choice) {
 	
 
 <style>
-.d{width:100%;
+img {width:800px;
+     height:265;
+   position: absolute;
+  top: 70px;
+  left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.d{width:980px;
+     height:750;
    position: absolute;
   top: 100px;
-  left: 30px;
+  left: 60px;
   margin-left: auto;
   margin-right: auto;}
 
@@ -595,7 +579,7 @@ function setTol(choice) {
 
 .f1{width:100%;
    position: absolute;
-  top: 200px;
+  top: 300px;
   left: 30px;}
 
 
@@ -622,7 +606,7 @@ function setTol(choice) {
 
 
 
-
+<img src="https://github.com/mayur4535/test/blob/master/toss-heads-or-tails-electronic-circuit-electronics-resistor-clip-art-resistor%20(5).png?raw=true" alt="Paris" ">
 
 
 
