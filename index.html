@@ -585,14 +585,20 @@ function setTol(choice) {
 
 <style>
 .d{width:100%;
-   TOP:100px;}
-
+   position: absolute;
+  top: 200px;
+  left: 200px;}
+.f1{width:100%;
+   position: absolute;
+  top: 400px;
+  left: 70px;}
 
 
 .s{ border-radius: 25px;
   border: 2px solid #73AD21;
   padding: 2px;
-  text-align: center}
+  text-align: center
+  width:50px;}
 .s1{ border-radius: 20px;
   border: 2px solid #73AD21;
   padding: 10px;
@@ -619,11 +625,11 @@ function setTol(choice) {
 <tbody>
 
 <td >
-<div class="s1"><input onclick="setvar('3')" name="V" id="11" type="button" value="3 BAND" style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
+<input onclick="setvar('3')" name="V" id="11" type="button" value="3 BAND" style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
                font-size: 40px; margin: 4px 2px;"/></td>
-<td> <div class="s1"><input onclick="setvar('4')" name="V" type="button" value="4 BAND" style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
+<td> <input onclick="setvar('4')" name="V" type="button" value="4 BAND" style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
                font-size: 40px; margin: 4px 2px;"/></td> 
-<td><div class="s1"><input onclick="setvar('5')" name="V" type="button" value="5 BAND" 
+<td><input onclick="setvar('5')" name="V" type="button" value="5 BAND" 
                style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
                font-size: 40px; margin: 4px 2px;"/> </td>
 </tr>
@@ -637,7 +643,7 @@ function setTol(choice) {
 <hr />
 <div class="OnLineCalculate"><hr />
 <div id="canvas-box"><canvas class="d" id="canvas">Update your browser!</canvas></div>
-
+<div class=f1>
 <table id="colorBands">
 <tbody>
 <tr><th style="text-align: center;" colspan="4">The band number</th></tr>
@@ -664,6 +670,6 @@ function setTol(choice) {
 <td><input id="L" size="15px" type="text" /></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </form></div>
 </div>
