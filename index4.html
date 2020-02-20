@@ -1,7 +1,5 @@
 
-
-<base href="https://coil32.net/online-calculators/inductor-color-code-calculator.html" />
-	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	
 <script>
 <!--
@@ -229,9 +227,9 @@ function CreateImage() {
 	ctxCanvas.lineTo(230, 20);
 
 	var lgSample = ctxCanvas.createLinearGradient(0, 0, 0, 50);
-	lgSample.addColorStop(0, "#999999");
-	lgSample.addColorStop(0.2, "#cccccc");
-	lgSample.addColorStop(1, "#666666");
+	lgSample.addColorStop(0, "darkgreen");
+	lgSample.addColorStop(0.2, "lightgreen");
+	lgSample.addColorStop(1, "green");
 
    ctxCanvas.shadowOffsetX = 4;  
    ctxCanvas.shadowOffsetY = 4;  
@@ -586,12 +584,14 @@ function setTol(choice) {
 	
 	
 
-
+<style>
+.d{width:1000
+</style>
 
 
 
 <div class="OnLineCalculate"><hr />
-<div id="canvas-box"><canvas id="canvas">Update your browser!</canvas></div>
+<div id="canvas-box"><canvas class="d" id="canvas">Update your browser!</canvas></div>
 <form action="#" name="generator">
 
 
