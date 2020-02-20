@@ -1,4 +1,6 @@
 
+  
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 	
 <script>
@@ -589,7 +591,11 @@ function setTol(choice) {
 .s{ border-radius: 25px;
   border: 2px solid #73AD21;
   padding: 20px;
- 
+  text-align: center}
+.s1{ border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  text-align: center}
 
 </style>
 
@@ -607,22 +613,21 @@ function setTol(choice) {
 
 
 <form action="#" name="generator">
+<div class="s">
 <table>
 <tbody>
-<tr>
 
-<div class="s">
-<tr>
-<td ><input onclick="setvar('3')" name="V" type="radio" value="3" /><em>3 bands </td>
-<td> <input onclick="setvar('4')" name="V" type="radio" value="4" /><em>4bands </td> 
-<td><input onclick="setvar('5')" name="V" type="radio" value="5" /><em>5 bands </td>
+<td >
+<div class="s1"><input onclick="setvar('3')" name="V" type="radio" value="3" /><em>3 bands </td>
+<td> <div class="s1"><input onclick="setvar('4')" name="V" type="radio" value="4" /><em>4bands </td> 
+<td><div class="s1"><input onclick="setvar('5')" name="V" type="radio" value="5" /><em>5 bands </td>
 </tr>
-</div>
+
 </tr>
 
 </tbody>
 </table>
-
+</div>
 
 <hr />
 <div class="OnLineCalculate"><hr />
