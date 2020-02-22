@@ -3,14 +3,19 @@
 img {width:98%;
    position: absolute;
   top: 100px;
-  left:0px;
+  left:2px;
   
   
 }
 .f1{width:90%;
    position: absolute;
-  top: 109.5px;
+  top: 109px;
   left: 50px;}
+
+.f2{width:90%;
+   position: absolute;
+  top: 109px;
+  left: 80px;}
 
 </style>
 
@@ -39,7 +44,7 @@ img {width:98%;
  
    
   
-  <td><select name="band3" value="2" onChange="calcResistance(this)" style="width: 150px;  color: white; background: red;">
+  <td><select class=f2 name="band3" value="2" onChange="calcResistance(this)" style="width: 50px;height: 108px;  color: white; background: red;">
 <option value="0" style="color: white; background: black;" selected>Black (1)</option>
 
 <option value="2" style="color: white; background: red;" selected>Red (100)</option>
@@ -50,7 +55,7 @@ img {width:98%;
 
 <option value="8" style="color: white; background: gray;">Gray (100M)</option>
 <option value="9" style="color: black; background: white;">White (1G)</option>
-</select></td> 
+</select></td></div> 
   
   
 <td><select name="band1" value="1" onChange="calcResistance(this)" style="width: 150px; color: white; background: #583030;">
