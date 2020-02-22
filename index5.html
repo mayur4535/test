@@ -1,0 +1,172 @@
+<html>
+
+<table>
+<tr align="center"><td>Band 1</td><td>Band 2</td><td>Band 3</td><td></td><td>Band 4</td></tr>
+<tr align="center"><td>Value 1 (MSV)</td><td>Value 2</td><td>Weight</td><td></td><td>Tolerance</td></tr>
+
+
+
+<form name="colorSelect" method="" action="">
+  
+<td><select name="band4" value="0" onChange="calcResistance(this)" style="width: 150px; color: White; background: red; size:5;">
+<option value="AA" style="color: white; background: black;" selected>Black (1)</option>
+<option value="BA" style="color: black; background: silver;">Red</option>
+</select></td>  
+ 
+  
+  
+  <td><select name="band3" value="2" onChange="calcResistance(this)" style="width: 150px; color: white; background: red;">
+<option value="111" style="color: white; background: black;" selected>Black (1)</option>
+
+<option value="112" style="color: white; background: red;" selected>Red (100)</option>
+
+<option value="113" style="color: black; background: yellow;">Yellow (10k)</option>
+<option value="114" style="color: white; background: green;">Green (100k)</option>
+<option value="115" style="color: white; background: blue;">Blue (1M)</option>
+
+<option value="116" style="color: white; background: gray;">Gray (100M)</option>
+<option value="117" style="color: black; background: white;">White (1G)</option>
+</select></td> 
+  
+  
+<td><select name="band1" value="1" onChange="calcResistance(this)" style="width: 150px; color: white; background: #583030;">
+<option value="0" style="color: white; background: black;">Black (0)</option>
+<option value="1" style="color: white; background: #583030;" selected>Brown (1)</option>
+<option value="2" style="color: white; background: red;">Red (2)</option>
+<option value="3" style="color: black; background: orange;">Orange (3)</option>
+<option value="4" style="color: black; background: yellow;">Yellow (4)</option>
+<option value="5" style="color: white; background: green;">Green (5)</option>
+<option value="6" style="color: white; background: blue;">Blue (6)</option>
+<option value="7" style="color: white; background: purple;">Violet (7)</option>
+<option value="8" style="color: white; background: gray;">Gray (8)</option>
+<option value="9" style="color: black; background: white;">White (9)</option>
+</select></td>
+  
+  
+  
+<td><select name="band2" value="0" onChange="calcResistance(this)" style="width: 150px; color: white; background: black;">
+<option value="0" style="color: white; background: black;" selected>Black (0)</option>
+<option value="1" style="color: white; background: #583030;">Brown (1)</option>
+<option value="2" style="color: white; background: red;">Red (2)</option>
+<option value="3" style="color: black; background: orange;">Orange (3)</option>
+<option value="4" style="color: black; background: yellow;">Yellow (4)</option>
+<option value="5" style="color: white; background: green;">Green (5)</option>
+<option value="6" style="color: white; background: blue;">Blue (6)</option>
+<option value="7" style="color: white; background: purple;">Violet (7)</option>
+<option value="8" style="color: white; background: gray;">Gray (8)</option>
+<option value="9" style="color: black; background: white;">White (9)</option>
+</select></td>
+
+
+<tr><font size="24"><center><td colspan="2" align="right"><h4>Resistance:&nbsp;&nbsp;</h4></td><td colspan="3" align="left"><h4><text id="resistorValue">BAT85</text></h4></td></center></font></tr>
+</form>
+</table>
+<script>
+
+function calcResistance(input) {
+    msv = document.colorSelect.band1.value;
+    lsv = document.colorSelect.band2.value;
+    mult = document.colorSelect.band3.value;
+    tol = document.colorSelect.band4.value;
+    
+    var bgColors = new Array("black", "#583030", "red", "orange", "yellow", "green", "blue", "purple", "gray", "white", "gold", "silver");
+    var fgColors = new Array("white", "white", "white", "black", "black", "white", "white", "white", "black", "black", "black", "black");
+     
+  
+  
+  resistText = tol ; 
+  
+  if (mult == "111")
+        resistText += "X";
+   
+   else if (mult == "112")
+        resistText += "S";
+   
+   else if (mult == "113")
+        resistText += "T";
+  else if (mult == "114")
+        resistText += "V";
+   else if (mult == "115")
+        resistText += "W";
+  
+   else if (mult == "116")
+        resistText += "Y";
+  else if (mult == "117")
+        resistText += "Z";
+  
+  if (msv == "0")
+        resistText += "0";
+   else if (msv == "1")
+        resistText += "1";
+   else if (msv == "2")
+        resistText += "2";
+   else if (msv == "3")
+        resistText += "3";
+   else if (msv == "4")
+        resistText += "4";
+  else if (msv == "5")
+        resistText += "5";
+   else if (msv == "6")
+        resistText += "6";
+  else if (msv == "7")
+        resistText += "7";
+   else if (msv == "8")
+        resistText += "8";
+  else if (msv == "9")
+        resistText += "9";
+  
+  
+  if (lsv == "0")
+        resistText += "0";
+   else if (lsv == "1")
+        resistText += "1";
+   else if (lsv == "2")
+        resistText += "2";
+   else if (lsv == "3")
+        resistText += "3";
+   else if (lsv == "4")
+        resistText += "4";
+  else if (lsv == "5")
+        resistText += "5";
+   else if (lsv == "6")
+        resistText += "6";
+  else if (lsv == "7")
+        resistText += "7";
+   else if (lsv == "8")
+        resistText += "8";
+  else if (lsv == "9")
+        resistText += "9";
+  
+  
+  
+  
+    
+ 
+  
+     
+  
+  
+    //resistText = addCommas(resistText); // Insert commas
+    //resistText += " \u2126 \u00B1"; 
+    
+    
+    // Set pull-down menu bg and fg colors:
+    document.colorSelect.band1.style.background = bgColors[parseInt(msv)];
+    document.colorSelect.band1.style.color = fgColors[parseInt(msv)];
+    document.colorSelect.band2.style.background = bgColors[parseInt(lsv)];
+    document.colorSelect.band2.style.color = fgColors[parseInt(lsv)];
+    document.colorSelect.band3.style.background = bgColors[parseInt(mult)];
+    document.colorSelect.band3.style.color = fgColors[parseInt(mult)];
+    document.colorSelect.band3.style.background = bgColors[parseInt(tol)];
+    document.colorSelect.band3.style.color = fgColors[parseInt(tol)];
+    
+    // Update the text box
+    document.getElementById("resistorValue").innerHTML=resistText;
+}
+
+function addCommas(x) {
+// This handy function found here:
+// http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+    return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
