@@ -1,688 +1,199 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">	
-	
-<script>
-<!--
-var cmVal=0
-var lmVal=0
-var lmVal2=0
-var fmVal=0
-var dmVal=0
-var dm2Val=0
-var dm3Val=0
-var dm4Val=0
-var llmVal=0
-var llm2Val=0
-function checnum(as)
-{var dd=as.value;if(dd.lastIndexOf(" ")>=0)
-{dd=dd.replace(" ","");as.value=dd;}
-if(dd.lastIndexOf(",")>=0)
-{dd=dd.replace(",",".");as.value=dd;}
-var strValidChars="0123456789.-,";var strChar;var blnResult=true;var strString=dd;if(strString.length==0)return false; for(i=0;i<strString.length&&blnResult==true;i++)
-{strChar=strString.charAt(i);if(strValidChars.indexOf(strChar)==-1)
-{dd=dd.substring(0,(dd.length-1));as.value=dd;}}}
-function prevC()
-{if(document.getElementById("CM")){cmVal=eval(document.getElementById("CM").value);}
-if(document.getElementById("LM")){lmVal=eval(document.getElementById("LM").value);}
-if(document.getElementById("FM")){fmVal=eval(document.getElementById("FM").value);}
-if(document.getElementById("DM")){dmVal=eval(document.getElementById("DM").value);}
-if(document.getElementById("DM2")){dm2Val=eval(document.getElementById("DM2").value);}
-if(document.getElementById("DM3")){dm3Val=eval(document.getElementById("DM3").value);}
-if(document.getElementById("DM4")){dm4Val=eval(document.getElementById("DM4").value);}
-if(document.getElementById("lM")){llmVal=eval(document.getElementById("lM").value);}
-if(document.getElementById("lM2")){llmVal=eval(document.getElementById("lM2").value);}}
-function unitC()
-{var C=parseFloat(document.getElementById("C").value);var CM=eval(document.getElementById("CM").value)
-if(!C){return;}
-C=(C*cmVal)/CM
-document.getElementById("C").value=parseFloat(C)}
-function unitL()
-{var L=parseFloat(document.getElementById("L").value);var LM=eval(document.getElementById("LM").value)
-if(!L){return;}
-L=(L*lmVal)/LM
-document.getElementById("L").value=parseFloat(L)}
-function unitL2()
-{var L=parseFloat(document.getElementById("L2").value);var LM=eval(document.getElementById("LM2").value)
-if(!L){return;}
-L=(L*lmVal)/LM
-document.getElementById("L2").value=parseFloat(L)}
-function unitF()
-{var f=parseFloat(document.getElementById("f").value);var FM=eval(document.getElementById("FM").value)
-if(!f){return;}
-f=(f*fmVal)/FM
-document.getElementById("f").value=parseFloat(f)}
-function unitD()
-{var D=parseFloat(document.getElementById("D").value);var DM=eval(document.getElementById("DM").value)
-if(!D){return;}
-D=(D*dmVal)/DM
-document.getElementById("D").value=parseFloat(D)}
-function unitD2()
-{var D=parseFloat(document.getElementById("D2").value);var DM=eval(document.getElementById("DM2").value)
-if(!D){return;}
-D=(D*dm2Val)/DM
-document.getElementById("D2").value=parseFloat(D)}
-function unitD4()
-{var D=parseFloat(document.getElementById("D4").value);var DM=eval(document.getElementById("DM4").value)
-if(!D){return;}
-D=(D*dm4Val)/DM
-document.getElementById("D4").value=parseFloat(D)}
-function unitH()
-{var D=parseFloat(document.getElementById("h").value);var DM=eval(document.getElementById("DM3").value)
-if(!D){return;}
-D=(D*dm3Val)/DM
-document.getElementById("h").value=parseFloat(D)}
-function unitl()
-{var l=parseFloat(document.getElementById("l").value);var lM=eval(document.getElementById("lM").value)
-if(!l){return;}
-l=(l*llmVal)/lM
-document.getElementById("l").value=parseFloat(l)}
-function unitl2()
-{var l=parseFloat(document.getElementById("l2").value);var lM=eval(document.getElementById("lM2").value)
-if(!l){return;}
-l=(l*llmVal)/lM
-document.getElementById("l2").value=parseFloat(l)}
-<!--
-variant = 4;
-
-window.onload = function()
-{
-   canvas = document.getElementById("canvas");
-	ctxCanvas = canvas.getContext("2d");
-      
-   bgBlack = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("black", "grey", bgBlack);
-   
-   bgBrown = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("brown", "white", bgBrown);
-   
-   bgRed = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("red", "mistyrose", bgRed);
-   
-   bgOrange = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("orange", "oldlace", bgOrange);        
-
-   bgYellow = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("yellow", "white", bgYellow);
-
-   bgGreen = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("green", "palegreen", bgGreen);
-
-   bgBlue = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("blue", "aqua", bgBlue);
-            
-   bgViolet = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("darkviolet", "fuchsia", bgViolet);
-
-   bgGray = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("gray", "whitesmoke", bgGray);
-   
-   bgWhite = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("#CDCDCD", "white", bgWhite);
-   
-   bgGold = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("gold", "white", bgGold); 
-   
-   bgSilver = ctxCanvas.createLinearGradient(50, 0, 50, 50);
-   CreateSmoothBG("silver", "white", bgSilver);     
-   
-   var count = document.generator.V.length;
-   for (i=0; i<count; i++)
-   {
-		if (document.generator.V.item(i).value =="4")
-			{
-				document.generator.V.item(i).checked = 1;
-			}
-   }   
-	setImage();
-}
-function setImage(){
-   CreateImage();
-   sm1 = document.getElementById("tensSelect");
-   sm2 = document.getElementById("onesSelect");
-   sm3 = document.getElementById("multiplierSelect");
-   sm4 = document.getElementById("toleranceSelect");
-   if (variant==5){
-   	CreateSmooth0();
-   	document.getElementById("First").innerHTML="Second";
-   	document.getElementById("Second").innerHTML="Third";
-   	document.getElementById("Third").innerHTML="Forth";
-   	document.getElementById("Forth").innerHTML="Fifth";
-   	document.getElementById("toleranceSelect").style.display = "block";
-   	document.getElementById("tolerance").innerHTML='<select id="toleranceSelect" style="background-color: gold; color: black;" name="toleranceSelect" size="1" onchange="setTol(this)"><option style="background-color: gold; color: black;" value="gold">gold</option><option style="background-color: silver; color: black;" value="silver">silver</option><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option></select>';
-   	document.getElementById("firstDigit").innerHTML='<select id="tensSelect" style="background-color: black; color: white;" name="tensSelect" size="1" onchange="setTens(this)"><option style="background-color: gold; color: black;" value="gold">gold</option><option selected="selected" style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>';
-   	document.getElementById("secondDigit").innerHTML='<select id="onesSelect" style="background-color: black; color: white;" name="onesSelect" size="1" onchange="setOnes(this)"><option style="background-color: gold; color: black;" value="gold">gold</option><option selected="selected" style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>';
-   }
-   else if (variant==4) {
-   	document.getElementById("First").innerHTML="First";
-   	document.getElementById("Second").innerHTML="Second";
-   	document.getElementById("Third").innerHTML="Third";
-   	document.getElementById("Forth").innerHTML="Forth";
-   	document.getElementById("toleranceSelect").style.display = "block";
-   	document.getElementById("tolerance").innerHTML='<select id="toleranceSelect" style="background-color: gold; color: black;" name="toleranceSelect" size="1" onchange="setTol(this)"><option style="background-color: gold; color: black;" value="gold">gold</option><option style="background-color: silver; color: black;" value="silver">silver</option><option style="background-color: black; color: white;" value="black">black</option></select>';
-   	document.getElementById("firstDigit").innerHTML='<select id="tensSelect" style="background-color: black; color: white;" name="tensSelect" size="1" onchange="setTens(this)"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>';
-   	document.getElementById("secondDigit").innerHTML='<select id="onesSelect" style="background-color: black; color: white;" name="onesSelect" size="1" onchange="setOnes(this)"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>';
-} 
-   else if (variant==3) {
-   	document.getElementById("First").innerHTML="First";
-   	document.getElementById("Second").innerHTML="Second";
-   	document.getElementById("Third").innerHTML="Third";
-   	document.getElementById("Forth").innerHTML="";
-   	document.getElementById("toleranceSelect").style.display = "none";
-   	document.getElementById("firstDigit").innerHTML='<select id="tensSelect" style="background-color: black; color: white;" name="tensSelect" size="1" onchange="setTens(this)"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>'; 
-   	document.getElementById("secondDigit").innerHTML='<select id="onesSelect" style="background-color: black; color: white;" name="onesSelect" size="1" onchange="setOnes(this)"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>';
-   }        
-	setTens(sm1);
-	setOnes(sm2);
-	setMult(sm3);
-	setTol(sm4);
-}
-function setMultBand(){
-	var bg1 = document.getElementById("tensSelect").style.backgroundColor;
-	var bg2 = document.getElementById("onesSelect").style.backgroundColor;
-	if ((bg1 == "gold")||(bg2 == "gold")) {
-		document.getElementById("multiplier").innerHTML='<select id="multiplierSelect" style="background-color: black; color: white;" name="multiplierSelect" size="1" onchange="setMult(this)"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select>';		
-	}
-	else if (!((bg1 == "gold")||(bg1 == "gold"))) {
-		document.getElementById("multiplier").innerHTML='<select id="multiplierSelect" style="background-color: black; color: white;" name="multiplierSelect" size="1" onchange="setMult(this)"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: gold; color: black;" value="gold">gold</option><option style="background-color: silver; color: black;" value="silver">silver</option></select>';
-	}
-}
-function setvar(_var){
-	variant =  _var;
-	ctxCanvas.clearRect(0, 0, 300, 150);
-	setImage()
-}
-function CreateSmoothBG(color1, color2, obj) {
-	obj.addColorStop(0, color1);
-	obj.addColorStop(0.1, color1);
-	obj.addColorStop(0.3, color2);
-	obj.addColorStop(0.5, color1);
-	obj.addColorStop(1, color1);
-}
-function CreateImage() {
-	
-	var lgSample = ctxCanvas.createLinearGradient(0, 0, 0, 50);
-	lgSample.addColorStop(0, "darkgreen");
-	lgSample.addColorStop(0.2, "lightgreen");
-	lgSample.addColorStop(1, "green");
-
-   ctxCanvas.shadowOffsetX = 4;  
-   ctxCanvas.shadowOffsetY = 4;  
-   ctxCanvas.shadowBlur = 4;  
-   ctxCanvas.shadowColor = "rgba(0, 0, 0, 0.5)";
-	ctxCanvas.fillStyle = lgSample;
-	ctxCanvas.fill();
-	ctxCanvas.stroke();	
-}
-function CreateSmooth0() {
-	ctxCanvas.clearRect(50,0,15,40);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = bgSilver;
-	ctxCanvas.fillRect(50,0,15,40);
-	ctxCanvas.stroke();
-}
-function CreateSmooth1(fillStyle) {
-	if ((variant==3)||(variant==4)){
-	ctxCanvas.clearRect(50,0,15,40);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(50,0,15,40);
-	ctxCanvas.stroke();
-	}
-	else if (variant==5){
-	ctxCanvas.clearRect(80,6,10,28);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(80,6,10,28);
-	ctxCanvas.stroke();
-	}
-}
-function CreateSmooth2(fillStyle) {
-	if ((variant==3)||(variant==4)){
-	ctxCanvas.clearRect(80,6,10,28);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(80,6,10,28);
-	ctxCanvas.stroke();
-	}
-	else if (variant==5){
-	ctxCanvas.clearRect(100,6,10,28);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(100,6,10,28);
-	ctxCanvas.stroke();
-	}
-}
-function CreateSmooth3(fillStyle) {
-	if ((variant==3)||(variant==4)){
-	ctxCanvas.clearRect(100,6,10,28);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(100,6,10,28);
-	ctxCanvas.stroke();
-	}
-	else if (variant==5){
-	ctxCanvas.clearRect(140,6,10,28);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(140,6,10,28);
-	ctxCanvas.stroke();
-	}	
-}
-function CreateSmooth4(fillStyle) {
-	if (variant==3){
-	ctxCanvas.clearRect(140,8,10,24);
-	var lgSample = ctxCanvas.createLinearGradient(0, 0, 0, 50);
-	lgSample.addColorStop(0, "#999999");
-	lgSample.addColorStop(0.2, "#cccccc");
-	lgSample.addColorStop(1, "#666666");
-	ctxCanvas.fillStyle = lgSample;
-	ctxCanvas.fillRect(140,8,10,24);
-	}
-	if (variant==4){
-	ctxCanvas.clearRect(140,6,10,28);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(140,6,10,28);
-	ctxCanvas.stroke();
-	}
-	if (variant==5){
-	ctxCanvas.clearRect(170,0,15,40);
-	ctxCanvas.shadowOffsetX = 0;  
-   ctxCanvas.shadowOffsetY = 0;  
-   ctxCanvas.shadowBlur = 0;  
-   ctxCanvas.shadowColor = "transparent black";
-	ctxCanvas.fillStyle = fillStyle;
-	ctxCanvas.fillRect(170,0,15,40);
-	ctxCanvas.stroke();
-	}	
-}
-// create array listing all the multiplier values
-
-var multiplier = new Array()
-multiplier[0] = 0
-multiplier[1] = 1
-multiplier[2] = 2
-multiplier[3] = 3
-multiplier[4] = 4
-multiplier[5] = -1
-multiplier[6] = -2
-
-// create array listing all tolerance values
-
-var tolerance = new Array()
-tolerance[0] = " ±5%"
-tolerance[1] = " ±10%"
-tolerance[2] = " ±20%"
-tolerance[3] = " ±1%"
-tolerance[4] = " ±2%"
-tolerance[5] = " ±3%"
-tolerance[6] = " ±4%"
-tolerance[7] = ""
-tolerance[8] = ""
-tolerance[9] = ""
-
-function format(dig) {
-	value = Math.round(dig*100)/100;
-	if (value >= 1000) {
-		value /= 1000
-		return "" + value + " mH";}
-	else {
-		return "" + value + " µH";}
-}
-
-// calculate inductance and tolerance values
-function calcValue() {
-	if ((variant==3)||(variant==4)) {
-		var d1 = document.generator.tensSelect.selectedIndex
-		var d2 = document.generator.onesSelect.selectedIndex
-	}
-	else if (variant==5){
-		var d1 = document.generator.tensSelect.selectedIndex - 1
-		var d2 = document.generator.onesSelect.selectedIndex - 1
-	}
-	
-	if ((variant==4)||(variant==5)) {
-		var t = document.generator.toleranceSelect.selectedIndex;
-	}
-	else if (variant==3) {t=2;}
-	if (!((d1<0)||(d2<0))) {
-		var value = (d1 * 10) + d2
-		var m = document.generator.multiplierSelect.selectedIndex
-		value = eval("" + value + "e" + multiplier[m])
-	}
-	else if ((d1<0)&&(d2>=0)) {
-		 d1 =	document.generator.onesSelect.selectedIndex-1;
-		 d2 = document.generator.multiplierSelect.selectedIndex
-		 value = 0.1*d1+0.01*d2;
-	}
-	else if ((d1>=0)&&(d2<0)) {
-		 d1 =	document.generator.tensSelect.selectedIndex-1;
-		 d2 = document.generator.multiplierSelect.selectedIndex
-		 value = d1+0.1*d2;
-	}
-	value = format(value)
-	var tol = tolerance[t]
-	document.result.L.value = value + ", " + tol
-}
-function setTens(choice) {
-   var tensbgColor = choice.options[choice.selectedIndex].style.backgroundColor;
-   var tensColor = choice.options[choice.selectedIndex].style.color;
-   choice.style.backgroundColor = tensbgColor;
-   choice.style.color = tensColor;
-   if (tensbgColor == "black"){
-         CreateSmooth1(bgBlack)
-         }
-   else if (tensbgColor == "brown"){
-         CreateSmooth1(bgBrown)
-         }
-   else if (tensbgColor == "gold"){
-         CreateSmooth1(bgGold)
-         }
-   else if (tensbgColor == "red"){
-         CreateSmooth1(bgRed)
-         }
-   else if (tensbgColor == "orange"){
-         CreateSmooth1(bgOrange)
-         }
-   else if (tensbgColor == "yellow"){
-         CreateSmooth1(bgYellow)
-         }
-   else if (tensbgColor == "green"){
-         CreateSmooth1(bgGreen)
-         }
-   else if (tensbgColor == "blue"){
-         CreateSmooth1(bgBlue)
-         }
-   else if (tensbgColor == "darkviolet"){
-         CreateSmooth1(bgViolet)
-         }
-   else if (tensbgColor == "gray"){
-         CreateSmooth1(bgGray)
-         }
-   else if (tensbgColor == "white"){
-         CreateSmooth1(bgWhite)
-         }
-   setMultBand();      
-	calcValue();
-}
-function setOnes(choice) {
-   var onesbgColor = choice.options[choice.selectedIndex].style.backgroundColor;
-   var onesColor = choice.options[choice.selectedIndex].style.color;
-   choice.style.backgroundColor = onesbgColor;
-   choice.style.color = onesColor;
-   if (onesbgColor == "black"){
-         CreateSmooth2(bgBlack)
-         }
-   else if (onesbgColor == "brown"){
-         CreateSmooth2(bgBrown)
-         }
-   else if (onesbgColor == "red"){
-         CreateSmooth2(bgRed)
-         }
-   else if (onesbgColor == "gold"){
-         CreateSmooth2(bgGold)
-         }
-   else if (onesbgColor == "orange"){
-         CreateSmooth2(bgOrange)
-         }
-   else if (onesbgColor == "yellow"){
-         CreateSmooth2(bgYellow)
-         }
-   else if (onesbgColor == "green"){
-         CreateSmooth2(bgGreen)
-         }
-   else if (onesbgColor == "blue"){
-         CreateSmooth2(bgBlue)
-         }
-   else if (onesbgColor == "darkviolet"){
-         CreateSmooth2(bgViolet)
-         }
-   else if (onesbgColor == "gray"){
-         CreateSmooth2(bgGray)
-         }
-   else if (onesbgColor == "white"){
-         CreateSmooth2(bgWhite)
-         }
-   setMultBand();        
-	calcValue();
-}
-function setMult(choice) {
-   var multbgColor = choice.options[choice.selectedIndex].style.backgroundColor;
-   var multColor = choice.options[choice.selectedIndex].style.color;
-   choice.style.backgroundColor = multbgColor;
-   choice.style.color = multColor;
-   if (multbgColor == "black"){
-         CreateSmooth3(bgBlack)
-         }
-   else if (multbgColor == "brown"){
-         CreateSmooth3(bgBrown)
-         }
-   else if (multbgColor == "red"){
-         CreateSmooth3(bgRed)
-         }
-   else if (multbgColor == "orange"){
-         CreateSmooth3(bgOrange)
-         }
-   else if (multbgColor == "yellow"){
-         CreateSmooth3(bgYellow)
-         }
-   else if (multbgColor == "gold"){
-         CreateSmooth3(bgGold)
-         }
-   else if (multbgColor == "silver"){
-         CreateSmooth3(bgSilver)
-         }
-   else if (multbgColor == "green"){
-         CreateSmooth3(bgGreen)
-         }
-   else if (multbgColor == "blue"){
-         CreateSmooth3(bgBlue)
-         }
-   else if (multbgColor == "darkviolet"){
-         CreateSmooth3(bgViolet)
-         }
-   else if (multbgColor == "gray"){
-         CreateSmooth3(bgGray)
-         }
-   else if (multbgColor == "white"){
-         CreateSmooth3(bgWhite)
-         }
-	calcValue();
-}
-function setTol(choice) {
-   var tolbgColor = choice.options[choice.selectedIndex].style.backgroundColor;
-   var tolColor = choice.options[choice.selectedIndex].style.color;
-   choice.style.backgroundColor = tolbgColor;
-   choice.style.color = tolColor;
-   if (tolbgColor == "black"){
-         CreateSmooth4(bgBlack)
-         }
-   else if (tolbgColor == "gold"){
-         CreateSmooth4(bgGold)
-         }
-   else if (tolbgColor == "silver"){
-         CreateSmooth4(bgSilver)
-         }
-   else if (tolbgColor == "brown"){
-         CreateSmooth4(bgBrown)
-         }
-   else if (tolbgColor == "red"){
-         CreateSmooth4(bgRed)
-         }
-   else if (tolbgColor == "orange"){
-         CreateSmooth4(bgOrange)
-         }
-   else if (tolbgColor == "yellow"){
-         CreateSmooth4(bgYellow)
-         }
-	calcValue();
-}
-
-//-->
-</script>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 <style>
-img {width:75%;
+img {width:98%;
    position: absolute;
   top: 100px;
-  left:30px;
+  left:10px;
   
   
 }
-.d{width:100%;
-   height:213.5px;
-   position: absolute;
-  top: 105.2px;
-  left:26.5px;
-  
-  }
-
-
-
 .f1{width:90%;
    position: absolute;
-  top: 300px;
-  left: 30px;}
-
-
-.s{ border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 2px;
-  text-align: center
-  width:50px;
-  margin-left: auto;
-  margin-right: auto;}
-
+  top: 141px;
+  left: 200px;}
 
 </style>
 
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<img src="https://github.com/mayur4535/test/blob/master/New%20Project%20(2).png?raw=true" alt="Paris" ">
 
 
 
 
-
-
-
-
-
-
-
-
-
-<form action="#" name="generator">
-<div class="s">
 <table>
-<tbody>
-
-<td colspan="2">
-
-<input onclick="setvar('3')" name="V" id="11" type="button" value="3 BAND" style=" background-color: #167A04 ; border: 1; color: white;   text-align: center; text-decoration: none; display: inline-block;
-               font-size: 20px; margin: 4px 2px;"/></td>
-<td> <input onclick="setvar('4')" name="V" type="button" value="4 BAND" style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
-               font-size: 20px; margin: 4px 2px;"/></td> 
-<td><input onclick="setvar('5')" name="V" type="button" value="5 BAND" 
-               style=" background-color: #167A04 ; border: 1; color: white;  text-align: center; text-decoration: none; display: inline-block;
-               font-size: 20px; margin: 4px 2px;"/> </td>
-</tr>
-
-</tr>
-
-</tbody>
-</table>
-</div>
 
 
-<div class="OnLineCalculate">
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/res.png?raw=true" alt="Paris" ">
-<div id="canvas-box"><canvas class="d" id="canvas">Update your browser!</canvas></div>
-<div class=f1>
-<table id="colorBands">
-<tbody>
-<tr><th style="text-align: center;" colspan="4"></th></tr>
-<tr>
-<td id="First">First</td>
-<td id="Second">Second</td>
-<td id="Third">Third</td>
-<td id="Forth">Forth</td>
-</tr>
-<tr>
-<td id="firstDigit"><select id="tensSelect" style="background-color: black; color: white;" name="tensSelect" size="1"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select></td>
 
 
-<td id="secondDigit"><select id="onesSelect" style="background-color: black; color: white;" name="onesSelect" size="1"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select></td>
+<form name="colorSelect" method="" action="">
+<td><select name="band5" >
+
+</select></td> 
+ 
+<td><select class=f1 name="band4" value="0" onChange="calcResistance(this)" style="width: 150px;height: 250px; color: black; background: black; size:5;">
+<option value="0" style="color: white; background: black;" selected>Black (1)</option>
+<option value="2" style="color: white; background: red;" selected>Red (100)</option>
+</select></td> </div>
+ 
+   
+  
+  <td><select name="band3" value="2" onChange="calcResistance(this)" style="width: 150px;  color: white; background: red;">
+<option value="0" style="color: white; background: black;" selected>Black (1)</option>
+
+<option value="2" style="color: white; background: red;" selected>Red (100)</option>
+
+<option value="4" style="color: black; background: yellow;">Yellow (10k)</option>
+<option value="5" style="color: white; background: green;">Green (100k)</option>
+<option value="6" style="color: white; background: blue;">Blue (1M)</option>
+
+<option value="8" style="color: white; background: gray;">Gray (100M)</option>
+<option value="9" style="color: black; background: white;">White (1G)</option>
+</select></td> 
+  
+  
+<td><select name="band1" value="1" onChange="calcResistance(this)" style="width: 150px; color: white; background: #583030;">
+<option value="0" style="color: white; background: black;">Black (0)</option>
+<option value="1" style="color: white; background: #583030;" selected>Brown (1)</option>
+<option value="2" style="color: white; background: red;">Red (2)</option>
+<option value="3" style="color: black; background: orange;">Orange (3)</option>
+<option value="4" style="color: black; background: yellow;">Yellow (4)</option>
+<option value="5" style="color: white; background: green;">Green (5)</option>
+<option value="6" style="color: white; background: blue;">Blue (6)</option>
+<option value="7" style="color: white; background: purple;">Violet (7)</option>
+<option value="8" style="color: white; background: gray;">Gray (8)</option>
+<option value="9" style="color: black; background: white;">White (9)</option>
+</select></td>
+  
+  
+  
+<td><select name="band2" value="0" onChange="calcResistance(this)" style="width: 150px; color: white; background: black;">
+<option value="0" style="color: white; background: black;" selected>Black (0)</option>
+<option value="1" style="color: white; background: #583030;">Brown (1)</option>
+<option value="2" style="color: white; background: red;">Red (2)</option>
+<option value="3" style="color: black; background: orange;">Orange (3)</option>
+<option value="4" style="color: black; background: yellow;">Yellow (4)</option>
+<option value="5" style="color: white; background: green;">Green (5)</option>
+<option value="6" style="color: white; background: blue;">Blue (6)</option>
+<option value="7" style="color: white; background: purple;">Violet (7)</option>
+<option value="8" style="color: white; background: gray;">Gray (8)</option>
+<option value="9" style="color: black; background: white;">White (9)</option>
+</select></td>
 
 
-<td id="multiplier"><select id="multiplierSelect" style="background-color: black; color: white;" name="multiplierSelect" size="1"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: gold; color: black;" value="gold">gold</option><option style="background-color: silver; color: black;" value="silver">silver</option></select></td>
-
-
-<td id="tolerance"><select id="toleranceSelect" style="background-color: gold; color: black;" name="toleranceSelect" size="1"><option style="background-color: gold; color: black;" value="gold">gold</option><option style="background-color: silver; color: black;" value="silver">silver</option><option style="background-color: black; color: white;" value="black">black</option></select></td>
-</tr>
-</tbody>
-</table>
+<tr><font size="24"><center><td colspan="2" align="right"><h4>Resistance:&nbsp;&nbsp;</h4></td><td colspan="3" align="left"><h4><text id="resistorValue">BAT85</text></h4></td></center></font></tr>
 </form>
-<div class="OnLineResult"><form action="#" name="result">
-<table>
-<tbody>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<tr>
-<td><input  id="L" size="15px" type="text" style="border-radius: 25px;font-size: 20px;
-  border: 2px solid #73AD21;
-  padding: 20px; 
-    "/></td>
-</tr>
-</tbody>
-</table></div>
-</form></div>
-</div>
+</table>
+<script>
+
+function calcResistance(input) {
+    msv = document.colorSelect.band1.value;
+    lsv = document.colorSelect.band2.value;
+    mult = document.colorSelect.band3.value;
+    tol = document.colorSelect.band4.value;
+    tol1 = document.colorSelect.band5.value;
+    
+    var bgColors = new Array("black", "#583030", "red", "orange", "yellow", "green", "blue", "purple", "gray", "white", "gold", "silver");
+    var fgColors = new Array("white", "white", "white", "black", "black", "white", "white", "white", "black", "black", "black", "black");
+     
+  
+  
+  resistText = tol1;
+ if (tol == "0")
+        resistText += "AA";
+    else if (tol == "2")
+        resistText += "BA";
+  
+  if (mult == "0")
+        resistText += "X";
+   
+   else if (mult == "2")
+        resistText += "S";
+   
+   else if (mult == "4")
+        resistText += "T";
+  else if (mult == "5")
+        resistText += "V";
+   else if (mult == "6")
+        resistText += "W";
+  
+   else if (mult == "8")
+        resistText += "Y";
+  else if (mult == "9")
+        resistText += "Z";
+  
+  if (msv == "0")
+        resistText += "0";
+   else if (msv == "1")
+        resistText += "1";
+   else if (msv == "2")
+        resistText += "2";
+   else if (msv == "3")
+        resistText += "3";
+   else if (msv == "4")
+        resistText += "4";
+  else if (msv == "5")
+        resistText += "5";
+   else if (msv == "6")
+        resistText += "6";
+  else if (msv == "7")
+        resistText += "7";
+   else if (msv == "8")
+        resistText += "8";
+  else if (msv == "9")
+        resistText += "9";
+  
+  
+  if (lsv == "0")
+        resistText += "0";
+   else if (lsv == "1")
+        resistText += "1";
+   else if (lsv == "2")
+        resistText += "2";
+   else if (lsv == "3")
+        resistText += "3";
+   else if (lsv == "4")
+        resistText += "4";
+  else if (lsv == "5")
+        resistText += "5";
+   else if (lsv == "6")
+        resistText += "6";
+  else if (lsv == "7")
+        resistText += "7";
+   else if (lsv == "8")
+        resistText += "8";
+  else if (lsv == "9")
+        resistText += "9";
+  
+  
+   
+  
+    
+ 
+  
+     
+
+
+    
+    
+    // Set pull-down menu bg and fg colors:
+    document.colorSelect.band1.style.background = bgColors[parseInt(msv)];
+    document.colorSelect.band1.style.color = fgColors[parseInt(msv)];
+    document.colorSelect.band2.style.background = bgColors[parseInt(lsv)];
+    document.colorSelect.band2.style.color = fgColors[parseInt(lsv)];
+    document.colorSelect.band3.style.background = bgColors[parseInt(mult)];
+    document.colorSelect.band3.style.color = fgColors[parseInt(mult)];
+     document.colorSelect.band4.style.background = bgColors[parseInt(tol)];
+    document.colorSelect.band4.style.color = fgColors[parseInt(tol)];
+    
+    // Update the text box
+    document.getElementById("resistorValue").innerHTML=resistText;
+}
+
+function addCommas(x) {
+// This handy function found here:
+// http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+    return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
