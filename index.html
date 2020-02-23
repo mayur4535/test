@@ -50,11 +50,12 @@ img {width:150;
 </div>
 <div class="outSMD" style="border-radius: 35px; text-align:center; font-size: 70px;
   border: 2px solid #73AD21;
-  padding: 10px; 
+  padding: 10px 75px; 
     position: absolute;
   top: 700px;
   left: 300px;
-   align:center;}">RESULT</div>
+   align:center;
+   width:200;}">RES</div>
 
 
 
@@ -158,10 +159,10 @@ $('.SMDtexto').on('change input paste keyup', function ()
   var cantidadDigitosResistencia = $(this).val().length;
   if ($(this).val().search(/([^0-9,r])/i) >= '0')
   {
-    $('.outSMD').html('<font color="red">Error de código</font>');
+    $('.outSMD').html('<font color="red">Err.</font>');
   } else
   {
-    $('.outSMD').text('Valor de la Resistencia');
+    $('.outSMD').text('Cal.');
     if (cantidadDigitosResistencia == '3')
     {
       if ($(this).val().toUpperCase().indexOf("R") != '-1') //Si tiene R en el código
@@ -177,7 +178,7 @@ $('.SMDtexto').on('change input paste keyup', function ()
             $('.outSMD').text(reemplazoDecimalResistencia + unit1);
           } else if (posicionR == '2')
           {
-            $('.outSMD').html('<font color="red">Error de código</font>');
+            $('.outSMD').html('<font color="red">Err.</font>');
           }
         } else
       {
@@ -205,7 +206,7 @@ $('.SMDtexto').on('change input paste keyup', function ()
             $('.outSMD').text(reemplazoDecimalResistencia + ohm);
           } else if (posicionR == '3')
           {
-            $('.outSMD').html('<font color="red">Error de código</font>');
+            $('.outSMD').html('<font color="red">Err.</font>');
           }
         } else
       {
