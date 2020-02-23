@@ -121,6 +121,13 @@ img {width:150;
   top: 450px;
   left: 120px;}">
 RSULT</text></h4></td></center></font></tr>
+<text  id="resistorValue1"  style="border-radius: 35px; text-align:center; font-size: 20px;
+  border: 2px solid RED;
+  padding: 20px; 
+    position: absolute;
+  top: 550px;
+  left: 30px;}">
+</text>
 </form>
 </table>
 <script>
@@ -258,6 +265,30 @@ else if (mult == "9")
     
     // Update the text box
     document.getElementById("resistorValue").innerHTML=resistText;
+   
+ resistText1 = tol1;
+
+ if (tol == "0")
+        resistText1 += "";
+    else if (tol == "1")
+        resistText1 += "CA=RCA (analog)";
+     else if (tol == "2")
+        resistText1 += "CD=RCA (digital)";
+      else if (tol == "3")
+        resistText1 += "DM=National Semiconductor (digital";
+       else if (tol == "4")
+        resistText1 += "GD=Goldstar (digital)";
+        else if (tol == "5")
+        resistText1 += "HA=Hitachi (analog)";
+       else if (tol == "6")
+        resistText1 += "HD=Hitachi (digital)";
+       else if (tol == "7")
+        resistText1 += "MC=Motorola";
+        else if (tol == "8")
+        resistText1 += "TA=Toshiba";
+        else if (tol == "9")
+        resistText1 += "TC=Toshiba";
+ document.getElementById("resistorValue1").innerHTML=resistText1;
 }
 
 function addCommas(x) {
