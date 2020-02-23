@@ -9,7 +9,7 @@ img {width:150;
 } 
 .f1{width:90%;
    position: absolute;
-  top: 190px;
+  top: 185px;
   left: 112px;}
 
 .f2{width:90%;
@@ -19,15 +19,15 @@ img {width:150;
 
 .f3{width:90%;
    position: absolute;
-  top: 230px;
+  top: 234px;
   left: 112px;}
 .f4{width:90%;
    position: absolute;
-  top: 250px;
+  top: 260px;
   left: 112px;}
 .f5{width:90%;
    position: absolute;
-  top: 271px;
+  top: 285px;
   left: 112px;}
 
 </style>
@@ -47,22 +47,11 @@ img {width:150;
 
 <form name="colorSelect" method="" action="">
 <td><select class=f1 name="band5" value="0" onChange="calcResistance(this)" style="width: 0px;height: 107px; color: black; background: red; size:5;">
-<option value="1N" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+<option value="" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 </select></td> 
-<td><select class=f5 name="band6" value="0" onChange="calcResistance(this)" style="width: 137px;height: 15px; color: black; background: white; size:5;">
-<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-<option value="1" style="color: white; background: #583030;" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
-</select></td> </div> 
+ 
 
-<td><select class=f1 name="band4" value="0" onChange="calcResistance(this)" style="width: 137px;height: 15px; color: black; background: yellow; size:5;">
+<td><select class=f1 name="band4" value="0" onChange="calcResistance(this)" style="width: 137px;height: 20px; color: black; background: yellow; size:5;">
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -77,7 +66,7 @@ img {width:150;
  
    
   
-  <td><select class=f2 name="band3" value="2" onChange="calcResistance(this)" style="width: 137px;height: 15px;  color: white; background: black;">
+  <td><select class=f2 name="band3" value="2" onChange="calcResistance(this)" style="width: 137px;height: 20px;  color: white; background: black;">
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -91,7 +80,7 @@ img {width:150;
 </select></td></div> 
   
   
-<td><select class=f3 name="band1" value="1" onChange="calcResistance(this)" style="width:137px;height: 15px; color: white; background: black;">
+<td><select class=f3 name="band1" value="1" onChange="calcResistance(this)" style="width:137px;height: 20px; color: white; background: black;">
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -106,7 +95,7 @@ img {width:150;
   
   
   
-<td><select class=f4 name="band2" value="0" onChange="calcResistance(this)" style="width:137px;height: 15px; color: white; background: grey;">
+<td><select class=f4 name="band2" value="0" onChange="calcResistance(this)" style="width:137px;height: 20px; color: white; background: grey;">
 <option value="0" style="color: white; background: black;" selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -125,7 +114,7 @@ img {width:150;
   border: 2px solid #73AD21;
   padding: 20px; 
     position: absolute;
-  top: 400px;
+  top: 450px;
   left: 115px;}">
 1N4007J</text></h4></td></center></font></tr>
 </form>
@@ -137,7 +126,7 @@ function calcResistance(input) {
     lsv = document.colorSelect.band2.value;
     mult = document.colorSelect.band3.value;
     tol = document.colorSelect.band4.value;
-     tol2 = document.colorSelect.band6.value;
+     
     tol1 = document.colorSelect.band5.value;
    
     
@@ -239,26 +228,6 @@ else if (mult == "9")
     
 
 
-if (tol2 == "0")
-        resistText += "";
-   else if (tol2 == "1")
-        resistText += "A";
-   else if (tol2 == "2")
-        resistText += "B";
-   else if (tol2 == "3")
-        resistText += "C";
-   else if (tol2 == "4")
-        resistText += "D";
-  else if (tol2 == "5")
-        resistText += "E";
-   else if (tol2 == "6")
-        resistText += "F";
-  else if (tol2 == "7")
-        resistText += "G";
-   else if (tol2 == "8")
-        resistText += "H";
-  else if (tol2 == "9")
-        resistText += "J";
   
    
   
@@ -281,8 +250,7 @@ if (tol2 == "0")
     document.colorSelect.band4.style.color = fgColors[parseInt(tol)];
      document.colorSelect.band5.style.background = bgColors[parseInt(tol)];
     document.colorSelect.band5.style.color = fgColors[parseInt(tol)];
-     document.colorSelect.band6.style.background = bgColors[parseInt(tol2)];
-    document.colorSelect.band6.style.color = fgColors[parseInt(tol2)];
+  
     
     // Update the text box
     document.getElementById("resistorValue").innerHTML=resistText;
