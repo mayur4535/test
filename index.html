@@ -67,7 +67,7 @@ img {width:150;
  
    
   
-  <td><select class=f2 name="band3" value="2" onChange="calcResistance(this)" style="width: 137px;height: 20px;  color: white; background: #ffff;">
+  <td><select class=f2 name="band3" value="2" onChange="calcResistance(this)" style="width: 121px;height: 20px;  color: white; background: #ffff;">
 <option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
@@ -82,7 +82,7 @@ img {width:150;
 </select></td></div> 
   
   
-<td><select class=f3 name="band1" value="1" onChange="calcResistance(this)" style="width:137px;height: 20px; color: white; background: #ffff;">
+<td><select class=f3 name="band1" value="1" onChange="calcResistance(this)" style="width:121px;height: 20px; color: white; background: #ffff;">
 <option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
@@ -95,10 +95,10 @@ img {width:150;
 <option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
 <option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
 </select></td>
+   
   
   
-  
-<td><select class=f4 name="band2" value="0" onChange="calcResistance(this)" style="width:137px;height: 20px; color: white; background: #ffff;">
+<td><select class=f4 name="band2" value="0" onChange="calcResistance(this)" style="width:121px;height: 20px; color: white; background: #ffff;">
 <option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
@@ -143,25 +143,25 @@ function calcResistance(input) {
   
 
  if (tol == "0")
-        resistText += "0";
+        resistText += "";
     else if (tol == "1")
-        resistText += "1";
+        resistText += "CA";
      else if (tol == "2")
-        resistText += "2";
+        resistText += "CD";
       else if (tol == "3")
-        resistText += "3";
+        resistText += "DM";
        else if (tol == "4")
-        resistText += "4";
+        resistText += "GD";
         else if (tol == "5")
-        resistText += "5";
+        resistText += "HA";
        else if (tol == "6")
-        resistText += "6";
+        resistText += "HD";
        else if (tol == "7")
-        resistText += "7";
+        resistText += "MC";
         else if (tol == "8")
-        resistText += "8";
+        resistText += "TA";
         else if (tol == "9")
-        resistText += "9";
+        resistText += "TC";
 
   if (mult == "0")
         resistText += "0";
@@ -177,15 +177,15 @@ function calcResistance(input) {
         resistText += "4";
   
    else if (mult == "5")
-        resistText += "5";
+        resistText += "14";
   else if (mult == "6")
-        resistText += "6";
+        resistText += "34";
   else if (mult == "7")
-        resistText += "7";
+        resistText += "40";
 else if (mult == "8")
-        resistText += "8";
+        resistText += "74";
 else if (mult == "9")
-        resistText += "9";
+        resistText += "140";
   
   if (msv == "0")
         resistText += "0";
