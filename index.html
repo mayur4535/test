@@ -1,4 +1,14 @@
-<style>
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+<head>
+<meta charset='UTF-8'>
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<link rel="canonical" href="https://codepen.io/gaston-luis-rodriguez-wlack/pen/dwZxvE" />
+<style class="INLINE_PEN_STYLESHEET_ID">
+
 img {width:150;
      height:350;
    position: absolute;
@@ -16,291 +26,208 @@ img {width:150;
    position: absolute;
   top: 110px;
   left: 115px;}
-
-.f3{width:90%;
-   position: absolute;
-  top: 140px;
-  left: 115px;}
-.f4{width:90%;
-   position: absolute;
-  top: 170px;
-  left: 115px;}
-.f5{width:90%;
-   position: absolute;
-  top: 285px;
-  left: 115px;}
-.ff{
-   position: absolute;
-  top: 285px;
-  
-  margin: center;}
 </style>
-
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-
-
-<table>
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/ic%204%20band.png?raw=true" alt="Paris" ">
+<script src="https://static.codepen.io/assets/editor/iframe/iframeConsoleRunner-dc0d50e60903d6825042d06159a8d5ac69a6c0e9bcef91e3380b17617061ce0f.js"></script>
+<script src="https://static.codepen.io/assets/editor/iframe/iframeRefreshCSS-e120fd1ef4e480df85dd5faf7ee953074e62dc3d6da49fdf75fe06deb33f93c5.js"></script>
+<script src="https://static.codepen.io/assets/editor/iframe/iframeRuntimeErrors-29f059e28a3c6d3878960591ef98b1e303c1fe1935197dae7797c017a3ca1e82.js"></script>
+</head>
+<body>
 
 
 
-<form name="colorSelect" method="" action="">
-<td><select class=f1 name="band5" value="0" onChange="calcResistance(this)" style="width: 0px;height: 0px; color: black; background: red; size:5;">
-<option value="" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-</select></td> 
- 
-
-<td><select class=f1 name="band4" value="0" onChange="calcResistance(this)" style="width: 121px;height: 20px; color: black; background: #ffff; size:5;">
-<option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
-<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-<option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
-</select></td> </div>
- 
-   
-  
-  <td><select class=f2 name="band3" value="2" onChange="calcResistance(this)" style="width: 121px;height: 20px;  color: white; background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
-<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-<option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
-</select></td></div> 
-  
-  
-<td><select class=f3 name="band1" value="1" onChange="calcResistance(this)" style="width:121px;height: 20px; color: white; background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
-<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-<option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
-</select></td>
-   
-  
-  
-<td><select class=f4 name="band2" value="0" onChange="calcResistance(this)" style="width:121px;height: 20px; color: white; background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
-<option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-<option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange </option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow </option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green </option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue </option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet </option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray </option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White </option>
-</select></td>
-
-<tr>
-
-<td><text  id="resistorValue"  style="border-radius: 35px; text-align:center; font-size: 30px;
-  border: 2px solid #73AD21;
-  padding: 10px; 
-    position: absolute;
-  top: 425px;
-  left: 120px;}">
-RSULT</text></h4></td></tr>
-<tr>
-<td><text  id="resistorValue1"  class="ff" style="border-radius: 35px; text-align:center; font-size: 15px;
-  border: 2px solid RED;
-  padding: 10px; 
-    position: absolute;
-  top: 490px;
-  ">
-RSULT</text>
-</td></tr>
-</center></font></tr>
-</form>
-</table>
-<script>
-
-function calcResistance(input) {
-    msv = document.colorSelect.band1.value;
-    lsv = document.colorSelect.band2.value;
-    mult = document.colorSelect.band3.value;
-    tol = document.colorSelect.band4.value;
-     
-    tol1 = document.colorSelect.band5.value;
-   
-    
-    var bgColors = new Array("black", "#583030", "red", "orange", "yellow", "green", "blue", "purple", "gray", "white", "gold", "silver");
-    var fgColors = new Array("white", "white", "white", "black", "black", "white", "white", "white", "black", "black", "black", "black");
-     
-  
-  
-  resistText = tol1;
-  
-
- if (tol == "0")
-        resistText += "";
-    else if (tol == "1")
-        resistText += "CA";
-     else if (tol == "2")
-        resistText += "CD";
-      else if (tol == "3")
-        resistText += "DM";
-       else if (tol == "4")
-        resistText += "GD";
-        else if (tol == "5")
-        resistText += "HA";
-       else if (tol == "6")
-        resistText += "HD";
-       else if (tol == "7")
-        resistText += "MC";
-        else if (tol == "8")
-        resistText += "TA";
-        else if (tol == "9")
-        resistText += "TC";
-
-  if (mult == "0")
-        resistText += "0";
-   
-   else if (mult == "1")
-        resistText += "1";
-   
-   else if (mult == "2")
-        resistText += "2";
-  else if (mult == "3")
-        resistText += "3";
-   else if (mult == "4")
-        resistText += "4";
-  
-   else if (mult == "5")
-        resistText += "14";
-  else if (mult == "6")
-        resistText += "34";
-  else if (mult == "7")
-        resistText += "40";
-else if (mult == "8")
-        resistText += "74";
-else if (mult == "9")
-        resistText += "140";
-  
-  if (msv == "0")
-        resistText += "0";
-   else if (msv == "1")
-        resistText += "1";
-   else if (msv == "2")
-        resistText += "2";
-   else if (msv == "3")
-        resistText += "3";
-   else if (msv == "4")
-        resistText += "4";
-  else if (msv == "5")
-        resistText += "5";
-   else if (msv == "6")
-        resistText += "6";
-  else if (msv == "7")
-        resistText += "7";
-   else if (msv == "8")
-        resistText += "8";
-  else if (msv == "9")
-        resistText += "9";
-  
-  
-  if (lsv == "0")
-        resistText += "0";
-   else if (lsv == "1")
-        resistText += "1";
-   else if (lsv == "2")
-        resistText += "2";
-   else if (lsv == "3")
-        resistText += "3";
-   else if (lsv == "4")
-        resistText += "4";
-  else if (lsv == "5")
-        resistText += "5";
-   else if (lsv == "6")
-        resistText += "6";
-  else if (lsv == "7")
-        resistText += "7";
-   else if (lsv == "8")
-        resistText += "8";
-  else if (lsv == "9")
-        resistText += "9";
-    
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/Inductor%20SMD.png?raw=true" alt="Paris" ">
 
 
-  
-   
-  
-    
- 
-  
-     
+
+<input type="text" class="SMDtexto" value="0000" autocomplete="off" spellcheck="false"></div>
+</div>
+<div class="outSMD">Valor de la Resistencia</div>
 
 
-    
-    
-    // Set pull-down menu bg and fg colors:
-    document.colorSelect.band1.style.background = bgColors[parseInt(msv)];
-    document.colorSelect.band1.style.color = fgColors[parseInt(msv)];
-    document.colorSelect.band2.style.background = bgColors[parseInt(lsv)];
-    document.colorSelect.band2.style.color = fgColors[parseInt(lsv)];
-    document.colorSelect.band3.style.background = bgColors[parseInt(mult)];
-    document.colorSelect.band3.style.color = fgColors[parseInt(mult)];
-     document.colorSelect.band4.style.background = bgColors[parseInt(tol)];
-    document.colorSelect.band4.style.color = fgColors[parseInt(tol)];
-     document.colorSelect.band5.style.background = bgColors[parseInt(tol)];
-    document.colorSelect.band5.style.color = fgColors[parseInt(tol)];
-  
-    
-    // Update the text box
-    document.getElementById("resistorValue").innerHTML=resistText;
-   
- resistText1 = tol1;
 
- if (tol == "0")
-        resistText1 += "";
-    else if (tol == "1")
-        resistText1 += "CA=RCA (analog)";
-     else if (tol == "2")
-        resistText1 += "CD=RCA (digital)";
-      else if (tol == "3")
-        resistText1 += "DM=National Semiconductor (digital";
-       else if (tol == "4")
-        resistText1 += "GD=Goldstar (digital)";
-        else if (tol == "5")
-        resistText1 += "HA=Hitachi (analog)";
-       else if (tol == "6")
-        resistText1 += "HD=Hitachi (digital)";
-       else if (tol == "7")
-        resistText1 += "MC=Motorola";
-        else if (tol == "8")
-        resistText1 += "TA=Toshiba";
-        else if (tol == "9")
-        resistText1 += "TC=Toshiba";
- document.getElementById("resistorValue1").innerHTML=resistText1;
-}
 
-function addCommas(x) {
-// This handy function found here:
-// http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-    return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-</script>
+
+
+
+
+
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script id="INLINE_PEN_JS_ID">
+    var bandValues = [];
+var ohm = "H";
+var unit = '';
+var unit1 = 'µH';
+
+var resistor = {
+  'band1': 0,
+  'band2': 0,
+  'multiplier': 1,
+  'tolerance': 5,
+  'resistance': 0 };
+
+
+$('.band').on('click', function (e) {
+  $('#colors').appendTo($(this)).show();
+});
+
+$('#colors .color').on('click', function (e) {
+  var bandvalue = $(this).attr('data-value');
+  var multiplier = $(this).attr('data-multiplier');
+  var tolerance = $(this).attr('data-tolerance');
+  var band = $(this).parent().parent();
+  var resistance = null;
+
+  $(this).
+  closest('.band').
+  css('background', $(this).css('background')).
+  attr('data-color', $(this).attr('id'));
+
+  if (band.hasClass('value-1')) resistor.band1 = parseInt(bandvalue);
+  if (band.hasClass('value-2')) resistor.band2 = parseInt(bandvalue);
+
+  if (band.hasClass('multiplier'))
+  {
+    var multiVal = parseFloat(multiplier);
+    resistor.multiplier = multiVal;
+  }
+
+  if (band.hasClass('tolerance')) resistor.tolerance = tolerance;
+
+  $(this).parent().fadeOut(200);
+
+  var b1 = resistor.band1;
+  var b2 = resistor.band2;
+  var m = resistor.multiplier;
+  var t = resistor.tolerance;
+  if (resistor.tolerance == '1')
+  {
+    $('.contenedor').css("background", '#0578c4');
+  } else
+  {
+    $('.contenedor').css("background", 'tan');
+  }
+
+  var resistance = parseInt(b1 + '' + b2) * m;
+  if (resistance > 999999999) {
+    resistance = resistance / 1000000000;
+    unit = 'G' + ohm;
+  } else
+  if (resistance < 999999999 && resistance > 999999) {
+    resistance = resistance / 1000000;
+    unit = 'M' + ohm;
+  } else
+  if (resistance < 999999 && resistance > 999) {
+    resistance = resistance / 1000;
+    unit = 'K' + ohm;
+  } else
+  {
+    unit = ohm;
+  }
+
+  t !== null && t !== 0 ? unit = unit + ' ' + t + '%' : '&nbsp;';
+
+  //resistor.resistance = (resistance !== null && resistance !== 0) ? resistance + unit : '&nbsp;';
+  resistor.resistance = resistance !== null ? resistance + unit : 'Resistencia inválida';
+  $('.out').html(resistor.resistance);
+});
+
+$('.SMDtexto').on('click', function ()
+{
+  if ($(this).val() == '0000')
+  {
+    $(this).val("");
+  }
+});
+
+$('.SMDtexto').on('change input paste keyup', function ()
+{
+  var cantidadDigitosResistencia = $(this).val().length;
+  if ($(this).val().search(/([^0-9,r])/i) >= '0')
+  {
+    $('.outSMD').html('<font color="red">Error de código</font>');
+  } else
+  {
+    $('.outSMD').text('Valor de la Resistencia');
+    if (cantidadDigitosResistencia == '3')
+    {
+      if ($(this).val().toUpperCase().indexOf("R") != '-1') //Si tiene R en el código
+        {
+          var posicionR = $(this).val().toUpperCase().indexOf("R");
+          if (posicionR == '0')
+          {
+            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', "0.");
+            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
+          } else if (posicionR == '1')
+          {
+            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', ".");
+            $('.outSMD').text(reemplazoDecimalResistencia + unit1);
+          } else if (posicionR == '2')
+          {
+            $('.outSMD').html('<font color="red">Error de código</font>');
+          }
+        } else
+      {
+        var primerosDosDigitosResistencia = parseInt(parseInt($(this).val()).toString(10).slice(0, 2));
+        var ultimoDigitoResistencia = parseInt(parseInt($(this).val()).toString(10).slice(2));
+        var resistencia = primerosDosDigitosResistencia * Math.pow(10, ultimoDigitoResistencia);
+        $('.outSMD').text(valorarResistencia(resistencia));
+      }
+    } else if (cantidadDigitosResistencia == '4')
+    {
+      if ($(this).val().toUpperCase().indexOf("R") != '-1') //Si tiene R en el código
+        {
+          var posicionR = $(this).val().toUpperCase().indexOf("R");
+          if (posicionR == '0')
+          {
+            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', "0.");
+            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
+          } else if (posicionR == '1')
+          {
+            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', ".");
+            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
+          } else if (posicionR == '2')
+          {
+            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', ".");
+            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
+          } else if (posicionR == '3')
+          {
+            $('.outSMD').html('<font color="red">Error de código</font>');
+          }
+        } else
+      {
+        var primerosDosDigitosResistencia = parseInt(parseInt($(this).val()).toString(10).slice(0, 3));
+        var ultimoDigitoResistencia = parseInt(parseInt($(this).val()).toString(10).slice(3));
+        var resistencia = primerosDosDigitosResistencia * Math.pow(10, ultimoDigitoResistencia);
+        $('.outSMD').text(valorarResistencia(resistencia));
+      }
+    } else if (cantidadDigitosResistencia > '4')
+    {
+      $('.outSMD').html('<font color="red">Demasiados dígitos!!!</font>');
+    }
+  }
+});
+
+function valorarResistencia(res) {
+  if (res > 999999999)
+  {
+    res = res / 1000000000;
+    unit = 'N' + ohm;
+  } else
+  if (res < 999999999 && res > 999999) {
+    res = res / 1000000;
+    unit = 'µ' + ohm;
+  } else
+  if (res < 999999 && res > 999) {
+    res = res / 1000;
+    unit = 'm' + ohm;
+  } else
+  {
+    unit = unit1;
+  }
+  return res + unit; // The function returns the product of p1 and p2
+};
+    //# sourceURL=pen.js
+  </script>
+</body>
+</html>
