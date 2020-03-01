@@ -32,12 +32,12 @@ body {
 }
 
 body { 
-  background: #4CAF50 ; 
+   ; 
 }
 
 input[id=tool_capacitor]{
         
-    font-size: 40px;
+    font-size: 50px;
     padding: 5px ;    
     border:2px solid #aaa;
     border-radius:4px;
@@ -113,6 +113,23 @@ input[id="tool_capacitor_uni]{
   padding: 105px 320px;
   font-size: 200px;
 
+}
+fieldset {
+    font-family: sans-serif;
+    border: 5px solid #1F497D;
+    background: #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+fieldset legend {
+    background: #1F497D;
+    color: #fff;
+    padding: 5px 10px ;
+    font-size: 32px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 5px #ddd;
+    margin-left: 20px;
 }
 
 </style>
@@ -205,14 +222,14 @@ input[id="tool_capacitor_uni]{
 <div class="search-block visible-xs pull-right"><form class="navbar-form navbar-form-mobile navbar-right " action="/search" method="GET">&nbsp;</form></div>
 </div>
 <div class="container-fluid"><form id="tool">
-<h3>Inputs</h3><fieldset><legend><label class="control-label" for="tool_capacitor">Capacitor (C)</label></legend>
+<h3>Inputs</h3><fieldset><legend ><label class="control-label" for="tool_capacitor">Capacitor (C)</label></legend>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
 <div class="col-sm-4 col-xs-12">
 <div class="form-group"></div>
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group"><input id="tool_capacitor" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  font-size:40px;" class="form-control"> <option value="0.000000001">nanoFarad (nF)</option> <option selected="selected" value="0.000001">microFarad (&mu;F)</option> </select></div>
+<div class="form-group"><input id="tool_capacitor" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  font-size:50px; width:40px;" class="form-control"> <option value="0.000000001">nanoFarad (nF)</option> <option selected="selected" value="0.000001">microFarad (&mu;F)</option> </select></div>
 <h3></h3>
 </div>
 </div>
