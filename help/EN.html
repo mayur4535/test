@@ -1,221 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>EN</title>
-     
-        <link href="helpstyle.css" rel='stylesheet' type='text/css' />
-        <script src="js/jquery-1.12.4.min.js"></script>
-        <script src="js/jquery.nicescroll.min.js"></script>
-</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
+    
+    <script src="/assets/js/css3-mediaqueries.js"></script>
+    <link href="/assets/css/ie8.css" rel="stylesheet">
+<![endif]-->
+<style>
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
+}
 
-<body bgcolor="#f8f8f8">
- 
-<script>
-  $(document).ready(function() {
-	var nice = $("html").niceScroll();  // The document page (body)
-  });
-</script>
+body {
+  display: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body {
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
+}
 
-<p align="justify"><b><font color="#CC0000">Warning! </font>The program works only with the English keyboard layout.</b></p><hr>
-        <div  id="move-top"></div>
-        <font size="+0">
-    <ul class="contents">
-            <font size="+2">&nbsp;&nbsp;<b>Contents:</b></font><br><br>
-        <li>
-                <a href="#p1">&nbsp;<span>&#8594;</span>&nbsp;<b>How to use this</b></a>
-            <li>
-                    <a href="#p2">&nbsp;<span>&#8594;</span>&nbsp;<b>Drawing and Editing Circuits</b></a>
-                <li>
-                        <a href="#p3">&nbsp;<span>&#8594;</span>&nbsp;<b>High Frequency Circuits</b></a>
-                    <li>
-                            <a href="#p4">&nbsp;<span>&#8594;</span>&nbsp;<b>Simulation != Real Life</b></a>
-                        <li>
-                                <a href="#p5">&nbsp;<span>&#8594;</span>&nbsp;<b>Some Errors</b></a>
-                            <li>
-                                    <a href="#p6">&nbsp;<span>&#8594;</span>&nbsp;<b>License</b></a>
-    </ul></font>
-    <font size="-1"><b><i>The main part of the information is taken from the <a href="javascript:nw.Shell.openExternal('http://lushprojects.com/circuitjs/');" target="_blank">http://lushprojects.com/circuitjs/</a></i></b>
-    </font><br><br><br>
+body { 
+  background: #4CAF50 ; 
+}
 
-    <form action="#" method="GET">
-            <fieldset>
-                <legend>
-                    <h3 id="p1"><b>How to use this</b></h3>
-                </legend>
-                <div align="justify">
-                <font>When the simulator starts up you will see an animated schematic of a simple LRC circuit. The green colour indicates positive voltage. The grey colour indicates ground. A red colour indicates negative voltage. The moving yellow dots indicate current.</font><br><br>
-                <font>To turn a switch on or off, just click on it. If you move the mouse over any component of the circuit, you will
-                        see a short description of that component and its current state in the lower right corner of the window.
-                        To modify a component, move the mouse over it, click the right mouse button (or control-click if you have
-                        a Mac) and select &quot;Edit&quot;. You can also access the edit function by double-clicking on a component.</font><br><br>
-                <font>There are three graphs at the bottom of the window; these act like oscilloscopes, each one showing the voltage
-                        and current across a particular component. Voltage is shown in green, and current is shown in yellow. The
-                        current may not be visible if the voltage graph is on top of it. The peak value of the voltage in the scope
-                        window is also shown. Move the mouse over one of the scope views, and the component it is graphing will be
-                        highlighted. To modify or remove a scope, click the right mouse button over it and choose &quot;remove&quot;
-                        from the menu. There are also many other scope options in this context menu. To view a component in the scope,
-                        click the right mouse button over the component and select &quot;View in Scope&quot;.</font><br><br>
-                <font>The &quot;Circuits&quot; menu contains a lot of sample circuits for you to try.</font><br><br>
-                <font>Some circuits, eg Basics-&gt;Potentiometer, contain potentiometers or variable voltage sources. These can be
-                        adjusted using sliders that are added to the right hand tool bar, or by positioning the mouse pointer over
-                        the component and using the scroll wheel.</font>
-                </div>
-            </fieldset>
-    <br><br>
-            <form action="#" method="GET">
-                <fieldset>
-                    <legend>
-                        <h3 id="p2">Drawing and Editing Circuits</h3>
-                    </legend>
-                    <div align="justify">
-                    <font>You can get a blank circuit by choosing &quot;Blank Circuit&quot; from the &quot;Circuits&quot; menu. You
-                            will need to add at least one voltage source to start the simulator.</font><br><br>
-                    <font>To add components or a wire choose one of the &quot;Add....&quot; options from the &quot;Draw&quot; menu.
-                            Note that common components have keyboard short-cuts to select their add mode. When in add mode the cursor
-                            changes to a &quot;+&quot;. Click and drag the mouse to add a component.</font><br><br>
-                    <font>Components may be moved and resized in the selection mode. When in selection mode the cursor changes to an
-                            arrow. Choose &quot;Select/Drag Sel&quot; from the &quot;Draw&quot; menu or press &quot;space&quot;,
-                            or press &quot;escape&quot; to go in to selection mode. Hovering over a component will highlight it and
-                            show information about that component in the info area. Clicking and dragging on a component will move
-                            the component. If you click and drag on the square handles or hold down the ctrl key this will resize
-                            the component and move the terminals.</font><br><br>
-                    <font>Wires only connect at their ends and not in the middle therefore you have to draw each segment of a wire
-                            separately. If the simulator spots unconnected points it thinks you intended to connect it will highlight
-                            these with a red circle.</font><br><br>
-                    <font>Many components have adjustments that can be made using the edit function explained above. For resistors,
-                            capacitors and inductors you can conveniently set the value from the E12 range by rolling the mouse wheel
-                            when hovering over the component</font><br><br>
-                    <font>The File menu allows you to import or export circuit description files. See notes below on browser compatibility.</font><br><br>
-                    <font>The Reset button resets the circuit to a reasonable state. If the simulation is paused then hitting the Reset
-                            button twice will restart it. The Run/Stop button allows you to pause the simulation. The Simulation
-                            Speed slider allows you to adjust the speed of the simulation. If the simulation isn&#39;t time-dependent
-                            (that is, if there are no capacitors, inductors, or time-dependent voltage sources), then this won&#39;t
-                            have any effect. The Current Speed slider lets you adjust the speed of the dots, in case the currents
-                            are so weak (or strong) that the dots are moving too slowly (or too quickly).</font>
-                    </div>
-                </fieldset>
-            </form>
-    <br><br>
-            <form action="#" method="GET">
-                <fieldset>
-                    <legend>
-                        <h3 id=p3>High Frequency Circuits</h3>
-                    </legend>
-                    <div align="justify">
-                    <font>This simulator simulates the circuit using a series of short time steps. In each step the changes to the
-                            voltages and currents in the circuit are calculated based on the component models and the current circuit
-                            state. For this process to work the time steps used need to be significantly shorter than the duration
-                            of any event of interest in the circuit. Or, if you prefer, the time steps need to be significantly shorter
-                            than the period of the highest frequency signal of interest.</font><br><br>
-                    <font>By default the simulator uses a 5&micro;s step size. This is OK for audio frequency signals but not for radio
-                            frequency signals or fast digital signals. The step size can be changed from the &quot;Other Options...&quot;
-                            dialog on the options menu. For comparison, the transmission line example in the application uses a 5ps
-                            step size.</font><br><br>
-                    <font>The step size shouldn&#39;t be confused with the &quot;Simulation Speed&quot; controlled by the slider in
-                            the right hand panel. The step size controls how long (in simulated time) each step is. The &quot;Simulation
-                            Speed&quot; slider controls how often (in real time) the computer calculates a step.</font>
-                    </div>
-                </fieldset>
-            </form>
-    <br><br>
-            <form action="#" method="GET">
-                <fieldset>
-                    <legend>
-                        <h3 id=p4>Simulation != Real Life</h3>
-                    </legend>
-                    <div align="justify">
-                    <font>Physics simulations are not real life, and don&#39;t assume that simulation and reality are identical! This
-                            simulation idealizes many components. Wires and component leads have no resistance. Voltage sources are
-                            ideal - they will try and supply infinite current if you let them. Capacitors and inductors are 100%
-                            efficient. Logic gate inputs draw zero current - not too bad as an approximation for CMOS logic, but
-                            not typical of 1980s TTL for example. By all means use this simulator to help visualize circuits, but
-                            always test in reality.</font><br><br>
-                    <font>Sorry to break it to you folks, but the simulator numerically approximates models of components that are
-                            also approximate. Even without allowing for any bugs it is just a rough guide to reality. This simulator
-                            may be helpful for visualization, but used the wrong way any simulator can give a false sense of security.
-                            Some people don&#39;t really grasp this important concept - I&#39;ve even had one user accuse the simulator
-                            of &quot;lying&quot; because he (or she) didn&#39;t take account of the component idealizations and didn&#39;t
-                            understand the actual performance of the components they chose to use. It&#39;s a key leaning for all
-                            electronic engineers that they must always be fully aware of real-world component (and system) characteristics
-                            and how these differ from any particular simulator they use. If you want more precise models of real-world
-                            components then the SPICE-based simulators are much more appropriate tools than this one, but even then,
-                            you should be aware of deviations from reality. As the great analogue circuit designer Bob Pease said
-                            &quot;When a computer tries to simulate an analog circuit, sometimes it does a good job; but when it
-                            doesn&#39;t, things get very sticky&quot;.</font><br><br>
-                    <font>One consequence of the use of ideal components is that the simulator doesn&#39;t converge on a result for
-                            circuits that have no defined behaviour - for example an ideal voltage source short-circuited by an ideal
-                            wire. Another situation that can&#39;t be simulated under these assumptions is the current distribution
-                            between the conductors if two perfect conductors are connected in parallel. When using the simulator
-                            you must account for places where real electronics differs from the ideal.</font>
-                    </div>
-                </fieldset>
-            </form>
-    <br><br>
-            <form action="#" method="GET">
-                <fieldset>
-                    <legend>
-                        <h3 id="p5">Some Errors</h3>
-                    </legend>
-                    <div align="justify">
-                    <font>Here are some errors you might encounter:</font>
-                    <ul>
-                        <font>
-                        <li>Voltage source loop with no resistance! - this means one of the voltage sources in your circuit is shorted.
-                                Make sure there is some resistance across every voltage source.</li><br>
-                        <li>Capacitor loop with no resistance! - it&#39;s not allowed to have any current loops containing capacitors
-                                but no resistance. For example, capacitors connected in parallel are not allowed; you must put a
-                                resistor in series with them. Shorted capacitors are allowed.</li><br>
-                        <li>Singular matrix! - this means that your circuit is inconsistent (two different voltage sources connected
-                                to each other), or that the voltage at some point is undefined. It might mean that some component&#39;s
-                                terminals are unconnected; for example, if you create an op-amp but haven&#39;t connected anything
-                                to it yet, you will get this error.</li><br>
-                        <li>Convergence failed! - this means the simulator can&#39;t figure out what the state of the circuit should
-                                be. Just click Reset and hopefully that should fix it. Your circuit might be too complicated, but
-                                this happens sometimes even with the examples.</li><br>
-                        <li>Transmission line delay too large! - the transmission line delay is too large compared to the timestep
-                                of the simulator, so too much memory would be required. Make the delay smaller.</li><br>
-                        <li>Need to ground transmission line! - the bottom two wires of a transmission line must always be grounded
-                                in this simulator.</li>
-                        </font>
-                    </ul>
-                    </div>
-                </fieldset>
-    <br><br>
-                <form action="#" method="GET">
-                    <fieldset>
-                        <legend>
-                            <h3 id="p6">License</h3>
-                        </legend>
-                        <div align="justify">
-                        <font>The simulator is provided with no support or warranty. Absolutely no guarantee is provided of suitability
-                                for any purpose.</font><br><br>
-                        <font>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General
-                                Public License as published by the Free Software Foundation; either version 2 of the License, or
-                                (at your option) any later version.</font><br><br>
-                        <font>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-                                the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-                                Public License for more details.</font><br><br>
-                                <font>For details of licensing see <a href="javascript:nw.Shell.openExternal('http://www.gnu.org/licenses/');" target="_blank">http://www.gnu.org/licenses/</a>.</font><br><br>
-                        <div class="contents" align="left">
-                        <font><b>Components of this program:</b></font><br><br>
-                        <font>JQuery - Distributed under the MIT License</font><br><br>
-                        <font>jQuery.NiceScroll - Distributed under the MIT License</font><br><br>
-                        <font>jQuery.scrollSpeed - is taken from the github.com/nathco/jQuery.scrollSpeed</font><br><br>
-                        <font>NW.js - Distributed under the MIT License</font>
-                        </div><br>
-                        <hr>
-                        <br>
-                        <font>Original by Paul Falstad.</font><br>
-                        <font><a href="javascript:nw.Shell.openExternal('http://www.falstad.com/');" target="_blank">http://www.falstad.com/</a></font><br><br>
-                        <font>JavaScript conversion by Iain Sharp.</font><br>
-                        <font><a href="javascript:nw.Shell.openExternal('http://lushprojects.com/');" target="_blank">http://lushprojects.com/</a></font><br><br>
-                        <font>The program was compiled to desktop application for Windows, MAC OS and Linux by Usevalad Khatkevich.</font><br>
-                        <font><a href="javascript:nw.Shell.openExternal('https://github.com/CEBA77');" target="_blank">https://github.com/CEBA77</a></font>
-                        </div>
-                    </fieldset><br>
-                    <a href="#move-top" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"> </span></a>
-</body>
+input[id=tool_capacitor]{
+        
+    font-size: 40px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_capacitor]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_resistance]{
+    font-size: 70px;
+    padding: 50px ;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_resistance]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_output_pulse_width]{
+    font-size: 70px;
+    padding: 50px ;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_output_pulse_width]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_capacitor_unit]{
+    width:200;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_capacitor_unit]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_submit]{
+  background-color: #167A04 ;
+  border: 1;
+  color: white;
+  padding: 80px 300px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[id="tool_capacitor_uni]{
+  padding: 105px 320px;
+  font-size: 200px;
 
-</html>
+}
+
+</style>
+<script type="text/javascript">// <![CDATA[
+      
+  function searchFor(obj, query) {
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key) && (typeof obj[key] === "string")) {
+        if(obj[key] === query) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+// ]]></script>
+<script type="text/javascript" src="../assets/library/jquery.popupoverlay.js"></script>
+<script type="text/javascript">// <![CDATA[
+        $(document).ready(function() {
+
+            if($.cookie('aacwelcome') === undefined) {
+                if (popup_is_mobile() === false) {
+                    $('#my_popup').popup({
+                        color: 'white',
+                        opacity: 1,
+                        transition: '0.3s',
+                        scrolllock: true,
+                        beforeopen: function () {
+                            googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
+                            $('#my_popup').removeClass("hidden");
+                        }
+                    });
+                    $('#div-gpt-ad-1430160889889-0').bind('adready', function () {
+                        var quotes = [{'author': 'James Kip Finch' , 'quote': 'The engineer has been, and is, a maker of history.'},
+                            {'author': 'Gordon Lindsay Glegg', 'quote': 'The scientist discovers a new type of material or energy and the engineer discovers a new use for it.'},
+                            {'author': 'Henry Petroski', 'quote': 'Engineering is achieving function while avoiding failure.'},
+                            {'author': 'Henry Petroski', 'quote': 'Successful engineering is all about understanding how things break or fail.'},
+                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems… there’s no law of physics preventing them.'},
+                            {'author': 'Thomas Edison', 'quote': 'I have not failed, but found 1000 ways to not make a light bulb.'},
+                            {'author': 'Robert Heinlein', 'quote': 'One man’s “magic” is another man’s engineering. “Supernatural” is a null word.'},
+                            {'author': 'Unknown', 'quote': 'Everyone wants the project to be good, fast, and cheap... pick two.'},
+                        ];
+                        var quote = quotes[Math.floor(Math.random()*quotes.length)];
+                        $('#welcomequote').text(quote.quote);
+                        $('#welcomeauthor').text(quote.author);                           
+                        $('#my_popup').popup('show');
+                    });
+                } else {
+                    $('#div-gpt-ad-1430160889889-0').detach().insertAfter('header');
+                    $('#div-gpt-ad-1430160889889-0').addClass('text-center');
+                    $('#div-gpt-ad-1430160889889-0').css({"padding-top": "20px", "padding-bottom": "20px", "background-color": "#f26b31"});
+                    googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
+                }
+                var welcomeExpire = new Date();
+                welcomeExpire.setHours(welcomeExpire.getHours() + 6);
+                $.cookie('aacwelcome','set', {domain: "allaboutcircuits.com", path: "/", expires: welcomeExpire});
+           }
+        });
+    
+// ]]></script>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
+<div id="top-box" class="hidden-xs">
+<div class="top-box-wrapper">
+<div class="container navContainer">
+<div class="row">
+<div class="social-box col-lg-3 col-md-4 col-sm-5 pull-right">
+<div class="hidden-print"><span class="hidden-xs"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container navContainer">
+<div class="row">
+<div class="navbar-header">
+<div class="resp-menu-wrap pull-right">
+<div class="search-block visible-xs pull-right"><form class="navbar-form navbar-form-mobile navbar-right " action="/search" method="GET">&nbsp;</form></div>
+</div>
+<div class="container-fluid"><form id="tool">
+<h3>Inputs</h3><fieldset><legend><label class="control-label" for="tool_capacitor">Capacitor (C)</label></legend>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><input id="tool_capacitor" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  font-size:40px;" class="form-control"> <option value="0.000000001">nanoFarad (nF)</option> <option selected="selected" value="0.000001">microFarad (&mu;F)</option> </select></div>
+<h3></h3>
+</div>
+</div>
+</div></fieldset>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"><label class="control-label" for="tool_resistance">Resistance (R)</label></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><input id="tool_resistance" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_resistance_unit" style="height:100px; width:1000px; font-size:70px;" class="form-control"> <option value="1">Ohms (&Omega;)</option> <option selected="selected" value="1000">kiloOhms (k&Omega;)</option> <option value="1000000">MegaOhms (m&Omega;)</option> </select></div>
+</div>
+</div>
+</div>
+</form>
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
+</div>
+<div class="col-sm-4">
+<div class="form-group"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate"  disabled="disabled" /></div>
+</div>
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
+</div>
+</div>
+</div>
+<h3>Output </h3>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"><label class="control-label" for="tool_output_pulse_width">Output Pulse Width (T)</label></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning"><input id="tool_output_pulse_width" class="form-control" type="number" /></div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">Seconds (s)</div>
+</div>
+</div>
+</div>
+</div>
+<p>
+<script type="text/javascript">// <![CDATA[
+var _0x5f73=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x5F\x70\x75\x6C\x73\x65\x5F\x77\x69\x64\x74\x68","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74\x5F\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x61\x64\x64\x43\x6C\x61\x73\x73","\x6F\x6E"];!function(_0xaba3x1){_0x5f73[0];_0xaba3x1(_0x5f73[4])[_0x5f73[9]](function(){var _0xaba3x2=!1;_0xaba3x1(_0x5f73[4])[_0x5f73[3]](function(){_0x5f73[1]== _0xaba3x1(this)[_0x5f73[2]]()&& (_0xaba3x2=  !0)}),_0xaba3x2?_0xaba3x1(_0x5f73[7])[_0x5f73[6]](_0x5f73[5],_0x5f73[5]):_0xaba3x1(_0x5f73[7])[_0x5f73[8]](_0x5f73[5])}),_0xaba3x1(_0x5f73[7])[_0x5f73[22]](_0x5f73[10],function(_0xaba3x2){_0xaba3x2[_0x5f73[11]]();var _0xaba3x3=_0xaba3x1(_0x5f73[12]),_0xaba3x4=_0xaba3x1(_0x5f73[13]),_0xaba3x5=_0xaba3x1(_0x5f73[14]),_0xaba3x6=_0xaba3x1(_0x5f73[15]),_0xaba3x7=_0xaba3x1(_0x5f73[16]);if(_0xaba3x3[_0x5f73[2]]()&& _0xaba3x4[_0x5f73[2]]()&& _0xaba3x5[_0x5f73[2]]()&& _0xaba3x6[_0x5f73[2]]()){var _0xaba3x8=_0xaba3x3[_0x5f73[2]]()* _0xaba3x4[_0x5f73[2]](),_0xaba3x9=_0xaba3x5[_0x5f73[2]]()* _0xaba3x6[_0x5f73[2]](),_0xaba3xa=1.1* _0xaba3x9* _0xaba3x8;_0xaba3x7[_0x5f73[2]](_0xaba3xa),_0xaba3x1(_0x5f73[19])[_0x5f73[18]](_0x5f73[17]),_0xaba3x1(_0x5f73[19])[_0x5f73[21]](_0x5f73[20])}})}(jQuery)
+// ]]></script>
+</p>
+</div>
+</div>
+</div>
