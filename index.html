@@ -1,746 +1,266 @@
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
+    
+    <script src="/assets/js/css3-mediaqueries.js"></script>
+    <link href="/assets/css/ie8.css" rel="stylesheet">
+<![endif]-->
 <style>
-
-html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
-
-
-
-
-
-
-
-/* End extract */
-html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
-h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}.w3-serif{font-family:serif}
-
-
-
-
-                                                                                border
-
-.w3-btn,.w3-button{border:none;display:inline-block;padding:px px;font-size:50px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
-
-
-
-
-
-
-
-
-
-.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
-
-
-
-.w3-modal-content{margin:auto;background-color:#fff;position:relati;padding:0;outline:0;width:6000px}
-
-
-
-
-.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
-.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
-
-
-@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
-
-
-
-.w3-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
-
-.w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}.w3-display-hover{display:none}
-
-
-
-
-
-.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
-.w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
-.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
-
-
-                                               border colour 
-.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:red!important}
-
-</style>
-<style>
-.bg{ background-color:e6e9ee;
-     }
-.w3-button{background:;
-          WIDTH:100%}
-.w3-modal-content{width:98%;}
-</style>
-<body>
-<div class=bg>
-<table border="1" width="100%" class="tools-details" style="border-color:#0000;">
-
-
-  <tr>
-<td align="middle">
-   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>BASIC SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ANTENA.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id02" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id02').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>ANTENA SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ant1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-      
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/CAPECITOR.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id03" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id03').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>CAPACITOR SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/capecitor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-      
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td><tr>
-<td align="middle">
-   <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ATTEN.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id04" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id04').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>ATTENUATOR SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-       <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/atten1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/OP AMP.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id05" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id05').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>OP-AMP & CIRCUITS SYMBOL</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/opamp1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/opamp2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id06').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/CURRENT.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id06" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id06').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>ELECTRIC CURRENT SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/current1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id07').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/DIODE.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id07" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id07').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>DIODE SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/diode1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id08').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/CONNECTOR.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id08" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id08').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>CONNECTOR & PLUG SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/connector1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id09').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/AV.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id09" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id09').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>AUDIO & VIDEO SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/av1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/av2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id010').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/FERRITE.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id010" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id010').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>FERRITE CORE SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ferrite1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p>L</p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id011').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/filter.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id011" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id011').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>ELECTRONIC FILTERS SYMBOL</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/filters1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id012').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/fuses.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id012" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id012').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>FUSE SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/fuse1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id013').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/heatsink.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id013" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id013').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>	HEAT SOURCES & THERMAL GENERATORS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/heatsink1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id014').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/voltage.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id014" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id014').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>VOLTAGE SOURCES SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/voltage1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id015').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/batt.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id015" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id015').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>BATTERIES & CELL SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/battery1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id016').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/inductor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id016" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id016').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>INDUCTORS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/inductor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id017').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/lamp.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id017" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id017').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>LIGHT BULBS & LAMPS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/lamp1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id018').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id018" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id018').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>LOGIC CIRCUITS & GATES & FLIP-FLOP SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate3.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id019').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/motor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id019" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id019').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>MOTORS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/motor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/motor2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id020').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/crystel.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id020" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id020').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>PIZOELECTRIC CRYSTELS OSCILLATOR & RESONATORS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/crystel1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id021').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/actdc.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id021" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id021').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>POWER CONVERTERS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/converter1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id022').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/switch.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id022" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id022').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>POWER SWITCHS & SIMPLE SWITCHES SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/switch1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/switch2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id023').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/relay.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id023" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id023').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>RELAYS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/relay1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id024').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/resistor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id024" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id024').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>RESISTORS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/resistor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id025').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/sensor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id025" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id025').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>SENSORS & TRANSDUCERS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/sens1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id026').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/meter.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id026" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id026').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>METERS TESTING & CONTROLS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/meter1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id027').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/traic.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id027" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id027').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>THYRISTORS / TRAICS & DIACS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/traic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id028').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/trans.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id028" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id028').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>TRANSFORMERS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transformer1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transformer2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id029').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transistor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id029" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id029').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>TRANSISTORS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transistor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id030').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/igbt.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id030" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id030').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>TRANSISTORS MOSFET & IGFET SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/igbt1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-<tr>
-<td align="middle">
-   <button onclick="document.getElementById('id031').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/tube.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id031" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id031').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>VACCUMTUBES VALVES & ELECTRONTUBES SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/tube1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id032').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/WAVE.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id032" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id032').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>WAVEFORMS / PULSE WAVEFORMS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/wave1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/wave2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id033').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/winding.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
-
-  <div id="id033" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id033').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>TRANSFORMERS WINDING & CONNECTIONS SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/winding1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td></tr>
-
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-   
-  
-  
-  
-  
-  
-  
-  }
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
 }
-</script>
 
-</body>
-</html>
+body {
+  display: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body {
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
+}
+
+body { 
+  background: #4CAF50 ; 
+}
+
+input[id=tool_capacitor]{
+        
+    font-size: 40px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_capacitor]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_resistance]{
+    font-size: 70px;
+    padding: 50px ;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_resistance]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_output_pulse_width]{
+    font-size: 70px;
+    padding: 50px ;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_output_pulse_width]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_capacitor_unit]{
+    width:200;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_capacitor_unit]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_submit]{
+  background-color: #167A04 ;
+  border: 1;
+  color: white;
+  padding: 80px 300px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[id="tool_capacitor_uni]{
+  padding: 105px 320px;
+  font-size: 200px;
+
+}
+
+</style>
+<script type="text/javascript">// <![CDATA[
+      
+  function searchFor(obj, query) {
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key) && (typeof obj[key] === "string")) {
+        if(obj[key] === query) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+// ]]></script>
+<script type="text/javascript" src="../assets/library/jquery.popupoverlay.js"></script>
+<script type="text/javascript">// <![CDATA[
+        $(document).ready(function() {
+
+            if($.cookie('aacwelcome') === undefined) {
+                if (popup_is_mobile() === false) {
+                    $('#my_popup').popup({
+                        color: 'white',
+                        opacity: 1,
+                        transition: '0.3s',
+                        scrolllock: true,
+                        beforeopen: function () {
+                            googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
+                            $('#my_popup').removeClass("hidden");
+                        }
+                    });
+                    $('#div-gpt-ad-1430160889889-0').bind('adready', function () {
+                        var quotes = [{'author': 'James Kip Finch' , 'quote': 'The engineer has been, and is, a maker of history.'},
+                            {'author': 'Gordon Lindsay Glegg', 'quote': 'The scientist discovers a new type of material or energy and the engineer discovers a new use for it.'},
+                            {'author': 'Henry Petroski', 'quote': 'Engineering is achieving function while avoiding failure.'},
+                            {'author': 'Henry Petroski', 'quote': 'Successful engineering is all about understanding how things break or fail.'},
+                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems… there’s no law of physics preventing them.'},
+                            {'author': 'Thomas Edison', 'quote': 'I have not failed, but found 1000 ways to not make a light bulb.'},
+                            {'author': 'Robert Heinlein', 'quote': 'One man’s “magic” is another man’s engineering. “Supernatural” is a null word.'},
+                            {'author': 'Unknown', 'quote': 'Everyone wants the project to be good, fast, and cheap... pick two.'},
+                        ];
+                        var quote = quotes[Math.floor(Math.random()*quotes.length)];
+                        $('#welcomequote').text(quote.quote);
+                        $('#welcomeauthor').text(quote.author);                           
+                        $('#my_popup').popup('show');
+                    });
+                } else {
+                    $('#div-gpt-ad-1430160889889-0').detach().insertAfter('header');
+                    $('#div-gpt-ad-1430160889889-0').addClass('text-center');
+                    $('#div-gpt-ad-1430160889889-0').css({"padding-top": "20px", "padding-bottom": "20px", "background-color": "#f26b31"});
+                    googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
+                }
+                var welcomeExpire = new Date();
+                welcomeExpire.setHours(welcomeExpire.getHours() + 6);
+                $.cookie('aacwelcome','set', {domain: "allaboutcircuits.com", path: "/", expires: welcomeExpire});
+           }
+        });
+    
+// ]]></script>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
+<div id="top-box" class="hidden-xs">
+<div class="top-box-wrapper">
+<div class="container navContainer">
+<div class="row">
+<div class="social-box col-lg-3 col-md-4 col-sm-5 pull-right">
+<div class="hidden-print"><span class="hidden-xs"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container navContainer">
+<div class="row">
+<div class="navbar-header">
+<div class="resp-menu-wrap pull-right">
+<div class="search-block visible-xs pull-right"><form class="navbar-form navbar-form-mobile navbar-right " action="/search" method="GET">&nbsp;</form></div>
+</div>
+<div class="container-fluid"><form id="tool">
+<h3>Inputs</h3><fieldset><legend><label class="control-label" for="tool_capacitor">Capacitor (C)</label></legend>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><input id="tool_capacitor" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  font-size:40px;" class="form-control"> <option value="0.000000001">nanoFarad (nF)</option> <option selected="selected" value="0.000001">microFarad (&mu;F)</option> </select></div>
+<h3></h3>
+</div>
+</div>
+</div></fieldset>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"><label class="control-label" for="tool_resistance">Resistance (R)</label></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><input id="tool_resistance" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_resistance_unit" style="height:100px; width:1000px; font-size:70px;" class="form-control"> <option value="1">Ohms (&Omega;)</option> <option selected="selected" value="1000">kiloOhms (k&Omega;)</option> <option value="1000000">MegaOhms (m&Omega;)</option> </select></div>
+</div>
+</div>
+</div>
+</form>
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
+</div>
+<div class="col-sm-4">
+<div class="form-group"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate"  disabled="disabled" /></div>
+</div>
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
+</div>
+</div>
+</div>
+<h3>Output </h3>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"><label class="control-label" for="tool_output_pulse_width">Output Pulse Width (T)</label></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning"><input id="tool_output_pulse_width" class="form-control" type="number" /></div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">Seconds (s)</div>
+</div>
+</div>
+</div>
+</div>
+<p>
+<script type="text/javascript">// <![CDATA[
+var _0x5f73=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x5F\x70\x75\x6C\x73\x65\x5F\x77\x69\x64\x74\x68","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74\x5F\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x61\x64\x64\x43\x6C\x61\x73\x73","\x6F\x6E"];!function(_0xaba3x1){_0x5f73[0];_0xaba3x1(_0x5f73[4])[_0x5f73[9]](function(){var _0xaba3x2=!1;_0xaba3x1(_0x5f73[4])[_0x5f73[3]](function(){_0x5f73[1]== _0xaba3x1(this)[_0x5f73[2]]()&& (_0xaba3x2=  !0)}),_0xaba3x2?_0xaba3x1(_0x5f73[7])[_0x5f73[6]](_0x5f73[5],_0x5f73[5]):_0xaba3x1(_0x5f73[7])[_0x5f73[8]](_0x5f73[5])}),_0xaba3x1(_0x5f73[7])[_0x5f73[22]](_0x5f73[10],function(_0xaba3x2){_0xaba3x2[_0x5f73[11]]();var _0xaba3x3=_0xaba3x1(_0x5f73[12]),_0xaba3x4=_0xaba3x1(_0x5f73[13]),_0xaba3x5=_0xaba3x1(_0x5f73[14]),_0xaba3x6=_0xaba3x1(_0x5f73[15]),_0xaba3x7=_0xaba3x1(_0x5f73[16]);if(_0xaba3x3[_0x5f73[2]]()&& _0xaba3x4[_0x5f73[2]]()&& _0xaba3x5[_0x5f73[2]]()&& _0xaba3x6[_0x5f73[2]]()){var _0xaba3x8=_0xaba3x3[_0x5f73[2]]()* _0xaba3x4[_0x5f73[2]](),_0xaba3x9=_0xaba3x5[_0x5f73[2]]()* _0xaba3x6[_0x5f73[2]](),_0xaba3xa=1.1* _0xaba3x9* _0xaba3x8;_0xaba3x7[_0x5f73[2]](_0xaba3xa),_0xaba3x1(_0x5f73[19])[_0x5f73[18]](_0x5f73[17]),_0xaba3x1(_0x5f73[19])[_0x5f73[21]](_0x5f73[20])}})}(jQuery)
+// ]]></script>
+</p>
+</div>
+</div>
+</div>
