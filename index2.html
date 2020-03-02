@@ -1,549 +1,292 @@
 
-<HTML>
 
-
-
-
-
-
-
-
-
-<script language="JavaScript">
-
-<!--
-
-
-
-// CED subroutine for cleaning up JavaScript rounding errors 
-
-// to any reasonable number of decimal places 5/5/1997 last mod 2/19/2004
-
-// round for decimal of (value of precision) places, default is 3
-
-// This routine can be used to pass a number and a number for precision
-
-// or just a number only, that is to be rounded to a set number of decimal
-
-// places. This routine supports leading and training zeros, leading and
-
-// trailing spaces, and padding. To prevent errors, pass variables as a string.
-
-
-
-function perRound(num, precision) {
-
-	var precision = 3; //default value if not passed from caller, change if desired
-
-	// remark if passed from caller
-
-	precision = parseInt(precision); // make certain the decimal precision is an integer
-
-    var result1 = num * Math.pow(10, precision);
-
-    var result2 = Math.round(result1);
-
-    var result3 = result2 / Math.pow(10, precision);
-
-    return zerosPad(result3, precision);
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
+    
+    <script src="/assets/js/css3-mediaqueries.js"></script>
+    <link href="/assets/css/ie8.css" rel="stylesheet">
+<![endif]-->
+<style>
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
 }
 
-
-
-function zerosPad(rndVal, decPlaces) {
-
-    var valStrg = rndVal.toString(); // Convert the number to a string
-
-    var decLoc = valStrg.indexOf("."); // Locate the decimal point
-
-    // check for a decimal 
-
-    if (decLoc == -1) {
-
-        decPartLen = 0; // If no decimal, then all decimal places will be padded with 0s
-
-        // If decPlaces is greater than zero, add a decimal point
-
-        valStrg += decPlaces > 0 ? "." : "";
-
-    }
-
-    else {
-
-        decPartLen = valStrg.length - decLoc - 1; // If there is a decimal already, only the needed decimal places will be padded with 0s
-
-    }
-
-     var totalPad = decPlaces - decPartLen;    // Calculate the number of decimal places that need to be padded with 0s
-
-    if (totalPad > 0) {
-
-        // Pad the string with 0s
-
-        for (var cntrVal = 1; cntrVal <= totalPad; cntrVal++) 
-
-            valStrg += "0";
-
-        }
-
-    return valStrg;
-
+body {
+  display: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body {
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
 }
 
-// send the value in as "num" in a variable
-
-
-
-// clears field of default value
-
-function clear_field(field) {
-
-		if (field.value==field.defaultValue) {
-
-			field.value=''
-
-		}
-
-	}
-
-
-
-	digit00 = 0;
-
-	digit01 = 0;
-
-	digit1 = 0;
-
-	digit2 = 0;
-
-	digit3 = 0;
-
-	digit4 = '+/- 20%';
-
-
-
-// generic object maker prepares an empty array of n items
-
-
-
-function makeArray(n) {
-
-	this.length = n
-
-	for (var i=1; i <= n; i++)
-
-		this[i] = null
-
+body { 
+   ; 
 }
 
-
-
-// calculate capacitance value
-
-
-
-function calcCap(d1, d2, d3) {
-
-      var farads = 0
-
-      var i = 0
-
-      multiplier = 1
-
-	if ((d3 != .1) && (d3 != .01))
-
-	{
-
-        for (i = 0; i < d3; ++i)
-
-            multiplier *= 10
-
-	  var farads = ((d1 * 10) + d2) * multiplier
-
-	}
-
-	else {
-
-		 var farads = ((d1 * 10)* d3 + d2 * d3)
-
-	     }
-
-
-
-	farads = format(farads)
-
-	return farads
-
-}
-
-
-
-// format capacitance values for output
-
-
-
-function format(faradval) {
-
-	var result = ""
-
-	if (faradval >= 10e9) 
-
-	{
-
-		faradval /= 10e8
-
-		result = "  " + faradval + " mF"
-
-		return result
-
-	}
-
-	else if (faradval >= 10e6) 
-
-		{
-
-		  faradval /= 10e5
-
- 		  result = "  " + faradval + " uF"
-
-		  return result
-
-		}
-
-		else if (faradval >= 10e3) 
-
-			{
-
-		  	  faradval /= 10e2
-
- 		  	  result = "  " + faradval + " nF"
-
-		  	  return result
-
-			}
-
-			else {
-
-				  result = "  " + faradval + " pF"
-
-				  return result
-
-	      	     }
-
-}
-
-
-
-// the main function that displays new colors and calculates values
-
-
-
-function computeForm(form) {
-
-      // calculate the capacitance
-
-      form.capval.value = calcCap(digit1, digit2, digit3)
-
-      // show the tolerance
-
-      form.tolval.value = digit4
-
-      return 0
-
-}
-
-
-
-function clearForm(form)
-
-{
-
-    digit1 = 0
-
-    digit2 = 0
-
-    digit3 = 0
-
-    form.capval.value = ""
-
-    form.tolval.value = "" 
-
-}
-
-
-
-//-->
-
-</script>
-
-</head>
-
-<center>
-
-<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
-
-<BODY BGCOLOR=FFFFFF TEXT=000000 LINK=0000FF VLINK=800080>
-
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<STYLE TYPE="text/css">
-<!--
-body { font-family: Tahoma, Verdana; }
-input.btn {
-  color:black;
-  font: bold 75% 'tahoma',helvetica,sans-serif;
-  background-color:#ffd148;
-  border: 2px solid;
-  border-color: #c7c5c8;
- }
- 
- input.btn2 {
-  color:black;
-  font: bold 95% 'tahoma',helvetica,sans-serif;
-  background-color:#ffd148;
-  border: 2px solid;
-  border-color: #c7c5c8;
- 
-}
-p {
- border-radius: 15px;
-  background-color: ;
-  width: 65px;
-  border: 2px solid green;
-  height: 27px;
-  margin: -0.5px;
-  margin-left: -7px;
+input[id=tool_capacitor]{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
   
+  input[id=tool_capacitor]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_resistance]{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_resistance]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_output_pulse_width]{
+     width:250;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_output_pulse_width]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_capacitor_unit]{
+    width:250;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:8px 0;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  input[id=tool_capacitor_unit]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_submit]{
+  background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+  padding: 70px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
-</STYLE>
-
-<meta name="viewport" content="width=100%, initial-scale=1">
-<form name="capacitor">
-<CENTER>
-
-
-<TABLE ALIGN="center"    >
-<td valign="top">
-
-<TABLE>
-<img src="https://www.radiomuseum.org/forumdata/users/14211/codes/sm_stamp_1.png" alt="Paris" width="150" height="100">
-</table>
-</td>
-
-
-<td valign="top">
-
-<TABLE>
-<tr>
-
-<td><input type="text" name="capval"  style= " color:#7e7e81; font-weight: bold; text:bold; font-size: 25px; border:2px solid #ffffff00;"  placeholder="0 nf"  value="" readonly></td>
-
-
-</tr>
-
-
-
-<tr>
-
-
-
-<td><input type="text" name="tolval"  style= "color:#7e7e81; font-size: 15px; border:2px solid #ffffff00;" value="" placeholder="&plusmn; 00%" readonly>
-
-</td>
-
-</tr>
-
-
-</table>
-</td>
-
-</TABLE>
-
-</CENTER>
-
-
-<td valign="top" width="160px">
-<TABLE ALIGN="center" >
-
-
-<td><div align="center"><B>1
-
-</div></td>
-
-<td><div align="center"><B>2</B></div></td>
-
-<td><div align="center"><B>Multi.</div></td>
-
-<td><div align="center"><B>%</B></div></td>
-
-</tr>
-
-<tr></tr>
-
-<tr>
-
-<td valign="top">
-
-<TABLE>
-<tr><td><p style=background-color:black; ><input type="radio" name="band2" id="bands_7" onClick="digit1 = 0;computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_7">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band2"  id="bands_8" onClick="digit1 = 1;computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_8">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band2"  id="bands_9" onClick="digit1 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_9">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band2"  id="bands_10" onClick="digit1 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_10">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band2"  id="bands_11" onClick="digit1 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_11">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band2"  id="bands_12" onClick="digit1 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_12">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:blue; ><input type="radio" name="band2"  id="bands_13" onClick="digit1 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_13">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:purple; ><input type="radio" name="band2"  id="bands_14" onClick="digit1 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_14">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band2"  id="bands_15" onClick="digit1 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_15">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band2"  id="bands_16" onClick="digit1 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_16">11111111111111111111111</label></p></td></tr>
-
-
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-
-
-<tr><td><p style=background-color:black; ><input type="radio" name="band3" id="bands_17" onClick="digit2 = 0;computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_17">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band3"  id="bands_18" onClick="digit2 = 1;computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_18">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band3"  id="bands_19" onClick="digit2 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_19">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band3"  id="bands_20" onClick="digit2 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_20">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band3"  id="bands_21" onClick="digit2 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_21">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band3"  id="bands_22" onClick="digit2 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_22">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:blue; ><input type="radio" name="band3"  id="bands_23" onClick="digit2 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_23">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:purple; ><input type="radio" name="band3"  id="bands_24" onClick="digit2 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_24">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band3"  id="bands_25" onClick="digit2 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_25">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band3"  id="bands_26" onClick="digit2 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_26">11111111111111111111111</label></p></td></tr>
-
-
-
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-<tr><td><p style=background-color:black; ><input type="radio" name="band4" id="bands_27" onClick="digit3 = 0;computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_27">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band4"  id="bands_28" onClick="digit3 = 1;computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_28">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band4"  id="bands_29" onClick="digit3 = 2;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_29">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:orange; ><input type="radio" name="band4"  id="bands_30" onClick="digit3 = 3;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_30">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:yellow; ><input type="radio" name="band4"  id="bands_31" onClick="digit3 = 4;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_31">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band4"  id="bands_32" onClick="digit3 = 5;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_32">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:blue; ><input type="radio" name="band4"  id="bands_33" onClick="digit3 = 6;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_33">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:purple; ><input type="radio" name="band4"  id="bands_34" onClick="digit3 = 7;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_34">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:grey; ><input type="radio" name="band4"  id="bands_35" onClick="digit3 = 8;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_35">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:white; ><input type="radio" name="band4"  id="bands_36" onClick="digit3 = 9;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_36">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:gold; ><input type="radio" name="band4"  id="bands_37" onClick="digit3 = 0.1;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_37">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:silver; ><input type="radio" name="band4"  id="bands_38" onClick="digit3 = 0.01;computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_38">11111111111111111111111</label></p></td></tr>
-
-
-</TABLE>
-
-</td>
-
-<td valign="top">
-
-<TABLE>
-<tr><td><p style=background-color:black; ><input type="radio" name="band5"  id="bands_39" onClick="digit4 = '&plusmn; 20%';computeForm(this.form)" ><label style="color:#ffffff00;size:70px;" for="bands_39">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:brown; ><input type="radio" name="band5"  id="bands_40" onClick="digit4 = '&plusmn;  1%';computeForm(this.form)"CHECKED><label style="color:#ffffff00;size:70px;" for="bands_40">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:red; ><input type="radio" name="band5"  id="bands_41" onClick="digit4 = '&plusmn;  2%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_41">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:green; ><input type="radio" name="band5"  id="bands_42" onClick="digit4 = '&plusmn;  5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_42">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:#daa520; ><input type="radio" name="band5"  id="bands_43" onClick="digit4 = '&plusmn; .5%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_43">11111111111111111111111</label></p></td></tr>
-
-<tr><td><p style=background-color:silver; ><input type="radio" name="band5"  id="bands_44" onClick="digit4 = '&plusmn; 10%';computeForm(this.form)"><label style="color:#ffffff00;size:70px;" for="bands_44">11111111111111111111111</label></p></td></tr>
-
-
-</TABLE>
-
-</td>
-
-</tr>
-
-</TABLE>
-
-
-</CENTER>
-
-</td>
-
-</tr>
-
-</TABLE>
-
-</CENTER>
-
-</FORM>
-
-</CENTER>
-
-</center>
-
-</center>
-
-</td>
-
-</tr>
-
-</table>
-
+input[id="tool_capacitor_uni]{
+  padding: 105px 320px;
+  font-size: 200px;
+
+}
+
+
+</style>
+<script type="text/javascript">// <![CDATA[
+      
+  function searchFor(obj, query) {
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key) && (typeof obj[key] === "string")) {
+        if(obj[key] === query) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+// ]]></script>
+<script type="text/javascript" src="../assets/library/jquery.popupoverlay.js"></script>
+<script type="text/javascript">// <![CDATA[
+        $(document).ready(function() {
+
+            if($.cookie('aacwelcome') === undefined) {
+                if (popup_is_mobile() === false) {
+                    $('#my_popup').popup({
+                        color: 'white',
+                        opacity: 1,
+                        transition: '0.3s',
+                        scrolllock: true,
+                        beforeopen: function () {
+                            googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
+                            $('#my_popup').removeClass("hidden");
+                        }
+                    });
+                    $('#div-gpt-ad-1430160889889-0').bind('adready', function () {
+                        var quotes = [{'author': 'James Kip Finch' , 'quote': 'The engineer has been, and is, a maker of history.'},
+                            {'author': 'Gordon Lindsay Glegg', 'quote': 'The scientist discovers a new type of material or energy and the engineer discovers a new use for it.'},
+                            {'author': 'Henry Petroski', 'quote': 'Engineering is achieving function while avoiding failure.'},
+                            {'author': 'Henry Petroski', 'quote': 'Successful engineering is all about understanding how things break or fail.'},
+                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems… there’s no law of physics preventing them.'},
+                            {'author': 'Thomas Edison', 'quote': 'I have not failed, but found 1000 ways to not make a light bulb.'},
+                            {'author': 'Robert Heinlein', 'quote': 'One man’s “magic” is another man’s engineering. “Supernatural” is a null word.'},
+                            {'author': 'Unknown', 'quote': 'Everyone wants the project to be good, fast, and cheap... pick two.'},
+                        ];
+                        var quote = quotes[Math.floor(Math.random()*quotes.length)];
+                        $('#welcomequote').text(quote.quote);
+                        $('#welcomeauthor').text(quote.author);                           
+                        $('#my_popup').popup('show');
+                    });
+                } else {
+                    $('#div-gpt-ad-1430160889889-0').detach().insertAfter('header');
+                    $('#div-gpt-ad-1430160889889-0').addClass('text-center');
+                    $('#div-gpt-ad-1430160889889-0').css({"padding-top": "20px", "padding-bottom": "20px", "background-color": "#f26b31"});
+                    googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
+                }
+                var welcomeExpire = new Date();
+                welcomeExpire.setHours(welcomeExpire.getHours() + 6);
+                $.cookie('aacwelcome','set', {domain: "allaboutcircuits.com", path: "/", expires: welcomeExpire});
+           }
+        });
+    
+// ]]></script>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
+<div id="top-box" class="hidden-xs">
+<div class="top-box-wrapper">
+<div class="container navContainer">
+<div class="row">
+<div class="social-box col-lg-3 col-md-4 col-sm-5 pull-right">
+<div class="hidden-print"><span class="hidden-xs"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container navContainer">
+<div class="row">
+<div class="navbar-header">
+<div class="resp-menu-wrap pull-right">
+<div class="search-block visible-xs pull-right"><form class="navbar-form navbar-form-mobile navbar-right " action="/search" method="GET">&nbsp;</form></div>
+</div>
+<div class="container-fluid"><form id="tool"><div colspan="2" align="center" height="19">
+<h3>Inputs</h3></div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><label class="control-label" for="tool_capacitor">Capacitor (C)</label><input id="tool_capacitor" style="position: absolute;
+  right: 110px;"class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  position: absolute;
+  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
+    
+    
+    
+   width:100px;" class="form-control"> <option value="0.000000001">nF</option> <option selected="selected" value="0.000001">&mu;F</option> </select></div>
+<h3></h3></fieldset>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><label class="control-label" for="tool_resistance">Resistance (R)</label><input id="tool_resistance" class="form-control" style="position: absolute;
+  right: 110px;"type="number" />&nbsp;&nbsp;<select id="tool_resistance_unit" style="padding: 5px ;  position: absolute;
+  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
+    
+    
+    
+   width:100px;"  class="form-control"> <option selected="selected"value="1">&Omega;</option> <option  value="1000">k&Omega;</option> <option value="1000000">m&Omega;</option> </select></div>
+</div>
+</div>
+</div>
 </form>
-
-</td>
-
-</tr>
-
-</table>
-
-
-
-</center>
-
-</td>
-
-</tr>
-
-</table>
-
-</center>
-
-</center>
-
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
+</div>
+<div class="col-sm-4" >
+<div class="form-group" ><div colspan="2" align="center" height="19"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate"  disabled="disabled" /></div></div>
+</div>
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
+</div>
+</div>
+</div><div colspan="2" align="center" height="19">
+<h3>Output </h3></div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group"></div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning"><label class="control-label" for="tool_output_pulse_width">Output Pulse Width (T)</label><input id="tool_output_pulse_width" style="position: absolute;
+  right: 110px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;
+  right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
+    
+    
+    
+   width:100px;">S</label></div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">Seconds </div>
+</div>
+</div>
+</div>
+</div>
+<p>
+<script type="text/javascript">// <![CDATA[
+var _0x5f73=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x5F\x70\x75\x6C\x73\x65\x5F\x77\x69\x64\x74\x68","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74\x5F\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x61\x64\x64\x43\x6C\x61\x73\x73","\x6F\x6E"];!function(_0xaba3x1){_0x5f73[0];_0xaba3x1(_0x5f73[4])[_0x5f73[9]](function(){var _0xaba3x2=!1;_0xaba3x1(_0x5f73[4])[_0x5f73[3]](function(){_0x5f73[1]== _0xaba3x1(this)[_0x5f73[2]]()&& (_0xaba3x2=  !0)}),_0xaba3x2?_0xaba3x1(_0x5f73[7])[_0x5f73[6]](_0x5f73[5],_0x5f73[5]):_0xaba3x1(_0x5f73[7])[_0x5f73[8]](_0x5f73[5])}),_0xaba3x1(_0x5f73[7])[_0x5f73[22]](_0x5f73[10],function(_0xaba3x2){_0xaba3x2[_0x5f73[11]]();var _0xaba3x3=_0xaba3x1(_0x5f73[12]),_0xaba3x4=_0xaba3x1(_0x5f73[13]),_0xaba3x5=_0xaba3x1(_0x5f73[14]),_0xaba3x6=_0xaba3x1(_0x5f73[15]),_0xaba3x7=_0xaba3x1(_0x5f73[16]);if(_0xaba3x3[_0x5f73[2]]()&& _0xaba3x4[_0x5f73[2]]()&& _0xaba3x5[_0x5f73[2]]()&& _0xaba3x6[_0x5f73[2]]()){var _0xaba3x8=_0xaba3x3[_0x5f73[2]]()* _0xaba3x4[_0x5f73[2]](),_0xaba3x9=_0xaba3x5[_0x5f73[2]]()* _0xaba3x6[_0x5f73[2]](),_0xaba3xa=1.1* _0xaba3x9* _0xaba3x8;_0xaba3x7[_0x5f73[2]](_0xaba3xa),_0xaba3x1(_0x5f73[19])[_0x5f73[18]](_0x5f73[17]),_0xaba3x1(_0x5f73[19])[_0x5f73[21]](_0x5f73[20])}})}(jQuery)
+// ]]></script>
+</p>
+</div>
+</div>
+</div>
