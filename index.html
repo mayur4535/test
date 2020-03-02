@@ -1,16 +1,19 @@
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-<!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
-    
-    <script src="/assets/js/css3-mediaqueries.js"></script>
-    <link href="/assets/css/ie8.css" rel="stylesheet">
-<![endif]-->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script type="text/javascript">
+    var ad_categories = ['tools','digital-ics'];
+  </script>
 <style>
 #borderimg { 
   border: 10px solid transparent;
@@ -28,17 +31,18 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
 }
 
 body { 
-   ; 
+
 }
 
 input[id=tool_capacitor]{
-    width:200;    
+        
+        
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
@@ -52,45 +56,126 @@ input[id=tool_capacitor]{
     border-color:dodgerBlue;
     box-shadow:0 0 8px 0 dodgerBlue;
   }
-input[id=tool_resistance]{
-    font-size: 70px;
-    padding: 50px ;
+input[id=tool_resistance_1]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
     border:2px solid #aaa;
     border-radius:4px;
-    margin:8px 0;
+    margin: 8px 0;
     outline:none;
-    box-sizing:border-box;
-    transition:.3s;
   }
   
-  input[id=tool_resistance]:focus{
+  input[id=tool_resistance_1]:focus{
     border-color:dodgerBlue;
     box-shadow:0 0 8px 0 dodgerBlue;
   }
-input[id=tool_output_pulse_width]{
-    font-size: 70px;
-    padding: 50px ;
+input[id=tool_resistance_2]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
     border:2px solid #aaa;
     border-radius:4px;
-    margin:8px 0;
+    margin: 8px 0;
     outline:none;
-    box-sizing:border-box;
-    transition:.3s;
   }
   
-  input[id=tool_output_pulse_width]:focus{
+  input[id=tool_resistance_2]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_frequency]{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+  }
+  
+  input[id=tool_frequency]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_period]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+  }
+  
+  input[id=tool_period]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_duty_cycle]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+  }
+  
+  input[id=tool_duty_cycle]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_mark_space_ratio]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+  }
+  
+  input[id=tool_mark_space_ratio]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_time_high]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+  }
+  
+  input[id=tool_time_high]:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+input[id=tool_time_low]{
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+  }
+  
+  input[id=tool_time_low]:focus{
     border-color:dodgerBlue;
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_capacitor_unit]{
-    width:200;
+     width:200;    
+    font-size: 60px;
+    padding: 5px ;    
     border:2px solid #aaa;
     border-radius:4px;
-    margin:8px 0;
+    margin: 8px 0;
     outline:none;
-    padding:8px;
-    box-sizing:border-box;
-    transition:.3s;
   }
   
   input[id=tool_capacitor_unit]:focus{
@@ -100,190 +185,277 @@ input[id=tool_capacitor_unit]{
 input[id=tool_submit]{
   background-color: #167A04 ;
   border: 1;
+  align:center;
   color: white;
-  padding: 80px 300px;
+ 
+  padding: 10px 200px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 70px;
   margin: 4px 2px;
-  cursor: pointer;
-}
+  cursor: pointer;}
 input[id="tool_capacitor_uni]{
   padding: 105px 320px;
   font-size: 200px;
 
 }
-fieldset {
-    font-family: sans-serif;
-    border: 5px solid #1F497D;
-    background: #ddd;
-    border-radius: 5px;
-    padding: 15px;
-}
 
-fieldset legend {
-    background: #1F497D;
-    color: #fff;
-    padding: 5px 10px ;
-    font-size: 32px;
-    border-radius: 5px;
-    box-shadow: 0 0 0 5px #ddd;
-    margin-left: 20px;
-}
 
 </style>
-<script type="text/javascript">// <![CDATA[
-      
-  function searchFor(obj, query) {
-    for(var key in obj) {
-      if(obj.hasOwnProperty(key) && (typeof obj[key] === "string")) {
-        if(obj[key] === query) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
-  var googletag = googletag || {};
-  googletag.cmd = googletag.cmd || [];
-  (function() {
-    var gads = document.createElement('script');
-    gads.async = true;
-    gads.type = 'text/javascript';
-    var useSSL = 'https:' == document.location.protocol;
-    gads.src = (useSSL ? 'https:' : 'http:') +
-      '//www.googletagservices.com/tag/js/gpt.js';
-    var node = document.getElementsByTagName('script')[0];
-    node.parentNode.insertBefore(gads, node);
-  })();
-// ]]></script>
-<script type="text/javascript" src="../assets/library/jquery.popupoverlay.js"></script>
-<script type="text/javascript">// <![CDATA[
-        $(document).ready(function() {
 
-            if($.cookie('aacwelcome') === undefined) {
-                if (popup_is_mobile() === false) {
-                    $('#my_popup').popup({
-                        color: 'white',
-                        opacity: 1,
-                        transition: '0.3s',
-                        scrolllock: true,
-                        beforeopen: function () {
-                            googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
-                            $('#my_popup').removeClass("hidden");
-                        }
-                    });
-                    $('#div-gpt-ad-1430160889889-0').bind('adready', function () {
-                        var quotes = [{'author': 'James Kip Finch' , 'quote': 'The engineer has been, and is, a maker of history.'},
-                            {'author': 'Gordon Lindsay Glegg', 'quote': 'The scientist discovers a new type of material or energy and the engineer discovers a new use for it.'},
-                            {'author': 'Henry Petroski', 'quote': 'Engineering is achieving function while avoiding failure.'},
-                            {'author': 'Henry Petroski', 'quote': 'Successful engineering is all about understanding how things break or fail.'},
-                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems… there’s no law of physics preventing them.'},
-                            {'author': 'Thomas Edison', 'quote': 'I have not failed, but found 1000 ways to not make a light bulb.'},
-                            {'author': 'Robert Heinlein', 'quote': 'One man’s “magic” is another man’s engineering. “Supernatural” is a null word.'},
-                            {'author': 'Unknown', 'quote': 'Everyone wants the project to be good, fast, and cheap... pick two.'},
-                        ];
-                        var quote = quotes[Math.floor(Math.random()*quotes.length)];
-                        $('#welcomequote').text(quote.quote);
-                        $('#welcomeauthor').text(quote.author);                           
-                        $('#my_popup').popup('show');
-                    });
-                } else {
-                    $('#div-gpt-ad-1430160889889-0').detach().insertAfter('header');
-                    $('#div-gpt-ad-1430160889889-0').addClass('text-center');
-                    $('#div-gpt-ad-1430160889889-0').css({"padding-top": "20px", "padding-bottom": "20px", "background-color": "#f26b31"});
-                    googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
-                }
-                var welcomeExpire = new Date();
-                welcomeExpire.setHours(welcomeExpire.getHours() + 6);
-                $.cookie('aacwelcome','set', {domain: "allaboutcircuits.com", path: "/", expires: welcomeExpire});
-           }
-        });
-    
-// ]]></script>
+
+
 <div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
-<div id="top-box" class="hidden-xs">
-<div class="top-box-wrapper">
-<div class="container navContainer">
-<div class="row">
-<div class="social-box col-lg-3 col-md-4 col-sm-5 pull-right">
-<div class="hidden-print"><span class="hidden-xs"></span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="container navContainer">
-<div class="row">
-<div class="navbar-header">
-<div class="resp-menu-wrap pull-right">
-<div class="search-block visible-xs pull-right"><form class="navbar-form navbar-form-mobile navbar-right " action="/search" method="GET">&nbsp;</form></div>
-</div>
-<div class="container-fluid"><form id="tool">
+ <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
+<div class="mx-4">
+<div class="bootstrap3-legacy">
+<div class="container-fluid">
+<form id="tool">
 <h3>Inputs</h3>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group"></div>
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group"><label class="control-label" for="tool_capacitor">Capacitor (C)</label><input id="tool_capacitor" style="position: absolute;
   right: 110px;"class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  position: absolute;
-  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
-    
-    
-    
-   width:100px;" class="form-control"> <option value="0.000000001">(nF)</option> <option selected="selected" value="0.000001">(&mu;F)</option> </select></div>
-<h3></h3></fieldset>
+  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;width:100px;" class="form-control"> <option value="0.000000001">nF</option> <option selected="selected" value="0.000001">&mu;F</option> </select></div>
+<h3></h3>
 </div>
 </div>
 </div>
+</div>
+  <h1></h1>
 <div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group"><label class="control-label" for="tool_resistance">Resistance (R)</label></div>
+<div class="col-sm-12 col-xs-">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group"><input id="tool_resistance" class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_resistance_unit" style="height:100px; width:1000px; font-size:70px;" class="form-control"> <option value="1">Ohms (&Omega;)</option> <option selected="selected" value="1000">kiloOhms (k&Omega;)</option> <option value="1000000">MegaOhms (m&Omega;)</option> </select></div>
+<div class="form-group"><label for="tool_resistance_1" class="control-label">Resistance (R<sub>1</sub>)</label>
+<input type="number" id="tool_resistance_1" class="form-control" style="position: absolute;
+  right: 110px;">
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+<select class="form-control" id="tool_resistance_1_unit"style="padding: 5px ;  position: absolute;
+  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;width:100px;" >
+<option value="1">Ohms (O)</option>
+<option value="1000" selected="selected">k&Omega;</option>
+<option value="1000000">M&Omega;</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+  <h1></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_resistance_2" class="control-label">Resistance (R<sub>2</sub>)</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<input type="number" id="tool_resistance_2" class="form-control" placeholder="resistance" required />
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+<select class="form-control" id="tool_resistance_2_unit"style="height:100px; width:1000px; font-size:70px;">
+<option value="1">&Omega;</option>
+<option value="1000" selected="selected">k&Omega;</option>
+<option value="1000000">M&Omega;</option>
+</select>
+</div>
 </div>
 </div>
 </div>
 </form>
+
 <div class="row">
 <div class="col-sm-12">
+<div class='col-sm-4'>
+<div class="form-group">
+&nbsp;
+</div>
+</div>
 <div class="col-sm-4">
-<div class="form-group">&nbsp;</div>
+<div class="form-group">
+<input type="button" id="tool_submit" class="btn btn-theme" value="Calculate" disabled="disabled" />
+</div>
 </div>
 <div class="col-sm-4">
-<div class="form-group"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate"  disabled="disabled" /></div>
-</div>
-<div class="col-sm-4">
-<div class="form-group">&nbsp;</div>
+<div class="form-group">
+&nbsp;
 </div>
 </div>
 </div>
-<h3>Output </h3>
+</div>
+<h3>Outputs</h3>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group"><label class="control-label" for="tool_output_pulse_width">Output Pulse Width (T)</label></div>
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_frequency" class="control-label">Frequency (Hz)</label>
+</div>
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="tool_submit_container form-group has-warning"><input id="tool_output_pulse_width" class="form-control" type="number" /></div>
+<div class="tool_submit_container form-group has-warning">
+<input type="number" id="tool_frequency" class="form-control" placeholder="" required />
+</div>
 </div>
 <div class="col-sm-4 col-xs-4">
-<div class="form-group">Seconds (s)</div>
+<div class="form-group">
+<h1>
 </div>
 </div>
 </div>
 </div>
-<p>
-<script type="text/javascript">// <![CDATA[
-var _0x5f73=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x5F\x70\x75\x6C\x73\x65\x5F\x77\x69\x64\x74\x68","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74\x5F\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x61\x64\x64\x43\x6C\x61\x73\x73","\x6F\x6E"];!function(_0xaba3x1){_0x5f73[0];_0xaba3x1(_0x5f73[4])[_0x5f73[9]](function(){var _0xaba3x2=!1;_0xaba3x1(_0x5f73[4])[_0x5f73[3]](function(){_0x5f73[1]== _0xaba3x1(this)[_0x5f73[2]]()&& (_0xaba3x2=  !0)}),_0xaba3x2?_0xaba3x1(_0x5f73[7])[_0x5f73[6]](_0x5f73[5],_0x5f73[5]):_0xaba3x1(_0x5f73[7])[_0x5f73[8]](_0x5f73[5])}),_0xaba3x1(_0x5f73[7])[_0x5f73[22]](_0x5f73[10],function(_0xaba3x2){_0xaba3x2[_0x5f73[11]]();var _0xaba3x3=_0xaba3x1(_0x5f73[12]),_0xaba3x4=_0xaba3x1(_0x5f73[13]),_0xaba3x5=_0xaba3x1(_0x5f73[14]),_0xaba3x6=_0xaba3x1(_0x5f73[15]),_0xaba3x7=_0xaba3x1(_0x5f73[16]);if(_0xaba3x3[_0x5f73[2]]()&& _0xaba3x4[_0x5f73[2]]()&& _0xaba3x5[_0x5f73[2]]()&& _0xaba3x6[_0x5f73[2]]()){var _0xaba3x8=_0xaba3x3[_0x5f73[2]]()* _0xaba3x4[_0x5f73[2]](),_0xaba3x9=_0xaba3x5[_0x5f73[2]]()* _0xaba3x6[_0x5f73[2]](),_0xaba3xa=1.1* _0xaba3x9* _0xaba3x8;_0xaba3x7[_0x5f73[2]](_0xaba3xa),_0xaba3x1(_0x5f73[19])[_0x5f73[18]](_0x5f73[17]),_0xaba3x1(_0x5f73[19])[_0x5f73[21]](_0x5f73[20])}})}(jQuery)
-// ]]></script>
-</p>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_period" class="control-label">Period (T) (ms)</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning">
+<input type="number" id="tool_period" class="form-control" placeholder="" required />
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+<h1>
 </div>
 </div>
 </div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_duty_cycle" class="control-label">Duty Cycle (%)</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning">
+<input type="number" id="tool_duty_cycle" class="form-control" placeholder="" required />
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+<h1>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_mark_space_ratio" class="control-label">Mark Space Ratio</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning">
+<input type="number" id="tool_mark_space_ratio" class="form-control" placeholder="" required />
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+&nbsp;
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_time_high" class="control-label">Time High (T<sub>1</sub>)(ms)</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning">
+<input type="number" id="tool_time_high" class="form-control" placeholder="" required />
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+<h1>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="tool_time_low" class="control-label">Time Low (T<sub>0</sub>)(ms)</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="tool_submit_container form-group has-warning">
+<input type="number" id="tool_time_low" class="form-control" placeholder="" required />
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    ! function(t) {
+        "use strict";
+        t("#tool :input").keyup(function() {
+            var o = !1;
+            t("#tool :input").each(function() {
+                "" == t(this).val() && (o = !0)
+            }), o ? t("#tool_submit").attr("disabled", "disabled") : t("#tool_submit").removeAttr("disabled")
+        }), t("#tool_submit").on("click", function(o) {
+            o.preventDefault();
+            var a = t("#tool_capacitor"),
+                l = t("#tool_capacitor_unit"),
+                i = t("#tool_resistance_1"),
+                e = t("#tool_resistance_1_unit"),
+                _ = t("#tool_resistance_2"),
+                s = t("#tool_resistance_2_unit"),
+                n = t("#tool_frequency"),
+                v = t("#tool_period"),
+                c = t("#tool_duty_cycle"),
+                r = t("#tool_mark_space_ratio"),
+                u = t("#tool_time_high"),
+                d = t("#tool_time_low");
+            if (a.val() && l.val() && i.val() && e.val() && _.val() && s.val()) {
+                var m = a.val() * l.val(),
+		      b = i.val() * e.val(),
+		      p = _.val() * s.val(),
+		      f = (.694 * (b + p) * m) * 1000,
+	       	      h = (.694 * p * m) * 1000,
+                      y = f / 1000 + h / 1000,
+		      k = 1.44 /((b+2*p)*m) ,
+                      g = (.694 * (b + 2*p) * m) * 1000,
+                      w = f / (f + h) * 100,
+                      C = f / h;
+                      n.val(k.toPrecision(4)), v.val(g.toPrecision(4)), c.val(w.toPrecision(4)), r.val(C.toPrecision(4)), u.val(f.toPrecision(4)), d.val(h.toPrecision(4)), t(".tool_submit_container").removeClass("has-warning"), t(".tool_submit_container").addClass("has-success")
+            }		
+        })
+    }(jQuery);
+</script>
+</div>
+</div>
+
+</div>
+</body>
+</html>
