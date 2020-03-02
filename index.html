@@ -40,7 +40,7 @@ body {
 
 input[id=tool_capacitor]{
         
-        
+    width:200px;    
     font-size: 60px;
     padding: 5px  ;    
     border:2px solid #aaa;
@@ -57,13 +57,16 @@ input[id=tool_capacitor]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_resistance_1]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_resistance_1]:focus{
@@ -71,13 +74,16 @@ input[id=tool_resistance_1]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_resistance_2]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_resistance_2]:focus{
@@ -85,13 +91,16 @@ input[id=tool_resistance_2]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_frequency]{
-    width:200;    
+   width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_frequency]:focus{
@@ -99,13 +108,16 @@ input[id=tool_frequency]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_period]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_period]:focus{
@@ -113,13 +125,16 @@ input[id=tool_period]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_duty_cycle]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_duty_cycle]:focus{
@@ -127,13 +142,16 @@ input[id=tool_duty_cycle]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_mark_space_ratio]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_mark_space_ratio]:focus{
@@ -141,13 +159,16 @@ input[id=tool_mark_space_ratio]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_time_high]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_time_high]:focus{
@@ -155,13 +176,16 @@ input[id=tool_time_high]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_time_low]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_time_low]:focus{
@@ -169,13 +193,16 @@ input[id=tool_time_low]{
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 input[id=tool_capacitor_unit]{
-     width:200;    
+     width:200px;    
     font-size: 60px;
-    padding: 5px ;    
+    padding: 5px  ;    
     border:2px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
+    
+    box-sizing:border-box;
+    transition:.3s;
   }
   
   input[id=tool_capacitor_unit]:focus{
@@ -229,7 +256,7 @@ input[id="tool_capacitor_uni]{
 </div>
 </div>
 </div>
-  <h1></h1>
+
 <div class="row">
 <div class="col-sm-12 col-xs-">
 <div class='col-sm-4 col-xs-12'>
@@ -240,15 +267,10 @@ input[id="tool_capacitor_uni]{
 <div class="col-sm-4 col-xs-8">
 <div class="form-group"><label for="tool_resistance_1" class="control-label">Resistance (R<sub>1</sub>)</label>
 <input type="number" id="tool_resistance_1" class="form-control" style="position: absolute;
-  right: 110px;">
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-<div class="form-group">
-<select class="form-control" id="tool_resistance_1_unit"style="padding: 5px ;  position: absolute;
+  right: 110px;"><select class="form-control" id="tool_resistance_1_unit"style="padding: 5px ;  position: absolute;
   right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;width:100px;" >
-<option value="1">Ohms (O)</option>
-<option value="1000" selected="selected">k&Omega;</option>
+<option value="1"selected="selected">&Omega;</option>
+<option value="1000" >k&Omega;</option>
 <option value="1000000">M&Omega;</option>
 </select>
 </div>
@@ -260,19 +282,18 @@ input[id="tool_capacitor_uni]{
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
-<label for="tool_resistance_2" class="control-label">Resistance (R<sub>2</sub>)</label>
+
 </div>
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<input type="number" id="tool_resistance_2" class="form-control" placeholder="resistance" required />
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-<div class="form-group">
-<select class="form-control" id="tool_resistance_2_unit"style="height:100px; width:1000px; font-size:70px;">
-<option value="1">&Omega;</option>
-<option value="1000" selected="selected">k&Omega;</option>
+<div class="form-group"><label for="tool_resistance_2" class="control-label">Resistance (R<sub>2</sub>)</label>
+<input type="number" id="tool_resistance_2" class="form-control" style="position: absolute;
+  right: 110px;" />
+
+<select class="form-control" id="tool_resistance_2_unit"style="padding: 5px ;  position: absolute;
+  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;width:100px;">
+<option value="1" selected="selected">&Omega;</option>
+<option value="1000" >k&Omega;</option>
 <option value="1000000">M&Omega;</option>
 </select>
 </div>
