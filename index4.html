@@ -195,7 +195,7 @@ $('.SMDtexto').on('change input paste keyup', function ()
             $('.outSMD').text(reemplazoDecimalResistencia + ohm);
           } else if (posicionR == '3')
           {
-            $('.outSMD').html('<font color="red">Error de código</font>');
+            $('.outSMD').html('<font color="red">Error</font>');
           }
         } else
       {
@@ -206,7 +206,7 @@ $('.SMDtexto').on('change input paste keyup', function ()
       }
     } else if (cantidadDigitosResistencia > '4')
     {
-      $('.outSMD').html('<font color="red">Demasiados dígitos!!!</font>');
+      $('.outSMD').html('<font color="red">Error</font>');
     }
   }
 });
