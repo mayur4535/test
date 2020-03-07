@@ -193,74 +193,52 @@ body {
        <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>
 
           <h1 style="font-size:50;"></h1>
-          <label>R<sub>C <font face="Arial" size="5"> (Collector resistor)</font></label><input type="text" name="R3" class="intro" size="17" value="8" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+          <label>R<sub>C <font face="Arial" size="5"> (Collector resistor)</font></label><input type="text" class="intro" name="RC" size="17" value="2" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
        <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>   
 
+         <h1 style="font-size:50;"></h1>
+          <label><font>R<sub>E1</sub> </font><font face="Arial" size="5"> (Emitter
+              resistor, AC bypassed)</font></label><input type="text" name="RE1" size="17" class="intro" value="1" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
+          <h1 style="font-size:50;"></h1>
+          <label><font>R<sub>E2</sub>  </font><font face="Arial" size="5"> (Emitter
+              resistor, gain control)</font></label><input type="text" name="RE2" size="17" value="1000"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
+
+            <h1 style="font-size:50;"></h1>
+          <label><font>R<sub>VP</sub></font><font face="Arial" size="5"> (Supply Voltage)</font></label><input type="text" name="VP" size="17" value="24"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
+
+                       <h1 style="font-size:50;"></h1>
+          <label><font>Beta</sub></font><font face="Arial" size="5"> (DC Current Gain)</font></label><input type="text" name="Beta" size="17" value="100"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
+
+                         <h1 style="font-size:50;"></h1>
+          <label><font>V<sub>BE </sub></font><font face="Arial" size="5"> (Base to emitter
+              drop)</font></label><input type="text" name="VBE" size="17" value="0.6"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
+
+                                  <h1 style="font-size:50;"></h1>
+          <label><font>R<sub>s</sub></font><font face="Arial" size="5"> (Source
+              Resistance)</font></label><input type="text" name="RS" size="17" value="50"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
+                                   <h1 style="font-size:50;"></h1>
+          <label><font>R<sub>L</sub></font><font face="Arial" size="5"> (Load resistor)</font></label><input type="text" name="RL" size="17" value="50"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+                         
+                       <h1 style="font-size:50;"></h1>
+          <label><font>R<sub>L</sub></font><font face="Arial" size="5"> (Load resistor)</font></label><input type="text" name="RL" size="17" value="50"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
+
 </fieldset>
-
-
-            
-            
-              
-          
-                    
-          <h1></h1>
-            <td><font size="70" face="Arial"><font size="70">R<sub>C</sub> </font><h1><font face="Arial" size="5"> (Collector resistor)</font></font></td>
-            <td><font face="Arial"><input type="text" class="intro" name="RC" size="17" value="2" ></font>
-              <font size="70" face="Arial">(K ohms)</font></td>
-          </tr>
-                    
-          <h1></h1>
-            <td><font face="Arial"><font size="70">R<sub>E1</sub> </font><h1><font face="Arial" size="5"> (Emitter
-              resistor, AC bypassed)</font></font></td>
-            <td><font face="Arial"><input type="text" name="RE1" size="17" value="1"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial">(K ohms)</font></td>
-          </tr>
-          
-
-          
-          <h1></h1>
-            <td><font face="Arial"><font size="70">R<sub>E2</sub> </font><h1><font face="Arial" size="5"> (Emitter
-              resistor, gain control)</font></font></td>
-            <td><font face="Arial"><input type="text" name="RE2" size="17" value="1000"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial">(K ohms)</font></td>
-          </tr>
-
-
-          
-          <h1></h1>
-            <td><font face="Arial"><font size="70">R<sub>VP</sub></font><h1><font face="Arial" size="5">  (Supply Voltage)</font></td>
-            <td><font face="Arial"><input type="text" name="VP" size="17" value="24"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial">(V)</font></td>
-          </tr>
-
-          <h1></h1>
-            <td><font face="Arial"><font size="70">Beta</sub></font><h1><font face="Arial" size="5">  (DC Current Gain)</font></td>
-            <td><font face="Arial"><input type="text" name="Beta" size="17" value="100"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial"></font></td>
-          </tr>
-          <h1></h1>
-          
-            <td><font face="Arial"><font size="70">V<sub>BE </sub></sub></font><h1><font face="Arial" size="5">  (Base to emitter
-              drop)</font></td>
-            <td><font face="Arial"><input type="text" name="VBE" size="17" value="0.6"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial">(V)</font></td>
-          </tr>
-          <h1></h1>
-            
-            <td><font face="Arial"><font size="70">R<sub>s</sub></sub></font><h1><font face="Arial" size="5">  (Source
-              Resistance)</font></td>
-            <td><font face="Arial"><input type="text" name="RS" size="17" value="50"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial">(ohms)</font></td>
-          </tr>
-          <h1></h1>
      
-            <td><font face="Arial"><font size="70">R<sub>L</sub></sub></font><h1><font face="Arial" size="5">  (Load resistor)</font></td>
-            
-            <td><font face="Arial"><input type="text" name="RL" size="17" value="50"style= "font-size: 70px; padding: 50px ; border:2px solid #aaa; border-radius:4px; margin: 8px 0; outline:none; box-sizing:border-box; transition:.3s; focus= border-color:dodgerBlue;box-shadow:0 0 8px 0 dodgerBlue;" ></font>
-              <font size="70" face="Arial">(ohms)</font></td>
-          </tr>
-          <h1></h1>
+     
             
             <td><font face="Arial"><font size="70">f<sub>T</sub></sub></font><h1><font face="Arial" size="5">  (Current
               Gain BW Product)</font></td>
