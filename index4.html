@@ -1,3 +1,4 @@
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -52,55 +53,155 @@ input[type=checkbox]{
    
   }
 
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 10px solid #ccc;
+ 
+  background-color: #f1f1f1;
+  text-align:center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  
+  float:center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 15px;
+  transition: 0.3s;
+  font-size: 70px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #c4cc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  align:center;
+}
+.tab1 {
+border-radius: 25px;
+  background: #167A04;
+  padding: 20px; 
+  width: 100px;
+  height: 150px;
+  font-size:40px;
+  color:white;
+}
+
+
 </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<div class="clear"></div>
-</nav>
-</div>
-<div class="clear"></div>
-</header>
-<div id="intro">
-<div class="width">
-<div class="intro-content">
-
-</div>
-</div>
-</div>
-<div id="body" class="width">
-<section id="content" class="two-column with-right-sidebar">
-<article>
-
-
-
 <SCRIPT language="javascript" type="text/javascript">
-function calc()
+function calc1()
 {
-a=Number(document.calculator.number1.value);
-c=a-30;
-document.calculator.dBW.value=c;
+a=Number(document.calculator1.number1.value);
+c=  10* Math.log10(a*1e6);
+document.calculator1.PdBmicroWatt.value=c;
+}
+</SCRIPT>
+<SCRIPT language="javascript" type="text/javascript">
+function calc2()
+{
+a1=Number(document.calculator2.number2.value);
+c1=a1/10;
+c2= Math.pow(10,c1)* 1e-6;
+document.calculator2.PWatt.value=c2;
 }
 </SCRIPT>
 
+<div class="tab">
+  <button class=  "tablinks" onclick="openCity(event, 'London')"><font class="tab1">Watt To dB&micro;W</font></button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')"><font class="tab1">dB&micro;W To Watt</font></button>
+
+</div>
 
 
-<FORM name="calculator">
+
+
+
+
+<div id="London" class="tabcontent">
+ <FORM name="calculator1">
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Inputs</h3></div></legend>
+<h3>Inputs </h3></div></legend>
 
 
-<label for="f">dBm<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<label for="f">Watt<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
 
-</fieldset>
+</fieldset></div>
 
 <h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
+
+<h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc1();" style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;"></legend></fieldset>
+
+
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Outputs</h3></div></legend>
+<label for="f">dB&micro;W<font face="Arial" size="6"></font></label><input  name="PdBmicroWatt" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+
+</fieldset></div>
+
+
+
+
+</FORM>
+</div>
+
+
+
+
+
+
+
+<div id="Paris" class="tabcontent">
+ <FORM name="calculator2">
+
+
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Inputs </h3></div></legend>
+
+
+<label for="f">dB&micro;W<font face="Arial" size="6"></font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+
+
+</fieldset><div>
+
+<h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc2();" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -122,11 +223,21 @@ document.calculator.dBW.value=c;
 
 
 
-<label for="f">dBW<font face="Arial" size="6"></font></label><input  name="dBW" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<label for="f">Watt<font face="Arial" size="6"></font></label><input  name="PWatt" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
-</fieldset>
-</FORM>
-<br/>
+</fieldset></div>
+</FORM> 
+</div>
 
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
