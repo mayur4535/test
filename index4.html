@@ -1,5 +1,3 @@
-
-
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -53,8 +51,44 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-</style>
+
+</style>	
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
+    
+    <script src="/assets/js/css3-mediaqueries.js"></script>
+    <link href="/assets/css/ie8.css" rel="stylesheet">
+    <![endif]-->
+<script type="text/javascript">// <![CDATA[
+      
+  function searchFor(obj, query) {
+    for(var key in obj) {
+      if(obj.hasOwnProperty(key) && (typeof obj[key] === "string")) {
+        if(obj[key] === query) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+// ]]></script>
 <script type="text/javascript" src="../assets/library/jquery.popupoverlay.js"></script>
 <script type="text/javascript">// <![CDATA[
         $(document).ready(function() {
@@ -76,9 +110,9 @@ input[type=checkbox]{
                             {'author': 'Gordon Lindsay Glegg', 'quote': 'The scientist discovers a new type of material or energy and the engineer discovers a new use for it.'},
                             {'author': 'Henry Petroski', 'quote': 'Engineering is achieving function while avoiding failure.'},
                             {'author': 'Henry Petroski', 'quote': 'Successful engineering is all about understanding how things break or fail.'},
-                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems… there’s no law of physics preventing them.'},
+                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems� there�s no law of physics preventing them.'},
                             {'author': 'Thomas Edison', 'quote': 'I have not failed, but found 1000 ways to not make a light bulb.'},
-                            {'author': 'Robert Heinlein', 'quote': 'One man’s “magic” is another man’s engineering. “Supernatural” is a null word.'},
+                            {'author': 'Robert Heinlein', 'quote': 'One man�s �magic� is another man�s engineering. �Supernatural� is a null word.'},
                             {'author': 'Unknown', 'quote': 'Everyone wants the project to be good, fast, and cheap... pick two.'},
                         ];
                         var quote = quotes[Math.floor(Math.random()*quotes.length)];
@@ -101,13 +135,104 @@ input[type=checkbox]{
 // ]]></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script type="text/javascript">// <![CDATA[
+        function showSocialCode() {
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+            ga('create', 'UA-1454132-1', 'auto');
+            ga('require', 'GTM-MMWSMVL');
+            ga('require', 'displayfeatures');
+            ga('set',{'dimension1':'analog,automotive,onsemi-powermgmt,tools,analog'});
+            ga('set',{'contentGroup1':'analog,automotive,onsemi-powermgmt,tools,analog'});
+            
+                        
+            ga('send', 'pageview');
+
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1808435332737507'); // Insert your pixel ID here.
+            fbq('track', 'PageView');
+            fbq('track', 'ViewContent', {
+                content_ids: ['analog','automotive','onsemi-powermgmt','tools','analog'],
+            content_type: 'category'});
+
+            _linkedin_data_partner_id = "353081";
+            (function(){var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript";b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);})();
+        }
+        if(jstz.determine().name().indexOf("Europe") === -1) {
+            showSocialCode(); // NOT EU
+        } else {
+            showSocialCode();
+            window.addEventListener("load", function () {
+                window.cookieconsent.initialise({
+                    "palette": {
+                        "popup": {
+                            "background": "#252e39"
+                        },
+                        "button": {
+                            "background": "#14a7d0"
+                        }
+                    },
+                    "type": "opt-out",
+                    "content": {
+                        "message": "This website uses tracking cookies to ensure you get the best experience on our website.",
+                        "href": "https://www.allaboutcircuits.com/privacy-policy/",
+                        "dismiss": "OK, GOT IT"
+                    },
+                    onInitialise: function (status) {
+                        var type = this.options.type;
+                        var didConsent = this.hasConsented();
+                        if (type == 'opt-out' && didConsent) {
+                            console.log("eu"); //showSocialCode();
+                        }
+                    },
+
+                    onStatusChange: function (status, chosenBefore) {
+                        var type = this.options.type;
+                        var didConsent = this.hasConsented();
+                        if (type == 'opt-out' && didConsent) {
+                            console.log("eu"); //showSocialCode();
+                        }
+                    },
+
+                    onRevokeChoice: function () {
+                        var type = this.options.type;
+                        if (type == 'opt-out') {
+                            console.log("eu"); //showSocialCode();
+                        }
+                    },
+
+                })
+            });
+        }
+    
+// ]]></script>
+
+
+
+
+
+
+<div class="container navContainer">
+<div class="row">
+<div class="page-header">
+
+</div>
+
+<div class="sp-content-block toolpage">
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
-<div class="sp-content-block toolpage">
-
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Input</h3></div></legend>
+<h3>Inputs</h3></div></legend>
 
 
 <div class="container-fluid"><form id="tool-form">
@@ -115,32 +240,12 @@ input[type=checkbox]{
 
 
 
-
-
 <div class="row">
 
 
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="vout">V<sub>out</sub><font face="Arial" size="6"></font></label><input id="vout" name="vout" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
-</div>
-
-<h1 style="font-size:50;"></h1>
-
-<div class="row">
-
-
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="gain">Gain<font face="Arial" size="6"></font></label><input id="gain" name="gain" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /></div>
-</div>
-
-<h1 style="font-size:50;"></h1>
-
-<div class="row">
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="r1">R<sub>1</sub><font face="Arial" size="6"></font></label><input id="r1" name="r1" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">&Omega;</label></div>
+<div class="form-group text-center"><label for="r1">R<sub>1</sub><font face="Arial" size="6"></font></label><input id="r1" name="r1" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">k&Omega;</label></div>
 </div>
 
 
@@ -152,31 +257,7 @@ input[type=checkbox]{
 
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="v1">V<sub>1</sub><font face="Arial" size="6">(Input Lead)</font></label><input id="v1" name="v1" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
-</div>
-
-
-
-<h1 style="font-size:50;"></h1>
-<div class="row">
-
-
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="v2">V<sub>2</sub><font face="Arial" size="5"> (non-zero only if offset is required)</font></label><input id="v2" name="v2" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
-</div>
-
-
-
-
-
-<h1 style="font-size:50;"></h1>
-<div class="row">
-
-
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="vp">V<sub>p</sub><font face="Arial" size="5"> </font></label><input id="vp" name="vp" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
+<div class="form-group text-center"><label for="r2">R<sub>2</sub><font face="Arial" size="6"></font></label><input id="r2" name="r2" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">k&Omega;</label></div>
 </div>
 
 
@@ -188,22 +269,73 @@ input[type=checkbox]{
 
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group"><label for="vn">V<sub>n</sub><font face="Arial" size="5"> </font></label><input id="vn" name="vn" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
+<div class="form-group text-center"><label for="r3">R<sub>3</sub><font face="Arial" size="6"></font></label><input id="r3" name="r3" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">k&Omega;</label></div>
+</div>
+
+
+
+
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center"><label for="r3">R<sub>4</sub><font face="Arial" size="6"></font></label><input id="r4" name="r4" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">k&Omega;</label></div>
+</div>
+
+
+
+
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center"><label for="v1">V<sub>1</sub><font face="Arial" size="6"></font></label><input id="v1" name="v1" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
+</div>
+
+
+
+
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center"><label for="v2">V<sub>2</sub><font face="Arial" size="6"></font></label><input id="v2" name="v2" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
+</div>
+
+
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center"><label for="vp">V<sub>p</sub><font face="Arial" size="6"></font></label><input id="vp" name="vp" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
+</div>
+
+
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center"><label for="vn">V<sub>n</sub><font face="Arial" size="6"></font></label><input id="vn" name="vn" class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">V</label></div>
 </div>
 
 </form></fieldset>
 
-<h1 style="font-size:50;"></h1>
 
 <div class="row">
-
-<div class="form-group"></div>
+<div class="col-sm-12">
+<div class="col-sm-4">
+<div class="form-group">&nbsp;</div>
 </div>
 <div class="col-sm-4">
-<div class="form-group">
-
-
-<fieldset><legend><div colspan="2" align="center" height="19"><input id="calculate" class="btn btn-theme" type="button" value="Calculate" disabled="disabled" style="background-color: #167A04 ;
+<div class="form-group"><fieldset><legend><div colspan="2" align="center" height="19"><input id="calculate" class="btn btn-theme" type="button" value="Calculate" disabled="disabled" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -215,12 +347,21 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;"></div></div>
-</div></legend></fieldset> 
-</div>
+</div></legend></fieldset> </div>
 </div>
 <div class="col-sm-4">
-<div class="form-group">&nbsp;</div>
+
 </div>
+</div>
+</div>
+
+
+
+
+
+<div id="answer-fields">
+<div class="row">
+<div class="col-sm-12 col-xs-12">
 
 
 
@@ -230,45 +371,51 @@ input[type=checkbox]{
 
 
 <h3>Outputs</h3></div></legend>
-<div id="answer-fields">
-<div class="row">
+
+
+<div class="col-sm-4 col-xs-12">
 
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning"><label for="r2">R<sub>2</sub><font face="Arial" size="5"> </font></label><input id="r2"  class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="text" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">&Omega;</label></div>
+<div class="form-group has-warning"><label for="a1">V<sub>out</sub></label><input id="a1"  name="a1"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label></div>
 </div>
 
 
 
-
-<div class="row">
-
-
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning"><label for="r3">R<sub>3</sub><font face="Arial" size="5"> </font></label><input id="r3"  class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="text" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">&Omega;</label></div>
-</div>
-
-
-
-
-<div class="row">
-
+<h1 style="font-size:50;"></h1>
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
 
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning"><label for="r4">R<sub>4</sub><font face="Arial" size="5"> </font></label><input id="r4"  class="intro"  style="position: absolute;   width:200; right: 150px;"class="form-control" type="text" /><label style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:120px;">&Omega;</label></div>
-</div>
-<div class="col-sm-4 col-xs-4">
-<div class="form-group"></div>
+<div class="form-group has-warning"><label for="a2">Gain<font face="Arial" size="6"> (Inverting)(V<sub>out</sub> / V<sub>1</sub>)</sub></font></label><input id="a2"  name="a2"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       </div>
 </div>
 </div>
+
+
+<h1 style="font-size:50;"></h1>
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+
 </div>
-</borderimg>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning"><label for="a3">Gain<font face="Arial" size="6"> (non-inverting)(V<sub>out</sub> / V<sub>2</sub>)</sub></font></label><input id="a3"  name="a3"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>
+
+
 <script type="text/javascript">// <![CDATA[
-var _0x1a43=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x76\x6F\x75\x74","\x23\x67\x61\x69\x6E","\x23\x72\x31","\x23\x76\x31","\x23\x76\x32","\x23\x76\x70","\x23\x76\x6E","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x72\x32","\x23\x72\x33","\x23\x72\x34","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x6F\x6E"];!function(_0xfef8x1){_0x1a43[0];function _0xfef8x2(){var _0xfef8x2,_0xfef8x3,_0xfef8x4,_0xfef8x5,_0xfef8x6,_0xfef8x7=Number(_0xfef8x1(_0x1a43[2])[_0x1a43[1]]()),_0xfef8x8=Number(_0xfef8x1(_0x1a43[3])[_0x1a43[1]]()),_0xfef8x9=Number(_0xfef8x1(_0x1a43[4])[_0x1a43[1]]()),_0xfef8xa=Number(_0xfef8x1(_0x1a43[5])[_0x1a43[1]]()),_0xfef8xb=Number(_0xfef8x1(_0x1a43[6])[_0x1a43[1]]()),_0xfef8xc=Number(_0xfef8x1(_0x1a43[7])[_0x1a43[1]]()),_0xfef8xd=Number(_0xfef8x1(_0x1a43[8])[_0x1a43[1]]()),_0xfef8xe=3;0> _0xfef8x8&& (_0xfef8x8=  -_0xfef8x8),_0xfef8xd== _0xfef8xc&& (_0xfef8xd=  -_0xfef8xc),_0xfef8xd> _0xfef8xc&& (temp= _0xfef8xc,_0xfef8xc= _0xfef8xd,_0xfef8xd= temp),_0xfef8xd> 0&& (_0xfef8xd= 0),_0xfef8x3= _0xfef8x9,_0xfef8x5= _0xfef8x8* _0xfef8xa,_0xfef8x6= _0xfef8x7- _0xfef8x5,_0xfef8x4= _0xfef8x8* _0xfef8x3* _0xfef8xb/ _0xfef8x6,_0xfef8x2= _0xfef8x8* (_0xfef8x9+ _0xfef8x4)/ _0xfef8x4* _0xfef8x9- _0xfef8x9,_0xfef8x1(_0x1a43[10])[_0x1a43[1]](_0xfef8x2[_0x1a43[9]](_0xfef8xe)),_0xfef8x1(_0x1a43[11])[_0x1a43[1]](_0xfef8x3[_0x1a43[9]](_0xfef8xe)),_0xfef8x1(_0x1a43[12])[_0x1a43[1]](_0xfef8x4[_0x1a43[9]](_0xfef8xe)),_0xfef8x1(_0x1a43[7])[_0x1a43[1]](_0xfef8xc[_0x1a43[9]](_0xfef8xe)),_0xfef8x1(_0x1a43[8])[_0x1a43[1]](_0xfef8xd[_0x1a43[9]](_0xfef8xe)),_0xfef8x1(_0x1a43[3])[_0x1a43[1]](_0xfef8x8[_0x1a43[9]](_0xfef8xe))}var _0xfef8x3,_0xfef8x4=_0xfef8x1(_0x1a43[13]);_0xfef8x1(_0x1a43[24])[_0x1a43[25]](function(){_0xfef8x4[_0x1a43[15]](_0x1a43[14],!1),_0xfef8x1(this)[_0x1a43[19]](_0x1a43[18])[_0x1a43[17]](_0x1a43[16]),_0xfef8x1[_0x1a43[20]](_0xfef8x1(this)[_0x1a43[1]]())=== !1?_0xfef8x1(this)[_0x1a43[19]](_0x1a43[18])[_0x1a43[21]](_0x1a43[16]):_0xfef8x1(this)[_0x1a43[19]](_0x1a43[18])[_0x1a43[17]](_0x1a43[16]),_0xfef8x3= 0,_0xfef8x1(_0x1a43[24])[_0x1a43[23]](function(){_0x1a43[22]!= _0xfef8x1(this)[_0x1a43[1]]()&& _0xfef8x1[_0x1a43[20]](_0xfef8x1(this)[_0x1a43[1]]())!== !1|| _0xfef8x3++}),_0xfef8x3> 0&& _0xfef8x4[_0x1a43[15]](_0x1a43[14],!0)}),_0xfef8x4[_0x1a43[31]](_0x1a43[26],function(_0xfef8x3){_0xfef8x3[_0x1a43[27]]();_0xfef8x2(),_0xfef8x1(_0x1a43[30])[_0x1a43[23]](function(){_0xfef8x1(this)[_0x1a43[19]](_0x1a43[18])[_0x1a43[17]](_0x1a43[28]),_0xfef8x1(this)[_0x1a43[19]](_0x1a43[18])[_0x1a43[21]](_0x1a43[29])})})}(jQuery)
-  
+var _0x20ef=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x72\x31","\x23\x72\x32","\x23\x72\x33","\x23\x72\x34","\x23\x76\x31","\x23\x76\x32","\x23\x76\x70","\x23\x76\x6E","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x31","\x23\x61\x32","\x23\x61\x33","\x6F\x6E","\x63\x68\x61\x6E\x67\x65","\x23\x66\x72\x2D\x75\x6E\x69\x74","\x23\x69\x6E\x70\x2D\x75\x6E\x69\x74"];!function(_0xe984x1){_0x20ef[0];function _0xe984x2(){_0xe984x1(_0x20ef[10])[_0x20ef[9]](function(){_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[2]](_0x20ef[1]),_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[6]](_0x20ef[5]),_0xe984x1(this)[_0x20ef[8]](_0x20ef[7])})}function _0xe984x3(){_0xe984x1(_0x20ef[10])[_0x20ef[9]](function(){_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[2]](_0x20ef[5]),_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[6]](_0x20ef[1])})}var _0xe984x4,_0xe984x5=_0xe984x1(_0x20ef[11]);_0xe984x1(_0x20ef[16])[_0x20ef[17]](function(){_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[2]](_0x20ef[12]),_0xe984x2(),_0xe984x5[_0x20ef[14]](_0x20ef[13],!1),_0xe984x1[_0x20ef[15]](_0xe984x1(this)[_0x20ef[8]]())=== !1?(_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[6]](_0x20ef[12]),_0xe984x5[_0x20ef[14]](_0x20ef[13],!1)):_0xe984x1(this)[_0x20ef[4]](_0x20ef[3])[_0x20ef[2]](_0x20ef[12]),_0xe984x4= 0,_0xe984x1(_0x20ef[16])[_0x20ef[9]](function(){_0x20ef[7]!= _0xe984x1(this)[_0x20ef[8]]()&& _0xe984x1[_0x20ef[15]](_0xe984x1(this)[_0x20ef[8]]())!== !1|| _0xe984x4++}),_0xe984x4> 0&& _0xe984x5[_0x20ef[14]](_0x20ef[13],!0)}),_0xe984x5[_0x20ef[32]](_0x20ef[18],function(_0xe984x2){_0xe984x2[_0x20ef[19]]();var _0xe984x4,_0xe984x5,_0xe984x6,_0xe984x7,_0xe984x8,_0xe984x9,_0xe984xa,_0xe984xb,_0xe984xc,_0xe984xd,_0xe984xe,_0xe984xf;_0xe984x7= parseFloat(_0xe984x1(_0x20ef[20])[_0x20ef[8]]()),_0xe984x8= parseFloat(_0xe984x1(_0x20ef[21])[_0x20ef[8]]()),_0xe984x9= parseFloat(_0xe984x1(_0x20ef[22])[_0x20ef[8]]()),_0xe984xa= parseFloat(_0xe984x1(_0x20ef[23])[_0x20ef[8]]()),_0xe984xb= parseFloat(_0xe984x1(_0x20ef[24])[_0x20ef[8]]()),_0xe984xc= parseFloat(_0xe984x1(_0x20ef[25])[_0x20ef[8]]()),_0xe984xd= parseFloat(_0xe984x1(_0x20ef[26])[_0x20ef[8]]()),_0xe984xe= parseFloat(_0xe984x1(_0x20ef[27])[_0x20ef[8]]()),_0xe984xe== _0xe984xd&& (_0xe984xe=  -_0xe984xd),_0xe984xe> _0xe984xd&& (_0xe984xf= _0xe984xd,_0xe984xd= _0xe984xe,_0xe984xe= _0xe984xf),_0xe984xe> 0&& (_0xe984xe= 0),_0xe984xf= 1+ _0xe984x8/ _0xe984x7,_0xe984x4= _0xe984xf/ (1+ _0xe984x9/ _0xe984xa)* _0xe984xc- _0xe984x8/ _0xe984x7* _0xe984xb,_0xe984x5= -_0xe984x8/ _0xe984x7,_0xe984x6= (_0xe984x7+ _0xe984x8)/ _0xe984x7* (_0xe984xa/ (_0xe984x9+ _0xe984xa)),_0xe984x4> _0xe984xd&& (_0xe984x4= _0xe984xd),_0xe984xe> _0xe984x4&& (_0xe984x4= _0xe984xe),_0xe984x1(_0x20ef[26])[_0x20ef[8]](_0xe984xd[_0x20ef[28]](4)),_0xe984x1(_0x20ef[27])[_0x20ef[8]](_0xe984xe[_0x20ef[28]](4)),_0xe984x1(_0x20ef[29])[_0x20ef[8]](parseFloat(_0xe984x4)[_0x20ef[28]](4)),_0xe984x1(_0x20ef[30])[_0x20ef[8]](parseFloat(_0xe984x5)[_0x20ef[28]](4)),_0xe984x1(_0x20ef[31])[_0x20ef[8]](parseFloat(_0xe984x6)[_0x20ef[28]](4)),_0xe984x3()}),_0xe984x1(_0x20ef[34])[_0x20ef[32]](_0x20ef[33],function(){_0xe984x2()}),_0xe984x1(_0x20ef[35])[_0x20ef[32]](_0x20ef[33],function(){_0xe984x2()})}(jQuery)
+    
 // ]]></script>
 </p>
+</div>
+</div>
 </div>
