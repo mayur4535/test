@@ -49,248 +49,197 @@ body {
 input[type=checkbox]{
     width: 120px; 
     height: 120px; 
-</style>
-<script type="text/javascript" language="JavaScript">// <![CDATA[
-function Compute(form) {
-	with(Math) {
-		var KILO= 1000;
-		var MEGA= KILO*KILO;
-		var PICO= 1/(MEGA*MEGA);
-		
-		var PI= 3.1415926535897932384626433832795;
+   
+  }
 
-		var R1= Number(form.R1.value)*KILO;
-		var R2= Number(form.R2.value)*KILO;
-		var RC= Number(form.RC.value)*KILO;
-		var RE= Number(form.RE.value)*KILO;
-		
-		var Beta= Number(form.Beta.value);
-		var VBE= Number(form.VBE.value);
-		var VP= Number(form.VP.value);
-		var Ft= Number(form.Ft.value)*MEGA;
-		var Cbe= Number(form.Cbe.value)*PICO;				
-		var Ccb= Number(form.Ccb.value)*PICO;		
-		var RS= Number(form.RS.value);		
-		var RL= Number(form.RL.value);			
-		
-		var Precision= 5;
-		var Rin;
-		var fp1;
-		var fp2;
-		
-		VB= VP*R2/(R1+R2);
-		VE= VB-VBE;
-		IE= VE/RE;
-		Alpha= Beta/(1+Beta);
-		IC= Alpha*IE;
-		IB= IC/Beta;
-		VC= VP - IC*RC;		
-		
-		gm = IC/.025
-		Rpi= Beta/gm;
-		re= Alpha/gm;
+</style>	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
+    
+    <script src="/assets/js/css3-mediaqueries.js"></script>
+    <link href="/assets/css/ie8.css" rel="stylesheet">
+    <![endif]-->
 
-		
-		Rb= (Beta+1)*(re+RE);
-		R12= R1*R2/(R1+R2);
-		Rin= Rb*R12/(Rb+R12);
-		
-		RCL= RC*RL/(RC+RL);		
-		
-		A= (Alpha*Rpi*RCL)/((RS+2*Rpi)*re);
-		
-		// Cpi is Cbe
-		// Cu   is Ccb
-		
-		if( Ccb && Ft) { 		// we can find Cbe from Ft an Ccb
-			Cbe= gm/(Ft*2*PI)-Ccb;
-		}		
-		
-		Rspi= RS*2*Rpi/(RS+2*Rpi);  
-		
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script type="text/javascript">// <![CDATA[
+        function showSocialCode() {
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		
-		fp1= 1/(2*PI*(Rspi)*(Cbe/2+Ccb));
-		fp2= 1/(2*PI*RCL*Ccb);
+            ga('create', 'UA-1454132-1', 'auto');
+            ga('require', 'GTM-MMWSMVL');
+            ga('require', 'displayfeatures');
+            ga('set',{'dimension1':'analog,automotive,passives,tools,analog,power'});
+            ga('set',{'contentGroup1':'analog,automotive,passives,tools,analog,power'});
+            
+                        
+            ga('send', 'pageview');
 
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '1808435332737507'); // Insert your pixel ID here.
+            fbq('track', 'PageView');
+            fbq('track', 'ViewContent', {
+                content_ids: ['analog','automotive','passives','tools','analog','power'],
+            content_type: 'category'});
 
-		
-		Rin/= KILO;
-		fp1/= MEGA;
-		fp2/= MEGA;		
-		Cbe/=PICO;
+            _linkedin_data_partner_id = "353081";
+            (function(){var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript";b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);})();
+        }
+        if(jstz.determine().name().indexOf("Europe") === -1) {
+            showSocialCode(); // NOT EU
+        } else {
+            showSocialCode();
+            window.addEventListener("load", function () {
+                window.cookieconsent.initialise({
+                    "palette": {
+                        "popup": {
+                            "background": "#252e39"
+                        },
+                        "button": {
+                            "background": "#14a7d0"
+                        }
+                    },
+                    "type": "opt-out",
+                    "content": {
+                        "message": "This website uses tracking cookies to ensure you get the best experience on our website.",
+                        "href": "https://www.allaboutcircuits.com/privacy-policy/",
+                        "dismiss": "OK, GOT IT"
+                    },
+                    onInitialise: function (status) {
+                        var type = this.options.type;
+                        var didConsent = this.hasConsented();
+                        if (type == 'opt-out' && didConsent) {
+                            console.log("eu"); //showSocialCode();
+                        }
+                    },
 
-		form.VB.value= VB.toPrecision(Precision);
-		form.VE.value= VE.toPrecision(Precision);
-		form.VC.value= VC.toPrecision(Precision);
-		form.IB.value=  IB.toPrecision(Precision)*KILO;
-		form.IC.value=  IC.toPrecision(Precision)*KILO;
-		form.IE.value=  IE.toPrecision(Precision)*KILO;
-		form.gm.value= gm.toPrecision(Precision);
-		form.A.value= A.toPrecision(Precision);	
-		form.Rpi.value= Rpi.toPrecision(Precision);
-		form.re.value= re.toPrecision(Precision);		
-		form.Rin.value= Rin.toPrecision(Precision);
-		form.fp1.value= fp1.toPrecision(Precision);		
-		form.fp2.value= fp2.toPrecision(Precision);			
-		form.Cbe.value= Cbe.toPrecision(Precision);	
+                    onStatusChange: function (status, chosenBefore) {
+                        var type = this.options.type;
+                        var didConsent = this.hasConsented();
+                        if (type == 'opt-out' && didConsent) {
+                            console.log("eu"); //showSocialCode();
+                        }
+                    },
 
-	
-		
-	}
-}
+                    onRevokeChoice: function () {
+                        var type = this.options.type;
+                        if (type == 'opt-out') {
+                            console.log("eu"); //showSocialCode();
+                        }
+                    },
+
+                })
+            });
+        }
+    
 // ]]></script>
-
-
-<form action="" method="POST" name="ParamForm">
-
-							  
-
-
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Inputs</h3></div></legend>
 
-          <label><font>R1</sub> </font><font face="Arial" size="5"> </font></label><INPUT type="text"  name="R1" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label> 
 
 
+<div id="top-box" class="hidden-xs">
+<div class="top-box-wrapper">
+<div class="container navContainer">
+<div class="row">
 
-        <h1 style="font-size:50;"></h1>
-          <label><font>R2</sub> </font><font face="Arial" size="5"> </font></label><INPUT type="text"  name="R2" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label> 
+<form id="tool">
 
+<div class="row">
 
-        <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>C</sub> </font><font face="Arial" size="5">(Collector resistor) </font></label><INPUT type="text"  name="RC" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label> 
+<div class="form-group">
+<label><font>Vout  </font><font face="Arial" size="5"> </font></label><input id="vout"  name="vout"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label></div>
+</div>
 
-                <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>E</sub> </font><font face="Arial" size="5">(Emitter resistor) </font></label><INPUT type="text"  name="RE" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>
+<div class="row">
 
-           <h1 style="font-size:50;"></h1>
-          <label><font>VP</sub> </font><font face="Arial" size="5">(Supply Voltage) </font></label><INPUT type="text"  name="VP" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
+<div class="form-group"><h1 style="font-size:50;"></h1><label for="gain"><font>Gain </font><font face="Arial" size="5"></font></label><input id="gain"  name="gain"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" /></div>
+</div>
 
- <h1 style="font-size:50;"></h1>
-          <label><font>Beta</sub> </font><font face="Arial" size="5">(DC Current Gain) </font></label><INPUT type="text"  name="Beta" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-      
+<div class="row">
 
-       <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>BE </sub> </font><font face="Arial" size="5">(Base to emitter drop) </font></label><INPUT type="text"  name="VBE" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
+<div class="form-group"><h1 style="font-size:50;"></h1><label for="r1"><font>R1 </font><font face="Arial" size="5"></font></label><input id="r1"  name="r1"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label></div>
+</div>
 
+<div class="row">
 
-           <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>s  </sub> </font><font face="Arial" size="5">(Source Resistance) </font></label><INPUT type="text"  name="RS" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>
+<div class="form-group"><h1 style="font-size:50;"></h1><label for="v1">V1 <font face="Arial" size="5"> (Input lead)</font></label><input id="v1"  name="v1"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label></div>
+</div>
 
-        <h1 style="font-size:50;"></h1>
-          <label><font>R<SUB>L  </sub> </font><font face="Arial" size="5">(Load resistor) </font></label><INPUT type="text"  name="RL" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>
+<div class="row">
 
-       
-        <h1 style="font-size:50;"></h1>
-          <label><font>F<sub>T  </sub> </font><font face="Arial" size="5">(Current Gain BW Product) </font></label><INPUT type="text"  name="Ft" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHz</label>
+<div class="form-group"><h1 style="font-size:50;"></h1><label for="v2">V2 <font face="Arial" size="5"> (non-zero only if offset is requred)</font></label><input id="v2"  name="v2"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label></div>
 
-          <h1 style="font-size:50;"></h1>
-          <label><font>C<sub>CB  </sub> </font><font face="Arial" size="5">(Cu Collector-Base Cap.) </font></label><INPUT type="text"  name="Ccb" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">pF</label>
+</div>
 
 
-        <h1 style="font-size:50;"></h1>
-          <label><font>C<sub>BE  </sub> </font><font face="Arial" size="5">Optional (C&pi; Base-Emitter Cap.) </font></label><INPUT type="text"  name="Cbe" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">pF</label>
+<div class="row">
 
-       </fieldset>
-<br>
- <fieldset><legend><div colspan="2" align="center" height="19"><input type="Button" name="B1" onClick="Compute(document.ParamForm)" value="Calculate" style="background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
- 
-  padding: 10px 200px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;"></div></div>
-</div></legend></fieldset>
+<div class="form-group"><h1 style="font-size:50;"></h1><label for="vp">Vp</label><input id="vp"  name="vp"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label></div>
+</div>
+
+<div class="row">
+
+<div class="form-group"><h1 style="font-size:50;"></h1><label for="vn">Vn</label><input id="vn"  name="vn"  class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
+       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label></div>
+</div>
+</form></fieldset></borderimg>
 
 
 
 
 
+<div class="row">
 
-<fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Outputs</h3></div></legend>
-
-
-          <label><font>V<sub>c </sub> </font><font face="Arial" size="5">(Collector Voltage) </font></label><INPUT type="text"  name="VC" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-   
+<div class="col-sm-4"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate" disabled="disabled" /></div>
+<div class="col-sm-4">&nbsp;</div>
+</div>
 
 
-    <h1 style="font-size:50;"></h1>
-    
-          <label><font>V<sub>E </sub> </font><font face="Arial" size="5">(Emitter Voltage)  </font></label><INPUT type="text"  name="VE" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-														 
-     <h1 style="font-size:50;"></h1>
-    
-          <label><font>V<sub>B  </sub> </font><font face="Arial" size="5">(Base Voltage)  </font></label><INPUT type="text"  name="VB" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
+<h3 class="inputHL" style="margin-top: 10px;"align="center">Outputs</h3>
+<div class="row clearfix">
 
-          <h1 style="font-size:50;"></h1>
-    
-          <label><font>I<sub>e  </sub> </font><font face="Arial" size="5">(Emitter Voltage)  </font></label><INPUT type="text"  name="IE" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">mA</label>
+<div class="form-group"><label for="tool_output1">R2 (k&Omega;)</label><input id="tool_output1" class="form-control" type="text" /></div>
+</div>
 
-        <h1 style="font-size:50;"></h1>
-    
-          <label><font>I<sub>c  </sub> </font><font face="Arial" size="5">(Collector Voltage) </font></label><INPUT type="text"  name="IC" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">mA</label>
+<div class="row clearfix">
 
-                <h1 style="font-size:50;"></h1>
-    
-          <label><font>I<sub>B </sub> </font><font face="Arial" size="5">(Base Voltage) </font></label><INPUT type="text"  name="IB" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">mA</label>
-  
-             <h1 style="font-size:50;"></h1>
-    
-          <label><font>g<sub>m </sub> </font><font face="Arial" size="5">(Transconductance) </font></label><INPUT type="text"  name="gm" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       
-          <h1 style="font-size:50;"></h1>
-    
-          <label><font>R </sub> </font><font face="Arial" size="5">(Input Resistance of BJT at low freq) </font></label><INPUT type="text"  name="Rpi" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>
+<div class="form-group"><label for="tool_output2">R3 (k&Omega;)</label><input id="tool_output2" class="form-control" type="text" /></div>
+</div>
 
-         <h1 style="font-size:50;"></h1>
-    
-          <label><font>R<sub>e</font><font face="Arial" size="5"></font></label><INPUT type="text"  name="re" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>
+<div class="row clearfix">
 
-          <h1 style="font-size:50;"></h1>
-    
-          <label><font>R<sub>IN</font><font face="Arial" size="5"> (Input Resistance of Amp)</font></label><INPUT type="text"  name="Rin" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>
+<div class="form-group"><label for="tool_output3">R4 (k&Omega;)</label><input id="tool_output3" class="form-control" type="text" /></div>
+</div>
 
-          <h1 style="font-size:50;"></h1>
-    <hr>
-          <label><font>A</font><font face="Arial" size="5"> (Amplifier Voltage Gain)</font></label><INPUT type="text"  name="A" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       
- <h1 style="font-size:50;"></h1>
-    
-          <label><font>f<sub>p1</font><font face="Arial" size="5"> </font></label><INPUT type="text"  name="fp1" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHz</label>
-
-  <h1 style="font-size:50;"></h1>
-    
-          <label><font>f<sub>p2</font><font face="Arial" size="5"> </font></label><INPUT type="text"  name="fp2" size="17" class="intro"  style="position: absolute;   width:200; right: 130px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 10px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHz</label>
-
-
-
-</form></fieldset>
+<p>
+<script type="text/javascript">// <![CDATA[
+var _0xde72=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x76\x6F\x75\x74","\x23\x67\x61\x69\x6E","\x23\x72\x31","\x23\x76\x31","\x23\x76\x32","\x23\x76\x70","\x23\x76\x6E","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x32","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x33","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x6F\x6E"];!function(_0x3d66x1){_0xde72[0];var _0x3d66x2={calculate:function(){var _0x3d66x2,_0x3d66x3,_0x3d66x4,_0x3d66x5,_0x3d66x6,_0x3d66x7=Number(_0x3d66x1(_0xde72[2])[_0xde72[1]]()),_0x3d66x8=Number(_0x3d66x1(_0xde72[3])[_0xde72[1]]()),_0x3d66x9=Number(_0x3d66x1(_0xde72[4])[_0xde72[1]]()),_0x3d66xa=Number(_0x3d66x1(_0xde72[5])[_0xde72[1]]()),_0x3d66xb=Number(_0x3d66x1(_0xde72[6])[_0xde72[1]]()),_0x3d66xc=Number(_0x3d66x1(_0xde72[7])[_0xde72[1]]()),_0x3d66xd=Number(_0x3d66x1(_0xde72[8])[_0xde72[1]]()),_0x3d66xe=3;if(_0x3d66x8> 0&& (_0x3d66x8=  -_0x3d66x8),_0x3d66xd== _0x3d66xc&& (_0x3d66xd=  -_0x3d66xc),_0x3d66xd> _0x3d66xc){var _0x3d66xf=_0x3d66xc;_0x3d66xc= _0x3d66xd,_0x3d66xd= _0x3d66xf};_0x3d66xd> 0&& (_0x3d66xd= 0),_0x3d66x2= -_0x3d66x8* _0x3d66x9,_0x3d66x3= _0x3d66x9,_0x3d66x5= _0x3d66x8* _0x3d66xa,_0x3d66x6= _0x3d66x7- _0x3d66x5,_0x3d66x4= _0x3d66x3* (1- _0x3d66x6* _0x3d66x9/ ((_0x3d66x9+ _0x3d66x2)* _0x3d66xb))/ (_0x3d66x6* _0x3d66x9/ ((_0x3d66x9+ _0x3d66x2)* _0x3d66xb)),_0x3d66x1(_0xde72[10])[_0xde72[1]](_0x3d66x2[_0xde72[9]](_0x3d66xe)),_0x3d66x1(_0xde72[11])[_0xde72[1]](_0x3d66x3[_0xde72[9]](_0x3d66xe)),_0x3d66x1(_0xde72[12])[_0xde72[1]](_0x3d66x4[_0xde72[9]](_0x3d66xe))}};_0x3d66x1(_0xde72[15])[_0xde72[20]](function(){var _0x3d66x2=!1;_0x3d66x1(_0xde72[15])[_0xde72[14]](function(){_0xde72[13]== _0x3d66x1(this)[_0xde72[1]]()&& (_0x3d66x2=  !0)}),_0x3d66x2?_0x3d66x1(_0xde72[18])[_0xde72[17]](_0xde72[16],_0xde72[16]):_0x3d66x1(_0xde72[18])[_0xde72[19]](_0xde72[16])}),_0x3d66x1(_0xde72[18])[_0xde72[24]](_0xde72[21],function(_0x3d66x1){_0x3d66x1[_0xde72[22]](),_0x3d66x2[_0xde72[23]]()})}(jQuery)
+// ]]></script>
+</p>
+</div>
+</div>
+</div>
+</div>
