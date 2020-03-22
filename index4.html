@@ -52,6 +52,14 @@ input[type=checkbox]{
    
   }
 </style>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,11 +74,11 @@ input[type=checkbox]{
 <SCRIPT language="javascript" type="text/javascript">
 function calc1()
 {
-a=Number(document.calculator1.number1.value);
-fac = a/20;
-c = Math.pow(10,fac);
-c = c/1000;
-document.calculator1.mV_per_meter.value=c;
+a1=Number(document.calculator1.number1.value);
+a2=Number(document.calculator1.number2.value);
+a3=Number(document.calculator1.number3.value);
+c = ( a1 + (a2/60) + (a3/3600) );
+document.calculator1.decimal_degree.value=c;
 }
 </SCRIPT>
 <FORM name="calculator1">
@@ -82,7 +90,12 @@ document.calculator1.mV_per_meter.value=c;
 <h3>Inputs</h3></div></legend>
 
 
-<label for="f">dBu<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<label for="f">Degrees<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+<label for="f">Minutes<font face="Arial" size="6"></font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+
+<label for="f">Seconds<font face="Arial" size="6"></font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
 
 </fieldset></div>
@@ -109,22 +122,33 @@ document.calculator1.mV_per_meter.value=c;
 
 
 
-<label for="f">mV/m<font face="Arial" size="6"></font></label><input  name="mV_per_meter" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<label for="f">Decimal Deg.<font face="Arial" size="6"></font></label><input  name="decimal_degree" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
 </fieldset></div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+ <table border="1" height="573" width="100%" >
+
+
+
+
+
+
+
 </FORM>
-
-
-
-
-
-
-
-
-
-
+<br/>
 
 </body>
 </html>
