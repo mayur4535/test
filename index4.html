@@ -51,7 +51,60 @@ input[type=checkbox]{
     height: 120px; 
    
   }
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 10px solid #ccc;
+ 
+  background-color: #f1f1f1;
+  text-align:center;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  
+  float:center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 15px;
+  transition: 0.3s;
+  font-size: 70px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #c4cc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  align:center;
+}
+.tab1 {
+border-radius: 25px;
+  background: #167A04;
+  padding: 20px; 
+  width: 100px;
+  height: 150px;
+  font-size:40px;
+  color:white;
+}
+
+
 </style>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,14 +120,33 @@ input[type=checkbox]{
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-Fr=Number(document.calculator.number1.value);
-PPM=Number(document.calculator.number2.value);
-c1 =  ( ((Fr*(Math.pow(10,9)))* PPM )/ (Math.pow(10,6)) );
-document.calculator.freq.value=c1;
+SINAD_in=Number(document.calculator.number1.value);
+ENOB_out= (SINAD_in - 1.76 )/6.02 ;
+document.calculator.ENOB.value=ENOB_out;
 }
 </SCRIPT>
+
+<SCRIPT language="javascript" type="text/javascript">
+function calc1()
+{
+ENOB_in=Number(document.calculator1.number2.value);
+SINAD_out= ( ENOB_in*6.02 ) + 1.76;
+document.calculator1.SINAD.value=SINAD_out;
+}
+</SCRIPT>
+<div class="tab">
+  <button class=  "tablinks" onclick="openCity(event, 'London')"><font class="tab1">SINAD To ENOB</font></button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')"><font class="tab1">ENOB TO SINAD</font></button>
+
+</div>
+
+
+
+
+
+
+<div id="London" class="tabcontent">
 <FORM name="calculator">
-<table border="1" height="573" width="100%" >
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
@@ -82,14 +154,11 @@ document.calculator.freq.value=c1;
 <h3>Inputs</h3></div></legend>
 
 
-<label for="f">RF <font face="Arial" size="6"> (Carrier Frequency)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:200; right: 160px;"class="form-control" type="number" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">GHz</label>
+<label for="f">SINAD<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 160px;"class="form-control" type="number" />
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:140px;">dB</label>
 
 <h1 style="font-size:50;"></h1>
-<label for="f">Frequency<font face="Arial" size="6"></font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:200; right: 160px;"class="form-control" type="number" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">ppm</label>
 
-<h1 style="font-size:50;"></h1>
 </fieldset></div>
 <h1 style="font-size:50;"></h1>
 <fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" name="bt1" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
@@ -113,24 +182,74 @@ document.calculator.freq.value=c1;
 
 
 
-<label for="f">Frequency<font face="Arial" size="6"></font></label><input  name="freq" class="intro"  style="position: absolute;  text-align:center; width:200; right: 160px;"class="form-control" type="number" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:140px;">Hz</label>
+<label for="f">ENOB<font face="Arial" size="6"></font></label><input  name="ENOB" class="intro"  style="position: absolute;  text-align:center; width:300; right: 160px;"class="form-control" type="number" />
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:140px;">Bits</label>
 </fieldset></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 </FORM>
+</div>
 
+
+
+
+
+<div id="Paris" class="tabcontent">
+<FORM name="calculator1">
+<table border="1" height="573" width="100%" >
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Inputs</h3></div></legend>
+
+
+<label for="f">ENOB<font face="Arial" size="6"></font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 160px;"class="form-control" type="number" />
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:140px;">Bits</label>
+
+<h1 style="font-size:50;"></h1>
+
+</fieldset></div>
+<h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" name="bt1" value="CALCULATE" onclick="javascript:calc1();" style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;"></legend></fieldset>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+<fieldset><legend><div colspan="2" align="center" height="19">
+
+
+<h3>Outputs</h3></div></legend>
+
+
+
+<label for="f">SINAD<font face="Arial" size="6"></font></label><input  name="SINAD" class="intro"  style="position: absolute;  text-align:center; width:300; right: 160px;"class="form-control" type="number" />
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:140px;">dB</label>
+</fieldset></div>
+</FORM>
+</div>
 
 </body>
 </html>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
