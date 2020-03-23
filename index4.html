@@ -65,37 +65,39 @@ input[type=checkbox]{
 <!-- rfw_rsp -->
 
 <SCRIPT language="javascript" type="text/javascript">
-function calc1()
+function calc()
 {
-Freq = Number(document.calculator1.number1.value);
-Electrial_Degree = Number(document.calculator1.number2.value);
-lambda = 3*Math.pow(10,8)/Freq;
-c = (Electrial_Degree / 360) * lambda;
-document.calculator1.electrical_length_meters.value=c;
+N=Number(document.calculator.number1.value);
+T=Number(document.calculator.number2.value);
+F=Number(document.calculator.number3.value);
+c1 =  T/F ;
+c2 =  T/N ;
+document.calculator.MTBF.value=c1;
+document.calculator.MTTF.value=c2;
 }
 </SCRIPT>
-<FORM name="calculator1">
+<FORM name="calculator">
+<table border="1" height="573" width="100%" >
 
- <table border="1" height="573" width="100%" >
+
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Inputs</h3></div></legend>
 
 
-<label for="f">F<font face="Arial" size="6">  (Operating Frequency)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:200; right: 130px;"class="form-control" type="number" />
-
-
-
+<label for="f">Devices<font face="Arial" size="6"> (Number of devices-Under Test)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 10px;"class="form-control" type="number" />
 <h1 style="font-size:50;"></h1>
-<label for="f">L<font face="Arial" size="6">  (Electrical Length)</font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:200; right: 130px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;
-  right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&#176;C</label>
+<label for="f">Test<font face="Arial" size="6"> (Duration of the test-in Hours)</font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+
+<label for="f">Reported<font face="Arial" size="6"> (Number of  failures  reported)</font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:300; right: 10px;"class="form-control" type="number" />
 
 
 </fieldset></div>
+
 <h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" name= "bt2" value="CALCULATE" onclick="javascript:calc1();" style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" name="bt1" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -107,9 +109,8 @@ document.calculator1.electrical_length_meters.value=c;
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;"></legend></fieldset>
-
 <div id="borderimg">
- <borderimg id="control-label" style="width:100%; height:500px;">
+    <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
@@ -117,11 +118,11 @@ document.calculator1.electrical_length_meters.value=c;
 
 
 
-<label >L<font face="Arial" size="6">  (Electrical Length in Meter)</font></label><input  name="electrical_length_meters" class="intro"  style="position: absolute;   text-align:center; width:200; right: 130px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;
-  right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">m</label>
+<label for="f">MTBF<font face="Arial" size="6"></font></label><input  name="MTBF" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+<label for="f">MTTF<font face="Arial" size="6"></font></label><input  name="MTTF" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
 </fieldset></div>
-
 
 
 
@@ -138,7 +139,7 @@ document.calculator1.electrical_length_meters.value=c;
 
 
 </FORM>
-<br/>
+
 
 </body>
 </html>
