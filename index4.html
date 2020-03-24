@@ -1,3 +1,22 @@
+<link rel="alternate" type="application/rss+xml" title="All About Circuits Articles" href="//www.allaboutcircuits.com/rss/" />
+<link rel="alternate" type="application/rss+xml" title="All About Circuits Forum RSS Feed" href="//forum.allaboutcircuits.com/forums/-/index.rss" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script type="text/javascript">
+    var ad_categories = ['tools','cooling','heat-sinks','electromechanical','general','pcb'];
+  </script>
+
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.6/jstz.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script src="/js/tracking.js"></script>
+
+<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script src="/js/ad.js?v=101"></script>
+</head>
+<body>
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -51,146 +70,112 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 10px solid #ccc;
- 
-  background-color: #f1f1f1;
-  text-align:center;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  
-  float:center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 15px;
-  transition: 0.3s;
-  font-size: 70px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #c4cc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  align:center;
-}
-.tab1 {
-border-radius: 25px;
-  background: #167A04;
-  padding: 20px; 
-  width: 100px;
-  height: 150px;
-  font-size:40px;
-  color:white;
-}
-
-
 </style>
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 
-<div class="clear"></div>
-</nav>
-</div>
-<div class="clear"></div>
-</header>
-<div id="intro">
-<div class="width">
-<div class="intro-content">
-
-
-<div id="body" class="width">
-<section id="content" class="two-column with-right-sidebar">
-<article>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- rfw_rsp -->
-
-
-<SCRIPT language="javascript" type="text/javascript">
-function calc1()
-{
-a=Number(document.calculator1.number1.value);
-c=  Math.log10(a*1000)* 10;
-document.calculator1.PdBm.value=c;
-}
-</SCRIPT>
-<SCRIPT language="javascript" type="text/javascript">
-function calc2()
-{
-a1=Number(document.calculator2.number2.value);
-c1=a1/10;
-c2= Math.pow(10,c1)/1000;
-document.calculator2.PWatt.value=c2;
-}
-</SCRIPT>
 
 
 
 
-
-
-
-
-
-
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
-<div class="tab">
-  <button class=  "tablinks" onclick="openCity(event, 'London')"><font class="tab1">Watt To dBm</font></button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')"><font class="tab1">dBm To Watt</font></button>
-
-</div></div>
-
-
-
-
-
-
-<div id="London" class="tabcontent">
-<FORM name="calculator1">
+<div class="mx-4">
+<div class="bootstrap3-legacy">
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Inputs</h3></div></legend>
+<h3>Inputs</h3></div></legend><form id="tool">
+<div class="row">
+
+<div class="form-group">
 
 
-<label for="f">POWER<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="number" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:150px;">Watt</label>
-
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="Ta">Ambient<font face="Arial" size="6">  (Maximum Temperature)</font></label><input  name="Ta"  id="Ta"class="intro"  style="position: absolute;  text-align:center; width:200; right: 280px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:250px;">&#176;C</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4"><div class="form-group"></div></div>
+</div>
+</div>
 <h1 style="font-size:50;"></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
-</fieldset></div>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="TJmax">Junction<font face="Arial" size="6">  (Maximum Temperature)</font></label><input  name="TJmax"  id="TJmax"class="intro"  style="position: absolute;  text-align:center; width:200; right: 280px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:250px;">&#176;C</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4"><div class="form-group"></div></div>
+</div>
+</div>
 <h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" name= "bt2" value="CALCULATE" onclick="javascript:calc1();" style="background-color: #167A04 ;
+<div class="row">
+
+<div class="form-group">
+
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="Rcase">TR<font face="Arial" size="6">  (Thermal Resistance)<sub>Junction to Case</font></label><input  name="Rcase"  id="Rcase"class="intro"  style="position: absolute;  text-align:center; width:200; right: 280px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:250px;">°C/Watt</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4"><div class="form-group"></div></div>
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+<div class="form-group">
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="R1">TR<sub>1<font face="Arial" size="6">  (Thermal Resistance)</font></label><input  name="R1"  id="R1"class="intro"  style="position: absolute;  text-align:center; width:200; right: 280px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:250px;">°C/Watt</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4"><div class="form-group"></div></div>
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+<div class="form-group">
+
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="R2">TR<sub>2<font face="Arial" size="6">  (Thermal Resistance)</font></label><input  name="R2"  id="R2"class="intro"  style="position: absolute;  text-align:center; width:200; right: 280px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:250px;">°C/Watt</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4"><div class="form-group"></div></div>
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row">
+
+<div class="form-group">
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
+<label for="out">Output Type</label><select style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:470px;" id="out" >
+<option value="1">Power</option>
+<option value="2">Junction Temp.</option>
+</select>
+</div>
+</div>
+</div>
+</div></form></fieldset>
+
+<div class="row">
+
+<div class="col-sm-4"><div class="form-group"><h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" id="tool_submit" class="btn btn-theme" value="Calculate" disabled="disabled" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -201,82 +186,79 @@ document.calculator2.PWatt.value=c2;
   display: inline-block;
   font-size: 70px;
   margin: 4px 2px;
-  cursor: pointer;"></legend></fieldset>
+  cursor: pointer;"></legend></fieldset></div></div>
+
+
 <div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
+ <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
 
+<div class="row clearfix" id="power_out">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
-
-<label for="f">POWER<font face="Arial" size="6"></font></label><input  name="PdBm" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="text" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:150px;">dBM</label>
-</fieldset></div>
-</FORM>
 </div>
-
-
-
-
-<div id="Paris" class="tabcontent">
-<FORM name="calculator2">
-
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
-<fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Inputs</h3></div></legend>
-
-
-<label for="f">POWER<font face="Arial" size="6"></font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="number" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:150px;">dBm</label>
-
-<h1 style="font-size:50;"></h1>
-
-</fieldset></div>
-<h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" name= "bt2" value="CALCULATE" onclick="javascript:calc2();" style="background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
- 
-  padding: 10px 200px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;"></legend></fieldset>
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
-<fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>
-
-
-
-<label for="f">POWER<font face="Arial" size="6"></font></label><input  name="PWatt" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="text" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:150px;">Watt</label>
-</fieldset></div>
-</FORM>
 </div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<label for="tool_output1">Power<font face="Arial" size="6">  (Thermal Resistance)</font></label><input  name="tool_output1"  id="tool_output1"class="intro"  style="position: absolute;  text-align:center; width:200; right: 280px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:250px;">Watts</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group"></div>
+</div>
+</div>
+</div>
+<div class="row clearfix" id="tj_out">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+<label for="tool_output2">Junction Temperature (°C)</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<input type="text" id="tool_output2" class="form-control" placeholder="Junction Temperature">
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group"></div>
+</div>
+</div>
+</div>
+<script language="JavaScript" type="text/javascript">
+	var x;
+	var c;
+	var n;
+	x = "1";
 
-</body>
-</html>
-<script>
-function openCity(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
+$(document).ready(function () {
+        $("#tj_out").hide();
+        $("#power_out").show();  
+});
+	$('#out').change( function(){
+		x = $('#out').val();
+		if(x == "1"){
+			$('#power_out').show();
+			$('#tj_out').hide();
+		}else if(x == "2"){
+			$('#power_out').hide();
+			$('#tj_out').show();
+		}
+	});
+!function(t){"use strict";var e={calculate:function(){var e=4,o=Number(t("#Ta").val()),u=Number(t("#TJmax").val()),a=Number(t("#Rcase").val()),l=Number(t("#R1").val()),i=Number(t("#R2").val()),r=Number(t("#tool_output2").val());if(x == "1"){
+r=Number(t("#tool_output2").val());
+c=(r-o)/(a+l+i);
+t("#tool_output1").val(c.toPrecision(e));
+}else if(x == "2"){
+c=Number(t("#tool_output1").val());
+n=c*(a+l+i)+o;
+t("#tool_output2").val(n.toPrecision(e));
+}}};t("#tool :input").keyup(function(){var e=!1;t("#tool :input").each(function(){""==t(this).val()&&(e=!0)}),e?t("#tool_submit").attr("disabled","disabled"):t("#tool_submit").removeAttr("disabled")}),t("#tool_submit").on("click",function(t){t.preventDefault(),e.calculate()})}(jQuery);
+  </script>
+</div>
+</div>
