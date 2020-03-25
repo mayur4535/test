@@ -1,18 +1,5 @@
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
-
-
-.ids{
-     border: 2px solid red;
-  padding: 10px;
-  border-radius: 50px 20px;}
-
-input[type=radio]{
-    width: 120px; 
-    height: 120px; 
-   
-  }
-
 #borderimg { 
   border: 10px solid transparent;
   padding: 10px;
@@ -59,7 +46,7 @@ body {
   padding: 10px;
   border-radius: 50px 20px;}
 
-input[type=checkbox]{
+input[type=radio]{
     width: 120px; 
     height: 120px; 
    
@@ -67,28 +54,23 @@ input[type=checkbox]{
 
 </style>	
 
-<form action="" method="POST" name="form">
 
-
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Inputs</h3></div></legend>
+<form action="" method="POST" name="form">
 
-
-<div class="ids">
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Inputs</h3></div></legend>
 <input checked="checked" id="radio1" name="R1" title="" type="radio" />110 
 <input id="radio9" name="R1" type="radio" />120
-<input id="radio10" name="R1" type="radio" />208<br>
-<input id="radio11" name="R1" type="radio" />220
+<input id="radio10" name="R1" type="radio" />208
+<input id="radio11" name="R1" type="radio" />220<br>
  <input id="radio12" name="R1" type="radio" />230
-<input id="radio2" name="R1" type="radio" />240<br>
+<input id="radio2" name="R1" type="radio" />240
 <input id="radio13" name="R1" type="radio" />277
  <input id="radio14" name="R1" type="radio" />440
 <input id="radio3" name="R1" type="radio" />480
-
-</div>
-<input class="tbx3" id="txtsv" name="" readonly="readonly" size="20" type="text" />
+<input class="tbx3" id="txtsv" name="" readonly="readonly" size="20" type="text" /></fieldset>
 <br>
 
 <input checked="checked" id="radio4" name="R2" type="radio" />Single-Phase
@@ -111,7 +93,7 @@ input[type=checkbox]{
 <br>
 <input id="radio8" name="R3" type="radio" />
 <input class="tbx3" id="txtvolts" name="txtvolts" style="margin-left: 1px;" type="text" /> <b>V</b>
-<br>
+<br></fieldset>
 <input id="calBtn" onclick="calcWSCnw()" type="button" value="Calculate" /> 
 <input id="clearBtn" onclick="reset()" type="button" value="Clear" />
 <br>
