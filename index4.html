@@ -119,7 +119,7 @@ input[type=radio]{
 <span style="font-size: 50;">Current in Amp (A):</span></b></span></td>
 
 <td class="lft" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
-<input class="intro" id="txtAmpInput" name="text8" size="20" style="width:500px;"type="text" />
+<input class="intro" id="txtAmpInput" name="text8" size="20" style="width:500px;"type="number" />
 </span></span></td>
 
 <td colspan="2" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: x-small;">
@@ -138,7 +138,7 @@ input[type=radio]{
 </span></td></tr>
 
 <tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>
-<span style="font-size: 50;">Allowable (V<sub>D</sub>)</span></b></span></td>
+<span style="font-size: 50;">Allowable (V<sub>D</sub>)</span></br><span style="color: #0b5394;font-size:50;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Or</span></b></span></td>
 <td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;">
 <span style="font-size: 50;">
 <input checked="checked" id="radio6" name="R3" type="radio" /><b>V<sub>S 3% 
@@ -155,10 +155,10 @@ input[type=radio]{
 <input class="tbx3" id="txtavd" name="text5" readonly="readonly" type="text" style="width:10px; border-color:#ffffff00;"type="text"/>
 </span></td></tr>
 
-<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: small;"><span style="color: #0b5394;">Or</span> Select your (V<sub>D</sub>)</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">
+<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;"> Select your (V<sub>D</sub>)</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
 
 <input id="radio8" name="R3" type="radio" />
-<input class="tbx3" id="txtvolts" name="txtvolts" style="margin-left: 1px;" type="text" /> <b>V</b>
+<input class="intro" id="txtvolts" name="txtvolts" style="width:400px; margin-left: 1px;" type="number" /> <b>V</b>
 
 </span></span></td><td colspan="2" style="text-align: left;"></td></tr><tr><td colspan="4" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">
 
@@ -166,9 +166,16 @@ input[type=radio]{
 <input id="clearBtn" onclick="reset()" type="button" value="Clear" />
 </span></span></td></tr></tbody></table>
 
-<div style="text-align: left;"></div><table border="0" id="caltbl" style="width: 100%px;"><tbody align="left"><tr><td colspan="2" style="text-align: center;"><span style="color: blue;"><b><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Wire Size</span></span></b></span></td></tr><tr><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Copper 
+<div style="text-align: left;"></div>
 
-<input class="tbx3" id="txtcopper" name="text6" readonly="readonly" type="text" /></span></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Aluminum <input class="tbx3" id="txtaluminum" name="text7" readonly="readonly" type="text" /></span></span></td></tr></tbody></table></form><ul><li><span style="font-family: arial, helvetica, sans-serif;">
+<table border="0" id="caltbl" style="width: 100%px;">
+<tbody align="left">
+<tr><td colspan="2" style="text-align: center;"><span style="color: blue;"><b><span style="font-family: Arial,Helvetica,sans-serif;"></span></b></span></td></tr>
+<tr><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Copper 
+
+<input class="tbx3" id="txtcopper" name="text6" readonly="readonly" type="text" /></span></span></td>
+<td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Aluminum <input class="tbx3" id="txtaluminum" name="text7" readonly="readonly" type="text" /></span></span></td></tr>
+</tbody></table></form><ul><li><span style="font-family: arial, helvetica, sans-serif;">
 
  
 
