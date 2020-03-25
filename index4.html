@@ -1,5 +1,18 @@
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
+
+
+.ids{
+     border: 2px solid red;
+  padding: 10px;
+  border-radius: 50px 20px;}
+
+input[type=radio]{
+    width: 120px; 
+    height: 120px; 
+   
+  }
+
 #borderimg { 
   border: 10px solid transparent;
   padding: 10px;
@@ -16,7 +29,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 55px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
 }
 
 body { 
@@ -51,240 +64,65 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-</style>
 
+</style>	
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<form action="" method="POST" name="form">
 
-
-<div class="mx-4">
-<div class="bootstrap3-legacy">
-<div class="container-fluid">
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Inputs</h3></div></legend>
 
-<form id="tool-form">
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
+
+<div class="ids">
+<input checked="checked" id="radio1" name="R1" title="" type="radio" />110 
+<input id="radio9" name="R1" type="radio" />120
+<input id="radio10" name="R1" type="radio" />208<br>
+<input id="radio11" name="R1" type="radio" />220
+ <input id="radio12" name="R1" type="radio" />230
+<input id="radio2" name="R1" type="radio" />240<br>
+<input id="radio13" name="R1" type="radio" />277
+ <input id="radio14" name="R1" type="radio" />440
+<input id="radio3" name="R1" type="radio" />480
 
 </div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<label for="type">Unit Select<font face="Arial" size="6"> </font></label><select style="padding: 5px ;  position: absolute; right: 10px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:525px;"class="form-control" id="type">
-<option value="1">Length</option>
-<option value="2">Weight / Mass</option>
-<option value="3">Power</option>
-<option value="4">Temperature</option>
-<option value="5">Torque</option>
-</select>
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-</div>
-</div>
-</div>
-<h1 style="font-size:70;"></h1>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
+<input class="tbx3" id="txtsv" name="" readonly="readonly" size="20" type="text" />
+<br>
 
-</div>
-</div>
-<h1 style="font-size:100;"></h1>
- 
-<div class="col-sm-4 col-xs-4">
-<div class="form-group" id="input-unit-container">
+<input checked="checked" id="radio4" name="R2" type="radio" />Single-Phase
+<input id="radio5" name="R2" type="radio" />Three-Phase
+<input class="tbx3" id="txtnp" name="text2" readonly="readonly" type="text" />
+<br>
+<input class="tbx3" id="txtAmpInput" name="text8" size="20" type="text" />
+<input class="tbx3" id="txta" name="text3" readonly="readonly" type="text" />
 
-<select  style="padding: 5px ;  position: absolute; left: 130px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;"class="form-control" id="length-in">
-<option value="1">(km)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Kilometers </option>
-<option value="2">(m)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Meters </option>
-<option value="3">(cm)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Centimeters </option>
-<option value="4">(mm)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Millimeters </option>
-<option value="5">(mi)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Miles </option>
-<option value="6">(yd)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Yards </option>
-<option value="7">(ft)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Feet </option>
-<option value="8">(in)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Inches </option>
-<option value="9">(µin)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Microinches </option>
-</select>
-
-<select  class="intro" style="padding: 5px ;  position: absolute; left: 130px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;"class="form-control" id="mass-in">
-<option value="1">(kg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Kilograms </option>
-<option value="2">(g)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Grams </option>
-<option value="3">(mg)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Milligrams </option>
-<option value="4">(lb)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Pounds </option>
-<option value="5">(oz)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Ounces </option>
-</select>
-
-<select  style="padding: 5px ;  position: absolute; left: 130px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;"class="form-control" id="power-in">
-<option value="1">(mW)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Milliwatts </option>
-<option value="2">(W)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Watts </option>
-<option value="3">(dBm)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Decibel-milliwatt </option>
-<option value="4">(dBW)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Decibel-watt </option>
-<option value="5">(mV)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Millivolts </option>
-<option value="6">(V)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Volts </option>
-</select>
-
-<select  style="padding: 5px ;  position: absolute; left: 130px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;"class="form-control" id="temp-in">
-<option value="1">(°F)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Farenheit </option>
-<option value="3">(°C)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Celsius </option>
-<option value="2">(°K)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Kelvin </option>
-</select>
-
-<select  style="padding: 5px ;  position: absolute; left: 130px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;" id="tor-in">
-<option value="1">(Nm)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Newton-meters </option>
-<option value="2">(ft-lbs)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Foot-pounds </option>
-<option value="3">(in-lbs)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Inch-pounds </option>
-</select>
-</div>
-</div>
-</div>
-</div>
-<h1 style="font-size:70;"></h1>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center" id="out-unit-container">
-<label for="out"></label><label  style="padding: 5px ;  position: absolute; right: 330px;font-size:60px; text-align:center;  width:300px;">TO</label>
-<select style="padding: 5px ;  position: absolute; right: 120px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;" class="form-control" id="length-out">
-<option value="1">(km)&nbsp; Kilometers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
-<option value="2">(m)&nbsp;Meters </option>
-<option value="3">(cm)&nbsp;Centimeters </option>
-<option value="4">(mm)&nbsp;Millimeters </option>
-<option value="5">(mi)&nbsp;Miles </option>
-<option value="6">(yd)&nbsp;Yards </option>
-<option value="7">(ft)&nbsp;Feet </option>
-<option value="8">(in)&nbsp;Inches </option>
-<option value="9">(µin)&nbsp; Microinches </option>
-</select>
-
-<select  
-<select style="padding: 5px ;  position: absolute; right: 120px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;" id="mass-out">
-<option value="4">(lb)&nbsp;Pounds </option>
-<option value="1">(kg)&nbsp;Kilograms </option>
-<option value="2">(g)&nbsp;Grams </option>
-<option value="3">(mg)&nbsp;Milligrams </option>
-<option value="5">(oz)&nbsp;Ounces </option>
-</select>
-
-<select  
-<select style="padding: 5px ;  position: absolute; right: 120px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;" id="power-out">
-<option value="3">(dBm)&nbsp;Decibel-milliwatt </option>
-<option value="1">(mW)&nbsp;Milliwatts </option>
-<option value="2">(W)&nbsp;Watts </option>
-<option value="4">(dBW)&nbsp;Decibel-watt </option>
-<option value="5">(mV)&nbsp;Millivolts </option>
-<option value="6">(V)&nbsp;Volts </option>
-</select>
-
-<select  
-<select style="padding: 5px ;  position: absolute; right: 120px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;" id="temp-out">
-<option value="3">(°C)&nbsp;Celsius </option>
-<option value="1">(°F)&nbsp;Farenheit </option>
-<option value="2">(°K)&nbsp;Kelvin </option>
-</select>
-
-<select  
-<select style="padding: 5px ;  position: absolute; right: 120px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:300px;" id="tor-out">
-<option value="3">(in-lbs)&nbsp;Inch-pounds </option>
-<option value="1">(Nm)&nbsp;Newton-meters </option>
-<option value="2">(ft-lbs)Foot-pounds </option>
-</select>
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-</div>
-</div>
-</div>
-<br><br>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="in"><font face="Arial" size="6"></font></label><input  name="in"  id="in"class="intro"  style="position: absolute;  text-align:center; width:500; right: 235px;"class="form-control" type="number" placeholder="Enter Input"/>
-</div>
-</div><br>
-</form></fieldset>
-<div class="row">
-<div class="col-sm-12">
-<div class='col-sm-4'>
-<div class="form-group">
-&nbsp;
-</div>
-</div>
+<br>
 
 
 
-<div class="col-sm-4">
-<div class="form-group">
-<div id="borderimg">
- <borderimg id="control-label" style="width:100%; height:500px;">
- <fieldset><legend><div colspan="2" align="center" height="19"><input type="button" id="calculate" class="btn btn-theme" value="Calculate"  disabled="disabled" style="background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
- 
-  padding: 10px 200px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;"></legend></fieldset>
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group">
+<input class="tbx3" id="txtDistInput" name="text9" size="20" type="text" />
+<input class="tbx3" id="txtowd" name="text4" readonly="readonly" type="text" />
+<br>
+<input checked="checked" id="radio6" name="R3" type="radio" /><b>3% 
+<input id="radio7" name="R3" type="radio" />5%
+<input class="tbx3" id="txtavd" name="text5" readonly="readonly" type="text" />
+<br>
+<input id="radio8" name="R3" type="radio" />
+<input class="tbx3" id="txtvolts" name="txtvolts" style="margin-left: 1px;" type="text" /> <b>V</b>
+<br>
+<input id="calBtn" onclick="calcWSCnw()" type="button" value="Calculate" /> 
+<input id="clearBtn" onclick="reset()" type="button" value="Clear" />
+<br>
 
-</div>
-</div>
-</div>
-</div>
-<div id="answer-fields">
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="form-group">
-
-</div>
-<div id="borderimg">
- <borderimg id="control-label" style="width:100%; height:500px;">
-<fieldset><legend><div colspan="2" align="center" height="19">
+<input class="tbx3" id="txtcopper" name="text6" readonly="readonly" type="text" /> copper
+<input class="tbx3" id="txtaluminum" name="text7" readonly="readonly" type="text" />Aluminum
 
 
-<h3>Outputs</h3></div></legend>
+</form>
 
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
 
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning">
 
-</div>
-</div>
-
-<div class="col-sm-4 col-xs-4">
-<div class="form-group">
-<h1 style="font-size:0;"></h1>
-<div id="answer-unit"  style="position: absolute;  text-align:center; width:600; top:1300px;right: 190px;"class="form-control"  type="text" ></div><input  name="answer"  id="answer"class="intro"  style="position: absolute;  text-align:center; width:500; right: 235px;"class="form-control" type="number"class="form-control" placeholder="Output" type="text" /><br>
-<br><br><br>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script type="text/javascript">
-!function(e){"use strict";function t(){1==e("#type").val()?e("#toRange").hide():e("#toRange").show()}function s(){e("#input-unit-container select").each(function(){e(this).hide()}),e("#out-unit-container select").each(function(){e(this).hide()});var t=e("#type").val();"1"==t?(e("#length-in").show(),e("#length-out").show()):"2"==t?(e("#mass-in").show(),e("#mass-out").show()):"3"==t?(e("#power-in").show(),e("#power-out").show()):"4"==t?(e("#temp-in").show(),e("#temp-out").show()):"5"==t&&(e("#tor-in").show(),e("#tor-out").show())}function a(e,t,s){var a="";switch(e){case"10":s/=1e3;case"4":s/=10;case"3":s/=100;case"2":s/=1e3;case"1":a="si";break;case"9":s/=Math.pow(10,6);case"8":s/=12;case"7":s/=3;case"6":s/=1760;case"5":a="std"}if("si"==a)switch(t){case"10":s*=1e3;case"4":s*=10;case"3":s*=100;case"2":s*=1e3;case"1":return s;case"9":s*=Math.pow(10,6);case"8":s*=12;case"7":s*=3;case"6":s*=1760;case"5":return s/1.60934}if("std"==a)switch(t){case"10":s*=1e3;case"4":s*=10;case"3":s*=100;case"2":s*=1e3;case"1":return 1.60934*s;case"9":s*=Math.pow(10,6);case"8":s*=12;case"7":s*=3;case"6":s*=1760;case"5":return s}}function r(e,t,s){var a="";switch(e){case"3":s/=1e3;case"2":s/=1e3;case"1":a="si";break;case"5":s/=16;case"4":a="std"}if("si"==a)switch(t){case"3":s*=1e3;case"2":s*=1e3;case"1":return s;case"5":s*=16;case"4":return s/.453592}if("std"==a)switch(t){case"3":s*=1e3;case"2":s*=1e3;case"1":return.453592*s;case"5":s*=16;case"4":return s}}function c(e,t,s){var a="";switch(e){case"2":s=1e3*s;case"1":a="si";break;case"4":s+=30;case"3":a="db";break;case"5":s/=1e3;case"6":a="v"}if("si"==a)switch(t){case"1":s/=1e3;case"2":return s;case"4":s/=1e3;case"3":return 10*Math.log(s)/Math.log(10);case"6":return c("3","6",10*Math.log(s)/Math.log(10));case"5":return 1e3*c("3","6",10*Math.log(s)/Math.log(10))}if("db"==a)switch(t){case"1":s-=30;case"2":return Math.pow(10,s/10);case"4":s-=30;case"3":return s;case"6":return Math.sqrt(50*Math.pow(10,s/10)/1e3);case"5":return 1e3*Math.sqrt(50*Math.pow(10,s/10)/1e3)}if("v"==a)switch(t){case"2":return c("3","2",10*Math.log(1e3*Math.pow(s,2)/50)/Math.log(10));case"1":return c("3","1",10*Math.log(1e3*Math.pow(s,2)/50)/Math.log(10));case"3":return 10*Math.log(1e3*Math.pow(s,2)/50)/Math.log(10);case"4":return 10*Math.log(1e3*Math.pow(s,2)/50)/Math.log(10)-30;case"6":return s;case"5":return 1e3*s}}function n(e,t){switch(e){case"1":return 5*(t-32)/9;case"3":return t;case"2":return t-273.15}}function i(e,t){switch(e){case"1":return t;case"3":return 9*t/5+32;case"2":return 9*(t-273.15)/5+32}}function o(e,t){switch(e){case"1":return 5*(t-32)/9+273.15;case"3":return t+273.15;case"2":return t}}function u(e,t){switch(e){case"1":return t;case"2":return t/.73756214837;case"3":return t/.73756214837/12}}function l(e,t){switch(e){case"1":return.73756214837*t;case"2":return t;case"3":return t/12}}function h(e,t){switch(e){case"1":return 12*t*.73756214837;case"2":return 12*t;case"3":return t}}function w(){e("#answer-fields :input").each(function(){e(this).closest("div").removeClass("has-success"),e(this).closest("div").addClass("has-warning"),e(this).val("")})}function v(){e("#answer-fields :input").each(function(){e(this).closest("div").removeClass("has-warning"),e(this).closest("div").addClass("has-success")})}var p,d=e("#calculate");e("#tool-form :input").keyup(function(){e(this).closest("div").removeClass("has-error"),w(),d.attr("disabled",!1),e.isNumeric(e(this).val())===!1?(e(this).closest("div").addClass("has-error"),d.attr("disabled",!1)):e(this).closest("div").removeClass("has-error"),p=0,e("#tool-form :input").each(function(){""!=e(this).val()&&e.isNumeric(e(this).val())!==!1||p++}),p>0&&d.attr("disabled",!0)}),d.on("click",function(t){t.preventDefault();var s,w,p,d;if(p=parseFloat(e("#in").val()),d=e("#type").val(),s=0,e("#answer-unit").text(""),e("#answer").val(""),"1"==d)s=a(e("#length-in").val(),e("#length-out").val(),p),e("#answer-unit").text(e("#length-out :selected").text()),e("#answer").val(parseFloat(s).toFixed(4));else if("2"==d)s=r(e("#mass-in").val(),e("#mass-out").val(),p),e("#answer-unit").text(e("#mass-out :selected").text()),e("#answer").val(parseFloat(s).toFixed(4));else if("3"==d)s=c(e("#power-in").val(),e("#power-out").val(),p),w=2*s*Math.sqrt(2),e("#answer").val(parseFloat(s).toFixed(4)),e("#answer-unit").text(e("#power-out :selected").text()),"5"!=e("#power-out").val()&&"6"!=e("#power-out").val()||(e("#answer-unit").text(""),e("#answer-unit").append("V<sub>rms</sub> - V<sub>pp</sub>"),e("#answer").val(parseFloat(s).toFixed(4)+" - "+parseFloat(w).toFixed(4)));else if("4"==d){var f=e("#temp-out").val(),M=e("#temp-in").val();"1"==f?s=i(M,p):"2"==f?s=o(M,p):"3"==f&&(s=n(M,p)),e("#answer-unit").text(e("#temp-out :selected").text()),e("#answer").val(parseFloat(s).toFixed(4))}else if("5"==d){var g=e("#tor-out").val(),x=e("#tor-in").val();"1"==g?s=u(x,p):"2"==g?s=l(x,p):"3"==g&&(s=h(x,p)),e("#answer-unit").text(e("#tor-out :selected").text()),e("#answer").val(parseFloat(s).toFixed(4))}v()}),t(),s(),e("#answer-unit").text(""),e("#type").on("change",function(){w(),e("#answer-unit").text(""),t(),s()})}(jQuery);
-    </script>
-</div>
-</div>
+<script language="JavaScript" src="https://www.electricaltechnology.org/wp-content/cache/autoptimize/autoptimize_single_803ec5c66ede83b34e6589c671042d4b.php" type="text/javascript"></script></p><div class='code-block code-block-5' style='margin: 8px 0; clear: both;'> <amp-auto-ads type="adsense"
+ data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads></div><div class="stream-item stream-item-in-post stream-item-inline-post aligncenter"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
