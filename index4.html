@@ -158,24 +158,50 @@ input[type=radio]{
 <tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;"> Select your (V<sub>D</sub>)</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
 
 <input id="radio8" name="R3" type="radio" />
-<input class="intro" id="txtvolts" name="txtvolts" style="width:400px; margin-left: 1px;" type="number" /> <b>V</b>
+<input class="intro" id="txtvolts" name="txtvolts" style="width:350px; margin-left: 1px;" type="number" /> <b>V</b>
 
-</span></span></td><td colspan="2" style="text-align: left;"></td></tr><tr><td colspan="4" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">
+</span></span></td>
+</table>
 
-<input id="calBtn" onclick="calcWSCnw()" type="button" value="Calculate" /> 
-<input id="clearBtn" onclick="reset()" type="button" value="Clear" />
-</span></span></td></tr></tbody></table>
+<td colspan="2" style="text-align: left;"></td></tr><tr><td colspan="4" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+<h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input id="calBtn" onclick="calcWSCnw()" type="button" value="Calculate"  style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;"></legend></fieldset></div>
 
-<div style="text-align: left;"></div>
 
-<table border="0" id="caltbl" style="width: 100%px;">
-<tbody align="left">
-<tr><td colspan="2" style="text-align: center;"><span style="color: blue;"><b><span style="font-family: Arial,Helvetica,sans-serif;"></span></b></span></td></tr>
-<tr><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Copper 
+</span></span></td></tr>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Outputs</h3></div></legend>
 
-<input class="tbx3" id="txtcopper" name="text6" readonly="readonly" type="text" /></span></span></td>
-<td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">Aluminum <input class="tbx3" id="txtaluminum" name="text7" readonly="readonly" type="text" /></span></span></td></tr>
-</tbody></table></form><ul><li><span style="font-family: arial, helvetica, sans-serif;">
+<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 70;"> Copper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
+
+
+<input class="intro" id="txtcopper" name="text6" style="width:450px; margin-left: 1px;" type="text" /> <b></b>
+
+</span></span></td><br>
+<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 70;"> Aluminum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
+
+
+<input class="intro" id="txtaluminum" name="text7" style="width:450px; margin-left: 1px;" type="text" /> <b></b>
+
+</span></span></td>
+
+
+</fieldset>
 
  
 
