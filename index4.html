@@ -58,27 +58,68 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Inputs</h3></div></legend>
 
-
-	
-		  <label for="f">Gauge<font face="Arial" size="6"></font></label><input type="number" step="1" name="x" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:57px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">AWG</label>
-<h1 style="font-size:50;"></h1>		
-<label for="f">Material<font face="Arial" size="6"></font></label>
-<select name="type" onchange="OnResChange()"style="padding: 5px ;  position: absolute; right: 1px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:440px;">
-				<option selected>Select</option>
-                                <option>Copper</option>
-				<option>Aluminum</option>
-				<option>Carbon steel</option>
-				<option>Electrical steel</option>
-				<option>Gold</option>
-				<option>Nichrome</option>
-				<option>Nickel</option>
-				<option>Silver</option>
-			</select>
-<h1 style="font-size:50;"></h1>		
- <label for="f">Resistivity<font face="Arial" size="6"></font></label><input type="number" min="0" step="any" name="r" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:57px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">&#937;.m</label>
-		<h1 style="font-size:50;"></h1></fieldset>
+		 <label for="f">Gauge<font face="Arial" size="6"></font></label>
+			<select name="swgsel" onchange="OnSelChange()" style="padding: 5px ;  position: absolute; right: 1px;font-size:60px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:8px 0; width:440px;" autofocus>
+				<option>Select  </option>
+				<option>7/0</option>
+				<option>6/0</option>
+				<option>5/0</option>
+				<option>4/0</option>
+				<option>3/0</option>
+				<option>2/0</option>
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				<option>13</option>
+				<option>14</option>
+				<option>15</option>
+				<option>16</option>
+				<option>17</option>
+				<option>18</option>
+				<option>19</option>
+				<option>20</option>
+				<option>21</option>
+				<option>22</option>
+				<option>23</option>
+				<option>24</option>
+				<option>25</option>
+				<option>26</option>
+				<option>27</option>
+				<option>28</option>
+				<option>29</option>
+				<option>30</option>
+				<option>31</option>
+				<option>32</option>
+				<option>33</option>
+				<option>34</option>
+				<option>35</option>
+				<option>36</option>
+				<option>37</option>
+				<option>38</option>
+				<option>39</option>
+				<option>40</option>
+				<option>41</option>
+				<option>42</option>
+				<option>43</option>
+				<option>44</option>
+				<option>45</option>
+				<option>46</option>
+				<option>47</option>
+				<option>48</option>
+				<option>49</option>
+				<option>50</option>
+			</select><h1 style="font-size:50;"></h1></fieldset>
+		  
 <h1 style="font-size:50;"></h1>
 <fieldset><legend><div colspan="2" align="center" height="19"><input onclick="OnCalc()" type="button" value="Calculate" class="btn" style="background-color: #167A04 ;
   border: 1;
@@ -92,8 +133,7 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;"></legend></fieldset>
-		
-		  
+
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
@@ -103,83 +143,28 @@ input[type=checkbox]{
 <label for="f">Diameter<font face="Arial" size="6"></font></label><input type="text" name="din"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
  <label style="padding: 5px ;  position: absolute;right: 1px;font-size:57px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">in</label>
 <h1 style="font-size:80;"></h1>	
-<label for="f">Diameter<font face="Arial" size="6"></font></label><input type="text" name="dmm"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
+<label for="f">Diameter<font face="Arial" size="6"></font></label><input type="text" name="d"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
  <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">mm</label>
 
-
 <h1 style="font-size:80;"></h1>	
-<label for="f">Resistance</label><input type="text" name="rft"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">&#937;/kft</label>	<font face="Arial" size="5"> <br>(per 1000 feet)</font>
-
-<h1 style="font-size:40;"></h1>	
-<label for="f">kcmil</label><input type="text" name="amil"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">kcmil</label><font face="Arial" size="5"><br>(Cross sectional area in kilo circular mils)</font>
-
-<h1 style="font-size:40;"></h1>	
-<label for="f">Resistance</label><input type="text" name="rm"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">&#937;/km</label><font face="Arial" size="5"> <br>(per 1000 Meters)</font>	
-		  
-<h1 style="font-size:40;"></h1>	
-<label for="f">Square- in.</label><input type="text" name="ain"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">in<sup>2</sup></label><font face="Arial" size="5"> <br>(in Cross sectional area )</font>		 
-
-<h1 style="font-size:40;"></h1>	
-<label for="f">Square- mm.</label><input type="text" name="amm"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">mm<sup>2</sup></label><font face="Arial" size="5"> <br>(in Cross sectional area )</font>		
-		  
-		 
-	 
-		  
+<label for="f">Square- mm.</label><input type="text" name="a"  readonly="readonly" class="intro"   style="position: absolute;  text-align:center; width:280; right: 160px;"class="intext"  />
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   text-align:center;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:140px;">mm<sup>2</sup></label><font face="Arial" size="5"> <br>(in Cross sectional area )</font><h1 style="font-size:50;"></h1>		
+</fieldset></form>
 
 
-<h1 style="font-size:50;"></h1>	
-	</form>
-		
-	
-
-
-	<script>
-		function OnSelChange()
-		{
-			var i = document.calcform.awgsel.selectedIndex;
-			if( i==1 ) awg = "0000";
-			if( i==2 ) awg = "000";
-			if( i==3 ) awg = "00";
-			if( i>3 )  awg = i-4;
-			document.calcform.x.value = awg;
-		}
-		function OnResChange()
-		{
-			var i = document.calcform.type.selectedIndex;
-			var ilook=[1.72e-8, 2.82e-8, 1.43e-7, 4.6e-7, 2.44e-8, 1.1e-6, 6.99e-8, 1.59e-8];
-			var res = ilook[i];
-			res = res.toExponential().toString();
-			document.calcform.r.value = res;
-		}
+<script>
 		function OnCalc()
 		{
-			n = document.calcform.x.value;
-			if( n=="000000" || n=="6/0" ) n=-5;
-			if( n=="00000" || n=="5/0" ) n=-4;
-			if( n=="0000" || n=="4/0" ) n=-3;
-			if( n=="000" || n=="3/0" ) n=-2;
-			if( n=="00" || n=="2/0" ) n=-1;
-			din = 0.005*Math.pow(92,((36-n)/39));
-			dmm = 0.127*Math.pow(92,((36-n)/39));
-			amil = 1000*din*din;
-			ain = Math.PI/4*din*din;
-			amm = Math.PI/4*dmm*dmm;
-			document.calcform.din.value = din.toFixed(4);
-			document.calcform.dmm.value = dmm.toFixed(4);
-			document.calcform.amil.value = amil.toFixed(4);
-			document.calcform.ain.value  = ain.toFixed(4);
-			document.calcform.amm.value  = amm.toFixed(4);
-
-			var res = document.calcform.r.value;
-			rft = 0.3048e9*res/(25.4*25.4*ain);
-			rm = 1e9*res/amm;
-			document.calcform.rft.value = rft.toFixed(4);
-			document.calcform.rm.value  = rm.toFixed(4);
+			var i = document.calcform.swgsel.selectedIndex;
+			var dlook=[0.5, 0.464, 0.432, 0.4, 0.372, 0.348, 0.324, 0.3, 0.276, 0.252, 0.232, 0.212, 0.192, 0.176, 0.16, 0.144, 0.128, 0.116, 0.104, 0.092, 0.08, 0.072, 0.064, 0.056, 0.048, 0.040, 0.036, 0.032, 0.028, 0.024, 0.022, 0.02, 0.018, 0.0164, 0.0148, 0.0136, 0.0124, 0.0116, 0.0108, 0.01, 0.0092, 0.0084, 0.0076, 0.0068, 0.006, 0.0052, 0.0048, 0.0044, 0.004, 0.0036, 0.0032, 0.0028, 0.0024, 0.002, 0.0016, 0.0012, 0.001];
+			din = dlook[i-1];
+			d = 25.4*din;
+			a = Math.PI/4*d*d;
+			document.calcform.d.value = d.toFixed(3);
+			document.calcform.din.value = din.toFixed(3);
+			document.calcform.a.value = a.toFixed(4);
 		}
-	</script>	
+	</script>
+
+
 	
