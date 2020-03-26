@@ -16,7 +16,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 80px;
 }
 
 body { 
@@ -59,119 +59,77 @@ input[type=radio]{
   height: 150px;
 }
 </style>
-
-
-
-<form action="" method="POST" name="form">
-
-
-
+<div id="content"><form id="VDPC" name="VDPC">
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
+<h3 style="font-size:60;">Inputs</h3></div></legend>
 
 
-<h3>Outputs</h3></div></legend>
-<table border="0" id="caltbl" style="width: 100%px;"><tbody>
-
-</tr>
+<table id="caltbl" style="width: 100%px;" border="0"><tbody>
 <tr><td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;">Source(V)&nbsp;:</span></b></span></td>
 
 <td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
-<input checked="checked" id="radio1" name="R1" title="" type="radio" />110 
-<input id="radio9" name="R1" type="radio" />120
-<input id="radio10" name="R1" type="radio" />208 
-
-
-</span></span><br /> <span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;"> 
-<input id="radio11" name="R1" type="radio" />220
-
- <input id="radio12" name="R1" type="radio" />230
-<input id="radio2" name="R1" type="radio" />240
-</span></span><br />
-<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;"> 
-
-
-<input id="radio13" name="R1" type="radio" />277
-<input id="radio14" name="R1" type="radio" />440
-<input id="radio3" name="R1" type="radio" />480
-</span></span><br /><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;"> 
-<hr>
+<input checked="checked" name="vd" type="radio" value="3.6" /><b>120 Volts
+<input name="vd" type="radio" value="6.2" /><b>208 Volts
+</span></span><br /> <span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
+<input name="vd" type="radio" value="6.6" /><b>220 Volts
+ <input name="vd" type="radio" value="6.9" /><b>230 Volts
+</span></span><br /> <span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
+<input name="vd" type="radio" value="7.2" /><b>240 Volts
+<input name="vd" type="radio" value="8.3" /><b>277 Volts 
+</span></span><br /> <span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
+<input name="vd" type="radio" value="13.2" /><b>440 Volts
+<input name="vd" type="radio" value="14.4" /><b>480 Volts<hr>
 </span></span>
 </td>
+</tr>
 
-<td colspan="2" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: 0;">
-<input class="tbx3" id="txtsv" name="" readonly="readonly" size="20" style="width:1px; border-color:#ffffff00;"type="text" /></span></td></tr>
 
 <tr><td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;">Select Ø&nbsp;:</span></b></span></td>
 
 <td class="lft" style="text-align: left; white-space: nowrap;"><span style="font-family: Arial,Helvetica,sans-serif;">
 
-<span style="font-size: 50;"><input checked="checked" id="radio4" name="R2" type="radio" />Single
+<span style="font-size: 50;"><input checked="checked"  name="phs" type="radio" />Single
 Ø
-<input id="radio5" name="R2" type="radio" />Three
+<input  name="phs" type="radio" />Three
 Ø
 <hr>
-</span></span></td>
+</span></span></td></tr>
 
-<td colspan="2" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: x-small;">
-<input class="tbx3" id="txtnp" name="text2" readonly="readonly" type="text"style="width:1px; border-color:#ffffff00;"type="text" /></span></td></tr>
+
+<tr><td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;">Material&nbsp;:</span></b></span></td>
+
+<td class="lft" style="text-align: left; white-space: nowrap;"><span style="font-family: Arial,Helvetica,sans-serif;">
+
+<span style="font-size: 50;"><input checked="checked"  name="CuAl" type="radio" />Copper
+<input  name="CuAl" type="radio" />Aluminium
+<hr>
+</span></span></td></tr>
+
+ 
+
+
 
 <tr><td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>
 <span style="font-size: 50;">Amp (A)&nbsp;:</span></b></span></td>
-
 <td class="lft" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
-<input class="intro" id="txtAmpInput" name="text8" size="20" style="width:500px;"type="number" />
-</span></span></td>
+<input class="intro" maxlength="10" name="amps" size="20" style="width:500px;"type="number" />
+</span></span></td></tr>
 
-<td colspan="2" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: x-small;">
-<input class="tbx3" id="txta" name="text3" readonly="readonly" type="text" style="width:1px; border-color:#ffffff00;"type="number"/>
-</span></td></tr>
-
-<tr><td class="lft" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;">Distance&nbsp;(feet)&nbsp;:</span></b>
-</span></td>
-
+<tr><td class="lft" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;">Distance&nbsp;(feet)&nbsp;:</span></b></span></td>
 <td class="lft" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
-<input class="intro" id="txtDistInput" name="text9" size="20" style="width:500px;"type="number" /><hr>
-</span></span></td>
+<input class="intro" maxlength="10" name="dist" size="20" style="width:500px;"type="number" /><hr>
+</span></span></td></tr></table></fieldset>
 
-<td colspan="2" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: x-small;">
-<input class="tbx3" id="txtowd" name="text4" readonly="readonly" type="text"style="width:1px; border-color:#ffffff00;"type="text" />
 
-</span></td></tr>
 
-<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b>
-<span style="font-size: 50;">Allowable&nbsp;(V<sub>D</sub>)&nbsp;:</span></br><span style="color: #0b5394;font-size:50;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Or</span></b></span></td>
-<td class="lft" style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;">
-<span style="font-size: 50;">
-<input checked="checked" id="radio6" name="R3" type="radio" /><b>V<sub>S 3% 
 
-</b></span></span><b>
-
-<span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;"><span style="font-size: 50;"><span style="font-family: Arial,Helvetica,sans-serif;"></sub></span></span>
-<input id="radio7" name="R3" type="radio" />V<sub>S 5%<hr>
-
-</span></span>
-
-<span style="font-size: 50;"><span style="font-family: Arial,Helvetica,sans-serif;">
-</sub></span></span></b></td><td colspan="2" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif; font-size: x-small;">
-<input class="tbx3" id="txtavd" name="text5" readonly="readonly" type="text" style="width:1px; border-color:#ffffff00;"type="text"/>
-</span></td></tr>
-
-<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 50;">Select (V<sub>D</sub>)&nbsp;:</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
-
-<input id="radio8" name="R3" type="radio" />
-<input class="intro" id="txtvolts" name="txtvolts" style="width:350px; margin-left: 1px;" type="number" /> <b>V</b>
-
-</span></span></td></table>
-
-</fieldset>
- <td colspan="2" style="text-align: left;"></td></tr><tr><td colspan="4" style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: small;">
-<div id="borderimg">
+<tr><td colspan="2"><div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><input id="calBtn" onclick="calcWSCnw()" type="button" value="Calculate"  style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><input id="calBtn"  onclick="VSCal();" type="button" value="Calculate"   style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -183,929 +141,36 @@ input[type=radio]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;"><h1></h1></legend></fieldset></div>
+</tr>
 
-
-</span></span></td></tr>
+<tr><td colspan="2">
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Outputs</h3></div></legend>
+<h3 style="font-size:60;">Outputs</h3></div></legend>
 
-<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 70;"> Copper&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
+<span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 70;">Wire Size<sub> Max. &nbsp;</span></span>
 
 
-<input class="intro" id="txtcopper" name="text6" style="width:450px; margin-left: 1px;" type="text" /> <b></b>
+<input class="intro" id="txtcopper" name="wire" style="width:450px; margin-left: 1px;" type="text" /> <b></b>
 
 </span></span></td><br>
-<tr><td style="text-align: left;"><span style="font-family: Arial,Helvetica,sans-serif;"><b><span style="font-size: 70;"> Aluminum &nbsp;&nbsp;</span></b></span></td><td style="text-align: center;"><span style="font-family: Arial,Helvetica,sans-serif;"><span style="font-size: 50;">
 
 
-<input class="intro" id="txtaluminum" name="text7" style="width:450px; margin-left: 1px;" type="text" /> <b></b>
-
-</span></span></td>
-
+</span></span>
 
 </fieldset>
 
- 
 
-<script>
-function resistor_calculate6(){var a_digit_js=document.getElementsByName("a_digit")[0].value;var b_digit_js=document.getElementsByName("b_digit")[0].value;var c_digit_js=document.getElementsByName("c_digit")[0].value;var mult_js=document.getElementsByName("mult")[0].value;var tole_js=document.getElementsByName("tole")[0].value;var temp_js=document.getElementsByName("temco")[0].value;var f=document.getElementById("five");document.getElementById("five_div").style.backgroundColor=f.options[f.selectedIndex].style.backgroundColor;var g=document.getElementById("six");document.getElementById("six_div").style.backgroundColor=g.options[g.selectedIndex].style.backgroundColor;var h=document.getElementById("seven");document.getElementById("seven_div").style.backgroundColor=h.options[h.selectedIndex].style.backgroundColor;var i=document.getElementById("eight");document.getElementById("eight_div").style.backgroundColor=i.options[i.selectedIndex].style.backgroundColor;var j=document.getElementById("nine");document.getElementById("nine_div").style.backgroundColor=j.options[j.selectedIndex].style.backgroundColor;var k=document.getElementById("ten");document.getElementById("ten_div").style.backgroundColor=k.options[k.selectedIndex].style.backgroundColor;var first_three_digit=a_digit_js+b_digit_js+c_digit_js;var total_res=(first_three_digit*mult_js);if(total_res>1000&&total_res<1000000){total_res=(total_res/1000)+' k';}
-else if(total_res>1000000){total_res=(total_res/1000000)+' M';}
-document.getElementsByName('resistance')[0].value=total_res+'\u03A9';document.getElementsByName('tole_html')[0].value=tole_js;document.getElementsByName('temp_html')[0].value=temp_js+'ppm/\u2103';}
-function resistor_calculate5(){var d_digit_js=document.getElementsByName("d_digit")[0].value;var e_digit_js=document.getElementsByName("e_digit")[0].value;var f_digit_js=document.getElementsByName("f_digit")[0].value;var multip_js=document.getElementsByName("multip")[0].value;var toler_js=document.getElementsByName("toler")[0].value;var f=document.getElementById("eleven");document.getElementById("eleven_div").style.backgroundColor=f.options[f.selectedIndex].style.backgroundColor;var g=document.getElementById("twelve");document.getElementById("twelve_div").style.backgroundColor=g.options[g.selectedIndex].style.backgroundColor;var h=document.getElementById("thirteen");document.getElementById("thirteen_div").style.backgroundColor=h.options[h.selectedIndex].style.backgroundColor;var i=document.getElementById("fourteen");document.getElementById("fourteen_div").style.backgroundColor=i.options[i.selectedIndex].style.backgroundColor;var j=document.getElementById("fifteen");document.getElementById("fifteen_div").style.backgroundColor=j.options[j.selectedIndex].style.backgroundColor;var first_three_digit=d_digit_js+e_digit_js+f_digit_js;var res_total=(first_three_digit*multip_js);if(res_total>1000&&res_total<1000000){res_total=(res_total/1000)+' k';}
-else if(res_total>1000000){res_total=(res_total/1000000)+' M';}
-document.getElementsByName('resistancetotal')[0].value=res_total+'Ω';document.getElementsByName('toler_html')[0].value=toler_js;}
-function resistor_calculator4(){var first_digit_js=document.getElementsByName("first_digit")[0].value;var second_digit_js=document.getElementsByName("second_digit")[0].value;var multiplier_js=document.getElementsByName("multiplier")[0].value;var tolerance_js=document.getElementsByName("tolerance")[0].value;var f=document.getElementById("one");document.getElementById("first_div").style.backgroundColor=f.options[f.selectedIndex].style.backgroundColor;var g=document.getElementById("two");document.getElementById("second_div").style.backgroundColor=g.options[g.selectedIndex].style.backgroundColor;var h=document.getElementById("three");document.getElementById("third_div").style.backgroundColor=h.options[h.selectedIndex].style.backgroundColor;var i=document.getElementById("four");document.getElementById("fourth_div").style.backgroundColor=i.options[i.selectedIndex].style.backgroundColor;var first_two_digit=first_digit_js+second_digit_js;var total_resistance=(first_two_digit*multiplier_js);if(total_resistance>1000&&total_resistance<1000000){total_resistance=(total_resistance/1000)+' k';}
-else if(total_resistance>1000000){total_resistance=(total_resistance/1000000)+' M';}
-document.getElementsByName('totalresistance')[0].value=total_resistance+'Ω';document.getElementsByName('tolerance_html')[0].value=tolerance_js;}
-function resistor_calculator3(){var y_digit_js=document.getElementsByName("y_digit")[0].value;var z_digit_js=document.getElementsByName("z_digit")[0].value;var multipl_js=document.getElementsByName("multipl")[0].value;var f=document.getElementById("sixteen");document.getElementById("sixteen_div").style.backgroundColor=f.options[f.selectedIndex].style.backgroundColor;var g=document.getElementById("seventeen");document.getElementById("seventeen_div").style.backgroundColor=g.options[g.selectedIndex].style.backgroundColor;var h=document.getElementById("eighteen");document.getElementById("eighteen_div").style.backgroundColor=h.options[h.selectedIndex].style.backgroundColor;var first_two_digit=y_digit_js+z_digit_js;var r_t=(first_two_digit*multipl_js);if(r_t>1000&&r_t<1000000){r_t=(r_t/1000)+' k';}
-else if(r_t>1000000){r_t=(r_t/1000000)+' M';}
-document.getElementsByName('rt')[0].value=r_t+'Ω';}
-function peakcalculate(){var aavoltage_js=document.getElementsByName("aavoltage_html")[0].value;if(aavoltage_js==''||isNaN(aavoltage_js)){alert("Enter some Number");return;}
-var f=document.getElementById("aavoltage_multi");var aavoltage_multi_value=f.options[f.selectedIndex].value;if(aavoltage_multi_value=='1'){peak_voltage_js=aavoltage_js*0.5;}
-if(aavoltage_multi_value=='2'){peak_voltage_js=aavoltage_js*1.414;}
-if(aavoltage_multi_value=='3'){peak_voltage_js=aavoltage_js*1.57;}
-document.getElementsByName('peak_voltage_html')[0].value=peak_voltage_js.toFixed(4);}
-function peaktopeakcalculate(){var avoltage_js=document.getElementsByName("avoltage_html")[0].value;if(avoltage_js==''||isNaN(avoltage_js)){alert("Enter some Number");return;}
-var f=document.getElementById("avoltage_multi");var avoltage_multi_value=f.options[f.selectedIndex].value;if(avoltage_multi_value=='1'){peaktopeak_voltage_js=avoltage_js*2;}
-if(avoltage_multi_value=='2'){peaktopeak_voltage_js=avoltage_js*2.828;}
-if(avoltage_multi_value=='3'){peaktopeak_voltage_js=avoltage_js*3.141;}
-document.getElementsByName('peaktopeak_voltage_html')[0].value=peaktopeak_voltage_js.toFixed(4);}
-function rmscalculate(){var voltage_js=document.getElementsByName("voltage_html")[0].value;if(voltage_js==''||isNaN(voltage_js)){alert("Enter some Number");return;}
-var f=document.getElementById("voltage_multi");var voltage_multi_value=f.options[f.selectedIndex].value;if(voltage_multi_value=='1'){rms_voltage_js=voltage_js/Math.sqrt(2);}
-if(voltage_multi_value=='2'){rms_voltage_js=voltage_js/(Math.sqrt(2)*2);}
-if(voltage_multi_value=='3'){rms_voltage_js=(3.14159*voltage_js)/(Math.sqrt(2)*2);}
-document.getElementsByName('rms_voltage_html')[0].value=rms_voltage_js.toFixed(4);}
-function VSCal()
-{if(document.forms['VDPC'].dist.value==""||document.forms['VDPC'].amps.value=="")
-{alert("You must enter both distance and amperes");}
-else
-{VDCdrop();}}
-function VDCdrop()
-{with(document.forms['VDPC'])
-{for(var n=0;n<=vd.length;n++)
-{if(vd[n].checked)
-{vp=(vd[n].value);break;}}
-l=parseFloat(dist.value);i=parseFloat(amps.value);(CuAl[0].checked)?(kCuAl=12.9):(kCuAl=21.2);(phs[0].checked)?(phase=2):(phase=1.732);}
-Cm=(phase*kCuAl*l*i)/vp;calcsz();}
-function calcsz()
-{with(document.forms['VDPC'].wire)
-{for(x=0;x<=L.length;x++)
-{if(Cm<=L[0])
-{(value=S[x]);break;}
-else
-{if(Cm>L[x]&&Cm<=H[x])
-{(value=S[x]);break;}
-if(Cm>H[27])
-{alert("Out of Range\n"+"Use smaller values");break;}}}}}
-{var vp;var i;var l;var kCuAl;var Cm;var phase;var L=new Array(2580,4110,6530,10380,16510,26240,41740,52620,66360,83690,105600,133100,167800,211600,250000,300000,350000,400000,500000,600000,700000,750000,800000,900000,1000000,1250000,1500000,1750000);var H=new Array(4110,6530,10380,16510,26240,41740,52620,66360,83690,105600,133100,167800,211600,250000,300000,350000,400000,500000,600000,700000,750000,800000,900000,1000000,1250000,1500000,1750000,2000000);var S=new Array("14","12","10","8","6","4","3","2","1","1/0","2/0","3/0","4/0","250 MCM","300 MCM","350 MCM","400 MCM","500 MCM","600 MCM","700 MCM","750 MCM","800 MCM","900 MCM","1000 MCM","1250 MCM","1500 MCM","1750 MCM","2000 MCM");}
-function clearForm()
-{with(document.forms['VDPC'])
-{for(x=0;x<=elements.length;x++)
-{vd[0].checked=true;CuAl[0].checked=true;phs[0].checked=true;dist.value="";amps.value="";wire.value="";break;}}}
-function calculatetime(){var form=document.timeform;var i=form.distunits.selectedIndex;var distunitsvalue=form.distunits.options[i].value;var j=form.speedunits.selectedIndex;var speedunitsvalue=form.speedunits.options[j].value;var d=form.distvalue.value;if(isblank(d))d='0';else
-d=parseFloat(d);var s=form.speedvalue.value;if(isblank(s))s='0';else
-s=parseFloat(s);var t=(d*distunitsvalue)/(s*speedunitsvalue);form.hourvalue.value=Math.floor(t/3600);t=t-(form.hourvalue.value*3600);form.minutevalue.value=Math.floor(t/60);form.secondvalue.value=Math.floor(t-(form.minutevalue.value*60));return true;}
-function calculatedistance(){var form=document.distform;var i=form.distunits.selectedIndex;var distunitsvalue=form.distunits.options[i].value;var j=form.speedunits.selectedIndex;var speedunitsvalue=form.speedunits.options[j].value;var h=form.hourvalue.value;if(isblank(h))h='0';else
-h=parseFloat(h);var m=form.minutevalue.value;if(isblank(m))m='0';else
-m=parseFloat(m);var s=form.secondvalue.value;if(isblank(s))s='0';else
-s=parseFloat(s);var sp=form.speedvalue.value;if(isblank(sp))sp='0';else
-sp=parseFloat(sp);var temp=(h*3600)+(m*60)+s;form.distvalue.value=roundoff(((sp*speedunitsvalue)*temp)/distunitsvalue,5);return true;}
-function clearcramer2()
-{document.cramer.X.value="";document.cramer.Y.value="";document.cramer.Z.value="";document.cramer.X2.value="";document.cramer.Y2.value="";document.cramer.Z2.value="";document.cramer.resx.value="";document.cramer.resy.value="";}
-function clearcramer3()
-{document.cramer.A.value="";document.cramer.B.value="";document.cramer.C.value="";document.cramer.D.value="";document.cramer.A2.value="";document.cramer.B2.value="";document.cramer.C2.value="";document.cramer.D2.value="";document.cramer.A3.value="";document.cramer.B3.value="";document.cramer.C3.value="";document.cramer.D3.value="";document.cramer.resx2.value="";document.cramer.resy2.value="";document.cramer.resz2.value="";}
-function isNum(args)
-{args=args.toString();if(args.length==0)
-return false;for(var i=0;i<args.length;i++)
-{if((args.substring(i,i+1)<"0"||args.substring(i,i+1)>"9")&&args.substring(i,i+1)!="."&&args.substring(i,i+1)!="-"&&args.substring(i,i+1)!="e"&&args.substring(i,i+1)!="E")
-{return false;}}
-return true;}
-function cramercheck(p)
-{var X=document.cramer.X.value;var Y=document.cramer.Y.value;var Z=document.cramer.Z.value;var X2=document.cramer.X2.value;var Y2=document.cramer.Y2.value;var Z2=document.cramer.Z2.value;var A=document.cramer.A.value;var B=document.cramer.B.value;var C=document.cramer.C.value;var D=document.cramer.D.value;var A2=document.cramer.A2.value;var B2=document.cramer.B2.value;var C2=document.cramer.C2.value;var D2=document.cramer.D2.value;var A3=document.cramer.A3.value;var B3=document.cramer.B3.value;var C3=document.cramer.C3.value;var D3=document.cramer.D3.value;if(p=="1"&&!isNum(X))
-{X=X.substring(0,X.length-1);document.cramer.X.value=X;return;}
-else if(p=="2"&&!isNum(Y))
-{Y=Y.substring(0,Y.length-1);document.cramer.Y.value=Y;return;}
-else if(p=="3"&&!isNum(Z))
-{Z=Z.substring(0,Z.length-1);document.cramer.Z.value=Z;return;}
-else if(p=="4"&&!isNum(X2))
-{X2=X2.substring(0,X2.length-1);document.cramer.X2.value=X2;return;}
-else if(p=="5"&&!isNum(Y2))
-{Y2=Y2.substring(0,Y2.length-1);document.cramer.Y2.value=Y2;return;}
-else if(p=="6"&&!isNum(Z2))
-{Z2=Z2.substring(0,Z2.length-1);document.cramer.Z2.value=Z2;return;}
-else if(p=="7"&&!isNum(A))
-{A=A.substring(0,A.length-1);document.cramer.A.value=A;return;}
-else if(p=="8"&&!isNum(B))
-{B=B.substring(0,B.length-1);document.cramer.B.value=B;return;}
-else if(p=="9"&&!isNum(C))
-{C=C.substring(0,C.length-1);document.cramer.C.value=C;return;}
-else if(p=="10"&&!isNum(D))
-{D=D.substring(0,D.length-1);document.cramer.D.value=D;return;}
-else if(p=="11"&&!isNum(A2))
-{A2=A2.substring(0,A2.length-1);document.cramer.A2.value=A2;return;}
-else if(p=="12"&&!isNum(B2))
-{B2=B2.substring(0,B2.length-1);document.cramer.B2.value=B2;return;}
-else if(p=="13"&&!isNum(C2))
-{C2=C2.substring(0,C2.length-1);document.cramer.C2.value=C2;return;}
-else if(p=="14"&&!isNum(D2))
-{D2=D2.substring(0,D2.length-1);document.cramer.D2.value=D2;return;}
-else if(p=="15"&&!isNum(A3))
-{A3=A3.substring(0,A3.length-1);document.cramer.A3.value=A3;return;}
-else if(p=="16"&&!isNum(B3))
-{B3=B3.substring(0,B3.length-1);document.cramer.B3.value=B3;return;}
-else if(p=="17"&&!isNum(C3))
-{C3=C3.substring(0,C3.length-1);document.cramer.C3.value=C3;return;}
-else if(p=="18"&&!isNum(D3))
-{D3=D3.substring(0,D3.length-1);document.cramer.D3.value=D3;return;}}
-function cramercal1()
-{var X=document.cramer.X.value;var Y=document.cramer.Y.value;var Z=document.cramer.Z.value;var X2=document.cramer.X2.value;var Y2=document.cramer.Y2.value;var Z2=document.cramer.Z2.value;if(Z=="")Z=0;if(Z2=="")Z2=0;if(X!=""&&Y!=""&&Z!=""&&X2!=""&&Y2!=""&&Z2!="")
-{var resx=(Z*Y2-Y*Z2)/(X*Y2-Y*X2);var resy=(X*Z2-Z*X2)/(X*Y2-Y*X2);document.cramer.resx.value=resx;document.cramer.resy.value=resy;}}
-function cramercal2()
-{var A=document.cramer.A.value;var B=document.cramer.B.value;var C=document.cramer.C.value;var D=document.cramer.D.value;var A2=document.cramer.A2.value;var B2=document.cramer.B2.value;var C2=document.cramer.C2.value;var D2=document.cramer.D2.value;var A3=document.cramer.A3.value;var B3=document.cramer.B3.value;var C3=document.cramer.C3.value;var D3=document.cramer.D3.value;if(A!=""&&B!=""&&C!=""&&D!=""&&A2!=""&&B2!=""&&C2!=""&&D2!=""&&A3!=""&&B3!=""&&C3!=""&&D3!="")
-{var fixed=A*(B2*C3-C2*B3)-B*(A2*C3-C2*A3)+C*(A2*B3-A3*B2);var resx2=D*(B2*C3-C2*B3)-B*(D2*C3-C2*D3)+C*(D2*B3-B2*D3);var resy2=A*(D2*C3-C2*D3)-D*(A2*C3-C2*A3)+C*(A2*D3-D2*A3);var resz2=A*(B2*D3-D2*B3)-B*(A2*D3-A3*D2)+D*(A2*B3-A3*B2);document.cramer.resx2.value=resx2/fixed;document.cramer.resy2.value=resy2/fixed;document.cramer.resz2.value=resz2/fixed;}}
-function calculatespeed(){var form=document.speedform;var i=form.distunits.selectedIndex;var distunitsvalue=form.distunits.options[i].value;var j=form.speedunits.selectedIndex;var speedunitsvalue=form.speedunits.options[j].value;var h=form.hourvalue.value;if(isblank(h))h='0';else
-h=parseFloat(h);var m=form.minutevalue.value;if(isblank(m))m='0';else
-m=parseFloat(m);var s=form.secondvalue.value;if(isblank(s))s='0';else
-s=parseFloat(s);var d=form.distvalue.value;if(isblank(d))d='0';else
-d=parseFloat(d);var temp=(h*3600)+(m*60)+s;form.speedvalue.value=roundoff(((d*distunitsvalue)/(temp*speedunitsvalue)),5);return true;}
-function roundoff(x,y){x=parseFloat(x);y=parseFloat(y);x=Math.round(x*Math.pow(10,y))/Math.pow(10,y);return x;}
-function isblank(s)
-{for(var i=0;i<s.length;i++){var c=s.charAt(i);if((c!=' ')&&(c!='\n')&&(c!='\t'))return false;}
-return true;}
-function tempconv(zog){var num1,num2
-if(zog==1){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*33.90
-document.tempsize.tempto.value=num1}
-if(zog==2){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*14.50
-document.tempsize.tempto.value=num1}
-if(zog==3){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*1.133
-document.tempsize.tempto.value=num1}
-if(zog==4){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.6720
-document.tempsize.tempto.value=num1}
-if(zog==5){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*14.22
-document.tempsize.tempto.value=num1}
-if(zog==6){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.003281
-document.tempsize.tempto.value=num1}
-if(zog==7){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*6.8948
-document.tempsize.tempto.value=num1}
-if(zog==8){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*2.3067
-document.tempsize.tempto.value=num1}
-if(zog==9){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*2.036
-document.tempsize.tempto.value=num1}
-if(zog==10){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*27.677
-document.tempsize.tempto.value=num1}
-if(zog==11){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2+273
-document.tempsize.tempto.value=num1}
-if(zog==12){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=(num2+17.78)*1.8
-document.tempsize.tempto.value=num1}
-if(zog==13){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.0295
-document.tempsize.tempto.value=num1}
-if(zog==14){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.8826
-document.tempsize.tempto.value=num1}
-if(zog==15){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*304.8
-document.tempsize.tempto.value=num1}
-if(zog==16){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.4335
-document.tempsize.tempto.value=num1}
-if(zog==17){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.491
-document.tempsize.tempto.value=num1}
-if(zog==18){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.03613
-document.tempsize.tempto.value=num1}
-if(zog==19){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*1.488
-document.tempsize.tempto.value=num1}
-if(zog==20){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.0690
-document.tempsize.tempto.value=num1}
-if(zog==21){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.07031
-document.tempsize.tempto.value=num1}
-if(zog==22){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2*0.1450
-document.tempsize.tempto.value=num1}
-if(zog==23){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=num2+460
-document.tempsize.tempto.value=num1}
-if(zog==24){num2=parseFloat(document.tempsize.tempfrom.value)
-num1=(num2-32)*0.5556
-document.tempsize.tempto.value=num1}
-if(zog==99){document.tempsize.tempfrom.value=document.tempsize.tempto.value
-document.tempsize.tempto.value=""}}
-function SolveIC555timer(form)
-{if(R1<1||C<.0005)alert("R1 should be > 1K and C > .005uF");if(R1>.99&&R2>0&&C>.0005){RT=(R1*1)+(R2*1);T1=0.693*RT*C;T1=Math.round(T1*100000);T1=T1/100000;T2=0.693*R2*C;T2=Math.round(T2*100000);T2=T2/100000;F=1.44/(C*((R1*1)+(R2*2)));F=Math.round(F*10000000);F=F/10000000;form.T1.value=T1;form.T2.value=T2;form.F.value=F;}}
-function SetR1(R){R1=R.value;}
-function SetR2(R){R2=R.value;}
-function SetC(CC){C=CC.value;}
-function ClearForm(form)
-{R1=0;R2=0;C=0;T1=0;T2=0;F=0;form.R1.value=0;form.R2.value=0;form.C.value=0;form.T1.value=0;form.T2.value=0;form.F.value=0;}
-function solvePVRC(form){var i=4;if(!form.E.value)E=0;else E=eval(form.E.value);if(E==0)i--;if(!form.I.value)I=0;else I=eval(form.I.value);if(I==0)i--;if(!form.R.value)R=0;else R=eval(form.R.value);if(R==0)i--;if(!form.P.value)P=0;else P=eval(form.P.value);if(P==0)i--;if(i==0)return;if(i!=2)
-{alert("\nError. Please enter 'two' values.\n");return;}
-if(E!=0)
-{if(I!=0)
-{R=E/I;P=E*I;}
-else if(R!=0)
-{I=E/R;P=(E*E)/R;}
-else if(P!=0)
-{I=P/E;R=(E*E)/P;}
-showresults(form);form.E.focus();return;}
-if(I!=0)
-{if(R!=0)
-{E=I*R;P=(I*I)*R;}
-else if(P!=0)
-{E=P/I;R=P/(I*I);}
-showresults(form);form.I.focus();return;}
-I=Math.sqrt(P/R);E=Math.sqrt(P*R);showresults(form);form.R.focus();return;}
-function clearBoxes(form)
-{form.E.value="";form.I.value="";form.R.value="";form.P.value="";form.E.focus();}
-function showresults(form){form.E.value=E;form.I.value=I;form.R.value=R;form.P.value=P;}
-function compute_watts(form){if((form.e.value!="")&&(form.i.value!="")&&(form.r.value!="")){form.result.value=0
-alert("Please enter only two of V, I, and R")}
-else if(((form.e.value=="")&&(form.i.value=="")&&(form.r.value==""))||((form.e.value=="")&&(form.i.value=="")&&(form.r.value!=""))||((form.e.value=="")&&(form.i.value!="")&&(form.r.value==""))||((form.e.value!="")&&(form.i.value=="")&&(form.r.value==""))){form.result.value=0
-alert("Please enter two of V, I, and R")}
-else if(form.e.value=="")
-form.result.value=eval(form.i.value)*eval(form.i.value)*eval(form.r.value)
-else if(form.i.value==""){if(eval(form.r.value)==0)
-divide_by_zero_error(form)
-else
-form.result.value=eval(form.e.value)*eval(form.e.value)/eval(form.r.value)}
-else if(form.r.value=="")
-form.result.value=eval(form.e.value)*eval(form.i.value)}
-function compute_amps(form){if((form.ee.value!="")&&(form.ww.value!="")&&(form.rr.value!="")){form.resulta.value=""
-alert("Please enter only two of V, W, and R")}
-else if(((form.ee.value=="")&&(form.ww.value=="")&&(form.rr.value==""))||((form.ee.value=="")&&(form.ww.value=="")&&(form.rr.value!=""))||((form.ee.value=="")&&(form.ww.value!="")&&(form.rr.value==""))||((form.ee.value!="")&&(form.ww.value=="")&&(form.rr.value==""))){form.resulta.value=""
-alert("Please enter two of V, W, and R")}
-else if(form.cb.checked){if(form.rr.value!="")
-alert("Only enter V and W when using the 3-phase calculation")
-else if(eval(form.ee.value)==0)
-divide_by_zero_error(form)
-else
-form.resulta.value=eval(form.ww.value)/(eval(form.ee.value)*1.73)}
-else if(form.ee.value==""){if(eval(form.rr.value)==0)
-divide_by_zero_error(form)
-else
-form.resulta.value=Math.sqrt(eval(form.ww.value)/eval(form.rr.value))}
-else if(form.ww.value==""){if(eval(form.rr.value)==0)
-divide_by_zero_error(form)
-else
-form.resulta.value=eval(form.ee.value)/eval(form.rr.value)}
-else if(form.rr.value==""){if(eval(form.ee.value)==0)
-divide_by_zero_error(form)
-else
-form.resulta.value=eval(form.ww.value)/eval(form.ee.value)}}
-function compute_volts(form){if((form.wv.value!="")&&(form.iv.value!="")&&(form.rv.value!="")){form.resultv.value=0
-alert("Please enter only two of W, I, and R")}
-else if(((form.wv.value=="")&&(form.iv.value=="")&&(form.rv.value==""))||((form.wv.value=="")&&(form.iv.value=="")&&(form.rv.value!=""))||((form.wv.value=="")&&(form.iv.value!="")&&(form.rv.value==""))||((form.wv.value!="")&&(form.iv.value=="")&&(form.rv.value==""))){form.resultv.value=0
-alert("Please enter two of W, I, and R")}
-else if(form.wv.value=="")
-form.resultv.value=eval(form.iv.value)*eval(form.rv.value)
-else if(form.iv.value=="")
-form.resultv.value=Math.sqrt(eval(form.wv.value)*eval(form.rv.value))
-else if(form.rv.value==""){if(eval(form.iv.value)==0)
-divide_by_zero_error(form)
-else
-form.resultv.value=eval(form.wv.value)/eval(form.iv.value)}}
-function compute_ohms(form){if((form.eo.value!="")&&(form.io.value!="")&&(form.wo.value!="")){form.resulto.value=0
-alert("Please enter only two of V, I, and W")}
-else if(((form.eo.value=="")&&(form.io.value=="")&&(form.wo.value==""))||((form.eo.value=="")&&(form.io.value=="")&&(form.wo.value!=""))||((form.eo.value=="")&&(form.io.value!="")&&(form.wo.value==""))||((form.eo.value!="")&&(form.io.value=="")&&(form.wo.value==""))){form.resulto.value=0
-alert("Please enter two of V, I, and W")}
-else if(form.eo.value==""){if(eval(form.io.value)==0)
-divide_by_zero_error(form)
-else
-form.resulto.value=eval(form.wo.value)/eval(form.io.value)*eval(form.io.value)}
-else if(form.io.value==""){if(eval(form.wo.value)==0)
-divide_by_zero_error(form)
-else
-form.resulto.value=eval(form.eo.value)*eval(form.eo.value)/eval(form.wo.value)}
-else if(form.wo.value==""){if(eval(form.io.value)==0)
-divide_by_zero_error(form)
-else
-form.resulto.value=eval(form.eo.value)/eval(form.io.value)}}
-function solveCFI(form)
-{var i=3;if(!form.C.value)C=0;else C=eval(form.C.value);if(C==0)i--;if(!form.F.value)F=0;else F=eval(form.F.value);if(F==0)i--;if(!form.L.value)L=0;else L=eval(form.L.value);if(L==0)i--;if(i==0)return;if(i==1)
-{alert("\nMissing a value. Two are required!\n");return;}
-if(C==0)
-{form.C.value=25330/F/F/L;return;}
-if(F==0)
-{form.F.value=159.154/Math.sqrt(L*C);return;}
-form.L.value=25330/F/F/C;return;}
-function massconv(zog){var num1,num2
-if(zog==1){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.0328
-document.masssize.massto.value=num1}
-if(zog==2){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.3937
-document.masssize.massto.value=num1}
-if(zog==3){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.01094
-document.masssize.massto.value=num1}
-if(zog==4){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*2.205
-document.masssize.massto.value=num1}
-if(zog==5){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*3.281
-document.masssize.massto.value=num1}
-if(zog==6){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*1.094
-document.masssize.massto.value=num1}
-if(zog==7){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.03937
-document.masssize.massto.value=num1}
-if(zog==8){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.001076
-document.masssize.massto.value=num1}
-if(zog==9){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.1550
-document.masssize.massto.value=num1}
-if(zog==10){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*30.48
-document.masssize.massto.value=num1}
-if(zog==11){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.3048
-document.masssize.massto.value=num1}
-if(zog==12){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*2.54
-document.masssize.massto.value=num1}
-if(zog==13){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*25.40
-document.masssize.massto.value=num1}
-if(zog==14){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.4536
-document.masssize.massto.value=num1}
-if(zog==15){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*929.03
-document.masssize.massto.value=num1}
-if(zog==16){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*6.452
-document.masssize.massto.value=num1}
-if(zog==17){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*91.44
-document.masssize.massto.value=num1}
-if(zog==18){num2=parseFloat(document.masssize.massfrom.value)
-num1=num2*0.9144
-document.masssize.massto.value=num1}
-if(zog==99){document.masssize.massfrom.value=document.masssize.massto.value
-document.masssize.massto.value=""}}
-function solveRFC(form)
-{var i=3;if(!form.Resistance.value)r=0;else r=eval(form.Resistance.value);if(r==0)i--;if(!form.Frequency.value)f=0;else f=eval(form.Frequency.value);if(f==0)i--;if(!form.Capacitance.value)c=0;else c=eval(form.Capacitance.value);if(c==0)i--;if(i==0)return;if(i==1)
-{alert("\nMissing a value. Two are required!\n");return;}
-if(r==0)
-{form.Resistance.value=(BelsConstant/c)/f;return;}
-if(f==0)
-{form.Frequency.value=(BelsConstant/c)/r;return;}
-form.Capacitance.value=BelsConstant/(f*r);return;}
-function calcREST()
-{restnce=0;resout=0;one=(document.dropbox.bandone.options[document.dropbox.bandone.selectedIndex].value)
-two=(document.dropbox.bandtwo.options[document.dropbox.bandtwo.selectedIndex].value)
-three=(document.dropbox.bandthree.options[document.dropbox.bandthree.selectedIndex].value)
-four=(document.dropbox.bandfour.options[document.dropbox.bandfour.selectedIndex].value)
-val1=((one-100)*3)-2;val2=((two-200)*3)+28;val3=((three-300)*3)+58;val4=((four-400)*3)+88;var mn=new Array
-(101,0,"Black",102,10,"Brown",103,20,"Red",104,30,"Orange",105,40,"Yellow",106,50,"Green",107,60,"Blue",108,70,"Violet",109,80,"Gray",110,90,"White",201,0,"Black",202,1,"Brown",203,2,"Red",204,3,"Orange",205,4,"Yellow",206,5,"Green",207,6,"Blue",208,7,"Violet",209,8,"Gray",210,9,"White",301,1,"Black",302,10,"Brown",303,100,"Red",304,1000,"Orange",305,10000,"Yellow",306,100000,"Green",307,1000000,"Blue",308,10000000,"Violet",309,.1,"Gold",310,.01,"Silver",401,20,"None",402,10,"Silver",403,5,"Gold");res1=mn[val1];res2=mn[val2];res3=mn[val3];res4=mn[val4];restnce=(res1+res2)*res3;resout=restnce;if(restnce>1000){resout=(restnce/1000)+" K"}
-if(restnce>1000000){resout=(restnce/1000000)+" MEG"}
-document.outbox.z1.value=" "+(resout)+" ohms and "+(res4)+" % tolerance";}
-function convertform(){form=document.forms['PCC'];var firstvalue=0;for(var i=1;i<=form.count;i++){if(form.elements[i].value!=null&&form.elements[i].value.length!=0){firstvalue=parseFloat(form.elements[i].value);if(isNaN(firstvalue))firstvalue=0;firstvalue*=form.elements[i].factor;break;}}
-if(firstvalue==0){clearform(0,form);return false;}
-for(var i=0;i<=form.count;i++){form.elements[i].value=firstvalue/form.elements[i].factor;form.elements[i].value=" "+
-formatvalue(form.elements[i].value,form.rsize);}
-return true;}
-function formatvalue(input,rsize){var sign="";var m=input;var e=0;;var res;var l;var d;if(m==0.0)return"0";if(m<0){sign="-";m=-m;}
-while(m<1.0){e--;m*=10.0}
-while(m>=10){e++;m/=10.0}
-res=formathelp(sign,m,e,1000);l=res.length-rsize;if(l>4)res="***";if(l==3||l==4)res=formathelp(sign,m,e,1);else if(l==2)res=formathelp(sign,m,e,10);else if(l==1)res=formathelp(sign,m,e,100);return res;}
-function formathelp(sign,m,e,d){var m1=m;var e1=e;var res;m1*=d;m1=Math.round(m1);m1/=d;if(m1==10.0){m1=1.0;e1++;}
-if(e1==0)
-res=sign+m1;else
-res=sign+m1+"E"+e1;return res;}
-function resetform(form){clearform(0,form);return true;}
-function clearform(n,form){for(var i=0;i<=form.count;i++){if(i!=n)form.elements[i].value="";}
-return true;}
-function calc1(theForm)
-{var kapa=Math.round(theForm.t6.value*100)/100;var pk=kapa/(kapa-1);theForm.t1.value=Math.round(theForm.t1.value*10)/10;theForm.t2.value=Math.round(theForm.t2.value*100)/100;theForm.t3.value=Math.round(theForm.t3.value*10)/10;theForm.t4.value=Math.round(theForm.t4.value*10)/10;theForm.t5.value=Math.round(theForm.t1.value*theForm.t3.value/theForm.t2.value/101325*100000)/100000;theForm.t6.value=Math.round(theForm.t5.value*theForm.t4.value*100000)/100000;theForm.t7.value=Math.round((1/theForm.t5.value)*10000)/10000;}
-function dfault1(theForm)
-{theForm.t1.value=298;theForm.t2.value=1;theForm.t3.value=286.7;theForm.t4.value=1;theForm.t5.value=0.84319;theForm.t6.value=0.84319;theForm.t7.value=1.186;}
-function calc2(theForm)
-{theForm.t8.value=Math.round(theForm.t8.value*10)/10;theForm.t9.value=Math.round(theForm.t9.value*100)/100;theForm.t10.value=Math.round(theForm.t10.value*10)/10;theForm.t11.value=Math.round(Math.pow(theForm.t8.value*theForm.t9.value*theForm.t10.value,0.5)*10)/10;theForm.t12.value=Math.round(3.281*theForm.t11.value*10)/10;}
-function dfault2(theForm)
-{theForm.t8.value=298;theForm.t9.value=1.4;theForm.t10.value=286.7;theForm.t11.value=345.8;theForm.t12.value=1134.6;}
-function volconv(zog){var num1,num2
-if(zog==1){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.0005787
-document.volsize.volto.value=num1}
-if(zog==2){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.01732
-document.volsize.volto.value=num1}
-if(zog==3){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*264.2
-document.volsize.volto.value=num1}
-if(zog==4){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*27
-document.volsize.volto.value=num1}
-if(zog==5){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.1337
-document.volsize.volto.value=num1}
-if(zog==6){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.035531
-document.volsize.volto.value=num1}
-if(zog==7){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*61.02
-document.volsize.volto.value=num1}
-if(zog==8){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.001
-document.volsize.volto.value=num1}
-if(zog==9){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.2642
-document.volsize.volto.value=num1}
-if(zog==10){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*1.057
-document.volsize.volto.value=num1}
-if(zog==11){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.0584
-document.volsize.volto.value=num1}
-if(zog==12){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.02632
-document.volsize.volto.value=num1}
-if(zog==13){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.03704
-document.volsize.volto.value=num1}
-if(zog==14){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*7.48052
-document.volsize.volto.value=num1}
-if(zog==15){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*28.32
-document.volsize.volto.value=num1}
-if(zog==16){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.001639
-document.volsize.volto.value=num1}
-if(zog==17){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*1000
-document.volsize.volto.value=num1}
-if(zog==18){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.003785
-document.volsize.volto.value=num1}
-if(zog==19){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*3.785
-document.volsize.volto.value=num1}
-if(zog==20){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*17.118
-document.volsize.volto.value=num1}
-if(zog==21){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*57.75
-document.volsize.volto.value=num1}
-if(zog==22){num2=parseFloat(document.volsize.volfrom.value)
-num1=num2*0.9463
-document.volsize.volto.value=num1}
-if(zog==99){document.volsize.volfrom.value=document.volsize.volto.value
-document.volsize.volto.value=""}}
-function javaCalc(obj){var Results;var inUnits;var Unit;var InchFactor=0.000039370079;var mmFactor=0.001;var MicroinchFactor=39.370079;var AngstromFactor=10000;var MilFactor=0.039370079;var NanometerFactor=1000;inUnits=obj.inUnit.value;Unit=obj.UnitList.value;if(Unit=="Microns"){Results=inUnits}
-if(Unit=="Inches"){Results=inUnits/InchFactor}
-if(Unit=="Millimeters"){Results=inUnits/mmFactor}
-if(Unit=="Nanometers"){Results=inUnits/NanometerFactor}
-if(Unit=="Microinches"){Results=inUnits/MicroinchFactor}
-if(Unit=="Angstroms"){Results=inUnits/AngstromFactor}
-if(Unit=="Mils"){Results=inUnits/MilFactor}
-obj.Microns.value=eval(Results);obj.Inches.value=Results*eval(InchFactor);obj.mm.value=Results*eval(mmFactor);obj.Nanometers.value=Results*NanometerFactor;obj.Microinches.value=Results*MicroinchFactor;obj.Angstroms.value=Results*AngstromFactor;obj.Mils.value=Results*MilFactor;}
-function ComputeCETC(form)
-{with(Math){var micro=0.000001;var Precision=3;var En;var Vc=Number(form.Vc.value);var C=Number(form.C.value)*micro;var R=Number(form.R.value);if(R){TC=R*C;form.TC.value=TC.toPrecision(Precision);}
-En=1*Vc*Vc*C/2;form.En.value=En.toPrecision(Precision);En1=En*0.00094781712;form.En1.value=En1.toPrecision(Precision);}}
-function ComputeACII(form){with(Math){var d=Number(form.d.value);var n=Number(form.n.value);var len=Number(form.len.value);var L;var Precision=5;L=d*d*n*n/(18*d+40*len);form.L.value=L.toFixed(Precision);}}
-function ComputeFTPSC(form){with(Math){var Kilo=1000;var Meg=Kilo*Kilo;var micro=1/Meg;var Pico=1/(Meg*Meg);var Nano=1/(Meg*Kilo);var Precision=3;var Po1,Po2,Po3,Po4;var Pin;var Nps1;var T;var D;var Area;var F=Number(form.F.value)*Kilo;var Vin=abs(Number(form.Vin.value));var Eff=abs(Number(form.Eff.value)/100);var Vd=abs(Number(form.Vd.value));var Vdsmax=abs(Number(form.Vdsmax.value));var AL=Number(form.AL.value)/Meg;var Vtran=Number(form.Vtran.value)
-T=1/F;var Vo1=abs(Number(form.Vo1.value));var Io1=abs(Number(form.Io1.value));Po1=(Vo1+Vd)*Io1;var Vo2=abs(Number(form.Vo2.value));var Io2=abs(Number(form.Io2.value));Po2=(Vo2+Vd)*Io2;var Vo3=abs(Number(form.Vo3.value));var Io3=abs(Number(form.Io3.value));Po3=(Vo3+Vd)*Io3;var Vo4=abs(Number(form.Vo4.value));var Io4=abs(Number(form.Io4.value));Po4=(Vo4+Vd)*Io4;Pin=(Po1+Po2+Po3+Po4)/Eff;Nps1=(Vdsmax*0.8-Vin)/(Vo2+Vd);Tdt=T*.2;Tch=(Vo1+Vd)*Nps1*(T-Tdt)/((Vin-Vtran)+(Vo1+Vd)*Nps1);Tdis=T-Tdt-Tch;L=((Vin*Tch)*(Vin*Tch))/(2.5*T*Pin);Np=sqrt(L/AL);Ns1=Np*(Vo1+Vd)/(Vin-Vtran);Ns2=Np*(Vo2+Vd)/(Vin-Vtran);Ns3=Np*(Vo3+Vd)/(Vin-Vtran);Ns4=Np*(Vo4+Vd)/(Vin-Vtran);Ip=Vin*Tch/L;Iprms=Ip*sqrt(Tch/(3*T));Area=500*PI/4;Dp=2*sqrt(Area/PI);AWGp=(log(Dp/1000)-log(.32439))/log(0.8909);T=T*Meg;Tdt=Tdt*Meg;Tch=Tch*Meg;Tdis=Tdis*Meg;L=L*Meg;form.T.value=T.toPrecision(Precision);form.Po1.value=Po1.toPrecision(Precision);form.Po2.value=Po2.toPrecision(Precision);form.Po3.value=Po3.toPrecision(Precision);form.Po4.value=Po4.toPrecision(Precision);form.Pin.value=Pin.toPrecision(Precision);form.Nps1.value=Nps1.toPrecision(Precision);form.Tch.value=Tch.toPrecision(Precision);form.Tdis.value=Tdis.toPrecision(Precision);form.Tdt.value=Tdt.toPrecision(Precision);form.L.value=L.toPrecision(Precision);form.Np.value=Np.toPrecision(Precision);form.Ns1.value=Ns1.toPrecision(Precision);form.Ns2.value=Ns2.toPrecision(Precision);form.Ns3.value=Ns3.toPrecision(Precision);form.Ns4.value=Ns4.toPrecision(Precision);form.Ip.value=Ip.toPrecision(Precision);form.Iprms.value=Iprms.toPrecision(Precision);form.Dp.value=Dp.toPrecision(Precision);form.AWGp.value=AWGp.toPrecision(2);}}
-function ComputeWB1(form){with(Math){var Precision=3;var Vb;var Vin=Number(form.Vin.value);var R1=Number(form.R1.value);var R2=Number(form.R2.value);var R3=Number(form.R3.value);var Rx=Number(form.Rx.value);Vb=Vin*(Rx/(R3+Rx)-R2/(R1+R2));form.Vb.value=Vb.toPrecision(Precision);}}
-function ComputeWB2(form){with(Math){var Precision=3;var Rx;var Vin=Number(form.Vin.value);var R1=Number(form.R1.value);var R2=Number(form.R2.value);var R3=Number(form.R3.value);var Vb=Number(form.Vb.value);Rx=(R2*R3)/R1;form.Rx.value=Rx.toPrecision(Precision);}}
-function ComputeFPLC(form){with(Math){var Kilo=1000;var Meg=Kilo*Kilo;var micro=1/Meg;var Pico=1/(Meg*Meg);var Nano=1/(Meg*Kilo);var Precision=3;var Ptx=Number(form.Ptx.value);var Gtx=Number(form.Gtx.value);var Grx=Number(form.Grx.value);var lambda=Number(form.lambda.value);var f=Number(form.f.value)*Meg;var d=Number(form.d.value);var Atx;var Arx;Atx=pow(10,Gtx/20);Arx=pow(10,Grx/20);if(f>0&&!lambda){lambda=300000000/f;form.lambda.value=lambda.toPrecision(Precision);}else if(lambda>0){f=300000000/lambda/Meg;form.f.value=f.toPrecision(Precision);}
-Prx=Ptx+Gtx+Grx-20*log((4*PI*d)/lambda)/LN10;form.Prx.value=Prx.toPrecision(Precision);}}
-function solveBTLLPF(f)
-{var i;c=eval(f.c.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value==""){n=1;f.n.value=n;}
-if(n>11){n=11;f.n.value=n;}
-if(c<1||f.c.value==""){c=1000000000;f.c.value=c/FM;}
-if(z<=0||f.z.value==""){z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;var g=new MakeArray(12);var s=new MakeArray(12);var t=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++)
-{k=(2*i-1)*Math.PI/(2*n);g[i]=2*Math.sin(k);s[i]=g[i]/(z*w);t[i]=g[i]*z/w;}
-f.t1.value=(t[1]/LM).toPrecision(Precision);f.s2.value=(s[2]/CM).toPrecision(Precision);f.t3.value=(t[3]/LM).toPrecision(Precision);f.s4.value=(s[4]/CM).toPrecision(Precision);f.t5.value=(t[5]/LM).toPrecision(Precision);f.s6.value=(s[6]/CM).toPrecision(Precision);f.t7.value=(t[7]/LM).toPrecision(Precision);f.s8.value=(s[8]/CM).toPrecision(Precision);f.t9.value=(t[9]/LM).toPrecision(Precision);f.s10.value=(s[10]/CM).toPrecision(Precision);f.t11.value=(t[11]/LM).toPrecision(Precision);}
-function solveBTLHPF(f)
-{var i;n=eval(f.n.value);c=eval(f.c.value);z=eval(f.z.value);if(n<1||f.n.value=="")
-{n=1;f.n.value=n;}
-if(n>11){n=11;f.n.value=n;}
-if(c<1||f.c.value==""){c=1000;f.c.value=c;}
-if(z<=0||f.z.value==""){z=50;f.z.value=z;}
-w=2*Math.PI*c/1000;var g=new MakeArray(12);var s=new MakeArray(12);var t=new MakeArray(12);var x=new MakeArray(12);var y=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++){k=(2*i-1)*Math.PI/(2*n);g[i]=2*Math.sin(k);x[i]=1000/(g[i]*z*w);y[i]=z/(g[i]*w);s[i]=x[i];t[i]=y[i];}
-f.x1.value=(x[1]).toPrecision(Precision);f.y2.value=(y[2]).toPrecision(Precision);f.x3.value=(x[3]).toPrecision(Precision);f.y4.value=(y[4]).toPrecision(Precision);f.x5.value=(x[5]).toPrecision(Precision);f.y6.value=(y[6]).toPrecision(Precision);f.x7.value=(x[7]).toPrecision(Precision);f.y8.value=(y[8]).toPrecision(Precision);f.x9.value=(x[9]).toPrecision(Precision);f.y10.value=(y[10]).toPrecision(Precision);f.x11.value=(x[11]).toPrecision(Precision);f.t1.value=(t[1]).toPrecision(Precision);f.s2.value=(s[2]).toPrecision(Precision);f.t3.value=(t[3]).toPrecision(Precision);f.s4.value=(s[4]).toPrecision(Precision);f.t5.value=(t[5]).toPrecision(Precision);f.s6.value=(s[6]).toPrecision(Precision);f.t7.value=(t[7]).toPrecision(Precision);f.s8.value=(s[8]).toPrecision(Precision);f.t9.value=(t[9]).toPrecision(Precision);f.s10.value=(s[10]).toPrecision(Precision);f.t11.value=(t[11]).toPrecision(Precision);}
-function solveCTLCPF(f)
-{var i;c=eval(f.c.value);r=eval(f.r.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value==""){n=1;f.n.value=n;}
-if(n>11){n=11;f.n.value=n;}
-am=Math.round((n+0.1)/2)*2-1-n;if(am<0){n=n+1;f.n.value=n;}
-if(c<1||f.c.value==""){c=1000000000;f.c.value=c/FM;}
-if(r<0.01||f.r.value==""){r=0.01;f.r.value=r;}
-if(z<=0||f.z.value==""){z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;rr=r/17.37;e2x=Math.exp(2*rr);coth=(e2x+1)/(e2x-1);bt=Math.log(coth);btn=bt/(2*n);gn=(Math.exp(btn)-Math.exp(-btn))/2;var a=new MakeArray(12);var b=new MakeArray(12);var g=new MakeArray(12);var s=new MakeArray(12);var t=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++){k=(2*i-1)*Math.PI/(2*n);a[i]=Math.sin(k);k2=Math.PI*i/n;k3=Math.sin(k2);b[i]=Math.pow(gn,2)+Math.pow(k3,2);}
-g[1]=2*a[1]/gn;for(i=2;i<=n;i++){g[i]=(4*a[i-1]*a[i])/(b[i-1]*g[i-1]);}
-for(i=1;i<=n;i++){s[i]=g[i]/(z*w);t[i]=g[i]*z/w;}
-f.t1.value=(t[1]/LM).toPrecision(Precision);f.s2.value=(s[2]/CM).toPrecision(Precision);f.t3.value=(t[3]/LM).toPrecision(Precision);f.s4.value=(s[4]/CM).toPrecision(Precision);f.t5.value=(t[5]/LM).toPrecision(Precision);f.s6.value=(s[6]/CM).toPrecision(Precision);f.t7.value=(t[7]/LM).toPrecision(Precision);f.s8.value=(s[8]/CM).toPrecision(Precision);f.t9.value=(t[9]/LM).toPrecision(Precision);f.s10.value=(s[10]/CM).toPrecision(Precision);f.t11.value=(t[11]/LM).toPrecision(Precision);}
-function solveCTLHPF(f)
-{var i;c=eval(f.c.value);r=eval(f.r.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value==""){n=1;f.n.value=n;}
-if(n>11){n=11;f.n.value=n;}
-am=Math.round((n+0.1)/2)*2-1-n;if(am<0){n=n+1;f.n.value=n;}
-if(c<1||f.c.value==""){c=1000;f.c.value=c/FM;}
-if(r<0.01||f.r.value==""){r=0.01;f.r.value=r;}
-if(z<=0||f.z.value==""){z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;rr=r/17.37;e2x=Math.exp(2*rr);coth=(e2x+1)/(e2x-1);bt=Math.log(coth);btn=bt/(2*n);gn=(Math.exp(btn)-Math.exp(-btn))/2;var a=new MakeArray(12);var b=new MakeArray(12);var g=new MakeArray(12);var x=new MakeArray(12);var y=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++){k=(2*i-1)*Math.PI/(2*n);a[i]=Math.sin(k);k2=Math.PI*i/n;k3=Math.sin(k2);b[i]=Math.pow(gn,2)+Math.pow(k3,2);}
-g[1]=2*a[1]/gn;for(i=2;i<=n;i++){g[i]=(4*a[i-1]*a[i])/(b[i-1]*g[i-1]);}
-for(i=1;i<=n;i++)
-{x[i]=1/(g[i]*z*w);y[i]=z/(g[i]*w);}
-f.x1.value=(x[1]/CM).toPrecision(Precision);f.y2.value=(y[2]/LM).toPrecision(Precision);f.x3.value=(x[3]/CM).toPrecision(Precision);f.y4.value=(y[4]/LM).toPrecision(Precision);f.x5.value=(x[5]/CM).toPrecision(Precision);f.y6.value=(y[6]/LM).toPrecision(Precision);f.x7.value=(x[7]/CM).toPrecision(Precision);f.y8.value=(y[8]/LM).toPrecision(Precision);f.x9.value=(x[9]/CM).toPrecision(Precision);f.y10.value=(y[10]/LM).toPrecision(Precision);f.x11.value=(x[11]/CM).toPrecision(Precision);}
-function solveBPCLPF(f)
-{var i;c=eval(f.c.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value=="")
-{n=1;f.n.value=n;}
-if(n>11)
-{n=11;f.n.value=n;}
-if(c<1||f.c.value=="")
-{c=1000;f.c.value=c/FM;}
-if(z<=0||f.z.value=="")
-{z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;var g=new MakeArray(12);var x=new MakeArray(12);var y=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++)
-{k=(2*i-1)*Math.PI/(2*n);g[i]=2*Math.sin(k);x[i]=g[i]/(z*w);y[i]=g[i]*z/w;}
-f.x1.value=(x[1]/CM).toPrecision(Precision);f.y2.value=(y[2]/LM).toPrecision(Precision);f.x3.value=(x[3]/CM).toPrecision(Precision);f.y4.value=(y[4]/LM).toPrecision(Precision);f.x5.value=(x[5]/CM).toPrecision(Precision);f.y6.value=(y[6]/LM).toPrecision(Precision);f.x7.value=(x[7]/CM).toPrecision(Precision);f.y8.value=(y[8]/LM).toPrecision(Precision);f.x9.value=(x[9]/CM).toPrecision(Precision);f.y10.value=(y[10]/LM).toPrecision(Precision);f.x11.value=(x[11]/CM).toPrecision(Precision);}
-function solveBPCHPF(f)
-{var i;c=eval(f.c.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value=="")
-{n=1;f.n.value=n;}
-if(n>11)
-{n=11;f.n.value=n;}
-if(c<1||f.c.value=="")
-{c=1000;f.c.value=c/FM;}
-if(z<=0||f.z.value=="")
-{z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;var g=new MakeArray(12);var s=new MakeArray(12);var t=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++)
-{k=(2*i-1)*Math.PI/(2*n);g[i]=2*Math.sin(k);s[i]=1/(g[i]*z*w);t[i]=z/(g[i]*w);}
-f.t1.value=(t[1]/LM).toPrecision(Precision);f.s2.value=(s[2]/CM).toPrecision(Precision);f.t3.value=(t[3]/LM).toPrecision(Precision);f.s4.value=(s[4]/CM).toPrecision(Precision);f.t5.value=(t[5]/LM).toPrecision(Precision);f.s6.value=(s[6]/CM).toPrecision(Precision);f.t7.value=(t[7]/LM).toPrecision(Precision);f.s8.value=(s[8]/CM).toPrecision(Precision);f.t9.value=(t[9]/LM).toPrecision(Precision);f.s10.value=(s[10]/CM).toPrecision(Precision);f.t11.value=(t[11]/LM).toPrecision(Precision);}
-function solveCPLLPF(f)
-{var i;c=eval(f.c.value);r=eval(f.r.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value=="")
-{n=1;f.n.value=n;}
-if(n>11)
-{n=11;f.n.value=n;}
-am=Math.round((n+0.1)/2)*2-1-n;if(am<0)
-{n=n+1;f.n.value=n;}
-if(c<1||f.c.value=="")
-{c=1000;f.c.value=c/FM;}
-if(r<0.01||f.r.value=="")
-{r=0.01;f.r.value=r;}
-if(z<=0||f.z.value==""){z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;rr=r/17.37;e2x=Math.exp(2*rr);coth=(e2x+1)/(e2x-1);bt=Math.log(coth);btn=bt/(2*n);gn=(Math.exp(btn)-Math.exp(-btn))/2;var a=new MakeArray(12);var b=new MakeArray(12);var g=new MakeArray(12);var x=new MakeArray(12);var y=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++){k=(2*i-1)*Math.PI/(2*n);a[i]=Math.sin(k);k2=Math.PI*i/n;k3=Math.sin(k2);b[i]=Math.pow(gn,2)+Math.pow(k3,2);}
-g[1]=2*a[1]/gn;for(i=2;i<=n;i++){g[i]=(4*a[i-1]*a[i])/(b[i-1]*g[i-1]);}
-for(i=1;i<=n;i++){x[i]=g[i]/(z*w);y[i]=g[i]*z/w;}
-f.x1.value=(x[1]/CM).toPrecision(Precision);f.y2.value=(y[2]/LM).toPrecision(Precision);f.x3.value=(x[3]/CM).toPrecision(Precision);f.y4.value=(y[4]/LM).toPrecision(Precision);f.x5.value=(x[5]/CM).toPrecision(Precision);f.y6.value=(y[6]/LM).toPrecision(Precision);f.x7.value=(x[7]/CM).toPrecision(Precision);f.y8.value=(y[8]/LM).toPrecision(Precision);f.x9.value=(x[9]/CM).toPrecision(Precision);f.y10.value=(y[10]/LM).toPrecision(Precision);f.x11.value=(x[11]/CM).toPrecision(Precision);}
-function solveCPLHPF(f)
-{var i;c=eval(f.c.value);r=eval(f.r.value);z=eval(f.z.value);n=eval(f.n.value);FM=eval(f.FM.value);ZM=eval(f.ZM.value);CM=eval(f.CM.value);LM=eval(f.LM.value);c=c*FM;z=z*ZM;if(n<1||f.n.value=="")
-{n=1;f.n.value=n;}
-if(n>11)
-{n=11;f.n.value=n;}
-am=Math.round((n+0.1)/2)*2-1-n;if(am<0){n=n+1;f.n.value=n;}
-if(c<1||f.c.value==""){c=1000;f.c.value=c/FM;}
-if(r<0.01||f.r.value==""){r=0.01;f.r.value=r;}
-if(z<=0||f.z.value==""){z=50;f.z.value=z/ZM;}
-w=2*Math.PI*c;rr=r/17.37;e2x=Math.exp(2*rr);coth=(e2x+1)/(e2x-1);bt=Math.log(coth);btn=bt/(2*n);gn=(Math.exp(btn)-Math.exp(-btn))/2;var a=new MakeArray(12);var b=new MakeArray(12);var g=new MakeArray(12);var s=new MakeArray(12);var t=new MakeArray(12);var Precision=7;for(i=1;i<=n;i++){k=(2*i-1)*Math.PI/(2*n);a[i]=Math.sin(k);k2=Math.PI*i/n;k3=Math.sin(k2);b[i]=Math.pow(gn,2)+Math.pow(k3,2);}
-g[1]=2*a[1]/gn;for(i=2;i<=n;i++){g[i]=(4*a[i-1]*a[i])/(b[i-1]*g[i-1]);}
-for(i=1;i<=n;i++){s[i]=1/(g[i]*z*w);t[i]=z/(g[i]*w);}
-f.t1.value=(t[1]/LM).toPrecision(Precision);f.s2.value=(s[2]/CM).toPrecision(Precision);f.t3.value=(t[3]/LM).toPrecision(Precision);f.s4.value=(s[4]/CM).toPrecision(Precision);f.t5.value=(t[5]/LM).toPrecision(Precision);f.s6.value=(s[6]/CM).toPrecision(Precision);f.t7.value=(t[7]/LM).toPrecision(Precision);f.s8.value=(s[8]/CM).toPrecision(Precision);f.t9.value=(t[9]/LM).toPrecision(Precision);f.s10.value=(s[10]/CM).toPrecision(Precision);f.t11.value=(t[11]/LM).toPrecision(Precision);}
-function solvePRC(form)
-{var i=3;if(!form.R1.value)R1=0;else R1=eval(form.R1.value);if(R1==0)i--;if(!form.R2.value)R2=0;else R2=eval(form.R2.value);if(R2==0)i--;if(!form.R.value)R=0;else R=eval(form.R.value);if(R==0)i--;R1M=eval(form.R1M.value);R2M=eval(form.R2M.value);RM=eval(form.RM.value);R1=R1*R1M;R2=R2*R2M;R=R*RM;if(i==0)return;if(i==1)
-{alert("\nMissing a value. Two values are required!\n");return;}
-if(R1==0)
-{R1=(R*R2)/(R2-R);form.R1.value=R1/R1M;return;}
-if(R2==0)
-{R2=(R*R1)/(R1-R);form.R2.value=R2/R2M;return;}
-R=(R1*R2)/(R1+R2);form.R.value=R/RM;return;}
-function computeLCRC(nawobj)
-{var Precision=7;cscale=1/(1000000*(Math.pow(10,3*(document.form.C_units.selectedIndex))))
-lscale=1/(Math.pow(10,3*(document.form.L_units.selectedIndex)))
-fscale=1/(Math.pow(10,3*(document.form.F_units.selectedIndex)))
-cin=parseFloat(nawobj.parm1.value)
-lin=parseFloat(nawobj.parm2.value)
-c=cin*cscale
-l=lin*lscale
-f=1/(2*Math.PI*Math.sqrt(l*c))
-nawobj.result.value=(f*fscale).toPrecision(Precision)}
-function log10(x)
-{with(Math){return log(x)/log(10);}}
-function ComputeLEDRC(form)
-{with(Math){var Vf=Number(form.Vf.value);var Vs=Number(form.Vs.value);var Imax=Number(form.Imax.value);var R;var Precision=3;R=(Vs-Vf)/Imax*1000;form.R.value=R.toPrecision(Precision);}}
-function ComputeMIC(form){with(Math){var b=Number(form.b.value);var w=Number(form.w.value);var h=Number(form.h.value);var L;var Precision=5;L=0.00508*b*(log(2*b/(w+h))+.5+0.2235*(w+h)/b);form.L.value=L.toFixed(Precision);}}
-function sknf_calc(){with(Math){f_base=document.getElementById("sknfText1").value
-f_mult=document.getElementById("sknfSelect1").value
-d_mult=document.getElementById("sknfSelect2").value
-freq=f_base*f_mult
-dpen=7.6/Math.sqrt(freq)*d_mult
-document.getElementById("sknfText2").value=dpen.toPrecision(3)}}
-function sknf_save()
-{userCookie.put("sknfText1",document.getElementById("sknfText1").value)
-userCookie.put("sknfSelect1",document.getElementById("sknfSelect1").value)
-userCookie.put("sknfSelect2",document.getElementById("sknfSelect2").value)
-userCookie.write()}
-function ComputeWAC(form)
-{with(Math){var F=Number(form.F.value);var LenIn=Number(form.Len.value);var LenFt=LenIn/12;var LenM=LenIn*.0254
-var D=Number(form.D.value);var Meg=1000000;var Nano=0.000000001;var Pico=0.000000000001;var L;var C;var Precision=3;C=17*LenFt/((log(24*LenFt/D)-1)*(1-(F*LenFt/234)*(F*LenFt/234)));w=(2*PI*F*Meg);L=1/(w*w*C*Pico)/Nano;LambdaQ=300/F/4;PLQ=LenM/LambdaQ*100;var h=LenFt/984*F*360;Rr=h*h/312;if(PLQ>50)Rr=0;form.L.value=L.toFixed(Precision);form.C.value=C.toFixed(Precision);form.LambdaQ.value=LambdaQ.toFixed(Precision);form.PLQ.value=PLQ.toFixed(Precision);form.Rr.value=Rr.toFixed(Precision);}}
-function getValuesVDC(){if(isNaN(document.net.I.value)){alert("Enter value for Input Voltage")
-document.net.I.focus()
-document.net.I.select()
-return false}
-if(isNaN(document.net.R1.value)){alert("Enter value for R1")
-document.net.R1.focus()
-document.net.R1.select()
-return false}
-if(isNaN(document.net.R2.value)){alert("Enter value for R2")
-document.net.R2.focus()
-document.net.R2.select()
-return false}
-if(isNaN(document.net.O.value)){alert("Enter value for Output Voltage")
-document.net.O.focus()
-document.net.O.select()
-return false}
-I=parseFloat(document.net.I.value)
-R1=parseFloat(document.net.R1.value)
-R2=parseFloat(document.net.R2.value)
-O=parseFloat(document.net.O.value)
-if(document.net.I.value==""&&document.net.R1.value!=""&&document.net.R2.value!=""&&document.net.O.value!=""){I=O*(R1+R2)/R2
-document.net.I.value=Math.round(I*1e3)/1e3
-return false}
-if(document.net.R1.value==""&&document.net.R2.value!=""&&document.net.I.value!=""&&document.net.O.value!=""){R1=(I*R2/O)-R2
-document.net.R1.value=Math.round(R1*100)/100
-return false}
-if(document.net.R2.value==""&&document.net.R1.value!=""&&document.net.I.value!=""&&document.net.O.value!=""){R2=O*R1/(I-O)
-document.net.R2.value=Math.round(R2*100)/100
-return false}
-if(document.net.O.value==""&&document.net.I.value!=""&&document.net.R1.value!=""&&document.net.R2.value!=""){O=I*R2/(R1+R2)
-document.net.O.value=Math.round(O*1e3)/1e3
-return false}}
-function computePSC(form)
-{f=form.depth.value;A=form.hole.value;a=form.aperture.value;t=form.num.value/form.den.value;if(form.scale.value=="2"){f*=1;}
-if(form.scale.value=="1"){f*=10;}
-if(form.scale.value=="0"){f*=25.4;}
-imagesz=f*1.3;optdia=Math.round(Math.sqrt(4*0.00000056*f/1000)*10000)/10;if(form.hole.value=="0"){fstop=f/optdia;}else{fstop=f/A;}
-fstop=Math.round(fstop);exposure=Math.round(fstop*fstop/a/a);exptime=t*exposure
-expmin=Math.round((exptime/60)-0.5);expsec=exptime-(expmin*60);if(form.scale.value=="2"){imagesz/=1
-form.imscale.value="mm";}
-if(form.scale.value=="1"){imagesz/=10;form.imscale.value="cm";}
-if(form.scale.value=="0"){imagesz/=25.4;form.imscale.value="inches";}
-form.imagesz.value=Math.round(imagesz*10)/10;form.optdia.value=optdia;form.fstop.value=fstop;form.exposure.value=exposure;form.expmin.value=expmin;form.expsec.value=expsec;}
-function calculateZDC(zen)
-{vinMin=parseFloat(zen.VinMin.value)
-vinMax=parseFloat(zen.VinMax.value)
-vOut=parseFloat(zen.Vout.value)
-IL=parseFloat(zen.Iload.value)
-if((vOut+0.8)>vinMin){alert("Minimum Input Voltage is too low!")
-return}
-R=round(1000*((vinMin-vOut)/(IL+10)))
-Rp=round(Math.pow((vinMax-vOut),2)/R)
-zen.R.value=R;zen.Rp.value=Rp;It=1000*((vinMax-vOut)/R)
-Zp=round((It*vOut)/1000)
-zen.vOut.value=vOut;zen.Zp.value=Zp;}
-function round(n)
-{return parseInt((n*100)+0.5)/100}
-function calcLOSC(page)
-{mast1=parseFloat(page.height1.value);mast2=parseFloat(page.height2.value);if(page.units[1].checked){mast1=mast1/0.3048;mast2=mast2/0.3048;}
-d1=Math.sqrt(2*mast1);d2=Math.sqrt(2*mast2);if(page.dist[1].checked){d1=parseFloat(d1*1.609);d2=parseFloat(d2*1.609);unit=" Km";}else unit=" Miles";d1=Math.round(d1);d2=Math.round(d2);page.horiz1.value=d1+unit;page.horiz2.value=d2+unit
-page.distance.value=Math.round(d1+d2)+unit;}
-function calcbattery()
-{var form=document.form1;var r=form.rating.value;var d=form.device.value;var Precision=6;var result=(r/d)*(.7);form.result.value=result.toPrecision(Precision);return true;}
-function solveTAC(form)
-{if(!form.A.value){alert("\nMissing a value. A value is required!\n");return;}
-else A=eval(form.A.value);if(A==0){alert("\nPlease enter A other than zero!\n");return;}
-if(!form.ZI.value){alert("\nMissing a value. Zi value is required!\n");return;}
-else ZI=eval(form.ZI.value);if(ZI==0){alert("\nPlease enter Zi other than zero!\n");return;}
-if(!form.ZO.value){alert("\nMissing a value. Zo value is required!\n");return;}
-else ZO=eval(form.ZO.value);if(ZO==0){alert("\nPlease enter Zo other than zero!\n");return;}
-ZIM=eval(form.ZIM.value);ZOM=eval(form.ZOM.value);R1M=eval(form.R1M.value);R2M=eval(form.R2M.value);R3M=eval(form.R3M.value);ZI=ZI*ZIM;ZO=ZO*ZOM;R2=2*Math.sqrt(ZI*ZO*Math.pow(10,A/10))/(Math.pow(10,A/10)-1);form.R2.value=R2/R2M;R3=(((Math.pow(10,A/10)+1)/(Math.pow(10,A/10)-1))*ZO)-R2;form.R3.value=R3/R3M;R1=(((Math.pow(10,A/10)+1)/(Math.pow(10,A/10)-1))*ZI)-R2;form.R1.value=R1/R1M;form.A.focus();return;}
-function ComputeMFDC(form)
-{with(Math){var MEGA=1000000;var Vrms=Number(form.Vrms.value);var Ae=Number(form.Ae.value);var Al=Number(form.Al.value);var F=Number(form.F.value)*MEGA;var N=Number(form.N.value);var Idc=Number(form.Idc.value);var Precision=2;Bmax=(Vrms*100*MEGA)/(4.44*F*N*Ae)+(N*Idc*Al)/(10*Ae);form.Bmax.value=Bmax.toFixed(Precision);tesla=0.0001*Bmax;var p=4;form.tesla.value=tesla.toFixed(p);}}
-function ComputeMSUARC(form)
-{with(Math){var Baud=Number(form.Baud.value);var F=Number(form.F.value);var nbits=Number(form.Bits.value);var radix=16;var N;var UxMCTL;var UxBR1;var UxBR0;var B0;var B1;var B2;var B3;var B4;var B5;var B6;var B7;var B8;var B9;var i;var er1;var er0;var msum;var txer=new Array(13);var rxer=new Array(13);var s=1;N=floor(F/Baud);UxBR1=N>>8;UxBR0=N&0xFF;UxMCTL=0x00;for(i=0;i<13;i++){txer[i]=0;rxer[i]=0;}
-msum=0;for(i=0;i<8;i++){er0=(Baud/F*((i+1)*N+msum)-(i+1))*100;er1=(Baud/F*((i+1)*N+msum+1)-(i+1))*100;if(abs(er1)<abs(er0)){msum++;UxMCTL|=s;txer[i]=er1;}else{txer[i]=er0;}
-s<<=1;}
-s=1;for(i=8;i<nbits;i++){if(UxMCTL&s){er0=(Baud/F*((i+1)*N+msum+1)-(i+1))*100;msum++;}else{er0=(Baud/F*((i+1)*N+msum)-(i+1))*100;}
-txer[i]=er0;s<<=1;}
-msum=0;for(i=0;i<nbits;i++){er0=(Baud/F*(2*((UxMCTL&1)+floor(N/2))+i*N+msum)-1-i)*100;rxer[i]=er0;s<<=1;if(s>=0x100)s=1;if(UxMCTL&s){msum++;}}
-form.UxMCTL.value="0x"+UxMCTL.toString(16);form.UxBR0.value="0x"+UxBR0.toString(radix);form.UxBR1.value="0x"+UxBR1.toString(radix);form.B0.value=txer[0].toPrecision(3);form.B1.value=txer[1].toPrecision(3);form.B2.value=txer[2].toPrecision(3);form.B3.value=txer[3].toPrecision(3);form.B4.value=txer[4].toPrecision(3);form.B5.value=txer[5].toPrecision(3);form.B6.value=txer[6].toPrecision(3);form.B7.value=txer[7].toPrecision(3);form.B8.value=txer[8].toPrecision(3);form.B9.value=txer[9].toPrecision(3);form.B10.value=txer[10].toPrecision(3);form.B11.value=txer[11].toPrecision(3);form.B12.value=txer[12].toPrecision(3);form.BR0.value=rxer[0].toPrecision(3);form.BR1.value=rxer[1].toPrecision(3);form.BR2.value=rxer[2].toPrecision(3);form.BR3.value=rxer[3].toPrecision(3);form.BR4.value=rxer[4].toPrecision(3);form.BR5.value=rxer[5].toPrecision(3);form.BR6.value=rxer[6].toPrecision(3);form.BR7.value=rxer[7].toPrecision(3);form.BR8.value=rxer[8].toPrecision(3);form.BR9.value=rxer[9].toPrecision(3);form.BR10.value=rxer[10].toPrecision(3);form.BR11.value=rxer[11].toPrecision(3);form.BR12.value=rxer[12].toPrecision(3);}}
-function ComputeHSTC1(form)
-{with(Math){var Precision=3;var Ta=Number(form.Ta.value);var TJmax=Number(form.TJmax.value);var Rcase=Number(form.Rcase.value);var R1=Number(form.R1.value);var R2=Number(form.R2.value);var TJ=Number(form.TJ.value);P=(TJ-Ta)/(Rcase+R1+R2);form.P.value=P.toFixed(Precision);btu=P*3.412;form.btu.value=btu.toFixed(Precision);}}
-function ComputeHSTC2(form){with(Math){var Precision=3;var Ta=Number(form.Ta.value);var TJmax=Number(form.TJmax.value);var Rcase=Number(form.Rcase.value);var R1=Number(form.R1.value);var R2=Number(form.R2.value);var P=Number(form.P.value);TJ=P*(Rcase+R1+R2)+Ta;form.TJ.value=TJ.toFixed(Precision);ComputeHSTC1(form);}}
-function ComputeIESW(form){with(Math){var a=Number(form.a.value);var b=Number(form.b.value);var L;var Precision=3;L=0.00508*b*(log(2*b/a)-0.75);form.L.value=L.toFixed(Precision);}}
-function ComputeIOARC(form){with(Math){var Vout=Number(form.Vout.value);var A=Number(form.A.value);var R1=Number(form.R1.value);var V1=Number(form.V1.value);var V2=Number(form.V2.value);var Vp=Number(form.Vp.value);var Vn=Number(form.Vn.value);var R2;var R3;var R4;var Vout1;var Vout2;var Precision=3;if(A>0)A=-A;if(Vn==Vp)Vn=-Vp;if(Vn>Vp){temp=Vp;Vp=Vn;Vn=temp;}
-if(Vn>0.0)Vn=0;R2=-A*R1;R3=R1;Vout1=A*V1;Vout2=Vout-Vout1;R4=R3*(1-Vout2*R1/((R1+R2)*V2))/(Vout2*R1/((R1+R2)*V2));form.R2.value=R2.toPrecision(Precision);form.R3.value=R3.toPrecision(Precision);form.R4.value=R4.toPrecision(Precision);form.Vp.value=Vp.toPrecision(Precision);form.Vn.value=Vn.toPrecision(Precision);form.A.value=A.toPrecision(Precision);}}
-function ComputeHAC(form){with(Math){var KILO=1000;var CENTO=100;var MEG=KILO*KILO;var MICRO=1/MEG;var PICO=1/(MEG*MEG);var NANO=1/(MEG*KILO);var Precision=3;var lambda=Number(form.lambda.value);var f=Number(form.f.value)*MEG;var N=Number(form.N.value);var SL=Number(form.SL.value);if(f>0&&!lambda){lambda=300000000/f;form.lambda.value=lambda.toPrecision(Precision);}else if(lambda>0){f=300000000/lambda/MEG;form.f.value=f.toPrecision(Precision);}
-C=lambda;CL=(C/lambda);Z=150/sqrt(CL);D=lambda/PI;S=SL*lambda;L=N*sqrt(C*C+SL*SL);G=10.8+10*log(CL*CL*N*SL)/LN10;HPBW=52/(CL*sqrt(N*SL));BWFN=115/(CL*sqrt(N*SL));var A=pow(10,G/10);Ae=A*lambda*lambda/(4*PI);D*=CENTO;S*=CENTO;L*=CENTO;form.Ae.value=Ae.toPrecision(Precision);form.HPBW.value=HPBW.toPrecision(Precision);form.BWFN.value=BWFN.toPrecision(Precision);form.D.value=D.toPrecision(Precision);form.S.value=S.toPrecision(Precision);form.Z.value=Z.toPrecision(Precision);form.G.value=G.toPrecision(Precision);form.L.value=L.toPrecision(Precision);}}
-function calcSLCC(form){init();d=form.diameter.value
-if(d==""){alert("Enter a value for the coil's diameter (mm)")
-form.diameter.focus()
-return}
-d=parseFloat(d)
-l=form.lengt.value
-if(l==""){alert("Enter a value for the coil's length (mm)")
-form.lengt.focus()
-return}
-l=parseFloat(l)
-if(l<d){s1="The coil's length needs to be at least as long as it's diameter."
-s2="\nPlease select alternative values."
-alert(s1+s2)
-reset()
-return}
-h=form.inductance.value
-if(h==""){alert("Enter the required Inductance (in microHenries)")
-form.inductance.focus()
-return}
-h=parseFloat(h)
-if(form.core[1].checked)h=h/1.5
-n=Math.sqrt(h*((0.70866*d)+(1.5748*l)))
-n=parseInt(n/(d/25.4),10)
-form.turns.value=n
-tpmm=parseFloat(n/l)
-tpi=tpmm*25.5
-for(var i=0;i<16;i++){if(tpi>=wire[i+1])swg=(((i+1)*2)+10)}
-if(swg==42){s1="Unable to wind sufficient turns in the given coil length.\n"
-s2="Increase the diameter or the length of the coil."
-alert(s1+s2)
-reset()
-return}
-form.wire.value=swg}
-function ComputeDC1(form){with(Math){var dB=Number(form.dB.value);var VG;var PG;var Precision=3;VG=pow(10,dB/20);PG=pow(10,dB/10);form.dB.value=dB.toPrecision(Precision);form.VG.value=VG.toPrecision(Precision);form.PG.value=PG.toPrecision(Precision);}}
-function ComputeDC2(form){with(Math){var dB;var VG=Number(form.VG.value);var PG;var Precision=3;dB=20*log10(VG);PG=VG*sqrt(2);form.dB.value=dB.toPrecision(Precision);form.VG.value=VG.toPrecision(Precision);form.PG.value=PG.toPrecision(Precision);}}
-function ComputeDC3(form){with(Math){var dB;var VG;var PG=Number(form.PG.value);var Precision=3;dB=10*log10(PG);VG=PG/sqrt(2);form.dB.value=dB.toPrecision(Precision);form.VG.value=VG.toPrecision(Precision);form.PG.value=PG.toPrecision(Precision);}}
-function ComputeDC4(form){with(Math){var Z=Number(form.Z.value);var dBm=Number(form.dBm.value);var P;var V;var Precision=3;P=pow(10,dBm/10)*0.001;V=sqrt(P*Z);form.dBm.value=dBm.toPrecision(Precision);form.P.value=P.toPrecision(Precision);form.V.value=V.toPrecision(Precision);}}
-function ComputeDC5(form){with(Math){var dBm;var P=Number(form.P.value);var V;var Z=Number(form.Z.value);var Precision=3;dBm=10*log10(P/.001);V=sqrt(P*Z);form.dBm.value=dBm.toPrecision(Precision);form.P.value=P.toPrecision(Precision);form.V.value=V.toPrecision(Precision);}}
-function ComputeDC6(form){with(Math){var Z=Number(form.Z.value);var dBm;var P;var V=Number(form.V.value);var Precision=3;P=V*V/Z;dBm=10*log10(P/.001);form.dBm.value=dBm.toPrecision(Precision);form.P.value=P.toPrecision(Precision);form.V.value=V.toPrecision(Precision);}}
-function ComputeRPDC(form){with(Math){var i=Number(form.input.value);var g=Number(form.gain.value);var d=Number(form.distance.value);var R;var Precision=3;r1=g/10
-r2=Math.pow(10,r1)
-result=(i*r2)/(4*Math.PI*d*d);form.result.value=result.toPrecision(Precision);}}
-function calcrRRC()
-{var form=document.form1;var p=form.power.value;var g=form.gain.value;var an=form.antenna.value;var a=form.area.value;var s=form.signal.value;var Precision=6;var r1=p*g*a*an;var r2=16*3.1415*3.1415*s;var result=(r1)/(r2);form.result.value=result.toPrecision(Precision);return true;}
-function ComputeNIOARC(form){with(Math){var Vout=Number(form.Vout.value);var A=Number(form.A.value);var R1=Number(form.R1.value);var V1=Number(form.V1.value);var V2=Number(form.V2.value);var Vp=Number(form.Vp.value);var Vn=Number(form.Vn.value);var R2;var R3;var R4;var Vout1;var Vout2;var Precision=3;if(A<0)A=-A;if(Vn==Vp)Vn=-Vp;if(Vn>Vp){temp=Vp;Vp=Vn;Vn=temp;}
-if(Vn>0.0)Vn=0;R3=R1;Vout1=A*V1;Vout2=Vout-Vout1;R4=A*R3*V2/Vout2;R2=A*(R1+R4)/R4*R1-R1;form.R2.value=R2.toPrecision(Precision);form.R3.value=R3.toPrecision(Precision);form.R4.value=R4.toPrecision(Precision);form.Vp.value=Vp.toPrecision(Precision);form.Vn.value=Vn.toPrecision(Precision);form.A.value=A.toPrecision(Precision);}}
-function solveECBLPFC(f)
-{F=eval(f.F.value);R=eval(f.R.value);C=eval(f.C.value);R3=eval(f.R3.value);R4=eval(f.R4.value);FM=eval(f.FM.value);RM=eval(f.RM.value);CM=eval(f.CM.value);R3M=eval(f.R3M.value);R4M=eval(f.R4M.value);F=F*FM;R=R*RM;C=C*CM;R3=R3*R3M;R4=R4*R4M;if(f.F.value==""){F=1000;f.F.value=(F/FM).toPrecision(Precision);}
-if(f.R.value==""){if(f.C.value==""){R=10000;f.R.value=(R/RM).toPrecision(Precision);C=0.159/(F*R);f.C.value=(C/CM).toPrecision(Precision);}else{f.C.value=(C/CM).toPrecision(Precision);R=0.159/(F*C);f.R.value=(R/RM).toPrecision(Precision);}}else{f.R.value=(R/RM).toPrecision(Precision);C=0.159/(F*R);f.C.value=(C/CM).toPrecision(Precision);}
-if(f.R3.value==""){if(f.R4.value==""){R3=10000;f.R3.value=(R3/R3M).toPrecision(Precision);R4=0.585*R3;f.R4.value=(R4/R4M).toPrecision(Precision);}else{f.R4.value=(R4/R4M).toPrecision(Precision);R3=R4/0.585;f.R3.value=(R3/R3M).toPrecision(Precision);}}else{f.R3.value=(R3/R3M).toPrecision(Precision);R4=0.585*R3;f.R4.value=(R4/R4M).toPrecision(Precision);}}
-function solveECBHPFC(f)
-{F=eval(f.F.value);R=eval(f.R.value);C=eval(f.C.value);R3=eval(f.R3.value);R4=eval(f.R4.value);FM=eval(f.FM.value);RM=eval(f.RM.value);CM=eval(f.CM.value);R3M=eval(f.R3M.value);R4M=eval(f.R4M.value);F=F*FM;R=R*RM;C=C*CM;R3=R3*R3M;R4=R4*R4M;if(f.F.value==""){F=1000;f.F.value=(F/FM).toPrecision(Precision);}
-if(f.R.value==""){if(f.C.value==""){R=10000;f.R.value=(R/RM).toPrecision(Precision);C=0.159/(F*R);f.C.value=(C/CM).toPrecision(Precision);}else{f.C.value=(C/CM).toPrecision(Precision);R=0.159/(F*C);f.R.value=(R/RM).toPrecision(Precision);}}else{f.R.value=(R/RM).toPrecision(Precision);C=0.159/(F*R);f.C.value=(C/CM).toPrecision(Precision);}
-if(f.R3.value==""){if(f.R4.value==""){R3=10000;f.R3.value=(R3/R3M).toPrecision(Precision);R4=0.585*R3;f.R4.value=(R4/R4M).toPrecision(Precision);}else{f.R4.value=(R4/R4M).toPrecision(Precision);R3=R4/0.585;f.R3.value=(R3/R3M).toPrecision(Precision);}}else{f.R3.value=(R3/R3M).toPrecision(Precision);R4=0.585*R3;f.R4.value=(R4/R4M).toPrecision(Precision);}}
-function solveSKBLPFC(f)
-{F=eval(f.F.value);R=eval(f.R.value);C1=eval(f.C1.value);C2=eval(f.C2.value);FM=eval(f.FM.value);RM=eval(f.RM.value);C1M=eval(f.C1M.value);C2M=eval(f.C2M.value);F=F*FM;R=R*RM;C1=C1*C1M;C2=C2*C2M;if(f.F.value==""){F=1000;f.F.value=(F/FM).toPrecision(Precision);}
-if(f.R.value==""){if(f.C1.value==""){if(f.C2.value==""){R=10000;f.R.value=(R/RM).toPrecision(Precision);C2=0.1125/(F*R);f.C2.value=(C2/C2M).toPrecision(Precision);C1=C2*2;f.C1.value=(C1/C1M).toPrecision(Precision);return;}else{f.C2.value=(C2/C2M).toPrecision(Precision);C1=C2*2;f.C1.value=(C1/C1M).toPrecision(Precision);R=0.1125/(F*C2);f.R.value=(R/RM).toPrecision(Precision);return;}}else{f.C1.value=(C1/C1M).toPrecision(Precision);C2=C1/2;f.C2.value=(C2/C2M).toPrecision(Precision);R=0.1125/(F*C2);f.R.value=(R/RM).toPrecision(Precision);return;}}else{f.R.value=(R/RM).toPrecision(Precision);C2=0.1125/(F*R);f.C2.value=(C2/C2M).toPrecision(Precision);C1=C2*2;f.C1.value=(C1/C1M).toPrecision(Precision);return;}}
-function solveSKBHPFC(f)
-{F=eval(f.F.value);R1=eval(f.R1.value);R2=eval(f.R2.value);C=eval(f.C.value);FM=eval(f.FM.value);R1M=eval(f.R1M.value);R2M=eval(f.R2M.value);CM=eval(f.CM.value);F=F*FM;R1=R1*R1M;R2=R2*R2M;C=C*CM;if(f.F.value==""){F=1000;f.F.value=(F/FM).toPrecision(Precision);}
-if(f.R1.value==""){if(f.R2.value==""){if(f.C.value==""){R1=10000;f.R1.value=(R1/R1M).toPrecision(Precision);R2=R1*2;f.R2.value=(R2/R2M).toPrecision(Precision);C=0.1125/(F*R1);f.C.value=(C/CM).toPrecision(Precision);return;}else{f.C.value=(C/CM).toPrecision(Precision);R1=0.1125/(F*C);f.R1.value=(R1/R1M).toPrecision(Precision);R2=R1*2;f.R2.value=(R2/R2M).toPrecision(Precision);return;}}else{f.R2.value=(R2/R2M).toPrecision(Precision);R1=R2/2;f.R1.value=(R1/R1M).toPrecision(Precision);C=0.1125/(F*R1);f.C.value=(C/CM).toPrecision(Precision);return;}}else{f.R1.value=(R1/R1M).toPrecision(Precision);R2=R1*2;f.R2.value=(R2/R2M).toPrecision(Precision);C=0.1125/(F*R1);f.C.value=(C/CM).toPrecision(Precision);return;}}
-function cPCCCC()
-{t=20;nF=1000;uF=nF*nF;n1=document.res.first.selectedIndex;n2=document.res.second.selectedIndex;n3=document.res.mult.selectedIndex;idx=document.res.tol.selectedIndex;if(idx==1)t=10;result=((n1*10)+n2)*(Math.pow(10,n3));if(result=="")return;if(result<nF)fact="pF";if((result>=nF)&&(result<uF)){result=result/nF;fact="nF";}
-if(result>=uF){result=result/uF;fact="uF";}
-r1=result-((t*result)/100);r2=result+((t*result)/100);r1=parseInt((r1*100)+0.5)/100;r2=parseInt((r2*100)+0.5)/100;txt=" "+r1+" to "+r2+" "+fact;txt=txt+" ("+result+" "+fact+" +/-"+t+"%)";document.res.ans.value=txt;}
-function calcbandwidth()
-{var form=document.bandwidth;var i=form.frequencyunits.selectedIndex;var frequencyunitsvalue=form.frequencyunits.options[i].value;var s=form.speaker.value;var f=form.frequency.value;var result=(f*frequencyunitsvalue)/(s);form.result.value=roundoff(result,9);return true;}
-function calcspeaker()
-{var form=document.speaker;var i=form.frequencyunits.selectedIndex;var frequencyunitsvalue=form.frequencyunits.options[i].value;var f=form.frequency.value;var b=form.bandwidth.value;var result=(f*frequencyunitsvalue)/(b);form.result.value=roundoff(result,9);return true;}
-function calcfrequency()
-{var form=document.frequency;var b=form.bandwidth.value;var s=form.speaker.value;var result=b*s;form.result.value=roundoff(result,11);return true;}
-function solvePAC(form)
-{if(!form.A.value)if(!form.A.value){alert("\nEnter value of Attenuation\n");return;}
-else A=eval(form.A.value);if(A==0){alert("\nPlease enter Attenuation other than zero!\n");return;}
-if(!form.ZI.value){alert("\nEnter value of Zi\n");return;}
-else ZI=eval(form.ZI.value);if(ZI==0){alert("\nPlease enter Zi other than zero!\n");return;}
-if(!form.ZO.value){alert("\nEnter value of Zo\n");return;}
-else ZO=eval(form.ZO.value);if(ZO==0){alert("\nPlease enter Zo other than zero!\n");return;}
-ZIM=eval(form.ZIM.value);ZOM=eval(form.ZOM.value);R1M=eval(form.R1M.value);R2M=eval(form.R2M.value);R3M=eval(form.R3M.value);ZI=ZI*ZIM;ZO=ZO*ZOM;R2=0.5*(Math.pow(10,A/10)-1)*Math.sqrt((ZI*ZO)/Math.pow(10,A/10));form.R2.value=R2/R2M;R3=1/(((Math.pow(10,A/10)+1)/(ZO*(Math.pow(10,A/10)-1)))-(1/R2));form.R3.value=R3/R3M;R1=1/(((Math.pow(10,A/10)+1)/(ZI*(Math.pow(10,A/10)-1)))-(1/R2));form.R1.value=R1/R1M;form.A.focus();return;}
-function calcLC()
-{var freq=form1.Fx.value
-var reac=form1.Xx.value
-var C=1000000/(2*Math.PI*freq*reac);var L=reac*1000/(2*Math.PI*freq)
-form1.cap.value=Math.round(C*10)/10;form1.ind.value=Math.round(L*100)/100;}
-function calcXL()
-{var freq1=form2.Fx1.value
-var ind1=form2.ind1.value
-var XL1=2*Math.PI*freq1*ind1/1000
-form2.XL1.value=Math.round(XL1*100)/100;}
-function calcXC()
-{var freq2=form3.Fx2.value
-var cap2=form3.cap2.value
-var XC2=1000000/(2*Math.PI*freq2*cap2);form3.XC2.value=Math.round(XC2*100)/100;}
-function computeRMSC(form)
-{form.pulse_rms.value=form.x1.value*Math.sqrt(form.d.value)
-form.triangle_rms.value=Math.sqrt((form.x1.value*form.x1.value+form.x1.value*form.x2.value+form.x2.value*form.x2.value)/3)
-form.trapazoid_rms.value=Math.sqrt(form.d.value*(form.x1.value*form.x1.value+form.x1.value*form.x2.value+form.x2.value*form.x2.value)/3)
-form.pulse_dc.value=form.x1.value*form.d.value
-form.triangle_dc.value=form.x1.value/2+form.x2.value/2
-form.trapazoid_dc.value=form.d.value*(form.x1.value/2+form.x2.value/2)
-form.pulse_ac.value=Math.sqrt(form.pulse_rms.value*form.pulse_rms.value-form.pulse_dc.value*form.pulse_dc.value)
-form.triangle_ac.value=Math.sqrt(form.triangle_rms.value*form.triangle_rms.value-form.triangle_dc.value*form.triangle_dc.value)
-form.trapazoid_ac.value=Math.sqrt(form.trapazoid_rms.value*form.trapazoid_rms.value-form.trapazoid_dc.value*form.trapazoid_dc.value)}
-function perRound(num,precision){var precision=3;precision=parseInt(precision);var result1=num*Math.pow(10,precision);var result2=Math.round(result1);var result3=result2/Math.pow(10,precision);return zerosPad(result3,precision);}
-function zerosPad(rndVal,decPlaces){var valStrg=rndVal.toString();var decLoc=valStrg.indexOf(".");if(decLoc==-1){decPartsecnum=0;valStrg+=decPlaces>0?".":"";}
-else{decPartsecnum=valStrg.secnumgth-decLoc-1;}
-var totalPad=decPlaces-decPartsecnum;if(totalPad>0){for(var cntrVal=1;cntrVal<=totalPad;cntrVal++)
-valStrg+="0";}
-return valStrg;}
-function clear_field(field){if(field.value==field.defaultValue){field.value=''}}
-function CloseR(Rval,IEASeries){if(Rval<=0){return 0;}
-Expo=Math.floor(Math.log(Rval)/Math.log(10));Mant=Rval/Math.pow(10,Expo);x=Math.floor(IEASeries*Math.log(Mant)/Math.log(10));min_dist=1000;for(i=(x-1);i<=(x+1);i++)
-{y=(Math.pow(10,(i/IEASeries))).toFixed(2);dist=Math.abs(Mant-y);if(dist<min_dist){min_dist=dist;closest=i;}}
-x=(Math.pow(10,(closest/IEASeries))).toFixed(2);y=Math.pow(10,Expo);return x*y;}
-function E_6(Val){if(Val<=0){return 0;}
-Clist="1,1.5,2.2,3.3,4.7,6.8,10";Vals=Clist.split(",")
-n=Vals.length
-Expo=Math.floor(Math.log(Val)/Math.log(10));Mant=Val/Math.pow(10,Expo);min_dist=1000;for(i=0;i<=n;i++){dist=Math.abs(Mant-Vals[i]);if(dist<min_dist){min_dist=dist;closest=i;}}
-return Vals[closest]*Math.pow(10,Expo);}
-function E_12(Val){if(Val<=0){return 0;}
-Clist="1,1.2,1.5,1.8,2.2,2.7,3.3,3.9,4.7,5.6,6.8,8.2,10";Vals=Clist.split(",")
-n=Vals.length
-Expo=Math.floor(Math.log(Val)/Math.log(10));Mant=Val/Math.pow(10,Expo);min_dist=1000;for(i=0;i<=n;i++){dist=Math.abs(Mant-Vals[i]);if(dist<min_dist){min_dist=dist;closest=i;}}
-return Vals[closest]*Math.pow(10,Expo);}
-function E_24(Val){if(Val<=0){return 0;}
-Clist="1,1.1,1.2,1.3,1.5,1.6,1.8,2.0,2.2,2.4,2.7,3.0,3.3,3.6,3.9,4.3,4.7,5.1,5.6,6.2,6.8,7.5,8.2,9.1,10"
-Vals=Clist.split(",")
-n=Vals.length
-Expo=Math.floor(Math.log(Val)/Math.log(10));Mant=Val/Math.pow(10,Expo);min_dist=1000;for(i=0;i<=n;i++){dist=Math.abs(Mant-Vals[i]);if(dist<min_dist){min_dist=dist;closest=i;}}
-return Vals[closest]*Math.pow(10,Expo);}
-function E_48(Val){return CloseR(Val,48).toPrecision(3);}
-function E_96(Val){return CloseR(Val,96).toPrecision(3);}
-function E_192(Val){return CloseR(Val,192).toPrecision(3);}
-function Significant(x,d){if(x==0){return 0;}
-y=Math.log(Math.abs(x))/Math.log(10);if(Math.abs(Math.floor(y)-y)<0.000000000000001){y=Math.floor(y);}
-e=Math.floor(y);m=x/Math.pow(10,e);m=(m).toFixed(d-1);return m*Math.pow(10,e);}
-function calculate(){v=document.getElementById("Text1").value;v6=E_6(v).toPrecision(3);v12=E_12(v).toPrecision(3);v24=E_24(v).toPrecision(3);v48=E_48(v);v96=E_96(v);v192=E_192(v);e6=(100*(v6-v)/v).toPrecision(3)+"%";e12=(100*(v12-v)/v).toPrecision(3)+"%";e24=(100*(v24-v)/v).toPrecision(3)+"%";e48=(100*(v48-v)/v).toPrecision(3)+"%";e96=(100*(v96-v)/v).toPrecision(3)+"%";e192=(100*(v192-v)/v).toPrecision(3)+"%";document.getElementById("Text2").value=v6;document.getElementById("Text3").value=v12;document.getElementById("Text4").value=v24;document.getElementById("Text5").value=v48;document.getElementById("Text6").value=v96;document.getElementById("Text7").value=v192;document.getElementById("Text8").value=e6;document.getElementById("Text9").value=e12;document.getElementById("Text10").value=e24;document.getElementById("Text11").value=e48;document.getElementById("Text12").value=e96;document.getElementById("Text13").value=e192;}
-function calcWSCnw(){function clickRadio1(){}
-function clickRadio2(){}
-function clickRadio3(){}
-function clickRadio9(){}
-function clickRadio10(){}
-function clickRadio11(){}
-function clickRadio12(){}
-function clickRadio13(){}
-function clickRadio14(){}
-var CondResistCopper=11.2;var CondResistAluminum=17.4;var ThreePhaseMultiplier=1.732;var WireCirc=new Array();WireCirc[0]=1620;WireCirc[1]=2580;WireCirc[2]=4110;WireCirc[3]=6530;WireCirc[4]=10380;WireCirc[5]=15510;WireCirc[6]=26240;WireCirc[7]=41740;WireCirc[8]=52620;WireCirc[9]=66360;WireCirc[10]=83690;WireCirc[11]=105600;WireCirc[12]=133100;WireCirc[13]=167800;WireCirc[14]=211600;WireCirc[15]=250000;WireCirc[16]=300000;WireCirc[17]=350000;WireCirc[18]=400000;WireCirc[19]=500000;WireCirc[20]=600000;WireCirc[21]=700000;WireCirc[22]=750000;WireCirc[23]=800000;WireCirc[24]=900000;WireCirc[25]=1000000;WireCirc[26]=1250000;WireCirc[27]=1500000;WireCirc[28]=1750000;WireCirc[29]=2000000;var WireSize=new Array();WireSize[0]="18 AWG";WireSize[1]="16 AWG";WireSize[2]="14 AWG";WireSize[3]="12 AWG";WireSize[4]="10 AWG";WireSize[5]="8 AWG";WireSize[6]="6 AWG";WireSize[7]="4 AWG";WireSize[8]="3 AWG";WireSize[9]="2 AWG";WireSize[10]="1 AWG";WireSize[11]="1/0 AWG";WireSize[12]="2/0 AWG";WireSize[13]="3/0 AWG";WireSize[14]="4/0 AWG";WireSize[15]="250 MCM";WireSize[16]="300 MCM";WireSize[17]="350 MCM";WireSize[18]="400 MCM";WireSize[19]="500 MCM";WireSize[20]="600 MCM";WireSize[21]="700 MCM";WireSize[22]="750 MCM";WireSize[23]="800 MCM";WireSize[24]="900 MCM";WireSize[25]="1000 MCM";WireSize[26]="1250 MCM";WireSize[27]="1500 MCM";WireSize[28]="1750 MCM";WireSize[29]="2000 MCM";var WireAmax=new Array();WireAmax[0]=0;WireAmax[1]=0;WireAmax[2]=0;WireAmax[3]=20;WireAmax[4]=25;WireAmax[5]=30;WireAmax[6]=40;WireAmax[7]=55;WireAmax[8]=65;WireAmax[9]=75;WireAmax[10]=85;WireAmax[11]=100;WireAmax[12]=135;WireAmax[13]=155;WireAmax[14]=180;WireAmax[15]=205;WireAmax[16]=230;WireAmax[17]=250;WireAmax[18]=270;WireAmax[19]=310;WireAmax[20]=340;WireAmax[21]=375;WireAmax[22]=385;WireAmax[23]=395;WireAmax[24]=425;WireAmax[25]=445;WireAmax[26]=485;WireAmax[27]=520;WireAmax[28]=545;WireAmax[29]=560;var WireCmax=new Array();WireCmax[0]=14;WireCmax[1]=18;WireCmax[2]=20;WireCmax[3]=25;WireCmax[4]=30;WireCmax[5]=40;WireCmax[6]=55;WireCmax[7]=70;WireCmax[8]=85;WireCmax[9]=95;WireCmax[10]=110;WireCmax[11]=125;WireCmax[12]=175;WireCmax[13]=200;WireCmax[14]=230;WireCmax[15]=255;WireCmax[16]=285;WireCmax[17]=310;WireCmax[18]=335;WireCmax[19]=380;WireCmax[20]=420;WireCmax[21]=460;WireCmax[22]=475;WireCmax[23]=490;WireCmax[24]=520;WireCmax[25]=545;WireCmax[26]=590;WireCmax[27]=625;WireCmax[28]=650;WireCmax[29]=665;var myform=document.forms[0];if(myform.radio1.checked==true){myform.txtsv.value=110;var valsourcevoltage=110;}
-else if(myform.radio9.checked==true){myform.txtsv.value=120;var valsourcevoltage=120;}
-else if(myform.radio10.checked==true){myform.txtsv.value=208;var valsourcevoltage=208;}
-else if(myform.radio11.checked==true){myform.txtsv.value=220;var valsourcevoltage=220;}
-else if(myform.radio12.checked==true){myform.txtsv.value=230;var valsourcevoltage=230;}
-else if(myform.radio2.checked==true){myform.txtsv.value=240;var valsourcevoltage=240;}
-else if(myform.radio13.checked==true){myform.txtsv.value=277;var valsourcevoltage=277;}
-else if(myform.radio14.checked==true){myform.txtsv.value=440;var valsourcevoltage=440;}
-else if(myform.radio3.checked==true){myform.txtsv.value=480;var valsourcevoltage=480;}
-else{myform.txtsv.value=0;var valsourcevoltage=0;}
-var phases='Single';if(myform.radio4.checked==true){myform.txtnp.value=1;ThreePhaseMultiplier=1;}
-else if(myform.radio5.checked==true){myform.txtnp.value=3;ThreePhaseMultiplier=1.732;phases='Three';}
-if(myform.radio6.checked==true){myform.txtavd.value="3%";myform.txtvolts.value="";valvoltagedrop=0.03;}
-else if(myform.radio7.checked==true){myform.txtavd.value="5%";myform.txtvolts.value="";valvoltagedrop=0.05;}
-else if(myform.radio8.checked==true){myform.txtavd.value=myform.txtvolts.value+" volts";valvoltagedrop=(myform.txtvolts.value/valsourcevoltage);}
-myform.txta.value=myform.txtAmpInput.value;myform.txtowd.value=myform.txtDistInput.value;var valAmperes=myform.txta.value;var valdistance=myform.txtowd.value;var valWireCMCopper=CondResistCopper*2*valAmperes*valdistance;var valWireCMAluminum=CondResistAluminum*2*valAmperes*valdistance;var valWireCMCopper=valWireCMCopper/(valsourcevoltage*valvoltagedrop);var valWireCMAluminum=valWireCMAluminum/(valsourcevoltage*valvoltagedrop);var valWireCMCopper=valWireCMCopper*ThreePhaseMultiplier;var valWireCMAluminum=valWireCMAluminum*ThreePhaseMultiplier;var amps=valAmperes*1;for(var cntr=0;cntr<WireSize.length;cntr++){if((valWireCMCopper>WireCirc[cntr])||(amps>WireCmax[cntr]))
-var CopperWireSize=WireSize[cntr+1];if((valWireCMAluminum>WireCirc[cntr])||(amps>WireAmax[cntr]))
-var AluminumWireSize=WireSize[cntr+1];}
-myform.txtcopper.value=CopperWireSize;myform.txtaluminum.value=AluminumWireSize;var hfcalc=document.getElementById('ContentPlaceHolder1_hfcalc');hfcalc.value=valsourcevoltage+'|'+phases+'|'+myform.txtAmpInput.value+'|'
-+myform.txtDistInput.value+'|'+valvoltagedrop+'|'+CopperWireSize+'|'+AluminumWireSize;}
-function calcbatterycapacity()
-{var form=document.form1;var r=form.rating.value;var d=form.device.value;var Precision=6;var result=(r*d)/(.7);form.result.value=result.toPrecision(Precision);return true;}
-function OnCalc()
-{var itype=document.calcform.type.selectedIndex;var issel=document.calcform.ssel.selectedIndex;var ilsel=document.calcform.lsel.selectedIndex;var iphase=document.calcform.phase.selectedIndex;var condtemp=document.calcform.condtemp.selectedIndex;n=document.calcform.s.value;len=document.calcform.l.value;v=document.calcform.v.value;i=document.calcform.i.value;var ilook=[1.72e-8,2.82e-8,1.43e-7,4.6e-7,2.44e-8,1.1e-6,6.99e-8,1.59e-8];var res=ilook[itype];if(issel==0)
-{if(n=="000000"||n=="6/0")n=-5;if(n=="00000"||n=="5/0")n=-4;if(n=="0000"||n=="4/0")n=-3;if(n=="000"||n=="3/0")n=-2;if(n=="00"||n=="2/0")n=-1;d=0.127e-3*Math.pow(92,((36-n)/39));}
-else if(issel==1)
-{d=25.4*n;}
-if(ilsel==0)
-len*=0.3048;a=Math.PI/4*d*d;r=2*res*len/a;vd=i*r;if(iphase==2)vd*=0.866;if(iphase==3)vd*=.5;if(condtemp==1)vd+=vd*(2/100);if(condtemp==2)vd+=vd*(4/100);if(condtemp==3)vd+=vd*(6/100);if(condtemp==4)vd+=vd*(8/100);if(condtemp==5)vd+=vd*(10/100);if(condtemp==6)vd+=vd*(12/100);if(condtemp==7)vd+=vd*(14/100);if(condtemp==8)vd+=vd*(16/100);if(condtemp==9)vd+=vd*(18/100);if(condtemp==10)vd+=vd*(20/100);if(condtemp==11)vd+=vd*(22/100);if(condtemp==12)vd+=vd*(24/100);if(condtemp==13)vd+=vd*(26/100);if(condtemp==14)vd+=vd*(28/100);vdp=vd/v*100;vend=v-vd;document.calcform.vd.value=vd.toFixed(4);document.calcform.vdp.value=vdp.toFixed(4);document.calcform.r.value=r.toFixed(4);document.calcform.vend.value=vend.toFixed(4);}
-function calculatebm()
-{var x=document.getElementById("binary1").value;var y=document.getElementById("binary2").value;if((/[^0-1]/g.test(x))||x==""){document.getElementById("error1").innerHTML="Enter a valid Binary value!";document.getElementById("binary1").value="";return 0;}else if((/[^0-1]/g.test(y))||y==""){document.getElementById("error2").innerHTML="Enter a valid Binary value!";document.getElementById("binary2").value="";return 0;}else{document.getElementById("error1").innerHTML="";document.getElementById("error2").innerHTML="";var outputValue=0;for(i=x.length-1;i>=0;i-=1){outputValue+=eval(x.charAt(i))*Math.pow(2,x.length-i-1);}
-var b1=parseInt(outputValue);outputValue=0;for(i=y.length-1;i>=0;i-=1){outputValue+=eval(y.charAt(i))*Math.pow(2,y.length-i-1);}
-var b2=parseInt(outputValue);var res=b1*b2;document.getElementById("result1").value=res.toString(2);document.getElementById("result2").value=res;}}
-function querystring_calc(){var q=window.location.search.substr(1);if(q.length>1){var spl=q.split("&");for(var x=0;x<spl.length;x++){var spl2=spl[x].split("=");if(spl2.length==2){if(spl2[0].length>0&&spl2[1].length>0){if(spl2[0].substr(0,4).toLowerCase()=="res_"||spl2[0].substr(0,4).toLowerCase()=="txt_"){document.getElementById(spl2[0].toLowerCase()).value=spl2[1];}else{document.getElementById(spl2[0].toLowerCase()).selectedIndex=document.getElementById(spl2[1].toLowerCase()).index;}}}
-changeType();}}}
-function linkToPage(){var pathName=window.location.pathname;var gettype=document.getElementById('calc').options[document.getElementById('calc').selectedIndex].id;var page_url="http://www.digitalrebellion.com"+pathName;page_url+="?calc="+gettype;switch(gettype){case'diff':page_url+="&country="+document.getElementById('country').options[document.getElementById('country').selectedIndex].id;page_url+="&txt_breaker="+document.getElementById('txt_breaker').value;page_url+="&txt_total="+document.getElementById('txt_total').value;break;case'breaker':page_url+="&country="+document.getElementById('country').options[document.getElementById('country').selectedIndex].id;page_url+="&txt_total="+document.getElementById('txt_total').value;break;case'voltage':page_url+="&txt_breaker="+document.getElementById('txt_breaker').value;page_url+="&txt_total="+document.getElementById('txt_total').value;break;}
-window.location.href=page_url;}
-function calculate(gettype,voltage,breaker,power){voltage=parseFloat(voltage);breaker=parseFloat(breaker);power=parseFloat(power);switch(gettype){case'diff':var circuitLimit=breaker*voltage;var recommendedLimit=circuitLimit*0.8;var load=Math.round(((power/circuitLimit)*100),2);if(power>circuitLimit){var vFinal='<font color="red">'+(circuitLimit-power)+' W<br />'+load+'% Load</font>';}else if(power>recommendedLimit){var vFinal='<font color="orange">'+(circuitLimit-power)+' W<br />'+load+'% Load</font><br />Within 20% Safety Margin';}else{var vFinal='<font color="green">'+(circuitLimit-power)+' W<br />'+load+'% Load</font>';}
-document.getElementById('output').innerHTML="<b>Difference:"+vFinal;break;case'breaker':breaker=power/voltage;var recBreaker=((power+(power*0.2))/voltage);document.getElementById('output').innerHTML="<b>Minimum Breaker Size: "+Math.round(breaker)+" A<br/>Recommended Breaker Size: "+Math.round(recBreaker)+" A</b>";break;case'voltage':voltage=power/breaker;document.getElementById('output').innerHTML="<b>Voltage: "+Math.round(voltage)+" V</b>";break;}}
-function formatNum(nStr)
-{nStr+='';x=nStr.split('.');x1=x[0];x2=x.length>1?'.'+x[1]:'';var rgx=/(\d+)(\d{3})/;while(rgx.test(x1)){x1=x1.replace(rgx,'$1'+','+'$2');}
-return x1+x2;}
-function recalculate(){var gettype=document.getElementById('calc').options[document.getElementById('calc').selectedIndex].id;var getvoltage=document.getElementById('country').options[document.getElementById('country').selectedIndex].id.substr(1,3);var getbreaker=document.getElementById('txt_breaker').value;var gettotal=document.getElementById('txt_total').value;calculate(gettype,getvoltage,getbreaker,gettotal);}
-function changeType(){var calc=document.getElementById('calc').options[document.getElementById('calc').selectedIndex].id;switch(calc){case"diff":document.getElementById('div_voltage').className='row';document.getElementById('div_breaker').className='row';document.getElementById('div_total').className='row';break;case"breaker":document.getElementById('div_voltage').className='row';document.getElementById('div_breaker').className='hide';document.getElementById('div_total').className='row';break;case"voltage":document.getElementById('div_voltage').className='hide';document.getElementById('div_breaker').className='row';document.getElementById('div_total').className='row';break;}
-recalculate();}
-function IsNumeric(sText)
-{var ValidChars="0123456789.";var IsNumber=true;var Char;if(sText.length==0)return false;for(i=0;i<sText.length&&IsNumber==true;i++)
-{Char=sText.charAt(i);if(ValidChars.indexOf(Char)==-1)
-{IsNumber=false;}}
-return IsNumber;}
-function validate_text(getobj){var gettext=document.getElementById(getobj).value;if(IsNumeric(gettext)&&gettext.length>0){resetTextBox(getobj);recalculate();document.getElementById(getobj).focus();}else{document.getElementById(getobj).className="textbox_red";document.getElementById(getobj).focus();}}
-function resetTextBox(getobj){document.getElementById(getobj).className="textbox_black";document.getElementById(getobj).focus();}
+</tbody></table></form></div>
 
 
-</script>
+
+
+<script language="JavaScript" src="https://www.electricaltechnology.org/wp-content/cache/autoptimize/autoptimize_single_803ec5c66ede83b34e6589c671042d4b.php" type="text/javascript"></script></p> 
+
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></div>
+ <script type='text/javascript' src='https://www.electricaltechnology.org/wp-content/cache/autoptimize/autoptimize_single_bd59095b84bc2c1f3f77c736cbdf4d25.php'></script>
