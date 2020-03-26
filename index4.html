@@ -16,7 +16,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
 }
 
 body { 
@@ -160,6 +160,8 @@ document.CableDamping2.Cablelength.value = roundto(E,0);
 // end Calculation cable length -->
 </script>
 
+
+
 <form name="CableDamping1">
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
@@ -167,10 +169,9 @@ document.CableDamping2.Cablelength.value = roundto(E,0);
 <h3>Inputs</h3></div></legend>
 
 
-<label for="f">Z <sub>Out<font face="Arial" size="6">(Source of impedance)</font></label><input  name="Impedance" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="number" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:150px;">&Omega;</label>
 
-<h1 style="font-size:50;"></h1>
+
+
 
 <label for="f">C<sub><font face="Arial" size="6">(Capacitance Per m)</font></label><input  name="Capacitance" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="number" />
  <label style="padding: 5px ;  position: absolute;right: 1px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:150px;">pF/m</label>
@@ -179,7 +180,10 @@ document.CableDamping2.Cablelength.value = roundto(E,0);
 
 <label for="f">D<sub><font face="Arial" size="6">(Cable length)</font></label><input  name="Cablelength" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="number" />
  <label style="padding: 5px ;  position: absolute;right: 1px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:150px;">Mtr</label>
+<h1 style="font-size:50;"></h1>
 
+<label for="f">Z <sub>Out<font face="Arial" size="6">(Source of impedance)</font></label><input  name="Impedance" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="number" />
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:57px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;text-align:center; width:150px;">&Omega;</label>
 </fieldset>
 <h1 style="font-size:50;"></h1>
 <fieldset><legend><div colspan="2" align="center" height="19"><input type="button" onClick="Calculate1_OnClick();" value="&#160;calculate&#160;"  style="background-color: #167A04 ;
@@ -204,7 +208,7 @@ document.CableDamping2.Cablelength.value = roundto(E,0);
 
 
 <label for="f"><i>f</i></font><sub>c</sub><font face="Arial" size="6"> (Cutoff frequency)</font></label><input  name="Frequency" class="intro"  style="position: absolute;  text-align:center; width:300; right: 170px;"class="form-control" type="text" />
- <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:150px;">H<sub>z</label>
+ <label style="padding: 5px ;  position: absolute;right: 1px;font-size:53px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:150px;">H<sub>z</label>
 </fieldset></div>
 
 
