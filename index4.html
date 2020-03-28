@@ -1,6 +1,20 @@
 
 <style>
+.body{text-size:100px;}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 
 
@@ -90,7 +104,24 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
       </header>
       <div class="w3-container">
         
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
+      <table id="customers">
+
+  <tr>
+  <td align="middle"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
+<td align="middle"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
+  </tr>
+  <tr>
+    <td align="middle"style="font-size:50px;">Country Voltage</td>
+    <td align="middle"style="font-size:50px;">220V</td>
+   
+  </tr>
+  <tr>
+    <td align="middle"style="font-size:50px;">Frequency</td>
+    <td align="middle"style="font-size:50px;">50 Hz</td>
+  </tr>
+  
+
+</table>
      
         <footer class="w3-container w3-teal">
         <p></p> 
@@ -139,7 +170,7 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
   </div>
 </div></td><td></td>
 <td align="middle">
-   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:250;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></button>
+   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></button>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
