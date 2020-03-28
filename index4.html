@@ -83,17 +83,58 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
           WIDTH:100%}
 .w3-modal-content{width:98%;}
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
 <body>
-<div class=bg>
-<table border="1" width="100%" class="tools-details" style="border-color:#0000;">
 
+<h2>My Phonebook</h2>
 
- 
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
+<ul id="myUL">
+  
+  
+<li><a href="#">
 
- <tr>
-<td align="middle">
-   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://www.worldometers.info/img/flags/af-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:250;"><br><b><font style="font-size:30px; text-align:center;">Afghanistan</font></button>
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" style="align:left;">
+<img src="https://www.worldometers.info/img/flags/af-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:100px;"><font style="font-size:100px;"> INIA;l</font></button></a>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
@@ -106,18 +147,20 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
         
       <table id="customers">
 
-  <tr>
+  <tr >
   <td align="middle"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
 <td align="middle"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
+<td align="middle"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
+<td align="middle"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
   </tr>
-  <tr>
-    <td align="middle"style="font-size:50px;">Country Voltage</td>
-    <td align="middle"style="font-size:50px;">220V</td>
+  <tr >
+    <td  colspan="2" align="middle"style="font-size:50px;">Country Voltage</td>
+    <td colspan="2" align="middle"style="font-size:50px;">220V</td>
    
   </tr>
   <tr>
-    <td align="middle"style="font-size:50px;">Frequency</td>
-    <td align="middle"style="font-size:50px;">50 Hz</td>
+    <td colspan="2"align="middle"style="font-size:50px;">Frequency</td>
+    <td colspan="2" align="middle"style="font-size:50px;">50 Hz</td>
   </tr>
   
 
@@ -128,67 +171,49 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
       </footer>
     </div>
   </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://www.worldometers.info/img/flags/al-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:230;"><br><b><font style="font-size:30px; text-align:center;">Albania</font></button>
+</div></li>
+  
+  
+  
+  
+  
+  <li><a href="#">Agnes</a></li>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>BASIC SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://www.worldometers.info/img/flags/ag-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:250;"><br><b><font style="font-size:30px; text-align:center;">Algeria</font></button>
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>BASIC SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
-<td align="middle">
-   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:240;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></button>
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+</ul>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>BASIC SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
-        
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></td><td></td>
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+
+
+
+
+ 
+
 
 
 
