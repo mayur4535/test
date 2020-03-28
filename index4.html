@@ -1,339 +1,83 @@
-
-  <style type="text/css">
-.gbJbiW { 
-  width: 58px;
-  position: absolute;
-  left: 216px;
-  height: 493px;
-  background: green;
-  top: 80px;
- }.eWejpm { 
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  top: 87px;
-  list-style: none;
-  left: 0px;
- }
-.eWejpm div { 
-  display: block; 
-  position: relative; 
-  font-size: 15px; 
-  line-height: 23px; 
-  height: 22px; 
-  margin-bottom: 2px; 
-  text-decoration: none; 
-  cursor: pointer;
-}
-.eWejpm div small { 
-  font-size: 11px;
-}
-.eWejpm div:hover,
-  .eWejpm .active { 
-  background: rgb(245, 243, 237); 
-  color: #063541;
-}
-.eWejpm div { 
-  width: 244px; 
-  text-indent: 10px; 
-  color: #E9E5D2; 
-  border-top-right-radius: 13px; 
-  border-bottom-right-radius: 13px;
-}
-.eWejpm div .phys { 
-  text-align: right; 
-  left: auto; 
-  right: 30px;
-}
-.eWejpm div:first-child { 
-  border-radius: 0;
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.bhoPUy { 
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  top: 87px;
-  list-style: none;
-  left: 0px;
-
-  left: 246px;
- }
-.bhoPUy div { 
-  display: block; 
-  position: relative; 
-  font-size: 15px; 
-  line-height: 23px; 
-  height: 22px; 
-  margin-bottom: 2px; 
-  text-decoration: none; 
-  cursor: pointer;
-}
-.bhoPUy div small { 
-  font-size: 11px;
-}
-.bhoPUy div:hover,
-  .bhoPUy .active { 
-  background: rgb(245, 243, 237); 
-  color: #063541;
-}
-.bhoPUy div { 
-  text-indent: 56px; 
-  color: #063541; 
-  width: 250px; 
-  border-top-left-radius: 13px; 
-  border-bottom-left-radius: 13px;
-}
-.bxBnsK { 
-  display: block;
-  position: relative;
-  font-size: 15px;
-  line-height: 23px;
-  height: 22px;
-  margin-bottom: 2px;
-  text-decoration: none;
-  cursor: pointer;
-
- }
-.bxBnsK small { 
-  font-size: 11px; 
-  font-weight: normal;
-
-}
-.bxBnsK .phys { 
-  color: #073642; 
-  opacity: 1; 
-  font-size: 0.8em; 
-  opacity: 0.8; 
-  position: absolute; 
-  top: 0px; 
-  width: 20px; 
-  height: 22px; 
-  border-radius: 11px; 
-  text-indent: 0px; 
-  line-height: 22px; 
-  left: 30px;
-
-}
-.bxBnsK:hover { 
-  background: #f5f3ed !important; 
-  color: #063541;
-
-}
- .brkzav { 
-  display: block;
-  position: relative;
-  font-size: 15px;
-  line-height: 23px;
-  height: 22px;
-  margin-bottom: 2px;
-  text-decoration: none;
-  cursor: pointer;
-
- }
-.brkzav small { 
-  font-size: 11px; 
-  font-weight: normal;
-
-}
-.brkzav .phys { 
-  color: #073642; 
-  opacity: 1; 
-  font-size: 0.8em; 
-  opacity: 0.8; 
-  position: absolute; 
-  top: 0px; 
-  width: 20px; 
-  height: 22px; 
-  border-radius: 11px; 
-  text-indent: 0px; 
-  line-height: 22px; 
-  left: 30px;
-
-}
-.brkzav[data-type="power"] { 
-  background: #073642; 
-  color: #FFFFFF; 
-  font-weight: bold;
-
-}
-.brkzav[data-type="power"] .phys { 
-  color: #FFFFFF;
-
-}
-.brkzav[data-type="power"]:hover { 
-  background: #268BD2 !important; 
-  color: #FFFFFF !important;
-
-}
-.brkzav[data-type="gpio"] { 
-  background: #ebe6d3 !important; 
-  font-weight: bold; 
-  color: #063541 !important;
-
-}
-.brkzav[data-type="gpio"] .phys { 
-  position: absolute; 
-  text-indent: 0;
-
-}
-.brkzav[data-type="ground"] .phys { 
-  padding-left: 31px; 
-  left: 0; 
-  background: #073642; 
-  color: #FFFFFF; 
-  font-weight: bold; 
-  opacity: 1; 
-  position: absolute; 
-  top: 0px; 
-  width: 20px; 
-  height: 22px; 
-  border-radius: 11px; 
-  text-indent: 0px; 
-  line-height: 22px;
-
-}
-.brkzav[data-type="ground"]:hover .phys { 
-  background: #268BD2 !important;
-
-}
-.brkzav:hover { 
-  background: #f5f3ed !important; 
-  color: #063541;
-
-}.gzEDUL { 
-  width: 250px;
-  font-size: 1.5em;
-  line-height: 23px;
-  cursor: pointer;
-  position: absolute;
-  left: 0px;
-  top: 28px;
-  z-index: 1;
-  font-weight: 600;
- }
-
-.raspberrypi  image setting{setting is hear}
-
-.bksEyz { 
-  font-family: 'Avenir', verdana, arial;
-  position: relative;
-  width: 292px;
-  background: red;
-  min-height: 653px;
-  margin-right: 208px;
-  border-top-right-radius: 46px;
-  border-bottom-right-radius: 46px;
-  text-align: left;
- }
-
-.bksEyz::before,
-  .bksEyz::after { 
-  content: ''; 
-  display: block; 
-  width: 28px; 
-  height: 28px; 
-  background: #FFFFFF; 
-  border-radius: 50%; 
-  border: 14px solid #F7DF84; 
-  right: 19px; 
-  top: 19px; 
-  position: absolute;
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
+#customers tr:nth-child(even){background-color: #f2f2f2;}
 
-.bksEyz::after { 
-  top: auto; 
-  bottom: 19px;
-}
+#customers tr:hover {background-color: #ddd;}
 
+</style>
+</head>
+<body>
 
-</style></head>
-  <body>
+<table id="customers">
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Christina Berglund</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Königlich Essen</td>
+    <td>Philip Cramer</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>Simon Crowther</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris spécialités</td>
+    <td>Marie Bertrand</td>
+    <td>France</td>
+  </tr>
+</table>
 
-    <div id="demo"><div data-reactroot=""><h1></h1><div class="bksEyz"><div class="gzEDUL"></div><div class="gbJbiW"></div><div class="eWejpm"><div class="bxBnsK" data-type="power" title=""><span><span class="phys">1</span>
-
-<!-- react-text: 10 -->3v3 Power<!-- /react-text --><!-- react-text: 11 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 0px; width: 16px; height: 16px; background: rgb(181, 137, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="brkzav" data-type="gpio" title="Wiring Pi pin 8"><span><span class="phys">3</span>
-
-<!-- react-text: 17 -->BCM 2<!-- /react-text --><small><!-- react-text: 19 --> <!-- /react-text --><!-- react-text: 20 -->(SDA)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(38, 139, 210); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 9"><span><span class="phys">5</span>
-
-<!-- react-text: 26 -->BCM 3<!-- /react-text --><small><!-- react-text: 28 --> <!-- /react-text --><!-- react-text: 29 -->(SCL)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(38, 139, 210); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 7"><span><span class="phys">7</span>
-
-<!-- react-text: 35 -->BCM 4<!-- /react-text --><small><!-- react-text: 37 --> <!-- /react-text --><!-- react-text: 38 -->(GPCLK0)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">9</span>
-
-<!-- react-text: 44 -->Ground<!-- /react-text --><!-- react-text: 45 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 0"><span><span class="phys">11</span>
-
-<!-- react-text: 51 -->BCM 17<!-- /react-text --><!-- react-text: 52 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 2"><span><span class="phys">13</span>
-
-<!-- react-text: 58 -->BCM 27<!-- /react-text --><!-- react-text: 59 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 3"><span><span class="phys">15</span>
-
-<!-- react-text: 65 -->BCM 22<!-- /react-text --><!-- react-text: 66 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="power" title=""><span><span class="phys">17</span>
-
-<!-- react-text: 72 -->3v3 Power<!-- /react-text --><!-- react-text: 73 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(181, 137, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="brkzav" data-type="gpio" title="Wiring Pi pin 12"><span><span class="phys">19</span>
-
-<!-- react-text: 79 -->BCM 10<!-- /react-text --><small><!-- react-text: 81 --> <!-- /react-text --><!-- react-text: 82 -->(MOSI)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="brkzav" data-type="gpio" title="Wiring Pi pin 13"><span><span class="phys">21</span>
-
-<!-- react-text: 88 -->BCM 9<!-- /react-text --><small><!-- react-text: 90 --> <!-- /react-text --><!-- react-text: 91 -->(MISO)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 14"><span><span class="phys">23</span>
-
-<!-- react-text: 97 -->BCM 11<!-- /react-text --><small><!-- react-text: 99 --> <!-- /react-text --><!-- react-text: 100 -->(SCLK)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">25</span>
-
-<!-- react-text: 106 -->Ground<!-- /react-text --><!-- react-text: 107 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 30"><span><span class="phys">27</span>
-
-<!-- react-text: 113 -->BCM 0<!-- /react-text --><small><!-- react-text: 115 --> <!-- /react-text --><!-- react-text: 116 -->(ID_SD)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(38, 139, 210); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 21"><span><span class="phys">29</span>
-
-<!-- react-text: 122 -->BCM 5<!-- /react-text --><!-- react-text: 123 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 22"><span><span class="phys">31</span>
-
-<!-- react-text: 129 -->BCM 6<!-- /react-text --><!-- react-text: 130 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 23"><span><span class="phys">33</span>
-
-<!-- react-text: 136 -->BCM 13<!-- /react-text --><small><!-- react-text: 138 --> <!-- /react-text --><!-- react-text: 139 -->(PWM1)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 24"><span><span class="phys">35</span>
-
-<!-- react-text: 145 -->BCM 19<!-- /react-text --><small><!-- react-text: 147 --> <!-- /react-text --><!-- react-text: 148 -->(MISO)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 25"><span><span class="phys">37</span>
-
-<!-- react-text: 154 -->BCM 26<!-- /react-text --><!-- react-text: 155 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">39</span>
-
-<!-- react-text: 161 -->Ground<!-- /react-text --><!-- react-text: 162 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div></div><div class="bhoPUy"><div class="brkzav" data-type="power" title=""><span><span class="phys">2</span>
-
-<!-- react-text: 169 -->5v Power<!-- /react-text --><!-- react-text: 170 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(220, 50, 47); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="power" title=""><span><span class="phys">4</span>
-
-<!-- react-text: 176 -->5v Power<!-- /react-text --><!-- react-text: 177 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(220, 50, 47); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="brkzav" data-type="ground" title=""><span><span class="phys">6</span>
-
-<!-- react-text: 183 -->Ground<!-- /react-text --><!-- react-text: 184 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 15"><span><span class="phys">8</span>
-
-<!-- react-text: 190 -->BCM 14<!-- /react-text --><small><!-- react-text: 192 --> <!-- /react-text --><!-- react-text: 193 -->(TXD)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(108, 113, 196); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 16"><span><span class="phys">10</span>
-
-<!-- react-text: 199 -->BCM 15<!-- /react-text --><small><!-- react-text: 201 --> <!-- /react-text --><!-- react-text: 202 -->(RXD)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(108, 113, 196); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 1"><span><span class="phys">12</span>
-
-<!-- react-text: 208 -->BCM 18<!-- /react-text --><small><!-- react-text: 210 --> <!-- /react-text --><!-- react-text: 211 -->(PWM0)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">14</span>
-
-<!-- react-text: 217 -->Ground<!-- /react-text --><!-- react-text: 218 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 4"><span><span class="phys">16</span>
-
-<!-- react-text: 224 -->BCM 23<!-- /react-text --><!-- react-text: 225 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 5"><span><span class="phys">18</span>
-
-<!-- react-text: 231 -->BCM 24<!-- /react-text --><!-- react-text: 232 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">20</span>
-
-<!-- react-text: 238 -->Ground<!-- /react-text --><!-- react-text: 239 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 6"><span><span class="phys">22</span>
-
-<!-- react-text: 245 -->BCM 25<!-- /react-text --><!-- react-text: 246 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 10"><span><span class="phys">24</span>
-
-<!-- react-text: 252 -->BCM 8<!-- /react-text --><small><!-- react-text: 254 --> <!-- /react-text --><!-- react-text: 255 -->(CE0)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 11"><span><span class="phys">26</span>
-
-<!-- react-text: 261 -->BCM 7<!-- /react-text --><small><!-- react-text: 263 --> <!-- /react-text --><!-- react-text: 264 -->(CE1)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 31"><span><span class="phys">28</span>
-
-<!-- react-text: 270 -->BCM 1<!-- /react-text --><small><!-- react-text: 272 --> <!-- /react-text --><!-- react-text: 273 -->(ID_SC)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(38, 139, 210); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">30</span>
-
-<!-- react-text: 279 -->Ground<!-- /react-text --><!-- react-text: 280 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 26"><span><span class="phys">32</span>
-
-<!-- react-text: 286 -->BCM 12<!-- /react-text --><small><!-- react-text: 288 --> <!-- /react-text --><!-- react-text: 289 -->(PWM0)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="ground" title=""><span><span class="phys">34</span>
-
-<!-- react-text: 295 -->Ground<!-- /react-text --><!-- react-text: 296 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(0, 43, 54); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 27"><span><span class="phys">36</span>
-
-<!-- react-text: 302 -->BCM 16<!-- /react-text --><!-- react-text: 303 --><!-- /react-text --></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(133, 153, 0); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 28"><span><span class="phys">38</span>
-
-<!-- react-text: 309 -->BCM 20<!-- /react-text --><small><!-- react-text: 311 --> <!-- /react-text --><!-- react-text: 312 -->(MOSI)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div><div class="bxBnsK" data-type="gpio" title="Wiring Pi pin 29"><span><span class="phys">40</span>
-
-<!-- react-text: 318 -->BCM 21<!-- /react-text --><small><!-- react-text: 320 --> <!-- /react-text --><!-- react-text: 321 -->(SCLK)<!-- /react-text --></small></span><span style="display: block; border: 1px solid transparent; border-radius: 50%; width: 16px; height: 16px; background: rgb(211, 54, 130); position: absolute; right: 2px; top: 2px; left: 2px;"><span style="display: block; border-radius: 100%; background: rgb(253, 246, 227); position: absolute; left: 5px; top: 5px; width: 6px; height: 6px; font-size: 7px;"></span></span></div></div></div></div></div>
-
-
-
-
-</body></html>
+</body>
+</html>
