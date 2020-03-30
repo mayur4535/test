@@ -1,4 +1,5 @@
 
+
 <style>
 .body{text-size:100px;}
 #customers {
@@ -123,34 +124,19 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
 }
 </style>
 </head>
+var x = img src="https://www.worldometers.info/img/flags/an-flag.gif";
+
+
+
+
 <body>
-<div class=bg>
 
 
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Country's names.." title="Type in a name">
-
-<ul id="myUL">
-  
-  
-<li><a href="#">
-
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" style="align:left;">
-<img src="https://www.iec.ch/resources/isoflags/as.png" class="w3-border" alt="Norway" style="padding:px;width:80px;"><font style="font-size:50px;"> INIA;l</font></button></a>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4">
-      <header class="w3-container w3-teal"> 
-        <span onclick="document.getElementById('id01').style.display='none'"                             
-        class="w3-button w3-display-topmiddle">&times;</span>
-        <h2>BASIC SYMBOLS</h2>
-      </header>
-      <div class="w3-container">
         
      <table id="customers">
 
-  
-
+ <tr> 
+<td colspan="4" style="text-align:center; font-size:30px; background-color:lightgreen;">Plug Type</td></tr>
 <tr>
   <td align="middle" colspan="2"> <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:150;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td><td align="middle">
 <img src="https://www.worldometers.info/img/flags/an-flag.gif" class="w3-border" alt="Norway" style="padding:px;width:150;"><br><b><font style="font-size:30px; text-align:center;">Andorra</font></td>
@@ -161,93 +147,27 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
   </tr>
      <table id="customers">
   <tr>
-    <td align="middle"style="font-size:30px;">Country Voltage 220v</td>
-    <td align="middle"style="font-size:30px;">220V</td>
+    <td align="middle"style="font-size:30px;">Country Voltage:- 220v</td>
+    <td align="middle"style="font-size:30px;">Frequency:- 50Hz</td>
    
   </tr>
-  <tr>
-    <td align="middle"style="font-size:30px;">Frequency  50Hz</td>
-    <td align="middle"style="font-size:30px;">50 Hz</td>
-  </tr>
-  
+
+ <table id="customers">
+
+<tr>
+<td colspan="3" style="text-align:center; font-size:30px; background-color:lightgreen;">Wiring Colour</td>
+</tr>
+<tr>
+<td colspan="1"  style=" font-size:30px; text-align:center; ">SINGLE PHASE</td>
+<td colspan="1" align="middle" style=" font-size:30px;text-align:center; ">THREE PHASE</td>
+<td colspan="1" align="middle" style=" font-size:30px;text-align:center; ">DC CIRCUIT</td>
+</tr>
+<tr>
+<td>
+
+
+
+
+
 
 </table>
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    </div>
-  </div>
-</div></li>
-  
-  
-  
-  
-  
-  <li><a href="#">Agnes</a></li>
-
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-</ul>
-
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-</script>
-
-
-
-<body>
-
-
-
-
-
- 
-
-
-
-
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-   
-  
-  
-  
-  
-  
-  
-  }
-}
-</script>
-
-</body>
-</html>
