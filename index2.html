@@ -204,12 +204,19 @@ img {width:350;
 } 
 .cal{width:90%;
    position: absolute;
-  width:100%;
+  width:98%;
   top: 350px;
+  align:middle;
 }
 .cc{width:90%;
    position: absolute;
-  top: 525px;
+  top: 430px;
+  align:middle;
+}
+.cc1{width:90%;
+   position: absolute;
+  top: 510px;
+  align:middle;
 }
 .f1{width:90%;
    position: absolute; border: none; padding:40px; width: 160px;
@@ -295,8 +302,8 @@ img {width:350;
  
 <table class="cal" style="border: 1px solid #ddd;">
 <tr style="text-align:center; font-size:20px; background-color:#BBB;">
-<td align="middle" colspan="2"><select  name="first" value="0" onChange="calcResistance(this)" style="width: 100px;height: 50px; color: black; background: #ffff; size:5;">
-<option value="11" style="color: white; background: #ffff;"selected>b1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<td align="middle" colspan="2"><select  name="first" value="0" onChange="calcResistance(this)" style="width: 100px;height: 25px; color: black; background: #ffff; size:5;">
+<option value="11" style="color: white; background: #ffff;"selected>First Baand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -308,8 +315,8 @@ img {width:350;
 <option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
 <option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
 </select></td>
-<td align="middle"><select  name="second" value="2" onChange="calcResistance(this)" style="width: 100px;height: 50px;   background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected>b2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<td align="middle"><select  name="second" value="2" onChange="calcResistance(this)" style="width: 100px;height: 25px;   background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected>Second band &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -325,8 +332,8 @@ img {width:350;
 
 
 <tr style="text-align:center; font-size:20px; background-color:#BBB;">
-<td align="middle" colspan="2"><select  name="mult" value="1" onChange="calcResistance(this)" style="width:100px;height: 50px;  background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected>b3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<td align="middle" colspan="2"><select  name="mult" value="1" onChange="calcResistance(this)" style="width:100px;height: 25px;  background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected>Multiply Band &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -338,8 +345,8 @@ img {width:350;
 <option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
 <option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
 </select></td>
-<td align="middle"><select  name="tol" value="0" onChange="calcResistance(this)" style="width:100px;height: 50px;  background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected> b4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<td align="middle"><select name="volt" value="0" onChange="calcResistance(this)" style="width:100px;height: 25px;  background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected> Voltage Band&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -355,8 +362,8 @@ img {width:350;
 
 
 <tr style="text-align:center; font-size:20px; background-color:#BBB;">
-<td align="middle" colspan="4"><select name="volt" value="0" onChange="calcResistance(this)" style="width:100px;height: 50px;  background: #ffff;">
-<option value="11" style="color: white; background: #ffff;"selected> b5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<td align="middle" colspan="4"><select  name="tol" value="0" onChange="calcResistance(this)" style="width:100px;height: 25px;  background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected> Tolerance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
 <option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
@@ -373,17 +380,17 @@ img {width:350;
     
 </table></div>
 <br>
-
-<div class="cc"><input type="button" style=" background-color: grey ; border: 1; border-radius: 10px;color: white;  text-align: center; text-decoration: none; display: inline-block;
+<table>
+<input type="button" class="cc"style=" background-color: grey ; border: 1; border-radius: 10px;color: white;  text-align: center; text-decoration: none; display: inline-block;
                font-size: 50px; margin: 4px 2px;"value="Calculate" OnClick="c()"><br>
 
-<input type="text" style="border-radius: 25px;font-size: 50px;
+<input type="text" class="cc1"style="border-radius: 25px;font-size: 20px;
   border: 2px solid #73AD21;
-  padding: 20px; 
-  width: 100px;
-  height: 150px;  " name="capval"  value="0" readonly>
+  padding: 10px; 
+  
+  height: 80px;  " name="capval"  value="0" readonly>
 </div>
-
+</table>
 </form>
 
 <script>
