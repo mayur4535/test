@@ -1,290 +1,432 @@
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-<!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-shim.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.1/es5-sham.js"></script>
-    
-    <script src="/assets/js/css3-mediaqueries.js"></script>
-    <link href="/assets/css/ie8.css" rel="stylesheet">
-<![endif]-->
-<style>
-#borderimg { 
-  border: 10px solid transparent;
-  padding: 10px;
-  width: 100%;
-  hight: 100%;
-  border-image-source: url();  
-  border-image-slice: 30;
-}
 
-body {
-  display: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
-}
+<script language="JavaScript">
 
-body { 
-   ; 
-}
+<!--
 
-input[id=tool_capacitor]{
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[id=tool_capacitor]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-input[id=tool_resistance]{
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[id=tool_resistance]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-input[id=tool_output_pulse_width]{
-     width:250;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[id=tool_output_pulse_width]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-input[id=tool_capacitor_unit]{
-    width:250;
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin:8px 0;
-    outline:none;
-    padding:8px;
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  input[id=tool_capacitor_unit]:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-input[id=tool_submit]{
-  background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
- 
-  padding: 10px 200px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-input[id="tool_capacitor_uni]{
-  padding: 105px 320px;
-  font-size: 200px;
+
+
+// CED subroutine for cleaning up JavaScript rounding errors 
+
+// to any reasonable number of decimal places 5/5/1997 last mod 2/19/2004
+
+// round for decimal of (value of precision) places, default is 3
+
+// This routine can be used to pass a number and a number for precision
+
+// or just a number only, that is to be rounded to a set number of decimal
+
+// places. This routine supports leading and training zeros, leading and
+
+// trailing spaces, and padding. To prevent errors, pass variables as a string.
+
+
+
+function perRound(num, precision) {
+
+	var precision = 3; //default value if not passed from caller, change if desired
+
+	// remark if passed from caller
+
+	precision = parseInt(precision); // make certain the decimal precision is an integer
+
+    var result1 = num * Math.pow(10, precision);
+
+    var result2 = Math.round(result1);
+
+    var result3 = result2 / Math.pow(10, precision);
+
+    return zerosPad(result3, precision);
 
 }
 
 
-</style>
-<script type="text/javascript">// <![CDATA[
-      
-  function searchFor(obj, query) {
-    for(var key in obj) {
-      if(obj.hasOwnProperty(key) && (typeof obj[key] === "string")) {
-        if(obj[key] === query) {
-          return true;
-        }
-      }
+
+function zerosPad(rndVal, decPlaces) {
+
+    var valStrg = rndVal.toString(); // Convert the number to a string
+
+    var decLoc = valStrg.indexOf("."); // Locate the decimal point
+
+    // check for a decimal 
+
+    if (decLoc == -1) {
+
+        decPartLen = 0; // If no decimal, then all decimal places will be padded with 0s
+
+        // If decPlaces is greater than zero, add a decimal point
+
+        valStrg += decPlaces > 0 ? "." : "";
+
     }
-    return false;
-  }
-  var googletag = googletag || {};
-  googletag.cmd = googletag.cmd || [];
-  (function() {
-    var gads = document.createElement('script');
-    gads.async = true;
-    gads.type = 'text/javascript';
-    var useSSL = 'https:' == document.location.protocol;
-    gads.src = (useSSL ? 'https:' : 'http:') +
-      '//www.googletagservices.com/tag/js/gpt.js';
-    var node = document.getElementsByTagName('script')[0];
-    node.parentNode.insertBefore(gads, node);
-  })();
-// ]]></script>
-<script type="text/javascript" src="../assets/library/jquery.popupoverlay.js"></script>
-<script type="text/javascript">// <![CDATA[
-        $(document).ready(function() {
 
-            if($.cookie('aacwelcome') === undefined) {
-                if (popup_is_mobile() === false) {
-                    $('#my_popup').popup({
-                        color: 'white',
-                        opacity: 1,
-                        transition: '0.3s',
-                        scrolllock: true,
-                        beforeopen: function () {
-                            googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
-                            $('#my_popup').removeClass("hidden");
-                        }
-                    });
-                    $('#div-gpt-ad-1430160889889-0').bind('adready', function () {
-                        var quotes = [{'author': 'James Kip Finch' , 'quote': 'The engineer has been, and is, a maker of history.'},
-                            {'author': 'Gordon Lindsay Glegg', 'quote': 'The scientist discovers a new type of material or energy and the engineer discovers a new use for it.'},
-                            {'author': 'Henry Petroski', 'quote': 'Engineering is achieving function while avoiding failure.'},
-                            {'author': 'Henry Petroski', 'quote': 'Successful engineering is all about understanding how things break or fail.'},
-                            {'author': 'Michio Kaku', 'quote': 'What we usually consider as impossible are simply engineering problems… there’s no law of physics preventing them.'},
-                            {'author': 'Thomas Edison', 'quote': 'I have not failed, but found 1000 ways to not make a light bulb.'},
-                            {'author': 'Robert Heinlein', 'quote': 'One man’s “magic” is another man’s engineering. “Supernatural” is a null word.'},
-                            {'author': 'Unknown', 'quote': 'Everyone wants the project to be good, fast, and cheap... pick two.'},
-                        ];
-                        var quote = quotes[Math.floor(Math.random()*quotes.length)];
-                        $('#welcomequote').text(quote.quote);
-                        $('#welcomeauthor').text(quote.author);                           
-                        $('#my_popup').popup('show');
-                    });
-                } else {
-                    $('#div-gpt-ad-1430160889889-0').detach().insertAfter('header');
-                    $('#div-gpt-ad-1430160889889-0').addClass('text-center');
-                    $('#div-gpt-ad-1430160889889-0').css({"padding-top": "20px", "padding-bottom": "20px", "background-color": "#f26b31"});
-                    googletag.cmd.push(function () {googletag.display('div-gpt-ad-1430160889889-0');});
-                }
-                var welcomeExpire = new Date();
-                welcomeExpire.setHours(welcomeExpire.getHours() + 6);
-                $.cookie('aacwelcome','set', {domain: "allaboutcircuits.com", path: "/", expires: welcomeExpire});
-           }
-        });
-    
-// ]]></script>
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
-<div id="top-box" class="hidden-xs">
-<div class="top-box-wrapper">
-<div class="container navContainer">
-<div class="row">
-<div class="social-box col-lg-3 col-md-4 col-sm-5 pull-right">
-<div class="hidden-print"><span class="hidden-xs"></span></div>
+    else {
+
+        decPartLen = valStrg.length - decLoc - 1; // If there is a decimal already, only the needed decimal places will be padded with 0s
+
+    }
+
+     var totalPad = decPlaces - decPartLen;    // Calculate the number of decimal places that need to be padded with 0s
+
+    if (totalPad > 0) {
+
+        // Pad the string with 0s
+
+        for (var cntrVal = 1; cntrVal <= totalPad; cntrVal++) 
+
+            valStrg += "0";
+
+        }
+
+    return valStrg;
+
+}
+
+// send the value in as "num" in a variable
+
+
+
+// clears field of default value
+
+function clear_field(field) {
+
+		if (field.value==field.defaultValue) {
+
+			field.value=''
+
+		}
+
+	}
+
+
+
+function c() {
+
+   t = 20;//default percentage
+
+   v = 3;//default voltage
+
+   nF = 1000;
+
+   uF = nF*nF;
+
+   n1 = eval(document.colorSelect.first.selectedIndex);
+
+   n2 = eval(document.colorSelect.second.selectedIndex);
+
+   n3 = eval(document.colorSelect.mult.selectedIndex);
+
+   v1 = eval(document.colorSelect.volt.selectedIndex);
+
+   idx =eval(document.colorSelect.tol.selectedIndex);
+
+
+
+// percentage tolerance
+
+   if(idx == 1) t = 10;
+
+   if(idx == 2) t = 5;
+
+
+
+// voltage
+
+   if(v1 == 1) v = 6.3;
+
+   if(v1 == 2) v = 10;
+
+   if(v1 == 3) v = 16;
+
+   if(v1 == 4) v = 20;
+
+   if(v1 == 5) v = 25;
+
+   if(v1 == 6) v = 35;
+
+  
+
+   factor = ((n1 * 10)+n2)*(Math.pow(10,n3));
+
+   if(factor == "") return;
+
+
+
+   if(factor < nF) fact = "pF";
+
+   if((factor >= nF) && (factor < uF)) {
+
+      factor = factor/nF;
+
+      fact = "nF";
+
+   }
+
+   if(factor >= uF) {
+
+      factor = factor/uF;
+
+      fact = "uF";
+
+   }
+
+   r1 = factor - ((t * factor)/100);
+
+   r2 = factor + ((t * factor)/100);
+
+   r1 = parseInt((r1*100)+0.5)/100;
+
+   r2 = parseInt((r2*100)+0.5)/100;
+
+   
+
+   txt = " "+r1+" to "+r2+" "+fact;
+
+   txt = txt + "    ("+factor+" "+fact+"  ±"+t+"%) " +v+ " V";
+
+   document.colorSelect.capval.value = txt;
+
+}
+
+ document.colorSelect.band1.style.background = bgColors[parseInt(first)];
+    document.colorSelect.band1.style.color = fgColors[parseInt(first)];
+
+
+</script>
+  
+<style>
+img {width:350;
+     
+   position: absolute;
+  top: 70px;
+  left:100px;
+  
+  
+} 
+.cal1{width:90%;
+   position: absolute;
+  top: 800px;
+  left: 115px;}
+.cal{width:90%;
+   position: absolute;
+  top: 800px;
+  left: 115px;}
+.f1{width:90%;
+   position: absolute;
+  top: 80px;
+  left: 115px;}
+
+.f2{width:90%;
+   position: absolute;
+  top: 110px;
+  left: 115px;}
+
+.f3{width:90%;
+   position: absolute;
+  top: 140px;
+  left: 115px;}
+.f4{width:90%;
+   position: absolute;
+  top: 170px;
+  left: 115px;}
+.f5{width:90%;
+   position: absolute;
+  top: 285px;
+  left: 115px;}
+.ff{
+   position: absolute;
+  top: 285px;
+  
+  margin: center;}
+</style>
+
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+
+<table>
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/tenta.png?raw=true" alt="Paris" ">
+
+
+
+<form name="colorSelect" method="" action="">
+<td><select class=f1 name="volt0" value="0" onChange="calcResistance(this)" style="width: 0px;height: 0px; color: black; background: red; size:5;">
+<option value="" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+</select></td> 
+
+<p name="band6" style=" border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 20px;
+  height: 15px;">1</p>
+<p name="band7" style=" border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 20px;
+  height: 15px;">2</p>
+<p name="band8" style=" border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 20px;
+  height: 15px;">3</p>
+<p name="band9" style=" border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 20px;
+  height: 15px;">4</p>
+<p name="first0" style=" border-radius: 25px;
+  background: #73AD21;
+  padding: 20px;
+  width: 20px;
+  height: 15px;">5</p>
+
+
+
+  
+<div class="cal1">
+<select  name="first" value="0" onChange="calcResistance(this)" style="width: 50px;height: 20px; color: black; background: #ffff; size:5;">
+<option value="11" style="color: white; background: #ffff;"selected>b1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+<option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
+<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
+<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
+<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
+<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
+<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
+<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
+<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
+</select></td> 
+ 
+   
+  
+<select  name="second" value="2" onChange="calcResistance(this)" style="width: 50px;height: 20px;   background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected>b2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+<option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
+<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
+<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
+<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
+<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
+<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
+<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
+<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
+</select> 
+  
+  
+<select  name="mult" value="1" onChange="calcResistance(this)" style="width:50px;height: 20px;  background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected>b3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+<option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
+<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
+<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
+<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
+<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
+<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
+<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
+<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
+</select>
+   
+  
+  
+<select  name="tol" value="0" onChange="calcResistance(this)" style="width:50px;height: 20px;  background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected> b4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+<option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
+<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
+<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange </option>
+<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow </option>
+<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green </option>
+<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue </option>
+<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet </option>
+<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray </option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White </option>
+</select>
+<select name="volt" value="0" onChange="calcResistance(this)" style="width:50px;height: 20px;  background: #ffff;">
+<option value="11" style="color: white; background: #ffff;"selected> b5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+<option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
+<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
+<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange </option>
+<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow </option>
+<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green </option>
+<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue </option>
+<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet </option>
+<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray </option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White </option>
+</select></div>
+
+
+<div class="cal"><input type="button" style=" background-color: grey ; border: 1; border-radius: 10px;color: white;  text-align: center; text-decoration: none; display: inline-block;
+               font-size: 70px; margin: 4px 2px;"value="Calculate" OnClick="c()">
+
+<input type="text" style="border-radius: 25px;font-size: 50px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 800px;
+  height: 150px;  " name="capval"  value="0" readonly></div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="container navContainer">
-<div class="row">
-<div class="navbar-header">
-<div class="resp-menu-wrap pull-right">
-<div class="search-block visible-xs pull-right"><form class="navbar-form navbar-form-mobile navbar-right " action="/search" method="GET">&nbsp;</form></div>
-</div>
-<div class="container-fluid"><form id="tool"><fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Inputs</h3></div></legend>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group"></div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group"><label class="control-label" for="tool_capacitor">Capacitor (C)</label><input id="tool_capacitor" style="position: absolute;
-  right: 110px;"class="form-control" type="number" />&nbsp;&nbsp;<select id="tool_capacitor_unit" style="padding: 5px ;  position: absolute;
-  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
-    
-    
-    
-   width:100px;" class="form-control"> <option value="0.000000001">nF</option> <option selected="selected" value="0.000001">&mu;F</option> </select></div>
-<h3></h3>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group"></div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group"><label class="control-label" for="tool_resistance">Resistance (R)</label><input id="tool_resistance" class="form-control" style="position: absolute;
-  right: 110px;"type="number" />&nbsp;&nbsp;<select id="tool_resistance_unit" style="padding: 5px ;  position: absolute;
-  right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
-    
-    
-    
-   width:100px;"  class="form-control"> <option selected="selected"value="1">&Omega;</option> <option  value="1000">k&Omega;</option> <option value="1000000">m&Omega;</option> </select></div>
-</div>
-</div>
-</div></fieldset>
+
 </form>
-<div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group">&nbsp;</div>
-</div>
-<div class="col-sm-4" >
-<div class="form-group" ><fieldset><legend><div colspan="2" align="center" height="19"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate"  disabled="disabled" /></div></div>
-</div></legend></fieldset>
-<div class="col-sm-4">
-<div class="form-group">&nbsp;</div>
-</div>
-</div>
-</div><fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Output </h3></div></legend>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group"></div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="tool_submit_container form-group has-warning"><label class="control-label" for="tool_output_pulse_width">Output Pulse<br> Width (T)</label><input id="tool_output_pulse_width" style="position: absolute;
-  right: 110px;"class="form-control" type="number" /><label style="padding: 5px ;  position: absolute;
-  right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;
+
+<script>
+
+function calcResistance(input) {
+    tol1 = document.colorSelect.volt0.value;
+    msv = document.colorSelect.first.value;
+    lsv = document.colorSelect.second.value;
+    mult = document.colorSelect.mult.value;
+    tol = document.colorSelect.tol.value;
+    volt = document.colorSelect.volt.value;
+     
     
+   
     
+    var bgColors = new Array("black", "#583030", "red", "orange", "yellow", "green", "blue", "purple", "gray", "white", "gold", "silver");
+    var fgColors = new Array("white", "white", "white", "black", "black", "white", "white", "white", "black", "black", "black", "black");
+     
+  document.colorSelect.volt0.style.background = bgColors[parseInt(tol)];
+    document.colorSelect.volt0.style.color = fgColors[parseInt(tol)];
+
+    // Set pull-down menu bg and fg colors:
+    document.colorSelect.first.style.background = bgColors[parseInt(msv)];
+    document.colorSelect.first.style.color = fgColors[parseInt(msv)];
+    document.colorSelect.second.style.background = bgColors[parseInt(lsv)];
+    document.colorSelect.second.style.color = fgColors[parseInt(lsv)];
+    document.colorSelect.mult.style.background = bgColors[parseInt(mult)];
+    document.colorSelect.mult.style.color = fgColors[parseInt(mult)];
+     document.colorSelect.tol.style.background = bgColors[parseInt(tol)];
+    document.colorSelect.tol.style.color = fgColors[parseInt(tol)];
+      document.colorSelect.volt.style.background = bgColors[parseInt(volt)];
+    document.colorSelect.volt.style.color = fgColors[parseInt(volt)];
+     
+  
+    document.colorSelect.band6.style.background = bgColors[parseInt(msv)];
+    document.colorSelect.band6.style.color = fgColors[parseInt(msv)];
+    document.colorSelect.band7.style.background = bgColors[parseInt(lsv)];
+    document.colorSelect.band7.style.color = fgColors[parseInt(lsv)];
+    document.colorSelect.band8.style.background = bgColors[parseInt(mult)];
+    document.colorSelect.band8.style.color = fgColors[parseInt(mult)];
+    document.colorSelect.band9.style.background = bgColors[parseInt(tol)];
+    document.colorSelect.band9.style.color = fgColors[parseInt(tol)];
+    document.colorSelect.first0.style.background = bgColors[parseInt(volt)];
+    document.colorSelect.first0.style.color = fgColors[parseInt(volt)];
     
-   width:100px;">S</label></div>
-</div></fieldset>
-<div class="col-sm-4 col-xs-4">
-<div class="form-group"></div>
-</div>
-</div>
-</div>
-</div>
-<p>
-<script type="text/javascript">// <![CDATA[
-var _0x5f73=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72","\x23\x74\x6F\x6F\x6C\x5F\x63\x61\x70\x61\x63\x69\x74\x6F\x72\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65","\x23\x74\x6F\x6F\x6C\x5F\x72\x65\x73\x69\x73\x74\x61\x6E\x63\x65\x5F\x75\x6E\x69\x74","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x5F\x70\x75\x6C\x73\x65\x5F\x77\x69\x64\x74\x68","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74\x5F\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x61\x64\x64\x43\x6C\x61\x73\x73","\x6F\x6E"];!function(_0xaba3x1){_0x5f73[0];_0xaba3x1(_0x5f73[4])[_0x5f73[9]](function(){var _0xaba3x2=!1;_0xaba3x1(_0x5f73[4])[_0x5f73[3]](function(){_0x5f73[1]== _0xaba3x1(this)[_0x5f73[2]]()&& (_0xaba3x2=  !0)}),_0xaba3x2?_0xaba3x1(_0x5f73[7])[_0x5f73[6]](_0x5f73[5],_0x5f73[5]):_0xaba3x1(_0x5f73[7])[_0x5f73[8]](_0x5f73[5])}),_0xaba3x1(_0x5f73[7])[_0x5f73[22]](_0x5f73[10],function(_0xaba3x2){_0xaba3x2[_0x5f73[11]]();var _0xaba3x3=_0xaba3x1(_0x5f73[12]),_0xaba3x4=_0xaba3x1(_0x5f73[13]),_0xaba3x5=_0xaba3x1(_0x5f73[14]),_0xaba3x6=_0xaba3x1(_0x5f73[15]),_0xaba3x7=_0xaba3x1(_0x5f73[16]);if(_0xaba3x3[_0x5f73[2]]()&& _0xaba3x4[_0x5f73[2]]()&& _0xaba3x5[_0x5f73[2]]()&& _0xaba3x6[_0x5f73[2]]()){var _0xaba3x8=_0xaba3x3[_0x5f73[2]]()* _0xaba3x4[_0x5f73[2]](),_0xaba3x9=_0xaba3x5[_0x5f73[2]]()* _0xaba3x6[_0x5f73[2]](),_0xaba3xa=1.1* _0xaba3x9* _0xaba3x8;_0xaba3x7[_0x5f73[2]](_0xaba3xa),_0xaba3x1(_0x5f73[19])[_0x5f73[18]](_0x5f73[17]),_0xaba3x1(_0x5f73[19])[_0x5f73[21]](_0x5f73[20])}})}(jQuery)
-// ]]></script>
-</p>
-</div>
-</div>
-</div>
+    // Update the text box
+    document.getElementById("resistorValue").innerHTML=resistText;
+   
+
+ document.getElementById("resistorValue1").innerHTML=resistText1;
+}
+
+function addCommas(x) {
+// This handy function found here:
+// http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+    return x.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+</script>
