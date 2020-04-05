@@ -210,7 +210,7 @@ img {width:300;
 }
 .cc{width:90%;
    position: absolute;
-  top: 590px;
+  top: 595px;
   align:middle;
 }
 .cc1{width:90%;
@@ -337,30 +337,30 @@ img {width:300;
 <td align="middle" colspan="2"><select  name="mult" value="1" onChange="calcResistance(this)" style="padding: 5px ;align:middle; 
  font-size:20px;   border:2px solid #aaa;border-radius:4px;margin:2px 0; width:100%;">
 <option value="11" style="color: white; background: #ffff;"selected>Multiply Band &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
+<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
 <option value="0" style="color: white; background: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
 <option value="1" style="color: white; background: #583030;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
 <option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange</option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow</option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green</option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue</option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet</option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray</option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White</option>
+ 
+
 </select></td>
 <td align="middle"><select name="volt" value="0" onChange="calcResistance(this)" style="padding: 5px ;align:middle; 
  font-size:20px;   border:2px solid #aaa;border-radius:4px;margin:2px 0; width:100%;">
 <option value="11" style="color: white; background: #ffff;"selected> Voltage Band&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
-<option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
-<option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange </option>
+<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White </option>
+
 <option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow </option>
+<option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+
+
+
 <option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green </option>
 <option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue </option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet </option>
+
 <option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray </option>
-<option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White </option>
+<option value="12" style="color: white; background: pink;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pink </option>
+
 </select></td>
 
 
@@ -369,16 +369,12 @@ img {width:300;
 <td align="middle" colspan="4"><select  name="tol" value="0" onChange="calcResistance(this)" style="padding: 5px ;align:middle; 
  font-size:20px;   border:2px solid #aaa;border-radius:4px;margin:2px 0; width:100%;">
 <option value="11" style="color: white; background: #ffff;"selected> Tolerance&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option> 
-<option value="0" style="color: white; background: black;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Black</option>
+
 <option value="1" style="color: white; background: #583030;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brown</option>
-<option value="2" style="color: white; background: red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</option>
-<option value="3" style="color: black; background: orange;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orange </option>
-<option value="4" style="color: black; background: yellow;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yellow </option>
-<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green </option>
-<option value="6" style="color: white; background: blue;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blue </option>
-<option value="7" style="color: white; background: purple;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Violet </option>
-<option value="8" style="color: white; background: gray;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gray </option>
 <option value="9" style="color: black; background: white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;White </option>
+<option value="5" style="color: white; background: green;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Green </option>
+
+
 </select></td>
 
 
@@ -414,8 +410,8 @@ function calcResistance(input) {
     
    
     
-    var bgColors = new Array("black", "#583030", "red", "orange", "yellow", "green", "blue", "purple", "gray", "white", "gold", "silver");
-    var fgColors = new Array("white", "white", "white", "black", "black", "white", "white", "white", "black", "black", "black", "black");
+    var bgColors = new Array("black", "#583030", "red", "orange", "yellow", "green", "blue", "purple", "gray", "white", "gold", "silver","pink");
+    var fgColors = new Array("white", "white", "white", "black", "black", "white", "white", "white", "black", "black", "black", "black","white");
      
   document.colorSelect.volt0.style.background = bgColors[parseInt(tol)];
     document.colorSelect.volt0.style.color = fgColors[parseInt(tol)];
