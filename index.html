@@ -1,357 +1,373 @@
-<head>
 
-<link rel="stylesheet" href="http://www.daycounter.com/DaycounterStyle.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<META  name="description" content="Air Core Coil Inductor Inductance Calculator.">
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px; 
+  top: 24px;
+  left: 149px;"id="first" ></Button>
+<Button style="width:90%; border: none; width: 40px;padding:20px; 
+   position: absolute;
+  top: 024px;
+  left: 219px;"id="second" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px;
+  border: none;
+  border-radius: ;
+  top: 95px;
+  left: 219px;"id="third" ></Button>
+<Button style="fwidth:90%;
+   position: absolute;  border: none; width: 40px; padding:20;
+  top: 95.5px;
+  left: 149px;}
+.f5{width:90%"id="fourth" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px;
+  border: none;
+  border-radius: ;
+  top: 95px;
+  left: 78px;" id="fifth" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px;
+  border: none;
+  border-radius: ;
+  top: 24px;
+  left: 78px;" id="tol1" ></Button>
 
-<META  name="keywords" content="Air, Core,Coil,Inductance, Inductor, Electronics, Calculator">
-				                  
-				                  
-<title>BJT Cascode Amplifier Calculator</title>
+ 
+ 
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/mica ori.png?raw=true" alt="Paris" ">
 
-<script language="JavaScript">
 
-function Compute(form) {
-	with(Math) {
-		var KILO= 1000;
-		var MEGA= KILO*KILO;
-		var PICO= 1/(MEGA*MEGA);
-		
-		var PI= 3.1415926535897932384626433832795;
 
-		var R1= Number(form.R1.value)*KILO;
-		var R2= Number(form.R2.value)*KILO;
-		var R3= Number(form.R3.value)*KILO;		
-		var RC= Number(form.RC.value)*KILO;
-		var RE1= Number(form.RE1.value)*KILO;
-		var RE2= Number(form.RE2.value);
-				
-		var Beta= Number(form.Beta.value);
-		var VBE= Number(form.VBE.value);
-		var VP= Number(form.VP.value);
-		var Ft= Number(form.Ft.value)*MEGA;
-		var Cbe= Number(form.Cbe.value)*PICO;				
-		var Ccb= Number(form.Ccb.value)*PICO;		
-		var RS= Number(form.RS.value);		
-		var RL= Number(form.RL.value);			
-		
-		var Precision= 5;
-		var Rin;
-		var RE12= RE1+RE2;
-		
-		VB1= VP*R3/(R1+R2+R3);
-		VB2= VP*(R2+R3)/(R1+R2+R3);
-		
-		VE1= VB1-VBE;
-		VE2= VB2-VBE;
-		VC1= VE2;	
-		
-		RB1= R3*(R1+R2)/(R1+R2+R3);
-		IB= (VB1-VBE)/(RB1+Beta*RE12);
-		IC= Beta*IB;
-		VC2= VP - IC*RC;
-		
-		gm = IC/.025
-		
-		RLC= RL*RC/(RL+RC);
-		R23= R2*R3/(R2+R3);
-		R23S= R23*RS/(R23+RS);
 
-		Rpi= Beta/gm;
-		
-		Rx= 20;			// Rx is a few tens of ohhms tipically: often is neglected. 
-		
-		Rs_p= Rpi*(Rx+R23S)/(Rpi+(Rx+R23S));
-		
-		Rin= Rpi*(RB1)/(Rpi+(RB1));
-		
+  <div class="container">
 
-		A1= -gm*RLC*R23/(R23+RS) * Rpi/(Rpi+Rx+R23S);
-		A2= -RLC/RE2;
-		
-		if(abs(A1)<=abs(A2)) A= A1;
-		else A= A2;
 
-		
-		// Cpi is Cbe
-		// Cu   is Ccb
-		
-		if( Ccb && Ft) { 		// we can find Cbe from Ft an Ccb
-			Cbe= gm/(Ft*2*PI)-Ccb;
-		}		
-		
-		
-		f1= 1/(Rs_p*(Cbe+ 2*Ccb))/(2*PI);
-		
-		f2= 1/(RLC*Ccb)/(2*PI);
+<select name="" id="tol">
+  <option value="0" class="black" >Black</option>
+  <option value="10" class="brown" >Brown</option>
+  <option value="20" class="red" >Red</option>
+  <option value="30" class="orange">Orange</option>
+  <option value="40" class="yellow">Yellow</option>
+  <option value="50" class="green">Green</option>
+  <option value="60" class="blue">Blue</option>
+  <option value="70" class="violet">Violet</option>
+  <option value="80" class="grey">Grey</option>
+  <option value="90" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select>
+   
 
-		
-		
-		Rin/= KILO;
-		f1/= MEGA;
-		f2/= MEGA;		
-		Cbe/=PICO;
-		
-		BW= 1/sqrt( 1/(f1*f1)+1/(f2*f2)+1/(Ft*Ft) );
 
-		form.VB1.value= VB1.toPrecision(Precision);
-		form.VB2.value= VB2.toPrecision(Precision);
-		form.VE1.value= VE1.toPrecision(Precision);
-		form.VE2.value= VE2.toPrecision(Precision);
-		form.VC1.value= VC1.toPrecision(Precision);
-		form.VC2.value= VC2.toPrecision(Precision);
-		form.IB.value=  IB.toPrecision(Precision)*KILO;
-		form.IC.value=  IC.toPrecision(Precision)*KILO;
-		form.gm.value= gm.toPrecision(Precision);
-		form.A.value= A.toPrecision(Precision);	
-		form.Rpi.value= Rpi.toPrecision(Precision);
-		form.Rin.value= Rin.toPrecision(Precision);
-		form.f1.value= f1.toPrecision(Precision);		
-		form.f2.value= f2.toPrecision(Precision);		
-		form.BW.value= BW.toPrecision(Precision);				
-		form.Cbe.value= Cbe.toPrecision(Precision);	
 
-	
-		
-	}
+
+
+   
+
+  <select name="" id="firstColumn">
+  <option value="0" class="black" >Black</option>
+  <option value="10" class="brown" >Brown</option>
+  <option value="20" class="red" >Red</option>
+  <option value="30" class="orange">Orange</option>
+  <option value="40" class="yellow">Yellow</option>
+  <option value="50" class="green">Green</option>
+  <option value="60" class="blue">Blue</option>
+  <option value="70" class="violet">Violet</option>
+  <option value="80" class="grey">Grey</option>
+  <option value="90" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select>
+
+    <select name=""  id="secondColumn">
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select>
+
+    <select name=""  id="thirdColumn">
+  <option value="1" class="black">Black</option>
+  <option value="10" class="brown">Brown</option>
+  <option value="100" class="red">Red</option>
+  <option value="1000" class="orange">Orange</option>
+  <option value="10000" class="yellow">Yellow</option>
+  <option value="100000" class="green">Green</option>
+  <option value="1000000" class="blue">Blue</option>
+  <option value="10000000" class="violet">Violet</option>
+  <option value="0" class="grey">Grey</option>
+  <option value="0" class="white">White</option>
+  <option value="0.1" class="gold">Gold</option>
+  <option value="1.01" class="silver">Silver</option>
+</select>
+
+    <select name="" id="fourthColumn">
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="0" class="orange">Orange</option>
+  <option value="0" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="0.25" class="blue">Blue</option>
+  <option value="0.1" class="violet">Violet</option>
+  <option value="0.05" class="grey">Grey</option>
+  <option value="0" class="white">White</option>
+  <option value="5" class="gold">Gold</option>
+  <option value="10" class="silver">Silver</option>
+</select>
+ 
+<select name="" id="fifthColumn">
+  <option value="0111" class="black">Black</option>
+  <option value="1111" class="brown">Brown</option>
+  <option value="2111" class="red">Red</option>
+  <option value="0111" class="orange">Orange</option>
+  <option value="0" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="0.25" class="blue">Blue</option>
+  <option value="0.1" class="violet">Violet</option>
+  <option value="0.05" class="grey">Grey</option>
+  <option value="0" class="white">White</option>
+  <option value="5" class="gold">Gold</option>
+  <option value="10" class="silver">Silver</option>
+</select>
+
+</div>
+
+  <h3 id="result"></h3>
+   <h3 id="result1"></h3>
+
+  <div id="resistor" onclick="bzz()" class="resistor">
+    <div class="wire"></div>
+    <div class="body"></div>
+    <div class="wire2"></div>
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+<script>
+
+function calculate(columnFirst, columnSecond, columnThird) {
+  var columnFirst = document.getElementById('firstColumn').value;
+  var columnSecond = document.getElementById('secondColumn').value;
+  var columnThird = document.getElementById('thirdColumn').value;
+  var columnFourth = document.getElementById('fourthColumn').value;
+   var columnFifth = document.getElementById('fifthColumn').value;
+  var wynik;
+
+  if (columnThird == 0) {
+    wynik = parseInt(columnFirst) + parseInt(columnSecond);
+  } else {
+    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
+  }
+  return wynik;
 }
+
+let select = document.querySelectorAll("select");
+
+
+select.forEach(function (element,){
+  element.addEventListener("change", function() {
+      // console.log(this)
+      let listOption = this.options[this.selectedIndex].id;
+      this.style.backgroundColor = listOption;
+      if (listOption == "black" || listOption == "blue") {
+        this.style.color = "white";
+      } else {
+        this.style.color = "black";
+      }
+      showResult();
+
+  })
+})
+ 
+
+function showResult() {
+  let calculationResult = calculate();
+  let columnFourth = document.getElementById('fourthColumn').value;
+   let columnFifth = document.getElementById('fifthColumn').value;
+  let digitCount = calculationResult.toString().length;
+  if (digitCount >= 4 && digitCount < 7) {
+    document.getElementById("result").innerHTML = "Result is: " + calculate() / 1000 + " nf and the tolerance is: " + columnFourth + "%";
+  } else if (digitCount >= 7 && digitCount <= 9) {
+    document.getElementById("result").innerHTML = "Result is: " + calculate() / 1000000 + " mf and the tolerance is: " + columnFourth + "%";
+  } else {
+    document.getElementById("result").innerHTML = "Result is: " + calculate() + " pf and the tolerance is: " + columnFourth + "%";
+  }{
+document.getElementById("result1").innerHTML= columnFifth;
+}
+}
+
+</script>
+
+
+<script>
+$("#firstColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#firstColumn").attr("class", color);
+    $("#first").attr("class", color);
+    
+});
+
+$("#secondColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#secondColumn").attr("class", color);
+    $("#second").attr("class", color);
+    
+});
+
+$("#thirdColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#thirdColumn").attr("class", color);
+    $("#third").attr("class", color);
+    
+});
+
+$("#fourthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fourthColumn").attr("class", color);
+    $("#fourth").attr("class", color);
+    
+});
+
+$("#fifthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fifthColumn").attr("class", color);
+    $("#fifth").attr("class", color);
+    
+});
+
+$("#tol").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#tol").attr("class", color);
+    $("#tol1").attr("class", color);
+    
+});
+
+
+
+
+
+
+
 
 
 </script>
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-</head>
-<style>
-<style>
-#borderimg { 
-  border: 10px solid transparent;
-  padding: 10px;
-  width: 100%;
-  hight: 100%;
-  border-image-source: url();  
-  border-image-slice: 30;
-}
+ 
 
-body {
-  display: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
-}
+<style>
 
-body { 
-  background: ; 
-}
-.intro{
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
+img {width:300;
+   left: 10px;  
+   position: absolute;
+  top: 10px;
+  left:10px;
+ opacity:0.5;
   
-  .intro:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
+} 
+
+
+.black {
+    background-color: black;
+}
+.brown {
+    background-color: brown;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.white {
+    background-color: white;
+}
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: silver;
+}
+
+
+
+
+.ff{
+   position: absolute; border: none; width: 20px;
+  top: 285px;
+  
+  margin: center;}
+
+
+
+
+
 </style>
 
 
+<style>
 
 
-		
-  
-	
-	 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: "Montserrat";
+}
 
 
-      
-  
-      
-      
-      <form method="POST" name="ParamForm" action="">
-<div class="container-fluid"><form id="tool"><fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Inputs</h3></div></legend>
-
-       <label>R1</label><input type="text" class="intro" name="R1" size="17" value="18" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label> 
-          
-          <h1 style="font-size:50;"></h1>
-       <label>R2</label><input type="text" name="R2" class="intro" size="17" value="4" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label> 
-          
-          <h1 style="font-size:50;"></h1>
-          <label>R3</label><input type="text" name="R3" class="intro" size="17" value="8" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>
-
-          <h1 style="font-size:50;"></h1>
-          <label>R<sub>C <font face="Arial" size="5"> (Collector resistor)</font></label><input type="text" class="intro" name="RC" size="17" value="2" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>   
-
-         <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>E1</sub> </font><font face="Arial" size="5"> (Emitter
-              resistor, AC bypassed)</font></label><input type="text" name="RE1" size="17" class="intro" value="1" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
-
-          <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>E2</sub>  </font><font face="Arial" size="5"> (Emitter
-              resistor, gain control)</font></label><input type="text" name="RE2" size="17" value="1000"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>  
-
-
-            <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>VP</sub></font><font face="Arial" size="5"> (Supply Voltage)</font></label><input type="text" name="VP" size="17" value="24"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>  
-
-
-                       <h1 style="font-size:50;"></h1>
-          <label><font>Beta</sub></font><font face="Arial" size="5"> (DC Current Gain)</font></label><input type="text" name="Beta" size="17" value="100"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">-</label>  
-
-
-                         <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>BE </sub></font><font face="Arial" size="5"> (Base to emitter
-              drop)</font></label><input type="text" name="VBE" size="17" value="0.6"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>  
-
-
-                                  <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>s</sub></font><font face="Arial" size="5"> (Source
-              Resistance)</font></label><input type="text" name="RS" size="17" value="50"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>  
-
-                                   <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>L</sub></font><font face="Arial" size="5"> (Load resistor)</font></label><input type="text" name="RL" size="17" value="50"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>  
-                         
-                  
-   
-                   <h1 style="font-size:50;"></h1>
-          <label><font>f<sub>T</sub></font><font face="Arial" size="5">(Current
-              Gain BW Product)</font></label><input type="text" name="Ft" size="17" value="600"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHz</label>  
-
-                 <h1 style="font-size:50;"></h1>
-          <label><font>C<sub>CB</sub></font><font face="Arial" size="5">(Cu
-              Collector-Base
-              Cap.)</font></label><input type="text" name="Ccb" size="17" value="1"class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">pf</label>
-
-                 <h1 style="font-size:50;"></h1>
-          <label><font>C<sub>BE</sub></font><font face="Arial" size="5"> C<sub>&#960;</sub>
-              Base-Emitter
-              Cap.): Opt.</font></label><input type="text" name="Cbe" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">pf</label>    
-
-</fieldset>
-     
-     <br>
-            
-     
-           
-          <fieldset><legend><div colspan="2" align="center" height="19"><input type="Button" onClick="Compute(document.ParamForm)" value="Calculate" style="background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
+.container {
+position:absolute;
+  top:200;
+  margin: 20px auto;
  
-  padding: 10px 200px;
-  text-align: center;
-  text-decoration: none;
+}
+
+select {
   display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;"></div></div>
-</div></legend></fieldset> 
-          
-         <br>
-
-
-
-<fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Outputs</h3></div></legend>
-
-
-
-    <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>C1</sub></font><font face="Arial" size="5"> (Collector Voltage)</font></label><input type="text" name="VC1"  size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>  
-
-     <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>E1</sub></font><font face="Arial" size="5">  (Emitter Voltage)</font></label><input type="text" name="VE1"  size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-
-     <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>B1</sub></font><font face="Arial" size="5">   (Base Voltage)</font></label><input type="text" name="VB1" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-
-      <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>C2</sub></font><font face="Arial" size="5">   (Collector Voltage)</font></label><input type="text" name="VC2"  size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-
-      <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>E2</sub></font><font face="Arial" size="5">   (Emitter Voltage)</font></label><input type="text" name="VE2" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-
-          <h1 style="font-size:50;"></h1>
-          <label><font>V<sub>B2</sub></font><font face="Arial" size="5">   (Base Voltage)</font></label><input type="text" name="VB2"  size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">V</label>
-
-        
-          <h1 style="font-size:50;"></h1>
-          <label><font>I<sub>C</sub></font><font face="Arial" size="5">   (Collector Voltage)</font></label><input type="text" name="IC" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">ma</label>
-
-       <h1 style="font-size:50;"></h1>
-          <label><font>I<sub>B</sub></font><font face="Arial" size="5">    (Base Voltage)</font></label><input type="text" name="IB" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">ma</label>
-
-           <h1 style="font-size:50;"></h1>
-          <label><font>g<sub>m</sub></font><font face="Arial" size="5">   (Transconductance)</font></label><input type="text" name="gm" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">-</label>
-
-
-        
-           <h1 style="font-size:50;"></h1>
-          <label><font>r<sub>&#960;</sub></font><font face="Arial" size="5">  (Input Resistance of BJT at low freq)</font></label><input type="text" name="Rpi" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">&Omega;</label>
-
-                      <h1 style="font-size:50;"></h1>
-          <label><font>R<sub>IN</sub></font><font face="Arial" size="5">  (Input Resistance of Amp)</font></label><input type="text" name="Rin" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">k&Omega;</label>
-<hr>
-                                <h1 style="font-size:50;"></h1>
-          <label><font>A</sub></font><font face="Arial" size="5">   (Amplifier Voltage Gain)</font></label><input type="text" name="A" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">-</label>
-
-                                            <h1 style="font-size:50;"></h1>
-          <label><font>f<sub>1</sub></font><font face="Arial" size="5"> </font></label><input type="text" name="f1" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHZ</label>
-
-                <h1 style="font-size:50;"></h1>
-          <label><font>f<sub>2</sub></font><font face="Arial" size="5"> </font></label><input type="text" name="f2" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHz</label>
-
-           <h1 style="font-size:50;"></h1>
-          <label><font>BW</sub></font><font face="Arial" size="5"> </font></label><input type="text" name="BW" size="17" class="intro" style="position: absolute;   width:200; right: 120px;"class="form-control" type="number" />
-       <label style="padding: 5px ;  position: absolute;right: 1px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:100px;">MHz</label>
-
-
-
-            
-             
-
-         
-
+  margin-left: 0px;
+  width: 100px;
+  height: 200px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  -webkit-appearance: none;
   
-          </tr>
-        </table>
-      </form>
-      </div>
+  padding-left: 30px;
+}
+ 
+ 
+</style>
