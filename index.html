@@ -110,9 +110,9 @@
   <option value="100000" class="green">Green</option>
   <option value="1000000" class="blue">Blue</option>
   <option value="10000000" class="violet">Violet</option>
-  <option value="0" class="grey">Grey</option>
-  <option value="0" class="white">White</option>
-  <option value="0.1" class="gold">Gold</option>
+  <option value="100000000" class="grey">Grey</option>
+  <option value="0.1" class="white">White</option>
+  <option value="0.01" class="gold">Gold</option>
   <option value="1.01" class="silver">Silver</option>
 </select>
 
@@ -266,7 +266,24 @@ $("#type").change(function(){
 });
 
 
+mobiscroll.settings = {
+    theme: 'ios',
+    themeVariant: 'light'
+};
 
+$(function () {
+
+    $('#type').mobiscroll().select({
+        display: 'bubble'
+        touchUi: true
+    });
+
+    $('#demo-desktop').mobiscroll().select({
+        display: 'bubble',
+        touchUi: false
+    });
+
+});
 
 
 
