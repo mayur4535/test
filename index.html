@@ -43,10 +43,11 @@
 
 
   <div class="container">
-
-
+<table class="cal" style="border: 5px solid #ddd; left-margin:10;font-size:20px;">
+<tr><td>&nbsp;Type</td><td>1Band</td><td>2Band</td><td>&nbsp;Mult</td><td>&nbsp;&nbsp;Tol</td><td>Temp</td></tr>
+<tr><td>
 <select name="" id="type" "> 
-  <option value="0"  >TYPE</option>
+  
   <option value="0" class="black" >Black</option>
   <option value="10" class="brown" >Brown</option>
   <option value="20" class="red" >Red</option>
@@ -60,7 +61,7 @@
   <option value="0" class="gold">Gold</option>
   <option value="0" class="silver">Silver</option>
 </select>
-   
+  </td><td> 
 
 
 
@@ -69,7 +70,7 @@
    
 
   <select name="" id="firstColumn">
-  <option value="0"  >1 BAND</option>
+  
   <option value="0" class="black" >Black</option>
   <option value="10" class="brown" >Brown</option>
   <option value="20" class="red" >Red</option>
@@ -82,10 +83,10 @@
   <option value="90" class="white">White</option>
   <option value="0" class="gold">Gold</option>
   <option value="0" class="silver">Silver</option>
-</select>
+</select></td><td>
 
     <select name=""  id="secondColumn">
-  <option value="0"  >2 BAND</option>
+ 
   <option value="0" class="black">Black</option>
   <option value="1" class="brown">Brown</option>
   <option value="2" class="red">Red</option>
@@ -98,10 +99,10 @@
   <option value="9" class="white">White</option>
   <option value="0" class="gold">Gold</option>
   <option value="0" class="silver">Silver</option>
-</select>
+</select></td><td>
 
     <select name=""  id="thirdColumn">
-  <option value="0"  >3 or Mult</option>
+
   <option value="1" class="black">Black</option>
   <option value="10" class="brown">Brown</option>
   <option value="100" class="red">Red</option>
@@ -114,10 +115,10 @@
   <option value="0.1" class="white">White</option>
   <option value="0.01" class="gold">Gold</option>
   <option value="1.01" class="silver">Silver</option>
-</select>
+</select></td><td>
 
     <select name="" id="fourthColumn">
-  <option value="0"  >Tollrance</option>
+  
   <option value="0" class="black">Black</option>
   <option value="1" class="brown">Brown</option>
   <option value="2" class="red">Red</option>
@@ -130,10 +131,10 @@
   <option value="0" class="white">White</option>
   <option value="5" class="gold">Gold</option>
   <option value="10" class="silver">Silver</option>
-</select>
+</select></td><td>
  
 <select name="" id="fifthColumn">
-  <option value="0"  >Temp</option>
+ 
   <option value="0111" class="black">Black</option>
   <option value="1111" class="brown">Brown</option>
   <option value="2111" class="red">Red</option>
@@ -146,7 +147,7 @@
   <option value="0" class="white">White</option>
   <option value="5" class="gold">Gold</option>
   <option value="10" class="silver">Silver</option>
-</select>
+</select></td>
 
 </div>
 
@@ -265,25 +266,6 @@ $("#type").change(function(){
     
 });
 
-
-mobiscroll.settings = {
-    theme: 'ios',
-    themeVariant: 'light'
-};
-
-$(function () {
-
-    $('#type').mobiscroll().select({
-        display: 'bubble'
-        touchUi: true
-    });
-
-    $('#demo-desktop').mobiscroll().select({
-        display: 'bubble',
-        touchUi: false
-    });
-
-});
 
 
 
