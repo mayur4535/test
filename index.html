@@ -1,4 +1,4 @@
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,7 +47,7 @@
 <tr><td>&nbsp;&nbsp;<b>Type</td><td>&nbsp;<b>1Band</td><td>&nbsp;<b>2Band</td><td>&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;<b>Tol</td><td>&nbsp;<b>Temp</td></tr>
 <tr><td>
 <select name="" id="type" "> 
-  <option  class="black" selected;></option>
+  
   <option value="Joint Army Navy (JAN)" class="black" >Black</option>
  
  
@@ -64,7 +64,7 @@
    
 
   <select name="" id="firstColumn">
-  <option  class="black" selected;></option>
+  
   <option value="0" class="black" >Black</option>
   <option value="10" class="brown" >Brown</option>
   <option value="20" class="red" >Red</option>
@@ -80,7 +80,7 @@
 </select></td><td>
 
     <select name=""  id="secondColumn">
- <option  class="black" selected;></option>
+ 
   <option value="0" class="black">Black</option>
   <option value="1" class="brown">Brown</option>
   <option value="2" class="red">Red</option>
@@ -96,7 +96,7 @@
 </select></td><td>
 
     <select name=""  id="thirdColumn">
-<option  class="black" selected;></option>
+
   <option value="1" class="black">Black</option>
   <option value="10" class="brown">Brown</option>
   <option value="100" class="red">Red</option>
@@ -110,8 +110,9 @@
 </select></td><td>
 
     <select name="" id="fourthColumn">
-  <option  class="black" selected;></option>
-  <option value="20%" class="black">Black</option>
+  
+  <option value="0" class="black">Black</option>
+   <option value="20%" class="black">Black</option>
   <option value="1%" class="brown">Brown</option>
   <option value="2%" class="red">Red</option>
   <option value="3%" class="orange">Orange</option>
@@ -126,7 +127,8 @@
 </select></td><td>
  
 <select name="" id="fifthColumn">
- <option  class="black" selected;></option>
+ 
+  
   <option value="" class="black">Black</option>
   <option value="100/ppmC°" class="brown">Brown</option>
   <option value="200/ppmC°" class="red">Red</option>
@@ -139,12 +141,10 @@
   <option value="900/ppmC°" class="white">White</option>
   <option value="1000/ppmC°" class="gold">Gold</option>
   <option value="2000/ppmC°" class="silver">Silver</option>
-</select></td></table>
+</select></td>
 
 </div>
-
-
-<table class="dd" style="font-size:15px;">
+   <table class="dd" style="font-size:15px;">
 
 
 <tr ><td colspan="2" align="middle" style="font-size:25px;" ><h3 id="result"></h3></td></tr>
@@ -153,18 +153,7 @@
 <tr><td>Tol</td><td><h3 id="result1"></h3></td></tr>
 <tr><td>Type</td><td> <h3 id="type1r"></h3></td></tr></table>
 
-  
-  
-  
-   
-
-
-
-
-
-
-
-<div id="resistor" onclick="bzz()" class="resistor">
+  <div id="resistor" onclick="bzz()" class="resistor">
     <div class="wire"></div>
     <div class="body"></div>
     <div class="wire2"></div>
@@ -223,16 +212,13 @@ function showResult() {
 
   let digitCount = calculationResult.toString().length;
   if (digitCount >= 4 && digitCount < 7) {
-    document.getElementById("result").innerHTML = calculate() / 1000 + " nf";
+    document.getElementById("result").innerHTML = "Result is: " + calculate() / 1000 + " nf";
   } else if (digitCount >= 7 && digitCount <= 9) {
-    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
+    document.getElementById("result").innerHTML = "Result is: " + calculate() / 1000000 + " mf";
   } else {
-    document.getElementById("result").innerHTML =  calculate() + " pf" ;
+    document.getElementById("result").innerHTML = "Result is: " + calculate() + " pf";
   }{
-document.getElementById("result1").innerHTML= columnFourth;
-}
-{
-document.getElementById("temp1").innerHTML=columnFifth;
+document.getElementById("result1").innerHTML= columnFifth;
 }
 {
 document.getElementById("type1r").innerHTML= Type;
@@ -313,8 +299,6 @@ img {width:300;
   
 }
 
-}
-
 .black {
     background-color: black;
 }
@@ -361,6 +345,7 @@ img {width:300;
 
 
 
+
 .ff{
    position: absolute; border: none; width: 20px;
   top:5px;
@@ -384,7 +369,7 @@ position:absolute;
   bottom:10;
   margin: ;
  
-} 
+}
 
 select {
   display: inline-block;
