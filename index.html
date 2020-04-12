@@ -47,7 +47,7 @@
 <tr><td>&nbsp;&nbsp;<b>Type</td><td>&nbsp;<b>1Band</td><td>&nbsp;<b>2Band</td><td>&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;<b>Tol</td><td>&nbsp;<b>Temp</td></tr>
 <tr><td>
 <select name="" id="type" "> 
-  
+  <option  class="black" selected;></option>
   <option value="Joint Army Navy (JAN)" class="black" >Black</option>
  
  
@@ -64,7 +64,7 @@
    
 
   <select name="" id="firstColumn">
-  
+  <option  class="black" selected;></option>
   <option value="0" class="black" >Black</option>
   <option value="10" class="brown" >Brown</option>
   <option value="20" class="red" >Red</option>
@@ -80,7 +80,7 @@
 </select></td><td>
 
     <select name=""  id="secondColumn">
- 
+ <option  class="black" selected;></option>
   <option value="0" class="black">Black</option>
   <option value="1" class="brown">Brown</option>
   <option value="2" class="red">Red</option>
@@ -96,7 +96,7 @@
 </select></td><td>
 
     <select name=""  id="thirdColumn">
-
+<option  class="black" selected;></option>
   <option value="1" class="black">Black</option>
   <option value="10" class="brown">Brown</option>
   <option value="100" class="red">Red</option>
@@ -110,7 +110,7 @@
 </select></td><td>
 
     <select name="" id="fourthColumn">
-  
+  <option  class="black" selected;></option>
   <option value="20%" class="black">Black</option>
   <option value="1%" class="brown">Brown</option>
   <option value="2%" class="red">Red</option>
@@ -126,27 +126,45 @@
 </select></td><td>
  
 <select name="" id="fifthColumn">
- 
+ <option  class="black" selected;></option>
   <option value="" class="black">Black</option>
-  <option value="100" class="brown">Brown</option>
-  <option value="200" class="red">Red</option>
-  <option value="300" class="orange">Orange</option>
-  <option value="400" class="yellow">Yellow</option>
-  <option value="500" class="green">Green</option>
-  <option value="600" class="blue">Blue</option>
-  <option value="700" class="violet">Violet</option>
-  <option value="800" class="grey">Grey</option>
-  <option value="900" class="white">White</option>
-  <option value="1000" class="gold">Gold</option>
-  <option value="2000" class="silver">Silver</option>
-</select></td>
+  <option value="100/ppmC°" class="brown">Brown</option>
+  <option value="200/ppmC°" class="red">Red</option>
+  <option value="300/ppmC°" class="orange">Orange</option>
+  <option value="400/ppmC°" class="yellow">Yellow</option>
+  <option value="500/ppmC°" class="green">Green</option>
+  <option value="600/ppmC°" class="blue">Blue</option>
+  <option value="700/ppmC°" class="violet">Violet</option>
+  <option value="800/ppmC°" class="grey">Grey</option>
+  <option value="900/ppmC°" class="white">White</option>
+  <option value="1000/ppmC°" class="gold">Gold</option>
+  <option value="2000/ppmC°" class="silver">Silver</option>
+</select></td></table>
 
 </div>
-   <h3 id="type1r"></h3>
-  <h3 id="result"></h3><h3 id="temp1"></h3>
-   <h3 id="result1"></h3>
 
-  <div id="resistor" onclick="bzz()" class="resistor">
+
+<table class="dd" style="font-size:15px;">
+
+
+<tr ><td colspan="2" align="middle" style="font-size:25px;" ><h3 id="result"></h3></td></tr>
+
+<tr><td>Tempreture</td><td><h3 id="temp1"></h3></td></tr>
+<tr><td>Tol</td><td><h3 id="result1"></h3></td></tr>
+<tr><td>Type</td><td> <h3 id="type1r"></h3></td></tr></table>
+
+  
+  
+  
+   
+
+
+
+
+
+
+
+<div id="resistor" onclick="bzz()" class="resistor">
     <div class="wire"></div>
     <div class="body"></div>
     <div class="wire2"></div>
@@ -214,7 +232,7 @@ function showResult() {
 document.getElementById("result1").innerHTML= columnFourth;
 }
 {
-document.getElementById("temp1").innerHTML=columnFifth+"/ppmC°";;
+document.getElementById("temp1").innerHTML=columnFifth;
 }
 {
 document.getElementById("type1r").innerHTML= Type;
@@ -286,6 +304,14 @@ img {width:300;
  opacity:;
   
 } 
+.dd{width:300;
+  margin-left:10;  
+   position: absolute;
+  top: 200px;
+  left:10px;
+ opacity:;
+  
+}
 
 }
 
@@ -358,7 +384,7 @@ position:absolute;
   bottom:10;
   margin: ;
  
-}
+} 
 
 select {
   display: inline-block;
