@@ -1,10 +1,13 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <table class="bom"  style="font-size:15px;  ">
+ 
+
+<div class="cd">
+<table class="bom"  style="font-size:15px;  ">
 <tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td></tr>
 
-<tr><td align="middle"><h3 id="result1"></h3></td><td align="middle"><h3 id="type1r"></h3></td></tr></table>
+<tr><td align="middle"><h3 id="result1"></h3></td><td align="middle"><h3 id="type1r"></h3></td></tr></table></div>
 
 <Button style="width:90%;
    position: absolute; border: none; padding:20px; width: 40px; 
@@ -275,7 +278,9 @@ $("#type").change(function(){
  
 
 <style>
-
+.cd {
+  
+}
 img {width:300;
   margin-left:10;  
    position: absolute;
@@ -290,7 +295,11 @@ img {width:300;
   top: 200px;
   left:10px;
  opacity:;
-  
+ border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px; 
 }
 .black {
     background-color: black;
