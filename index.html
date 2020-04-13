@@ -1,11 +1,38 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+<div class="iir">
+
+   <button onclick="document.getElementById('id033').style.display='block'" class="w3-button w3-black">&#8505;</button>
+
+  <div id="id033" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id033').style.display='none'"                             
+        class="w3-button w3-display-topmiddle">&times;</span>
+        <h2>full forms</h2>
+      </header>
+      <div class="w3-container">
+      <hr>  
+     <table align="middle"style="border-style: dotted;">
+<tr><td>CA=RCA (analog)</td><td>CD=RCA (digital)</td></tr>
+<tr><td>GD=Goldstar (digital)</td><td>HA=Hitachi (analog)</td></tr>
+<tr><td>HD=Hitachi (digital)</td><td>MC=Motorola</td></tr>
+<tr><td>TA=Toshiba</td><td>TC=Toshiba</td></tr>
+<tr><td colspan="2"align="middle">DM=National Semiconductor (digital)</td></tr></table>
+  <hr>
+        <footer class="w3-container w3-teal">
+        
+      </footer>
+    </div>
+
+
+</div> </div> 
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">
 <tr ><td align="middle"><h3 id="temp1"></h3></td></tr>
+<tr ><td align="middle"><h3 id="temp2"></h3></td></tr>
 
 </table></div>
 
@@ -168,33 +195,13 @@ function showResult() {
   
 {
 document.getElementById("temp1").innerHTML=columnFirst + columnSecond + columnThird + columnFourth;
-}{
- document.getElementById("temp2").innerHTML=columnFirst;
-}   
- temp2 = columnFirst;
-
- if (tol == "0")
-        resistText1 += "";
-    else if (tol == "CA")
-        resistText1 += "CA=RCA (analog)";
-     else if (tol == "CD")
-        resistText1 += "CD=RCA (digital)";
-      else if (tol == "3")
-        resistText1 += "DM=National Semiconductor (digital";
-       else if (tol == "4")
-        resistText1 += "GD=Goldstar (digital)";
-        else if (tol == "5")
-        resistText1 += "HA=Hitachi (analog)";
-       else if (tol == "6")
-        resistText1 += "HD=Hitachi (digital)";
-       else if (tol == "7")
-        resistText1 += "MC=Motorola";
-        else if (tol == "8")
-        resistText1 += "TA=Toshiba";
-        else if (tol == "9")
-        resistText1 += "TC=Toshiba";
 }
+ 
 
+}
+ 
+
+  
 </script>
 
 
@@ -250,6 +257,14 @@ img {width:300;
  opacity:;
   
 } 
+img {width:300;
+  margin-left:10;  
+   position: absolute;
+  top: 50px;
+  left:20px;
+ opacity:;
+  
+} 
 .bom{
   margin-left:10;  
    position: absolute;
@@ -260,7 +275,7 @@ img {width:300;
   border: 2px solid #73AD21;
   padding: 20px;
   width:250px;
-  height: 150px; 
+  font-size:25;
 }
 .black {
     background-color: black;
@@ -336,7 +351,7 @@ position:absolute;
 
 select {
   display: inline-block;
-  margin-left: 0px;
+  margin-left: 20px;
   width:53.7;
   height: 120px;
   text-align:center ;
@@ -349,3 +364,107 @@ select {
  
  
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+
+
+
+
+
+
+
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}.w3-serif{font-family:serif}
+
+
+
+
+                                                                                border
+
+.w3-btn,.w3-button{border:none;display:inline-block;padding:px px;font-size:50px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+
+
+
+
+
+
+
+
+
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+
+
+
+.w3-modal-content{margin:auto;background-color:#fff;position:relati;padding:0;outline:0;width:6000px}
+
+
+
+
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+
+
+@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
+
+
+
+.w3-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+
+.w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}.w3-display-hover{display:none}
+
+
+
+
+
+.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
+
+
+                                               border colour 
+.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:red!important}
+
+</style>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+   
+  
+  
+  
+  
+  
+  
+  }
+}
+</script>
