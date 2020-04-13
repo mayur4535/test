@@ -2,11 +2,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <table class="bom"  style="font-size:15px;  ">
-<tr ><td colspan="2"  align="middle" style="font-size:25px;" ><h3 id="result"></h3></td></tr>
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td><h3 id="temp1"></h3></td></tr>
 
-<tr><td>Tempreture</td><td><h3 id="temp1"></h3></td></tr>
-<tr><td>Tol</td><td><h3 id="result1"></h3></td></tr>
-<tr><td>Type</td><td> <h3 id="type1r"></h3></td></tr></table>
+<tr><td><h3 id="result1"></h3></td><td><h3 id="type1r"></h3></td></tr></table>
 
 <Button style="width:90%;
    position: absolute; border: none; padding:20px; width: 40px; 
@@ -205,11 +203,11 @@ function showResult() {
 
   let digitCount = calculationResult.toString().length;
   if (digitCount >= 4 && digitCount < 7) {
-    document.getElementById("result").innerHTML = "Result is: " + calculate() / 1000 + " nf";
+    document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
   } else if (digitCount >= 7 && digitCount <= 9) {
-    document.getElementById("result").innerHTML = "Result is: " + calculate() / 1000000 + " μF";
+    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
   } else {
-    document.getElementById("result").innerHTML = "Result is: " + calculate() + " pf";
+    document.getElementById("result").innerHTML =  calculate() + " pf";
   }{
 document.getElementById("result1").innerHTML= columnFourth;
 }
