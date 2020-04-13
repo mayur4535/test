@@ -1,236 +1,338 @@
 
-<style class="INLINE_PEN_STYLESHEET_ID">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
 
-img {width:250;
-     
+<div class="cd">
+<table class="bom"  style="font-size:15px;  ">
+<tr ><td align="middle"><h3 id="temp1"></h3></td></tr>
+
+</table></div>
+
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px; 
+  top: 44px;
+  left: 159px;"id="first" ></Button>
+<Button style="width:90%; border: none; width: 40px;padding:20px; 
    position: absolute;
-  top: 50px;
-  left:55px;
+  top: 044px;
+  left: 229px;"id="second" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px;
+  border: none;
+  border-radius: ;
+  top: 115px;
+  left: 229px;"id="third" ></Button>
+<Button style="fwidth:90%;
+   position: absolute;  border: none; width: 40px; padding:20;
+  top: 115px;
+  left: 159px;}
+.f5{width:90%"id="fourth" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px;
+  border: none;
+  border-radius: ;
+  top: 115px;
+  left: 88px;" id="fifth" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; padding:20px; width: 40px;
+  border: none;
+  border-radius: ;
+  top: 44px;
+  left: 88px;" id="type1" ></Button> 
+
+ 
+ 
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/ic 4 band (2).png?raw=true" alt="Paris" ">
+
+
+
+
+  <div class="container">
+<table class="cal" style="font-size:15px;">
+<tr><td>&nbsp;<b>1Band</td><td>&nbsp;<b>2Band</td><td>&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;<b>Tol</td></tr>
+<tr><td> 
+
+
+
+
+
+   
+
+  <select name="" id="firstColumn">
+    <option  class="black"></option>
+  <option value="0" class="black" >Black</option>
+  <option value="CA" class="brown" >Brown</option>
+  <option value="CD" class="red" >Red</option>
+  <option value="DM" class="orange">Orange</option>
+  <option value="GD" class="yellow">Yellow</option>
+  <option value="HA" class="green">Green</option>
+  <option value="HD" class="blue">Blue</option>
+  <option value="MC" class="violet">Violet</option>
+  <option value="TA" class="grey">Grey</option>
+  <option value="TC" class="white">White</option>
   
+</select></td><td>
+
+    <select name=""  id="secondColumn">
+    <option  class="black"></option>
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="14" class="green">Green</option>
+  <option value="34" class="blue">Blue</option>
+  <option value="40" class="violet">Violet</option>
+  <option value="74" class="grey">Grey</option>
+  <option value="140" class="white">White</option>
+  
+</select></td><td>
+
+    <select name=""  id="thirdColumn">
+   <option  class="black"></option>
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+  
+</select></td><td>
+
+    <select name="" id="fourthColumn">
+   <option  class="black"></option>
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+</select></td>
+
+</div>
+
+
+  
+</body>
+
+</html>
+
+
+
+
+<script>
+
+function calculate(columnFirst, columnSecond, columnThird) {
+  
+  var columnFirst = document.getElementById('firstColumn').value;
+  var columnSecond = document.getElementById('secondColumn').value;
+  var columnThird = document.getElementById('thirdColumn').value;
+  var columnFourth = document.getElementById('fourthColumn').value;
+   
+  var wynik;
+
+  if (columnThird == 0) {
+    wynik = parseInt(columnFirst) + parseInt(columnSecond);
+  } else {
+    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
+  }
+  return wynik;
+}
+
+let select = document.querySelectorAll("select");
+
+
+select.forEach(function (element,){
+  element.addEventListener("change", function() {
+      // console.log(this)
+      let listOption = this.options[this.selectedIndex].id;
+      this.style.backgroundColor = listOption;
+      if (listOption == "black" || listOption == "blue") {
+        this.style.color = "white";
+      } else {
+        this.style.color = "black";
+      }
+      showResult();
+
+  })
+})
+ 
+
+function showResult() {
+  let calculationResult = calculate();
+  let columnFourth = document.getElementById('fourthColumn').value;
+   
+     
+   let columnFirst = document.getElementById('firstColumn').value;
+   let columnSecond = document.getElementById('secondColumn').value;
+   let columnThird = document.getElementById('thirdColumn').value;
+
+  
+{
+document.getElementById("temp1").innerHTML=columnFirst + columnSecond + columnThird + columnFourth;
+}
+}
+
+</script>
+
+
+<script>
+$("#firstColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#firstColumn").attr("class", color);
+    $("#first").attr("class", color);
+    
+});
+
+$("#secondColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#secondColumn").attr("class", color);
+    $("#second").attr("class", color);
+    
+});
+
+$("#thirdColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#thirdColumn").attr("class", color);
+    $("#third").attr("class", color);
+    
+});
+
+$("#fourthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fourthColumn").attr("class", color);
+    $("#fourth").attr("class", color);
+    
+});
+
+
+
+
+
+
+
+
+
+</script>
+ 
+
+<style>
+.cd {
+  
+}
+img {width:300;
+  margin-left:10;  
+   position: absolute;
+  top: 30px;
+  left:10px;
+ opacity:0.;
   
 } 
-.SMDtexto{width:90%;
+.bom{
+  margin-left:10;  
    position: absolute;
-  top: 135px;
-  left: 85;
-   width:190px;
-   height:60px;
-   font-size:50px;
-   text-align:center;
-   color:white;
-   background:#100a0a;
-   border-color:#100a0a;}
-
-.f2{width:90%;
-   position: absolute;
-  top: 110px;
-  left: 115px;}
-</style>
-
-</head>
-<body>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<table width="100%"><tr><td align="middle">
-<img width="100%"src="https://github.com/mayur4535/electroic/blob/master/5/image/Inductor%20SMD.png?raw=true" alt="Paris" ">
-<input type="text" class="SMDtexto" value="0000" autocomplete="off" spellcheck="false"></td></tr></table>
-
-
-
-<div class="outSMD" style="border-radius: 35px; text-align:center; font-size: 50px;
+  top: 200px;
+  left:42px;
+ opacity:;
+ border-radius: 25px;
   border: 2px solid #73AD21;
-  padding: 10px 75px; 
-    position: absolute;
-  top: 350px;
-  width:160;
-   position: absolute;
-   left:20px;
-  align:middle;}">RES</div>
+  padding: 20px;
+  width:250px;
+  height: 150px; 
+}
+.black {
+    background-color: black;
+}
+.brown {
+    background-color: brown;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.white {
+    background-color: white;
+}
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: silver;
+}
+
+
+
+
+
+.ff{
+   position: absolute; border: none; width: 20px;
+  top:5px;
+  
+  margin: center;}
 
 
 
 
 
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: "Montserrat";
+}
 
 
+.container {
+position:absolute;
+  bottom:10;
+  margin: ;
+ 
+}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script id="INLINE_PEN_JS_ID">
-    var bandValues = [];
-var ohm = "H";
-var unit = '';
-var unit1 = 'µH';
-
-var resistor = {
-  'band1': 0,
-  'band2': 0,
-  'multiplier': 1,
-  'tolerance': 5,
-  'resistance': 0 };
-
-
-$('.band').on('click', function (e) {
-  $('#colors').appendTo($(this)).show();
-});
-
-$('#colors .color').on('click', function (e) {
-  var bandvalue = $(this).attr('data-value');
-  var multiplier = $(this).attr('data-multiplier');
-  var tolerance = $(this).attr('data-tolerance');
-  var band = $(this).parent().parent();
-  var resistance = null;
-
-  $(this).
-  closest('.band').
-  css('background', $(this).css('background')).
-  attr('data-color', $(this).attr('id'));
-
-  if (band.hasClass('value-1')) resistor.band1 = parseInt(bandvalue);
-  if (band.hasClass('value-2')) resistor.band2 = parseInt(bandvalue);
-
-  if (band.hasClass('multiplier'))
-  {
-    var multiVal = parseFloat(multiplier);
-    resistor.multiplier = multiVal;
-  }
-
-  if (band.hasClass('tolerance')) resistor.tolerance = tolerance;
-
-  $(this).parent().fadeOut(200);
-
-  var b1 = resistor.band1;
-  var b2 = resistor.band2;
-  var m = resistor.multiplier;
-  var t = resistor.tolerance;
-  if (resistor.tolerance == '1')
-  {
-    $('.contenedor').css("background", '#0578c4');
-  } else
-  {
-    $('.contenedor').css("background", 'tan');
-  }
-
-  var resistance = parseInt(b1 + '' + b2) * m;
-  if (resistance > 999999999) {
-    resistance = resistance / 1000000000;
-    unit = 'G' + ohm;
-  } else
-  if (resistance < 999999999 && resistance > 999999) {
-    resistance = resistance / 1000000;
-    unit = 'M' + ohm;
-  } else
-  if (resistance < 999999 && resistance > 999) {
-    resistance = resistance / 1000;
-    unit = 'K' + ohm;
-  } else
-  {
-    unit = ohm;
-  }
-
-  t !== null && t !== 0 ? unit = unit + ' ' + t + '%' : '&nbsp;';
-
-  //resistor.resistance = (resistance !== null && resistance !== 0) ? resistance + unit : '&nbsp;';
-  resistor.resistance = resistance !== null ? resistance + unit : 'Resistencia inválida';
-  $('.out').html(resistor.resistance);
-});
-
-$('.SMDtexto').on('click', function ()
-{
-  if ($(this).val() == '0000')
-  {
-    $(this).val("");
-  }
-});
-
-$('.SMDtexto').on('change input paste keyup', function ()
-{
-  var cantidadDigitosResistencia = $(this).val().length;
-  if ($(this).val().search(/([^0-9,r])/i) >= '0')
-  {
-    $('.outSMD').html('<font color="red">Err.</font>');
-  } else
-  {
-    $('.outSMD').text('Cal.');
-    if (cantidadDigitosResistencia == '3')
-    {
-      if ($(this).val().toUpperCase().indexOf("R") != '-1') //Si tiene R en el código
-        {
-          var posicionR = $(this).val().toUpperCase().indexOf("R");
-          if (posicionR == '0')
-          {
-            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', "0.");
-            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
-          } else if (posicionR == '1')
-          {
-            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', ".");
-            $('.outSMD').text(reemplazoDecimalResistencia + unit1);
-          } else if (posicionR == '2')
-          {
-            $('.outSMD').html('<font color="red">Err.</font>');
-          }
-        } else
-      {
-        var primerosDosDigitosResistencia = parseInt(parseInt($(this).val()).toString(10).slice(0, 2));
-        var ultimoDigitoResistencia = parseInt(parseInt($(this).val()).toString(10).slice(2));
-        var resistencia = primerosDosDigitosResistencia * Math.pow(10, ultimoDigitoResistencia);
-        $('.outSMD').text(valorarResistencia(resistencia));
-      }
-    } else if (cantidadDigitosResistencia == '4')
-    {
-      if ($(this).val().toUpperCase().indexOf("R") != '-1') //Si tiene R en el código
-        {
-          var posicionR = $(this).val().toUpperCase().indexOf("R");
-          if (posicionR == '0')
-          {
-            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', "0.");
-            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
-          } else if (posicionR == '1')
-          {
-            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', ".");
-            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
-          } else if (posicionR == '2')
-          {
-            var reemplazoDecimalResistencia = $(this).val().toUpperCase().replace('R', ".");
-            $('.outSMD').text(reemplazoDecimalResistencia + ohm);
-          } else if (posicionR == '3')
-          {
-            $('.outSMD').html('<font color="red">Err.</font>');
-          }
-        } else
-      {
-        var primerosDosDigitosResistencia = parseInt(parseInt($(this).val()).toString(10).slice(0, 3));
-        var ultimoDigitoResistencia = parseInt(parseInt($(this).val()).toString(10).slice(3));
-        var resistencia = primerosDosDigitosResistencia * Math.pow(10, ultimoDigitoResistencia);
-        $('.outSMD').text(valorarResistencia(resistencia));
-      }
-    } else if (cantidadDigitosResistencia > '4')
-    {
-      $('.outSMD').html('<font color="red">error</font>');
-    }
-  }
-});
-
-function valorarResistencia(res) {
-  if (res > 999999999)
-  {
-    res = res / 1000000000;
-    unit = 'N' + ohm;
-  } else
-  if (res < 999999999 && res > 999999) {
-    res = res / 1000000;
-    unit = 'µ' + ohm;
-  } else
-  if (res < 999999 && res > 999) {
-    res = res / 1000;
-    unit = 'm' + ohm;
-  } else
-  {
-    unit = unit1;
-  }
-  return res + unit; // The function returns the product of p1 and p2
-};
-    //# sourceURL=pen.js
-  </script>
-</body>
-</html>
+select {
+  display: inline-block;
+  margin-left: 0px;
+  width:53.7;
+  height: 120px;
+  text-align:center ;
+  background-color: black;
+  color: white;
+  -webkit-appearance: none;
+  
+  padding-left: 0.5px;
+}
+ 
+ 
+</style>
