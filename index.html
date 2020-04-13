@@ -10,36 +10,25 @@
 </table></div>
 
 <Button style="width:90%;
-   position: absolute; border: none; padding:20px; width: 40px; 
-  top: 44px;
-  left: 159px;"id="first" ></Button>
-<Button style="width:90%; border: none; width: 40px;padding:20px; 
+   position: absolute; border: none; HEIGHT:99; width: 24px; 
+  top: 61px;
+  left: 57px;"id="first" ></Button>
+<Button style="width:90%; border: none; width: 24px; HEIGHT:99; 
    position: absolute;
-  top: 044px;
-  left: 229px;"id="second" ></Button>
+  top: 61px;
+  left: 100px;"id="second" ></Button>
 <Button style="width:90%;
-   position: absolute; border: none; padding:20px; width: 40px;
+   position: absolute; border: none; HEIGHT:99;  width: 25px;
   border: none;
   border-radius: ;
-  top: 115px;
-  left: 229px;"id="third" ></Button>
+  top: 61px;
+  left: 144px;"id="third" ></Button>
 <Button style="fwidth:90%;
-   position: absolute;  border: none; width: 40px; padding:20;
-  top: 115px;
-  left: 159px;}
+   position: absolute;  border: none; width: 24px; HEIGHT:99; top: 61px;
+  left: 187px;}
 .f5{width:90%"id="fourth" ></Button>
-<Button style="width:90%;
-   position: absolute; border: none; padding:20px; width: 40px;
-  border: none;
-  border-radius: ;
-  top: 115px;
-  left: 88px;" id="fifth" ></Button>
-<Button style="width:90%;
-   position: absolute; border: none; padding:20px; width: 40px;
-  border: none;
-  border-radius: ;
-  top: 44px;
-  left: 88px;" id="type1" ></Button> 
+
+
 
  
  
@@ -179,7 +168,31 @@ function showResult() {
   
 {
 document.getElementById("temp1").innerHTML=columnFirst + columnSecond + columnThird + columnFourth;
-}
+}{
+ document.getElementById("temp2").innerHTML=columnFirst;
+}   
+ temp2 = columnFirst;
+
+ if (tol == "0")
+        resistText1 += "";
+    else if (tol == "CA")
+        resistText1 += "CA=RCA (analog)";
+     else if (tol == "CD")
+        resistText1 += "CD=RCA (digital)";
+      else if (tol == "3")
+        resistText1 += "DM=National Semiconductor (digital";
+       else if (tol == "4")
+        resistText1 += "GD=Goldstar (digital)";
+        else if (tol == "5")
+        resistText1 += "HA=Hitachi (analog)";
+       else if (tol == "6")
+        resistText1 += "HD=Hitachi (digital)";
+       else if (tol == "7")
+        resistText1 += "MC=Motorola";
+        else if (tol == "8")
+        resistText1 += "TA=Toshiba";
+        else if (tol == "9")
+        resistText1 += "TC=Toshiba";
 }
 
 </script>
@@ -232,9 +245,9 @@ $("#fourthColumn").change(function(){
 img {width:300;
   margin-left:10;  
    position: absolute;
-  top: 30px;
-  left:10px;
- opacity:0.;
+  top: 50px;
+  left:20px;
+ opacity:;
   
 } 
 .bom{
