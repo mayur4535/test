@@ -5,35 +5,34 @@
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">
-<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td></tr>
-
-<tr><td align="middle"><h3 id="result1"></h3></td><td align="middle"><h3 id="type1r"></h3></td></tr></table></div>
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td><td align="middle"><h3 id="result1"></h3></td></tr>
+</table></div>
 
 <Button style="width:90%;
    position: absolute; border: none; padding:10px; width: 155px; 
   top: 30px;
-  left: 98px;"id="first" ></Button>
+  left: 98px;"id="fifth" ></Button>
 <Button style="width:90%; border: none; width: 198px;HEIGHT:20;   position: absolute; 
   top: 60px;
-  left:78px;"id="second" ></Button>
+  left:78px;"id="first" ></Button>
 <Button style="width:90%;
    position: absolute; border: none; HEIGHT:20; width: 223px; 
  
   border: none;
   border-radius: ;
   top: 89px;
-  left: 65px;"id="third" ></Button>
+  left: 65px;"id="second" ></Button>
 <Button style="fwidth:90%;
    position: absolute;  border: none; width: 230px; height:20;
   top: 118px;
   left: 62px;}
-.f5{width:90%"id="fourth" ></Button>
+.f5{width:90%"id="third" ></Button>
 <Button style="width:90%;
    position: absolute; border: none; height:20px; width: 230px; 
   border: none;
   border-radius: ;
   top: 145px;
-  left: 62px;" id="fifth" ></Button>
+  left: 62px;" id="fourth" ></Button>
 
 
  
@@ -45,18 +44,21 @@
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;<b>Type</td><td>&nbsp;<b>1Band</td><td>&nbsp;<b>2Band</td><td>&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;<b>Tol</td><td>&nbsp;<b>Temp</td></tr>
+<tr><td>&nbsp;<b>Voltage</td><td>&nbsp;<b>1Band</td><td>&nbsp;<b>2Band</td><td>&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;<b>Tol</td></tr>
 <tr><td>
-<select name="" id="type" "> 
+ 
+<select name="" id="fifthColumn">
+ 
    <option  class="black"></option>
-  <option value="Joint Army Navy (JAN)" class="black" >Black</option>
+  
+  <option value="100 V" class="brown">Brown</option>
+  <option value="250 V" class="red">Red</option>
  
- 
-  <option value="American War Standard (AWS) " class="white">White</option>
+  <option value="400 V" class="yellow">Yellow</option>
 
-  <option value="Molded Paper (MP)" class="silver">Silver</option>
-</select>
-  </td><td> 
+  <option value="630 V" class="blue">Blue</option>
+  
+</select></td><td> 
 
 
 
@@ -113,35 +115,17 @@
     <select name="" id="fourthColumn">
   <option  class="black"></option>
  
-   <option value="±20%" class="black">Black</option>
-  <option value="±1%" class="brown">Brown</option>
-  <option value="±2%" class="red">Red</option>
-  <option value="±3%" class="orange">Orange</option>
-  <option value="±4%" class="yellow">Yellow</option>
-  <option value="±0.5%" class="green">Green</option>
-  <option value="±6%" class="blue">Blue</option>
-  <option value="±7%" class="violet">Violet</option>
-  <option value="±8%" class="grey">Grey</option>
-  <option value="±9%" class="white">White</option>
-  <option value="±5%" class="gold">Gold</option>
-  <option value="±10%" class="silver">Silver</option>
-</select></td><td>
- 
-<select name="" id="fifthColumn">
- 
-   <option  class="black"></option>
-  <option value="" class="black">Black</option>
-  <option value="±100/ppmC°" class="brown">Brown</option>
-  <option value="±200/ppmC°" class="red">Red</option>
-  <option value="±300/ppmC°" class="orange">Orange</option>
-  <option value="±400/ppmC°" class="yellow">Yellow</option>
-  <option value="±500/ppmC°" class="green">Green</option>
-  <option value="±600/ppmC°" class="blue">Blue</option>
-  <option value="±700/ppmC°" class="violet">Violet</option>
-  <option value="±800/ppmC°" class="grey">Grey</option>
-  <option value="±900/ppmC°" class="white">White</option>
-  <option value="±1000/ppmC°" class="gold">Gold</option>
-  <option value="±2000/ppmC°" class="silver">Silver</option>
+   <option value="±20.0%" class="black">Black</option>
+  <option value="±1.0%" class="brown">Brown</option>
+  <option value="±2.0%" class="red">Red</option>
+  <option value="±3.0%" class="orange">Orange</option>
+  <option value="±4.0%" class="yellow">Yellow</option>
+  <option value="±5.0%" class="green">Green</option>
+  
+  <option value="+80%,-20%" class="grey">Grey</option>
+  <option value="±10.0%" class="white">White</option>
+  <option value="±5.0%" class="gold">Gold</option>
+  <option value="±10.0%" class="silver">Silver</option>
 </select></td>
 
 </div>
@@ -288,12 +272,12 @@ img {width:250;
   margin-left:10;  
    position: absolute;
   top: 330px;
-  left:42px;
+  left:42px; 
  opacity:;
  border-radius: 25px;
   border: 2px solid #73AD21;
   padding: 20px;
-  width:250px;
+  width:250px; 
   height: 150px; 
 }
 .black {
