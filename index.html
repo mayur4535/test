@@ -142,7 +142,7 @@
 <script>
 
 function calculate(columnFirst, columnSecond, columnThird) {
-  var columnFirst = document.getElementById('type').value;
+
   var columnFirst = document.getElementById('firstColumn').value;
   var columnSecond = document.getElementById('secondColumn').value;
   var columnThird = document.getElementById('thirdColumn').value;
@@ -181,7 +181,7 @@ function showResult() {
   let calculationResult = calculate();
   let columnFourth = document.getElementById('fourthColumn').value;
    let columnFifth = document.getElementById('fifthColumn').value;
-      let Type = document.getElementById('type').value;
+      
 
   let digitCount = calculationResult.toString().length;
   if (digitCount >= 4 && digitCount < 7) {
@@ -193,9 +193,7 @@ function showResult() {
   }{
 document.getElementById("result1").innerHTML= columnFourth;
 }
-{
-document.getElementById("type1r").innerHTML= Type;
-}
+
 {
 document.getElementById("temp1").innerHTML=columnFifth;
 }
