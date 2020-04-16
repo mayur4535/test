@@ -1,176 +1,321 @@
 
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Drum.js: iOS Picker View Examples</title>
-<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-<style>
-  .container { margin: 150px auto; max-width: 960px; }
-  .drum-viewport {
-  cursor: pointer;
-  font-family: sans-serif;
-}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
 
-.drum-item {
-  padding: 0.4em;
-}
 
-.drum {
-  margin: 30px;
-}
-  .example {
-  position: relative;
-  margin: 30px;
-  display: inline-block;
-}
+<Button style="width:90%;
+   position: absolute;  border: none; width: 70px;HEIGHT:82;   position: absolute; border-radius:0% 100% 0% 100% / 0% 100% 0% 100%;
+  top: 40px;
+  left:100px;"id="first" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; HEIGHT:92; width: 15px; position: absolute; 
+ 
+  border: none;
+  border-radius: ;
+  top: 18px;
+  left: 167px;"id="second" ></Button>
+<Button style="fwidth:90%;
+   position: absolute;  border: none; width: 70px; height:80;border-radius:100% 0% 100% 0% / 100% 2% 98% 0%  ;
+  top: 42px;
+  left: 188px;}
+.f5{width:90%"id="third" ></Button>
 
-.example::before,
-.example::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 2px);
-  width: 0.5rem;
-  height: 1px;
-  background: red;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-size: 7px 100%;
-  box-shadow: 0 1px 2px hsla(0, 0%, 0%, .7);
-}
 
-.example::before {
-  background-image: linear-gradient(to right, hsla(0, 0%, 0%, .7), hsla(0, 0%, 0%, 0));
-}
+ 
+ 
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISKCAPV1.png?raw=true" alt="Paris" ">
 
-.example::after {
-  background-position-x: 100%;
-  background-image: linear-gradient(to left, hsla(0, 0%, 0%, .7), hsla(0, 0%, 0%, 0));
-}
+<div class="cd">
+<table class="bom"  style="font-size:15px;  ">
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td><td align="middle"><h3 id="result1"></h3></td></tr>
+</table></div>
 
-.example::before {
-  left: 0;
-}
 
-.example::after {
-  right: 0;
-}
 
-.example .drum-viewport {
-  margin: 0;
-  padding: 0 5px;
-  height: 5em;
-  font-size: 1rem;
-  position: relative;
-  box-shadow: inset 1px 0 7px hsla(0, 0%, 0%, .7);
-}
+  <div class="container">
+<table class="cal" style="font-size:15px;">
+<tr><td align="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td></tr>
+<tr><td> 
 
-.example .drum-viewport:focus {
-  outline: none;
-  box-shadow: inset 1px 0 7px hsla(0, 0%, 0%, .7),
-    0 0 7px 1px hsl(42, 100%, 40%);
-}
 
-.example .drum-viewport::before,
-.example .drum-viewport::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  height: 1.5em;
-  background: hsla(0, 0%, 0%, .8);
-  box-shadow: 1px 2px 7px hsla(0, 0%, 0%, .7);
-}
 
-.example .drum-viewport::before {
-  top: 0;
-  border-bottom: 1px solid hsla(0, 0%, 0%, .5);
-}
 
-.example .drum-viewport::after {
-  bottom: 0;
-  border-top: 1px solid hsla(0, 0%, 100%, .6);
-}
 
-.example .drum-item {
-  background: transparent;
-  color: hsl(42, 100%, 40%);
-  text-align: center;
-  font-weight: bold;
-  padding-top: .6em;
-}
-.drum-2.drum-viewport {
-  height: 3em;
-  background: hsl(90, 90%, 90%);
-  font-size: 2rem;
-}
-.drum-2:focus {
-  outline: 1px solid hsl(90, 90%, 37%);
-}
-.drum-2 .drum-drum {
-  margin: 0 .75em;
-}
-.drum-2 .drum-item {
-  background: white;
-  border-top: 3px solid hsl(90, 90%, 90%);
-  border-bottom: 3px solid hsl(90, 90%, 90%);
-  color: hsl(90, 90%, 37%);
-  text-align: center;
-  font-weight: bold;
-}
+   
 
-  </style>
-</head>
+  <select name="" id="firstColumn">
+    <option  class="black"></option>
+  <option value="0" class="black" >Black</option>
+  <option value="10" class="brown" >Brown</option>
+  <option value="20" class="red" >Red</option>
+  <option value="30" class="orange">Orange</option>
+  <option value="40" class="yellow">Yellow</option>
+  <option value="50" class="green">Green</option>
+  <option value="60" class="blue">Blue</option>
+  <option value="70" class="violet">Violet</option>
+  <option value="80" class="grey">Grey</option>
+  <option value="90" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select></td><td>
+
+    <select name=""  id="secondColumn">
+    <option  class="black"></option>
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select></td><td>
+
+    <select name=""  id="thirdColumn">
+   <option  class="black"></option>
+  <option value="1" class="black">Black</option>
+  <option value="10" class="brown">Brown</option>
+  <option value="100" class="red">Red</option>
+  <option value="1000" class="orange">Orange</option>
+  <option value="10000" class="yellow">Yellow</option>
+  <option value="100000" class="green">Green</option>
+  <option value="1000000" class="blue">Blue</option>
+  <option value="10000000" class="violet">Violet</option>
+   
+  
+</select></td>
+
+</div>
+
 
   
-    <div class="example">
-   
-    <h2>From A Select</h2>
+</body>
 
-<select class="drum">
-  <option>jQuery</option>
-  <option>Script</option>
-  <option>Net</option>
-  <option>CSS</option>
-  <option>JavaScript</option>
-  <option>HTML</option>
-  <option>ReactJS</option>
-  <option>jQuery</option>
-  <option>Script</option>
-  <option>Net</option>
-  <option>CSS</option>
-  <option>JavaScript</option>
-  <option>HTML</option>
-  <option>ReactJS</option>
-</select> 
+</html>
 
-    <select class="week-day">
-  <option>jQuery</option>
-  <option>Script</option>
-  <option>Net</option>
-  <option>CSS</option>
-  <option>JavaScript</option>
-  <option>HTML</option>
-  <option>ReactJS</option>
-</select>
-  </div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
-<script src="https://www.jqueryscript.net/demo/slot-machine-picker-drum/jquery.drum.min.js"></script>
+
+
+
 <script>
-  $('.drum').drum({
-    min: 0,
-    max: 10,
-    value: 4
-  });
-  $('.week-day').drum({
-    classes: {
-        'drum-viewport': 'drum-2'
+
+function calculate(columnFirst, columnSecond, columnThird) {
+
+  var columnFirst = document.getElementById('firstColumn').value;
+  var columnSecond = document.getElementById('secondColumn').value;
+  var columnThird = document.getElementById('thirdColumn').value;
+ 
+  var wynik;
+
+  if (columnThird == 0) {
+    wynik = parseInt(columnFirst) + parseInt(columnSecond);
+  } else {
+    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
+  }
+  return wynik;
+}
+
+let select = document.querySelectorAll("select");
+
+
+select.forEach(function (element,){
+  element.addEventListener("change", function() {
+      // console.log(this)
+      let listOption = this.options[this.selectedIndex].id;
+      this.style.backgroundColor = listOption;
+      if (listOption == "black" || listOption == "blue") {
+        this.style.color = "white";
+      } else {
+        this.style.color = "black";
       }
-  });
+      showResult();
+
+  })
+})
+ 
+
+function showResult() {
+  let calculationResult = calculate();
+  
+      
+
+  let digitCount = calculationResult.toString().length;
+  if (digitCount >= 4 && digitCount < 7) {
+    document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
+  } else if (digitCount >= 7 && digitCount <= 9) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
+  } else {
+    document.getElementById("result").innerHTML =  calculate() + " pf";
+  }
+}
+
 </script>
 
-</body>
-</html>
+
+<script>
+$("#firstColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#firstColumn").attr("class", color);
+    $("#first").attr("class", color);
+    
+});
+
+$("#secondColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#secondColumn").attr("class", color);
+    $("#second").attr("class", color);
+    
+});
+
+$("#thirdColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#thirdColumn").attr("class", color);
+    $("#third").attr("class", color);
+    
+});
+
+$("#fourthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fourthColumn").attr("class", color);
+    $("#fourth").attr("class", color);
+    
+});
+
+$("#fifthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fifthColumn").attr("class", color);
+    $("#fifth").attr("class", color);
+    
+});
+
+$("#type").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#type").attr("class", color);
+    $("#type1").attr("class", color);
+    
+});
+
+
+
+
+
+
+
+</script>
+ 
+
+<style>
+.cd {
+  
+}
+img {width:250;
+  margin-left:10;  
+   position: absolute;
+  top: 10px;
+  left:40px;
+ opacity:;
+  
+} 
+.bom{
+  margin-left:10;  
+   position: absolute;
+  top: 300px;
+  left:42px; 
+ opacity:;
+ border-radius: 25px;
+  border: 2px solid #73AD21;
+  
+  width:250px; 
+  height: 100px; 
+}
+.black {
+    background-color: black;
+}
+.brown {
+    background-color: brown;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.white {
+    background-color: white;
+}
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: silver;
+}
+
+
+
+
+
+.ff{
+   position: absolute; border: none; width: 20px;
+  top:5px;
+  
+  margin: center;}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: "Montserrat";
+}
+
+
+.container {
+position:absolute;
+  bottom:10;
+  margin: ;
+ 
+}
+
+select {
+  display: inline-block;
+  margin-left: 29px;
+  width:70.7;
+  height: 100px;
+  text-align:center ;
+  background-color: black;
+  color: white;
+  -webkit-appearance: none;
+  
+  padding-left: 10px;
+}
+ 
+ 
+</style>
