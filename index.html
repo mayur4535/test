@@ -4,11 +4,7 @@
  
 
 
-<Button style="width:90%;
-   position: absolute; border: none; padding:21px; width: 95px; 
 
-  top: 97px;
-  left: 120px;"id="fifth" ></Button>
 <Button style="width:90%; border: none; width: 18px;HEIGHT:53.5;   position: absolute; 
   top: 86.5px;
   left:138px;"id="first" ></Button>
@@ -38,32 +34,18 @@
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">  
-<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td><td align="middle"><h3 id="result1"></h3></td></tr>
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td>
+</tr><tr><td align="middle"><h3 id="result1"></h3></td></tr>
 </table></div>
 
 
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Temp</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tol</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>3Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>4Band</td></tr>
 <tr><td>
  
-<select name="" id="fifthColumn">
- 
-   <option  class="black"></option>
-  
- <option value="0" class="black" >Black</option>
-  <option value="-30/ppmC°" class="brown" >Brown</option>
-  <option value="-80/ppmC°" class="red" >Red</option>
-  <option value="-150/ppmC°" class="orange">Orange</option>
-  <option value="-220/ppmC°" class="yellow">Yellow</option>
-  <option value="-330/ppmC°" class="green">Green</option>
-  <option value="-470/ppmC°" class="blue">Blue</option>
-  <option value="-750/ppmC°" class="violet">Violet</option>
-  <option value="+30/ppmC°" class="grey">Grey</option>
-    <option value="+100/ppmC°" class="silver">Silver</option>
-  
-</select></td><td> 
+
 
 
 
@@ -105,14 +87,10 @@
 
     <select name=""  id="thirdColumn">
    <option  class="black"></option>
-  <option value="1" class="black">Black</option>
-  <option value="10" class="brown">Brown</option>
-  <option value="100" class="red">Red</option>
-  <option value="1000" class="orange">Orange</option>
-  <option value="10000" class="yellow">Yellow</option>
-  <option value="100000" class="green">Green</option>
-  <option value="1000000" class="blue">Blue</option>
-  <option value="10000000" class="violet">Violet</option>
+  <option value="1" id="black">Black</option>
+  <option value="10" id="brown">Brown</option>
+  <option value="100" id="red">Red</option>
+
   
   
 </select></td><td>
@@ -120,17 +98,14 @@
     <select name="" id="fourthColumn">
   <option  class="black"></option>
  
-   <option value="±20.0%" class="black">Black</option>
-  <option value="±1.0%" class="brown">Brown</option>
-  <option value="±2.0%" class="red">Red</option>
-  <option value="±3.0%" class="orange">Orange</option>
-  <option value="±4.0%" class="yellow">Yellow</option>
-  <option value="±5.0%" class="green">Green</option>
+   <option value="Very Slow Blow" class="black">Black</option>
   
-  <option value="+80%,-20%" class="grey">Grey</option>
-  <option value="±10.0%" class="white">White</option>
-  <option value="±5.0%" class="gold">Gold</option>
-  <option value="±10.0%" class="silver">Silver</option>
+  <option value="Fast Acting" class="red">Red</option>
+  
+  <option value="Very Fast Acting" class="yellow">Yellow</option>
+  <option value="Slow Blow" class="green">Green</option>
+  <option value="Normal" class="blue">Blue</option>
+  
 </select></td>
 
 
@@ -153,7 +128,7 @@ function calculate(columnFirst, columnSecond, columnThird) {
   var columnSecond = document.getElementById('secondColumn').value;
   var columnThird = document.getElementById('thirdColumn').value;
   var columnFourth = document.getElementById('fourthColumn').value;
-   var columnFifth = document.getElementById('fifthColumn').value;
+  
   var wynik;
 
   if (columnThird == 0) {
@@ -192,7 +167,7 @@ select.forEach(function (element,){
 function showResult() {
   let calculationResult = calculate();
   let columnFourth = document.getElementById('fourthColumn').value;
-   let columnFifth = document.getElementById('fifthColumn').value;
+  
       
 
   let digitCount = calculationResult.toString().length;
@@ -210,9 +185,7 @@ if (digitCount >= 0.01 && digitCount < 1) {
 document.getElementById("result1").innerHTML= columnFourth;
 }
 
-{
-document.getElementById("temp1").innerHTML=columnFifth;
-}
+
 }
 
 </script>
