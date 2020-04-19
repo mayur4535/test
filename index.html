@@ -172,15 +172,13 @@ function showResult() {
 
   let digitCount = calculationResult.toString().length;
   if (digitCount >= 4 && digitCount < 7) {
-    document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
+    document.getElementById("result").innerHTML =  calculate() / 1000 + " A";
   } else if (digitCount >= 7 && digitCount <= 9) {
-    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
+    document.getElementById("result").innerHTML =  calculate() / 1000000 + " A";
   } else {
-    document.getElementById("result").innerHTML =  calculate() + " pf";
+    document.getElementById("result").innerHTML =  calculate() + " mA";
   }
-if (digitCount >= 0.01 && digitCount < 1) {
-    document.getElementById("result").innerHTML =  calculate() / 0.1 + " pf";
-  }
+
 {
 document.getElementById("result1").innerHTML= columnFourth;
 }
