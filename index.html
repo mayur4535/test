@@ -5,32 +5,14 @@
 
 
 
-<Button style="width:90%; border: none; width: 18px;HEIGHT:53.5;   position: absolute; 
-  top: 86.5px;
-  left:138px;"id="first" ></Button>
-<Button style="width:90%;
-   position: absolute; border: none; HEIGHT:53.5; width: 18px; position: absolute; 
- 
-  border: none;
-  border-radius: ;
-  top: 86.5px;
-  left: 160px;"id="second" ></Button>
-<Button style="fwidth:90%;
-   position: absolute;  border: none; width: 18px; height:53.5;
-  top: 86.5px;
-  left: 182px;}
-.f5{width:90%"id="third" ></Button>
-<Button style="width:90%;
-   position: absolute; border: none; height:53.5px; width: 18px;
-  border: none;
-  border-radius: ;
-  top: 86.5px;
-  left: 222px;" id="fourth" ></Button>
+<Button style="width:90%; border: none; width: 30px;HEIGHT:30;   position: absolute;
+  top: 96px;
+  left:175px;"id="fifth" ></Button>
 
 
  
  
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/fuse4.png?raw=true" alt="Paris" ">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/FUSED.png?raw=true" alt="Paris" ">
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">  
@@ -42,9 +24,9 @@
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>4Band</td></tr>
-<tr><td>
- 
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td></tr>
+<tr><td>   
+  
 
 
 
@@ -53,61 +35,22 @@
 
    
 
- <select name="" id="firstColumn">
+ <select name="" id="fifthColumn">
     <option  class="black"></option>
-  <option value="0" class="black" >Black</option>
-  <option value="10" class="brown" >Brown</option>
-  <option value="20" class="red" >Red</option>
-  <option value="30" class="orange">Orange</option>
-  <option value="40" class="yellow">Yellow</option>
-  <option value="50" class="green">Green</option>
-  <option value="60" class="blue">Blue</option>
-  <option value="70" class="violet">Violet</option>
-  <option value="80" class="grey">Grey</option>
-  <option value="90" class="white">White</option>
-  <option value="0" class="gold">Gold</option>
-  <option value="0" class="silver">Silver</option>
-</select></td><td>
-
-    <select name=""  id="secondColumn">
-    <option  class="black"></option>
-  <option value="0" class="black">Black</option>
-  <option value="1" class="brown">Brown</option>
-  <option value="2" class="red">Red</option>
-  <option value="3" class="orange">Orange</option>
-  <option value="4" class="yellow">Yellow</option>
-  <option value="5" class="green">Green</option>
-  <option value="6" class="blue">Blue</option>
-  <option value="7" class="violet">Violet</option>
-  <option value="8" class="grey">Grey</option>
-  <option value="9" class="white">White</option>
-  <option value="0" class="gold">Gold</option>
-  <option value="0" class="silver">Silver</option>
-</select></td><td>
-
-    <select name=""  id="thirdColumn">
-   <option  class="black"></option>
-  <option value="1" id="black">Black</option>
-  <option value="10" id="brown">Brown</option>
-  <option value="100" id="red">Red</option>
-
+  <option value="50mA" class="pink" >Pink</option>
+  <option value="60mA" class="black" >Black</option>
+  <option value="100mA" class="grey">Grey</option>
+  <option value="150mA" class="red" >Red</option>
+  <option value="250mA" class="brown" >Brown</option>
+  <option value="500mA" class="yellow">Yellow</option>
+  <option value="750mA" class="green">Green</option>
+  <option value="1A" class="blue">Blue</option>
+   <option value="1.5A" class="lightblue">Light Blue</option>
+  <option value="2A" class="purple">Purple</option>
   
-  
-</select></td><td>
-
-    <select name="" id="fourthColumn">
-  <option  class="black"></option>
- 
-   <option value="Very Slow Blow" class="black">Black</option>
-  
-  <option value="Fast Acting" class="red">Red</option>
-  
-  <option value="Very Fast Acting" class="yellow">Yellow</option>
-  <option value="Slow Blow" class="green">Green</option>
-  <option value="Normal" class="blue">Blue</option>
+  <option value="3A" class="white">White</option>
   
 </select></td>
-
 
 </div>
 
@@ -124,25 +67,9 @@
 
 function calculate(columnFirst, columnSecond, columnThird) {
 
-  var columnFirst = document.getElementById('firstColumn').value;
-  var columnSecond = document.getElementById('secondColumn').value;
-  var columnThird = document.getElementById('thirdColumn').value;
-  var columnFourth = document.getElementById('fourthColumn').value;
+  var columnFifth = document.getElementById('fifthColumn').value;
   
-  var wynik;
 
-  if (columnThird == 0) {
-    wynik = parseInt(columnFirst) + parseInt(columnSecond);
-  } else {
-    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
-  }
-if (columnThird == 0.1) {
-    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * 0.1;
-  }
-if (columnThird == 0.01) {
-    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * 0.01;
-  }
-  return wynik;
 }
 
 let select = document.querySelectorAll("select");
@@ -166,21 +93,14 @@ select.forEach(function (element,){
 
 function showResult() {
   let calculationResult = calculate();
-  let columnFourth = document.getElementById('fourthColumn').value;
+  let columnFifth = document.getElementById('fifthColumn').value;
   
       
 
-  let digitCount = calculationResult.toString().length;
-  if (digitCount >= 4 && digitCount < 7) {
-    document.getElementById("result").innerHTML =  calculate() / 1000 + " A";
-  } else if (digitCount >= 7 && digitCount <= 9) {
-    document.getElementById("result").innerHTML =  calculate() / 1000000 + " A";
-  } else {
-    document.getElementById("result").innerHTML =  calculate() + " mA";
-  }
+  
 
 {
-document.getElementById("result1").innerHTML= columnFourth;
+document.getElementById("result1").innerHTML= columnFifth;
 }
 
 
@@ -308,9 +228,15 @@ img {width:300;
     background-color: silver;
 }
 
-
-
-
+.lightblue {
+    background-color: lightblue;
+}
+.purple {
+    background-color: purple;
+}
+.pink {
+    background-color: pink;
+}
 
 .ff{
    position: absolute; border: none; width: 20px;
