@@ -26,11 +26,18 @@
   border-radius: ;
   top: 106px;
   left: 190px;" id="fourth" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; height:90px; width: 20px;
+  border: none;
+  border-radius: ;
+  top: 106px;
+  left: 210px;" id="fifth" ></Button>
+
 
 
  
  
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/diode4.png?raw=true" alt="Paris" ">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/diode5.png?raw=true" alt="Paris" ">
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">
@@ -41,7 +48,7 @@
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>4Band</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>4Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>5Band</td></tr>
 <tr><td> 
 
 
@@ -52,25 +59,32 @@
 
   <select name="" id="firstColumn">
     <option  class="black"></option>
-  <option value="AA" class="black" >Black</option>
-  
-  <option value="BA" class="red" >Red</option>
+  <option value="0" class="black" >Black</option>
+  <option value="1" class="brown" >Brown</option>
+  <option value="2" class="red" >Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
 
   
 </select></td><td>
 
     <select name=""  id="secondColumn">
     <option  class="black"></option>
-  <option value="X" class="black" >Black</option>
-  
-  <option value="S" class="red" >Red</option>
-  
-  <option value="T" class="yellow">Yellow</option>
-  <option value="V" class="green">Green</option>
-  <option value="W" class="blue">Blue</option>
- 
-  <option value="Y" class="grey">Grey</option>
-  <option value="Z" class="white">White</option>
+  <option value="0" class="black" >Black</option>
+  <option value="1" class="brown" >Brown</option>
+  <option value="2" class="red" >Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
 </select></td><td>
 
     <select name=""  id="thirdColumn">
@@ -103,6 +117,22 @@
   <option value="8" class="grey">Grey</option>
   <option value="9" class="white">White</option>
 </select></td>
+<td>
+
+    <select name="" id="fifthColumn">
+  <option  class="black"></option>
+ 
+   
+  <option value="A" class="brown" >Brown</option>
+  <option value="B" class="red" >Red</option>
+  <option value="C" class="orange">Orange</option>
+  <option value="D" class="yellow">Yellow</option>
+  <option value="E" class="green">Green</option>
+  <option value="F" class="blue">Blue</option>
+  <option value="G" class="violet">Violet</option>
+  <option value="H" class="grey">Grey</option>
+  <option value="J" class="white">White</option>
+</select></td>
 
 </div>
 
@@ -123,7 +153,7 @@ function calculate(columnFirst, columnSecond, columnThird) {
   var columnSecond = document.getElementById('secondColumn').value;
   var columnThird = document.getElementById('thirdColumn').value;
   var columnFourth = document.getElementById('fourthColumn').value;
-   
+  var columnFifth = document.getElementById('fifthColumn').value; 
  
 }
 
@@ -152,11 +182,11 @@ function showResult() {
   let columnSecond = document.getElementById('secondColumn').value;
   let columnThird = document.getElementById('thirdColumn').value;
   let columnFourth = document.getElementById('fourthColumn').value;
-   
+  let columnFifth = document.getElementById('fifthColumn').value; 
       
 
  {
-document.getElementById("result1").innerHTML= columnFirst +columnSecond+columnThird+ columnFourth;
+document.getElementById("result1").innerHTML= "1N" + columnFirst +columnSecond+columnThird+ columnFourth +columnFifth;
 }
 
 
@@ -315,8 +345,8 @@ position:absolute;
 
 select {
   display: inline-block;
-  margin-left: 18px;
-  width:60;
+  margin-left: 10px;
+  width:52.7;
   height: 100px;
   text-align:center ;
   background-color: black;
