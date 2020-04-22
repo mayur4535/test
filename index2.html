@@ -4,31 +4,28 @@
  
 
 
+
+<Button style="width:90%; border: none; width: 150px;HEIGHT:20;   position: absolute; 
+  top: 84px;
+  left:100px;"id="first" ></Button>
 <Button style="width:90%;
-   position: absolute; border: none; padding:10px; width: 155px; 
-  top: 30px;
-  left: 98px;"id="fifth" ></Button>
-<Button style="width:90%; border: none; width: 198px;HEIGHT:20;   position: absolute; 
-  top: 60px;
-  left:78px;"id="first" ></Button>
-<Button style="width:90%;
-   position: absolute; border: none; HEIGHT:20; width: 223px; 
+   position: absolute; border: none; HEIGHT:20; width: 150px; 
  
   border: none;
   border-radius: ;
-  top: 89px;
-  left: 65px;"id="second" ></Button>
+  top: 107px;
+  left: 100px;"id="second" ></Button>
 <Button style="fwidth:90%;
-   position: absolute;  border: none; width: 230px; height:20;
-  top: 118px;
-  left: 62px;}
+   position: absolute;  border: none; width: 150px; height:20;
+  top: 131px;
+  left: 100px;}
 .f5{width:90%"id="third" ></Button>
 <Button style="width:90%;
-   position: absolute; border: none; height:20px; width: 230px; 
+   position: absolute; border: none; height:20px; width: 150px; 
   border: none;
   border-radius: ;
-  top: 145px;
-  left: 62px;" id="fourth" ></Button>
+  top: 153px;
+  left: 100px;" id="fourth" ></Button>
 
 
  
@@ -37,28 +34,15 @@
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">
-<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td><td align="middle"><h3 id="result1"></h3></td></tr>
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result1"></h3></td></tr>
 </table></div>
 
 
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;&nbsp;<b>Voltage</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tol</td></tr>
-<tr><td>
- 
-<select name="" id="fifthColumn">
- 
-   <option  class="black"></option>
-  
-  <option value="100 V" class="brown">Brown</option>
-  <option value="250 V" class="red">Red</option>
- 
-  <option value="400 V" class="yellow">Yellow</option>
-
-  <option value="630 V" class="blue">Blue</option>
-  
-</select></td><td> 
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>3Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>4Band</td></tr>
+<tr><td> 
 
 
 
@@ -147,15 +131,8 @@ function calculate(columnFirst, columnSecond, columnThird) {
   var columnSecond = document.getElementById('secondColumn').value;
   var columnThird = document.getElementById('thirdColumn').value;
   var columnFourth = document.getElementById('fourthColumn').value;
-   var columnFifth = document.getElementById('fifthColumn').value;
-  var wynik;
-
-  if (columnThird == 0) {
-    wynik = parseInt(columnFirst) + parseInt(columnSecond);
-  } else {
-    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
-  }
-  return wynik;
+   
+ 
 }
 
 let select = document.querySelectorAll("select");
@@ -179,24 +156,18 @@ select.forEach(function (element,){
 
 function showResult() {
   let calculationResult = calculate();
+  let columnFirst = document.getElementById('firstColumn').value;
+  let columnSecond = document.getElementById('secondColumn').value;
+  let columnThird = document.getElementById('thirdColumn').value;
   let columnFourth = document.getElementById('fourthColumn').value;
-   let columnFifth = document.getElementById('fifthColumn').value;
+   
       
 
-  let digitCount = calculationResult.toString().length;
-  if (digitCount >= 4 && digitCount < 7) {
-    document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
-  } else if (digitCount >= 7 && digitCount <= 9) {
-    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
-  } else {
-    document.getElementById("result").innerHTML =  calculate() + " pf";
-  }{
-document.getElementById("result1").innerHTML= columnFourth;
+ {
+document.getElementById("result1").innerHTML= columnFirst +columnSecond+columnThird+ columnFourth;
 }
 
-{
-document.getElementById("temp1").innerHTML=columnFifth;
-}
+
 }
 
 </script>
@@ -259,7 +230,7 @@ $("#type").change(function(){
   
 }
 img {width:150;
-  margin-left:70;  
+  margin-left:60;  
    position: absolute;
   top: 10px;
   left:40px;
@@ -269,7 +240,7 @@ img {width:150;
 .bom{
   margin-left:10;  
    position: absolute;
-  top: 300px;
+  top: 310px;
   left:42px; 
  opacity:;
  border-radius: 25px;
@@ -365,4 +336,3 @@ select {
  
  
 </style>
-Fimg
