@@ -93,6 +93,10 @@
   <option value="100000" class="green">Green</option>
   <option value="1000000" class="blue">Blue</option>
   <option value="10000000" class="violet">Violet</option>
+  <option value="100000000" class="">NO</option>
+  <option value="1000000000" class="grey">grey</option>
+  <option value="10000000000" class="white">white</option>
+ 
    
   
 </select></td><td>
@@ -187,7 +191,11 @@ function showResult() {
     document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
   } else if (digitCount >= 7 && digitCount <= 9) {
     document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
-  } else {
+  }
+else if (digitCount >= 10 && digitCount <= 12) {
+    document.getElementById("result").innerHTML =  calculate() / 10000000000 + " mF";
+  }
+ else {
     document.getElementById("result").innerHTML =  calculate() + " pf";
   }{
 document.getElementById("result1").innerHTML= columnFourth;
