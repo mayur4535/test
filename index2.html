@@ -96,6 +96,9 @@
   <option value="100000000" class="">NO</option>
   <option value="1000000000" class="grey">grey</option>
   <option value="10000000000" class="white">white</option>
+  
+  <option value="100000000000" class="white">wha</option>
+  <option value="10000000000" class="white">whs</option>
  
    
   
@@ -195,6 +198,10 @@ function showResult() {
 else if (digitCount >= 10 && digitCount <= 12) {
     document.getElementById("result").innerHTML =  calculate() / 10000000000 + " mF";
   }
+else if (digitCount >= 12 && digitCount <= 14) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000000000 + " pf";
+  }
+
  else {
     document.getElementById("result").innerHTML =  calculate() + " pf";
   }{
