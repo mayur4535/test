@@ -5,31 +5,26 @@
 
 
 <Button style="width:90%;
-   position: absolute; border: none; HEIGHT:44; width: 185px; 
-  top: 20px;
-  left: 82px;"id="first" ></Button>
-<Button style="width:90%; border: none; width: 185px;HEIGHT:36;   position: absolute; 
-  top: 64px;
-  left:82px;"id="second" ></Button>
+   position: absolute;  border: none; width: 70px;HEIGHT:82;   position: absolute; border-radius:0% 100% 0% 100% / 0% 100% 0% 100%;
+  top: 40px;
+  left:100px;"id="third" ></Button>
 <Button style="width:90%;
-   position: absolute; border: none; HEIGHT:37; width: 185px;
+   position: absolute; border: none; HEIGHT:92; width: 15px; position: absolute; 
  
   border: none;
   border-radius: ;
-  top: 100px;
-  left: 82px;"id="third" ></Button>
-
-<Button style="width:90%;
-   position: absolute; border: none; height:60px; width: 185px; 
-  border: none;
-  border-radius: ;
-  top: 137px;
-  left: 82px;" id="fifth" ></Button>
+  top: 18px;
+  left: 167px;"id="first" ></Button>
+<Button style="fwidth:90%;
+   position: absolute;  border: none; width: 70px; height:80;border-radius:100% 0% 100% 0% / 100% 2% 98% 0%  ;
+  top: 42px;
+  left: 188px;}
+.f5{width:90%"id="second" ></Button>
 
 
  
  
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/poly.png?raw=true" alt="Paris" ">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISKCAPV1.png?raw=true" alt="Paris" ">
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">
@@ -40,8 +35,27 @@
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Voltage</td></tr>
-<tr><td> 
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td align="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td></tr>
+<tr>
+<td>
+
+    <select name=""  id="thirdColumn">
+   <option  class="black"></option>
+  <option value="1" class="black">Black</option>
+  <option value="10" class="brown">Brown</option>
+  <option value="100" class="red">Red</option>
+  <option value="1000" class="orange">Orange</option>
+  <option value="10000" class="yellow">Yellow</option>
+  <option value="100000" class="green">Green</option>
+  <option value="1000000" class="blue">Blue</option>
+  <option value="10000000" class="violet">Violet</option>
+  <option value="1000000000" class="grey">Grey</option>
+  <option value="100000000000" class="white">White</option>
+  <option value="100000000000" class="gold">Gold</option>
+  <option value="1000000000" class="silver">Silver</option>  
+  
+</select></td>
+<td> 
 
 
 
@@ -61,7 +75,8 @@
   <option value="70" class="violet">Violet</option>
   <option value="80" class="grey">Grey</option>
   <option value="90" class="white">White</option>
-  
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
 </select></td><td>
 
     <select name=""  id="secondColumn">
@@ -76,40 +91,8 @@
   <option value="7" class="violet">Violet</option>
   <option value="8" class="grey">Grey</option>
   <option value="9" class="white">White</option>
-  
-</select></td><td>
-
-    <select name=""  id="thirdColumn">
-   <option  class="black"></option>
-  <option value="1" class="black">Black</option>
-  <option value="10" class="brown">Brown</option>
-  <option value="100" class="red">Red</option>
-  <option value="1000" class="orange">Orange</option>
-  <option value="10000" class="yellow">Yellow</option>
-  <option value="100000" class="green">Green</option>
-  <option value="1000000" class="blue">Blue</option>
-  <option value="10000000" class="violet">Violet</option>
-  <option value="100000000" class="grey">Grey</option>
-  <option value="1000000000" class="white">White</option>
-  <option value="100000000000" class="gold">Golden</option>
-  <option value="100000000000000" class="silver">Silver</option>
- 
-   
-  
-</select></td>
-<td>
- 
-<select name="" id="fifthColumn">
- 
-   <option  class="black"></option>
-  
-  <option value="100 V" class="brown">Brown</option>
-  <option value="250 V" class="red">Red</option>
- 
-  <option value="400 V" class="yellow">Yellow</option>
-
-  <option value="630 V" class="green">Green</option>
-  
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
 </select></td>
 
 </div>
@@ -131,7 +114,6 @@ function calculate(columnFirst, columnSecond, columnThird) {
   var columnSecond = document.getElementById('secondColumn').value;
   var columnThird = document.getElementById('thirdColumn').value;
  
-   var columnFifth = document.getElementById('fifthColumn').value;
   var wynik;
 
   if (columnThird == 0) {
@@ -164,7 +146,6 @@ select.forEach(function (element,){
 function showResult() {
   let calculationResult = calculate();
   
-   let columnFifth = document.getElementById('fifthColumn').value;
       
 
   let digitCount = calculationResult.toString().length;
@@ -173,24 +154,15 @@ function showResult() {
   } else if (digitCount >= 7 && digitCount <= 9) {
     document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
   }
-else if (digitCount >= 9 && digitCount <= 12) {
-    document.getElementById("result").innerHTML =  calculate() / 1000000000 + " mF";
+else if (digitCount >= 10 && digitCount <= 11) {
+    document.getElementById("result").innerHTML =  calculate() / 100000000000 + " pF";
   }
-else if (digitCount >= 12 && digitCount <= 14) {
-    document.getElementById("result").innerHTML =  calculate() / 1000000000000 + " pf";
+else if (digitCount >= 12 && digitCount <= 13) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000000000 + " pF";
   }
-else if (digitCount >= 14 && digitCount <= 17) {
-    document.getElementById("result").innerHTML =  calculate() / 10000000000000000 + " pf";
-  }
-
-
  else {
     document.getElementById("result").innerHTML =  calculate() + " pf";
   }
-
-{
-document.getElementById("temp1").innerHTML=columnFifth;
-}
 }
 
 </script>
@@ -252,11 +224,11 @@ $("#type").change(function(){
 .cd {
   
 }
-img {width:200;
+img {width:250;
   margin-left:10;  
    position: absolute;
   top: 10px;
-  left:65px;
+  left:40px;
  opacity:;
   
 } 
@@ -346,8 +318,8 @@ position:absolute;
 
 select {
   display: inline-block;
-  margin-left: 22px;
-  width:53.7;
+  margin-left: 29px;
+  width:70.7;
   height: 100px;
   text-align:center ;
   background-color: black;
