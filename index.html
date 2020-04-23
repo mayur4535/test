@@ -5,36 +5,35 @@
 
 
 <Button style="width:90%;
-   position: absolute; border: none; padding:21px; width: 95px; border-radius:0% 100% 0% 100% / 0% 100% 0% 100%;
-
-  top: 97px;
-  left: 60px;"id="fifth" ></Button>
-<Button style="width:90%; border: none; width: 70px;HEIGHT:82;   position: absolute; border-radius:0% 100% 0% 100% / 0% 100% 0% 100%;
-  top: 40px;
-  left:100px;"id="first" ></Button>
+   position: absolute; border: none; padding:10px; width: 155px; 
+  top: 30px;
+  left: 98px;"id="fifth" ></Button>
+<Button style="width:90%; border: none; width: 198px;HEIGHT:20;   position: absolute; 
+  top: 60px;
+  left:78px;"id="first" ></Button>
 <Button style="width:90%;
-   position: absolute; border: none; HEIGHT:92; width: 15px; position: absolute; 
+   position: absolute; border: none; HEIGHT:20; width: 223px; 
  
   border: none;
   border-radius: ;
-  top: 18px;
-  left: 167px;"id="second" ></Button>
+  top: 89px;
+  left: 65px;"id="second" ></Button>
 <Button style="fwidth:90%;
-   position: absolute;  border: none; width: 70px; height:80;border-radius:100% 0% 100% 0% / 100% 2% 98% 0%  ;
-  top: 42px;
-  left: 188px;}
+   position: absolute;  border: none; width: 230px; height:20;
+  top: 118px;
+  left: 62px;}
 .f5{width:90%"id="third" ></Button>
 <Button style="width:90%;
-   position: absolute; border: none; height:50px; width: 100px;border-radius:100% 0% 100% 0% / 100% 2% 98% 0%  ;
+   position: absolute; border: none; height:20px; width: 230px; 
   border: none;
   border-radius: ;
-  top: 90px;
-  left: 192px;" id="fourth" ></Button>
+  top: 145px;
+  left: 62px;" id="fourth" ></Button>
 
 
  
  
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISKCAPV.png?raw=true" alt="Paris" ">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISKCAP.png?raw=true" alt="Paris" ">
 
 <div class="cd">
 <table class="bom"  style="font-size:15px;  ">
@@ -45,23 +44,19 @@
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>Temp</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tol</td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;<b>Voltage</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Tol</td></tr>
 <tr><td>
  
 <select name="" id="fifthColumn">
  
    <option  class="black"></option>
   
- <option value="0" class="black" >Black</option>
-  <option value="-30/ppmC°" class="brown" >Brown</option>
-  <option value="-80/ppmC°" class="red" >Red</option>
-  <option value="-150/ppmC°" class="orange">Orange</option>
-  <option value="-220/ppmC°" class="yellow">Yellow</option>
-  <option value="-330/ppmC°" class="green">Green</option>
-  <option value="-470/ppmC°" class="blue">Blue</option>
-  <option value="-750/ppmC°" class="violet">Violet</option>
-  <option value="+30/ppmC°" class="grey">Grey</option>
-    <option value="+100/ppmC°" class="silver">Silver</option>
+  <option value="100 V" class="brown">Brown</option>
+  <option value="250 V" class="red">Red</option>
+ 
+  <option value="400 V" class="yellow">Yellow</option>
+
+  <option value="630 V" class="blue">Blue</option>
   
 </select></td><td> 
 
@@ -71,7 +66,7 @@
 
    
 
- <select name="" id="firstColumn">
+  <select name="" id="firstColumn">
     <option  class="black"></option>
   <option value="0" class="black" >Black</option>
   <option value="10" class="brown" >Brown</option>
@@ -116,7 +111,7 @@
   <option value="1000000000" class="grey">Grey</option>
   <option value="100000000000" class="white">White</option>
   <option value="100000000000" class="gold">Gold</option>
-  <option value="1000000000" class="silver">Silver</option>
+  <option value="1000000000" class="silver">Silver</option> 
   
 </select></td><td>
 
@@ -135,7 +130,6 @@
   <option value="±5.0%" class="gold">Gold</option>
   <option value="±10.0%" class="silver">Silver</option>
 </select></td>
-
 
 </div>
 
@@ -163,12 +157,6 @@ function calculate(columnFirst, columnSecond, columnThird) {
     wynik = parseInt(columnFirst) + parseInt(columnSecond);
   } else {
     wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
-  }
-if (columnThird == 0.1) {
-    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * 0.1;
-  }
-if (columnThird == 0.01) {
-    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * 0.01;
   }
   return wynik;
 }
@@ -203,18 +191,16 @@ function showResult() {
     document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
   } else if (digitCount >= 7 && digitCount <= 9) {
     document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
-  } 
+  }
 else if (digitCount >= 10 && digitCount <= 11) {
     document.getElementById("result").innerHTML =  calculate() / 100000000000 + " pF";
   }
 else if (digitCount >= 12 && digitCount <= 13) {
     document.getElementById("result").innerHTML =  calculate() / 1000000000000 + " pF";
   }
-else {
+ else {
     document.getElementById("result").innerHTML =  calculate() + " pf";
-  }
-
-{
+  }{
 document.getElementById("result1").innerHTML= columnFourth;
 }
 
