@@ -4,30 +4,44 @@
  
 
 
+<Button style="width:90%;
+   position: absolute; border: none; HEIGHT:44; width: 185px; 
+  top: 20px;
+  left: 82px;"id="first" ></Button>
+<Button style="width:90%; border: none; width: 185px;HEIGHT:36;   position: absolute; 
+  top: 64px;
+  left:82px;"id="second" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; HEIGHT:37; width: 185px;
+ 
+  border: none;
+  border-radius: ;
+  top: 100px;
+  left: 82px;"id="third" ></Button>
 
-<Button style="width:90%; border: none; width: 30px;HEIGHT:30;   position: absolute;
-  top: 96px;
-  left:175px;"id="fifth" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; height:60px; width: 185px; 
+  border: none;
+  border-radius: ;
+  top: 137px;
+  left: 82px;" id="fourth" ></Button>
 
 
  
  
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/FUSED.png?raw=true" alt="Paris" ">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/poly.png?raw=true" alt="Paris" ">
 
 <div class="cd">
-<table class="bom"  style="font-size:15px;  ">  
-<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result1"></h3></td>
-</tr>
+<table class="bom"  style="font-size:15px;  ">
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td><td align="middle"><h3 id="result1"></h3></td></tr>
 </table></div>
 
 
 
   <div class="container">
 <table class="cal" style="font-size:15px;">
-<tr><td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Select Colour</td></tr>
-<tr><td>   
-  
-
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Voltage</td></tr>
+<tr><td> 
 
 
 
@@ -35,22 +49,67 @@
 
    
 
- <select name="" id="fifthColumn">
+  <select name="" id="firstColumn">
     <option  class="black"></option>
-  <option value="50mA" class="pink" >Pink</option>
-  <option value="60mA" class="black" >Black</option>
-  <option value="100mA" class="grey">Grey</option>
-  <option value="150mA" class="red" >Red</option>
-  <option value="250mA" class="brown" >Brown</option>
-  <option value="500mA" class="yellow">Yellow</option>
-  <option value="750mA" class="green">Green</option>
-  <option value="1A" class="blue">Blue</option>
-   <option value="1.5A" class="lightblue">Light Blue</option>
-  <option value="2A" class="purple">Purple</option>
-                                    
+  <option value="0" class="black" >Black</option>
+  <option value="10" class="brown" >Brown</option>
+  <option value="20" class="red" >Red</option>
+  <option value="30" class="orange">Orange</option>
+  <option value="40" class="yellow">Yellow</option>
+  <option value="50" class="green">Green</option>
+  <option value="60" class="blue">Blue</option>
+  <option value="70" class="violet">Violet</option>
+  <option value="80" class="grey">Grey</option>
+  <option value="90" class="white">White</option>
   
-  <option value="3A" class="white">White</option>
-  <option value="7A" class="orange">Orange</option> 
+</select></td><td>
+
+    <select name=""  id="secondColumn">
+    <option  class="black"></option>
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+  
+</select></td><td>
+
+    <select name=""  id="thirdColumn">
+   <option  class="black"></option>
+  <option value="1" class="black">Black</option>
+  <option value="10" class="brown">Brown</option>
+  <option value="100" class="red">Red</option>
+  <option value="1000" class="orange">Orange</option>
+  <option value="10000" class="yellow">Yellow</option>
+  <option value="100000" class="green">Green</option>
+  <option value="1000000" class="blue">Blue</option>
+  <option value="10000000" class="violet">Violet</option>
+  <option value="100000000" class="grey">Grey</option>
+  <option value="1000000000" class="white">White</option>
+  <option value="100000000000" class="gold">Golden</option>
+  <option value="100000000000000" class="silver">Silver</option>
+ 
+   
+  
+</select></td>
+<td>
+ 
+<select name="" id="fifthColumn">
+ 
+   <option  class="black"></option>
+  
+  <option value="100 V" class="brown">Brown</option>
+  <option value="250 V" class="red">Red</option>
+ 
+  <option value="400 V" class="yellow">Yellow</option>
+
+  <option value="630 V" class="green">Green</option>
+  
 </select></td>
 
 </div>
@@ -68,9 +127,19 @@
 
 function calculate(columnFirst, columnSecond, columnThird) {
 
-  var columnFifth = document.getElementById('fifthColumn').value;
-  
+  var columnFirst = document.getElementById('firstColumn').value;
+  var columnSecond = document.getElementById('secondColumn').value;
+  var columnThird = document.getElementById('thirdColumn').value;
+ 
+   var columnFifth = document.getElementById('fifthColumn').value;
+  var wynik;
 
+  if (columnThird == 0) {
+    wynik = parseInt(columnFirst) + parseInt(columnSecond);
+  } else {
+    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
+  }
+  return wynik;
 }
 
 let select = document.querySelectorAll("select");
@@ -94,17 +163,34 @@ select.forEach(function (element,){
 
 function showResult() {
   let calculationResult = calculate();
-  let columnFifth = document.getElementById('fifthColumn').value;
   
+   let columnFifth = document.getElementById('fifthColumn').value;
       
 
-  
+  let digitCount = calculationResult.toString().length;
+  if (digitCount >= 4 && digitCount < 7) {
+    document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
+  } else if (digitCount >= 7 && digitCount <= 9) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
+  }
+else if (digitCount >= 9 && digitCount <= 12) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000000 + " mF";
+  }
+else if (digitCount >= 12 && digitCount <= 14) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000000000 + " pf";
+  }
+else if (digitCount >= 14 && digitCount <= 17) {
+    document.getElementById("result").innerHTML =  calculate() / 10000000000000000 + " pf";
+  }
+
+
+ else {
+    document.getElementById("result").innerHTML =  calculate() + " pf";
+  }
 
 {
-document.getElementById("result1").innerHTML= columnFifth;
+document.getElementById("temp1").innerHTML=columnFifth;
 }
-
-
 }
 
 </script>
@@ -166,18 +252,18 @@ $("#type").change(function(){
 .cd {
   
 }
-img {width:300;
+img {width:200;
   margin-left:10;  
    position: absolute;
-  top: 70px;
-  left:20px;
+  top: 10px;
+  left:65px;
  opacity:;
   
 } 
 .bom{
   margin-left:10;  
    position: absolute;
-  top: 250px;
+  top: 300px;
   left:42px; 
  opacity:;
  border-radius: 25px;
@@ -229,15 +315,9 @@ img {width:300;
     background-color: silver;
 }
 
-.lightblue {
-    background-color: lightblue;
-}
-.purple {
-    background-color: purple;
-}
-.pink {
-    background-color: pink;
-}
+
+
+
 
 .ff{
    position: absolute; border: none; width: 20px;
@@ -266,15 +346,15 @@ position:absolute;
 
 select {
   display: inline-block;
-  margin-left:120px;
-  width:100;
+  margin-left: 20px;
+  width:53.7;
   height: 100px;
   text-align:center ;
   background-color: black;
   color: white;
   -webkit-appearance: none;
   
-  padding-left: 30px;
+  padding-left: 10px;
 }
  
  
