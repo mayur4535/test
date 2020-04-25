@@ -1,3 +1,4 @@
+
 <style>
 
 
@@ -368,14 +369,27 @@ function TogglePopup(d) {
 
 //Array of tolerance values
 var tolval = new Array()
-tolval[0] = "+/- 0.25pF"
-tolval[1] = "+/- 0.5pF"
-tolval[2] = "+/- 1%"
-tolval[3] = "+/- 2%"
-tolval[4] = "+/- 5%"
-tolval[5] = "+/- 10%"
-tolval[6] = "+/- 20%"
-tolval[7] = "- 20% + 80%"
+tolval[0] = "± 0.05%"
+tolval[1] = "± 0.1%"
+tolval[2] = "± 0.25%"
+tolval[3] = "± 0.5%"
+tolval[4] = "± 1%"
+tolval[5] = "± 2%"
+tolval[6] = "± 2.5%"
+tolval[7] = "± 5%"
+tolval[8] = "± 10%"
+tolval[9] = "± 15%"
+tolval[10] = "± 20%"
+tolval[11] = "± 30%"
+tolval[12]= "-0 TO +100%"
+tolval[13] = "-10 TO +30%"
+tolval[14] = "± 22%"
+tolval[15] = "-0 TO 50%"
+tolval[16] = "-0 TO 75%"
+tolval[17] = "-10 TO +100%"
+tolval[18] = "-20 TO +5%"
+tolval[19] = "-20 TO +80%"
+
 
 //Array of tolerance codes
 var tolcode = new Array()
@@ -422,57 +436,63 @@ function valuetocode (obj) {
 <div class="bom">
 <table   style="width:250;
   ">
-<tr ><td align="middle" style="font-size:35px;" ><input  NAME="capval" id="capval" style="width:100px; height:50; font-size:20;  border-radius: 10px;" tabindex="4" onKeyup="valuetocode(this.form)"></td>
-
-<td  align="middle"style="font-size:20px;" ><select style="width:120px; height:50; font-size:20;  border-radius: 10px;"name="capmult" tabindex="5" onChange="valuetocode(this.form)">
-            <option>Microfarad</option>
-            <option>Nanofarad</option>
-            <option selected>Picofarad</option>
-          </select></td></tr><tr><td height="1"></td></tr><tr>
-<td><input type="checkbox" id="myCheck"  class="check" onclick="myFunction()" style="height:20px; width:20;">Voltege</td>
-<td align="middle" colspan="2" ><select style="width:100px; height:30; font-size:20;  border-radius: 10px;"name="tolval" id="tolval" tabindex="6" onChange="valuetocode(this.form)">
-            <option value="0">+/- 0.25pF</option>
-            <option value="1">+/- 0.5pF</option>
-            <option value="2">+/- 1%</option>
-            <option value="3">+/- 2%</option>
-            <option value="4">+/- 5%</option>
-            <option value="5">+/- 10%</option>
-            <option selected value="6">+/- 20%</option>
-            <option value="7">-20% +80%</option>
-          </select></td></tr>
+<tr ><td align="middle" style="font-size:35px;" ><p id="capacitance"></p></td><td  align="middle"style="font-size:20px;" ><p id="tolerance"></p></td></tr><tr><td height="15"></td></tr><tr>
+<td align="middle" colspan="2" ><p id="text" style="display:none; font-size:25px;">50V / 100V</p></td></tr>
 </table></div>
 
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISK.png?raw=true" alt="Paris" style="width:250;
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/FILMCAP.png?raw=true" alt="Paris" style="width:250;
   margin-left:10;  
    position: absolute; 
-  top: -8px;
+  top: 30px;
   left:40px;
  opacity:;">
 <form action="javascript:void(0)">
 
-
+<table class="calc">
+    <tr>
+      <td>
         
-  			<p  name="coderesult" id="coderesult"  style="width: 120px;
+  			<input  name="capcode" id="capcode"  maxlength="3" tabindex="1" placeholder="103"onKeyup="codetovalue(this.form)"style="width: 120px;
 				height: 50px;
 				border: none !important;
 				background-color: #ffffff00;
 				text-align: center;
 				padding: 0px !important;
-  margin-left:10;  font-size:50;color:brown;
+  margin-left:10;  font-size:50;color:white;
    position: absolute;
-  top: 20px;
-  left:90px;">103</p>
+  top: 85px;
+  left:75px;">
 				
 
-                                       
+
 
 				
-				<p1 id="tolresult" style=" position: absolute;
-  top: 75px;
-  left:205px;background-color: #ffffff00;border: none !important;width: 52px;font-size:40;color:brown;
-				height: 50px;">M</p1>
-          
-
+				<select name="tolerancecode" id="tolcode" tabindex="2" onChange="codetovalue(this.form)"style=" position: absolute;
+  top: 84px;
+  left:195px;background-color: #ffffff00;border: none !important;width: 63px;font-size:45;color:WHITE;
+				height: 50px;">
+          <option value="A">A</option>
+          <option value="B">B&nbsp;&nbsp;/ Ж</option>
+          <option value="C">C&nbsp;&nbsp;/ У</option>
+          <option value="D">D&nbsp;&nbsp;/ Д</option>
+          <option value="F">F&nbsp;&nbsp;/ Р</option>
+          <option value="G">G&nbsp;&nbsp;/ Л </option>
+          <option selected value="H">H </option>
+          <option value="J">J&nbsp;&nbsp;/ И</option>
+          <option value="K">K&nbsp;&nbsp;/ C</option>
+          <option value="L">L</option>
+          <option value="M">M&nbsp;&nbsp;/ B</option>
+          <option value="N">N&nbsp;&nbsp;/ Ф</option>
+          <option value="P">P</option>
+          <option value="Q">Q </option>
+          <option value="S">S</option>
+          <option value="T">T</option>
+           <option value="U">U&nbsp;&nbsp;/ Э</option>
+          <option value="W">W&nbsp;&nbsp;/ Ю </option>
+          <option value="Y">Y&nbsp;&nbsp;/ Б</option>
+          <option value="Z">Z&nbsp;&nbsp;/ A</option>
+        </select>
+		
 			
  
 <Button style=" display:none;
@@ -538,14 +558,16 @@ function myFunction() {
   height: 92px; 
 }
 .check{
-  margin-left:20;  
-   
+  margin-left:10;  
+   position: absolute;
+  top: 373px;
+  left:42px; 
  opacity:;
- border-radius: 25px;
+ border-radius: 15px;
   border: 2px solid red;
   font-size:25;
   width:250px; 
-  height: 50px; 
+   
 }
 body { 
   background: ; 
