@@ -422,37 +422,23 @@ function valuetocode (obj) {
 <div class="bom">
 <table   style="width:250;
   ">
-<tr ><td align="middle" style="font-size:35px;" ><input  NAME="capval" id="capval" style="width:100px; height:50; font-size:20;  border-radius: 10px;" tabindex="4" onKeyup="valuetocode(this.form)"></td>
-
-<td  align="middle"style="font-size:20px;" ><select style="width:120px; height:50; font-size:20;  border-radius: 10px;"name="capmult" tabindex="5" onChange="valuetocode(this.form)">
-            <option>Microfarad</option>
-            <option>Nanofarad</option>
-            <option selected>Picofarad</option>
-          </select></td></tr><tr><td height="1"></td></tr><tr>
-<td><input type="checkbox" id="myCheck"  class="check" onclick="myFunction()" style="height:20px; width:20;">Voltege</td>
-<td align="middle" colspan="2" ><select style="width:100px; height:30; font-size:20;  border-radius: 10px;"name="tolval" id="tolval" tabindex="6" onChange="valuetocode(this.form)">
-            <option value="0">+/- 0.25pF</option>
-            <option value="1">+/- 0.5pF</option>
-            <option value="2">+/- 1%</option>
-            <option value="3">+/- 2%</option>
-            <option value="4">+/- 5%</option>
-            <option value="5">+/- 10%</option>
-            <option selected value="6">+/- 20%</option>
-            <option value="7">-20% +80%</option>
-          </select></td></tr>
+<tr ><td align="middle" style="font-size:35px;" ><p id="capacitance"></p></td><td  align="middle"style="font-size:20px;" ><p id="tolerance"></p></td></tr><tr><td height="15"></td></tr><tr>
+<td align="middle" colspan="2" ><p id="text" style="display:none; font-size:25px;">50V / 100V</p></td></tr>
 </table></div>
 
 <img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISK.png?raw=true" alt="Paris" style="width:250;
   margin-left:10;  
    position: absolute; 
-  top: 50px;
+  top: -7px;
   left:40px;
  opacity:;">
 <form action="javascript:void(0)">
 
-
+<table class="calc">
+    <tr>
+      <td>
         
-  			<p  name="coderesult" id="coderesult"  style="width: 120px;
+  			<input  name="capcode" id="capcode"  maxlength="3" tabindex="1" placeholder="103"onKeyup="codetovalue(this.form)"style="width: 120px;
 				height: 50px;
 				border: none !important;
 				background-color: #ffffff00;
@@ -460,24 +446,34 @@ function valuetocode (obj) {
 				padding: 0px !important;
   margin-left:10;  font-size:50;color:brown;
    position: absolute;
-  top: 78px;
-  left:90px;">103</p>
+  top: 70px;
+  left:90px;">
 				
 
-                                       
+
 
 				
-				<p1 id="tolresult" style=" position: absolute;
-  top: 135px;
+				<select name="tolerancecode" id="tolcode" tabindex="2" onChange="codetovalue(this.form)"style=" position: absolute;
+  top: 70px;
   left:205px;background-color: #ffffff00;border: none !important;width: 52px;font-size:40;color:brown;
-				height: 50px;">ff</p1>
-          
-
+				height: 50px;">
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="F">F</option>
+          <option value="G">G</option>
+          <option value="J">J</option>
+          <option value="K">K</option>
+          <option selected value="M">M </option>
+          <option value="Z">Z</option>
+        </select>
+<table class="check">
+<tr><td>	
+   <input type="checkbox" id="myCheck"  onclick="myFunction()" style="height:30px; width:30;"></td><td>Underline</td></tr</table>		
 			
  
 <Button style=" display:none;
    position: absolute;  border: none; width: 170px; height:5; background:brown;
-  top: 190px;
+  top: 130px;
   left: 90px;}
 .f5{width:90%" id="rr" ></Button>
 
@@ -528,7 +524,7 @@ function myFunction() {
 .bom{
   margin-left:10;  
    position: absolute;
-  top: 332px;
+  top: 275px;
   left:42px; 
  opacity:;
  border-radius: 25px;
@@ -538,14 +534,16 @@ function myFunction() {
   height: 92px; 
 }
 .check{
-  margin-left:20;  
-   
+  margin-left:10;  
+   position: absolute;
+  top: 373px;
+  left:42px; 
  opacity:;
- border-radius: 25px;
+ border-radius: 15px;
   border: 2px solid red;
   font-size:25;
   width:250px; 
-  height: 50px; 
+   
 }
 body { 
   background: ; 
