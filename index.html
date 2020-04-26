@@ -369,26 +369,16 @@ function TogglePopup(d) {
 
 //Array of tolerance values
 var tolval = new Array()
-tolval[0] = "± 0.05%"
-tolval[1] = "± 0.1%"
-tolval[2] = "± 0.25%"
-tolval[3] = "± 0.5%"
-tolval[4] = "± 1%"
-tolval[5] = "± 2%"
-tolval[6] = "± 2.5%"
-tolval[7] = "± 5%"
-tolval[8] = "± 10%"
-tolval[9] = "± 15%"
-tolval[10] = "± 20%"
-tolval[11] = "± 30%"
-tolval[12]= "-0 TO +100%"
-tolval[13] = "-10 TO +30%"
-tolval[14] = "± 22%"
-tolval[15] = "-0 TO 50%"
-tolval[16] = "-0 TO 75%"
-tolval[17] = "-10 TO +100%"
-tolval[18] = "-20 TO +5%"
-tolval[19] = "-20 TO +80%"
+tolval[0] = "2.5V"
+tolval[1] = "4V"
+tolval[2] = "6.3V"
+tolval[3] = "10V"
+tolval[4] = "16V"
+tolval[5] = "20V"
+tolval[6] = "25V"
+tolval[7] = "35V"
+tolval[8] = "50V"
+
 
 
 //Array of tolerance codes
@@ -440,7 +430,7 @@ function valuetocode (obj) {
 <td align="middle" colspan="2" ><p id="text" style="display:none; font-size:25px;">50V / 100V</p></td></tr>
 </table></div>
 
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/FILMCAP.png?raw=true" alt="Paris" style="width:250;
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/SMDCAP.png?raw=true" alt="Paris" style="width:250;
   margin-left:10;  
    position: absolute; 
   top: 30px;
@@ -460,37 +450,27 @@ function valuetocode (obj) {
 				padding: 0px !important;
   margin-left:10;  font-size:50;color:white;
    position: absolute;
-  top: 85px;
-  left:75px;">
+  top: 77px;
+  left:155px;">
 				
 
 
 
 				
 				<select name="tolerancecode" id="tolcode" tabindex="2" onChange="codetovalue(this.form)"style=" position: absolute;
-  top: 84px;
-  left:195px;background-color: #ffffff00;border: none !important;width: 63px;font-size:45;color:WHITE;
+  top: 75px;
+  left:120px;background-color: #ffffff00;border: none !important;width: 63px;font-size:45;color:WHITE;
 				height: 50px;">
-          <option value="A">A</option>
-          <option value="B">B&nbsp;&nbsp;/ Ж</option>
-          <option value="C">C&nbsp;&nbsp;/ У</option>
-          <option value="D">D&nbsp;&nbsp;/ Д</option>
-          <option value="F">F&nbsp;&nbsp;/ Р</option>
-          <option value="G">G&nbsp;&nbsp;/ Л </option>
-          <option selected value="H">H </option>
-          <option value="J">J&nbsp;&nbsp;/ И</option>
-          <option value="K">K&nbsp;&nbsp;/ C</option>
-          <option value="L">L</option>
-          <option value="M">M&nbsp;&nbsp;/ B</option>
-          <option value="N">N&nbsp;&nbsp;/ Ф</option>
-          <option value="P">P</option>
-          <option value="Q">Q </option>
-          <option value="S">S</option>
-          <option value="T">T</option>
-           <option value="U">U&nbsp;&nbsp;/ Э</option>
-          <option value="W">W&nbsp;&nbsp;/ Ю </option>
-          <option value="Y">Y&nbsp;&nbsp;/ Б</option>
-          <option value="Z">Z&nbsp;&nbsp;/ A</option>
+          <option value="A">e</option>
+          <option value="B">G</option>
+          <option value="C">J</option>
+          <option value="D">A</option>
+          <option value="F">C</option>
+          <option value="G">D</option>
+          <option selected value="H">E </option>
+          <option value="J">V</option>
+          <option value="K">H</option>
+          
         </select>
 		
 			
