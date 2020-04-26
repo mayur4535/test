@@ -1,4 +1,3 @@
-
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -52,55 +51,50 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-
 </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-<div class="clear"></div>
-</nav>
-</div>
-<div class="clear"></div>
-</header>
-<div id="intro">
-<div class="width">
-<div class="intro-content">
-
-</div>
-</div>
-</div>
 <div id="body" class="width">
 <section id="content" class="two-column with-right-sidebar">
 <article>
 
-
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- rfw_rsp -->
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-a=Number(document.calculator.number1.value);
-c=a-30;
-document.calculator.dBW.value=c;
+Pmax=Number(document.calculator.number1.value);
+Pavg=Number(document.calculator.number2.value);
+Pin=Number(document.calculator.number3.value);
+IP3=Number(document.calculator.number4.value);
+Crestfactor= Pmax/Pavg;
+c1= -20.75 + (1.6*Crestfactor) + (2 *(Pin - IP3)) ;
+document.calculator.ACPR.value=c1;
 }
 </SCRIPT>
-
-
-
 <FORM name="calculator">
-
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Inputs</h3></div></legend>
 
 
-<label for="f">dBm<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
-
-
-</fieldset>
-
+<label for="f">Peak Power <font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 <h1 style="font-size:50;"></h1>
+
+<label for="f">Average Power<font face="Arial" size="6"></font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+<label for="f">Input Power<font face="Arial" size="6"></font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+<label for="f">Input 4<font face="Arial" size="4"> Third Order Intercept Point (IP3)</font></label><input  name="number4" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+<label for="f">Input 4<font face="Arial" size="4"> Third Order Intercept Point (IP3)</font></label><input  name="number4" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>
+</fieldset></div>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
   border: 1;
   align:center;
@@ -112,8 +106,7 @@ document.calculator.dBW.value=c;
   display: inline-block;
   font-size: 70px;
   margin: 4px 2px;
-  cursor: pointer;"></div></div>
-</div></legend></fieldset>
+  cursor: pointer;"></legend></fieldset></div>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div colspan="2" align="center" height="19">
@@ -121,13 +114,11 @@ document.calculator.dBW.value=c;
 
 <h3>Outputs</h3></div></legend>
 
+<label for="f">ACPR<font face="Arial" size="6">(Adjacent Channel Power Ratio)</font></label><input  name="ACPR" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
 
-<label for="f">dBW<font face="Arial" size="6"></font></label><input  name="dBW" class="intro"  style="position: absolute;   text-align:center; width:350; right: 10px;"class="form-control" type="number" />
 
-</fieldset>
 </FORM>
-<br/>
 
 </body>
 </html>
