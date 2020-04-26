@@ -52,49 +52,37 @@ input[type=checkbox]{
     height: 120px; 
    
   }
+.h11 {text-align: center; font-size:40; }
 </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-<div id="body" class="width">
-<section id="content" class="two-column with-right-sidebar">
-<article>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- rfw_rsp -->
-<SCRIPT language="javascript" type="text/javascript">
-function calc()
-{
-Pmax=Number(document.calculator.number1.value);
-Pavg=Number(document.calculator.number2.value);
-Pin=Number(document.calculator.number3.value);
-IP3=Number(document.calculator.number4.value);
-Crestfactor= Pmax/Pavg;
-c1= -20.75 + (1.6*Crestfactor) + (2 *(Pin - IP3)) ;
-document.calculator.ACPR.value=c1;
-}
-</SCRIPT>
-<FORM name="calculator">
+
+<form id=sat_calc name=sat_calc>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
-<fieldset><legend><div colspan="2" align="center" height="19">
+<fieldset><legend><div>
 <h3>Inputs</h3></div></legend>
 
+<h1 class="h11" face="Arial" size="6">Receiver location</h1>
 
-<label for="f">Peak Power <font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<label style="font-size:60;">Longitude<font face="Arial" size="6"> ("+" = E)</font></label><input  id="rx_lon" class="intro"  style="position: absolute;  text-align:center; width:350; right: 70px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:50px;">°</label>
 <h1 style="font-size:50;"></h1>
+<label style="font-size:60;">Latitude<font face="Arial" size="6"> ("+" = N)</font></label><input  id="rx_lat" class="intro"  style="position: absolute;  text-align:center; width:350; right: 70px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:50px;">°</label>
 
-<label for="f">Ave. PWR<font face="Arial" size="5"> (Average Power)</font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:50;"></h1>
-<label for="f">Input Power<font face="Arial" size="6"></font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:50;"></h1>
-<label for="f">Input 4<font face="Arial" size="4"> Third Order Intercept Point (IP3)</font></label><input  name="number4" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="number" />
+<HR>
+<h1 class="h11" face="Arial" size="6">Satellite location</h1>
+
+<label style="font-size:60;">Longitude<font face="Arial" size="6"> ("+" = E)</font></label><input  id="sat_lon" class="intro"  style="position: absolute;  text-align:center; width:350; right: 70px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:50px;">°</label>
+</fieldset></div>
 
 </fieldset></div>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
+<h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input id=calculate onclick="return cmd_calculate()" type=button value="CALCULATE"  style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -113,11 +101,160 @@ document.calculator.ACPR.value=c1;
 
 <h3>Outputs</h3></div></legend>
 
-<label style="font-size:60;" >ACPR<font face="Arial" size="5">(Adjacent Channel Power Ratio)</font></label><input  name="ACPR" class="intro"  style="position: absolute;  text-align:center; width:350; right: 10px;"class="form-control" type="text" />
+
+<label for="f">Azimuth<font face="Arial" size="6"> </font></label><input  id="rx_az" class="intro"  style="position: absolute;  text-align:center; width:350; right: 70px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:50px;">°</label>
+<h1 style="font-size:50;"></h1>
+<label for="f">Elevation<font face="Arial" size="6"></font></label><input  id="rx_el" class="intro"  style="position: absolute;  text-align:center; width:350; right: 70px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:50px;">°</label>
+
+</fieldset></div>
+
+
+</form>
 
 
 
-</FORM>
+
+
+<script>
+<!--
+
+// --------------------------------------------------------------------------
+
+
+
+// This function will calculate antenna azimuth and elevation from receiver
+// coordinates and satellite longitude. Called by the "Calculate" button.
+function cmd_calculate()
+{
+    var rx_lon, rx_lat, sat_lon, rx_az, rx_el;
+    var delta_lon, num, den;	                                // Temporary values
+    var R0 = 6370;		                                        // Earth's radius: 6370 km
+    var h = 35800;		                                        // Satellite height: 35800 km
+
+    rx_lon = parseFloat(document.getElementById('rx_lon').value);
+    if (isNaN(rx_lon) || (rx_lon < -180) || (rx_lon > 180))
+    {
+        document.getElementById('rx_lon').value = "";
+        window.alert("Please enter the longitude of the receiver\n(decimal format, positive = east, negative = west,\nvalid values between -180 and 180 degrees).");
+        return(1);
+    }
+    rx_lat = parseFloat(document.getElementById('rx_lat').value);
+    if (isNaN(rx_lat) || (rx_lat < -90) || (rx_lat > 90))
+    {
+        document.getElementById('rx_lat').value = "";
+        window.alert("Please enter the latitude of the receiver\n(decimal format, positive = north, negative = south,\nvalid values between -90 and 90 degrees).");
+        return(1);
+    }
+    sat_lon = parseFloat(document.getElementById('sat_lon').value);
+    if (isNaN(sat_lon) || (sat_lon < -180) || (sat_lon > 180))
+    {
+        document.getElementById('sat_lon').value = "";
+        window.alert("Please enter the longitude of the satellite\n(decimal format, positive = east, negative = west,\nvalid values between -180 and 180 degrees).");
+        return(1);
+    }
+
+    delta_lon = rx_lon - sat_lon;
+    rx_az = Math.atan((Math.tan((Math.PI/180)*delta_lon)/Math.sin((Math.PI/180)*rx_lat)))*(180/Math.PI)+180;
+    num = Math.cos(rx_lat*(Math.PI/180))*Math.cos(delta_lon*(Math.PI/180))-R0/(R0+h);
+    den = Math.sqrt(1-Math.pow(Math.cos(rx_lat*(Math.PI/180))*Math.cos(delta_lon*(Math.PI/180)),2));
+    rx_el = (180/Math.PI)*Math.atan(num/den);
+
+    document.getElementById('rx_az').value = rx_az.toPrecision(4);
+    document.getElementById('rx_el').value = rx_el.toPrecision(3);
+    return(0);
+}
+
+
+
+// --------------------------------------------------------------------------
+
+
+
+// This function, called by the "Get current location" button, will try to 
+// find the current coordinates, if supported by the browser.
+// If the browser supports geolocation, the function show_position() is 
+// called, if not, show_error() is called instead.
+function cmd_get_location()
+{
+    document.getElementById('rx_lon').value = "";               // Erase current coordinates.
+    document.getElementById('rx_lat').value = "";
+
+    document.getElementById('rx_az').value = "";                // Erase corresponding results.
+    document.getElementById('rx_el').value = "";
+
+    if (navigator.geolocation)                                  // Check if geolocation is supported.
+        navigator.geolocation.getCurrentPosition(show_position, show_error);
+    else 
+        window.alert("Geolocation is not supported by this browser.");
+}
+
+
+
+// --------------------------------------------------------------------------
+
+
+
+// This function is called by the cmd_get_location() function only if the 
+// browser supports geolocation. It updates the coordinates field with the
+// current position.
+function show_position(position)
+{
+    document.getElementById('rx_lon').value = position.coords.longitude.toFixed(6);
+    document.getElementById('rx_lat').value = position.coords.latitude.toFixed(6);
+}
+
+
+
+// --------------------------------------------------------------------------
+
+
+
+// This function is called by cmd_get_location() when an error occurred while
+// determining the current location.
+function show_error(error)
+{
+    switch(error.code) 
+    {
+        case error.PERMISSION_DENIED:
+            window.alert("User denied the request for Geolocation.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            window.alert("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            window.alert("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            window.alert("An unknown error occurred.");
+            break;
+    }
+}
+
+
+
+// --------------------------------------------------------------------------
+
+
+
+// Init the form values with some reasonable data.
+document.getElementById('rx_lon').value = "10.88";
+document.getElementById('rx_lat').value = "18.86";
+document.getElementById('sat_lon').value = "20.18";
+document.getElementById('rx_az').value = "";
+document.getElementById('rx_el').value = "";
+
+
+
+// --------------------------------------------------------------------------
+
+//-->
+</script>
+
+
 
 </body>
+
 </html>
+
