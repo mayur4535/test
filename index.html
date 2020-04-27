@@ -53,41 +53,38 @@ input[type=checkbox]{
   }
 .h11 {text-align: center; font-size:40; }
 </style>
-
-
 <article>
 
 
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-RCS=Number(document.calculator.number1.value);
-Fr=Number(document.calculator.number2.value);
-//Lambda= ( (3*Math.pow(10,8))/Fr );    (10*Log10(var1))+(20*Log10(3*Pow(10,8)/var2))-38.54"
-//Lambda1 = 3*Math.pow(10,8)/Lambda;
-P1 = 10*Math.log10(RCS);
-P2 = 20*Math.log10(Fr);
-c1 = P1+P2-38.54;
-document.calculator.Radar_target_gain_factor.value=c1;
+ZL=Number(document.calculator.number1.value);
+ZS=Number(document.calculator.number2.value);
+VI=Number(document.calculator.number3.value);
+c1= ( (ZL-ZS)/(ZL+ZS) );
+c2 = (c1 * VI ) ;
+document.calculator.reflection_coefficient.value=c1;
+document.calculator.reflected_voltage.value=c2;
 }
 </SCRIPT>
 <FORM name="calculator">
-
-
-
-
-
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div>
 <h3>Inputs</h3></div></legend>
 
-<label style="font-size:60;">RCS<font face="Arial" size="6"> (Radar Cross Section)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:51px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">m<sup>2</sup> </label>
+<label style="font-size:60;">Z<sub>L</sub><font face="Arial" size="6"> (
+Load Impedance)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="number" />
+
 <h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Frequency<font face="Arial" size="6"> </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Hz</label>
+<label style="font-size:60;">Z<sub>S</sub><font face="Arial" size="6"> (Source Impedance) </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="number" />
+
+
+<h1 style="font-size:50;"></h1>
+<label style="font-size:60;">V<sub>rms</sub><font face="Arial" size="6"> (Incident Voltage)</font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="number" />
+
 
 <h1 style="font-size:50;"></h1>
 
@@ -116,8 +113,12 @@ document.calculator.Radar_target_gain_factor.value=c1;
 <h3>Outputs</h3></div></legend>
 
 
-<label style="font-size:60;">TGF (Gσ)  <font face="Arial" size="5">(Target Gain Factor)</font></label><input  name="Radar_target_gain_factor" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
+<label style="font-size:60;">Γ<font face="Arial" size="6"> (Reflection Coefficient)</font></label><input  name="reflection_coefficient" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="number" />
+
+<h1 style="font-size:50;"></h1>
+<label style="font-size:60;">V<sub>ref</sub><font face="Arial" size="6"> (Reflected Voltage)</font></label><input  name="reflected_voltage" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="number" />
+
+
 <h1 style="font-size:50;"></h1>
 
 
@@ -125,4 +126,7 @@ document.calculator.Radar_target_gain_factor.value=c1;
 
 
 </FORM>
+<br/>
 
+</body>
+</html>
