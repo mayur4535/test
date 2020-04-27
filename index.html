@@ -53,52 +53,35 @@ input[type=checkbox]{
   }
 .h11 {text-align: center; font-size:40; }
 </style>
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-<div id="body" class="width">
-<section id="content" class="two-column with-right-sidebar">
 <article>
 
-<!-- rfw_rsp -->
+
 
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-P1 = Number(document.calculator.number1.value);
-P2 = Number(document.calculator.number2.value);
-P3 = Number(document.calculator.number3.value);
-P4 = Number(document.calculator.number4.value);
-c1 = (-10 * (Math.log10(P4/P1)));
-c2 = (-10 * (Math.log10(1-(P4/P1))));
-c3 = ( -10 *  (Math.log10( (P2/P1) + (P3/P1) + (P4/P1) ) ) );
-c4 = (-10 * (Math.log10( (P3/P4) )) );
-document.calculator.coupling.value=c1;
-document.calculator.coupling_loss.value=c2;
-document.calculator.Insertion_loss.value=c3;
-document.calculator.directivity.value=c4;
+B=Number(document.calculator.number1.value);
+NF= Number(document.calculator.number2.value);
+// -174 is the noise floor in dBm/Hz at 290 kelvin and with 1Hz bandwidth
+c1 = (-174 + (10*Math.log10(B)) + NF) ;
+document.calculator.MDS.value=c1;
 }
 </SCRIPT>
 <FORM name="calculator">
+
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div>
 <h3>Inputs</h3></div></legend>
 
-<label style="font-size:60;">Input Power<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
+<label style="font-size:60;">Bandwidth<font face="Arial" size="6">(Minimum)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Hz</label>
 <h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Output power<font face="Arial" size="6"> </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
+<label style="font-size:60;">Noise Figure<font face="Arial" size="6"> (Minimum)</font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dB</label>
 
-<h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Isolated <font face="Arial" size="6"><b> Port</b> (power)</font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
 
-<h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Coupled <font face="Arial" size="6"><b> Port</b> (power) </font></label><input  name="number4" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
 
 </fieldset></div>
 <div id="borderimg">
@@ -124,25 +107,11 @@ document.calculator.directivity.value=c4;
 <h3>Outputs</h3></div></legend>
 
 
-<label style="font-size:60;">Coupling<font face="Arial" size="6"></font></label><input  name="coupling" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
-<h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Coupling Loss<font face="Arial" size="6"> </font></label><input  name="coupling_loss" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
+<label style="font-size:60;">MDS<font face="Arial" size="4">(Minimum Detectable Signal)</font></label><input  name="MDS" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="text" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
 
-<h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Insertion Loss<font face="Arial" size="6"></font></label><input  name="Insertion_loss" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
-
-<h1 style="font-size:50;"></h1>
-<label style="font-size:60;">Directivity<font face="Arial" size="6"></font></label><input  name="directivity" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
 
 </fieldset></div>
 
 
 </FORM>
-
-
-</body>
-</html>
