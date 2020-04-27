@@ -54,29 +54,44 @@ input[type=checkbox]{
 .h11 {text-align: center; font-size:40; }
 </style>
 
+
 <article>
 
-<!-- rfw_rsp -->
 
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-Radius=Number(document.calculator.number1.value);
-c1= Math.PI* Math.pow(Radius,2) ;
-document.calculator.Radar_RCS.value=c1;
+RCS=Number(document.calculator.number1.value);
+Fr=Number(document.calculator.number2.value);
+//Lambda= ( (3*Math.pow(10,8))/Fr );    (10*Log10(var1))+(20*Log10(3*Pow(10,8)/var2))-38.54"
+//Lambda1 = 3*Math.pow(10,8)/Lambda;
+P1 = 10*Math.log10(RCS);
+P2 = 20*Math.log10(Fr);
+c1 = P1+P2-38.54;
+document.calculator.Radar_target_gain_factor.value=c1;
 }
 </SCRIPT>
 <FORM name="calculator">
+
+
+
+
+
 
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div>
 <h3>Inputs</h3></div></legend>
 
-<label style="font-size:60;">Target Radius<font face="Arial" size="6"></font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Mtr</label>
+<label style="font-size:60;">RCS<font face="Arial" size="6"> (Radar Cross Section)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:51px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">m<sup>2</sup> </label>
+<h1 style="font-size:50;"></h1>
+<label style="font-size:60;">Frequency<font face="Arial" size="6"> </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Hz</label>
 
 <h1 style="font-size:50;"></h1>
+
+
 </fieldset></div>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
@@ -101,17 +116,13 @@ document.calculator.Radar_RCS.value=c1;
 <h3>Outputs</h3></div></legend>
 
 
-<label style="font-size:60;">RCS<font face="Arial" size="6"> (Radar Cross Section) </font></label><input  name="Radar_RCS" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Mtr</label>
+<label style="font-size:60;">TGF (Gσ)  <font face="Arial" size="5">(Target Gain Factor)</font></label><input  name="Radar_target_gain_factor" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
 <h1 style="font-size:50;"></h1>
+
+
 </fieldset></div>
 
 
-
-
-
 </FORM>
-<br/>
 
-</body>
-</html>
