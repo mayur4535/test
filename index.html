@@ -56,35 +56,40 @@ input[type=checkbox]{
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-E=Number(document.calculator.number1.value);
-sigma=Number(document.calculator.number2.value);
-md=Number(document.calculator.number3.value);
-c1 = ( (sigma * (Math.pow(E,2))) / md  ) ;
-c2 = ( (Math.pow(E,2))/377 );
-document.calculator.SAR.value=c1;
-document.calculator.PD.value=c2;
+ht=Number(document.calculator.number1.value);
+hr=Number(document.calculator.number2.value);
+current=Number(document.calculator.number3.value);
+d=Number(document.calculator.number4.value);
+f=Number(document.calculator.number5.value);
+lambda= ( (3*Math.pow(10,8))/(f*Math.pow(10,9)) );
+pi_val = Math.PI;
+c = ( (120 * pi_val * ht * hr * current) / ( lambda * d ) );
+document.calculator.fieldstrength.value=c;
 }
 </SCRIPT>
 <FORM name="calculator">
-
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 <fieldset><legend><div>
 <h3>Inputs</h3></div></legend>
 
-<label style="font-size:50;">Electric Field <font face="Arial" size="6"> (RMS)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:51px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">V/m</label>
+<label style="font-size:60;">TX Antenna<font face="Arial" size="6"> (Height)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:60px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">M</label>
 <h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Material<font face="Arial" size="5"> (Conductivity of Material) </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:51px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">S/m</label>
-
-<h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Mass Density <font face="Arial" size="6"></font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:30px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Kg/m<sup>3</label>
+<label style="font-size:60;">RX Antenna<font face="Arial" size="6"> (Height) </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">M</label>
 
 <h1 style="font-size:50;"></h1>
+<label style="font-size:60;">Antenna Current<font face="Arial" size="6"></font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">A</label>
 
+<h1 style="font-size:50;"></h1>
+<label style="font-size:60;">Distance <font face="Arial" size="6"> (TX Antenna)</font></label><input  name="number4" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">GH<sub>z</label>
 
+<h1 style="font-size:50;"></h1>
+<label style="font-size:60;">Frequency  <font face="Arial" size="6"> (operation)</font></label><input  name="number5" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">GH<sub>z</label>
 </fieldset></div>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
@@ -109,22 +114,17 @@ document.calculator.PD.value=c2;
 <h3>Outputs</h3></div></legend>
 
 
-<label style="font-size:50;">SAR<font face="Arial" size="6">(Specific Absorption Rate)</font></label><input  name="SAR" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:30px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">Kg/m<sup>3</label>
-<h1 style="font-size:50;"></h1>
-<label style="font-size:50;">IPD<font face="Arial" size="6"> (Incident Power Density) </font></label><input  name="PD" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-
+<label style="font-size:60;">RFS<font face="Arial" size="6"> (RF Field Strength)</font></label><input  name="fieldstrength" class="intro"  style="position: absolute;  text-align:center; width:300; right: 1px;"class="form-control" type="text" />
 
 <h1 style="font-size:50;"></h1>
-
 
 
 </fieldset></div>
 
- 
+
+
 
 </FORM>
-<br/>
 
 </body>
 </html>
