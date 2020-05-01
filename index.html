@@ -53,13 +53,14 @@ input[type=checkbox]{
   }
 .h11 {text-align: center; font-size:40; }
 </style>
+
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-IIP3=Number(document.calculator.number1.value);
-MDS1= Number(document.calculator.number2.value);
-c1 = ((2/3)* (IIP3- MDS1))                          
-document.calculator.SFDR.value=c1;
+Ve=Number(document.calculator.number1.value);
+Td=Number(document.calculator.number2.value);
+c1 = ( ( (3*Math.pow(10,8))*Ve*Td/2 ));
+document.calculator.TDR_length.value=c1;
 }
 </SCRIPT>
 <FORM name="calculator">
@@ -70,11 +71,11 @@ document.calculator.SFDR.value=c1;
 <fieldset><legend><div>
 <h3>Inputs</h3></div></legend>
 
-<label style="font-size:60;">IIP3<font face="Arial" size="4"> (Third Order Intercept Point)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
+<label style="font-size:60;">U<font face="Arial" size="6"> (Velocity factor of transmission line)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="text" />
+
 <h1 style="font-size:50;"></h1>
-<label style="font-size:60;">MDS<font face="Arial" size="4"> (Minimum Detectable Signal) </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">dBm</label>
+<label style="font-size:60;">T<sub>d</sub><font face="Arial" size="6"> (Round trip time) </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:350; right: 1px;"class="form-control" type="text" />
+
 
 <h1 style="font-size:50;"></h1>
 
@@ -103,13 +104,12 @@ document.calculator.SFDR.value=c1;
 <h3>Outputs</h3></div></legend>
 
 
-<label style="font-size:60;">SFDR<font face="Arial" size="4"> (Spurious Free Dynamic Range)</font></label><input  name="SFDR" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">dB</label>
+<label style="font-size:60;">TDR Length<font face="Arial" size="6"></font></label><input  name="TDR_length" class="intro"  style="position: absolute;  text-align:center; width:300; right: 135px;"class="form-control" type="number" />
+<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:115px;">Mtr</label>
 <h1 style="font-size:50;"></h1>
 
 
 </fieldset></div>
-
 
 </FORM>
 <br/>
