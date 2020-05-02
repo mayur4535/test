@@ -1,3 +1,6 @@
+
+
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -16,7 +19,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 70px;
 }
 
 body { 
@@ -51,53 +54,119 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-.h11 {text-align: center; font-size:40; }
 </style>
-<SCRIPT language="javascript" type="text/javascript">
-function calc()
-{
-Fr=Number(document.calculator.number1.value);
-Len=Number(document.calculator.number2.value);
-Dia=Number(document.calculator.number3.value);
-c1 = (17*(Len/12)/((Math.log10((24*(Len/12))/Dia)-1)*(1-(Fr*(Len/12)/234)*(Fr*(Len/12)/234))) ) ;
-re1 = c1;
-c2 =  ( ( 1/((2*3.14159265359*Fr*1000000)*(2*3.14159265359*Fr*1000000)*re1*0.000000000001) )/0.000000001 );
-c3 = ( 300/Fr);
-c3 =c3/4;
-re2 = c3;
-c4 = ( (Len*0.0254)/re2)*100 ;
-c5 =  ( (Math.pow(((Len/12)/984*Fr*360),2))/312 );
-document.calculator.whip_antenna_capacitance.value=c1;
-document.calculator.whip_antenna_inductance.value=c2;
-document.calculator.whip_antenna_quarter_wavelength.value=c3;
-document.calculator.whip_antenna_length.value=c4;
-document.calculator.whip_antenna_radiation_resistance.value=c5;
-}
-</SCRIPT>
-<FORM name="calculator">
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+<article>
+
+
+
+
+
+
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
-<fieldset><legend><div>
-<h3>Inputs</h3></div></legend>
 
-<label style="font-size:50;">Frequency<font face="Arial" size="5"> (Whip Antenna)</font></label><input  name="number1" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">MH<sub>z</sub></label>
+
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Input</h3></div></legend>
+<div class="container-fluid">
+
+
+
+<form id="tool-form">
+<div class="row">
+
+
+
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><label for="r2" style="font-size:50;" >Transmitter Height<font face="Arial" size="5"> </font></label><input type="number" id="ht"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" />
+<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:110px;" class="form-control" id="ht-unit">
+<option value="1" selected="selected">ft&nbsp;&nbsp; Feet</option>
+<option value="3280.839895">km&nbsp; Kilometer</option>
+<option value="5280">mi&nbsp; Miles</option>
+<option value="3.280839895">m&nbsp; Meter</option>
+<option value="3">yd&nbsp; Yards</option>
+<option value="0.083">in&nbsp;&nbsp; Inches</option>
+<option value="0.0328">cm&nbsp; Centimeter</option>
+</select>
+
+
+</div>
+</div><h1 style="font-size:50;"></h1>
+
+
+<div class="row">
+
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><label for="r2" style="font-size:50;" >Receiver Height<font face="Arial" size="5"> </font></label><input type="number" id="hr"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" />
+<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:110px;" class="form-control" id="hr-unit">
+<option value="1" selected="selected">ft&nbsp;&nbsp; Feet</option>
+<option value="3280.839895">km&nbsp; Kilometer</option>
+<option value="5280">mi&nbsp; Miles</option>
+<option value="3.280839895">m&nbsp; Meter</option>
+<option value="3">yd&nbsp; Yards</option>
+<option value="0.083">in&nbsp;&nbsp; Inches</option>
+<option value="0.0328">cm&nbsp; Centimeter</option>
+</select>
+
+</div>
+</div>
 <h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Length<font face="Arial" size="5"> (Whip Antenna) </font></label><input  name="number2" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">mtr</label>
 
+<div class="row">
+
+
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><select class="form-control" id="dt-select"style="padding: 5px ;  position: absolute;right: 900px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:px;"> <option value="1">Distance</option> <option value="2">Downtilt</option> </select>o
+
+
+<input type="number" id="dt"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:56px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">°</label>
+<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;  width:110px;" class="form-control" id="dt-unit">
+<option value="1" selected="selected">Feet (ft)</option>
+<option value="3280.839895">Kilometer (km)</option>
+<option value="5280">Miles (mi)</option>
+<option value="3.280839895">Meter (m)</option>
+<option value="3">Yards (yd)</option>
+<option value="0.083">Inches (in)</option>
+<option value="0.0328">Centimeter (cm)</option>
+</select>
+</div>
+</div>
+</div>
 <h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Diameter<font face="Arial" size="5">(Whip Antenna)</font></label><input  name="number3" class="intro"  style="position: absolute;  text-align:center; width:300; right: 125px;"class="form-control" type="number" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:45px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:105px;">In</label>
 
-<h1 style="font-size:50;"></h1>
+<div class="row">
 
 
-</fieldset></div>
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
-<h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();"  style="background-color: #167A04 ;
+
+
+<div class="col-sm-4 col-xs-8">
+<div class="form-group"><label for="r2" style="font-size:50;" >Beamwidth</label><input type="number" id="bw"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">°</label>
+
+</div>
+</div>
+
+
+
+
+
+</form></fieldset>
+
+
+<div class="col-sm-4">
+<div class="form-group"><h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input id="calculate" class="btn btn-theme" type="button" value="Calculate" disabled="disabled" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -108,41 +177,74 @@ document.calculator.whip_antenna_radiation_resistance.value=c5;
   display: inline-block;
   font-size: 70px;
   margin: 4px 2px;
-  cursor: pointer;"></legend></fieldset></div>
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
+  cursor: pointer;">
+</div></legend></fieldset>
+
+</div>
+</div>
+
+
+
+    
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
+<div id="answer-fields">
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group" id="a1">
+<label for="" class="control-label">Downtilt Angle</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Output</label><input type="number" id="da"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" /><label id="a1deg" align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">°</label>
+<label id="a1ft" align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">ft</label><h1 style="font-size:50;"></h1>
 
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
 
-<label style="font-size:50;">Capacitance<font face="Arial" size="6"></font></label><input  name="whip_antenna_capacitance" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">pf</label>
-<h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Inductance<font face="Arial" size="6"> </font></label><input  name="whip_antenna_inductance" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">nH</label>
+</div>
+</div>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
 
-<h1 style="font-size:50;"></h1>
-<label style="font-size:50;"> Wavelength<font face="Arial" size="6"> (Quarter)</font></label><input  name="whip_antenna_quarter_wavelength" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">M</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Inner Coverage Radius</label><input type="number" id="icr"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">ft</label>
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="col-sm-4 col-xs-4">
 
-<h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Antenna Length<font face="Arial" size="6"></font></label><input  name="whip_antenna_length" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:61px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">%</label>
+</div>
+</div>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
 
-<h1 style="font-size:50;"></h1>
-<label style="font-size:50;">Resistance<font face="Arial" size="6"> (Radiation)</font></label><input  name="whip_antenna_radiation_resistance" class="intro"  style="position: absolute;  text-align:center; width:300; right: 105px;"class="form-control" type="text" />
-<label style="padding: 5px ;  position: absolute;right: 1px;font-size:55px;text-align:center;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:85px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>
-</fieldset></div>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Outer Coverage Radius</label><input type="number" id="ocr"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">ft</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
 
-
-
-
-
-</FORM>
-<br/>
-
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var _0xc357=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x64\x74\x2D\x73\x65\x6C\x65\x63\x74","\x68\x69\x64\x65","\x23\x64\x74\x2D\x75\x6E\x69\x74","\x23\x64\x74\x2D\x64\x65\x67","\x23\x61\x31\x64\x65\x67","\x23\x61\x31\x66\x74","\x31","\x73\x68\x6F\x77","\x44\x6F\x77\x6E\x74\x69\x6C\x74\x20\x41\x6E\x67\x6C\x65","\x74\x65\x78\x74","\x23\x61\x31\x20\x6C\x61\x62\x65\x6C","\x52\x65\x63\x65\x69\x76\x65\x72\x20\x44\x69\x73\x74\x61\x6E\x63\x65","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x68\x74","\x23\x68\x72","\x23\x64\x74","\x23\x62\x77","\x23\x68\x74\x2D\x75\x6E\x69\x74","\x23\x68\x72\x2D\x75\x6E\x69\x74","\x61\x74\x61\x6E","\x50\x49","\x74\x61\x6E","\x74\x6F\x46\x69\x78\x65\x64","\x23\x64\x61","\x61\x62\x73","\x23\x69\x63\x72","\x23\x6F\x63\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0xb7e7x1){_0xc357[0];function _0xb7e7x2(){var _0xb7e7x2=_0xb7e7x1(_0xc357[2])[_0xc357[1]]();_0xb7e7x1(_0xc357[4])[_0xc357[3]](),_0xb7e7x1(_0xc357[5])[_0xc357[3]](),_0xb7e7x1(_0xc357[6])[_0xc357[3]](),_0xb7e7x1(_0xc357[7])[_0xc357[3]](),_0xc357[8]== _0xb7e7x2?(_0xb7e7x1(_0xc357[4])[_0xc357[9]](),_0xb7e7x1(_0xc357[6])[_0xc357[9]](),_0xb7e7x1(_0xc357[12])[_0xc357[11]](_0xc357[10])):(_0xb7e7x1(_0xc357[5])[_0xc357[9]](),_0xb7e7x1(_0xc357[7])[_0xc357[9]](),_0xb7e7x1(_0xc357[12])[_0xc357[11]](_0xc357[13]))}function _0xb7e7x3(){_0xb7e7x1(_0xc357[22])[_0xc357[21]](function(){_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[15]](_0xc357[14]),_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[19]](_0xc357[18]),_0xb7e7x1(this)[_0xc357[1]](_0xc357[20])})}function _0xb7e7x4(){_0xb7e7x1(_0xc357[22])[_0xc357[21]](function(){_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[15]](_0xc357[18]),_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[19]](_0xc357[14])})}function _0xb7e7x5(_0xb7e7x1){return _0xb7e7x1* (180/ 3.1416)}var _0xb7e7x6,_0xb7e7x7=_0xb7e7x1(_0xc357[23]);_0xb7e7x1(_0xc357[28])[_0xc357[29]](function(){_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[15]](_0xc357[24]),_0xb7e7x3(),_0xb7e7x7[_0xc357[26]](_0xc357[25],!1),_0xb7e7x1[_0xc357[27]](_0xb7e7x1(this)[_0xc357[1]]())=== !1?(_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[19]](_0xc357[24]),_0xb7e7x7[_0xc357[26]](_0xc357[25],!1)):_0xb7e7x1(this)[_0xc357[17]](_0xc357[16])[_0xc357[15]](_0xc357[24]),_0xb7e7x6= 0,_0xb7e7x1(_0xc357[28])[_0xc357[21]](function(){_0xc357[20]!= _0xb7e7x1(this)[_0xc357[1]]()&& _0xb7e7x1[_0xc357[27]](_0xb7e7x1(this)[_0xc357[1]]())!== !1|| _0xb7e7x6++}),_0xb7e7x6> 0&& _0xb7e7x7[_0xc357[26]](_0xc357[25],!0)}),_0xb7e7x7[_0xc357[46]](_0xc357[30],function(_0xb7e7x2){_0xb7e7x2[_0xc357[31]]();var _0xb7e7x3,_0xb7e7x6,_0xb7e7x7,_0xb7e7x8,_0xb7e7x9,_0xb7e7xa,_0xb7e7xb,_0xb7e7xc;if(_0xb7e7x3= _0xb7e7x1(_0xc357[32])[_0xc357[1]](),_0xb7e7x6= _0xb7e7x1(_0xc357[33])[_0xc357[1]](),_0xb7e7x7= _0xb7e7x1(_0xc357[34])[_0xc357[1]](),_0xb7e7x8= _0xb7e7x1(_0xc357[35])[_0xc357[1]](),_0xb7e7x3*= _0xb7e7x1(_0xc357[36])[_0xc357[1]](),_0xb7e7x6*= _0xb7e7x1(_0xc357[37])[_0xc357[1]](),_0xc357[8]== _0xb7e7x1(_0xc357[2])[_0xc357[1]]()){_0xb7e7x7*= _0xb7e7x1(_0xc357[4])[_0xc357[1]](),_0xb7e7x9= (_0xb7e7x3- _0xb7e7x6)/ _0xb7e7x7,_0xb7e7x9= Math[_0xc357[38]](_0xb7e7x9),_0xb7e7x9= _0xb7e7x5(_0xb7e7x9),_0xb7e7xa= (_0xb7e7x3- _0xb7e7x6)/ Math[_0xc357[40]]((_0xb7e7x9+ _0xb7e7x8/ 2)* (2* Math[_0xc357[39]])/ 360),_0xb7e7xc= _0xb7e7x8/ 2;var _0xb7e7xd=2* Math[_0xc357[39]],_0xb7e7xe=_0xb7e7x9- _0xb7e7xc;_0xb7e7xb= (_0xb7e7x3- _0xb7e7x6)/ Math[_0xc357[40]](_0xb7e7xe* _0xb7e7xd/ 360)}else {_0xb7e7x9= (_0xb7e7x3- _0xb7e7x6)/ Math[_0xc357[40]](_0xb7e7x7* (2* Math[_0xc357[39]])/ 360),_0xb7e7xa= (_0xb7e7x3- _0xb7e7x6)/ Math[_0xc357[40]]((_0xb7e7x7+ _0xb7e7x8/ 2)* (2* Math[_0xc357[39]])/ 360),_0xb7e7xb= (_0xb7e7x3- _0xb7e7x6)/ Math[_0xc357[40]]((_0xb7e7x7- _0xb7e7x8/ 2)* (2* Math[_0xc357[39]])/ 360)};_0xb7e7x1(_0xc357[42])[_0xc357[1]](_0xb7e7x9[_0xc357[41]](4)),_0xb7e7x1(_0xc357[44])[_0xc357[1]](Math[_0xc357[43]](_0xb7e7xa[_0xc357[41]](3))),_0xb7e7x1(_0xc357[45])[_0xc357[1]](Math[_0xc357[43]](_0xb7e7xb[_0xc357[41]](2))),_0xb7e7x4()}),_0xb7e7x2(),_0xb7e7x1(_0xc357[2])[_0xc357[46]](_0xc357[47],function(){_0xb7e7x2(),_0xb7e7x3()}),_0xb7e7x1(_0xc357[36])[_0xc357[46]](_0xc357[47],function(){_0xb7e7x3()}),_0xb7e7x1(_0xc357[37])[_0xc357[46]](_0xc357[47],function(){_0xb7e7x3()}),_0xb7e7x1(_0xc357[4])[_0xc357[46]](_0xc357[47],function(){_0xb7e7x3()})}(jQuery)
+    </script>
+</div>
 </body>
 </html>
