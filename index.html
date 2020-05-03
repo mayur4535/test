@@ -86,11 +86,7 @@
   left: 485px;
   background: transparent;
   border-radius: 50%;
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 20px;
-  width: 100px;
-  height: 50px;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 1), inset 0px 0px 5px rgba(0, 0, 0, 0.9);
   cursor: pointer;
 }
 
@@ -140,10 +136,10 @@
 
 .circPH {
   position: absolute;
-  height: 80px;
-  width: 80px;
-  top: 71px;
-  left: 702px;
+  height: 40px;
+  width: 40px;
+  top: 90px;
+  left: 600px;
   border-radius: 75px;
   cursor: pointer;
   animation-duration: 0.5s;
@@ -164,10 +160,10 @@
 
 .miniKnobPosH {
   position: absolute;
-  height: 80px;
-  width: 80px;
-  top: 50px;
-  left: 575px;
+  height: 40px;
+  width: 40px;
+  top: 90px;
+  left: 600px;
   border-radius: 75px;
   background: #ddd;
   cursor: pointer;
@@ -177,7 +173,7 @@
 
 #MKLabelP {
   position: absolute;
-  left: 40px;
+  left: -3px;
   top: -20px;
   font-size: 14px;
   white-space: nowrap;
@@ -186,8 +182,8 @@
 
 .arrowsH {
   position: absolute;
-  top: 160px;
-  left: 723px;
+  top: 140px;
+  left: 602px;
 }
 
 .arrowLH {
@@ -215,15 +211,15 @@
 .arrowsV {
   position: absolute;
   top: 249px;
-  left: 710px;
+  left: 590px;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
 }
 
 .arrowLV {
   position: absolute;
-  top: 25px;
-  left: -20px;
+  top: 0px;
+  left: 0px;
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
@@ -233,8 +229,8 @@
 
 .arrowRV {
   position: absolute;
-  top: 25px;
-  left: 10px;
+  top: 0px;
+  left: 24px;
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
@@ -244,10 +240,10 @@
 
 .circPV {
   position: absolute;
-  height: 80px;
-  width: 80px;
-  top: 205px;
-  left: 700px;
+  height: 40px;
+  width: 40px;
+  top: 245px;
+  left: 600px;
   border-radius: 75px;
   cursor: pointer;
   animation-duration: 0.5s;
@@ -268,10 +264,10 @@
 
 .miniKnobPosV {
   position: absolute;
-  height: 80px;
-  width: 80px;
-  top: 205px;
-  left: 700px;
+  height: 40px;
+  width: 40px;
+  top: 245px;
+  left: 600px;
   border-radius: 75px;
   background: #ddd;
   cursor: pointer;
@@ -476,7 +472,7 @@
 .circT {
   position: absolute;
   top: 60px;
-  left: 900px;
+  left: 700px;
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -487,7 +483,7 @@
 .KnobT {
   position: absolute;
   top: 60px;
-  left: 900px;
+  left: 700px;
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -504,7 +500,7 @@
 
 .RLed {
   position: absolute;
-  height: 50px;
+  height: 12px;
   width: 6px;
   border-radius: 3px;
   top: 3px;
@@ -514,17 +510,6 @@
   cursor: pointer;
 }
 
-.RLed1 {
-  position: absolute;
-  height: 20px;
-  width: 6px;
-  border-radius: 3px;
-  top: 3px;
-  left: 38px;
-  background: #339;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0, 0, 0, 0.9);
-  cursor: pointer;
-}
 
 /*VoltageDiv Knob */
 
@@ -638,11 +623,11 @@
 
 .CaseFrame {
   position: absolute;
-  left: 45%;
+  left: 50%;
   margin-left: -425px;
   top: 22px;
   height: 420px;
-  width: 1000px;
+  width: 850px;
   background: #ddd;
   border-radius: 15px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 1), inset 0px 0px 10px rgba(0, 0, 0, 0.9);
@@ -995,7 +980,7 @@
 <div class="SwitchPlug"></div>
 </div>
 <div class="miniKnobPosH">
-<svg class="KnobHandle" viewBox="0 0 225 228" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+<svg class="KnobHandle" viewBox="0 0 225 228" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
 <g>
 <ellipse ry="100" rx="100" id="svg_7" cy="113" cx="113" stroke-width="0" stroke="#dbdb23" fill="#bfbfbf" />
 <line stroke-width="10" stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="213" x2="113" y1="13" x1="113" fill="none" stroke="#666" />
@@ -1007,10 +992,8 @@
 <ellipse ry="85" rx="85" id="svg_1" cy="113" cx="113" stroke-width="0" stroke="#dbdb23" fill="#bfbfbf" />
 <ellipse ry="65" rx="65" id="svg_1" cy="113" cx="113" stroke-width="0" stroke="#dbdb23" fill="#CCC" />
 </g>
-</svg><div class="RLed1"></div>
+</svg>
 </div>
-</div>
-
 <div class="circPH">
 <span class="LabelText" id="MKLabelP">X-Pos.</span>
 </div>
@@ -1019,7 +1002,7 @@
 <div class="arrowRH"></div>
 </div>
 <div class="miniKnobPosV">
-<svg class="KnobHandle" viewBox="0 0 225 228" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+<svg class="KnobHandle" viewBox="0 0 225 228" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
 <g>
 <ellipse ry="100" rx="100" id="svg_7" cy="113" cx="113" stroke-width="0" stroke="#dbdb23" fill="#bfbfbf" />
 <line stroke-width="10" stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="213" x2="113" y1="13" x1="113" fill="none" stroke="#666" />
@@ -1031,8 +1014,7 @@
 <ellipse ry="85" rx="85" id="svg_1" cy="113" cx="113" stroke-width="0" stroke="#dbdb23" fill="#bfbfbf" />
 <ellipse ry="65" rx="65" id="svg_1" cy="113" cx="113" stroke-width="0" stroke="#dbdb23" fill="#CCC" />
 </g>
-</svg><div class="RLed1"></div>
-</div>
+</svg>
 </div>
 <div class="circPV">
 <span class="LabelText" id="MKLabelP">Y-Pos.</span>
@@ -2300,4 +2282,3 @@ $(".Switch").click(function (e) {
     </script>
 </body>
 </html>
- 
