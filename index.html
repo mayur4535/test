@@ -57,48 +57,87 @@ input[type=checkbox]{
   }
 </style>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<div class="container-fluid">
-<form id="tool-form">
+<div class="mx-4">
+<div class="bootstrap3-legacy">
+<form id="tool">
 
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:60;" >Input Select</label><font face="Arial" size="6"> (C/R) </font><input type="number" id="inp"  class="intro"  style="position: absolute;   text-align:center;width:350; right: 145px;"class="form-control" type="text" /><select style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;  width:135px;" class="form-control" id="inp-unit">
 
-<option value="1">(C)&nbsp;&nbsp;&nbsp;Capacitance In pF</option>
-<option value="2">(R)&nbsp;&nbsp;&nbsp;Reactance</option>
-</select>
-</div>
-</div></div>
-<h1 style="font-size:50;"></h1>
 <div class="row">
-
-
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
 <div class="form-group">
 
-
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:60;" >Frequency</label><font face="Arial" size="6">  </font><input type="number" id="fr"  class="intro"  style="position: absolute;   width:350; text-align:center;right: 145px;"class="form-control"  /><select style="padding: 5px ;  position: absolute;right: 1px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0;  width:135px;" class="form-control" id="fr-unit">
-<option value="1">GHz GigaHertz </option>
-<option value="2">MHz MegaHertz </option>
-</select>
 </div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<label for="r2" style="font-size:50;" >In Dia <font face="Arial" size="8">(Conductor ID) </font></label><input type="number" id="d1"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 140px;"class="form-control"  />
+<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:125px;" class="form-control" id="d1_unit">
+<option selected="selected" value="0.001">mil</option>
+<option value="0.3937008">cm</option>
+<option value="0.03937008">mm</option>
+<option value="0.00003937008">um</option>
+<option value="1">in</option>
+</select>
 </div>
 
 </div>
 </div><h1 style="font-size:50;"></h1>
-</form></fieldset>
-
-<div class="col-sm-4">
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
 <div class="form-group">
-<h1 style="font-size:50;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><input id="calculate" class="btn btn-theme" type="button" value="Calculate" disabled="disabled" style="background-color: #167A04 ;
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<label for="r2" style="font-size:50;" >In Dia <font face="Arial" size="8">(Surface Shield ID) </font></label><input type="number" id="d2"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 140px;"class="form-control"  />
+<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:125px;" class="form-control" id="d2_unit">
+<option selected="selected" value="0.001">mil</option>
+<option value="0.3937008">cm</option>
+<option value="0.03937008">mm</option>
+<option value="0.00003937008">um</option>
+<option value="1">inch</option>
+</select>
+</div>
+<div class="col-sm-4 col-xs-4">
+
+</div>
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+
+<label for="r2" style="font-size:50;" >Dielectric</label><font face="Arial" size="8"> (Substrate) </font><input type="number" id="er"  class="intro"  style="position: absolute;   text-align
+:center;width:430; right: 10px;"class="form-control" type="text" />
+
+</div>
+
+</div>
+</div></form></fieldset>
+
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-4">&nbsp;</div>
+<div class="col-sm-4">
+<fieldset><legend><div colspan="2" align="center" height="19"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate" " style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -112,22 +151,43 @@ input[type=checkbox]{
   cursor: pointer;">
 </div></legend></fieldset>
 
+
+
+    
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
-<div id="answer-fields">
-<div class="row">
-<div class="col-sm-12 col-xs-12">
 
-<div class='col-sm-4 col-xs-12'>
+<div class="row clearfix">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
 <div class="form-group">
 
 </div>
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Capacitance</label><input  id="a1"  class="intro"  style="position: absolute;   text-align:center; width:300; right: 125px;"class="form-control" type="text" /><label id="a1deg" align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">pF</label>
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:50;" >Impedance</label><input  id="tool_output1"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;"><b>&Omega;</b></label>
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+
+</div>
+</div>
+<div class="row clearfix">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:50;" >Delay</label><font face="Arial" size="8"> (Inch) </font><input  id="tool_output2"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">ns</label>
 
 </div>
 </div>
@@ -135,15 +195,17 @@ input[type=checkbox]{
 
 </div>
 </div><h1 style="font-size:50;"></h1>
+<div class="row clearfix">
 <div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
- <div class="form-group">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
 </div>
 </div>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Reactance</label><input  id="a2"  class="intro"  style="position: absolute;   text-align:center;width:300; right: 125px;"class="form-control" type="text" /><label id="a1deg" align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;"><b>&Omega;</b></label>
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:50;" >Inductance</label><font face="Arial" size="8"> (per Inch) </font><input  id="tool_output3"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">nH</label>
 
 </div>
 </div>
@@ -151,29 +213,33 @@ input[type=checkbox]{
 
 </div>
 </div>
+<div class="row clearfix">
 <div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
+<div class="col-sm-4 col-xs-12">
 <div class="form-group">
 
 </div>
 </div><h1 style="font-size:50;"></h1>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Admittance</label><input  id="a3"  class="intro"  style="position: absolute;   text-align:center;width:300; right: 125px;"class="form-control" type="text" /><label id="a1deg" align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">S</label>
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:50;" >Capacitance</label><font face="Arial" size="8"> (per Inch) </font><input  id="tool_output4"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 125px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">pF</label>
 
 </div>
 </div>
 <div class="col-sm-4 col-xs-4">
 
-</div>
-</div>
-</div>
 </div>
 </div>
 <script type="text/javascript">
-var _0x3786=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x69\x6E\x70","\x23\x66\x72","\x32","\x23\x66\x72\x2D\x75\x6E\x69\x74","\x31","\x23\x69\x6E\x70\x2D\x75\x6E\x69\x74","\x50\x49","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x31","\x23\x61\x32","\x23\x61\x33","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0xddf8x1){_0x3786[0];function _0xddf8x2(){_0xddf8x1(_0x3786[10])[_0x3786[9]](function(){_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[2]](_0x3786[1]),_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[6]](_0x3786[5]),_0xddf8x1(this)[_0x3786[8]](_0x3786[7])})}function _0xddf8x3(){_0xddf8x1(_0x3786[10])[_0x3786[9]](function(){_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[2]](_0x3786[5]),_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[6]](_0x3786[1])})}var _0xddf8x4,_0xddf8x5=_0xddf8x1(_0x3786[11]);_0xddf8x1(_0x3786[16])[_0x3786[17]](function(){_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[2]](_0x3786[12]),_0xddf8x2(),_0xddf8x5[_0x3786[14]](_0x3786[13],!1),_0xddf8x1[_0x3786[15]](_0xddf8x1(this)[_0x3786[8]]())=== !1?(_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[6]](_0x3786[12]),_0xddf8x5[_0x3786[14]](_0x3786[13],!1)):_0xddf8x1(this)[_0x3786[4]](_0x3786[3])[_0x3786[2]](_0x3786[12]),_0xddf8x4= 0,_0xddf8x1(_0x3786[16])[_0x3786[9]](function(){_0x3786[7]!= _0xddf8x1(this)[_0x3786[8]]()&& _0xddf8x1[_0x3786[15]](_0xddf8x1(this)[_0x3786[8]]())!== !1|| _0xddf8x4++}),_0xddf8x4> 0&& _0xddf8x5[_0x3786[14]](_0x3786[13],!0)}),_0xddf8x5[_0x3786[31]](_0x3786[18],function(_0xddf8x2){_0xddf8x2[_0x3786[19]]();var _0xddf8x4,_0xddf8x5,_0xddf8x6,_0xddf8x7,_0xddf8x8;_0xddf8x7= parseFloat(_0xddf8x1(_0x3786[20])[_0x3786[8]]()),_0xddf8x8= parseFloat(_0xddf8x1(_0x3786[21])[_0x3786[8]]()),_0x3786[22]== _0xddf8x1(_0x3786[23])[_0x3786[8]]()&& (_0xddf8x8/= 1e3),_0x3786[24]== _0xddf8x1(_0x3786[25])[_0x3786[8]]()?(_0xddf8x4= _0xddf8x7,_0xddf8x5= 1e3/ (2* Math[_0x3786[26]]* _0xddf8x8* _0xddf8x4),_0xddf8x6= 1/ _0xddf8x5):(_0xddf8x5= _0xddf8x7,_0xddf8x4= 1e3/ (2* Math[_0x3786[26]]* _0xddf8x8* _0xddf8x5),_0xddf8x6= 1/ _0xddf8x5),_0xddf8x1(_0x3786[28])[_0x3786[8]](parseFloat(_0xddf8x4)[_0x3786[27]](4)),_0xddf8x1(_0x3786[29])[_0x3786[8]](parseFloat(_0xddf8x5)[_0x3786[27]](4)),_0xddf8x1(_0x3786[30])[_0x3786[8]](parseFloat(_0xddf8x6)[_0x3786[27]](4)),_0xddf8x3()}),_0xddf8x1(_0x3786[23])[_0x3786[31]](_0x3786[32],function(){_0xddf8x2()}),_0xddf8x1(_0x3786[25])[_0x3786[31]](_0x3786[32],function(){_0xddf8x2()})}(jQuery)
-    </script></p>
-<p>
+var _0x2815=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x64\x31","\x23\x64\x31\x5F\x75\x6E\x69\x74","\x23\x64\x32","\x23\x64\x32\x5F\x75\x6E\x69\x74","\x23\x65\x72","\x63\x6F\x61\x78\x5F\x63\x61\x6C\x63","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x7A\x6F","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x64\x65\x6C\x61\x79","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x32","\x63\x61\x70","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x34","\x69\x6E\x64","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x33","\x73\x71\x72\x74","\x6C\x6F\x67","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x6F\x6E"];!function(_0x3723x1){_0x2815[0];var _0x3723x2={calculate:function(){var _0x3723x3=parseFloat(_0x3723x1(_0x2815[2])[_0x2815[1]]())* _0x3723x1(_0x2815[3])[_0x2815[1]](),_0x3723x4=parseFloat(_0x3723x1(_0x2815[4])[_0x2815[1]]())* _0x3723x1(_0x2815[5])[_0x2815[1]](),_0x3723x5=parseFloat(_0x3723x1(_0x2815[6])[_0x2815[1]]()),_0x3723x6=_0x3723x2[_0x2815[7]](_0x3723x3,_0x3723x4,_0x3723x5);_0x3723x1(_0x2815[10])[_0x2815[1]](_0x3723x6[_0x2815[9]][_0x2815[8]](3)),_0x3723x1(_0x2815[12])[_0x2815[1]](_0x3723x6[_0x2815[11]][_0x2815[8]](3)),_0x3723x1(_0x2815[14])[_0x2815[1]](_0x3723x6[_0x2815[13]][_0x2815[8]](3)),_0x3723x1(_0x2815[16])[_0x2815[1]](_0x3723x6[_0x2815[15]][_0x2815[8]](3))},coax_calc:function(_0x3723x1,_0x3723x2,_0x3723x3){var _0x3723x4=60/ Math[_0x2815[17]](_0x3723x3)* Math[_0x2815[18]](_0x3723x2/ _0x3723x1),_0x3723x5=8.472e-11* Math[_0x2815[17]](_0x3723x3)/ 1e-9,_0x3723x6=5.08* Math[_0x2815[18]](_0x3723x2/ _0x3723x1),_0x3723x7=1.41/ Math[_0x2815[18]](_0x3723x2/ _0x3723x1);return {zo:_0x3723x4,delay:_0x3723x5,ind:_0x3723x6,cap:_0x3723x7}}};_0x3723x1(_0x2815[21])[_0x2815[26]](function(){var _0x3723x2=!1;_0x3723x1(_0x2815[21])[_0x2815[20]](function(){_0x2815[19]== _0x3723x1(this)[_0x2815[1]]()&& (_0x3723x2=  !0)}),_0x3723x2?_0x3723x1(_0x2815[24])[_0x2815[23]](_0x2815[22],_0x2815[22]):_0x3723x1(_0x2815[24])[_0x2815[25]](_0x2815[22])}),_0x3723x1(_0x2815[24])[_0x2815[30]](_0x2815[27],function(_0x3723x1){_0x3723x1[_0x2815[28]](),_0x3723x2[_0x2815[29]]()})}(jQuery)
+</script>
 </div>
-</body>
-</html>
+</div>
+<script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#tool_submit').on('click',function () {
+                            ga('send', 'event', 'calc-use', 'https://www.allaboutcircuits.com/tools/coax-impedance-calculator', 'https://www.allaboutcircuits.com/tools/coax-impedance-calculator');
+                        });
+                    });
+                </script>
