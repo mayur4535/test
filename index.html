@@ -1,5 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -54,99 +56,68 @@ input[type=checkbox]{
    
   }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+ 
 <article>
-
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 <div class="container-fluid">
 
+<p><div class="container-fluid">
+<form id="tool-form">
+
 <div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
 </div>
 </div>
-<div class="col-sm-4 form-group">
-<label for="r2" style="font-size:50;" >LC Pairs No<font face="Arial" size="6"> (Max 9) </font></label><input type="number" max="9" min="1" name="n" size="12" id="n"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control"  />
-
-</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:70;" >Attenuation</label><input type="number" id="att"  class="intro"  style="position: absolute;   text-align:center;width:300; right: 125px;"class="form-control"  /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">dB</label>
 
 </div>
 </div><h1 style="font-size:50;"></h1>
+<div class="col-sm-4 col-xs-4">
+
+</div>
+</div>
+</div>
 <div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
 </div>
 </div>
-<div class="col-sm-4 form-group">
-<label for="r2" style="font-size:50;" >Cut off frequency<font face="Arial" size="6"> </font></label><input type="number" name="c" size="12" id="c"  class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control"  />
-<label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">MH<sub>z</label>
-
-</div>
-
-</div>
-</div><h1 style="font-size:50;"></h1>
-<div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">
+<div class="col-sm-4 col-xs-8">
 <div class="form-group">
+<label for="r2" style="font-size:70;" >Impedance</label><input type="number" id="imp"  class="intro"  style="position: absolute;   text-align:center;width:300; right: 125px;"class="form-control"  /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;"><b>&Omega;</label>
+
 
 </div>
 </div>
-<div class="col-sm-4 form-group">
-<label for="r2" style="font-size:50;" >Passband<font face="Arial" size="6"> </font></label><input type="number"  size="12" id="bw"  name="bw"class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control"  />
-<label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">MH<sub>z</label>
-
-</div>
-
-</div>
-</div><h1 style="font-size:50;"></h1>
-<div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group">
+<div class="col-sm-4 col-xs-4">
 
 </div>
 </div>
-<div class="col-sm-4 form-group">
-<label for="r2" style="font-size:50;" >Impedance<font face="Arial" size="6"> </font></label><input type="number"  size="12" id="z"  name="z"class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control"  />
-<label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">Z</label>
-
 </div>
-
-</div>
-</div><h1 style="font-size:50;"></h1>
-<div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 form-group">
-<label for="r2" style="font-size:50;" >Ripple<font face="Arial" size="6"> </font></label><input type="number" size="12" id="r"  name="r" class="intro"  style="position: absolute;   width:300; right: 125px;"class="form-control"  />
-<label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;">Z</label>
-
-</div>
-
-</div>
-</div>
-<h1 style="font-size:50;"></h1>
 </form></fieldset>
-<div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4">&nbsp;</div>
+
+
+
 <div class="col-sm-4">
-<fieldset><legend><div colspan="2" align="center" height="19"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate"  style="background-color: #167A04 ;
+<div class="form-group"><h1 style="font-size:50;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input id="calculate" class="btn btn-theme" type="button" value="Calculate" disabled="disabled" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -163,362 +134,52 @@ input[type=checkbox]{
 </div>
 </div>
 
-
-</div>
-</div>
-</form>
-
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
 
-<div id="resultsType1" class="liquid">
+
+<div id="answer-fields">
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
 
 </div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:70;" >R<sub>1</sub></label><input type="text" id="r1"  class="intro"  style="position: absolute;   text-align:center;width:300; right: 125px;"class="form-control"  /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;"><b>&Omega;</label>
 
- <style>
-.hh{height:50px; text-align:center;width:100%; font-size:40px; padding: 5px ;border:0;    
-    
-  }
-</style> 
- <table  width="100%" class="tools-details">
-        <table style=height="573" width="100%"" border="2">
-<tbody>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
 
-<tr>
-<td COLSPAN="4"align="center" <b><font face="Arial"font size="80" >Type-1</font></b></td>
-</tr>
+</div>
+</div>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
 
-<tr>
-<td COLSPAN="2"align="center" <b><font face="Arial"font size="80" >nH</font></b></td>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:70;" >R<sub>2</sub></label><input type="text" id="r2"  class="intro"  style="position: absolute;   text-align:center;width:300; right: 125px;"class="form-control"  /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:96px;"><b>&Omega;</label>
 
-<td COLSPAN="2"align="center" <b><font face="Arial"font size="80" >pF</font></b></td>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
 
-</tr>
-
-<tr>
-<td align="center" ><font color="red" size="70"   face="Arial"><strong>L1</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x1"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C1</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x11" size="5" type="text" class="hh" id="x11"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L2</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x2"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C2</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x12"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L3</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x3"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C3</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x13"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L4</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x4"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C4</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x14"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L5</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x5"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C5</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x15"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L6</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x6"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C6</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x16"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L7</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x7"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C7</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x17"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L8</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x8"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C8</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x18"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L9</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x9"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C9</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="x1" size="5" type="text" class="hh" id="x19"></div>
-</div></div></div></td>
-</tr>
-
-</tbody>
-</table>
-
-
-
-
-
-<hr>
-
-<div id="resultsType2" class="liquid">
-
-
- <table  width="100%" class="tools-details">
-        <table style=height="573" width="100%"" border="2">
-<tbody>
-
-<tr>
-<td COLSPAN="4"align="center" <b><font face="Arial"font size="80" >Type-2</font></b></td>
-</tr>
-
-<tr>
-<td COLSPAN="2"align="center" <b><font face="Arial"font size="80" >nH</font></b></td>
-
-<td COLSPAN="2"align="center" <b><font face="Arial"font size="80" >pF</font></b></td>
-
-</tr>
-
-<tr>
-<td align="center" ><font color="red" size="70"   face="Arial"><strong>L1</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y1" size="5" type="text" class="hh" id="y1"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C1</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y11" size="5" type="text" class="hh" id="y11"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L2</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y2"" size="5" type="text" class="hh" id="y2"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C2</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y12" size="5" type="text" class="hh" id="y12"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L3</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y3" size="5" type="text" class="hh" id="y3"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C3</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y13" size="5" type="text" class="hh" id="y13"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L4</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y4" size="5" type="text" class="hh" id="y4"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C4</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y14" size="5" type="text" class="hh" id="y14"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L5</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y5" size="5" type="text" class="hh" id="y5"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C5</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y15" size="5" type="text" class="hh" id="y15"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L6</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y6" size="5" type="text" class="hh" id="y6"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C6</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y16" size="5" type="text" class="hh" id="y16"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L7</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y7" size="5" type="text" class="hh" id="y7"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C7</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y17" size="5" type="text" class="hh" id="y17"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L8</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y8" size="5" type="text" class="hh" id="y8"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C8</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y18" size="5" type="text" class="hh" id="y18"></div>
-</div></div></div></td>
-</tr>
-<tr>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>L9</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y9" size="5" type="text" class="hh" id="y9"></div>
-</div></div></div></td>
-<td align="center" ><font color="red" size="70"  face="Arial"><strong>C9</font></td>
-<td><div class="row">
-<div class="col-sm-12">
-<div class="col-sm-6">
-
-<div class="col-sm-10"><input name="y19" size="5" type="text" class="hh" id="y19"></div>
-</div></div></div></td>
-</tr>
-
-</tbody>
-</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 <script type="text/javascript">
-function cal(){with(Math){var x,n=eval($("#n").val()),c=eval($("#c").val()),bw=eval($("#bw").val()),r=eval($("#r").val()),z=eval($("#z").val());(1>n||""==n)&&(n=1,$("#n").val(n)),n>9&&(n=9,$("#n").val(n));var am=2*round((n+.1)/2)-1-n;0>am&&(n+=1,$("#n").val(n)),(1>c||""==c)&&(c=1e3,$("#c").val(c)),(1>bw||""==bw)&&(bw=1,$("#bw").val(bw)),(.01>r||""==r)&&(r=.01,$("#r").val(r)),(0>=z||""==z)&&(z=50,$("#z").val(z));for(var w=2*PI*c/1e3,wbw=2*PI*bw/1e3,w2=pow(w,2),rr=r/17.37,e2x=exp(2*rr),coth=(e2x+1)/(e2x-1),bt=log(coth),btn=bt/(2*n),gn=(exp(btn)-exp(-btn))/2,a=new MakeArray(10),b=new MakeArray(10),g=new MakeArray(10),srl=new MakeArray(10),src=new MakeArray(10),shl=new MakeArray(10),shc=new MakeArray(10),x=1;n>=x;x++){var k=(2*x-1)*PI/(2*n);a[x]=sin(k);var k2=PI*x/n,k3=sin(k2);b[x]=pow(gn,2)+pow(k3,2)}g[1]=2*a[1]/gn;for(var x=2;n>=x;x++)g[x]=4*a[x-1]*a[x]/(b[x-1]*g[x-1]);for(var x=1;n>=x;x++)srl[x]=g[x]*z/wbw,src[x]=1e3*wbw/(g[x]*z*w2),shl[x]=wbw*z/(g[x]*w2),shc[x]=1e3*g[x]/(wbw*z);$("#x1").val(shl[1]),$("#x2").val(srl[2]),$("#x3").val(shl[3]),$("#x4").val(srl[4]),$("#x5").val(shl[5]),$("#x6").val(srl[6]),$("#x7").val(shl[7]),$("#x8").val(srl[8]),$("#x9").val(shl[9]),$("#x11").val(shc[1]),$("#x12").val(src[2]),$("#x13").val(shc[3]),$("#x14").val(src[4]),$("#x15").val(shc[5]),$("#x16").val(src[6]),$("#x17").val(shc[7]),$("#x18").val(src[8]),$("#x19").val(shc[9]),$("#y1").val(srl[1]),$("#y2").val(shl[2]),$("#y3").val(srl[3]),$("#y4").val(shl[4]),$("#y5").val(srl[5]),$("#y6").val(shl[6]),$("#y7").val(srl[7]),$("#y8").val(shl[8]),$("#y9").val(srl[9]),$("#y11").val(src[1]),$("#y12").val(shc[2]),$("#y13").val(src[3]),$("#y14").val(shc[4]),$("#y15").val(src[5]),$("#y16").val(shc[6]),$("#y17").val(src[7]),$("#y18").val(shc[8]),$("#y19").val(src[9])}}!function($){"use strict";var app={calculate:function(){var x,n=eval($("#n").val()),c=eval($("#c").val()),bw=eval($("#bw").val()),r=eval($("#r").val()),z=eval($("#z").val());(1>n||""==n)&&(n=1,$("#n").val(n)),n>9&&(n=9,$("#n").val(n));var am=2*Math.round((n+.1)/2)-1-n;0>am&&(n+=1,$("#n").val(n)),(1>c||""==c)&&(c=1e3,$("#c").val(c)),(1>bw||""==bw)&&(bw=1,$("#bw").val(bw)),(.01>r||""==r)&&(r=.01,$("#r").val(r)),(0>=z||""==z)&&(z=50,$("#z").val(z));for(var w=2*Math.PI*c/1e3,wbw=2*Math.PI*bw/1e3,w2=Math.pow(w,2),rr=r/17.37,e2x=Math.exp(2*rr),coth=(e2x+1)/(e2x-1),bt=Math.log(coth),btn=bt/(2*n),gn=(Math.exp(btn)-Math.exp(-btn))/2,a=new app.MakeArray(10),b=new app.MakeArray(10),g=new app.MakeArray(10),srl=new app.MakeArray(10),src=new app.MakeArray(10),shl=new app.MakeArray(10),shc=new app.MakeArray(10),x=1;n>=x;x++){var k=(2*x-1)*Math.PI/(2*n);a[x]=Math.sin(k);var k2=Math.PI*x/n,k3=Math.sin(k2);b[x]=Math.pow(gn,2)+Math.pow(k3,2)}g[1]=2*a[1]/gn;for(var x=2;n>=x;x++)g[x]=4*a[x-1]*a[x]/(b[x-1]*g[x-1]);for(var x=1;n>=x;x++)srl[x]=g[x]*z/wbw,src[x]=1e3*wbw/(g[x]*z*w2),shl[x]=wbw*z/(g[x]*w2),shc[x]=1e3*g[x]/(wbw*z);$("#x1").val(shl[1]),$("#x2").val(srl[2]),$("#x3").val(shl[3]),$("#x4").val(srl[4]),$("#x5").val(shl[5]),$("#x6").val(srl[6]),$("#x7").val(shl[7]),$("#x8").val(srl[8]),$("#x9").val(shl[9]),$("#x11").val(shc[1]),$("#x12").val(src[2]),$("#x13").val(shc[3]),$("#x14").val(src[4]),$("#x15").val(shc[5]),$("#x16").val(src[6]),$("#x17").val(shc[7]),$("#x18").val(src[8]),$("#x19").val(shc[9]),$("#y1").val(srl[1]),$("#y2").val(shl[2]),$("#y3").val(srl[3]),$("#y4").val(shl[4]),$("#y5").val(srl[5]),$("#y6").val(shl[6]),$("#y7").val(srl[7]),$("#y8").val(shl[8]),$("#y9").val(srl[9]),$("#y11").val(src[1]),$("#y12").val(shc[2]),$("#y13").val(src[3]),$("#y14").val(shc[4]),$("#y15").val(src[5]),$("#y16").val(shc[6]),$("#y17").val(src[7]),$("#y18").val(shc[8]),$("#y19").val(src[9])},MakeArray:function(a){this.length=a;var l;for(l=1;a>=l;l++)this[l]=""}};$("#tool :input").keyup(function(){var a=!1;$("#tool :input").each(function(){""==$(this).val()&&(a=!0)}),a?$("#tool_submit").attr("disabled","disabled"):$("#tool_submit").removeAttr("disabled")}),$("#wg").change(function(){var a=$("#wg").val();"x"!=a?($("#width_unit").val("in"),$("#width_unit").attr("disabled","disabled")):$("#width_unit").removeAttr("disabled")}),$("#tool_submit").on("click",function(a){a.preventDefault(),app.calculate()})}(jQuery);
-</script>
+var _0x7433=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x61\x74\x74","\x23\x69\x6D\x70","\x70\x6F\x77","\x74\x6F\x46\x69\x78\x65\x64","\x23\x72\x32","\x23\x72\x31","\x6F\x6E"];!function(_0x2e2cx1){_0x7433[0];function _0x2e2cx2(){_0x2e2cx1(_0x7433[10])[_0x7433[9]](function(){_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[2]](_0x7433[1]),_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[6]](_0x7433[5]),_0x2e2cx1(this)[_0x7433[8]](_0x7433[7])})}function _0x2e2cx3(){_0x2e2cx1(_0x7433[10])[_0x7433[9]](function(){_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[2]](_0x7433[5]),_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[6]](_0x7433[1])})}var _0x2e2cx4,_0x2e2cx5=_0x2e2cx1(_0x7433[11]);_0x2e2cx1(_0x7433[16])[_0x7433[17]](function(){_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[2]](_0x7433[12]),_0x2e2cx2(),_0x2e2cx5[_0x7433[14]](_0x7433[13],!1),_0x2e2cx1[_0x7433[15]](_0x2e2cx1(this)[_0x7433[8]]())=== !1?(_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[6]](_0x7433[12]),_0x2e2cx5[_0x7433[14]](_0x7433[13],!1)):_0x2e2cx1(this)[_0x7433[4]](_0x7433[3])[_0x7433[2]](_0x7433[12]),_0x2e2cx4= 0,_0x2e2cx1(_0x7433[16])[_0x7433[9]](function(){_0x7433[7]!= _0x2e2cx1(this)[_0x7433[8]]()&& _0x2e2cx1[_0x7433[15]](_0x2e2cx1(this)[_0x7433[8]]())!== !1|| _0x2e2cx4++}),_0x2e2cx4> 0&& _0x2e2cx5[_0x7433[14]](_0x7433[13],!0)}),_0x2e2cx5[_0x7433[26]](_0x7433[18],function(_0x2e2cx2){_0x2e2cx2[_0x7433[19]]();var _0x2e2cx4,_0x2e2cx5,_0x2e2cx6,_0x2e2cx7,_0x2e2cx8;_0x2e2cx4= _0x2e2cx1(_0x7433[20])[_0x7433[8]](),_0x2e2cx5= _0x2e2cx1(_0x7433[21])[_0x7433[8]](),_0x2e2cx6= _0x2e2cx4/ 20,_0x2e2cx6= Math[_0x7433[22]](10,_0x2e2cx6)- 1,_0x2e2cx7= _0x2e2cx5* (1/ _0x2e2cx6),_0x2e2cx6= _0x2e2cx4/ 20,_0x2e2cx6= Math[_0x7433[22]](10,_0x2e2cx6)- 1,_0x2e2cx8= _0x2e2cx5* _0x2e2cx6,_0x2e2cx1(_0x7433[24])[_0x7433[8]](_0x2e2cx7[_0x7433[23]](4)),_0x2e2cx1(_0x7433[25])[_0x7433[8]](_0x2e2cx8[_0x7433[23]](4)),_0x2e2cx3()})}(jQuery)
+    </script>
 </div>
 </body>
 </html>
