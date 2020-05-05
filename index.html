@@ -1,8 +1,3 @@
-
-
-
-
-
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -82,7 +77,7 @@ input[type=checkbox]{
 <div class="form-group">
 <label for="r2" style="font-size:70;" >Distance <font face="Arial" size="6"></font></label><input type="number" id="dt"  class="intro"  style="position: absolute;   text-align
 :center;width:300; right: 140px;"class="form-control"  />
-<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:125px;" class="form-control" id="dt_unit">
+<select class="form-control" id="dt-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:125px;border-radius:4px; border:2px solid #aaa;">
 <option value="1">km&nbsp;&nbsp; Kilometers </option>
 <option value="0.001">m&nbsp;&nbsp; Meter </option>
 <option value="0.00001">cm&nbsp;&nbsp; Centimeters </option>
@@ -92,20 +87,14 @@ input[type=checkbox]{
 <option value="0.0000254">in&nbsp;&nbsp; Inches </option>
 </select>
 </div>
-</div>
-<h1 style="font-size:30;"></h1>
-
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:70;" >Frequency<font face="Arial" size="6"></font></label><input type="number" id="fr"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 140px;"class="form-control"  />
-<select style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:125px;" class="form-control" id="fr_unit">
-<option value="1">GHz Gigahertz </option>
-<option value="2">MHz Mega Hertz </option>
-</select>
-</div>
 </div><h1 style="font-size:30;"></h1>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
 
+</div>
+</div>
+</div>
+</div>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
@@ -115,9 +104,31 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
+<label for="r2" style="font-size:70;" >Frequency<font face="Arial" size="6"></font></label><input type="number" id="fr"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 140px;"class="form-control"  />
+<select class="form-control" id="fr-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:125px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">Gigahertz (GHz)</option>
+<option value="2">Mega Hertz (MHz)</option>
+</select>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:30;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
 <label for="r2" style="font-size:70;" >Gain</label><font face="Arial" size="7"> (Transmitter) </font><input  id="tg"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
-
 </div>
 </div>
 <div class="col-sm-4 col-xs-4">
@@ -136,7 +147,6 @@ input[type=checkbox]{
 <div class="form-group text-center">
 <label for="r2" style="font-size:70;" >Gain</label><font face="Arial" size="7"> (Receiver) </font><input  id="rg"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
-
 </div>
 </div>
 <div class="col-sm-4 col-xs-4">
@@ -167,7 +177,6 @@ input[type=checkbox]{
   margin: 4px 2px;
   cursor: pointer;">
 </div></legend></fieldset>
-
 </div>
 </div>
 <div class="col-sm-4">
@@ -189,11 +198,10 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:70;" >FSPL</label><font face="Arial" size="6"> (Free Space Path Loss) </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
+<label for="r2" style="font-size:70;" >Gain</label><font face="Arial" size="7"> (Receiver) </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
-
 </div>
-</div>
+</div><h1 style="font-size:30;"></h1>
 <div class="col-sm-4 col-xs-4">
 
 </div>
