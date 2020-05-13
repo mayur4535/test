@@ -193,7 +193,7 @@
 
             application.form.removeChild(application.form.getElementsByTagName("fieldset")[application.form.getElementsByTagName("fieldset").length-1]);
         },
-        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input style="position: absolute;border-radius:4px;   width:300; right: 10px;"type="text" value="" id="NF_%id%" class="nf_input"  /><input style="position: absolute;border-radius:4px;   width:300; right: 320px;"type="text" value="" id="Gain_%id%" class="gain_input" />',
+        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input style="position: absolute;border-radius:4px;   width:150; right: 30px;"type="text" value="" id="NF_%id%" class="nf_input"  /><input style="position: absolute;border-radius:4px;   width:150; right: 200px;"type="text" value="" id="Gain_%id%" class="gain_input" />',
         numRegExp : new RegExp(/^[0-9]+(\.[0-9]+)?$/),
         errorHTML : "Invalid inputs for %error_stages% please enter numerical value."
     }
@@ -204,7 +204,12 @@ window.application = application;
             
             
 </script>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
 
+
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Input</h3></div></legend>
 
                             <form method="get" action="" id="first_form" name="first_form">
                                 <select style="width:100;height:50;font-size:30;"name="num_of_stages" >
@@ -244,14 +249,9 @@ window.application = application;
                                     <option value="30" >30</option>
                                 </select>
                             </form>
-                        </h3>
-                    </div>
-
-                </div>
-                <div id="ads" >
-
-       </div>
-            </div>
+                       
+               
+           
             <div id="bottom" >
                 <div id="form" >
                     <label id="nf_title">NF (db)</label>
