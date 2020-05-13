@@ -62,8 +62,6 @@ input[type=checkbox]{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
-
-
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 <p><div class="container-fluid">
@@ -78,57 +76,60 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:50;" > Input <font face="Arial" size="6"> (Amplifier Power)</font></label><input type="number" id="aip"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:60;" >Output Power<font face="Arial" size="6"> </font></label><input type="number" id="op"  class="intro"  style="position: absolute;   text-align
 :center;width:300; right: 175px;"class="form-control"  />
-<select class="form-control" id="aip-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:158px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">mW Milliwatts </option>
+<select class="form-control" id="op-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:159px;border-radius:4px; border:2px solid #aaa;">
+
+<option value="1">mW &nbsp;Milliwats </option>
 <option value="2">W	&nbsp;	&nbsp; Watt </option>
 <option value="3">dBm Decibel-milliwatt </option>
 <option value="4">dBW Decibel-watt </option>
 </select>
 </div>
 </div>
-<h1 style="font-size:50;"></h1>
+
 <div class="row">
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
 </div>
-</div>
+</div><h1 style="font-size:50;"></h1>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<label for="r2" style="font-size:50;" > Output<font face="Arial" size="5">(Amplifier Power)</font></label><input type="number" id="aop"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 175px;"class="form-control"  />
-<select class="form-control" id="aop-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:158px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">mW Milliwatts </option>
-<option value="2">W	&nbsp;	&nbsp; Watt </option>
-<option value="3">dBm Decibel-milliwatt </option>
-<option value="4">dBW Decibel-watt </option>
-</select>
+<label for="r2" style="font-size:60;" >Gain</label><font face="Arial" size="7">  </font><input  id="ga"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 175px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:68;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:143px;">linear</label>
+
 </div>
 </div>
-<h1 style="font-size:50;"></h1>
+
+</div>
+</div>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
 </div>
-</div>
+</div><h1 style="font-size:50;"></h1>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<label for="r2" style="font-size:50;" >Input <font face="Arial" size="6"> (DC Power )</font></label><input type="number" id="dc"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:60;" >Distance<font face="Arial" size="6"></font></label><input type="number" id="dt"  class="intro"  style="position: absolute;   text-align
 :center;width:300; right: 175px;"class="form-control"  />
-<select class="form-control" id="dc-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:158px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">mW Milliwatts </option>
-<option value="2">W	&nbsp;	&nbsp; Watt </option>
-<option value="3">dBm Decibel-milliwatt </option>
-<option value="4">dBW Decibel-watt </option>
+<select class="form-control" id="dt-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:155px;border-radius:4px; border:2px solid #aaa;">
+<option value="0.3048">ft	&nbsp;&nbsp;	&nbsp; Feet </option>
+<option value="1000">km	&nbsp;	&nbsp;&nbsp; Kilometers </option>
+<option value="1">m	&nbsp;	&nbsp;&nbsp;	&nbsp; Meters </option>
+<option value="0.01">cm	&nbsp;	&nbsp;&nbsp; Centimeters </option>
+<option value="1609.344">mi	&nbsp;&nbsp;	&nbsp; Miles </option>
+<option value="0.9144">yd	&nbsp;&nbsp;	&nbsp; Yards </option>
+<option value="0.0254">in	&nbsp;&nbsp;	&nbsp; Inches </option>
 </select>
 </div>
 </div>
 
+</div>
+</div>
 </form></fieldset>
 <div class="row">
 <div class="col-sm-12">
@@ -170,15 +171,25 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Efficiency</label><font face="Arial" size="7">  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">%</label>
+<label for="r2" style="font-size:60;" >Power Density</label><font face="Arial" size="7"> (Watts/m<sup>2</sup>)  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 10px;"class="form-control" type="text" />
 
 </div>
 </div>
-<h1 style="font-size:50;"></h1>
-<script type="text/javascript">
-var _0xa55d=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x31","\x34","\x70\x6F\x77","\x33","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x61\x69\x70","\x23\x61\x6F\x70","\x23\x64\x63","\x23\x61\x69\x70\x2D\x75\x6E\x69\x74","\x23\x61\x6F\x70\x2D\x75\x6E\x69\x74","\x23\x64\x63\x2D\x75\x6E\x69\x74","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x6E\x73\x77\x65\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0x8243x1){_0xa55d[0];function _0x8243x2(){_0x8243x1(_0xa55d[10])[_0xa55d[9]](function(){_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[2]](_0xa55d[1]),_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[6]](_0xa55d[5]),_0x8243x1(this)[_0xa55d[8]](_0xa55d[7])})}function _0x8243x3(){_0x8243x1(_0xa55d[10])[_0xa55d[9]](function(){_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[2]](_0xa55d[5]),_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[6]](_0xa55d[1])})}function _0x8243x4(_0x8243x1,_0x8243x2){return _0xa55d[11]== _0x8243x2?0.001* _0x8243x1:_0xa55d[12]== _0x8243x2?1* Math[_0xa55d[13]](10,_0x8243x1/ 10):_0xa55d[14]== _0x8243x2?1* Math[_0xa55d[13]](10,(_0x8243x1- 30)/ 10):_0x8243x1}var _0x8243x5,_0x8243x6=_0x8243x1(_0xa55d[15]);_0x8243x1(_0xa55d[20])[_0xa55d[21]](function(){_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[2]](_0xa55d[16]),_0x8243x2(),_0x8243x6[_0xa55d[18]](_0xa55d[17],!1),_0x8243x1[_0xa55d[19]](_0x8243x1(this)[_0xa55d[8]]())=== !1?(_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[6]](_0xa55d[16]),_0x8243x6[_0xa55d[18]](_0xa55d[17],!1)):_0x8243x1(this)[_0xa55d[4]](_0xa55d[3])[_0xa55d[2]](_0xa55d[16]),_0x8243x5= 0,_0x8243x1(_0xa55d[20])[_0xa55d[9]](function(){_0xa55d[7]!= _0x8243x1(this)[_0xa55d[8]]()&& _0x8243x1[_0xa55d[19]](_0x8243x1(this)[_0xa55d[8]]())!== !1|| _0x8243x5++}),_0x8243x5> 0&& _0x8243x6[_0xa55d[18]](_0xa55d[17],!0)}),_0x8243x6[_0xa55d[32]](_0xa55d[22],function(_0x8243x2){_0x8243x2[_0xa55d[23]]();var _0x8243x5,_0x8243x6,_0x8243x7,_0x8243x8;_0x8243x6= _0x8243x1(_0xa55d[24])[_0xa55d[8]](),_0x8243x7= _0x8243x1(_0xa55d[25])[_0xa55d[8]](),_0x8243x8= _0x8243x1(_0xa55d[26])[_0xa55d[8]](),_0x8243x6= _0x8243x4(parseFloat(_0x8243x6),_0x8243x1(_0xa55d[27])[_0xa55d[8]]()),_0x8243x7= _0x8243x4(parseFloat(_0x8243x7),_0x8243x1(_0xa55d[28])[_0xa55d[8]]()),_0x8243x8= _0x8243x4(parseFloat(_0x8243x8),_0x8243x1(_0xa55d[29])[_0xa55d[8]]()),_0x8243x5= 100* (parseFloat(_0x8243x7)- parseFloat(_0x8243x6))/ parseFloat(_0x8243x8),_0x8243x1(_0xa55d[31])[_0xa55d[8]](parseFloat(_0x8243x5)[_0xa55d[30]](4)),_0x8243x3()}),_0x8243x1(_0xa55d[27])[_0xa55d[32]](_0xa55d[33],function(){_0x8243x2()}),_0x8243x1(_0xa55d[28])[_0xa55d[32]](_0xa55d[33],function(){_0x8243x2()}),_0x8243x1(_0xa55d[29])[_0xa55d[32]](_0xa55d[33],function(){_0x8243x2()})}(jQuery)
-    </script>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var _0xe033=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x31","\x34","\x70\x6F\x77","\x33","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x6F\x70","\x23\x67\x61","\x23\x64\x74","\x23\x64\x74\x2D\x75\x6E\x69\x74","\x23\x6F\x70\x2D\x75\x6E\x69\x74","\x50\x49","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x6E\x73\x77\x65\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0x777ex1){_0xe033[0];function _0x777ex2(){_0x777ex1(_0xe033[10])[_0xe033[9]](function(){_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[1]),_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[6]](_0xe033[5]),_0x777ex1(this)[_0xe033[8]](_0xe033[7])})}function _0x777ex3(){_0x777ex1(_0xe033[10])[_0xe033[9]](function(){_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[5]),_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[6]](_0xe033[1])})}function _0x777ex4(_0x777ex1,_0x777ex2){return _0xe033[11]== _0x777ex2?0.001* _0x777ex1:_0xe033[12]== _0x777ex2?1* Math[_0xe033[13]](10,_0x777ex1/ 10):_0xe033[14]== _0x777ex2?1* Math[_0xe033[13]](10,(_0x777ex1- 30)/ 10):_0x777ex1}var _0x777ex5,_0x777ex6=_0x777ex1(_0xe033[15]);_0x777ex1(_0xe033[20])[_0xe033[21]](function(){_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[16]),_0x777ex2(),_0x777ex6[_0xe033[18]](_0xe033[17],!1),_0x777ex1[_0xe033[19]](_0x777ex1(this)[_0xe033[8]]())=== !1?(_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[6]](_0xe033[16]),_0x777ex6[_0xe033[18]](_0xe033[17],!1)):_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[16]),_0x777ex5= 0,_0x777ex1(_0xe033[20])[_0xe033[9]](function(){_0xe033[7]!= _0x777ex1(this)[_0xe033[8]]()&& _0x777ex1[_0xe033[19]](_0x777ex1(this)[_0xe033[8]]())!== !1|| _0x777ex5++}),_0x777ex5> 0&& _0x777ex6[_0xe033[18]](_0xe033[17],!0)}),_0x777ex6[_0xe033[32]](_0xe033[22],function(_0x777ex2){_0x777ex2[_0xe033[23]]();var _0x777ex5,_0x777ex6,_0x777ex7,_0x777ex8,_0x777ex9;_0x777ex6= _0x777ex1(_0xe033[24])[_0xe033[8]](),_0x777ex7= _0x777ex1(_0xe033[25])[_0xe033[8]](),_0x777ex8= _0x777ex1(_0xe033[26])[_0xe033[8]](),_0x777ex8*= parseFloat(_0x777ex1(_0xe033[27])[_0xe033[8]]()),_0x777ex6= _0x777ex4(_0x777ex6,parseFloat(_0x777ex1(_0xe033[28])[_0xe033[8]]())),_0x777ex9= Math[_0xe033[13]](_0x777ex8,2),_0x777ex5= _0x777ex6* _0x777ex7/ (4* Math[_0xe033[29]]* _0x777ex9),_0x777ex1(_0xe033[31])[_0xe033[8]](parseFloat(_0x777ex5)[_0xe033[30]](4)),_0x777ex3()}),_0x777ex1(_0xe033[27])[_0xe033[32]](_0xe033[33],function(){_0x777ex2()}),_0x777ex1(_0xe033[28])[_0xe033[32]](_0xe033[33],function(){_0x777ex2()})}(jQuery)
+    </script></p>
+<p>
+
+
 </body>
 </html>
