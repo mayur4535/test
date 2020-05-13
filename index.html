@@ -249,7 +249,7 @@ input[type=checkbox]{
 
             application.form.removeChild(application.form.getElementsByTagName("fieldset")[application.form.getElementsByTagName("fieldset").length-1]);
         },
-        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input style="position: absolute;border-radius:4px;height:70;   width:200; right: 30px;"type="text" value="" id="NF_%id%" class="nf_input"  /><input style="position: absolute;border-radius:4px;   width:200;height:70; right: 250px;"type="text" value="" id="Gain_%id%" class="gain_input" />',
+        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input style="position: absolute;border-radius:4px;font-size:50; text-align:center;   width:200; right: 30px;"type="text" value="" id="NF_%id%" class="nf_input"  /><input style="position: absolute;border-radius:4px; text-align:center;  width:200;font-size:50; right: 250px;"type="text" value="" id="Gain_%id%" class="gain_input" />',
         numRegExp : new RegExp(/^[0-9]+(\.[0-9]+)?$/),
         errorHTML : "Invalid inputs for %error_stages% please enter numerical value."
     }
@@ -268,7 +268,7 @@ window.application = application;
 <h3>Input</h3></div></legend>
 
                             <form method="get" action="" id="first_form" name="first_form">
-                                <select style="width:100;height:50;font-size:30;"name="num_of_stages" >
+                                <font face="Arial" size="6">Select number of cascaded amplifiers</font><select style=" position:absolute; right:40;width:410;border-radius:4px;border:2px solid #aaa; height:70;font-size:30;"name="num_of_stages" >
                                     <option value="2" selected="selected" >2</option>
                                     <option value="3" >3</option>
 
@@ -310,7 +310,7 @@ window.application = application;
            
             <div id="bottom" >
                 <div id="form" >
-                    <label id="nf_title">NF (db)</label>
+                    <label style="position:absolute; right:260;" id="nf_title">NF (db)</label>
                     <label style="position:absolute; right:10;" id="gain_title">Gain (db)</label>
 
                     <br clear="all" />
