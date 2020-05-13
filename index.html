@@ -192,7 +192,12 @@
 
             application.form.removeChild(application.form.getElementsByTagName("fieldset")[application.form.getElementsByTagName("fieldset").length-1]);
         },
-        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input type="text" value="" id="NF_%id%" class="nf_input"  /><input type="text" value="" id="Gain_%id%" class="gain_input" />',
+        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label>
+
+<input type="text" value="rrgr" id="NF_%id%" class="nf_input"  />
+<input type="text" value="rggr" id="Gain_%id%" class="gain_input" />',
+
+
         numRegExp : new RegExp(/^[0-9]+(\.[0-9]+)?$/),
         errorHTML : "Invalid inputs for %error_stages% please enter numerical value."
     }
@@ -221,47 +226,18 @@ window.application = application;
 
 
 
-
-{ width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  .intro:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-
-
-
-.intro {
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  .intro:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
+#form input.nf_input, #form input.gain_input {
+    border: 1px solid #636363;
+    display: block;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0 12px;
+    text-align: right;
+    width: 88px;
+   
 }
-
   
  
 
@@ -298,7 +274,7 @@ h4 span.errorResult {
 
 <div>
  <form method="get" action="" id="first_form" name="first_form">
-                                <select name="num_of_stages" >
+                                <select style="padding: 5px ;  font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"name="num_of_stages" >
                                     <option value="2" selected="selected" >2</option>
                                     <option value="3" >3</option>
 
@@ -335,9 +311,7 @@ h4 span.errorResult {
                                     <option value="30" >30</option>
                                 </select>
                             </form></div>
-
-<div id="nf_title">NF (db)</div>
-                    <div id="gain_title">Gain (db)</div>
+<label style="position: absolute; right:10;">Gain (db)</label> <label>NF (db)</label>
 
 <form name="secondForm" id="secondForm" method="get" action="" >
                     </form>                   
