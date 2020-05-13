@@ -1,3 +1,4 @@
+
 <script>
 (function(window){
     
@@ -192,12 +193,7 @@
 
             application.form.removeChild(application.form.getElementsByTagName("fieldset")[application.form.getElementsByTagName("fieldset").length-1]);
         },
-        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label>
-
-<input type="text" value="rrgr" id="NF_%id%" class="nf_input"  />
-<input type="text" value="rggr" id="Gain_%id%" class="gain_input" />',
-
-
+        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input style="position: absolute;border-radius:4px;   width:300; right: 10px;"type="text" value="" id="NF_%id%" class="nf_input"  /><input style="position: absolute;border-radius:4px;   width:300; right: 320px;"type="text" value="" id="Gain_%id%" class="gain_input" />',
         numRegExp : new RegExp(/^[0-9]+(\.[0-9]+)?$/),
         errorHTML : "Invalid inputs for %error_stages% please enter numerical value."
     }
@@ -206,75 +202,12 @@ window.application = application;
 
 })(window);
             
+            
 </script>
-<style>
 
 
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-#form input.nf_input, #form input.gain_input {
-    border: 1px solid #636363;
-    display: block;
-    font-size: 12px;
-    height: 20px;
-    line-height: 20px;
-    margin: 0;
-    padding: 0 12px;
-    text-align: right;
-    width: 88px;
-   
-}
-  
- 
-
-
-
-h4 {
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 14px;
-    margin-bottom: 15px;
-    width: 195px;
-}
-
-h4 span {
-    color: #136433;
-    float: right;
-    font-size: 18px;
-    font-weight: normal;
-}
-
-h4 span.errorResult {
-    color: red;
-}
-
-#errorBox {
-    color: red;
-    font-size: 1.0em;
-    padding: 10px 0;
-}
-</style>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<div>
- <form method="get" action="" id="first_form" name="first_form">
-                                <select style="padding: 5px ;  font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"name="num_of_stages" >
+                            <form method="get" action="" id="first_form" name="first_form">
+                                <select style="width:100;height:50;font-size:30;"name="num_of_stages" >
                                     <option value="2" selected="selected" >2</option>
                                     <option value="3" >3</option>
 
@@ -310,16 +243,28 @@ h4 span.errorResult {
                                     <option value="29" >29</option>
                                     <option value="30" >30</option>
                                 </select>
-                            </form></div>
-<label style="position: absolute; right:10;">Gain (db)</label> <label>NF (db)</label>
-
-<form name="secondForm" id="secondForm" method="get" action="" >
-                    </form>                   
-<div style="text-align: right;padding-top:20px;">
-                        <a href="javascript:application.calculate()" ><img width="157" height="39"  alt="Calculate Noise Figure" border="0" /></a>
+                            </form>
+                        </h3>
                     </div>
 
-<div id="results" >
+                </div>
+                <div id="ads" >
+
+       </div>
+            </div>
+            <div id="bottom" >
+                <div id="form" >
+                    <label id="nf_title">NF (db)</label>
+                    <label style="position:absolute; right:10;" id="gain_title">Gain (db)</label>
+
+                    <br clear="all" />
+                    <form name="secondForm" id="secondForm" method="get" action="" >
+                    </form>
+                    <div style="text-align: right;padding-top:20px;">
+                        <a href="javascript:application.calculate()" ><img width="157" height="39" src="../images/calculator/calculate_button.png" alt="Calculate Noise Figure" border="0" /></a>
+                    </div>
+                </div>
+                <div id="results" >
                     <h2>Results</h2>
 
                     <h4>Total NF :  <span id="total_nf_result">??????</span></h4>
@@ -327,15 +272,11 @@ h4 span.errorResult {
                     <h4>Noise Temp :  <span id="noise_temp_result">??????</span></h4>
                     <div id="errorBox" ></div>
                 </div>
+            </div>
+
+        </div>
         <script type="text/javascript" >
                 application.init();
         </script>
 
-
-<div align="center">
-<center>
-
-
-<tr>
-<td width="100%" class="textarea" valign="top">
 
