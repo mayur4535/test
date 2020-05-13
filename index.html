@@ -62,6 +62,8 @@ input[type=checkbox]{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
+
+
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 <p><div class="container-fluid">
@@ -76,28 +78,27 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Output Power<font face="Arial" size="6"> </font></label><input type="number" id="op"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Output Power<font face="Arial" size="6"> (Radar)</font></label><input type="number" id="rop"  class="intro"  style="position: absolute;   text-align
 :center;width:300; right: 175px;"class="form-control"  />
-<select class="form-control" id="op-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:159px;border-radius:4px; border:2px solid #aaa;">
-
-<option value="1">mW &nbsp;Milliwats </option>
-<option value="2">W	&nbsp;	&nbsp; Watt </option>
+<select class="form-control" id="rop-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:157px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">mW Milliwatts</option>
+<option value="2">W	&nbsp;	&nbsp; Watts </option>
 <option value="3">dBm Decibel-milliwatt </option>
 <option value="4">dBW Decibel-watt </option>
 </select>
 </div>
 </div>
-
+<h1 style="font-size:40;"></h1>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
 </div>
-</div><h1 style="font-size:50;"></h1>
+</div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Gain</label><font face="Arial" size="7">  </font><input  id="ga"  class="intro"  style="position: absolute;   width:300; text-align
+<label for="r2" style="font-size:55;" >Antenna Gain</label><font face="Arial" size="7">  </font><input  id="ag"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 175px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:68;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:143px;">linear</label>
 
 </div>
@@ -111,25 +112,59 @@ input[type=checkbox]{
 <div class="form-group">
 
 </div>
-</div><h1 style="font-size:50;"></h1>
+</div><h1 style="font-size:40;"></h1>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Distance<font face="Arial" size="6"></font></label><input type="number" id="dt"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6"></font></label><input type="number" id="fr"  class="intro"  style="position: absolute;   text-align
 :center;width:300; right: 175px;"class="form-control"  />
-<select class="form-control" id="dt-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:155px;border-radius:4px; border:2px solid #aaa;">
-<option value="0.3048">ft	&nbsp;&nbsp;	&nbsp; Feet </option>
-<option value="1000">km	&nbsp;	&nbsp;&nbsp; Kilometers </option>
-<option value="1">m	&nbsp;	&nbsp;&nbsp;	&nbsp; Meters </option>
-<option value="0.01">cm	&nbsp;	&nbsp;&nbsp; Centimeters </option>
-<option value="1609.344">mi	&nbsp;&nbsp;	&nbsp; Miles </option>
-<option value="0.9144">yd	&nbsp;&nbsp;	&nbsp; Yards </option>
-<option value="0.0254">in	&nbsp;&nbsp;	&nbsp; Inches </option>
+<select class="form-control" id="fr-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:157px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">GHz GigaHertz </option>
+<option value="2">MHz MegaHertz </option>
 </select>
 </div>
 </div>
 
+
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:40;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
+<label for="r2" style="font-size:55;" >Area<font face="Arial" size="6"> (Radar Cross-Sectional)</font></label><input type="number" id="rcsa"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 175px;"class="form-control"  />
+<select class="form-control" id="rcsa-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:53px;margin:8px 0;height:83;width:157px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">Sq.Meters</option>
+<option value="0.01">Sq.Centimeters</option>
+<option value="0.3048">Sq.Feet</option>
+<option value="0.0254">Sq.Inches</option>
+</select>
 </div>
 </div>
+
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:40;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
+<label for="r2" style="font-size:55;" >Signal<font face="Arial" size="6"> (Detectable Signal Minimum)</font></label><input type="number" id="mds"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 175px;"class="form-control"  />
+<select class="form-control" id="mds-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:157px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">mW Milliwatts </option>
+<option value="2">W	&nbsp;	&nbsp; Watts </option>
+<option value="3">dBm Decibel-milliwatt </option>
+<option value="4">dBW Decibel-watt </option>
+</select>
+</div>
+</div>
+
 </form></fieldset>
 <div class="row">
 <div class="col-sm-12">
@@ -154,9 +189,9 @@ input[type=checkbox]{
   cursor: pointer;">
 </div></legend></fieldset>
 
-</div>
-</div>
 
+</div>
+</div>
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
@@ -171,25 +206,15 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:55;" >Power Density</label><font face="Arial" size="6"> (Watts/m<sup>2</sup>)  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 10px;"class="form-control" type="text" />
+<label for="r2" style="font-size:60;" >Maximum Range</label><font face="Arial" size="7">  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Mtr</label>
 
 </div>
-</div>
-<div class="col-sm-4 col-xs-4">
-<div class="form-group">
+</div><h1 style="font-size:30;"></h1>
 
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 <script type="text/javascript">
-var _0xe033=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x31","\x34","\x70\x6F\x77","\x33","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x6F\x70","\x23\x67\x61","\x23\x64\x74","\x23\x64\x74\x2D\x75\x6E\x69\x74","\x23\x6F\x70\x2D\x75\x6E\x69\x74","\x50\x49","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x6E\x73\x77\x65\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0x777ex1){_0xe033[0];function _0x777ex2(){_0x777ex1(_0xe033[10])[_0xe033[9]](function(){_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[1]),_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[6]](_0xe033[5]),_0x777ex1(this)[_0xe033[8]](_0xe033[7])})}function _0x777ex3(){_0x777ex1(_0xe033[10])[_0xe033[9]](function(){_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[5]),_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[6]](_0xe033[1])})}function _0x777ex4(_0x777ex1,_0x777ex2){return _0xe033[11]== _0x777ex2?0.001* _0x777ex1:_0xe033[12]== _0x777ex2?1* Math[_0xe033[13]](10,_0x777ex1/ 10):_0xe033[14]== _0x777ex2?1* Math[_0xe033[13]](10,(_0x777ex1- 30)/ 10):_0x777ex1}var _0x777ex5,_0x777ex6=_0x777ex1(_0xe033[15]);_0x777ex1(_0xe033[20])[_0xe033[21]](function(){_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[16]),_0x777ex2(),_0x777ex6[_0xe033[18]](_0xe033[17],!1),_0x777ex1[_0xe033[19]](_0x777ex1(this)[_0xe033[8]]())=== !1?(_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[6]](_0xe033[16]),_0x777ex6[_0xe033[18]](_0xe033[17],!1)):_0x777ex1(this)[_0xe033[4]](_0xe033[3])[_0xe033[2]](_0xe033[16]),_0x777ex5= 0,_0x777ex1(_0xe033[20])[_0xe033[9]](function(){_0xe033[7]!= _0x777ex1(this)[_0xe033[8]]()&& _0x777ex1[_0xe033[19]](_0x777ex1(this)[_0xe033[8]]())!== !1|| _0x777ex5++}),_0x777ex5> 0&& _0x777ex6[_0xe033[18]](_0xe033[17],!0)}),_0x777ex6[_0xe033[32]](_0xe033[22],function(_0x777ex2){_0x777ex2[_0xe033[23]]();var _0x777ex5,_0x777ex6,_0x777ex7,_0x777ex8,_0x777ex9;_0x777ex6= _0x777ex1(_0xe033[24])[_0xe033[8]](),_0x777ex7= _0x777ex1(_0xe033[25])[_0xe033[8]](),_0x777ex8= _0x777ex1(_0xe033[26])[_0xe033[8]](),_0x777ex8*= parseFloat(_0x777ex1(_0xe033[27])[_0xe033[8]]()),_0x777ex6= _0x777ex4(_0x777ex6,parseFloat(_0x777ex1(_0xe033[28])[_0xe033[8]]())),_0x777ex9= Math[_0xe033[13]](_0x777ex8,2),_0x777ex5= _0x777ex6* _0x777ex7/ (4* Math[_0xe033[29]]* _0x777ex9),_0x777ex1(_0xe033[31])[_0xe033[8]](parseFloat(_0x777ex5)[_0xe033[30]](4)),_0x777ex3()}),_0x777ex1(_0xe033[27])[_0xe033[32]](_0xe033[33],function(){_0x777ex2()}),_0x777ex1(_0xe033[28])[_0xe033[32]](_0xe033[33],function(){_0x777ex2()})}(jQuery)
-    </script></p>
-<p>
-
-
+var _0xe566=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x31","\x34","\x70\x6F\x77","\x33","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x72\x6F\x70","\x23\x61\x67","\x23\x66\x72","\x23\x72\x63\x73\x61","\x23\x6D\x64\x73","\x23\x72\x6F\x70\x2D\x75\x6E\x69\x74","\x23\x6D\x64\x73\x2D\x75\x6E\x69\x74","\x73\x71\x72\x74","\x23\x72\x63\x73\x61\x2D\x75\x6E\x69\x74","\x32","\x23\x66\x72\x2D\x75\x6E\x69\x74","\x50\x49","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x6E\x73\x77\x65\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0x7fafx1){_0xe566[0];function _0x7fafx2(){_0x7fafx1(_0xe566[10])[_0xe566[9]](function(){_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[1]),_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[6]](_0xe566[5]),_0x7fafx1(this)[_0xe566[8]](_0xe566[7])})}function _0x7fafx3(){_0x7fafx1(_0xe566[10])[_0xe566[9]](function(){_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[5]),_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[6]](_0xe566[1])})}function _0x7fafx4(_0x7fafx1,_0x7fafx2){return _0xe566[11]== _0x7fafx2?0.001* _0x7fafx1:_0xe566[12]== _0x7fafx2?1* Math[_0xe566[13]](10,_0x7fafx1/ 10):_0xe566[14]== _0x7fafx2?1* Math[_0xe566[13]](10,(_0x7fafx1- 30)/ 10):_0x7fafx1}var _0x7fafx5,_0x7fafx6=_0x7fafx1(_0xe566[15]);_0x7fafx1(_0xe566[20])[_0xe566[21]](function(){_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[16]),_0x7fafx2(),_0x7fafx6[_0xe566[18]](_0xe566[17],!1),_0x7fafx1[_0xe566[19]](_0x7fafx1(this)[_0xe566[8]]())=== !1?(_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[6]](_0xe566[16]),_0x7fafx6[_0xe566[18]](_0xe566[17],!1)):_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[16]),_0x7fafx5= 0,_0x7fafx1(_0xe566[20])[_0xe566[9]](function(){_0xe566[7]!= _0x7fafx1(this)[_0xe566[8]]()&& _0x7fafx1[_0xe566[19]](_0x7fafx1(this)[_0xe566[8]]())!== !1|| _0x7fafx5++}),_0x7fafx5> 0&& _0x7fafx6[_0xe566[18]](_0xe566[17],!0)}),_0x7fafx6[_0xe566[38]](_0xe566[22],function(_0x7fafx2){_0x7fafx2[_0xe566[23]]();var _0x7fafx5,_0x7fafx6,_0x7fafx7,_0x7fafx8,_0x7fafx9,_0x7fafxa,_0x7fafxb,_0x7fafxc,_0x7fafxd;_0x7fafx6= parseFloat(_0x7fafx1(_0xe566[24])[_0xe566[8]]()),_0x7fafx7= parseFloat(_0x7fafx1(_0xe566[25])[_0xe566[8]]()),_0x7fafx8= parseFloat(_0x7fafx1(_0xe566[26])[_0xe566[8]]()),_0x7fafx9= parseFloat(_0x7fafx1(_0xe566[27])[_0xe566[8]]()),_0x7fafxa= parseFloat(_0x7fafx1(_0xe566[28])[_0xe566[8]]()),_0x7fafx6= _0x7fafx4(parseFloat(_0x7fafx6),_0x7fafx1(_0xe566[29])[_0xe566[8]]()),_0x7fafxa= _0x7fafx4(parseFloat(_0x7fafxa),_0x7fafx1(_0xe566[30])[_0xe566[8]]()),_0x7fafx9= Math[_0xe566[31]](_0x7fafx9),_0x7fafx9*= parseFloat(_0x7fafx1(_0xe566[32])[_0xe566[8]]()),_0x7fafx9= Math[_0xe566[13]](_0x7fafx9,2),_0x7fafx8*= _0xe566[33]== _0x7fafx1(_0xe566[34])[_0xe566[8]]()?Math[_0xe566[13]](10,6):Math[_0xe566[13]](10,9),_0x7fafxb= parseFloat(_0x7fafx1(_0xe566[32])[_0xe566[8]]()),_0x7fafxc= _0x7fafx6* Math[_0xe566[13]](_0x7fafx7,2)* _0x7fafx9* Math[_0xe566[13]](3* Math[_0xe566[13]](10,8),2),_0x7fafxd= _0x7fafxa* Math[_0xe566[13]](4* Math[_0xe566[35]],3)* Math[_0xe566[13]](_0x7fafx8,2),_0x7fafx5= Math[_0xe566[31]](Math[_0xe566[31]](_0x7fafxc/ _0x7fafxd)),_0x7fafx5*= _0x7fafxb,_0x7fafx1(_0xe566[37])[_0xe566[8]](parseFloat(_0x7fafx5)[_0xe566[36]](4)),_0x7fafx3()}),_0x7fafx1(_0xe566[29])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()}),_0x7fafx1(_0xe566[34])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()}),_0x7fafx1(_0xe566[32])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()}),_0x7fafx1(_0xe566[30])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()})}(jQuery)
+    </script>
+</div>
 </body>
 </html>
