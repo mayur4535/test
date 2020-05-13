@@ -1,6 +1,5 @@
 
 
-
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -78,70 +77,9 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Out. Power<font face="Arial" size="5"> (Radar)</font></label><input type="number" id="rop"  class="intro"  style="position: absolute;   text-align
-:center;width:270; right: 175px;"class="form-control"  />
-<select class="form-control" id="rop-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:157px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">mW Milliwatts</option>
-<option value="2">W	&nbsp;	&nbsp; Watts </option>
-<option value="3">dBm Decibel-milliwatt </option>
-<option value="4">dBW Decibel-watt </option>
-</select>
-</div>
-</div>
-<h1 style="font-size:40;"></h1>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
+<label for="r2" style="font-size:60;" >Attenuation</label><font face="Arial" size="7">  </font><input  id="att"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
 
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Antenna Gain</label><font face="Arial" size="7">  </font><input  id="ag"  class="intro"  style="position: absolute;   width:270; text-align
-:center;right: 175px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:68;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:143px;">linear</label>
-
-</div>
-</div>
-
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div><h1 style="font-size:40;"></h1>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6"></font></label><input type="number" id="fr"  class="intro"  style="position: absolute;   text-align
-:center;width:270; right: 175px;"class="form-control"  />
-<select class="form-control" id="fr-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:157px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">GHz GigaHertz </option>
-<option value="2">MHz MegaHertz </option>
-</select>
-</div>
-</div>
-
-
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div><h1 style="font-size:40;"></h1>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Area<font face="Arial" size="5"> (Radar Cross-Sectional)</font></label><input type="number" id="rcsa"  class="intro"  style="position: absolute;   text-align
-:center;width:270; right: 175px;"class="form-control"  />
-<select class="form-control" id="rcsa-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:53px;margin:8px 0;height:83;width:157px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">Sq.Meters</option>
-<option value="0.01">Sq.Centimeters</option>
-<option value="0.3048">Sq.Feet</option>
-<option value="0.0254">Sq.Inches</option>
-</select>
 </div>
 </div>
 
@@ -153,15 +91,10 @@ input[type=checkbox]{
 </div>
 </div><h1 style="font-size:40;"></h1>
 <div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Signal<font face="Arial" size="5"> (Detectable Signal Minimum)</font></label><input type="number" id="mds"  class="intro"  style="position: absolute;   text-align
-:center;width:270; right: 175px;"class="form-control"  />
-<select class="form-control" id="mds-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:157px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">mW Milliwatts </option>
-<option value="2">W	&nbsp;	&nbsp; Watts </option>
-<option value="3">dBm Decibel-milliwatt </option>
-<option value="4">dBW Decibel-watt </option>
-</select>
+<div class="form-group">
+<label for="r2" style="font-size:60;" >Impedance</label><font face="Arial" size="7">  </font><input  id="imp"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"><b>&Omega;</b></label>
+
 </div>
 </div>
 
@@ -189,9 +122,6 @@ input[type=checkbox]{
   cursor: pointer;">
 </div></legend></fieldset>
 
-
-</div>
-</div>
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
@@ -206,14 +136,28 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Max. Range</label><font face="Arial" size="7">  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Mtr</label>
+<label for="r2" style="font-size:60;" >R<sub>1</sub> > Z<sub>0</sub></label><font face="Arial" size="7">  </font><input  id="r1"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"><b>&Omega;</b></label>
 
 </div>
-</div><h1 style="font-size:30;"></h1>
+</div>
+<h1 style="font-size:30;"></h1>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:60;" >R<sub>1</sub> < Z<sub>0</sub></label><font face="Arial" size="7">  </font><input  id="r2"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"><b>&Omega;</b></label>
+
+</div>
+</div>
 
 <script type="text/javascript">
-var _0xe566=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x31","\x34","\x70\x6F\x77","\x33","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x72\x6F\x70","\x23\x61\x67","\x23\x66\x72","\x23\x72\x63\x73\x61","\x23\x6D\x64\x73","\x23\x72\x6F\x70\x2D\x75\x6E\x69\x74","\x23\x6D\x64\x73\x2D\x75\x6E\x69\x74","\x73\x71\x72\x74","\x23\x72\x63\x73\x61\x2D\x75\x6E\x69\x74","\x32","\x23\x66\x72\x2D\x75\x6E\x69\x74","\x50\x49","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x6E\x73\x77\x65\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0x7fafx1){_0xe566[0];function _0x7fafx2(){_0x7fafx1(_0xe566[10])[_0xe566[9]](function(){_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[1]),_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[6]](_0xe566[5]),_0x7fafx1(this)[_0xe566[8]](_0xe566[7])})}function _0x7fafx3(){_0x7fafx1(_0xe566[10])[_0xe566[9]](function(){_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[5]),_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[6]](_0xe566[1])})}function _0x7fafx4(_0x7fafx1,_0x7fafx2){return _0xe566[11]== _0x7fafx2?0.001* _0x7fafx1:_0xe566[12]== _0x7fafx2?1* Math[_0xe566[13]](10,_0x7fafx1/ 10):_0xe566[14]== _0x7fafx2?1* Math[_0xe566[13]](10,(_0x7fafx1- 30)/ 10):_0x7fafx1}var _0x7fafx5,_0x7fafx6=_0x7fafx1(_0xe566[15]);_0x7fafx1(_0xe566[20])[_0xe566[21]](function(){_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[16]),_0x7fafx2(),_0x7fafx6[_0xe566[18]](_0xe566[17],!1),_0x7fafx1[_0xe566[19]](_0x7fafx1(this)[_0xe566[8]]())=== !1?(_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[6]](_0xe566[16]),_0x7fafx6[_0xe566[18]](_0xe566[17],!1)):_0x7fafx1(this)[_0xe566[4]](_0xe566[3])[_0xe566[2]](_0xe566[16]),_0x7fafx5= 0,_0x7fafx1(_0xe566[20])[_0xe566[9]](function(){_0xe566[7]!= _0x7fafx1(this)[_0xe566[8]]()&& _0x7fafx1[_0xe566[19]](_0x7fafx1(this)[_0xe566[8]]())!== !1|| _0x7fafx5++}),_0x7fafx5> 0&& _0x7fafx6[_0xe566[18]](_0xe566[17],!0)}),_0x7fafx6[_0xe566[38]](_0xe566[22],function(_0x7fafx2){_0x7fafx2[_0xe566[23]]();var _0x7fafx5,_0x7fafx6,_0x7fafx7,_0x7fafx8,_0x7fafx9,_0x7fafxa,_0x7fafxb,_0x7fafxc,_0x7fafxd;_0x7fafx6= parseFloat(_0x7fafx1(_0xe566[24])[_0xe566[8]]()),_0x7fafx7= parseFloat(_0x7fafx1(_0xe566[25])[_0xe566[8]]()),_0x7fafx8= parseFloat(_0x7fafx1(_0xe566[26])[_0xe566[8]]()),_0x7fafx9= parseFloat(_0x7fafx1(_0xe566[27])[_0xe566[8]]()),_0x7fafxa= parseFloat(_0x7fafx1(_0xe566[28])[_0xe566[8]]()),_0x7fafx6= _0x7fafx4(parseFloat(_0x7fafx6),_0x7fafx1(_0xe566[29])[_0xe566[8]]()),_0x7fafxa= _0x7fafx4(parseFloat(_0x7fafxa),_0x7fafx1(_0xe566[30])[_0xe566[8]]()),_0x7fafx9= Math[_0xe566[31]](_0x7fafx9),_0x7fafx9*= parseFloat(_0x7fafx1(_0xe566[32])[_0xe566[8]]()),_0x7fafx9= Math[_0xe566[13]](_0x7fafx9,2),_0x7fafx8*= _0xe566[33]== _0x7fafx1(_0xe566[34])[_0xe566[8]]()?Math[_0xe566[13]](10,6):Math[_0xe566[13]](10,9),_0x7fafxb= parseFloat(_0x7fafx1(_0xe566[32])[_0xe566[8]]()),_0x7fafxc= _0x7fafx6* Math[_0xe566[13]](_0x7fafx7,2)* _0x7fafx9* Math[_0xe566[13]](3* Math[_0xe566[13]](10,8),2),_0x7fafxd= _0x7fafxa* Math[_0xe566[13]](4* Math[_0xe566[35]],3)* Math[_0xe566[13]](_0x7fafx8,2),_0x7fafx5= Math[_0xe566[31]](Math[_0xe566[31]](_0x7fafxc/ _0x7fafxd)),_0x7fafx5*= _0x7fafxb,_0x7fafx1(_0xe566[37])[_0xe566[8]](parseFloat(_0x7fafx5)[_0xe566[36]](4)),_0x7fafx3()}),_0x7fafx1(_0xe566[29])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()}),_0x7fafx1(_0xe566[34])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()}),_0x7fafx1(_0xe566[32])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()}),_0x7fafx1(_0xe566[30])[_0xe566[38]](_0xe566[39],function(){_0x7fafx2()})}(jQuery)
+var _0x5a2e=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x61\x74\x74","\x23\x69\x6D\x70","\x70\x6F\x77","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x72\x31","\x23\x72\x32","\x6F\x6E","\x63\x68\x61\x6E\x67\x65","\x23\x64\x74\x2D\x75\x6E\x69\x74","\x23\x6F\x70\x2D\x75\x6E\x69\x74"];!function(_0xec98x1){_0x5a2e[0];function _0xec98x2(){_0xec98x1(_0x5a2e[10])[_0x5a2e[9]](function(){_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[2]](_0x5a2e[1]),_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[6]](_0x5a2e[5]),_0xec98x1(this)[_0x5a2e[8]](_0x5a2e[7])})}function _0xec98x3(){_0xec98x1(_0x5a2e[10])[_0x5a2e[9]](function(){_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[2]](_0x5a2e[5]),_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[6]](_0x5a2e[1])})}var _0xec98x4,_0xec98x5=_0xec98x1(_0x5a2e[11]);_0xec98x1(_0x5a2e[16])[_0x5a2e[17]](function(){_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[2]](_0x5a2e[12]),_0xec98x2(),_0xec98x5[_0x5a2e[14]](_0x5a2e[13],!1),_0xec98x1[_0x5a2e[15]](_0xec98x1(this)[_0x5a2e[8]]())=== !1?(_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[6]](_0x5a2e[12]),_0xec98x5[_0x5a2e[14]](_0x5a2e[13],!1)):_0xec98x1(this)[_0x5a2e[4]](_0x5a2e[3])[_0x5a2e[2]](_0x5a2e[12]),_0xec98x4= 0,_0xec98x1(_0x5a2e[16])[_0x5a2e[9]](function(){_0x5a2e[7]!= _0xec98x1(this)[_0x5a2e[8]]()&& _0xec98x1[_0x5a2e[15]](_0xec98x1(this)[_0x5a2e[8]]())!== !1|| _0xec98x4++}),_0xec98x4> 0&& _0xec98x5[_0x5a2e[14]](_0x5a2e[13],!0)}),_0xec98x5[_0x5a2e[26]](_0x5a2e[18],function(_0xec98x2){_0xec98x2[_0x5a2e[19]]();var _0xec98x4,_0xec98x5,_0xec98x6,_0xec98x7,_0xec98x8,_0xec98x9;_0xec98x6= _0xec98x1(_0x5a2e[20])[_0x5a2e[8]](),_0xec98x7= _0xec98x1(_0x5a2e[21])[_0x5a2e[8]](),_0xec98x9= Math[_0x5a2e[22]](10,_0xec98x6/ 20),_0xec98x8= (_0xec98x9+ 1)/ (_0xec98x9- 1),_0xec98x4= _0xec98x7* _0xec98x8,_0xec98x5= _0xec98x7* (1/ _0xec98x8),_0xec98x1(_0x5a2e[24])[_0x5a2e[8]](parseFloat(_0xec98x4)[_0x5a2e[23]](4)),_0xec98x1(_0x5a2e[25])[_0x5a2e[8]](parseFloat(_0xec98x5)[_0x5a2e[23]](4)),_0xec98x3()}),_0xec98x1(_0x5a2e[28])[_0x5a2e[26]](_0x5a2e[27],function(){_0xec98x2()}),_0xec98x1(_0x5a2e[29])[_0x5a2e[26]](_0x5a2e[27],function(){_0xec98x2()})}(jQuery)
     </script>
 </div>
 </body>
