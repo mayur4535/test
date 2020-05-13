@@ -1,5 +1,6 @@
 
 
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -18,7 +19,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 50px;
 }
 
 body { 
@@ -65,20 +66,18 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<p><div class="container-fluid">
+
 <form id="tool-form">
 
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
+<div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<select class="form-control" id="er-unit" style="padding: 5px ;  position: absolute;right: 315px;font-size:58px;margin:8px 0;width:280px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">Dielectric Constant</option>
-<option value="2">Velocity 	&nbsp;	&nbsp;of Propagation (%)</option>
-</select><input type="number" id="er"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 10px;"class="form-control"  />
+<select class="form-control" id="nf-unit" style="padding: 5px ;  position: absolute;right: 315px;font-size:60px;margin:8px 0;width:375px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">Figure Noise(dB)</option>
+<option value="2">Tempreture 	&nbsp; Noise(K)</option>
+</select><input type="number" id="nf"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 10px;"class="form-control"  />Select<h1 style="font-size:70;"></h1>
 
-</div>Select<h1 style="font-size:30;"></h1>
+</div>
 </div>
 
 <div class="row">
@@ -90,27 +89,13 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<label for="r2" style="font-size:60;" >Height<font face="Arial" size="6"> (Dielectric)</font></label><input type="number" id="dh"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 165px;"class="form-control"  />
-<select class="form-control" id="dh-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">mm Millimeters ()</option>
-<option value="25.4">in	&nbsp;	&nbsp; Inches ()</option>
-<option value="0.0000254">µin	&nbsp; MicroInches ()</option>
-<option value="10">cm	&nbsp; Centimeters ()</option>
-<option value="0.000001">µm	&nbsp; Micrometers ()</option>
-</select>
-</div>
-</div>
-<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:50;" >Reference </label><font face="Arial" size="7">(Temperature) </font><input  id="rt"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
 
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:60;" >Frequency <font face="Arial" size="3">(Operation)</font></label><input type="number" id="fr"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 165px;"class="form-control"  />
-<select class="form-control" id="fr-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">GHz GigaHertz </option>
-<option value="2">MHz MegaHertz </option>
-</select>
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+</div>
 </div>
 </div>
 </form></fieldset>
@@ -147,6 +132,7 @@ input[type=checkbox]{
 <div id="answer-fields">
 <div class="row">
 <div class="col-sm-12 col-xs-12">
+<div id="ans-nt-container">
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
@@ -154,13 +140,18 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Width</label><font face="Arial" size="7">  </font><input  id="ans1"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mm</label>
+<label for="ansNt" class="control-label">Noise Temperature</label><font face="Arial" size="7">  </font><input  id="ansNt"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"class="form-group" style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K</label>
 
 </div>
 </div>
-<h1 style="font-size:30;"></h1>
-<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-4">
+
+</div>
+</div>
+</div>
+<div class="col-sm-12" id="ans-nf-container" style="display: none">
+
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
 
@@ -168,15 +159,19 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:60;" >Length</label><font face="Arial" size="7"> </font><input  id="ans2"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
+<label for="ansNf" class="control-label">Noise Figure</label><font face="Arial" size="7">  </font><input  id="ansNf"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"class="form-group" style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
+
 
 </div>
 </div>
+<div class="col-sm-4 col-xs-4">
 
+</div>
+</div>
+</div>
+</div>
+</div>
 <script type="text/javascript">
-var _0xb7d9=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x65\x72","\x23\x64\x68","\x23\x66\x72","\x32","\x23\x66\x72\x2D\x75\x6E\x69\x74","\x23\x65\x72\x2D\x75\x6E\x69\x74","\x70\x6F\x77","\x23\x64\x68\x2D\x75\x6E\x69\x74","\x73\x71\x72\x74","\x74\x6F\x46\x69\x78\x65\x64","\x23\x61\x6E\x73\x31","\x23\x61\x6E\x73\x32","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0x7f6ax1){_0xb7d9[0];function _0x7f6ax2(){_0x7f6ax1(_0xb7d9[10])[_0xb7d9[9]](function(){_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[2]](_0xb7d9[1]),_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[6]](_0xb7d9[5]),_0x7f6ax1(this)[_0xb7d9[8]](_0xb7d9[7])})}function _0x7f6ax3(){_0x7f6ax1(_0xb7d9[10])[_0xb7d9[9]](function(){_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[2]](_0xb7d9[5]),_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[6]](_0xb7d9[1])})}var _0x7f6ax4,_0x7f6ax5=_0x7f6ax1(_0xb7d9[11]);_0x7f6ax1(_0xb7d9[16])[_0xb7d9[17]](function(){_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[2]](_0xb7d9[12]),_0x7f6ax2(),_0x7f6ax5[_0xb7d9[14]](_0xb7d9[13],!1),_0x7f6ax1[_0xb7d9[15]](_0x7f6ax1(this)[_0xb7d9[8]]())=== !1?(_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[6]](_0xb7d9[12]),_0x7f6ax5[_0xb7d9[14]](_0xb7d9[13],!1)):_0x7f6ax1(this)[_0xb7d9[4]](_0xb7d9[3])[_0xb7d9[2]](_0xb7d9[12]),_0x7f6ax4= 0,_0x7f6ax1(_0xb7d9[16])[_0xb7d9[9]](function(){_0xb7d9[7]!= _0x7f6ax1(this)[_0xb7d9[8]]()&& _0x7f6ax1[_0xb7d9[15]](_0x7f6ax1(this)[_0xb7d9[8]]())!== !1|| _0x7f6ax4++}),_0x7f6ax4> 0&& _0x7f6ax5[_0xb7d9[14]](_0xb7d9[13],!0)}),_0x7f6ax5[_0xb7d9[32]](_0xb7d9[18],function(_0x7f6ax2){_0x7f6ax2[_0xb7d9[19]]();var _0x7f6ax4,_0x7f6ax5,_0x7f6ax6,_0x7f6ax7,_0x7f6ax8;_0x7f6ax6= parseFloat(_0x7f6ax1(_0xb7d9[20])[_0xb7d9[8]]()),_0x7f6ax7= parseFloat(_0x7f6ax1(_0xb7d9[21])[_0xb7d9[8]]()),_0x7f6ax8= parseFloat(_0x7f6ax1(_0xb7d9[22])[_0xb7d9[8]]()),_0xb7d9[23]== _0x7f6ax1(_0xb7d9[24])[_0xb7d9[8]]()&& (_0x7f6ax8/= 1e3),_0xb7d9[23]== _0x7f6ax1(_0xb7d9[25])[_0xb7d9[8]]()&& (_0x7f6ax6/= 100,_0x7f6ax6= 1/ Math[_0xb7d9[26]](_0x7f6ax6,2)),_0x7f6ax7*= parseFloat(_0x7f6ax1(_0xb7d9[27])[_0xb7d9[8]]());var _0x7f6ax9=299.792458/ (2* _0x7f6ax8* Math[_0xb7d9[28]]((_0x7f6ax6+ 1)/ 2)),_0x7f6axa=(_0x7f6ax6+ 1)/ 2+ (_0x7f6ax6- 1)/ 2* (1/ Math[_0xb7d9[28]](1+ 12* (_0x7f6ax7/ _0x7f6ax9))),_0x7f6axb=299.792458/ (2* _0x7f6ax8* Math[_0xb7d9[28]](_0x7f6axa)),_0x7f6axc=0.412* _0x7f6ax7* ((_0x7f6axa+ 0.3)* (_0x7f6ax9/ _0x7f6ax7+ 0.264))/ ((_0x7f6axa- 0.258)* (_0x7f6ax9/ _0x7f6ax7+ 0.8)),_0x7f6axd=_0x7f6axb- 2* _0x7f6axc;_0x7f6ax4= _0x7f6ax9[_0xb7d9[29]](3),_0x7f6ax5= _0x7f6axd[_0xb7d9[29]](3),_0x7f6ax1(_0xb7d9[30])[_0xb7d9[8]](_0x7f6ax4),_0x7f6ax1(_0xb7d9[31])[_0xb7d9[8]](_0x7f6ax5),_0x7f6ax3()}),_0x7f6ax1(_0xb7d9[24])[_0xb7d9[32]](_0xb7d9[33],function(){_0x7f6ax2()}),_0x7f6ax1(_0xb7d9[25])[_0xb7d9[32]](_0xb7d9[33],function(){_0x7f6ax2()}),_0x7f6ax1(_0xb7d9[27])[_0xb7d9[32]](_0xb7d9[33],function(){_0x7f6ax2()})}(jQuery)
+var _0x3a86=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x6E\x66","\x23\x72\x74","\x23\x6E\x66\x2D\x75\x6E\x69\x74","\x70\x6F\x77","\x74\x6F\x46\x69\x78\x65\x64","\x23\x61\x6E\x73\x4E\x74","\x6C\x6F\x67\x31\x30","\x23\x61\x6E\x73\x4E\x66","\x6F\x6E","\x63\x68\x61\x6E\x67\x65","\x68\x69\x64\x65","\x23\x61\x6E\x73\x2D\x6E\x66\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x73\x68\x6F\x77","\x23\x61\x6E\x73\x2D\x6E\x74\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72"];!function(_0x576fx1){_0x3a86[0];function _0x576fx2(){_0x576fx1(_0x3a86[10])[_0x3a86[9]](function(){_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[1]),_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[6]](_0x3a86[5]),_0x576fx1(this)[_0x3a86[8]](_0x3a86[7])})}function _0x576fx3(){_0x576fx1(_0x3a86[10])[_0x3a86[9]](function(){_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[5]),_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[6]](_0x3a86[1])})}var _0x576fx4,_0x576fx5=_0x576fx1(_0x3a86[11]);_0x576fx1(_0x3a86[16])[_0x3a86[17]](function(){_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[12]),_0x576fx2(),_0x576fx5[_0x3a86[14]](_0x3a86[13],!1),_0x576fx1[_0x3a86[15]](_0x576fx1(this)[_0x3a86[8]]())=== !1?(_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[6]](_0x3a86[12]),_0x576fx5[_0x3a86[14]](_0x3a86[13],!1)):_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[12]),_0x576fx4= 0,_0x576fx1(_0x3a86[16])[_0x3a86[9]](function(){_0x3a86[7]!= _0x576fx1(this)[_0x3a86[8]]()&& _0x576fx1[_0x3a86[15]](_0x576fx1(this)[_0x3a86[8]]())!== !1|| _0x576fx4++}),_0x576fx4> 0&& _0x576fx5[_0x3a86[14]](_0x3a86[13],!0)}),_0x576fx5[_0x3a86[28]](_0x3a86[18],function(_0x576fx2){_0x576fx2[_0x3a86[19]]();var _0x576fx4,_0x576fx5,_0x576fx6;_0x576fx5= _0x576fx1(_0x3a86[20])[_0x3a86[8]](),_0x576fx6= _0x576fx1(_0x3a86[21])[_0x3a86[8]](),1== _0x576fx1(_0x3a86[22])[_0x3a86[8]]()?(_0x576fx4= _0x576fx6* (Math[_0x3a86[23]](10,_0x576fx5/ 10)- 1),_0x576fx1(_0x3a86[25])[_0x3a86[8]](_0x576fx4[_0x3a86[24]](4))):(_0x576fx4= 10* Math[_0x3a86[26]](_0x576fx5/ _0x576fx6+ 1),_0x576fx1(_0x3a86[27])[_0x3a86[8]](_0x576fx4[_0x3a86[24]](4))),_0x576fx3()}),_0x576fx1(_0x3a86[22])[_0x3a86[28]](_0x3a86[29],function(){_0x576fx2(),1== _0x576fx1(this)[_0x3a86[8]]()?(_0x576fx1(_0x3a86[31])[_0x3a86[30]](),_0x576fx1(_0x3a86[33])[_0x3a86[32]]()):(_0x576fx1(_0x3a86[33])[_0x3a86[30]](),_0x576fx1(_0x3a86[31])[_0x3a86[32]]())}),1== _0x576fx1(_0x3a86[22])[_0x3a86[8]]()?(_0x576fx1(_0x3a86[31])[_0x3a86[30]](),_0x576fx1(_0x3a86[33])[_0x3a86[32]]()):(_0x576fx1(_0x3a86[33])[_0x3a86[30]](),_0x576fx1(_0x3a86[31])[_0x3a86[32]]())}(jQuery)
     </script>
-</div>
-</body>
-</html>
