@@ -19,7 +19,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 50px;
+    font-family: 'Aclonica'; color:#404040;  font-size: 50px;
 }
 
 body { 
@@ -65,9 +65,9 @@ input[type=checkbox]{
             var num_el = document.first_form.num_of_stages;
             var num_of_stages =  num_el.options[num_el.selectedIndex].value;
 
-            document.getElementById("total_nf_result").innerHTML = "??????";
-            document.getElementById("total_gain_result").innerHTML = "??????";
-            document.getElementById("noise_temp_result").innerHTML = "??????";
+            document.getElementById("total_nf_result").innerHTML = "dB";
+            document.getElementById("total_gain_result").innerHTML = "dB";
+            document.getElementById("noise_temp_result").innerHTML = "K";
             
             num_el.onchange = function(){
                 application.init();
@@ -220,9 +220,9 @@ input[type=checkbox]{
         },
         outputResults : function(nf,gain,noise_temp){
 
-            document.getElementById("total_nf_result").innerHTML = nf.toFixed(4)+" dB";
-            document.getElementById("total_gain_result").innerHTML = gain.toFixed(4)+" dB";
-            document.getElementById("noise_temp_result").innerHTML = noise_temp.toFixed(4)+" K";
+            document.getElementById("total_nf_result").innerHTML = nf.toFixed(4)+" ";
+            document.getElementById("total_gain_result").innerHTML = gain.toFixed(4)+" ";
+            document.getElementById("noise_temp_result").innerHTML = noise_temp.toFixed(4)+" ";
         },
         outputError : function(html){
 
@@ -251,7 +251,7 @@ input[type=checkbox]{
         },
         fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input style="position: absolute;border-radius:4px;font-size:50; text-align:center;   width:200; right: 30px;"type="text" value="" id="NF_%id%" class="nf_input"  /><input style="position: absolute;border-radius:4px; text-align:center;  width:200;font-size:50; right: 250px;"type="text" value="" id="Gain_%id%" class="gain_input" />',
         numRegExp : new RegExp(/^[0-9]+(\.[0-9]+)?$/),
-        errorHTML : "Invalid inputs for %error_stages% please enter numerical value."
+        errorHTML : "Fill All Input Or Invelid Value"
     }
 
 window.application = application;
@@ -268,7 +268,7 @@ window.application = application;
 <h3>Input</h3></div></legend>
 
                             <form method="get" action="" id="first_form" name="first_form">
-                                <font face="Arial" size="6">Select number of cascaded amplifiers</font><select style=" position:absolute; right:40;width:410;border-radius:4px;border:2px solid #aaa; height:70;font-size:30;"name="num_of_stages" >
+                                <font face="Arial" size="6">Select number of cascaded amplifiers</font><select style=" position:absolute; right:40;width:410;border-radius:4px;border:2px solid #aaa; height:70;font-size:60;"name="num_of_stages" >
                                     <option value="2" selected="selected" >2</option>
                                     <option value="3" >3</option>
 
@@ -310,22 +310,46 @@ window.application = application;
            
             <div id="bottom" >
                 <div id="form" >
-                    <label style="position:absolute; right:260;" id="nf_title">NF (db)</label>
-                    <label style="position:absolute; right:10;" id="gain_title">Gain (db)</label>
+                    <label style="position:absolute; right:260;" id="nf_title">NF(db)</label>
+                    <label style="position:absolute; right:10;" id="gain_title">Gain(db)</label>
 
                     <br clear="all" />
                     <form name="secondForm" id="secondForm" method="get" action="" >
-                    </form>
+                    </form></fieldset>
+<h1 style="font-size:30;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><a href="javascript:application.calculate()"  style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;">calculate</a>
+</div></legend></fieldset>
+
+<fieldset><legend><div colspan="2" align="center" height="19">
+
+
+<h3>Outputs</h3></div></legend>
+<label for="r2" style="font-size:60;" >NF</label><font face="Arial" size="7">  </font><span  id="total_nf_result"  class="intro"  style="position: absolute;   width:500; text-align
+:center;right: 140px;"class="form-control" type="text" /></span><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label><h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:60;" >Gain</label><font face="Arial" size="7">  </font><span  id="total_gain_result"  class="intro"  style="position: absolute;   width:500; text-align
+:center;right: 140px;"class="form-control" type="text" /></span><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label><h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:60;" >Temp</label><font face="Arial" size="7">  </font><span  id="noise_temp_result"  class="intro"  style="position: absolute;   width:500; text-align
+:center;right: 140px;"class="form-control" type="text" /></span><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K</label>
+
                     <div style="text-align: right;padding-top:20px;">
-                        <a href="javascript:application.calculate()" ><img width="157" height="39" src="../images/calculator/calculate_button.png" alt="Calculate Noise Figure" border="0" /></a>
+                        
                     </div>
                 </div>
                 <div id="results" >
-                    <h2>Results</h2>
+                    
 
-                    <h4>Total NF :  <span id="total_nf_result">??????</span></h4>
-                    <h4>Total Gain :  <span id="total_gain_result">??????</span></h4>
-                    <h4>Noise Temp :  <span id="noise_temp_result">??????</span></h4>
+                   
                     <div id="errorBox" ></div>
                 </div>
             </div>
