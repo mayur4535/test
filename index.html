@@ -1,31 +1,460 @@
+<script>
+(function(window){
+    
+    var application = {
+    
+        init : function(){
 
+            var num_el = document.first_form.num_of_stages;
+            var num_of_stages =  num_el.options[num_el.selectedIndex].value;
 
+            document.getElementById("total_nf_result").innerHTML = "??????";
+            document.getElementById("total_gain_result").innerHTML = "??????";
+            document.getElementById("noise_temp_result").innerHTML = "??????";
+            
+            num_el.onchange = function(){
+                application.init();
+            }
 
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+            application.form =  document.secondForm;
+            
+            application.form.onsubmit=function(){
+                application.calculate();
+                return false;
+            }
+            
+            application.form.onkeydown = function(e){
+                var code;
+                if (!e) var e = window.event;
+                if (e.keyCode) code = e.keyCode;
+                else if (e.which) code = e.which;
+                
+                if(parseInt(code)==13){
+                    application.calculate();
+                }
+            }
+
+            var num_of_inputs = application.currentInputs();
+            var difference = num_of_stages - num_of_inputs;
+
+            if(difference > 0){
+
+                for(i=0;i<difference;i++){
+                    application.addInput();
+                }
+
+            }
+            else if(difference < 0){
+
+                for(i=0;i<-difference;i++){
+                    application.removeInput();
+                }
+
+            }
+            
+        },
+        calculate : function(){
+
+            if(application.validate()){
+
+                var inputs = application.form.getElementsByTagName("input");
+
+                var nf_values = new Array();
+                var gain_values = new Array();
+
+                 for(var i=0;i<inputs.length;i++){
+
+                    var input = inputs[i];
+
+                    if(input.id.split("_")[0]=="NF"){
+
+                        nf_values.push(parseFloat(input.value));
+                    }
+                    else {
+
+                        gain_values.push(parseFloat(input.value));
+                    }
+
+                }
+
+                var nf = application.calculateNF(nf_values,gain_values);
+                var gain = application.calculateGain(gain_values);
+                var noise_temp = application.calculateNoiseTemp(nf);
+
+                //window.console.log("NF : " + nf + " \n Gain : "+gain + " \n Noise Temp : "+noise_temp);
+
+                application.outputResults(nf,gain,noise_temp);
+            }
+
+        },
+        calculateNF : function(nf_array,gain_array){
+
+            var nf = 0;
+
+            for(var i=0;i<nf_array.length;i++){
+
+                var nf_db = nf_array[i];
+                var converted_nf = Math.pow(10,nf_db/10);
+                
+                var numerator=i==0?converted_nf:converted_nf-1;
+                var denominator = 1;
+
+                for(var j=0;j<i;j++){
+                    var gain_db = gain_array[j];
+                    var converted_gain = Math.pow(10,gain_db/10);
+                    denominator = denominator * converted_gain;
+                }
+
+                var nf = nf + numerator/denominator;
+
+            }
+
+            return 10*Math.log(nf)/2.302585093;
+
+        },
+        calculateGain : function(gain_array){
+
+            var gain = 0;
+
+            for(var i=0;i<gain_array.length;i++){
+                gain = gain + gain_array[i];
+            }
+
+            return gain;
+        },
+        calculateNoiseTemp : function(nf){
+
+          return 290*(Math.pow(10,nf/10)-1);
+
+        },
+        validate : function(){
+
+            document.getElementById("errorBox").innerHTML = '';
+
+            var inputs = application.form.getElementsByTagName("input");
+
+            var error_stages = '';
+
+            for(var i=0;i<inputs.length;i++){
+
+                var input = inputs[i];
+
+                if(application.numRegExp.test(input.value)==false){
+
+                    var type = input.id.split("_")[0];
+                    var stage = Math.floor(i/2)+1; 
+                    error_stages = error_stages + " <strong>Stage "+stage+" "+type+"</strong>,";
+
+                }
+
+            }
+
+            if(error_stages!=''){
+
+                application.outputError(error_stages);
+
+                return false;
+
+            }
+            else {
+
+                return true;
+            }
+        },
+        outputResults : function(nf,gain,noise_temp){
+
+            document.getElementById("total_nf_result").innerHTML = nf.toFixed(4)+" dB";
+            document.getElementById("total_gain_result").innerHTML = gain.toFixed(4)+" dB";
+            document.getElementById("noise_temp_result").innerHTML = noise_temp.toFixed(4)+" K";
+        },
+        outputError : function(html){
+
+            document.getElementById("total_nf_result").innerHTML = "<span class='errorResult' >Error!</span>";
+            document.getElementById("total_gain_result").innerHTML = "<span class='errorResult' >Error!</span>";
+            document.getElementById("noise_temp_result").innerHTML = "<span class='errorResult' >Error!</span>";
+            document.getElementById("errorBox").innerHTML = application.errorHTML.replace("%error_stages%",html);
+
+        },
+        currentInputs : function(){
+
+            return application.form.getElementsByTagName("fieldset").length;
+
+        },
+        addInput : function(){
+
+            var i =application.currentInputs()+1;
+            var fieldset = document.createElement("fieldset");
+
+            fieldset.innerHTML = application.fieldsetHtml.replace(/\%id\%/g,i);
+            application.form.appendChild(fieldset);
+        },
+        removeInput : function(){
+
+            application.form.removeChild(application.form.getElementsByTagName("fieldset")[application.form.getElementsByTagName("fieldset").length-1]);
+        },
+        fieldsetHtml : '<label for="NF_%id%" >Stage %id%</label><input type="text" value="" id="NF_%id%" class="nf_input"  /><input type="text" value="" id="Gain_%id%" class="gain_input" />',
+        numRegExp : new RegExp(/^[0-9]+(\.[0-9]+)?$/),
+        errorHTML : "Invalid inputs for %error_stages% please enter numerical value."
+    }
+
+window.application = application;
+
+})(window);
+            
+</script>
 <style>
-#borderimg { 
-  border: 10px solid transparent;
-  padding: 10px;
-  width: 100%;
-  hight: 100%;
-  border-image-source: url();  
-  border-image-slice: 30;
+BODY {
+background-color : #FFFFFF;
+font-family : Verdana, Arial, sans-serif;
+font-size: 80%;
+margin: 0;
+scrollbar-arrow-color: #000000;
+scrollbar-face-color: #8CA5B2;
+scrollbar-3dlight-color: #8CA5B2;
+scrollbar-highlight-color: #000000;
+scrollbar-shadow-color: #8CA5B2;
+scrollbar-darkshadow-color: #000000;
+scrollbar-track-color: #B2C3CC;
 }
 
-body {
-  display: row;
+a img { border: 0px solid transparent; margin:0; padding: 0; }
+a:hover img {text-decoration: none;}
+
+P, TD, LI, UL, Table {
+font-family : Verdana, Arial, sans-serif;
+font-size : 100%;
+}
+/* this group sets the normal link colors */
+
+A:LINK {color : #536B77; font-weight: bold; text-decoration: none;}
+A:VISITED {color : #536B77; font-weight: bold; text-decoration : none;}
+A:HOVER {color : #FFFFFF; font-weight: bold;  text-decoration : none;}
+A:ACTIVE {color : #536B77; font-weight: bold; text-decoration : none;}
+
+li {
+list-style-image: url('images/bullet.gif');
+}
+
+H1 {
+font-family: "Trebuchet MS", "Comic Sans MS", Arial, sans-serif;
+text-align: left;
+font-size: 1.8em;
+font-weight: bold;
+letter-spacing: 2px;
+color : #6B8490;
+margin: 0px;
+}
+
+h2 {
+color: #3C4D55;
+font-family: "Trebuchet MS", "Comic Sans MS", Arial, sans-serif;
+text-align: left;
+font-size: 1.4em;
+font-weight: bold;
+letter-spacing: 3px;
+}
+
+H3, H4, H5, H6 {
+font-size : 13px;
+font-weight : bold;
+color : #6B8490;
+}
+
+.imageborder {
+padding: 0px;
+background-image: url('images/cell1.jpg') }
+
+.borders {
+font-family : Verdana, Arial, sans-serif;
+background: #B2C3CC;
+color: #000000;
+line-height: normal;
+border-top: 1px solid #000000;
+border-bottom: 1px solid #000000;
+padding: 10px;
+font-size: 90%;
+font-weight: bold;
+}
+
+.plain {
+padding: 20px;
+}
+
+.rightside {
+font-family : Verdana, Arial, sans-serif;
+border-left: 1px dashed #3C4D55;
+text-align: justify;
+background: #FFFFFF;
+padding-left: 10px;
+padding-right: 0px;
+padding-top: 15px;
+padding-bottom: 15px;
+}
+
+.textarea {
+font-family : Verdana, Arial, sans-serif;
+text-align: left;
+background: #FFFFFF;
+line-height: 18px;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.tiny {
+font-size: 80%;
+letter-spacing: 1;
+font-weight-bold
+}
+
+.special {
+border: 1px dotted #3C4D55;
+padding: 5px;
+font-size: 80%;
+line-height: 20px;
+}
+
+.invisible {
+border: none;
+padding: 5px;
+font-size: 80%;
+line-height: 20px;
+}
+
+.caption {  
+font-size: 85%;
+font-family: Verdana, Arial, sans-serif;
+horizontal-align: center;
+text-align: center;
+}
+
+A.borders:LINK {color : #536B77; font-weight: bold; text-decoration: none;}
+A.borders:VISITED {color : #536B77; font-weight: bold; text-decoration : none;}
+A.borders:HOVER {color : #FFFFFF; font-weight: bold; background: #536B77; text-decoration : none;}
+A.borders:ACTIVE {color : #536B77; font-weight: bold; text-decoration : none;}
+
+table.a {
+	border-width: thin thin thin thin;
+	border-spacing: 0px;
+	border-style: outset outset outset outset;
+	border-color: rgb(107, 132, 144) rgb(107, 132, 144) rgb(107, 132, 144) rgb(107, 132, 144);
+	border-collapse: collapse;
+	background-color: white;
+}
+table.a th {
+	border-width: 1thin thin thin thin;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+table.a td {
+	border-width: thin thin thin thin;
+	padding: 1px 1px 1px 1px;
+	border-style: inset inset inset inset;
+	border-color: gray gray gray gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+table.a table {
+	border: none;
+}
+
+table.a table td, table.a table th {
+	border: none;
+}
+
+.centerdiv {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-}
-body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 50px;
 }
 
-body { 
-  background: ; 
+.smaller {
+font-size: 80%;
 }
-.intro{
+
+#content {
+	margin: 10px auto;
+	width: 800px;
+}
+
+#application {
+	margin:10px auto;
+	width:790px;
+	border:1px solid #70848f;
+} 
+
+#top {
+    border-bottom: 1px solid #70848F;
+    overflow: hidden;
+    padding: 20px;
+}
+
+#explanation {
+    float: left;
+    padding: 30px 30px 10px;
+    width: 300px;
+}
+
+#ads {
+    float: right;
+    width: 360px;
+}
+
+#first_form {
+    float: right;
+    margin: 2px;
+	border: 2px solid #00AA00;
+}
+
+#bottom {
+    overflow: hidden;
+}
+
+#form {
+    float: left;
+    margin-left: 50px;
+    padding: 10px 0px 10px 0;
+    width: 310px;
+}
+
+#form label {
+    display: block;
+    float: left;
+    font-size: 14px;
+    line-height: 22px;
+    width: 70px;
+}
+
+#nf_title {
+    float: left;
+    font-size: 14px;
+    text-align: right;
+    width: 130px;
+}
+
+#gain_title {
+    float: right;
+    font-size: 14px;
+    width: 85px;
+}
+
+#form fieldset {
+    border: 0 none;
+    margin: 12px 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+
+#form input.nf_input{ width:200;    
+    font-size: 60px;}
+
+
+#form input.gain_input {
     width:200;    
     font-size: 60px;
     padding: 5px ;    
@@ -44,134 +473,118 @@ body {
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 
-.ids{
-     border: 2px solid red;
-  padding: 10px;
-  border-radius: 50px 20px;}
+.nf_input {
+    float: left;
+}
 
-input[type=checkbox]{
-    width: 120px; 
-    height: 120px; 
-   
-  }
+.gain_input {
+    float: right;
+}
+
+#results {
+    float: right;
+	padding: 0 50px 50px 25px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    width: 335px;
+	border-left: 1px solid #70848f;
+}
+
+h4 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin-bottom: 15px;
+    width: 195px;
+}
+
+h4 span {
+    color: #136433;
+    float: right;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+h4 span.errorResult {
+    color: red;
+}
+
+#errorBox {
+    color: red;
+    font-size: 1.0em;
+    padding: 10px 0;
+}
 </style>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div>
+ <form method="get" action="" id="first_form" name="first_form">
+                                <select name="num_of_stages" >
+                                    <option value="2" selected="selected" >2</option>
+                                    <option value="3" >3</option>
+
+                                    <option value="4" >4</option>
+                                    <option value="5" >5</option>
+                                    <option value="6" >6</option>
+                                    <option value="7" >7</option>
+                                    <option value="8" >8</option>
+                                    <option value="9" >9</option>
+
+                                    <option value="10" >10</option>
+                                    <option value="11" >11</option>
+                                    <option value="12" >12</option>
+                                    <option value="13" >13</option>
+                                    <option value="14" >14</option>
+                                    <option value="15" >15</option>
+
+                                    <option value="16" >16</option>
+                                    <option value="17" >17</option>
+                                    <option value="18" >18</option>
+                                    <option value="19" >19</option>
+                                    <option value="20" >20</option>
+                                    <option value="21" >21</option>
+
+                                    <option value="22" >22</option>
+                                    <option value="23" >23</option>
+                                    <option value="24" >24</option>
+                                    <option value="25" >25</option>
+                                    <option value="26" >26</option>
+                                    <option value="27" >27</option>
+
+                                    <option value="28" >28</option>
+                                    <option value="29" >29</option>
+                                    <option value="30" >30</option>
+                                </select>
+                            </form></div><hr>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
+
+<div id="nf_title">NF (db)</div>
+                    <div id="gain_title">Gain (db)</div>
+
+<form name="secondForm" id="secondForm" method="get" action="" >
+                    </form>                   
+<div style="text-align: right;padding-top:20px;">
+                        <a href="javascript:application.calculate()" ><img width="157" height="39"  alt="Calculate Noise Figure" border="0" /></a>
+                    </div>
+
+<div id="results" >
+                    <h2>Results</h2>
+
+                    <h4>Total NF :  <span id="total_nf_result">??????</span></h4>
+                    <h4>Total Gain :  <span id="total_gain_result">??????</span></h4>
+                    <h4>Noise Temp :  <span id="noise_temp_result">??????</span></h4>
+                    <div id="errorBox" ></div>
+                </div>
+        <script type="text/javascript" >
+                application.init();
+        </script>
 
 
-<fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Input</h3></div></legend>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="800">
 
-<form id="tool-form">
+<tr>
+<td width="100%" class="textarea" valign="top">
 
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<select class="form-control" id="nf-unit" style="padding: 5px ;  position: absolute;right: 315px;font-size:60px;margin:8px 0;width:375px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">Figure Noise(dB)</option>
-<option value="2">Tempreture 	&nbsp; Noise(K)</option>
-</select><input type="number" id="nf"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 10px;"class="form-control"  />Select<h1 style="font-size:70;"></h1>
-
-</div>
-</div>
-
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:50;" >Reference </label><font face="Arial" size="6">(Temp.) </font><input  id="rt"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-</div>
-</div>
-</div>
-</form></fieldset>
-<div class="row">
-<div class="col-sm-12">
-<div class='col-sm-4'>
-<div class="form-group">
-&nbsp;
-</div>
-</div>
-<div class="col-sm-4">
-<div class="form-group">
-<fieldset><legend><div colspan="2" align="center" height="19"><input id="calculate" class="btn btn-theme" type="button" value="Calculate" " style="background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
- 
-  padding: 10px 200px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;">
-</div></legend></fieldset>
-
-</div>
-</div>
-
-<fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>
-<div id="answer-fields">
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div id="ans-nt-container">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning">
-<label for="ansNt" class="control-label">Noise </label><font face="Arial" size="6">(Temperature)  </font><input  id="ansNt"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"class="form-group" style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K</label><h1 style="font-size:50;"></h1>
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-
-</div>
-</div>
-</div>
-<div class="col-sm-12" id="ans-nf-container" style="display: none">
-
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group has-warning">
-<label for="ansNf" class="control-label">Noise Figure</label><font face="Arial" size="7">  </font><input  id="ansNf"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"class="form-group" style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label><h1 style="font-size:50;"></h1>
-
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-<script type="text/javascript">
-var _0x3a86=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x6E\x66","\x23\x72\x74","\x23\x6E\x66\x2D\x75\x6E\x69\x74","\x70\x6F\x77","\x74\x6F\x46\x69\x78\x65\x64","\x23\x61\x6E\x73\x4E\x74","\x6C\x6F\x67\x31\x30","\x23\x61\x6E\x73\x4E\x66","\x6F\x6E","\x63\x68\x61\x6E\x67\x65","\x68\x69\x64\x65","\x23\x61\x6E\x73\x2D\x6E\x66\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x73\x68\x6F\x77","\x23\x61\x6E\x73\x2D\x6E\x74\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72"];!function(_0x576fx1){_0x3a86[0];function _0x576fx2(){_0x576fx1(_0x3a86[10])[_0x3a86[9]](function(){_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[1]),_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[6]](_0x3a86[5]),_0x576fx1(this)[_0x3a86[8]](_0x3a86[7])})}function _0x576fx3(){_0x576fx1(_0x3a86[10])[_0x3a86[9]](function(){_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[5]),_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[6]](_0x3a86[1])})}var _0x576fx4,_0x576fx5=_0x576fx1(_0x3a86[11]);_0x576fx1(_0x3a86[16])[_0x3a86[17]](function(){_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[12]),_0x576fx2(),_0x576fx5[_0x3a86[14]](_0x3a86[13],!1),_0x576fx1[_0x3a86[15]](_0x576fx1(this)[_0x3a86[8]]())=== !1?(_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[6]](_0x3a86[12]),_0x576fx5[_0x3a86[14]](_0x3a86[13],!1)):_0x576fx1(this)[_0x3a86[4]](_0x3a86[3])[_0x3a86[2]](_0x3a86[12]),_0x576fx4= 0,_0x576fx1(_0x3a86[16])[_0x3a86[9]](function(){_0x3a86[7]!= _0x576fx1(this)[_0x3a86[8]]()&& _0x576fx1[_0x3a86[15]](_0x576fx1(this)[_0x3a86[8]]())!== !1|| _0x576fx4++}),_0x576fx4> 0&& _0x576fx5[_0x3a86[14]](_0x3a86[13],!0)}),_0x576fx5[_0x3a86[28]](_0x3a86[18],function(_0x576fx2){_0x576fx2[_0x3a86[19]]();var _0x576fx4,_0x576fx5,_0x576fx6;_0x576fx5= _0x576fx1(_0x3a86[20])[_0x3a86[8]](),_0x576fx6= _0x576fx1(_0x3a86[21])[_0x3a86[8]](),1== _0x576fx1(_0x3a86[22])[_0x3a86[8]]()?(_0x576fx4= _0x576fx6* (Math[_0x3a86[23]](10,_0x576fx5/ 10)- 1),_0x576fx1(_0x3a86[25])[_0x3a86[8]](_0x576fx4[_0x3a86[24]](4))):(_0x576fx4= 10* Math[_0x3a86[26]](_0x576fx5/ _0x576fx6+ 1),_0x576fx1(_0x3a86[27])[_0x3a86[8]](_0x576fx4[_0x3a86[24]](4))),_0x576fx3()}),_0x576fx1(_0x3a86[22])[_0x3a86[28]](_0x3a86[29],function(){_0x576fx2(),1== _0x576fx1(this)[_0x3a86[8]]()?(_0x576fx1(_0x3a86[31])[_0x3a86[30]](),_0x576fx1(_0x3a86[33])[_0x3a86[32]]()):(_0x576fx1(_0x3a86[33])[_0x3a86[30]](),_0x576fx1(_0x3a86[31])[_0x3a86[32]]())}),1== _0x576fx1(_0x3a86[22])[_0x3a86[8]]()?(_0x576fx1(_0x3a86[31])[_0x3a86[30]](),_0x576fx1(_0x3a86[33])[_0x3a86[32]]()):(_0x576fx1(_0x3a86[33])[_0x3a86[30]](),_0x576fx1(_0x3a86[31])[_0x3a86[32]]())}(jQuery)
-    </script>
