@@ -203,259 +203,26 @@ window.application = application;
             
 </script>
 <style>
-BODY {
-background-color : #FFFFFF;
-font-family : Verdana, Arial, sans-serif;
-font-size: 80%;
-margin: 0;
-scrollbar-arrow-color: #000000;
-scrollbar-face-color: #8CA5B2;
-scrollbar-3dlight-color: #8CA5B2;
-scrollbar-highlight-color: #000000;
-scrollbar-shadow-color: #8CA5B2;
-scrollbar-darkshadow-color: #000000;
-scrollbar-track-color: #B2C3CC;
-}
-
-a img { border: 0px solid transparent; margin:0; padding: 0; }
-a:hover img {text-decoration: none;}
-
-P, TD, LI, UL, Table {
-font-family : Verdana, Arial, sans-serif;
-font-size : 100%;
-}
-/* this group sets the normal link colors */
-
-A:LINK {color : #536B77; font-weight: bold; text-decoration: none;}
-A:VISITED {color : #536B77; font-weight: bold; text-decoration : none;}
-A:HOVER {color : #FFFFFF; font-weight: bold;  text-decoration : none;}
-A:ACTIVE {color : #536B77; font-weight: bold; text-decoration : none;}
-
-li {
-list-style-image: url('images/bullet.gif');
-}
-
-H1 {
-font-family: "Trebuchet MS", "Comic Sans MS", Arial, sans-serif;
-text-align: left;
-font-size: 1.8em;
-font-weight: bold;
-letter-spacing: 2px;
-color : #6B8490;
-margin: 0px;
-}
-
-h2 {
-color: #3C4D55;
-font-family: "Trebuchet MS", "Comic Sans MS", Arial, sans-serif;
-text-align: left;
-font-size: 1.4em;
-font-weight: bold;
-letter-spacing: 3px;
-}
-
-H3, H4, H5, H6 {
-font-size : 13px;
-font-weight : bold;
-color : #6B8490;
-}
-
-.imageborder {
-padding: 0px;
-background-image: url('images/cell1.jpg') }
-
-.borders {
-font-family : Verdana, Arial, sans-serif;
-background: #B2C3CC;
-color: #000000;
-line-height: normal;
-border-top: 1px solid #000000;
-border-bottom: 1px solid #000000;
-padding: 10px;
-font-size: 90%;
-font-weight: bold;
-}
-
-.plain {
-padding: 20px;
-}
-
-.rightside {
-font-family : Verdana, Arial, sans-serif;
-border-left: 1px dashed #3C4D55;
-text-align: justify;
-background: #FFFFFF;
-padding-left: 10px;
-padding-right: 0px;
-padding-top: 15px;
-padding-bottom: 15px;
-}
-
-.textarea {
-font-family : Verdana, Arial, sans-serif;
-text-align: left;
-background: #FFFFFF;
-line-height: 18px;
-padding-left: 20px;
-padding-right: 20px;
-padding-top: 5px;
-padding-bottom: 5px;
-}
-
-.tiny {
-font-size: 80%;
-letter-spacing: 1;
-font-weight-bold
-}
-
-.special {
-border: 1px dotted #3C4D55;
-padding: 5px;
-font-size: 80%;
-line-height: 20px;
-}
-
-.invisible {
-border: none;
-padding: 5px;
-font-size: 80%;
-line-height: 20px;
-}
-
-.caption {  
-font-size: 85%;
-font-family: Verdana, Arial, sans-serif;
-horizontal-align: center;
-text-align: center;
-}
-
-A.borders:LINK {color : #536B77; font-weight: bold; text-decoration: none;}
-A.borders:VISITED {color : #536B77; font-weight: bold; text-decoration : none;}
-A.borders:HOVER {color : #FFFFFF; font-weight: bold; background: #536B77; text-decoration : none;}
-A.borders:ACTIVE {color : #536B77; font-weight: bold; text-decoration : none;}
-
-table.a {
-	border-width: thin thin thin thin;
-	border-spacing: 0px;
-	border-style: outset outset outset outset;
-	border-color: rgb(107, 132, 144) rgb(107, 132, 144) rgb(107, 132, 144) rgb(107, 132, 144);
-	border-collapse: collapse;
-	background-color: white;
-}
-table.a th {
-	border-width: 1thin thin thin thin;
-	padding: 1px 1px 1px 1px;
-	border-style: inset inset inset inset;
-	border-color: gray gray gray gray;
-	background-color: white;
-	-moz-border-radius: 0px 0px 0px 0px;
-}
-table.a td {
-	border-width: thin thin thin thin;
-	padding: 1px 1px 1px 1px;
-	border-style: inset inset inset inset;
-	border-color: gray gray gray gray;
-	background-color: white;
-	-moz-border-radius: 0px 0px 0px 0px;
-}
-
-table.a table {
-	border: none;
-}
-
-table.a table td, table.a table th {
-	border: none;
-}
-
-.centerdiv {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.smaller {
-font-size: 80%;
-}
-
-#content {
-	margin: 10px auto;
-	width: 800px;
-}
-
-#application {
-	margin:10px auto;
-	width:790px;
-	border:1px solid #70848f;
-} 
-
-#top {
-    border-bottom: 1px solid #70848F;
-    overflow: hidden;
-    padding: 20px;
-}
-
-#explanation {
-    float: left;
-    padding: 30px 30px 10px;
-    width: 300px;
-}
-
-#ads {
-    float: right;
-    width: 360px;
-}
-
-#first_form {
-    float: right;
-    margin: 2px;
-	border: 2px solid #00AA00;
-}
-
-#bottom {
-    overflow: hidden;
-}
-
-#form {
-    float: left;
-    margin-left: 50px;
-    padding: 10px 0px 10px 0;
-    width: 310px;
-}
-
-#form label {
-    display: block;
-    float: left;
-    font-size: 14px;
-    line-height: 22px;
-    width: 70px;
-}
-
-#nf_title {
-    float: left;
-    font-size: 14px;
-    text-align: right;
-    width: 130px;
-}
-
-#gain_title {
-    float: right;
-    font-size: 14px;
-    width: 85px;
-}
-
-#form fieldset {
-    border: 0 none;
-    margin: 12px 0;
-    overflow: hidden;
-    padding: 0;
-}
 
 
-#form input.nf_input{ width:200;    
-    font-size: 60px;}
 
 
-#form input.gain_input {
-    width:200;    
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+{ width:200;    
     font-size: 60px;
     padding: 5px ;    
     border:2px solid #aaa;
@@ -473,22 +240,32 @@ font-size: 80%;
     box-shadow:0 0 8px 0 dodgerBlue;
   }
 
-.nf_input {
-    float: left;
+
+
+.intro {
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  .intro:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
 }
 
-.gain_input {
-    float: right;
-}
+  
+ 
 
-#results {
-    float: right;
-	padding: 0 50px 50px 25px;
-    padding-bottom: 50px;
-    padding-right: 50px;
-    width: 335px;
-	border-left: 1px solid #70848f;
-}
+
 
 h4 {
     font-size: 12px;
@@ -517,6 +294,8 @@ h4 span.errorResult {
 </style>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <div>
  <form method="get" action="" id="first_form" name="first_form">
                                 <select name="num_of_stages" >
@@ -555,9 +334,7 @@ h4 span.errorResult {
                                     <option value="29" >29</option>
                                     <option value="30" >30</option>
                                 </select>
-                            </form></div><hr>
-
-
+                            </form></div>
 
 <div id="nf_title">NF (db)</div>
                     <div id="gain_title">Gain (db)</div>
@@ -583,7 +360,7 @@ h4 span.errorResult {
 
 <div align="center">
 <center>
-<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="800">
+
 
 <tr>
 <td width="100%" class="textarea" valign="top">
