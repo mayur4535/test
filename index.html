@@ -1,31 +1,26 @@
 
+	<script>
+		function Compute(form) {
+			with(Math) {
+				var Precision= 10;
+				var Days;
+				var Ed;
+				var mAh= Number(form.mAh.value); // in mW.
+				var V= Number(form.V.value);
+				var Ps= Number(form.Ps.value);
+				var Pl= Number(form.Pl.value);   // in mW.
+				var N= Number(form.N.value);
+				var F= Number(form.F.value);
+				var T= Number(form.T.value);
+				Ed= (Ps*N*F*T)/(3600*V) + 24*Pl/V; // energy use/day. divide by 1000 converts uW to mW, 24 is hours per day. 
+				Days= (mAh/Ed);
+				form.Ed.value= Ed.toPrecision(Precision);
+				form.Days.value= Days.toPrecision(Precision);
 
-<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
-
-
-function calcbattery(){
-    var form = document.form1;
-   
-    var r = form.rating.value;
-    
-    var d = form.device.value;
-	
-   
-	var Precision=6;
-
-    var result = (r/d)* (.7);
-
-
-     form.result.value =result.toPrecision(Precision);
-    
- return true;
-}
-//-->
-</SCRIPT>
+			}
+		}
+	</script>
 </head>
-
-
-
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -91,22 +86,40 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
+<form method="post" name="ParamForm">
 
-
-
-	 <FORM name="form1">
-
-
-<label for="r2" style="font-size:55;" >Battery</label><font face="Arial" size="6"> (Capacity Rating)  </font><input maxlength="15" NAME="rating" class="intro"  style="position: absolute;   width:280; text-align
+<label for="r2" style="font-size:55;" >E</label><font face="Arial" size="6"> (Battery Energy)  </font><input  NAME="mAh" class="intro"  style="position: absolute;   width:280; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mAH</label>
 <h1 style="font-size:40;"></h1>		
-<label for="r2" style="font-size:60;" >  device</label><font face="Arial" size="6"> (Consumption) </font><input  maxlength="15" NAME="device" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mA</label>		
-	
+
+
+<label for="r2" style="font-size:55;" >V</label><font face="Arial" size="6"> (Battery Voltage)  </font><input  name="V" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	
+
+
+<label for="r2" style="font-size:55;" >Pl</label><font face="Arial" size="6"> (Data Logger Power when Sleeping)  </font><input  name="Pl" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mW</label>
+<h1 style="font-size:40;"></h1>	
+
+<label for="r2" style="font-size:55;" >Ps</label><font face="Arial" size="6"> (Sensor Power)  </font><input  name="Ps" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mW</label>
+<h1 style="font-size:40;"></h1>	
+
+<label for="r2" style="font-size:55;" >T</label><font face="Arial" size="6"> (Sensor On time per sample)  </font><input  name="T" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Sec</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Sample Rate per Day)  </font><input  name="F" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Spd</label>
+<h1 style="font-size:40;"></h1>	
+
+<label for="r2" style="font-size:55;" >Num. Sensors</label><font face="Arial" size="6">   </font><input  name="N" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"></label>
+<h1 style="font-size:40;"></h1>		
 </fieldset>
 <h1 style="font-size:80;"></h1>		
 <fieldset><legend><div colspan="2" align="center" height="19"><INPUT TYPE="button" VALUE=" Calculate " 
-   onClick="calcbattery(this.form)" " style="background-color: #167A04 ;
+   name="B1" onclick="Compute(document.ParamForm);" " style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -118,19 +131,21 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;">
-</div></legend></fieldset>	
+</div></legend></fieldset>
 		
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>	
+<h3>Outputs</h3></div></legend>			
+<label for="r2" style="font-size:55;" >Ed</label><font face="Arial" size="6"> (Energy usage per day)  </font><input maxlength="15" NAME="Ed" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mAH</label>
+<h1 style="font-size:40;"></h1>		
+<label for="r2" style="font-size:55;" >Battery Life</label><font face="Arial" size="6"> (Estimated)  </font><input maxlength="15" NAME="Days" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Day</label>
+<h1 style="font-size:40;"></h1>		
+			
+			
 		
-<label for="r2" style="font-size:60;" >Battery Life</label><font face="Arial" size="7">  </font><input   NAME="result"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">H</label>		
+		</form>
+
 		
-
-
-	
-</FORM>
-
-</fieldset>
