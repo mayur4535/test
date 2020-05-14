@@ -1,44 +1,28 @@
 
-<head>
 
-<link rel="stylesheet" href="http://www.daycounter.com/DaycounterStyle.css"/>
-
-<META  name="description" content="Air Core Coil Inductor Inductance Calculator.">
-
-<META  name="keywords" content="Air, Core,Coil,Inductance, Inductor, Electronics, Calculator">
-				                  
-				                  
-<title>Adjustable Voltage Regulator Resistor Divider Calculator</title>
-
-<script language="JavaScript">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
 
 
-function Compute(form) {
-	with(Math) {
-		var Kilo= 1000;
-		var Precision= 3;
-		var R1;
-				
-		var Vo= Number(form.Vo.value);
-		var Vr= Number(form.Vr.value);
-		var R1= Number(form.R1.value);
+function calcbattery(){
+    var form = document.form1;
+   
+    var r = form.rating.value;
+    
+    var d = form.device.value;
+	
+   
+	var Precision=6;
 
-		
+    var result = (r/d)* (.7);
 
-		
-		R2= (Vo-Vr)*R1/Vr;
-				
-		form.R2.value= R2.toPrecision(Precision);
-	}
+
+     form.result.value =result.toPrecision(Precision);
+    
+ return true;
 }
-
-
-
-</script>
-
-
-
-
+//-->
+</SCRIPT>
+</head>
 
 
 
@@ -99,7 +83,8 @@ input[type=checkbox]{
 
 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 
@@ -109,24 +94,19 @@ input[type=checkbox]{
 
 
 
+	 <FORM name="form1">
 
- 
-     
-     
-      <form method="POST" name="ParamForm">
 
-<label for="r2" style="font-size:55;" >Input Voltage</label><font face="Arial" size="7"> </font><input   name="Vr"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:45;"></h1>
-<label for="r2" style="font-size:55;" >Output Voltage</label><font face="Arial" size="7"> </font><input   name="Vo" class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:45;"></h1>
-<label for="r2" style="font-size:55;" >R<sub>1</sub></label><font face="Arial" size="7"> </font><input   name="R1" class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:30;"></h1>       
-</fieldset>   
-<h1 style="font-size:80;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="button"  name="B1" value="Calculate" onClick="Compute(document.ParamForm);" style="background-color: #167A04 ;
+<label for="r2" style="font-size:55;" >Battery</label><font face="Arial" size="7"> (Capacity Rating)  </font><input maxlength="15" NAME="rating" class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mAH</label>
+<h1 style="font-size:40;"></h1>		
+<label for="r2" style="font-size:60;" >  device</label><font face="Arial" size="7"> (Consumption) </font><input  maxlength="15" NAME="device" class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mA</label>		
+	
+</fieldset>
+<h1 style="font-size:80;"></h1>		
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT TYPE="button" VALUE=" Calculate " 
+   onClick="calcbattery(this.form)" " style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -138,14 +118,19 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;">
-</div></legend></fieldset>            
+</div></legend></fieldset>	
+		
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend> 
+<h3>Outputs</h3></div></legend>	
+		
+<label for="r2" style="font-size:60;" >Battery Life</label><font face="Arial" size="7">  </font><input   NAME="result"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">H</label>		
+		
 
-<label for="r2" style="font-size:60;" >R<sub>2</sub></label><font face="Arial" size="7"> </font><input   name="R2" class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>       
-         
-      </form>
-      
+
+	
+</FORM>
+
+</fieldset>
