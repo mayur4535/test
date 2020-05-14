@@ -64,16 +64,16 @@
 			var Rf1= Number(form.Rf1.value)*Kilo;  		// Top feedback resistor in ohms.
 
 			
-			if((Vin < 4.5)||(Vin>42)) alert ("Warning: Vin must be: 4.5V <= Vin <= 42V.");
-			if(Vinmax>42) alert ("Warning: Vinmax must be less than 42V.");
-			if(Vinmin < 4.5) alert ("Warning: Vinmin must be greater than 4.5V.");
-			if(Qoff < Qon) alert ("Warning: The MOSFET off time should be larger than the on time.");
+			if((Vin < 4.5)||(Vin>42)) ;
+			if(Vinmax>42);
+			if(Vinmin < 4.5) ;
+			if(Qoff < Qon) ;
 			
 			td= (50 + Qoff - Qon)*nano; 	// 50ns + the difference between the on and off times of the MOSFET.
 			DutyCycle= Vout/Vin;
 			RT= (Vout*(Vin-1.56))/(1.45e-7*Vin*Fs) - (td*(Vin-1.56))/(1.45e-7)- 1.4;
 			Tonmin= (1.45e-7*(RT+1.4))/(Vinmax - 1.56+ RT/3167) + td; // in seconds.
-			if(Tonmin<150e-9) alert("Warning: The minimum switching on-time should not be less than 150ns. The minimum switching time occurs when Vin is at it's maximum value.")
+			if(Tonmin<150e-9) ("")
 			Tonmax= (1.45e-7*(RT+1.4))/(Vinmin - 1.56+ RT/3167) + td; // in seconds.
 			
 			Rf2= Rf1/((Vout/1.25) - 1)/Kilo;
