@@ -1,4 +1,45 @@
 
+<head>
+
+<link rel="stylesheet" href="http://www.daycounter.com/DaycounterStyle.css"/>
+
+<META  name="description" content="Air Core Coil Inductor Inductance Calculator.">
+
+<META  name="keywords" content="Air, Core,Coil,Inductance, Inductor, Electronics, Calculator">
+				                  
+				                  
+<title>Adjustable Voltage Regulator Resistor Divider Calculator</title>
+
+<script language="JavaScript">
+
+
+function Compute(form) {
+	with(Math) {
+		var Kilo= 1000;
+		var Precision= 3;
+		var R1;
+				
+		var Vo= Number(form.Vo.value);
+		var Vr= Number(form.Vr.value);
+		var R1= Number(form.R1.value);
+
+		
+
+		
+		R2= (Vo-Vr)*R1/Vr;
+				
+		form.R2.value= R2.toPrecision(Precision);
+	}
+}
+
+
+
+</script>
+
+
+
+
+
 
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
@@ -58,69 +99,34 @@ input[type=checkbox]{
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<p><form id="tool">
 
 
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group">
 
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<label for="r2" style="font-size:60;" >Frequency <font face="Arial" size="3"></font></label><input type="number"name="freq"  id="freq"  class="intro"  style="position: absolute;   text-align
-:center;width:250; right: 165px;"class="form-control"  />
-<select class="form-control" id="freq_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
-<option selected="selected" value="1">GHz</option>
-<option value="1000">MHz</option>
-</select></div>
 
-</div>
-</div>
-<h1 style="font-size:40;"></h1>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group">
+ 
+     
+     
+      <form method="POST" name="ParamForm">
 
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<label for="r2" style="font-size:60;" > Constant <font face="Arial" size="6">(Dielectric)</font></label><input type="number" id="dc"  class="intro"  style="position: absolute;   text-align
-:center;width:405; right: 10px;"class="form-control"  />
-</div>
-</div>
-</div>
-</div>
-</div><h1 style="font-size:40;"></h1>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<label for="r2" style="font-size:55;" >Velocity<font face="Arial" size="6"> (Velocity of Propagation)</font></label><input type="number" id="vop"  class="intro"  style="position: absolute;   text-align
-:center;width:405; right: 10px;"class="form-control"  />
-</div>
-</div>
-</div>
-</form></fieldset>
+<label for="r2" style="font-size:55;" >Reference Voltage</label><font face="Arial" size="7"> </font><input   name="Vr"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:45;"></h1>
+<label for="r2" style="font-size:55;" >Output Voltage</label><font face="Arial" size="7"> </font><input   name="Vo" class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
+<h1 style="font-size:45;"></h1>
+<label for="r2" style="font-size:55;" >R<sub>1</sub></label><font face="Arial" size="7"> </font><input   name="R1" class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
+<h1 style="font-size:30;"></h1>       
+</fieldset>   
 <h1 style="font-size:80;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><input id="tool_submit" class="btn btn-theme" type="button" value="Calculate" " style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="button"  name="B1" value="Calculate" onClick="Compute(document.ParamForm);" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -132,35 +138,14 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;">
-</div></legend></fieldset>
-
+</div></legend></fieldset>            
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>
-<div class="row clearfix">
-<div class="col-sm-12 col-xs-12">
-<div class="col-sm-4 col-xs-12">
-<div class="form-group">
+<h3>Outputs</h3></div></legend> 
 
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div id="tool_output_container" class="form-group">
-<label for="r2" style="font-size:55;" >Wavelength</label><font face="Arial" size="7">  </font><input  id="tool_output1"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mm</label>
-
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-<h1 style="font-size:30;"></h1>
-</div>
-</div>
-</div>
-<script type="text/javascript">
-var _0x7c67=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x66\x72\x65\x71","\x23\x66\x72\x65\x71\x5F\x75\x6E\x69\x74","\x23\x64\x63","\x23\x76\x6F\x70","\x70\x6F\x77","\x73\x71\x72\x74","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x6B\x65\x79\x70\x72\x65\x73\x73","\x6F\x6E","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65"];!function(_0x59cax1){_0x7c67[0];var _0x59cax2={calculate:function(){var _0x59cax2=parseFloat(_0x59cax1(_0x7c67[2])[_0x7c67[1]]()),_0x59cax3=_0x59cax1(_0x7c67[3])[_0x7c67[1]](),_0x59cax4=parseFloat(_0x59cax1(_0x7c67[4])[_0x7c67[1]]()),_0x59cax5=parseFloat(_0x59cax1(_0x7c67[5])[_0x7c67[1]]()),_0x59cax6=_0x59cax2/ _0x59cax3,_0x59cax7=_0x59cax4> 0?_0x59cax4:1/ Math[_0x7c67[6]](_0x59cax5/ 100,2),_0x59cax8=300/ (_0x59cax6* Math[_0x7c67[7]](_0x59cax7));_0x59cax1(_0x7c67[9])[_0x7c67[1]](_0x59cax8[_0x7c67[8]](4))}};_0x59cax1(_0x7c67[12])[_0x7c67[17]](function(){var _0x59cax2=!1;_0x59cax1(_0x7c67[12])[_0x7c67[11]](function(){_0x7c67[10]== _0x59cax1(this)[_0x7c67[1]]()&& (_0x59cax2=  !0)}),_0x59cax2?_0x59cax1(_0x7c67[15])[_0x7c67[14]](_0x7c67[13],_0x7c67[13]):_0x59cax1(_0x7c67[15])[_0x7c67[16]](_0x7c67[13])}),_0x59cax1(_0x7c67[4])[_0x7c67[19]](_0x7c67[18],function(){_0x59cax1(_0x7c67[5])[_0x7c67[1]](0)}),_0x59cax1(_0x7c67[5])[_0x7c67[19]](_0x7c67[18],function(){_0x59cax1(_0x7c67[4])[_0x7c67[1]](0)}),_0x59cax1(_0x7c67[15])[_0x7c67[19]](_0x7c67[20],function(_0x59cax1){_0x59cax1[_0x7c67[21]](),_0x59cax2[_0x7c67[22]]()})}(jQuery)
-</script>
-</div>
-</body>
-</html>
+<label for="r2" style="font-size:60;" >R<sub>2</sub></label><font face="Arial" size="7"> </font><input   name="R2" class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>       
+         
+      </form>
+      
