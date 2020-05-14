@@ -1,26 +1,102 @@
 
-	<script>
-		function Compute(form) {
-			with(Math) {
-				var Precision= 10;
-				var Days;
-				var Ed;
-				var mAh= Number(form.mAh.value); // in mW.
-				var V= Number(form.V.value);
-				var Ps= Number(form.Ps.value);
-				var Pl= Number(form.Pl.value);   // in mW.
-				var N= Number(form.N.value);
-				var F= Number(form.F.value);
-				var T= Number(form.T.value);
-				Ed= (Ps*N*F*T)/(3600*V) + 24*Pl/V; // energy use/day. divide by 1000 converts uW to mW, 24 is hours per day. 
-				Days= (mAh/Ed);
-				form.Ed.value= Ed.toPrecision(Precision);
-				form.Days.value= Days.toPrecision(Precision);
+<SCRIPT language=JavaScript>
 
-			}
-		}
-	</script>
-</head>
+
+function Compute(form) {
+	with(Math) {
+		var Kilo= 1000;
+		var Meg= Kilo*Kilo;
+		var micro= 1/Meg;
+		var Pico= 1/(Meg*Meg);
+		var Nano= 1/(Meg*Kilo);
+		var Precision= 3;
+		var Po1,Po2,Po3,Po4;
+		var Pin;
+		var Nps1;		// primary to secondary1 turns ratio
+		var T;
+		var D;			// Diameter of wire.
+		var Area;		// Cross sectional area of wire.
+		
+		var F= Number(form.F.value)*Kilo;
+		var Vin= abs(Number(form.Vin.value));
+		var Eff= abs(Number(form.Eff.value)/100); // Efficency in %, Turn into a fraction
+		var Vd= abs(Number(form.Vd.value)); // Diode Drop
+		var Vdsmax= abs(Number(form.Vdsmax.value)); // Max transistor voltage VDD
+		var AL= Number(form.AL.value)/Meg;
+		var Vtran= Number(form.Vtran.value)
+		
+		T= 1/F;
+		
+		var Vo1= abs(Number(form.Vo1.value));
+		var Io1= abs(Number(form.Io1.value));
+		Po1= (Vo1+Vd)*Io1;
+		var Vo2= abs(Number(form.Vo2.value));
+		var Io2= abs(Number(form.Io2.value));
+		Po2= (Vo2+Vd)*Io2;
+		var Vo3= abs(Number(form.Vo3.value));
+		var Io3= abs(Number(form.Io3.value));
+		Po3= (Vo3+Vd)*Io3;
+		var Vo4= abs(Number(form.Vo4.value));
+		var Io4= abs(Number(form.Io4.value));
+		Po4= (Vo4+Vd)*Io4;
+		Pin= (Po1+Po2+Po3+Po4)/Eff;
+		
+		Nps1= (Vdsmax*0.8-Vin)/(Vo2+Vd); // .8 gives us 20% margin to exceeding the max transistor voltage
+		Tdt= T*.2;							  // We want a minimu dead time of 20% so that we don't go continuous.
+		Tch= (Vo1+Vd)*Nps1*(T-Tdt)/((Vin-Vtran)+(Vo1+Vd)*Nps1);	// the minus 1 is the voltage drop accross the transistor.	  
+		Tdis= T-Tdt-Tch;
+		
+		L= ((Vin*Tch)*(Vin*Tch))/(2.5*T*Pin);
+		Np= sqrt(L/AL);
+		Ns1= Np*(Vo1+Vd)/(Vin-Vtran);
+		Ns2= Np*(Vo2+Vd)/(Vin-Vtran);		
+		Ns3= Np*(Vo3+Vd)/(Vin-Vtran);
+		Ns4= Np*(Vo4+Vd)/(Vin-Vtran);
+		Ip= Vin*Tch/L;
+		Iprms= Ip*sqrt(Tch/(3*T));
+		
+		// Circular mils = 500*Irms; 1cirmil = PI/4 sq-mils 
+		Area= 500*PI/4; // in sq-mils. A= PI*(D/2)^2
+		Dp= 2*sqrt(Area/PI); // in mils
+		AWGp= (log(Dp/1000)-log(.32439))/log(0.8909);
+		
+		
+		T= T*Meg;			// convert to uS.
+		Tdt= Tdt*Meg;
+		Tch= Tch*Meg;
+		Tdis= Tdis*Meg;
+		L= L*Meg;
+
+		form.T.value= T.toPrecision(Precision);
+		form.Po1.value= Po1.toPrecision(Precision);	
+		form.Po2.value= Po2.toPrecision(Precision);
+		form.Po3.value= Po3.toPrecision(Precision);
+		form.Po4.value= Po4.toPrecision(Precision);
+		
+		form.Pin.value= Pin.toPrecision(Precision);
+		form.Nps1.value= Nps1.toPrecision(Precision);
+		form.Tch.value= Tch.toPrecision(Precision);
+		form.Tdis.value= Tdis.toPrecision(Precision);
+		form.Tdt.value= Tdt.toPrecision(Precision);
+		
+		form.L.value= L.toPrecision(Precision);
+		
+		form.Np.value= Np.toPrecision(Precision);
+		form.Ns1.value= Ns1.toPrecision(Precision);
+		form.Ns2.value= Ns2.toPrecision(Precision);
+		form.Ns3.value= Ns3.toPrecision(Precision);
+		form.Ns4.value= Ns4.toPrecision(Precision);
+		
+		form.Ip.value= Ip.toPrecision(Precision);
+		form.Iprms.value= Iprms.toPrecision(Precision);
+		form.Dp.value= Dp.toPrecision(Precision);
+		form.AWGp.value= AWGp.toPrecision(2);
+	}
+}
+
+
+
+</SCRIPT>
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -85,41 +161,89 @@ input[type=checkbox]{
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Input</h3></div></legend>
-<form method="post" name="ParamForm">
+<h3>Input</h3></div></legend>	<table border="1" width="580" height="631">			                  
+<FORM name=ParamForm method=post>
 
-<label for="r2" style="font-size:55;" >E</label><font face="Arial" size="6"> (Battery Energy)  </font><input  NAME="mAh" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mAH</label>
+<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Frequency)  </font><input maxlength="15" NAME="F" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KHz</label>
 <h1 style="font-size:40;"></h1>		
-
-
-<label for="r2" style="font-size:55;" >V</label><font face="Arial" size="6"> (Battery Voltage)  </font><input  name="V" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:40;"></h1>	
-
-
-<label for="r2" style="font-size:55;" >Pl</label><font face="Arial" size="5"> (Data Logger Power when Sleeping)  </font><input  name="Pl" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mW</label>
-<h1 style="font-size:40;"></h1>	
-
-<label for="r2" style="font-size:55;" >Ps</label><font face="Arial" size="6"> (Sensor Power)  </font><input  name="Ps" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mW</label>
-<h1 style="font-size:40;"></h1>	
-
-<label for="r2" style="font-size:55;" >T</label><font face="Arial" size="6"> (Sensor On time per sample)  </font><input  name="T" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Sec</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Sample Rate per Day)  </font><input  name="F" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Spd</label>
-<h1 style="font-size:40;"></h1>	
-
-<label for="r2" style="font-size:55;" >Num. Sensors</label><font face="Arial" size="6">   </font><input  name="N" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"></label>
+<label for="r2" style="font-size:55;" >T</label><font face="Arial" size="6">  </font><input maxlength="15" NAME="T" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uS</label>
 <h1 style="font-size:40;"></h1>		
-</fieldset>
-<h1 style="font-size:80;"></h1>		
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT TYPE="button" VALUE=" Calculate " 
-   name="B1" onclick="Compute(document.ParamForm);" " style="background-color: #167A04 ;
+<label for="r2" style="font-size:55;" >V<sub>d</sub></label><font face="Arial" size="6"> (Diode Voltage
+              Drop)  </font><input maxlength="15" NAME="Vd" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >V<sub>tran</sub></label><font face="Arial" size="6"> (Transistor Voltage
+              Drop)  </font><input maxlength="15" NAME="Vtran" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >Efficiency</label><font face="Arial" size="6"> </font><input maxlength="15" NAME="Eff" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">%</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >V<sub>DSMAX</sub></label><font face="Arial" size="6"> (Max
+              Transistor Voltage) </font><input maxlength="15" NAME="Vdsmax" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >A<sub>L</sub>=L/N<sup>2</sup></label><font face="Arial" size="6"> (uH/Turns^2)</font><input maxlength="15" NAME="AL" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uH</label>
+<h1 style="font-size:40;"></h1>	        
+<label for="r2" style="font-size:55;" >V<sub>in</sub></label><font face="Arial" size="6"> (Input Voltage)</font><input maxlength="15" NAME="Vin" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	          
+<label for="r2" style="font-size:55;" >V<sub>o1</sub></label><font face="Arial" size="6"> (Voltage Out
+              1)</font><input maxlength="15" NAME="Vo1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	           
+<label for="r2" style="font-size:55;" >I<sub>o1</sub></label><font face="Arial" size="6"> (Current Out
+              1)</font><input maxlength="15" NAME="Io1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:40;"></h1>	        
+<label for="r2" style="font-size:55;" >P<sub>1</sub></sub></label><font face="Arial" size="6"> (Current Out
+              1)</font><input maxlength="15" NAME="Po1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:40;"></h1>	       
+<hr>
+<h1 align="middle"style="font-size:40;"><b>Optional Secondary
+              Windings</b></h1>          
+         
+<hr>         
+<label for="r2" style="font-size:55;" >V<sub>o2</sub></label><font face="Arial" size="6"> (Voltage Out
+              2)</font><input maxlength="15" NAME="Vo2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>          
+<label for="r2" style="font-size:55;" >I<sub>o2</sub></label><font face="Arial" size="6"> (Current Out
+              2)</font><input maxlength="15" NAME="Io2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:40;"></h1>       
+<label for="r2" style="font-size:55;" >P<sub>2</sub></label><font face="Arial" size="6"> (Current Out
+              2)</font><input maxlength="15" NAME="Po2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:40;"></h1>          
+<label for="r2" style="font-size:55;" >V<sub>o3</sub></label><font face="Arial" size="6"> (Voltage Out
+              3)</font><input maxlength="15" NAME="Po2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>          
+<label for="r2" style="font-size:55;" >I<sub>o3</sub></label><font face="Arial" size="6"> (Current Out
+              3)</font><input maxlength="15" NAME="Io3" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:40;"></h1>            
+<label for="r2" style="font-size:55;" >P<sub>3</sub></label><font face="Arial" size="6"> </font><input maxlength="15" NAME="Po3" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:40;"></h1>             
+<label for="r2" style="font-size:55;" >V<sub>o4</sub></label><font face="Arial" size="6"> (Voltage Out
+              4) </font><input maxlength="15" NAME="Vo4" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>              
+<label for="r2" style="font-size:55;" >I<sub>o4</sub></label><font face="Arial" size="6"> (Current Out
+              4) </font><input maxlength="15" NAME="Io4" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:40;"></h1>     
+<label for="r2" style="font-size:55;" >P<sub>4</sub></label><font face="Arial" size="6">  </font><input maxlength="15" NAME="Po4" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:40;"></h1>              
+</fieldset>         
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT onclick=Compute(document.ParamForm); type=button value=Calculate name=B1 " style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -132,20 +256,76 @@ input[type=checkbox]{
   margin: 4px 2px;
   cursor: pointer;">
 </div></legend></fieldset>
-		
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>			
-<label for="r2" style="font-size:55;" >Ed</label><font face="Arial" size="6"> (Energy usage per day)  </font><input maxlength="15" NAME="Ed" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mAH</label>
-<h1 style="font-size:40;"></h1>		
-<label for="r2" style="font-size:55;" >Battery Life</label><font face="Arial" size="5"> (Estimated)  </font><input maxlength="15" NAME="Days" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Day</label>
-<h1 style="font-size:40;"></h1>		
-			
-			
-		
-		</form>
- 
-		
+<h3>Outputs</h3></div></legend>	
+<label for="r2" style="font-size:55;" >P<sub>in</sub></label><font face="Arial" size="6"> (Power In)  </font><input maxlength="15" NAME="Pin" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:40;"></h1> 
+<label for="r2" style="font-size:55;" > N<sub>ps1</sub></label><font face="Arial" size="6"> (Turns Ratio
+              Primary to Secondary Winding 1)  </font><input maxlength="15" NAME="Nps1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"></label>
+<h1 style="font-size:40;"></h1> 
+<label for="r2" style="font-size:55;" > T<sub>ch</sub></label><font face="Arial" size="6"> (Charge Period)  </font><input maxlength="15" NAME="Tch" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uS</label>
+<h1 style="font-size:40;"></h1>	         
+<label for="r2" style="font-size:55;" > T<sub>dis</sub></label><font face="Arial" size="6"> (Discharge Period)  </font><input maxlength="15" NAME="Tdis" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uS</label>
+<h1 style="font-size:40;"></h1>        
+<label for="r2" style="font-size:55;" > T<sub>dt</sub></label><font face="Arial" size="6"> (Dead Time Period)  </font><input maxlength="15" NAME="Tdt" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uS</label>
+<h1 style="font-size:40;"></h1>          
+<label for="r2" style="font-size:55;" > L<sub></sub></label><font face="Arial" size="6"> (Primary Inductance)  </font><input maxlength="15" NAME="L" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uH</label>
+<h1 style="font-size:40;"></h1>          
+<label for="r2" style="font-size:55;" >N<sub>p</sub></label><font face="Arial" size="6"> (Primary Turns)  </font><input maxlength="15" NAME="Np" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Tns</label>
+<h1 style="font-size:40;"></h1>       
+<label for="r2" style="font-size:55;" >N<sub>s1</sub></label><font face="Arial" size="6"> (Secondary Turns1)  </font><input maxlength="15" NAME="Ns1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Tns</label>
+<h1 style="font-size:40;"></h1>           
+<label for="r2" style="font-size:55;" >N<sub>s2</sub></label><font face="Arial" size="6"> (Secondary Turns2)  </font><input maxlength="15" NAME="Ns2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Tns</label>
+<h1 style="font-size:40;"></h1>           
+<label for="r2" style="font-size:55;" >N<sub>s3</sub></label><font face="Arial" size="6"> (Secondary Turns3)  </font><input maxlength="15" NAME="Ns3" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:69; position: absolute;right: 10px;font-size:61px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Tns</label>
+<h1 style="font-size:40;"></h1>      
+          
+          
+          
+          <tr>
+            <td width="239" height="23"><font face="Arial">Turns Secondary 3, N<sub>s3</sub>:</font></td>
+            <td colspan="2" width="325" height="23"><font face="Arial" size="2"><input type="text" name="Ns3" size="9">(Turns)</font></td>
+          </tr>
+          <tr>
+            <td width="239" height="23"><font face="Arial">Turns Secondary 4, N<sub>s4</sub>:</font></td>
+            <td colspan="2" width="325" height="23"><font face="Arial" size="2"><input type="text" name="Ns4" size="9">(Turns)</font></td>
+          </tr>
+          <tr>
+            <td width="239" height="19"><font face="Arial" size="2">Peak Primary
+              Current, I<sub>p</sub>:</font></td>
+            <td colspan="2" width="325" height="19"><font face="Arial" size="2"><input type="text" name="Ip" size="9">(A)</font></td>
+          </tr>
+          <tr>
+            <td width="239" height="23"><font face="Arial"><font size="2">Primary RMS
+              Current , I<sub>pri(rms)</sub>: </font></font></td>
+            <td colspan="2" width="325" height="23"><font face="Arial" size="2"><input type="text" name="Iprms" size="9">(A)</font></td>
+          </tr>
+          <tr>
+            <td width="239" height="23"><font size="2" face="Arial">Primary Wire
+              Diameter, D<sub>p</sub>:</font></td>
+            <td colspan="2" width="325" height="23"><font face="Arial" size="2"><input type="text" name="Dp" size="9">(mils)</font></td>
+          </tr>
+          <tr>
+            <td width="239" height="23"><font size="2" face="Arial">Primary Wire
+              Gauge, AWG<sub>p</sub>:</font></td>
+            <td colspan="2" width="325" height="23"><font face="Arial"><input type="text" name="AWGp" size="9">  <a href="http://www.daycounter.com/Calculators/AWG.phtml">AWG</a></font></td>
+          </tr>
+          <tr>
+            <td colspan="3" width="570" height="19">
+              <p align="center"><font face="Arial">&nbsp;</font></td>
+          </tr>
+        </table>
+      </form>
+      
