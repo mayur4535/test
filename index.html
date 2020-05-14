@@ -1,6 +1,7 @@
 
 
 
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -71,77 +72,14 @@ input[type=checkbox]{
 
 <div class="row">
 <div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-<label for="r2" style="font-size:55;" >Select Material<font face="Arial" size="6"> </font></label>
-<select class="form-control" id="mat" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">Custom</option>
-<option value="2">Copper</option>
-<option value="3">Aluminum</option>
-<option value="4">Gold</option>
-<option value="5">Silver</option>
-<option value="6">Nickel</option>
-</select>
-
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div><h1 style="font-size:40;"></h1>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Resistivity</label><font face="Arial" size="7">  </font><input  id="res"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:35px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">µ&Omega; cm</label>
-
-</div>
-</div>
-
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div><h1 style="font-size:40;"></h1>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:55;" >μ<sub>r<font face="Arial" size="6"> (Relative Permeability)</font></label><input type="number" id="rp"  class="intro"  style="position: absolute;   text-align
-:center;width:430; right: 10px;"class="form-control"  />
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-4">
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div><h1 style="font-size:40;"></h1>
-<div class="col-sm-4 col-xs-8">
-<div class="form-group text-center">
-<label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6"> </font></label><input type="number" id="fr"  class="intro"  style="position: absolute;   text-align
-:center;width:274; right: 165px;"class="form-control"  />
-<select class="form-control" id="fr-unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
-<option value="1">GHz GigaHertz ()</option>
-<option value="2">MHz MegaHertz ()</option>
+<label for="r2" style="font-size:60;" >Enter Value<font face="Arial" size="6"> </font></label><input type="number" id="in"  class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 225px;"class="form-control"  />
+<select class="form-control" id="type" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:210px;border-radius:4px; border:2px solid #aaa;">
+<option value="1">VSWR </option>
+<option value="2">RC	&nbsp;	&nbsp;	&nbsp; Reflection Coefficient</option>
+<option value="3">RL	&nbsp;	&nbsp;	&nbsp; Return Loss</option>
 </select>
 </div>
 </div>
@@ -169,12 +107,12 @@ input[type=checkbox]{
   margin: 4px 2px;
   cursor: pointer;">
 </div></legend></fieldset>
-
+</div>
+</div>
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
-<div id="answer-fields">
 <div class="row">
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
@@ -184,16 +122,63 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group has-warning">
-<label for="r2" style="font-size:55;" >Skin Depth</label><font face="Arial" size="7">  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">µm</label>
+<label for="r2" style="font-size:50;" >VSWR</label><font face="Arial" size="7">  </font><input  id="a1"  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />
 
 </div>
-</div><h1 style="font-size:30;"></h1>
+</div>
 <div class="col-sm-4 col-xs-4">
+<div class="form-group">
+</div>
+</div>
+</div>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Reflection Coefficient</label><font face="Arial" size="7">  </font><input  id="a2"  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+</div>
+</div>
+</div>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Return Loss</label><font face="Arial" size="7">  </font><input  id="a3"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
+</div>
+</div>
+
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Mismatch Loss</label><font face="Arial" size="7">  </font><input  id="a4"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dB</label>
+</div>
+</div><h1 style="font-size:40;"></h1>
 
 <script type="text/javascript">
-var _0xdbfa=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x72\x65\x73","\x23\x72\x70","\x23\x66\x72","\x31","\x23\x66\x72\x2D\x75\x6E\x69\x74","\x50\x49","\x70\x6F\x77","\x73\x71\x72\x74","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x6E\x73\x77\x65\x72","\x6F\x6E","\x63\x68\x61\x6E\x67\x65","\x32","\x31\x2E\x36\x37\x38","\x30\x2E\x39\x39\x39\x39\x39\x31","\x33","\x32\x2E\x36\x35\x34\x38","\x31\x2E\x30\x30\x30\x30\x32","\x34","\x32\x2E\x32\x34","\x35","\x31\x2E\x35\x38\x36","\x30\x2E\x39\x39\x39\x38","\x36","\x36\x2E\x38\x34","\x36\x30\x30","\x23\x6D\x61\x74"];!function(_0xccc6x1){_0xdbfa[0];function _0xccc6x2(){_0xccc6x1(_0xdbfa[10])[_0xdbfa[9]](function(){_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[2]](_0xdbfa[1]),_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[6]](_0xdbfa[5]),_0xccc6x1(this)[_0xdbfa[8]](_0xdbfa[7])})}function _0xccc6x3(){_0xccc6x1(_0xdbfa[10])[_0xdbfa[9]](function(){_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[2]](_0xdbfa[5]),_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[6]](_0xdbfa[1])})}var _0xccc6x4,_0xccc6x5=_0xccc6x1(_0xdbfa[11]);_0xccc6x1(_0xdbfa[16])[_0xdbfa[17]](function(){_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[2]](_0xdbfa[12]),_0xccc6x2(),_0xccc6x5[_0xdbfa[14]](_0xdbfa[13],!1),_0xccc6x1[_0xdbfa[15]](_0xccc6x1(this)[_0xdbfa[8]]())=== !1?(_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[6]](_0xdbfa[12]),_0xccc6x5[_0xdbfa[14]](_0xdbfa[13],!1)):_0xccc6x1(this)[_0xdbfa[4]](_0xdbfa[3])[_0xdbfa[2]](_0xdbfa[12]),_0xccc6x4= 0,_0xccc6x1(_0xdbfa[16])[_0xdbfa[9]](function(){_0xdbfa[7]!= _0xccc6x1(this)[_0xdbfa[8]]()&& _0xccc6x1[_0xdbfa[15]](_0xccc6x1(this)[_0xdbfa[8]]())!== !1|| _0xccc6x4++}),_0xccc6x4> 0&& _0xccc6x5[_0xdbfa[14]](_0xdbfa[13],!0)}),_0xccc6x5[_0xdbfa[30]](_0xdbfa[18],function(_0xccc6x2){_0xccc6x2[_0xdbfa[19]]();var _0xccc6x4,_0xccc6x5,_0xccc6x6,_0xccc6x7,_0xccc6x8;_0xccc6x5= parseFloat(_0xccc6x1(_0xdbfa[20])[_0xdbfa[8]]()),_0xccc6x6= parseFloat(_0xccc6x1(_0xdbfa[21])[_0xdbfa[8]]()),_0xccc6x7= parseFloat(_0xccc6x1(_0xdbfa[22])[_0xdbfa[8]]()),_0xdbfa[23]== _0xccc6x1(_0xdbfa[24])[_0xdbfa[8]]()&& (_0xccc6x7*= 1e3),_0xccc6x8= 4* Math[_0xdbfa[25]]/ 1e7,_0xccc6x7*= Math[_0xdbfa[26]](10,6),_0xccc6x5*= Math[_0xdbfa[26]](10,-6),_0xccc6x4= Math[_0xdbfa[27]](_0xccc6x5/ (Math[_0xdbfa[25]]* _0xccc6x7* _0xccc6x6* _0xccc6x8)),_0xccc6x4*= Math[_0xdbfa[26]](10,5),_0xccc6x1(_0xdbfa[29])[_0xdbfa[8]](parseFloat(_0xccc6x4)[_0xdbfa[28]](4)),_0xccc6x3()}),_0xccc6x1(_0xdbfa[46])[_0xdbfa[30]](_0xdbfa[31],function(){_0xccc6x2();var _0xccc6x3=_0xccc6x1(this)[_0xdbfa[8]](),_0xccc6x4=_0xccc6x1(_0xdbfa[20]),_0xccc6x5=_0xccc6x1(_0xdbfa[21]);_0xccc6x4[_0xdbfa[14]](_0xdbfa[13],!0),_0xccc6x5[_0xdbfa[14]](_0xdbfa[13],!0),_0xdbfa[32]== _0xccc6x3?(_0xccc6x4[_0xdbfa[8]](_0xdbfa[33]),_0xccc6x5[_0xdbfa[8]](_0xdbfa[34])):_0xdbfa[35]== _0xccc6x3?(_0xccc6x4[_0xdbfa[8]](_0xdbfa[36]),_0xccc6x5[_0xdbfa[8]](_0xdbfa[37])):_0xdbfa[38]== _0xccc6x3?(_0xccc6x4[_0xdbfa[8]](_0xdbfa[39]),_0xccc6x5[_0xdbfa[8]](_0xdbfa[23])):_0xdbfa[40]== _0xccc6x3?(_0xccc6x4[_0xdbfa[8]](_0xdbfa[41]),_0xccc6x5[_0xdbfa[8]](_0xdbfa[42])):_0xdbfa[43]== _0xccc6x3?(_0xccc6x4[_0xdbfa[8]](_0xdbfa[44]),_0xccc6x5[_0xdbfa[8]](_0xdbfa[45])):(_0xccc6x4[_0xdbfa[8]](_0xdbfa[7]),_0xccc6x5[_0xdbfa[8]](_0xdbfa[7]),_0xccc6x4[_0xdbfa[14]](_0xdbfa[13],!1),_0xccc6x5[_0xdbfa[14]](_0xdbfa[13],!1))}),_0xccc6x1(_0xdbfa[24])[_0xdbfa[30]](_0xdbfa[31],function(){_0xccc6x2()})}(jQuery)
-   </script>
+var _0x898f=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x69\x6E","\x23\x74\x79\x70\x65","\x31","\x6C\x6F\x67","\x70\x6F\x77","\x32","\x33","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x61\x31","\x23\x61\x32","\x23\x61\x33","\x23\x61\x34","\x6F\x6E","\x63\x68\x61\x6E\x67\x65"];!function(_0xbf08x1){_0x898f[0];function _0xbf08x2(){_0xbf08x1(_0x898f[10])[_0x898f[9]](function(){_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[2]](_0x898f[1]),_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[6]](_0x898f[5]),_0xbf08x1(this)[_0x898f[8]](_0x898f[7])})}function _0xbf08x3(){_0xbf08x1(_0x898f[10])[_0x898f[9]](function(){_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[2]](_0x898f[5]),_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[6]](_0x898f[1])})}var _0xbf08x4,_0xbf08x5=_0xbf08x1(_0x898f[11]);_0xbf08x1(_0x898f[16])[_0x898f[17]](function(){_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[2]](_0x898f[12]),_0xbf08x2(),_0xbf08x5[_0x898f[14]](_0x898f[13],!1),_0xbf08x1[_0x898f[15]](_0xbf08x1(this)[_0x898f[8]]())=== !1?(_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[6]](_0x898f[12]),_0xbf08x5[_0x898f[14]](_0x898f[13],!1)):_0xbf08x1(this)[_0x898f[4]](_0x898f[3])[_0x898f[2]](_0x898f[12]),_0xbf08x4= 0,_0xbf08x1(_0x898f[16])[_0x898f[9]](function(){_0x898f[7]!= _0xbf08x1(this)[_0x898f[8]]()&& _0xbf08x1[_0x898f[15]](_0xbf08x1(this)[_0x898f[8]]())!== !1|| _0xbf08x4++}),_0xbf08x4> 0&& _0xbf08x5[_0x898f[14]](_0x898f[13],!0)}),_0xbf08x5[_0x898f[32]](_0x898f[18],function(_0xbf08x2){_0xbf08x2[_0x898f[19]]();var _0xbf08x4,_0xbf08x5,_0xbf08x6,_0xbf08x7,_0xbf08x8,_0xbf08x9;_0xbf08x8= parseFloat(_0xbf08x1(_0x898f[20])[_0x898f[8]]()),_0xbf08x9= _0xbf08x1(_0x898f[21])[_0x898f[8]](),_0x898f[22]== _0xbf08x9?(_0xbf08x4= _0xbf08x8,_0xbf08x5= (_0xbf08x8- 1)/ (_0xbf08x8+ 1),_0xbf08x6= -20* (Math[_0x898f[23]](_0xbf08x5)/ Math[_0x898f[23]](10)),_0xbf08x7= -10* (Math[_0x898f[23]](1- Math[_0x898f[24]](_0xbf08x5,2))/ Math[_0x898f[23]](10))):_0x898f[25]== _0xbf08x9?(_0xbf08x5= _0xbf08x8,_0xbf08x4= (1+ _0xbf08x5)/ (1- _0xbf08x5),_0xbf08x6= -20* (Math[_0x898f[23]](_0xbf08x5)/ Math[_0x898f[23]](10)),_0xbf08x7= -10* (Math[_0x898f[23]](1- Math[_0x898f[24]](_0xbf08x5,2))/ Math[_0x898f[23]](10))):_0x898f[26]== _0xbf08x9&& (_0xbf08x6= _0xbf08x8,_0xbf08x5= Math[_0x898f[24]](10,-_0xbf08x6/ 20),_0xbf08x4= (1+ _0xbf08x5)/ (1- _0xbf08x5),_0xbf08x7= -10* (Math[_0x898f[23]](1- Math[_0x898f[24]](_0xbf08x5,2))/ Math[_0x898f[23]](10))),_0xbf08x1(_0x898f[28])[_0x898f[8]](parseFloat(_0xbf08x4)[_0x898f[27]](4)),_0xbf08x1(_0x898f[29])[_0x898f[8]](parseFloat(_0xbf08x5)[_0x898f[27]](4)),_0xbf08x1(_0x898f[30])[_0x898f[8]](parseFloat(_0xbf08x6)[_0x898f[27]](4)),_0xbf08x1(_0x898f[31])[_0x898f[8]](parseFloat(_0xbf08x7)[_0x898f[27]](4)),_0xbf08x3()}),_0xbf08x1(_0x898f[21])[_0x898f[32]](_0x898f[33],function(){_0xbf08x2()})}(jQuery)
+    </script>
 </div>
 </body>
 </html>
