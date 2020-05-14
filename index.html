@@ -1,37 +1,38 @@
 
 
-<script language="JavaScript">
-
-
-
-function Compute(form) {
-	with(Math) {
-		var MEGA= 1000000;
-		var KILO= 1000;
-		var V= Number(form.V.value);
-		var L= Number(form.L.value)/MEGA;
-		var Isat= Number(form.Isat.value);
-		
-		var Precision= 3;
-		
-		Tonmax= Isat*L/V;
-		Fmin= 1/(2*Tonmax);
-		Pmax= V*Isat/sqrt(6);
-		Esat= Isat*Isat*L/2;
-		
-		Tonmax*= MEGA;
-		Fmin/= KILO;
-		Esat*= MEGA;
-		
-		form.Tonmax.value= Tonmax.toFixed(Precision);
-		form.Fmin.value= Fmin.toFixed(Precision);
-		form.Pmax.value= Pmax.toFixed(Precision);
-		form.Esat.value= Esat.toFixed(Precision);		
+	
+	<script>
+	function Compute(form) {
+		with(Math) {
+			var micro= 1e-6;
+			var nano= 1e-9;
+			var pico= 1e-12;
+			var Kilo= 1000;
+			var Precision= 3;
+			
+			var stretch;
+			var Cpar;
+			
+			var Vdip= Number(form.Vdip.value);
+			var Vdipmax= Number(form.Vdipmax.value);
+			var Tdip= Number(form.Tdip.value)*micro;
+			var Cgate= Number(form.Cgate.value)*pico;
+			var C1= Number(form.C1.value)*micro;
+			
+			Cpar= C1+Cgate;
+			
+			stretch= Vdip/Vdipmax; // stretch the duration of the dip by this much. 
+			TC= stretch*Tdip;
+			Rgate= TC/Cpar;			
+			
+			form.Rgate.value= Rgate.toPrecision(Precision);
+			form.TC.value= TC.toPrecision(Precision);
+		}
 	}
-}
+	</script>	
+</head>
 
 
-</script>
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
@@ -99,22 +100,29 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
-<form method="POST" name="ParamForm" action="">
+			
 
+			<form method="POST" name="ParamForm">
+			
 
-<label for="r2" style="font-size:55;" >Volt. </label><font face="Arial" size="6"> (across the inductor)  </font><input maxlength="15" name="V" class="intro"  style="position: absolute;   width:280; text-align
+<label for="r2" style="font-size:55;" >Capacitance</label><font face="Arial" size="6"> (FET gate Power )  </font><input maxlength="15" name="Cgate" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">pF</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >C1</label><font face="Arial" size="6"> (capacitance (Optional))  </font><input maxlength="15" name="C1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uF</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >Duration</label><font face="Arial" size="6"> (Un-Mitigated Voltage Dip)  </font><input maxlength="15" name="Tdip" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">usec</label>
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >Magnitude</label><font face="Arial" size="6"> (Un-Mitigated Voltage Dip)  </font><input maxlength="15" name="Vdip" class="intro"  style="position: absolute;   width:280; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >Inductance </label><font face="Arial" size="6">  </font><input maxlength="15" name="L" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uH</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >inductor </label><font face="Arial" size="5">(Saturation current) </font><input maxlength="15" name="Isat" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
-<h1 style="font-size:40;"></h1>	
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >Desired </label><font face="Arial" size="6"> ( maximum voltage dip)  </font><input maxlength="15" name="Vdipmax" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>
 </fieldset>
-<h1 style="font-size:80;"></h1>	
-
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="Button" value="Calculate" onClick="Compute(document.ParamForm)" " style="background-color: #167A04 ;
+<h1 style="font-size:80;"></h1>		
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" value="Calculate" name="B1" onClick="Compute(document.ParamForm);" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -126,28 +134,23 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;">
-</div></legend></fieldset>
+</div></legend></fieldset>	
+		
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>	
-<label for="r2" style="font-size:55;" >Ton</label><font face="Arial" size="6"> (max)  </font><input maxlength="15" name="Tonmax" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">usec</label>
-<h1 style="font-size:40;"></h1>		
-<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (min)  </font><input maxlength="15" name="Fmin" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KHz</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >P</label><font face="Arial" size="6"> (max)  </font><input maxlength="15" name="Pmax" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
-<h1 style="font-size:40;"></h1>          
-<label for="r2" style="font-size:55;" >E</label><font face="Arial" size="6"> (Energy at saturation)  </font><input maxlength="15" name="Esat" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
-<h1 style="font-size:40;"></h1>           
-              
-            
-          
-          
-          
-          
-      </form>
-      
+<h3>Outputs</h3></div></legend>								
+<label for="r2" style="font-size:55;" >R3</label><font face="Arial" size="6"> (Gate Resistance)  </font><input maxlength="15"  name="Rgate" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">M&Omega;</label>
+<h1 style="font-size:40;"></h1>				
+<label for="r2" style="font-size:55;" >Time Constant</label><font face="Arial" size="6"> </font><input maxlength="15"  name="TC" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">usec</label>
+<h1 style="font-size:40;"></h1>								
+	
+				
+				
+				
+			
+			</form>
+			
+			
