@@ -1,4 +1,18 @@
 
+
+<SCRIPT language="javascript" type="text/javascript">
+function calc()
+{
+Er=Number(document.calculator.number1.value);
+Fr=Number(document.calculator.number2.value);
+c1= ( (Er+1)/2 );
+lambda=( (3* (Math.pow(10,8)))/(Fr*(Math.pow(10,9))) );
+c2 =  (lambda / (Math.pow(c1,0.5)) );
+document.calculator.effective_dielectric_constant.value=c1;
+document.calculator.guide_wavelength.value=c2;
+}
+</SCRIPT>
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -64,33 +78,16 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<p><div class="container-fluid">
-<form id="tool">
-
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-<label for="r2" style="font-size:55;" >Input<font face="Arial" size="6"> </font></label>
-<select class="form-control" id="tool_voltage_type" style="padding: 5px ;  position: absolute;right:447px;font-size:58px;margin:8px 0;width:170px;border-radius:4px; border:2px solid #aaa;">
-<option value="peak">V<sub>p</sub>	&nbsp;	&nbsp; Peak Voltage </option>
-<option value="peakpeak">V<sub>pp</sub>	&nbsp; Peak-to-Peak Voltage </option>
-<option value="avg">V<sub>avg</sub>	&nbsp; Average Voltage </option>
-</select><input type="number" id="tool_voltage"  class="intro"  style="position: absolute;   text-align
-:center;width:300; right: 140px;"class="form-control"  />
-<label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-
-
-
-<div class="col-sm-4 col-xs-8">
-<div class="form-group">
-
-</div>
-</div>
-
-</form></fieldset>
+<FORM name="calculator">
+<label for="r2" style="font-size:72;" >ε<sub>r</sub></label><font face="Arial" size="6"> (Relative Dielectric Constant) </font><input name="number1" class="intro"  style="position: absolute;   width:410; text-align
+:center;right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:10;"></h1>	
+<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> (Operation) </font><input name="number2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:54px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">GHz</label>
+<h1 style="font-size:50;"></h1>
+</fieldset>
 <h1 style="font-size:80;"></h1>		
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" id="tool_submit" class="btn btn-theme" value="CALCULATE" style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -103,32 +100,15 @@ input[type=checkbox]{
   margin: 4px 2px;
   cursor: pointer;">
 </div></legend></fieldset>	
-		
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>	
+<label for="r2" style="font-size:55;" >E<sub>dc</sub></label><font face="Arial" size="6"> (Effective dielectric constant) </font><input name="effective_dielectric_constant" class="intro"  style="position: absolute;   width:410; text-align
+:center;right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:50;"></h1>	
+<label for="r2" style="font-size:55;" >Guide wavelength</sub></label><font face="Arial" size="6"> </font><input name="guide_wavelength" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:57px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mtr</label>
 
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-<div class='col-sm-4 col-xs-12'>
-<div class="form-group">
-
-</div>
-</div>
-<div class="col-sm-4 col-xs-8">
-<div class="tool_submit_container form-group has-warning">
-<label for="r2" style="font-size:55;" >V<sub>rms</sub></label><font face="Arial" size="6"> (RMS Voltage) </font><input id="tool_voltage_rms" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-
-
-</div>
-</div><h1 style="font-size:80;"></h1>	
-<div class="col-sm-4 col-xs-4">
-
-<script type="text/javascript">
-var _0xe7bd=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","","\x76\x61\x6C","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x74\x6F\x6F\x6C\x5F\x76\x6F\x6C\x74\x61\x67\x65","\x23\x74\x6F\x6F\x6C\x5F\x76\x6F\x6C\x74\x61\x67\x65\x5F\x74\x79\x70\x65","\x23\x74\x6F\x6F\x6C\x5F\x76\x6F\x6C\x74\x61\x67\x65\x5F\x72\x6D\x73","\x70\x65\x61\x6B","\x73\x71\x72\x74","\x70\x65\x61\x6B\x70\x65\x61\x6B","\x50\x49","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74\x5F\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x61\x64\x64\x43\x6C\x61\x73\x73","\x6F\x6E"];!function(_0xb797x1){_0xe7bd[0];_0xb797x1(_0xe7bd[4])[_0xe7bd[9]](function(){var _0xb797x2=!1;_0xb797x1(_0xe7bd[4])[_0xe7bd[3]](function(){_0xe7bd[1]== _0xb797x1(this)[_0xe7bd[2]]()&& (_0xb797x2=  !0)}),_0xb797x2?_0xb797x1(_0xe7bd[7])[_0xe7bd[6]](_0xe7bd[5],_0xe7bd[5]):_0xb797x1(_0xe7bd[7])[_0xe7bd[8]](_0xe7bd[5])}),_0xb797x1(_0xe7bd[7])[_0xe7bd[24]](_0xe7bd[10],function(_0xb797x2){_0xb797x2[_0xe7bd[11]]();var _0xb797x3=_0xb797x1(_0xe7bd[12]),_0xb797x4=_0xb797x1(_0xe7bd[13]),_0xb797x5=_0xb797x1(_0xe7bd[14]);_0xb797x3[_0xe7bd[2]]()&& _0xb797x4[_0xe7bd[2]]()&& (_0xe7bd[15]=== _0xb797x4[_0xe7bd[2]]()?_0xb797x5[_0xe7bd[2]](_0xb797x3[_0xe7bd[2]]()* (1/ Math[_0xe7bd[16]](2))):_0xe7bd[17]=== _0xb797x4[_0xe7bd[2]]()?_0xb797x5[_0xe7bd[2]](_0xb797x3[_0xe7bd[2]]()* (1/ (2* Math[_0xe7bd[16]](2)))):_0xb797x5[_0xe7bd[2]](_0xb797x3[_0xe7bd[2]]()* (Math[_0xe7bd[18]]/ (2* Math[_0xe7bd[16]](2)))),_0xb797x1(_0xe7bd[21])[_0xe7bd[20]](_0xe7bd[19]),_0xb797x1(_0xe7bd[21])[_0xe7bd[23]](_0xe7bd[22]))})}(jQuery)
-</script>
-</div>
-</body>
-</html>
+</FORM>
+<h1 style="font-size:50;"></h1>	
