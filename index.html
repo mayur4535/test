@@ -67,43 +67,111 @@ input[type=checkbox]{
 <h3>Input</h3></div></legend>
 <p><form id="tool">
 
+
 <div class="row">
 <div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
-<div class="col-sm-4 col-xs-8"><div class="form-group">
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Width<font face="Arial" size="6"> (Trace) </font></label><input type="number" id="width"   class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="width_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option selected="selected" value="0.0000254">mil</option>
+<option value="0.01">cm</option>
+<option value="0.001">mm</option>
+<option value="0.000001">um</option>
+<option value="0.3937">inch</option>
+</select>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
-<label for="r2" style="font-size:55;" >Width</label><font face="Arial" size="7"> (Strip)  </font><input  id="w"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">In</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Thickness<font face="Arial" size="6"> (Trace) </font></label><input type="number" id="thick"   class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="thick_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option selected="selected" value="0.0000254">mil</option>
+<option value="0.01">cm</option>
+<option value="0.001">mm</option>
+<option value="0.000001">um</option>
+<option value="0.3937">inch</option>
+</select>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Temperature Rise<font face="Arial" size="6"> </font></label>
+<select class="form-control" id="temp_rise" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
+<option selected="" value="10">10 ° C</option>
+<option value="20">20 ° C</option>
+<option value="30">30 ° C</option>
+<option value="45">45 ° C</option>
+</select>
+<h1 style="font-size:50;"></h1>
+
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Ambient<font face="Arial" size="6"> (Temperature) </font></label><input type="number" id="amb_temp"   class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="amb_temp_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option selected="" value="1">° C</option>
+<option value="2">° K</option>
+<option value="3">° F</option>
+</select>
+</div>
 
 <h1 style="font-size:50;"></h1>
-</div>
-</div>
 <div class="row">
 <div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
-<div class="col-sm-4 col-xs-8"><div class="form-group">
-<label for="r2" style="font-size:55;" >Length</label><font face="Arial" size="7"> (Strip)  </font><input  id="b"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">In</label>
-
-
-<h1 style="font-size:50;"></h1>
 </div>
 </div>
-<div class="row">
-<div class="col-sm-12 col-xs-12">
-
-<div class="col-sm-4 col-xs-8"><div class="form-group">
-<label for="r2" style="font-size:55;" >Distance</label><font face="Arial" size="7">  </font><input  id="h"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">In</label>
-
-<h1 style="font-size:30;"></h1>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Length<font face="Arial" size="6"></font></label><input type="number" id="length"   class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="length_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option selected="selected" value="0.0000254">mil</option>
+<option value="0.01">cm</option>
+<option value="0.001">mm</option>
+<option value="0.000001">um</option>
+<option value="0.3937">inch</option>
+</select>
 </div>
-</div>
+
 <div class="row">
 <div class="col-sm-12">
 
-<div class="col-sm-4"></form></fieldset>
+<div class="col-sm-4"><div class="form-group">
+</form></fieldset>
 <h1 style="font-size:80;"></h1>
 <fieldset><legend><div colspan="2" align="center" height="19"><input type="button" id="tool_submit" class="btn btn-theme" value="CALCULATE"  style="background-color: #167A04 ;
   border: 1;
@@ -126,57 +194,183 @@ input[type=checkbox]{
 <h3>Outputs</h3></div></legend>
 
 
-
-<div class="row">
+<div class="row clearfix">
 <div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
 
-<div class="col-sm-4 col-xs-8"><div class="form-group">
-<label for="r2" style="font-size:55;" >Inductance</label><font face="Arial" size="7">  </font><input  id="L"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;H</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:55;" >Current</label><font face="Arial" size="7"> (Max)  </font><input  id="tool_output1"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row clearfix">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Temperature</label><font face="Arial" size="7"> (Trace)  </font><input  id="tool_output2"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">°C</label>
+
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row clearfix">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:55;" >Resistance</label><font face="Arial" size="7">   </font><input  id="tool_output3"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+
+
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row clearfix">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:55;" >Voltage Drop</label><font face="Arial" size="7">   </font><input  id="tool_output4"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
 
 
 
 </div>
-</div><h1 style="font-size:30;"></h1>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row clearfix">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div id="tool_output_container" class="form-group">
+<label for="r2" style="font-size:55;" >Power</label><font face="Arial" size="7"> (Dissipation)   </font><input  id="tool_output5"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+
+
+</div>
+</div>
+<h1 style="font-size:30;"></h1>
 <script type="text/javascript">
-(function($) {
-  "use strict";  
-  
-  var app = {
-    calculate : function(){
-      var b= Number($("#b").val());
-      var w= Number($("#w").val());
-      var h= Number($("#h").val());
-
-      var L;
-      var Precision= 5;
-
-      L= 0.00508 * b * (Math.log(2*b/(w+h))+.5+0.2235*(w+h)/b);
-
-      $("#L").val(L.toFixed(Precision));      
-    }
-  };
-  
-  $('#tool :input').keyup(function() {
-    var empty = false;
-     $('#tool :input').each(function() {
-      if ($(this).val() == '') {
-        empty = true;
-      }
-    });
-
-    if (empty) {
-      $('#tool_submit').attr('disabled', 'disabled');
-    } else {
-      $('#tool_submit').removeAttr('disabled');
-    }
-  });
-
-  $("#tool_submit").on('click',function(event) {
-    event.preventDefault();
-    app.calculate();
-  });
-})(jQuery);
+    ! function(t) {
+        "use strict";
+        var a = {
+            calculate: function() {
+                var o = 0,
+                    e = t("#width").val() * t("#width_unit").val(),
+                    p = t("#thick").val() * t("#thick_unit").val(),
+                    h = parseInt(t("#temp_rise").val()),
+                    r = t("#amb_temp_unit").val(),
+                    w = 0,
+                    i = t("#amb_temp").val();
+                switch (r) {
+                    case "1":
+                        w = parseInt(i);
+                        break;
+                    case "2":
+                        w = parseInt(i - 273.15);
+                        break;
+                    case "3":
+                        w = parseInt(100 / 180 * (i - 32))
+                }
+                var c = t("#length").val() * t("#length_unit").val(),
+                    s = e * p,
+                    M = a.loop_find_current(h, s, o),
+                    l = s,
+                    u = h,
+                    b = 17e-7,
+                    v = .0039,
+                    _ = Math.abs(((b * c) / l) * (1 + (v * u))),
+                    k = _ * M,
+                    f = k * M;
+                t("#tool_output1").val(M.toPrecision(3)), t("#tool_output2").val(u.toPrecision(3)), t("#tool_output3").val(_.toPrecision(3)), t("#tool_output4").val(k.toPrecision(3)), t("#tool_output5").val(f.toPrecision(3))
+            },
+            find_cross: function(t, a, o) {
+                var e;
+                if (o) switch (t) {
+                    case 10:
+                        e = -.012 * Math.pow(a, 5) + .4008 * Math.pow(a, 4) + -4.4272 * Math.pow(a, 3) + 25.218 * Math.pow(a, 2) + 22.072 * a;
+                        break;
+                    case 20:
+                        e = -.0189 * Math.pow(a, 4) + .2518 * Math.pow(a, 3) + 3.1502 * Math.pow(a, 2) + 29.816 * a;
+                        break;
+                    case 30:
+                        e = .0029 * Math.pow(a, 5) + -.0675 * Math.pow(a, 4) + .3704 * Math.pow(a, 3) + 2.9039 * Math.pow(a, 2) + 20.508 * a;
+                        break;
+                    case 45:
+                        e = .0015 * Math.pow(a, 5) + -.0462 * Math.pow(a, 4) + .3791 * Math.pow(a, 3) + 1.4026 * Math.pow(a, 2) + 18.58 * a;
+                        break;
+                    default:
+                        e = 0
+                } else switch (t) {
+                    case 10:
+                        e = .0076 * Math.pow(a, 4) + -.3082 * Math.pow(a, 3) + 5.1149 * Math.pow(a, 2) + 12.472 * a;
+                        break;
+                    case 20:
+                        e = 3e-4 * Math.pow(a, 4) + -.028 * Math.pow(a, 3) + 1.5033 * Math.pow(a, 2) + 12.522 * a;
+                        break;
+                    case 30:
+                        e = 1e-4 * Math.pow(a, 5) + -.0073 * Math.pow(a, 4) + .1048 * Math.pow(a, 3) + .3891 * Math.pow(a, 2) + 10.814 * a;
+                        break;
+                    case 45:
+                        e = 7e-5 * Math.pow(a, 5) + -.0045 * Math.pow(a, 4) + .0768 * Math.pow(a, 3) + .1738 * Math.pow(a, 2) + 9.5374 * a;
+                        break;
+                    case 60:
+                        e = 9e-5 * Math.pow(a, 5) + -.0058 * Math.pow(a, 4) + .102 * Math.pow(a, 3) + .036 * Math.pow(a, 2) + 7.2743 * a;
+                        break;
+                    case 75:
+                        e = 5e-5 * Math.pow(a, 5) + -.0031 * Math.pow(a, 4) + .0601 * Math.pow(a, 3) + .1117 * Math.pow(a, 2) + 6.5222 * a;
+                        break;
+                    case 100:
+                        e = 2e-5 * Math.pow(a, 5) + -.0013 * Math.pow(a, 4) + .0234 * Math.pow(a, 3) + .3736 * Math.pow(a, 2) + 4.1989 * a;
+                        break;
+                    default:
+                        e = 0
+                }
+                return e
+            },
+            loop_find_current: function(t, o, e) {
+                var p = 0,
+                    h = 0,
+                    r = 1e5,
+                    w = 1,
+                    i = 0;
+                for (p = .01; 35 >= p; p += .01) w = a.find_cross(t, p, e), i = Math.abs(w - o), r > i && (r = i, h = p);
+                return h
+            }
+        };
+        t("#tool :input").keyup(function() {
+            var a = !1;
+            t("#tool :input").each(function() {
+                "" == t(this).val() && (a = !0)
+            }), a ? t("#tool_submit").attr("disabled", "disabled") : t("#tool_submit").removeAttr("disabled")
+        }), t("#tool_submit").on("click", function(t) {
+            t.preventDefault(), a.calculate()
+        })
+    }(jQuery);
 </script>
 </div>
 </body>
