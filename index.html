@@ -65,7 +65,8 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<p><form id="tool">
+<p><div class="container-fluid">
+<form id="tool">
 
 
 <div class="row">
@@ -79,7 +80,7 @@ input[type=checkbox]{
 <div class="form-group">
 <label for="r2" style="font-size:55;" >Diameter<font face="Arial" size="6"> (Wire) </font></label><input type="number" id="thick"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
-<select class="form-control" id="thick_unit"  style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<select class="form-control" id="thick_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
 <option value="0.0035">oz/ft^2</option>
 <option selected="selected" value="0.00254">mil</option>
 <option value="1">cm</option>
@@ -100,7 +101,7 @@ input[type=checkbox]{
 <div class="form-group">
 <label for="r2" style="font-size:55;" >Height<font face="Arial" size="6"> (Substrate) </font></label><input type="number" id="sub_height"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
-<select class="form-control" id="sub_height_unit"  style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<select class="form-control" id="sub_height_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
 <option selected="selected" value="0.00254">mil</option>
 <option value="1">cm</option>
 <option value="0.1">mm</option>
@@ -118,7 +119,7 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Dielectric<font face="Arial" size="6"> (Substrate) </font></label><input type="number" id="er"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Dielectric<font face="Arial" size="6"> (Substrate) </font></label><input type="number" id="er"   class="intro"  style="position: absolute;   text-align
 :center;width:430; right: 10px;"class="form-control"  />
 
 </div>
@@ -158,18 +159,17 @@ input[type=checkbox]{
 
 </div>
 </div>
- <div class="col-sm-4 col-xs-8">
+<div class="col-sm-4 col-xs-8">
 <div id="tool_output_container" class="form-group">
 <label for="r2" style="font-size:55;" >Impedance</label><font face="Arial" size="7">  </font><input  id="tool_output1"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
 
 
-
 </div>
-</div> 
+</div>
 <h1 style="font-size:30;"></h1>
 <script type="text/javascript">
-var _0x998a=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x74\x68\x69\x63\x6B","\x23\x74\x68\x69\x63\x6B\x5F\x75\x6E\x69\x74","\x23\x73\x75\x62\x5F\x68\x65\x69\x67\x68\x74","\x23\x73\x75\x62\x5F\x68\x65\x69\x67\x68\x74\x5F\x75\x6E\x69\x74","\x23\x65\x72","\x77\x69\x72\x65\x5F\x6D\x69\x63\x72\x6F\x73\x74\x72\x69\x70\x5F\x63\x61\x6C\x63","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x7A\x6F","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x73\x71\x72\x74","\x70\x6F\x77","\x50\x49","\x6C\x6F\x67","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x6F\x6E"];!function(_0x9325x1){_0x998a[0];var _0x9325x2={calculate:function(){var _0x9325x3=parseFloat(_0x9325x1(_0x998a[2])[_0x998a[1]]())* _0x9325x1(_0x998a[3])[_0x998a[1]](),_0x9325x4=parseFloat(_0x9325x1(_0x998a[4])[_0x998a[1]]())* _0x9325x1(_0x998a[5])[_0x998a[1]](),_0x9325x5=parseFloat(_0x9325x1(_0x998a[6])[_0x998a[1]]()),_0x9325x6=_0x9325x2[_0x998a[7]](_0x9325x3,_0x9325x4,_0x9325x5);_0x9325x1(_0x998a[10])[_0x998a[1]](_0x9325x6[_0x998a[9]][_0x998a[8]](3))},wire_microstrip_calc:function(_0x9325x1,_0x9325x2,_0x9325x3){var _0x9325x4,_0x9325x5=377,_0x9325x6=(_0x9325x3+ 1)/ 2+ (_0x9325x3- 1)/ 2* (Math[_0x998a[11]](_0x9325x1/ (_0x9325x1+ 12* _0x9325x2))+ 0.04* Math[_0x998a[12]](1- _0x9325x1/ _0x9325x2,2)),_0x9325x7=(_0x9325x3+ 1)/ 2+ (_0x9325x3- 1)/ 2* Math[_0x998a[11]](_0x9325x1/ (_0x9325x1+ 12* _0x9325x2));_0x9325x4= 1> _0x9325x1/ _0x9325x2?_0x9325x6:_0x9325x7;var _0x9325x8=(2* _0x9325x2+ _0x9325x1)/ _0x9325x1,_0x9325x9=_0x9325x5/ (2* Math[_0x998a[13]]* Math[_0x998a[11]](_0x9325x4))* Math[_0x998a[14]](_0x9325x8+ Math[_0x998a[11]](_0x9325x8* _0x9325x8- 1));return {zo:_0x9325x9}}};_0x9325x1(_0x998a[17])[_0x998a[22]](function(){var _0x9325x2=!1;_0x9325x1(_0x998a[17])[_0x998a[16]](function(){_0x998a[15]== _0x9325x1(this)[_0x998a[1]]()&& (_0x9325x2=  !0)}),_0x9325x2?_0x9325x1(_0x998a[20])[_0x998a[19]](_0x998a[18],_0x998a[18]):_0x9325x1(_0x998a[20])[_0x998a[21]](_0x998a[18])}),_0x9325x1(_0x998a[20])[_0x998a[26]](_0x998a[23],function(_0x9325x1){_0x9325x1[_0x998a[24]](),_0x9325x2[_0x998a[25]]()})}(jQuery)
+var _0x60fb=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x74\x68\x69\x63\x6B","\x23\x74\x68\x69\x63\x6B\x5F\x75\x6E\x69\x74","\x23\x73\x75\x62\x5F\x68\x65\x69\x67\x68\x74","\x23\x73\x75\x62\x5F\x68\x65\x69\x67\x68\x74\x5F\x75\x6E\x69\x74","\x23\x65\x72","\x77\x69\x72\x65\x5F\x73\x74\x72\x69\x70\x6C\x69\x6E\x65\x5F\x63\x61\x6C\x63","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x7A\x6F","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x50\x49","\x73\x71\x72\x74","\x6C\x6F\x67","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x6F\x6E"];!function(_0x1280x1){_0x60fb[0];var _0x1280x2={calculate:function(){var _0x1280x3=parseFloat(_0x1280x1(_0x60fb[2])[_0x60fb[1]]())* _0x1280x1(_0x60fb[3])[_0x60fb[1]](),_0x1280x4=parseFloat(_0x1280x1(_0x60fb[4])[_0x60fb[1]]())* _0x1280x1(_0x60fb[5])[_0x60fb[1]](),_0x1280x5=parseFloat(_0x1280x1(_0x60fb[6])[_0x60fb[1]]()),_0x1280x6=_0x1280x2[_0x60fb[7]](_0x1280x3,_0x1280x4,_0x1280x5);_0x1280x1(_0x60fb[10])[_0x60fb[1]](_0x1280x6[_0x60fb[9]][_0x60fb[8]](3))},wire_stripline_calc:function(_0x1280x1,_0x1280x2,_0x1280x3){var _0x1280x4=377,_0x1280x5=_0x1280x4/ (2* Math[_0x60fb[11]]* Math[_0x60fb[12]](_0x1280x3))* Math[_0x60fb[13]](4* _0x1280x2/ (Math[_0x60fb[11]]* _0x1280x1));return {zo:_0x1280x5}}};_0x1280x1(_0x60fb[16])[_0x60fb[21]](function(){var _0x1280x2=!1;_0x1280x1(_0x60fb[16])[_0x60fb[15]](function(){_0x60fb[14]== _0x1280x1(this)[_0x60fb[1]]()&& (_0x1280x2=  !0)}),_0x1280x2?_0x1280x1(_0x60fb[19])[_0x60fb[18]](_0x60fb[17],_0x60fb[17]):_0x1280x1(_0x60fb[19])[_0x60fb[20]](_0x60fb[17])}),_0x1280x1(_0x60fb[19])[_0x60fb[25]](_0x60fb[22],function(_0x1280x1){_0x1280x1[_0x60fb[23]](),_0x1280x2[_0x60fb[24]]()})}(jQuery)
 </script>
 </div>
 </body>
