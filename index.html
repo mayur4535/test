@@ -1,152 +1,24 @@
 
-	
-	<script>
-	function StandardValue(val) {
-		var i;
-		var standard_values = [1.0,1.2,1.5,1.8,2.2,2.7,3.3,3.9,4.7,5.6,6.8,8.2,10,12,15,18,22,27,33,39,47,56,68,82,100,120,150,180,220,270,330,390,470,560,680,820,1000];
-		var len;
-		
-		len= standard_values.length;
-		for(i=0;i<len;i++) {
-			if(val < standard_values[i]) return standard_values[i];
-		}
-		return standard_values[standard_values.length-1]; // default to max standard value.
-	}
-	
-	function Compute(form) {
-		
-		with(Math) {
-			var micro= 1e-6;
-			var nano= 1e-9;
-			var pico= 1e-12;
-			var Kilo= 1000;
-			var Precision= 3;
-			var Tonmin;
-			var Fs;
-			var DutyCycle; 
-			var DutyCycleMin;
-			var td;
-			var Radj; 
-			var Cadj= 1000; // fixed at 1000 pf;
-			var L;
-			var Irip;	// max output ripple
-			var Icl;	// max current limit;
-			var Iclmin;	//
-			var Iclmax;
-			var Cout;
-			var Tonmax;
-			var Pd;			// power disipated in diode
-			var Pdiss;		// power disipated in LM25085
-			var Prsen;		// power disipated in the sense resistor. 
-			var Vsw;
-			var Va;
-			var R3C1;
-			var R3;
-			var C1;
-			var C2= 0.1;	// Fixed at .1uF. 
-			
-			
-		
-			
-			var Vinmax= Number(form.Vinmax.value);
-			var Vinmin= Number(form.Vinmin.value);
-			var Vin= Number(form.Vin.value);
-			var Vout= Number(form.Vout.value);
-			var Vd= Number(form.Vd.value);
-			var Qon= Number(form.Qon.value);			// MOSFET Transistor turn on time (ns)
-			var Qoff= Number(form.Qoff.value);			// MOSFET Transistor turn off time (ns)
-			var charge= Number(form.charge.value)*nano;	// MOSFET Gate Charge
-			var Fs= Number(form.Fs.value)*Kilo;  		// desired switching frequency
-			var Imax= Number(form.Imax.value);  		// maximum current limit in amps.
-			var Imin= Number(form.Imin.value); 	 		// minimum current in amps.
-			var Vrip= Number(form.Vrip.value)/Kilo; 	// maximum ripple voltage in volts.
-			var Rsen= Number(form.Rsen.value);  		// Current Sensing resistor in ohms.
-			var Rf1= Number(form.Rf1.value)*Kilo;  		// Top feedback resistor in ohms.
 
-			
-			if((Vin < 4.5)||(Vin>42)) ;
-			if(Vinmax>42);
-			if(Vinmin < 4.5) ;
-			if(Qoff < Qon) ;
-			
-			td= (50 + Qoff - Qon)*nano; 	// 50ns + the difference between the on and off times of the MOSFET.
-			DutyCycle= Vout/Vin;
-			RT= (Vout*(Vin-1.56))/(1.45e-7*Vin*Fs) - (td*(Vin-1.56))/(1.45e-7)- 1.4;
-			Tonmin= (1.45e-7*(RT+1.4))/(Vinmax - 1.56+ RT/3167) + td; // in seconds.
-			if(Tonmin<150e-9) ("")
-			Tonmax= (1.45e-7*(RT+1.4))/(Vinmin - 1.56+ RT/3167) + td; // in seconds.
-			
-			Rf2= Rf1/((Vout/1.25) - 1)/Kilo;
-
-			// inductor is selected so that it stays in continuous mode.  This is determinted by the 
-			// minimum output current.  If output current is near 0 then just select 20% of the max current.
-			Irip= 2*Imin;
-			if(Irip < 0.2*Imax) Irip= 0.2*Imax;
-			
-			
-			L= Tonmin*(Vinmax-Vout)/(Irip);
-			
-			L= StandardValue(L/micro)*micro;
-			
-
-			
-			
-			Irip= Tonmin*(Vinmax-Vout)/L;
-			
-			Iclmin= Imax + Irip/2;
-			Icl= (Iclmin*Rsen+.009)/Rsen;
-			Radj= Icl*Rsen/32e-6;		// this could be standardized.
-			Iclmax= (Radj*48e-6+.009)/Rsen;
-			
-			Cout= Irip/(8*Vrip*Fs);
-			Cout= StandardValue(Cout/micro)*micro;
-			
-			Cin= Imax*Tonmax/.5;			// 0.5V is the maximum allowable droop at Vin. 
-			Cin= StandardValue(Cin/micro)*micro;
-			
-			DutyCycleMin= Vout/Vinmax;
-			Pd= Vd*Imax*(1-DutyCycleMin);
-			Pdiss= Vinmax*(charge*Fs+1.3e-3);
-			Prsen= Imax*Imax*Rsen;
-			
-			Vsw= 0.65;						// Voltage across mosfet, ranges .5 to 1V. 
-			Va= Vout-(Vsw*(1-Vout/Vinmin));
-			R3C1= (Vinmin-Va)*Tonmax/0.025; // desired ripple 0.025V at junction. 
-			C1= 3300e-12;					// pf
-			R3= R3C1/C1;					
-			
-			DutyCycle*= 100;		// in percent.
-			Tonmin= Tonmin/1e-9;	// in nano seconds.			
-			Tonmax= Tonmax/1e-9;	// in nano seconds.	
-			L= L/micro;				// in uH
-			Cout= Cout/micro;		// in uF
-			Cin= Cin/micro;			// in uF
-			R3= R3/Kilo;
-			C1= C1/pico;
-			
-			
-			form.R3.value= R3.toPrecision(Precision);
-			form.C1.value= C1.toPrecision(Precision);
-			form.C2.value= C2.toPrecision(Precision);
-			form.R3C1.value= R3C1.toPrecision(Precision);
-			form.Pd.value= Pd.toPrecision(Precision);
-			form.Pdiss.value= Pdiss.toPrecision(Precision);
-			form.Prsen.value= Prsen.toPrecision(Precision);
-			form.L.value= L.toPrecision(Precision);
-			form.Iclmax.value= Iclmax.toPrecision(Precision);
-			form.Cout.value= Cout.toPrecision(Precision);
-			form.Cin.value= Cin.toPrecision(Precision);
-			form.Rf2.value= Rf2.toPrecision(Precision);
-			form.RT.value= RT.toPrecision(Precision);
-			form.Radj.value= Radj.toPrecision(Precision);
-			form.Cadj.value= Cadj;
-			form.DutyCycle.value= DutyCycle.toPrecision(Precision);
-			form.Tonmin.value= Tonmin.toPrecision(Precision);
-			form.Tonmax.value= Tonmax.toPrecision(Precision);
-		}
-	}
-	</script>	
-
+<SCRIPT language="javascript" type="text/javascript">
+function calc()
+{
+a=Number(document.calculator.number1.value);
+b=Number(document.calculator.number2.value);
+B=Number(document.calculator.number3.value);
+Fr=Number(document.calculator.number4.value);
+N=Number(document.calculator.number5.value);
+m = (9.11 * (Math.pow(10,-31))) ;
+e = (1.6 * (Math.pow(10,-19))) ;
+m1 =( 1 - ((Math.pow(a,2))/(Math.pow(b,2))));
+c1= ( ( ( e * (Math.pow(b,2)) * (Math.pow(B,2)) )/(8*m) ) * (Math.pow(m1,2))  ) ;
+c2 = (( 2 * (Math.PI) * Fr* (Math.pow(10,9)) * B )/N )* ( (Math.pow(b,2)) - (Math.pow(a,2)) ) ;
+c1 =c1/1000;
+c2 = c2/1000;
+document.calculator.Hull_potential.value=c1;
+document.calculator.Hartree_potential.value=c2;
+}
+</SCRIPT>
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -212,57 +84,28 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-			
 
-			
-			<form method="POST" name="ParamForm">
-			
 
-<label for="r2" style="font-size:55;" >V<sub>in</sub></label><font face="Arial" size="6"> (max)  </font><input name="Vinmax" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+
+<FORM name="calculator">
+<label for="r2" style="font-size:55;" >Cathod radius</label><font face="Arial" size="6">  </font><input name="number1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mtr</label>
 <h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >V<sub>in</sub></label><font face="Arial" size="6"> (nominal)  </font><input name="Vin" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<label for="r2" style="font-size:55;" >Anode radius</label><font face="Arial" size="6">  </font><input name="number2" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mtr</label>
 <h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >V<sub>in</sub></label><font face="Arial" size="6"> (min)  </font><input name="Vinmin" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<label for="r2" style="font-size:55;" >Magnetic Field</label><font face="Arial" size="6">  </font><input name="number3" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:30px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"> Wb/m<sup>2</sup> </label>
 <h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >V<sub>out</sub></label><font face="Arial" size="6">  </font><input name="Vout" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >VD</label><font face="Arial" size="6"> (Diode Forward Voltage)  </font><input name="Vd" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:50;"></h1>	
-<label for="r2" style="font-size:55;" >I<sub>out</label><font face="Arial" size="6"> (max out current)  </font><input name="Imax" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >I<sub>out</label><font face="Arial" size="6"> (min out current)  </font><input name="Imin" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >V<sub>out</label><font face="Arial" size="6"> (Max. Out. Volt. Ripple)  </font><input name="Vrip" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:38px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mVpp</label>
-<h1 style="font-size:40;"></h1>									
-<label for="r2" style="font-size:55;" >R</label><font face="Arial" size="6"> (Current Sense Res.DF(0.1))  </font><input name="Rsen" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>				
-<label for="r2" style="font-size:55;" >R<sub>f1</sub></label><font face="Arial" size="6"> (Feedback Res. DF(10k))  </font><input name="Rf1" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:40;"></h1>					
-<label for="r2" style="font-size:55;" >F<sub>s</sub></label><font face="Arial" size="6"> (Desired Switching Freq.)  </font><input name="Fs" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KHz</label>
-<h1 style="font-size:40;"></h1>							
-<label for="r2" style="font-size:55;" >MOSFET</sub></label><font face="Arial" size="6"> (On Time)  </font><input name="Qon" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:42px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">NSec</label>
-<h1 style="font-size:50;"></h1>					
-<label for="r2" style="font-size:55;" >MOSFET</sub></label><font face="Arial" size="6"> (Off Time)  </font><input name="Qoff" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:42px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">NSec</label>
-<h1 style="font-size:50;"></h1>				
-<label for="r2" style="font-size:55;" >MOSFET</sub></label><font face="Arial" size="6"> (Gate Charge)  </font><input name="charge" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">nC</label>
-<h1 style="font-size:40;"></h1>					
+<label for="r2" style="font-size:55;" >Tuning Frequency</label><font face="Arial" size="6">  </font><input name="number4" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:54px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">GHz </label>
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >Resonators Numbers</label><font face="Arial" size="6">  </font><input name="number5" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:54px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">GHz </label>
+<h1 style="font-size:40;"></h1>
 </fieldset>
 <h1 style="font-size:80;"></h1>		
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" value="Calculate" name="B1" onClick="Compute(document.ParamForm);" style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -279,71 +122,15 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>				
-				
-<label for="r2" style="font-size:55;" >Duty Cycle</label><font face="Arial" size="6"> </font><input name="DutyCycle" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">%</label>
-<h1 style="font-size:50;"></h1>					
-<label for="r2" style="font-size:55;" >T<sub>on </sub></label><font face="Arial" size="6">(Min. Switch On Time) </font><input name="Tonmin" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">nsec</label>
-<h1 style="font-size:40;"></h1>					
-<label for="r2" style="font-size:55;" >T<sub>on </sub></label><font face="Arial" size="6">(Max. Switch On Time) </font><input name="Tonmax" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">nsec</label>
-<h1 style="font-size:40;"></h1>				
-<label for="r2" style="font-size:55;" >D<sub>pwr </sub></label><font face="Arial" size="6">(Max. Diode Power) </font><input name="Pd" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
-<h1 style="font-size:40;"></h1>								
-<label for="r2" style="font-size:55;" >IC<sub>pwr </sub></label><font face="Arial" size="6">(Max. Power) </font><input name="Pdiss" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
-<h1 style="font-size:40;"></h1>					
-<label for="r2" style="font-size:55;" >C</sub></label><font face="Arial" size="6">(Max Current Sense Res. Pwr) </font><input name="Prsen" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
-<h1 style="font-size:50;"></h1>					
-<label for="r2" style="font-size:55;" >Inductor</label><font face="Arial" size="6"> </font><input name="L" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uH</label>
-<h1 style="font-size:50;"></h1>				
-<label for="r2" style="font-size:55;" >Icl </label><font face="Arial" size="6">(Peak Ind. Current Limit) </font><input name="Iclmax" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
-<h1 style="font-size:50;"></h1>					
-<label for="r2" style="font-size:55;" >C<sub>Output </sub></label><font face="Arial" size="6"> </font><input name="Cout" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uF</label>
-<h1 style="font-size:40;"></h1>					
-<label for="r2" style="font-size:55;" >C<sub>Input </sub></label><font face="Arial" size="6"> </font><input name="Cin" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uF</label>
-<h1 style="font-size:40;"></h1>					
-<label for="r2" style="font-size:55;" >R<sub>f2 </sub></label><font face="Arial" size="6">(Feedback Resistor) </font><input name="Rf2" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:40;"></h1>								
-<label for="r2" style="font-size:55;" >R<sub>t </sub></label><font face="Arial" size="6"> </font><input name="RT" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:40;"></h1>						
-<label for="r2" style="font-size:55;" >R<sub>adj </sub></label><font face="Arial" size="6">(Resistor Adj) </font><input name="Radj" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:40;"></h1>					
-<label for="r2" style="font-size:55;" >C<sub>adj </sub></label><font face="Arial" size="6">(Capacitor Adj) </font><input name="Cadj" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:40;"></h1>								
-<label for="r2" style="font-size:55;" >R3XC1<sub> </sub></label><font face="Arial" size="6">(Product) </font><input name="R3C1" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;"></label>
-<h1 style="font-size:40;"></h1>										
-<label for="r2" style="font-size:55;" >C1<sub> </sub></label><font face="Arial" size="6"> </font><input  name="C1" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">pF</label>
-<h1 style="font-size:50;"></h1>	
-<label for="r2" style="font-size:55;" >C2<sub> </sub></label><font face="Arial" size="6"> </font><input  name="C2" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">uf</label>
-<h1 style="font-size:50;"></h1>					
-<label for="r2" style="font-size:55;" >R3<sub> </sub></label><font face="Arial" size="6"> </font><input  name="R3" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:40;"></h1>								
-					
-				
-				
-				
-							
-				
+<h3>Outputs</h3></div></legend>		
 
-			</form>
-			
-			
-			
-		
+<label for="r2" style="font-size:55;" >Magnetron</label><font face="Arial" size="6"> (Hull Cutoff Potential)  </font><input name="Hull_potential" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:54px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KV</label>
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >Magnetron</label><font face="Arial" size="6"> (Hartree Potential)  </font><input name="Hartree_potential" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:54px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KV</label>
+<h1 style="font-size:40;"></h1>
+
+
+
+</FORM>
