@@ -1,56 +1,54 @@
+	<script>
+		function Compute(form) {
+			with(Math) {
+				var KILO = 1000;
+				var MEG = KILO * KILO;
+				var MICRO = 1 / MEG;
+				var PICO = 1 / (MEG * MEG);
+				var NANO = 1 / (MEG * KILO);
+				var Precision = 3;
 
-<script>
-	function Compute1(form) {
-		with(Math) {
-			var GIGA= 1000000000;
-			var MEGA= 1000000;
-			var KILO= 1000;
-			var Ipk= Number(form.Ipk.value);
-			var V= Number(form.V.value);		
-			var rt= Number(form.rt.value)/MEGA;		
-			var F= Number(form.F.value)*KILO;
-			
-			var Precision= 3;
-			
-			C= Ipk*rt/V; 
-			R= 1/(F*C*20.0);	
-			P= C*V*V*F/2;
+				var Vin = abs(Number(form.Vin.value));
+				var Vo1 = abs(Number(form.Vo1.value));
+				var Lpri = Number(form.Lpri.value) * MICRO;
+				var VT = Number(form.VT.value) * MICRO;
+				var Isat = Number(form.Isat.value);
+				var Lleak = Number(form.Lleak.value) * MICRO;
+				var N = Number(form.N.value);
+				var Vd = abs(Number(form.Vd.value)); // Diode Drop
+				var Vtran = Number(form.Vtran.value);
 
-			C*= GIGA;
+				if (VT) {
+					Isat = VT / Lpri;
+				} else {
+					VT = Isat * Lpri;
+				}
 
-			form.C.value= C.toFixed(Precision);		
-			form.R.value= R.toFixed(Precision);		
-			form.P.value= P.toFixed(Precision);		
+				Duty = Vo1 / (Vin * N);
+
+				Tonmax = VT / Vin;
+				F = Duty / Tonmax;
+				En = Lpri * Isat * Isat / 2;
+				P = F * En;
+				Io1 = P / Vo1;
+				Iin = P / Vin;
+
+				Tonmax *= MEG;
+				VT *= MEG;
+				F /= KILO;
+				En *= MEG;
+				form.Tonmax.value = Tonmax.toPrecision(Precision);
+				form.Duty.value = Duty.toPrecision(Precision);
+				form.Isat.value = Isat.toPrecision(Precision);
+				form.VT.value = VT.toPrecision(Precision);
+				form.F.value = F.toPrecision(Precision);
+				form.En.value = En.toPrecision(Precision);
+				form.P.value = P.toPrecision(Precision);
+				form.Iin.value = Iin.toPrecision(Precision);
+				form.Io1.value = Io1.toPrecision(Precision);
+			}
 		}
-	}
-
-	function Compute2(form) {
-		with(Math) {
-			var GIGA= 1000000000;	
-			var MEGA= 1000000;
-			var KILO= 1000;
-			var Ipk= Number(form.Ipk.value);		
-			var V= Number(form.V.value);		
-			var dV= Number(form.dV.value);
-			var F= Number(form.F.value)*KILO;
-			var L= Number(form.L.value)/MEGA;
-
-			
-			var Precision= 3;
-			
-			C= L*Ipk*Ipk/(dV*(dV+2*V));
-			R= 10/(F*C);
-			P= (L*Ipk*Ipk/2)*F;
-			
-			C*= GIGA;
-
-			form.C.value= C.toFixed(Precision);		
-			form.R.value= R.toFixed(Precision);		
-			form.P.value= P.toFixed(Precision);	
-		}
-	}
-</script>
-
+	</script>
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -116,25 +114,48 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-
-<form method="POST" name="ParamForm1" action="">
-   
-        
-<label for="r2" style="font-size:55;" >Ipk</sub></label><font face="Arial" size="6"> </font><input name="Ipk" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >Rd</sub></label><font face="Arial" size="6"> (Rise Time)</font><input name="rt" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">	&micro;sec</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >V<sub>rail</sub></label><font face="Arial" size="6"></font><input name="V" class="intro"  style="position: absolute;   width:280; text-align
+					<form name=ParamForm method=post>
+					
+					
+<label for="r2" style="font-size:55;" >V<sub>in</sub></label><font face="Arial" size="6"> (Voltage Primary) </font><input name="Vin" class="intro"  style="position: absolute;   width:280; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:40;"></h1>	
-<label for="r2" style="font-size:55;" >Frequency<sub></sub></label><font face="Arial" size="6"></font><input name="F" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KHz</label>
-<h1 style="font-size:40;"></h1>	
+<h1 style="font-size:50;"></h1>	
+<label for="r2" style="font-size:55;" >V<sub>Out1</sub></label><font face="Arial" size="6"> (Voltage Out 1) </font><input  name="Vo1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+
+<h1 style="font-size:35"></h1>	
+<font style=" margin-right: 10px; face="Arial" size="4"> (Note that this must be positive, and feed back is derived from this winding) </font>
+<h1 style="font-size:1;"></h1>	
+
+
+
+
+<label for="r2" style="font-size:55;" >Inductance</label><font face="Arial" size="6"> (Transformer Primary) </font><input name="Lpri" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;H</label>
+<h1 style="font-size:50;"></h1>	
+<label for="r2" style="font-size:55;" >VT product</label><font face="Arial" size="6"> (Transformer) </font><input name="VT" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:40px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V*&micro;S</label>
+<h1 style="font-size:50;"></h1>	
+<font style="text-align:center;" "face="Arial" size="6"> (OR) </font>
+<h1 style="font-size:30;"></h1>	
+<label for="r2" style="font-size:55;" >I<sub>sat</label><font face="Arial" size="6"></font><input name="Isat" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:50;"></h1>		
+<label for="r2" style="font-size:55;" >Leakage</label><font face="Arial" size="6"> (Transformer Inductance)(Opt)</font><input name="Lleak" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;H</label>
+<h1 style="font-size:50;"></h1>								
+<label for="r2" style="font-size:55;" >Turns Ratio</label><font face="Arial" size="6"> </font><input name="N" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:38px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">N<sub>p</sub>:N<sub>s</sub></label>
+<h1 style="font-size:50;"></h1>								
+<label for="r2" style="font-size:55;" >V<sub>d</sub></label><font face="Arial" size="6"> (Diode Voltage Drop) </font><input name="Vd" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>								
+<label for="r2" style="font-size:55;" >V<sub>td</sub></label><font face="Arial" size="6"> (Transistor Voltage Drop) </font><input name="Vtran" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:50;"></h1>								
 </fieldset>
 <h1 style="font-size:80;"></h1>		
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="Button" value="CALCULATE" onClick="Compute1(document.ParamForm1)"style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" value="CALCULATE" name="B1" onclick="Compute(document.ParamForm);" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -146,31 +167,35 @@ input[type=checkbox]{
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;">
-</div></legend></fieldset>	
-		
+</div></legend></fieldset>								
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>				
-				
-<label for="r2" style="font-size:55;" >C</label><font face="Arial" size="6"> </font><input name="C" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">nF</label>
-<h1 style="font-size:50;"></h1>	
-<label for="r2" style="font-size:55;" >Resistance</label><font face="Arial" size="6"> </font><input name="R" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>	
-<label for="r2" style="font-size:55;" >Power</label><font face="Arial" size="6"> </font><input name="P" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
-<h1 style="font-size:50;"></h1>	        
-        
-       
-       
-     
-        
-   
-      </form>
+<h3>Outputs</h3></div></legend>							
+<label for="r2" style="font-size:55;" >T<sub>ON</sub></label><font face="Arial" size="6"> (Time ON max) </font><input name="Tonmax" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;s</label>
+<h1 style="font-size:50;"></h1>							
+<label for="r2" style="font-size:55;" >Duty Cycle</label><font face="Arial" size="6"> (switch On) </font><input name="Duty" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;s</label>
+<h1 style="font-size:50;"></h1>								
+<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> (min) </font><input name="F" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KHz</label>
+<h1 style="font-size:50;"></h1>								
+<label for="r2" style="font-size:55;" >EPC</label><font face="Arial" size="6"> (Energy Per
+									Cycle) </font><input name="En" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;j</label>
+<h1 style="font-size:50;"></h1>							
+<label for="r2" style="font-size:55;" >Power</label><font face="Arial" size="6"> (max) </font><input name="P" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:50;"></h1>								
+<label for="r2" style="font-size:55;" >I<sub>In</aub> </label><font face="Arial" size="6"> (max Current
+									In) </font><input name="Iin" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:50;"></h1>								
+<label for="r2" style="font-size:55;" >I<sub>Out</aub> </label><font face="Arial" size="6"> (max Current Out 1) </font><input name="Io1" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:50;"></h1>							
+							
+					</form>
 
-
-
-
-     
+					
