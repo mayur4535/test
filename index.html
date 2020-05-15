@@ -1,5 +1,3 @@
-
-
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -78,14 +76,12 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Width<font face="Arial" size="6"> (Trace) </font></label><input type="number" id="width"   class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Current<font face="Arial" size="6"> (Max) </font></label><input type="number" id="current"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
-<select class="form-control" id="width_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
-<option selected="selected" value="1">mil</option>
-<option value="393.7">cm</option>
-<option value="39.37">mm</option>
-<option value="0.03937">um</option>
-<option value="1000">inch</option>
+<select class="form-control" id="current_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option selected="" value="1">A</option>
+<option value="1e-3">mA</option>
+<option value="1e-6">&micro;A</option>
 </select>
 </div>
 <h1 style="font-size:50;"></h1>
@@ -98,7 +94,29 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Thickness<font face="Arial" size="6"> (Trace) </font></label><input type="number" id="thick"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Width Unit<font face="Arial" size="6"> (Trace) </font></label>
+<select class="form-control" id="width_unit_select" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
+<option selected="" value="1">mil</option>
+<option value="393.7">cm</option>
+<option value="39.3">mm</option>
+<option value=".00393">um</option>
+<option value="1000">inch</option></div>
+</select>
+</div>
+
+</div>
+</div>
+</div><h1 style="font-size:50;"></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class="col-sm-4 col-xs-12">
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Thickness<font face="Arial" size="6"> (Trace) </font></label><input type="number" id="thick"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 <select class="form-control" id="thick_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
 <option value="1.3779">oz/ft^2</option>
@@ -119,7 +137,7 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Temperature<font face="Arial" size="6"> (Rise) </font></label>
+<label for="r2" style="font-size:55;" >Temp.<font face="Arial" size="6"> (Rise) </font></label>
 <select class="form-control" id="temp_rise" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
 
 <option selected="" value="10">10 ° C</option>
@@ -136,11 +154,11 @@ input[type=checkbox]{
 <div class="col-sm-4 col-xs-12">
 <div class="form-group">
 
-</div>
+ </div>
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Temp.<font face="Arial" size="6"> (Ambient) </font></label><input type="number" id="amb_temp"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Temp.<font face="Arial" size="6"> (Ambient) </font></label><input type="number" id="amb_temp"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 <select class="form-control" id="amb_temp_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
 <option selected="" value="1">° C</option>
@@ -158,7 +176,7 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group">
-<label for="r2" style="font-size:55;" >Length<font face="Arial" size="6"> </font></label><input type="number" id="length"  class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Length<font face="Arial" size="6"> </font></label><input type="number" id="length"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 <select class="form-control" id="length_unit" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
 <option value="0.00254">mil</option>
@@ -168,7 +186,7 @@ input[type=checkbox]{
 <option selected="" value="2.54">inch</option>
 </select>
 </div>
-<h1 style="font-size:50;"></h1>
+
 <div class="row">
 <div class="col-sm-12">
 
@@ -205,8 +223,9 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div id="tool_output_container" class="form-group">
-<label for="r2" style="font-size:55;" >Current</label><font face="Arial" size="7"> (Max)  </font><input  id="tool_output1"  class="intro"  style="position: absolute;   width:300; text-align
+<label for="r2" style="font-size:55;" >Width</label><font face="Arial" size="7">(Trace)  </font><input  id="tool_output1"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+
 
 </div>
 </div>
@@ -220,8 +239,9 @@ input[type=checkbox]{
 </div>
 <div class="col-sm-4 col-xs-8">
 <div id="tool_output_container" class="form-group">
-<label for="r2" style="font-size:55;" >Temperature</label><font face="Arial" size="7"> (Trace)  </font><input  id="tool_output2"  class="intro"  style="position: absolute;   width:300; text-align
+<label for="r2" style="font-size:55;" >Temp.</label><font face="Arial" size="7">(Trace)  </font><input  id="tool_output2"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">°C</label>
+
 
 
 </div>
@@ -240,6 +260,8 @@ input[type=checkbox]{
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
 
 
+
+
 </div>
 </div>
 <h1 style="font-size:50;"></h1>
@@ -253,8 +275,7 @@ input[type=checkbox]{
 <div class="col-sm-4 col-xs-8">
 <div id="tool_output_container" class="form-group">
 <label for="r2" style="font-size:55;" >Voltage Drop</label><font face="Arial" size="7">  </font><input  id="tool_output4"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
 
 
 </div>
@@ -276,8 +297,9 @@ input[type=checkbox]{
 </div>
 <h1 style="font-size:30;"></h1>
 <script type="text/javascript">
-var _0x73a4=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x77\x69\x64\x74\x68","\x23\x77\x69\x64\x74\x68\x5F\x75\x6E\x69\x74","\x23\x74\x68\x69\x63\x6B","\x23\x74\x68\x69\x63\x6B\x5F\x75\x6E\x69\x74","\x23\x74\x65\x6D\x70\x5F\x72\x69\x73\x65","\x23\x61\x6D\x62\x5F\x74\x65\x6D\x70\x5F\x75\x6E\x69\x74","\x23\x61\x6D\x62\x5F\x74\x65\x6D\x70","\x31","\x32","\x33","\x23\x6C\x65\x6E\x67\x74\x68","\x23\x6C\x65\x6E\x67\x74\x68\x5F\x75\x6E\x69\x74","\x6C\x6F\x6F\x70\x5F\x66\x69\x6E\x64\x5F\x63\x75\x72\x72\x65\x6E\x74","\x61\x62\x73","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x32","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x33","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x34","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x35","\x70\x6F\x77","\x66\x69\x6E\x64\x5F\x63\x72\x6F\x73\x73","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x6F\x6E"];!function(_0x1eacx1){_0x73a4[0];var _0x1eacx2={calculate:function(){var _0x1eacx3=1,_0x1eacx4=_0x1eacx1(_0x73a4[2])[_0x73a4[1]]()* _0x1eacx1(_0x73a4[3])[_0x73a4[1]](),_0x1eacx5=_0x1eacx1(_0x73a4[4])[_0x73a4[1]]()* _0x1eacx1(_0x73a4[5])[_0x73a4[1]](),_0x1eacx6=parseInt(_0x1eacx1(_0x73a4[6])[_0x73a4[1]]()),_0x1eacx7=_0x1eacx1(_0x73a4[7])[_0x73a4[1]](),_0x1eacx8=0,_0x1eacx9=_0x1eacx1(_0x73a4[8])[_0x73a4[1]]();switch(_0x1eacx7){case _0x73a4[9]:_0x1eacx8= parseInt(_0x1eacx9);break;case _0x73a4[10]:_0x1eacx8= parseInt(_0x1eacx9- 273.15);break;case _0x73a4[11]:_0x1eacx8= parseInt(100/ 180* (_0x1eacx9- 32))};var _0x1eacxa=_0x1eacx1(_0x73a4[12])[_0x73a4[1]]()* _0x1eacx1(_0x73a4[13])[_0x73a4[1]](),_0x1eacxb=_0x1eacx4* _0x1eacx5,_0x1eacxc=_0x1eacx2[_0x73a4[14]](_0x1eacx6,_0x1eacxb,_0x1eacx3),_0x1eacxd=64746e-10* _0x1eacxb,_0x1eacxe=0.002544* _0x1eacxa,_0x1eacxf=_0x1eacx6+ _0x1eacx8,_0x1eacx10=17e-7,_0x1eacx11=0.0039,_0x1eacx12=Math[_0x73a4[15]](_0x1eacx10* _0x1eacxe/ _0x1eacxd* (1+ _0x1eacx11* (_0x1eacxf- 25))),_0x1eacx13=_0x1eacx12* _0x1eacxc,_0x1eacx14=_0x1eacx13* _0x1eacxc;_0x1eacx1(_0x73a4[17])[_0x73a4[1]](_0x1eacxc[_0x73a4[16]](3)),_0x1eacx1(_0x73a4[18])[_0x73a4[1]](_0x1eacxf[_0x73a4[16]](3)),_0x1eacx1(_0x73a4[19])[_0x73a4[1]](_0x1eacx12[_0x73a4[16]](3)),_0x1eacx1(_0x73a4[20])[_0x73a4[1]](_0x1eacx13[_0x73a4[16]](3)),_0x1eacx1(_0x73a4[21])[_0x73a4[1]](_0x1eacx14[_0x73a4[16]](3))},find_cross:function(_0x1eacx1,_0x1eacx2,_0x1eacx3){var _0x1eacx4;if(_0x1eacx3){switch(_0x1eacx1){case 10:_0x1eacx4= -0.012* Math[_0x73a4[22]](_0x1eacx2,5)+ 0.4008* Math[_0x73a4[22]](_0x1eacx2,4)+ -4.4272* Math[_0x73a4[22]](_0x1eacx2,3)+ 25.218* Math[_0x73a4[22]](_0x1eacx2,2)+ 22.072* _0x1eacx2;break;case 20:_0x1eacx4= -0.0189* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.2518* Math[_0x73a4[22]](_0x1eacx2,3)+ 3.1502* Math[_0x73a4[22]](_0x1eacx2,2)+ 29.816* _0x1eacx2;break;case 30:_0x1eacx4= 0.0029* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0675* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.3704* Math[_0x73a4[22]](_0x1eacx2,3)+ 2.9039* Math[_0x73a4[22]](_0x1eacx2,2)+ 20.508* _0x1eacx2;break;case 45:_0x1eacx4= 0.0015* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0462* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.3791* Math[_0x73a4[22]](_0x1eacx2,3)+ 1.4026* Math[_0x73a4[22]](_0x1eacx2,2)+ 18.58* _0x1eacx2;break;default:_0x1eacx4= 0}}else {switch(_0x1eacx1){case 10:_0x1eacx4= 0.0076* Math[_0x73a4[22]](_0x1eacx2,4)+ -0.3082* Math[_0x73a4[22]](_0x1eacx2,3)+ 5.1149* Math[_0x73a4[22]](_0x1eacx2,2)+ 12.472* _0x1eacx2;break;case 20:_0x1eacx4= 3e-4* Math[_0x73a4[22]](_0x1eacx2,4)+ -0.028* Math[_0x73a4[22]](_0x1eacx2,3)+ 1.5033* Math[_0x73a4[22]](_0x1eacx2,2)+ 12.522* _0x1eacx2;break;case 30:_0x1eacx4= 1e-4* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0073* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.1048* Math[_0x73a4[22]](_0x1eacx2,3)+ 0.3891* Math[_0x73a4[22]](_0x1eacx2,2)+ 10.814* _0x1eacx2;break;case 45:_0x1eacx4= 7e-5* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0045* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.0768* Math[_0x73a4[22]](_0x1eacx2,3)+ 0.1738* Math[_0x73a4[22]](_0x1eacx2,2)+ 9.5374* _0x1eacx2;break;case 60:_0x1eacx4= 9e-5* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0058* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.102* Math[_0x73a4[22]](_0x1eacx2,3)+ 0.036* Math[_0x73a4[22]](_0x1eacx2,2)+ 7.2743* _0x1eacx2;break;case 75:_0x1eacx4= 5e-5* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0031* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.0601* Math[_0x73a4[22]](_0x1eacx2,3)+ 0.1117* Math[_0x73a4[22]](_0x1eacx2,2)+ 6.5222* _0x1eacx2;break;case 100:_0x1eacx4= 2e-5* Math[_0x73a4[22]](_0x1eacx2,5)+ -0.0013* Math[_0x73a4[22]](_0x1eacx2,4)+ 0.0234* Math[_0x73a4[22]](_0x1eacx2,3)+ 0.3736* Math[_0x73a4[22]](_0x1eacx2,2)+ 4.1989* _0x1eacx2;break;default:_0x1eacx4= 0}};return _0x1eacx4},loop_find_current:function(_0x1eacx1,_0x1eacx3,_0x1eacx4){var _0x1eacx5=0,_0x1eacx6=0,_0x1eacx7=1e5,_0x1eacx8=1,_0x1eacx9=0;for(_0x1eacx5= 0.01;35>= _0x1eacx5;_0x1eacx5+= 0.01){_0x1eacx8= _0x1eacx2[_0x73a4[23]](_0x1eacx1,_0x1eacx5,_0x1eacx4),_0x1eacx9= Math[_0x73a4[15]](_0x1eacx8- _0x1eacx3),_0x1eacx7> _0x1eacx9&& (_0x1eacx7= _0x1eacx9,_0x1eacx6= _0x1eacx5)};return _0x1eacx6}};_0x1eacx1(_0x73a4[26])[_0x73a4[31]](function(){var _0x1eacx2=!1;_0x1eacx1(_0x73a4[26])[_0x73a4[25]](function(){_0x73a4[24]== _0x1eacx1(this)[_0x73a4[1]]()&& (_0x1eacx2=  !0)}),_0x1eacx2?_0x1eacx1(_0x73a4[29])[_0x73a4[28]](_0x73a4[27],_0x73a4[27]):_0x1eacx1(_0x73a4[29])[_0x73a4[30]](_0x73a4[27])}),_0x1eacx1(_0x73a4[29])[_0x73a4[35]](_0x73a4[32],function(_0x1eacx1){_0x1eacx1[_0x73a4[33]](),_0x1eacx2[_0x73a4[34]]()})}(jQuery)
-</script>
-</div>
+var _0x144d=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x76\x61\x6C","\x23\x63\x75\x72\x72\x65\x6E\x74","\x23\x63\x75\x72\x72\x65\x6E\x74\x5F\x75\x6E\x69\x74","\x23\x74\x68\x69\x63\x6B","\x23\x74\x68\x69\x63\x6B\x5F\x75\x6E\x69\x74","\x23\x74\x65\x6D\x70\x5F\x72\x69\x73\x65","\x23\x61\x6D\x62\x5F\x74\x65\x6D\x70\x5F\x75\x6E\x69\x74","\x23\x61\x6D\x62\x5F\x74\x65\x6D\x70","\x31","\x32","\x33","\x23\x6C\x65\x6E\x67\x74\x68","\x23\x6C\x65\x6E\x67\x74\x68\x5F\x75\x6E\x69\x74","\x66\x69\x6E\x64\x5F\x63\x72\x6F\x73\x73","\x23\x77\x69\x64\x74\x68\x5F\x75\x6E\x69\x74\x5F\x73\x65\x6C\x65\x63\x74","\x61\x62\x73","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x31","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x32","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x33","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x34","\x23\x74\x6F\x6F\x6C\x5F\x6F\x75\x74\x70\x75\x74\x35","\x70\x6F\x77","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x20\x3A\x69\x6E\x70\x75\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x23\x74\x6F\x6F\x6C\x5F\x73\x75\x62\x6D\x69\x74","\x72\x65\x6D\x6F\x76\x65\x41\x74\x74\x72","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x6F\x6E"];!function(_0x865bx1){_0x144d[0];var _0x865bx2={calculate:function(){var _0x865bx3=1,_0x865bx4=_0x865bx1(_0x144d[2])[_0x144d[1]]()* _0x865bx1(_0x144d[3])[_0x144d[1]](),_0x865bx5=_0x865bx1(_0x144d[4])[_0x144d[1]]()* _0x865bx1(_0x144d[5])[_0x144d[1]](),_0x865bx6=parseInt(_0x865bx1(_0x144d[6])[_0x144d[1]]()),_0x865bx7=_0x865bx1(_0x144d[7])[_0x144d[1]](),_0x865bx8=0,_0x865bx9=_0x865bx1(_0x144d[8])[_0x144d[1]]();switch(_0x865bx7){case _0x144d[9]:_0x865bx8= parseInt(_0x865bx9);break;case _0x144d[10]:_0x865bx8= parseInt(_0x865bx9- 273.15);break;case _0x144d[11]:_0x865bx8= parseInt(100/ 180* (_0x865bx9- 32))};var _0x865bxa=_0x865bx1(_0x144d[12])[_0x144d[1]]()* _0x865bx1(_0x144d[13])[_0x144d[1]](),_0x865bxb=_0x865bx2[_0x144d[14]](_0x865bx6,_0x865bx4,_0x865bx3),_0x865bxc=_0x865bxb/ _0x865bx5,_0x865bxd=_0x865bx1(_0x144d[15])[_0x144d[1]](),_0x865bxe=_0x865bxc/ _0x865bxd,_0x865bxf=64746e-10* _0x865bxb,_0x865bx10=0.002544* _0x865bxa,_0x865bx11=_0x865bx6+ _0x865bx8,_0x865bx12=17e-7,_0x865bx13=0.0039,_0x865bx14=Math[_0x144d[16]](_0x865bx12* _0x865bx10/ _0x865bxf* (1+ _0x865bx13* (_0x865bx11- 25))),_0x865bx15=_0x865bx14* _0x865bx4,_0x865bx16=_0x865bx15* _0x865bx4;_0x865bx1(_0x144d[15])[_0x144d[1]]();_0x865bx1(_0x144d[18])[_0x144d[1]](_0x865bxe[_0x144d[17]](3)),_0x865bx1(_0x144d[19])[_0x144d[1]](_0x865bx11[_0x144d[17]](3)),_0x865bx1(_0x144d[20])[_0x144d[1]](_0x865bx14[_0x144d[17]](3)),_0x865bx1(_0x144d[21])[_0x144d[1]](_0x865bx15[_0x144d[17]](3)),_0x865bx1(_0x144d[22])[_0x144d[1]](_0x865bx16[_0x144d[17]](3))},find_cross:function(_0x865bx1,_0x865bx2,_0x865bx3){var _0x865bx4;if(_0x865bx3){switch(_0x865bx1){case 10:_0x865bx4= -0.012* Math[_0x144d[23]](_0x865bx2,5)+ 0.4008* Math[_0x144d[23]](_0x865bx2,4)+ -4.4272* Math[_0x144d[23]](_0x865bx2,3)+ 25.218* Math[_0x144d[23]](_0x865bx2,2)+ 22.072* _0x865bx2;break;case 20:_0x865bx4= -0.0189* Math[_0x144d[23]](_0x865bx2,4)+ 0.2518* Math[_0x144d[23]](_0x865bx2,3)+ 3.1502* Math[_0x144d[23]](_0x865bx2,2)+ 29.816* _0x865bx2;break;case 30:_0x865bx4= 0.0029* Math[_0x144d[23]](_0x865bx2,5)+ -0.0675* Math[_0x144d[23]](_0x865bx2,4)+ 0.3704* Math[_0x144d[23]](_0x865bx2,3)+ 2.9039* Math[_0x144d[23]](_0x865bx2,2)+ 20.508* _0x865bx2;break;case 45:_0x865bx4= 0.0015* Math[_0x144d[23]](_0x865bx2,5)+ -0.0462* Math[_0x144d[23]](_0x865bx2,4)+ 0.3791* Math[_0x144d[23]](_0x865bx2,3)+ 1.4026* Math[_0x144d[23]](_0x865bx2,2)+ 18.58* _0x865bx2;break;default:_0x865bx4= 0}}else {switch(_0x865bx1){case 10:_0x865bx4= 0.0076* Math[_0x144d[23]](_0x865bx2,4)+ -0.3082* Math[_0x144d[23]](_0x865bx2,3)+ 5.1149* Math[_0x144d[23]](_0x865bx2,2)+ 12.472* _0x865bx2;break;case 20:_0x865bx4= 3e-4* Math[_0x144d[23]](_0x865bx2,4)+ -0.028* Math[_0x144d[23]](_0x865bx2,3)+ 1.5033* Math[_0x144d[23]](_0x865bx2,2)+ 12.522* _0x865bx2;break;case 30:_0x865bx4= 1e-4* Math[_0x144d[23]](_0x865bx2,5)+ -0.0073* Math[_0x144d[23]](_0x865bx2,4)+ 0.1048* Math[_0x144d[23]](_0x865bx2,3)+ 0.3891* Math[_0x144d[23]](_0x865bx2,2)+ 10.814* _0x865bx2;break;case 45:_0x865bx4= 7e-5* Math[_0x144d[23]](_0x865bx2,5)+ -0.0045* Math[_0x144d[23]](_0x865bx2,4)+ 0.0768* Math[_0x144d[23]](_0x865bx2,3)+ 0.1738* Math[_0x144d[23]](_0x865bx2,2)+ 9.5374* _0x865bx2;break;case 60:_0x865bx4= 9e-5* Math[_0x144d[23]](_0x865bx2,5)+ -0.0058* Math[_0x144d[23]](_0x865bx2,4)+ 0.102* Math[_0x144d[23]](_0x865bx2,3)+ 0.036* Math[_0x144d[23]](_0x865bx2,2)+ 7.2743* _0x865bx2;break;case 75:_0x865bx4= 5e-5* Math[_0x144d[23]](_0x865bx2,5)+ -0.0031* Math[_0x144d[23]](_0x865bx2,4)+ 0.0601* Math[_0x144d[23]](_0x865bx2,3)+ 0.1117* Math[_0x144d[23]](_0x865bx2,2)+ 6.5222* _0x865bx2;break;case 100:_0x865bx4= 2e-5* Math[_0x144d[23]](_0x865bx2,5)+ -0.0013* Math[_0x144d[23]](_0x865bx2,4)+ 0.0234* Math[_0x144d[23]](_0x865bx2,3)+ 0.3736* Math[_0x144d[23]](_0x865bx2,2)+ 4.1989* _0x865bx2;break;default:_0x865bx4= 0}};return _0x865bx4}};_0x865bx1(_0x144d[26])[_0x144d[31]](function(){var _0x865bx2=!1;_0x865bx1(_0x144d[26])[_0x144d[25]](function(){_0x144d[24]== _0x865bx1(this)[_0x144d[1]]()&& (_0x865bx2=  !0)}),_0x865bx2?_0x865bx1(_0x144d[29])[_0x144d[28]](_0x144d[27],_0x144d[27]):_0x865bx1(_0x144d[29])[_0x144d[30]](_0x144d[27])}),_0x865bx1(_0x144d[29])[_0x144d[35]](_0x144d[32],function(_0x865bx1){_0x865bx1[_0x144d[33]](),_0x865bx2[_0x144d[34]]()})}(jQuery)
+</script></p>
+<p>
+
 </body>
 </html>
