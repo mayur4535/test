@@ -1,106 +1,55 @@
 
 <script>
-		function Show(form) {
-			var wave = Number(form.Wave.value);
-			switch (wave) {
-				case 1:
-				case 2:
-				case 3:
-					document.getElementById("divF1").style.display = "none";
-					document.getElementById("divF2").style.display = "none";
-					document.getElementById("divT1").style.display = "none";
-					document.getElementById("divT2").style.display = "none";
-					document.getElementById("divB1").style.display = "none";
-					document.getElementById("divB2").style.display = "none";
-					document.getElementById("divVdc1").style.display = "none";
-					document.getElementById("divVdc2").style.display = "none";
-					break;
-				case 4:
-					document.getElementById("divF1").style.display = "none";
-					document.getElementById("divF2").style.display = "none";
-					document.getElementById("divT1").style.display = "none";
-					document.getElementById("divT2").style.display = "none";
-					document.getElementById("divB1").style.display = "none";
-					document.getElementById("divB2").style.display = "none";
-					document.getElementById("divVdc1").style.display = "block";
-					document.getElementById("divVdc2").style.display = "block";
-					break;
-				case 5:
-				case 6:
-				case 7:
-					document.getElementById("divF1").style.display = "block";
-					document.getElementById("divF2").style.display = "block";
-					document.getElementById("divT1").style.display = "block";
-					document.getElementById("divT2").style.display = "block";
-					document.getElementById("divB1").style.display = "none";
-					document.getElementById("divB2").style.display = "none";
-					document.getElementById("divVdc1").style.display = "none";
-					document.getElementById("divVdc2").style.display = "none";
-					break;
-				case 8:
-					document.getElementById("divF1").style.display = "block";
-					document.getElementById("divF2").style.display = "block";
-					document.getElementById("divT1").style.display = "block";
-					document.getElementById("divT2").style.display = "block";
-					document.getElementById("divB1").style.display = "block";
-					document.getElementById("divB2").style.display = "block";
-					document.getElementById("divVdc1").style.display = "none";
-					document.getElementById("divVdc2").style.display = "none";
-					break;
-			}
-		}
+	function Compute1(form) {
+		with(Math) {
+			var GIGA= 1000000000;
+			var MEGA= 1000000;
+			var KILO= 1000;
+			var Ipk= Number(form.Ipk.value);
+			var V= Number(form.V.value);		
+			var rt= Number(form.rt.value)/MEGA;		
+			var F= Number(form.F.value)*KILO;
+			
+			var Precision= 3;
+			
+			C= Ipk*rt/V; 
+			R= 1/(F*C*20.0);	
+			P= C*V*V*F/2;
 
-		function Compute(form) {
-			with(Math) {
-				var Precision = 3;
-				var Vpk = Number(form.Vpk.value);
-				var F = Number(form.F.value);
-				var T = Number(form.T.value);
-				var B = Number(form.B.value);
-				var Vdc = Number(form.Vdc.value);
-				var Vrms;
-				var Vavg;
+			C*= GIGA;
 
-				var wave = Number(form.Wave.value);
-				switch (wave) {
-					case 1:
-						Vrms = Vpk / sqrt(2);
-						Vavg = 0;
-						break;
-					case 2:
-						Vrms = Vpk / sqrt(2);
-						Vavg = 0.637 * Vpk;
-						break;
-					case 3:
-						Vrms = Vpk / 2;
-						Vavg = 0.318 * Vpk;
-						break;
-					case 4:
-						Vrms = sqrt(Vdc * Vdc + Vpk * Vpk / 2);
-						Vavg = Vdc;
-						break;
-					case 5:
-						Vrms = Vpk * sqrt(F * T / 2);
-						Vavg = 2 * F * T * Vpk / PI;
-						break;
-					case 6:
-						Vrms = Vpk * sqrt(F * T);
-						Vavg = F * T * Vpk;
-						break;
-					case 7:
-						Vrms = Vpk * sqrt(F * T / 3);
-						Vavg = Vpk * F * T / 2;
-						break;
-					case 8:
-						Vrms = Vpk * sqrt(F * ((B - T) + 3 * T) / 3);
-						Vavg = Vpk * F * (B + T) / 2;
-						break;
-				}
-				form.Vrms.value = Vrms.toFixed(Precision);
-				form.Vavg.value = Vavg.toFixed(Precision);
-			}
+			form.C.value= C.toFixed(Precision);		
+			form.R.value= R.toFixed(Precision);		
+			form.P.value= P.toFixed(Precision);		
 		}
-	</script>
+	}
+
+	function Compute2(form) {
+		with(Math) {
+			var GIGA= 1000000000;	
+			var MEGA= 1000000;
+			var KILO= 1000;
+			var Ipk= Number(form.Ipk.value);		
+			var V= Number(form.V.value);		
+			var dV= Number(form.dV.value);
+			var F= Number(form.F.value)*KILO;
+			var L= Number(form.L.value)/MEGA;
+
+			
+			var Precision= 3;
+			
+			C= L*Ipk*Ipk/(dV*(dV+2*V));
+			R= 10/(F*C);
+			P= (L*Ipk*Ipk/2)*F;
+			
+			C*= GIGA;
+
+			form.C.value= C.toFixed(Precision);		
+			form.R.value= R.toFixed(Precision);		
+			form.P.value= P.toFixed(Precision);	
+		}
+	}
+</script>
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
@@ -167,40 +116,25 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<form name="ParamForm">
 
-
-
-<div>
-<label for="r2" style="font-size:55;" >V<sub>pk</sub></label><font face="Arial" size="6"> (Or Unit)  </font><input name="Vpk" class="intro"  style="position: absolute;   width:410; text-align
-:center;right: 10px;"class="form-control" type="number" /></div>
-<h1 style="font-size:40;"></h1>	<div>
-<label for="r2" style="font-size:55;" >Select Type</label><font face="Arial" size="6"> </font><select size="1" name="Wave"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   height:90;border:2px solid #aaa;border-radius:4px;margin:8px 0; width:410px;" onChange="Show(this.form);">
-<option value="1" selected>Sine wave</option>
-										<option value="2">Full rectified wave</option>
-										<option value="3">Half Rectified Sine wave</option>
-										<option value="4">Sine wave with DC offset</option>
-										<option value="5">Half sine with &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration T and frequency f</option>
-										<option value="6">Square wave with &nbsp;duration T and frequency f</option>
-										<option value="7">Saw tooth wave &nbsp;&nbsp;&nbsp;&nbsp;with duration T and frequency f</option>
-										<option value="8">Trapezoidal wave</option>
-									</select></div>
-<h1 style="font-size:60;"></h1>	<div id='divF1'><div id='divF2'>
-<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> </font><input name="F" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Hz</label></div></div>
-<h1 style="font-size:50;"></h1>	<div id='divT1'><div id='divT2'>
-<label for="r2" style="font-size:55;" >Duration </label><font face="Arial" size="6"> </font><input name="T" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">sec</label></div></div>
-<h1 style="font-size:50;"></h1>	<div id='divB1'><div id='divB2'>
-<label for="r2" style="font-size:55;" >Base </label><font face="Arial" size="6"> (Trapazoid Segment) </font><input name="B" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">sec</label></div></div>
-<h1 style="font-size:50;"></h1>	<div id='divVdc1'><div id='divVdc2'>
-<label for="r2" style="font-size:55;" >VDc</label><font face="Arial" size="6"> </font><input name="Vdc" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">sec</label></div></div>
-<h1 style="font-size:50;"></h1>	
+<form method="POST" name="ParamForm1" action="">
+   
+        
+<label for="r2" style="font-size:55;" >Ipk</sub></label><font face="Arial" size="6"> </font><input name="Ipk" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >Rd</sub></label><font face="Arial" size="6"> (Rise Time)</font><input name="rt" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:45px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">	&micro;sec</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >V<sub>rail</sub></label><font face="Arial" size="6"></font><input name="V" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>	
+<label for="r2" style="font-size:55;" >Frequency<sub></sub></label><font face="Arial" size="6"></font><input name="F" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">KHz</label>
+<h1 style="font-size:40;"></h1>	
 </fieldset>
 <h1 style="font-size:80;"></h1>		
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" value="CALCULATE" name="B1" onClick="Compute(this.form);" style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="Button" value="CALCULATE" onClick="Compute1(document.ParamForm1)"style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -219,20 +153,24 @@ input[type=checkbox]{
 
 <h3>Outputs</h3></div></legend>				
 				
-<label for="r2" style="font-size:55;" >V<sub>rms</sub></label><font face="Arial" size="6"> (Or Unit) </font><input name="Vrms" class="intro"  style="position: absolute;   width:410; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:55;" >V<sub>avg</sub></label><font face="Arial" size="6"></font><input name="Vavg" class="intro"  style="position: absolute;   width:410; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:50;"></h1>
+<label for="r2" style="font-size:55;" >C</label><font face="Arial" size="6"> </font><input name="C" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">nF</label>
+<h1 style="font-size:50;"></h1>	
+<label for="r2" style="font-size:55;" >Resistance</label><font face="Arial" size="6"> </font><input name="R" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+<h1 style="font-size:50;"></h1>	
+<label for="r2" style="font-size:55;" >Power</label><font face="Arial" size="6"> </font><input name="P" class="intro"  style="position: absolute;   width:280; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:55px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">W</label>
+<h1 style="font-size:50;"></h1>	        
+        
+       
+       
+     
+        
+   
+      </form>
 
 
 
-							
-							
-							
-							
-							
-							
-					</form>
-					
+
+     
