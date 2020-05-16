@@ -1,29 +1,4 @@
 <script>
-/***************************************
-*  GeneralCalc.js JavaScript Routines  *
-*                                      *
-*   General Calculator Routines For:   *
-*    * Calc_ohms_law.html              *
-*    * Calc_LC.html                    *
-*                                      *
-*                                      *
-*                                      *
-/**************************************/
-
-// This function takes a result in the form of a number and
-// converts it to the proper power of ten to display properly.
-// It also adds the proper units and multiplier label to the
-// end of the number. For instance 22000000 becomes 22.0 MHz
-//
-// Arguments:
-// v is the value to be ranged.
-// ch is the unit symbol (V, I, ˝ (\u03A9), W, etc.)
-//
-// allowed is an eight bit integer. Each Hi bit allows the
-// associated multiplier range to be used. From high bit to
-// low bit the ranges are:
-// 10^9 G, 10^6 M, 10^3 K, 10^0, 10^-3 m. 10^-6 ľ, 10^-9 n
-// and 10^-12 p. 
 
 function gSetRange(v, ch) {
    var pwr, sy;
@@ -133,9 +108,9 @@ function spDoText() {
       if (opt1[0].selected == true) {
          theSelected = 0x20;
          }
-   var sORp = " series";
+   var sORp = "";
    if (sp == 1) {
-      sORp = " parallel";
+      sORp = " ";
       }
    gSetMultipliers (opt1, "\u03a9" + sORp, 0x30, theSelected);
    switch (unit) {
@@ -170,7 +145,7 @@ function display(rs, xs, sComp, f, rp, xp, pComp) {
       document.CalcSPZ.sComponent.value = m;
       m = gSetRange(pComp, comp);
       document.CalcSPZ.pComponent.value = m;
-      m = gSetRange(f, "Hz");
+      m = gSetRange(f, "Hz");    ///////fwrwr//////
       document.CalcSPZ.frequency.value = m;
       }
    else {
@@ -389,12 +364,12 @@ input[type=checkbox]{
                </option><option value="1">Parallel to Series
             </option></select>
 
-<h1 style="font-size:80;"></h1>
+<h1 style="font-size:50;"></h1>
 <label for="r2" style="font-size:55;" >Resistance<font face="Arial" size="6">  </font></label><input type="text" name="Valu1"  size="20" maxlength="10" tabindex="2"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 <select name="Mult1" tabindex="3" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ series</option><option value="1" selected=""> Ω series</option></select>
 
-<h1 style="font-size:80;"></h1>
+<h1 style="font-size:50;"></h1>
 
 <select name="React" tabindex="4" onchange="spDoText()" style="padding: 5px ;  position: absolute;right: 450px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
 
@@ -405,10 +380,10 @@ input[type=checkbox]{
 <input type="text" name="Valu2"  maxlength="10" tabindex="5"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 
-<select name="Mult2" tabindex="6" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ series</option><option value="1" selected=""> Ω series</option></select>select
+<select name="Mult2" tabindex="6" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ series</option><option value="1" selected=""> Ω series</option></select><font face="Arial" color="white"size="0">hh  </font>
 
 
-<h1 style="font-size:80;"></h1>
+<h1 style="font-size:130;"></h1>
 
 <label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6">  </font></label><input type="text" name="Valu3"  size="20" maxlength="10" tabindex="7"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
@@ -443,45 +418,45 @@ input[type=checkbox]{
 
 
 <label for="r2" style="font-size:55;" >R
-                     Series</label><font face="Arial" size="6"> </font><input type="text" name="rSeries"  size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>	
+                     Series</label><font face="Arial" size="6"> </font><input type="text" name="rSeries"  size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />	
 
 
-<h1 style="font-size:30;"></h1>
+<h1 style="font-size:50;"></h1>
 
 <label for="r2" style="font-size:55;" >R
-                     Parallel</label><font face="Arial" size="6"> </font><input type="text" name="rParallel" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>	
+                     Parallel</label><font face="Arial" size="6"> </font><input type="text" name="rParallel" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />	
 
 
-<h1 style="font-size:30;"></h1>
-
-<label for="r2" style="font-size:55;" >X
-                     Series</label><font face="Arial" size="6"> </font><input type="text" name="xSeries" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>	
-
-<h1 style="font-size:30;"></h1>
+<h1 style="font-size:50;"></h1>
 
 <label for="r2" style="font-size:55;" >X
-                     Parallel</label><font face="Arial" size="6"> </font><input type="text" name="xParallel" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>	
+                     Series</label><font face="Arial" size="6"> </font><input type="text" name="xSeries" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />	
+
+<h1 style="font-size:50;"></h1>
+
+<label for="r2" style="font-size:55;" >X
+                     Parallel</label><font face="Arial" size="6"> </font><input type="text" name="xParallel" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />	
 
 
-<h1 style="font-size:30;"></h1>
+<h1 style="font-size:50;"></h1>
 
-<label for="r2" style="font-size:55;" >Series Component</label><font face="Arial" size="6"> </font><input type="text" name="sComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+<label for="r2" style="font-size:55;" >Series</label><font face="Arial" size="6"> (Component)  </font><input type="text" name="sComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />
 
 
-<h1 style="font-size:30;"></h1>
+<h1 style="font-size:50;"></h1>
 
-<label for="r2" style="font-size:55;" >Parallel Component</label><font face="Arial" size="6"> </font><input type="text" name="pComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+<label for="r2" style="font-size:55;" >Parallel </label><font face="Arial" size="6">(Component) </font><input type="text" name="pComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />
 
-<h1 style="font-size:30;"></h1>
+<h1 style="font-size:50;"></h1>
 
-<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> </font><input type="text" name="frequency" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> </font><input type="text" name="frequency" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="text" />
 
 
 <h1 style="font-size:30;"></h1>
