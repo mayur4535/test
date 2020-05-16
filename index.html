@@ -2,35 +2,76 @@
 
 <script language="JavaScript">
 
-function Log10(x){
-return Math.log(x) / Math.log(10);
-}
 
 function Compute(form) {
 	with(Math) {
-		var T= Number(form.T.value)+273;
-		var R= Number(form.R.value);
-		var dF= Number(form.dF.value);
-		var Kb= 1.3806505E-23;
-		var Precision= 6;
-		var MEG= 1000000;
+		var KILO= 1000;
+		var Precision= 3;
+		var N= 8;
+		var R = new Array();
+		var Rp = new Array();
+		var V = new Array();
+		var Vo = new Array();
+		var VoSum= 0;
 		
-		var Lv;
 		
+		V[0]= Number(form.V1.value);
+		R[0]= Number(form.R1.value);
+		V[1]= Number(form.V2.value);
+		R[1]= Number(form.R2.value);
+		V[2]= Number(form.V3.value);
+		R[2]= Number(form.R3.value);
+		V[3]= Number(form.V4.value);
+		R[3]= Number(form.R4.value);
+		V[4]= Number(form.V5.value);
+		R[4]= Number(form.R5.value);
+		V[5]= Number(form.V6.value);
+		R[5]= Number(form.R6.value);
+		V[6]= Number(form.V7.value);
+		R[6]= Number(form.R7.value);
+		V[7]= Number(form.V8.value);
+		R[7]= Number(form.R8.value);
 		
-		Vn= sqrt(4*Kb*R*T*dF);
-		Vnu= Vn*MEG;
-		Lv= 20*Log10(Vn);
+		for(i=0;i<N;i++) {
+			Rp[i]= 0;		// necessary
+		}
+		
+		for(i=0;i<N;i++) {
+			if(R[i]) {
+				if(i!=0) Rp[0]+= 1/R[i];
+				if(i!=1) Rp[1]+= 1/R[i];
+				if(i!=2) Rp[2]+= 1/R[i];
+				if(i!=3) Rp[3]+= 1/R[i];
+				if(i!=4) Rp[4]+= 1/R[i];
+				if(i!=5) Rp[5]+= 1/R[i];	
+				if(i!=6) Rp[6]+= 1/R[i];	
+				if(i!=7) Rp[7]+= 1/R[i];		
+			}
+		}
+		for(i=0;i<N;i++) Rp[i]= 1/Rp[i];
+		
+		for(i=0;i<N;i++) Vo[i]= V[i]*Rp[i]/(R[i]+Rp[i]);
+		
+		for(i=0;i<N;i++) VoSum+= Vo[i];
+		
+		form.VoSum.value= VoSum.toPrecision(Precision);
+		form.Vo1.value= Vo[0].toPrecision(Precision);
+		form.Vo2.value= Vo[1].toPrecision(Precision);
+		form.Vo3.value= Vo[2].toPrecision(Precision);
+		form.Vo4.value= Vo[3].toPrecision(Precision);
+		form.Vo5.value= Vo[4].toPrecision(Precision);
+		form.Vo6.value= Vo[5].toPrecision(Precision);
+		form.Vo7.value= Vo[6].toPrecision(Precision);
+		form.Vo8.value= Vo[7].toPrecision(Precision);
 
-		
-		form.Vn.value= Vnu.toPrecision(Precision);		
-		form.Lv.value= Lv.toPrecision(Precision);	
+
+	
 	}
 }
 
 
-</script>
 
+</script>
 
 
 
@@ -100,25 +141,43 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
+ <form method="POST" name="ParamForm">
       
-      
-      <form name="ParamForm" >
-     
 
-
-
-<label for="r2" style="font-size:50;" >Temperature</label><font face="Arial" size="7">  </font><input  name="T"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">°C</label>
-
-
-<h1 style="font-size:60;"></h1>
-<label for="r2" style="font-size:50;" >Resistance</label><font face="Arial" size="7">  </font><input  name="R"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:60;"></h1>
-<label for="r2" style="font-size:50;" >Bandwidth</label><font face="Arial" size="6"> (F<sub>2</sub>-F<sub>1</sub>)  </font><input  name="dF"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Hz</label>
-<h1 style="font-size:60;"></h1>
-       
+Chennal<font face="Arial" style="font-size:40; position:absolute; right:10; "> (Resistor in k&Omega;) </font><font face="Arial" style="font-size:40; position:absolute; right:360; "> (Voltage in V) </font>
+<h1 style="font-size:50;"></h1>
+<label for="r2" style="font-size:55;" >Channel 1</label><font face="Arial" size="7">  </font>
+<input  name="V1"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R1"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1>         
+<label for="r2" style="font-size:55;" >Channel 2</label><font face="Arial" size="7">  </font>
+<input  name="V2"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R2"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1>           
+<label for="r2" style="font-size:55;" >Channel 3</label><font face="Arial" size="7">  </font>
+<input  name="V3"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R3"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1>              
+<label for="r2" style="font-size:55;" >Channel 4</label><font face="Arial" size="7">  </font>
+<input  name="V4"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R4"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1>           
+<label for="r2" style="font-size:55;" >Channel 5</label><font face="Arial" size="7">  </font>
+<input  name="V5"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R5"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1> 
+<label for="r2" style="font-size:55;" >Channel 6</label><font face="Arial" size="7">  </font>
+<input  name="V6"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R6"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1> 
+<label for="r2" style="font-size:55;" >Channel 7</label><font face="Arial" size="7">  </font>
+<input  name="V7"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R7"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1> 
+<label for="r2" style="font-size:55;" >Channel 8</label><font face="Arial" size="7">  </font>
+<input  name="V8"  class="intro"   style="position: absolute;   width:300; text-align:center;right: 320px;"class="form-control" type="text" />
+<input  name="R8"  class="intro"  style="position: absolute;   width:300; text-align:center;right: 10px;"class="form-control" type="text" />          
+<h1 style="font-size:50;"></h1> 
 </fieldset>
 <h1 style="font-size:80;"></h1>
 <fieldset><legend><div colspan="2" align="center" height="19"><input type="button"  name="B1" onClick="Compute(document.ParamForm);" value="CALCULATE"  style="background-color: #167A04 ;
@@ -139,20 +198,35 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>        
-        
-<label for="r2" style="font-size:55;" >V<sub>n</sub></label><font face="Arial" size="7"> (RMS)  </font><input  name="Vn"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;V</label>       
-<h1 style="font-size:60;"></h1>
-<label for="r2" style="font-size:55;" >L<sub>v</sub></label><font face="Arial" size="7"> (Noise Level)   </font><input  name="Lv"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:55px;height:69;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dBv</label>   
+<h3>Outputs</h3></div></legend>
 
-    <h1 style="font-size:50;"></h1>    
-       
-      </form>
-      
-      
-      
-      
-      
-     
+<label for="r2" style="font-size:55;" >V<sub>Out1</sub></label><font face="Arial" size="7">  </font><input  name="Vo1"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:30;"></h1>           
+          
+<label for="r2" style="font-size:55;" >V<sub>Out2</sub></label><font face="Arial" size="7">  </font><input  name="Vo2"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1>     
+<label for="r2" style="font-size:55;" >V<sub>Out3</sub></label><font face="Arial" size="7">  </font><input  name="Vo3"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1> 
+<label for="r2" style="font-size:55;" >V<sub>Out4</sub></label><font face="Arial" size="7">  </font><input  name="Vo4"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1> 
+<label for="r2" style="font-size:55;" >V<sub>Out5</sub></label><font face="Arial" size="7">  </font><input  name="Vo5"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >V<sub>Out6</sub></label><font face="Arial" size="7">  </font><input  name="Vo6"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >V<sub>Out7</sub></label><font face="Arial" size="7">  </font><input  name="Vo7"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >V<sub>Out8</sub></label><font face="Arial" size="7">  </font><input  name="Vo8"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >V<sub>Out</sub> (sum)</label><font face="Arial" size="7">  </font><input  name="VoSum"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>         
+<h1 style="font-size:40;"></h1>
+
+</form></fieldset>
