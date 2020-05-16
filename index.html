@@ -121,7 +121,7 @@ function spDoText() {
       gSetMultipliers (opt2, "F" + sORp, 0x1F, 0x04);
       break;
       case 4:
-      gSetMultipliers (opt2, "H" + sORp, 0x1C, 0x08);
+      gSetMultipliers (opt2, "H" + sORp, 0x1C, 0x08); /////ffffffff///////
       break;
    }
 }
@@ -358,7 +358,7 @@ input[type=checkbox]{
 
 <form action="" method="POST" name="CalcSPZ" onsubmit="spCalculate(); return false;">
 <label for="r2" style="font-size:55;" >Select<font face="Arial" size="6"> (converter) </font></label>
-<select name="SerPar" tabindex="1" onchange="spDoText()" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">   
+<select name="SerPar" tabindex="1" onchange="spDoText()" style="padding: 5px ;  position: absolute;right: 10px; height:85; font-size:50px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">   
 
                <option value="0" selected="">Series to Parallel
                </option><option value="1">Parallel to Series
@@ -367,11 +367,11 @@ input[type=checkbox]{
 <h1 style="font-size:50;"></h1>
 <label for="r2" style="font-size:55;" >Resistance<font face="Arial" size="6">  </font></label><input type="text" name="Valu1"  size="20" maxlength="10" tabindex="2"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
-<select name="Mult1" tabindex="3" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ series</option><option value="1" selected=""> Ω series</option></select>
+<select name="Mult1" tabindex="3" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ</option><option value="1" selected=""> Ω</option></select>
 
 <h1 style="font-size:50;"></h1>
 
-<select name="React" tabindex="4" onchange="spDoText()" style="padding: 5px ;  position: absolute;right: 450px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
+<select name="React" tabindex="4" onchange="spDoText()" style="padding: 5px ;  font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
 
                <option value="1" selected="">Reactance
                </option><option value="2">Capacitance
@@ -380,10 +380,10 @@ input[type=checkbox]{
 <input type="text" name="Valu2"  maxlength="10" tabindex="5"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 
-<select name="Mult2" tabindex="6" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ series</option><option value="1" selected=""> Ω series</option></select><font face="Arial" color="white"size="0">hh  </font>
+<select name="Mult2" tabindex="6" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ</option><option value="1" selected=""> Ω</option></select>
 
 
-<h1 style="font-size:130;"></h1>
+<h1 style="font-size:1;"></h1>
 
 <label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6">  </font></label><input type="text" name="Valu3"  size="20" maxlength="10" tabindex="7"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
