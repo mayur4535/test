@@ -1,26 +1,29 @@
 
-<SCRIPT language="javascript" type="text/javascript">
-function calc()
-{
-Rs=Number(document.calculator.number1.value);
-Cs=Number(document.calculator.number2.value);
-Cp=Number(document.calculator.number3.value);
-Ls=Number(document.calculator.number4.value);
-Cs=Cs*Math.pow(10,-15);
-Cp=Cp*Math.pow(10,-12);
-Ls=Ls*Math.pow(10,-3);
-var1 = Math.pow((Ls*Cs),0.5);
-var2= Ls* ((Cs*Cp)/(Cs+Cp))
-c1=   1/(2*Math.PI*var1);
-c2=  1/(2*Math.PI*Math.pow(var2,0.5));
-c3=  1/(2*Math.PI*c1*Rs*Cs);
-c4= Cp/Cs;
-document.calculator.Fs.value=c1;
-document.calculator.Fp.value=c2;
-document.calculator.Q.value=c3;
-document.calculator.pulling_factor.value=c4;
-}
-</SCRIPT>
+<script>
+	function calculate(zen) {
+		vinMin = parseFloat(zen.VinMin.value)
+		vinMax = parseFloat(zen.VinMax.value)
+		vOut = parseFloat(zen.Vout.value)
+		IL = parseFloat(zen.Iload.value)
+		if ((vOut + 0.8) > vinMin) {
+			
+			return
+		}
+		R = round(1000 * ((vinMin - vOut) / (IL + 10)))
+		Rp = round(Math.pow((vinMax - vOut), 2) / R)
+		zen.R.value = R;
+		zen.Rp.value = Rp;
+		//zen.res.value = "  " + R + " Ohms " +", "+ Rp + " Watts"
+		It = 1000 * ((vinMax - vOut) / R)
+		Zp = round((It * vOut) / 1000)
+		zen.vOut.value = vOut;
+		zen.Zp.value = Zp;
+		//zen.zen.value="  " + vOut + " Volts " +", "+ Zp + " Watts"
+	}
+	function round(n) {
+		return parseInt((n * 100) + 0.5) / 100
+	}
+</script>
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
 #borderimg { 
@@ -87,23 +90,24 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
-
-<FORM name="calculator">
-<label for="r2" style="font-size:50;" >Resistance</label><font face="Arial" size="6"> (Series)  </font><input  name="number1"  class="intro"  style="position: absolute;   width:250; text-align
+  <form name="form" id="form">
+	
+	 
+<label for="r2" style="font-size:55;" >V<sub>IN</sub></label><font face="Arial" size="6"> (MAX) </font><input  name="VinMax"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >Capacitance</label><font face="Arial" size="6"> (Series)  </font><input  name="number2"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">pF</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >Capacitance</label><font face="Arial" size="6"> (Parallel)  </font><input  name="number3"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">pF</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >Inductance</label><font face="Arial" size="6"> (Series)  </font><input  name="number4"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mH</label>
-<h1 style="font-size:50;"></h1>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >In<sub>slet</sub></label><font face="Arial" size="6"> (min 6) </font><input  name="VinMin"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >V<sub>Out</sub></label><font face="Arial" size="6"> (Max 54V)  </font><input name="Vout"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >Load</sub></label><font face="Arial" size="6"> (Max current)  </font><input name="Iload"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:30;"></h1>
 </fieldset>
 <h1 style="font-size:80;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();"  style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><input name="button" type="button"  onclick="calculate(this.form)"  value="CALCULATE"  style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -122,16 +126,24 @@ input[type=checkbox]{
 
 
 <h3>Outputs</h3></div></legend>
-<label for="r2" style="font-size:50;" >Frequency</label><font face="Arial" size="6"> (Series)  </font><input  name="Fs"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Hz</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >Frequency</label><font face="Arial" size="6"> (Parallel)  </font><input  name="Fp"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Hz</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >Q-factor</label><font face="Arial" size="6"> (Crystal)  </font><input  name="Q"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="text" />
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >Pulling Factor</label><font face="Arial" size="6"> (Crystal)  </font><input  name="pulling_factor"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="text" />
-<h1 style="font-size:50;"></h1>
-</FORM>
+
+<label for="r2" style="font-size:55;" >CLR</label><font face="Arial" size="6"> (Current limiting resistor)  </font><input  name="R"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>		
+<h1 style="font-size:50;"></h1>		
+<label for="r2" style="font-size:55;" >Power rating</label><font face="Arial" size="6">   </font><input  name="Rp"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>		
+<h1 style="font-size:20;color:white;">5</h1>	
+<hr></hr>
+<label for="r2" style="font-size:55;" >Zener diode</label><font face="Arial" size="6">   </font><input  name="vOut"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>		
+<h1 style="font-size:50;"></h1>	
+<label for="r2" style="font-size:55;" >Power rating</label><font face="Arial" size="6">   </font><input  name="Zp"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>	
+	   
+<h1 style="font-size:30;"></h1>	   
+		
+		
+		
+  </form>
+                    
+              
