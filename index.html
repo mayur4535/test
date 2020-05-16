@@ -1,57 +1,4 @@
 
-<head>
-
-<link rel="stylesheet" href="http://www.daycounter.com/DaycounterStyle.css"/>
-
-<META  name="description" content="Air Core Coil Inductor Inductance Calculator.">
-
-<META  name="keywords" content="Air, Core,Coil,Inductance, Inductor, Electronics, Calculator">
-				                  
-				                  
-<title>Wheatstone Bridge Calculator</title>
-
-<script language="JavaScript">
-
-
-function Compute1(form) {
-	with(Math) {
-		var Precision= 3;
-		var Vb;
-		
-		var Vin= Number(form.Vin.value);
-		var R1= Number(form.R1.value);
-		var R2= Number(form.R2.value);
-		var R3= Number(form.R3.value);
-		var Rx= Number(form.Rx.value);
-
-		Vb= Vin*(Rx/(R3+Rx)- R2/(R1+R2) );
-		
-		form.Vb.value= Vb.toPrecision(Precision);
-	}
-}
-
-function Compute2(form) {
-	with(Math) {
-		var Precision= 3;
-		var Rx;
-		
-		var Vin= Number(form.Vin.value);
-		var R1= Number(form.R1.value);
-		var R2= Number(form.R2.value);
-		var R3= Number(form.R3.value);
-		var Vb= Number(form.Vb.value);
-
-		Rx= (R2*R3 + R3*(R1+R2)*(Vb/Vin)) / (R1- (R1+R2)*(Vb/Vin));
-
-		form.Rx.value= Rx.toPrecision(Precision);
-	}
-}
-
-
-
-</script>
-
-
 
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
@@ -119,53 +66,90 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
+<p><div class="container-fluid">
+<form id="tool-form">
+
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+
+<label for="r2" style="font-size:55;" >Charge<font face="Arial" size="6"> </font></label><input type="number" id="charge"   class="intro"  style="position: absolute;   text-align
+:center;width:300; right: 165px;"class="form-control"  />
+<select class="form-control" id="coulomb" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option value="1" >C&nbsp;&nbsp;&nbsp;&nbsp; Coulombs </option>
+<option value="1000" selected="selected">mC&nbsp;&nbsp;&nbsp; Millicoulombs </option>
+<option value="1000000">µC&nbsp;&nbsp;&nbsp; Microcoulombs </option>
+</select>
+
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group">
+<label for="r2" style="font-size:55;" >Voltage</label><font face="Arial" size="7">  </font><input  id="voltage"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 165px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:132px;">V</label>
 
 
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
 
-
-<form method="POST" name="ParamForm">
-
-
-
-   
-<label for="r2" style="font-size:55;" >V<sub>In</sub></label><font face="Arial" size="7">  </font><input  name="Vin"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >R<sub>1</sub></label><font face="Arial" size="7">  </font><input  name="R1"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >R<sub>2</sub></label><font face="Arial" size="7">  </font><input  name="R2"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >R<sub>3</sub></label><font face="Arial" size="7">  </font><input  name="R3"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:40;"></h1>   
-</fieldset>
+</form></fieldset>
+<h1 style="font-size:80;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="button" id="calculate" class="btn btn-theme"value="CALCULATE"  style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;">
+</div></legend></fieldset>
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
-  
- <input type="button" value="CALCULATE>" name="B1" onClick="Compute1(document.ParamForm);"  style="background-color: #167A04 ;align:center;color: white; font-size: 60px;">      
-   <input type="button" value="<CALCULATE" name="B2" onClick="Compute2(document.ParamForm);"  style="position:absolute; right:10;background-color: #167A04 ;align:center;color: white; font-size: 60px;">         
-<h1 style="font-size:80;"></h1>      
-<font face="Arial" size="7"> R<sub>X</sub> </font><font face="Arial" size="6">Resistance</font>
 
-<font face="Arial" size="7" style="position:absolute; right:250;" >V<sub>B</sub> </font>  
-     <font face="Arial" size="6" style="position:absolute; right:10;" >Bridge Voltage </font>  
-<h1 style="font-size:0;"></h1> 
-<input  name="Rx"  class="intro"  style="   width:400; text-align
-:center;right: 140px;"class="form-control" type="text" /> 
-<input  name="Vb"  class="intro"  style="position: absolute;   width:400; text-align
-:center;right: 10px;"class="form-control" type="text" />
 
-<h1 style="font-size:10;"></h1> 
-<font face="Arial" style="border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center; width:150; height:50;" >&Omega;</font> 
-     <font face="Arial"  style="position:absolute; right:10;border:2px solid #aaa;border-radius:4px;margin:8px 0; text-align:center;width:50;" ><b>V </font>
 
-          
-          
-            
-      
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:55;" >Capacitance</label><font face="Arial" size="7">  </font><input  id="answer"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">F</label>
+
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<script type="text/javascript">
+var _0xbec6=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x23\x61\x6E\x73\x77\x65\x72","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x76\x61\x6C","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x63\x68\x61\x72\x67\x65","\x23\x76\x6F\x6C\x74\x61\x67\x65","\x23\x63\x6F\x75\x6C\x6F\x6D\x62","\x6F\x6E"];!function(_0x7222x1){_0xbec6[0];var _0x7222x2,_0x7222x3=_0x7222x1(_0xbec6[1]);_0x7222x1(_0xbec6[16])[_0xbec6[17]](function(){_0x7222x1(_0xbec6[6])[_0xbec6[5]](_0xbec6[4])[_0xbec6[3]](_0xbec6[2]),_0x7222x1(_0xbec6[6])[_0xbec6[5]](_0xbec6[4])[_0xbec6[8]](_0xbec6[7]),_0x7222x1(_0xbec6[6])[_0xbec6[10]](_0xbec6[9]),_0x7222x1(this)[_0xbec6[5]](_0xbec6[4])[_0xbec6[3]](_0xbec6[11]),_0x7222x3[_0xbec6[13]](_0xbec6[12],!1),_0x7222x1[_0xbec6[14]](_0x7222x1(this)[_0xbec6[10]]())=== !1?(_0x7222x1(this)[_0xbec6[5]](_0xbec6[4])[_0xbec6[8]](_0xbec6[11]),_0x7222x3[_0xbec6[13]](_0xbec6[12],!1)):_0x7222x1(this)[_0xbec6[5]](_0xbec6[4])[_0xbec6[3]](_0xbec6[11]),_0x7222x2= 0,_0x7222x1(_0xbec6[16])[_0xbec6[15]](function(){_0xbec6[9]!= _0x7222x1(this)[_0xbec6[10]]()&& _0x7222x1[_0xbec6[14]](_0x7222x1(this)[_0xbec6[10]]())!== !1|| _0x7222x2++}),_0x7222x2> 0&& _0x7222x3[_0xbec6[13]](_0xbec6[12],!0)}),_0x7222x3[_0xbec6[23]](_0xbec6[18],function(_0x7222x2){_0x7222x2[_0xbec6[19]]();var _0x7222x3,_0x7222x4,_0x7222x5;_0x7222x4= _0x7222x1(_0xbec6[20])[_0xbec6[10]](),_0x7222x5= _0x7222x1(_0xbec6[21])[_0xbec6[10]](),_0x7222x4/= _0x7222x1(_0xbec6[22])[_0xbec6[10]](),_0x7222x3= _0x7222x4/ _0x7222x5,_0x7222x1(_0xbec6[6])[_0xbec6[10]](_0x7222x3),_0x7222x1(_0xbec6[6])[_0xbec6[5]](_0xbec6[4])[_0xbec6[3]](_0xbec6[7]),_0x7222x1(_0xbec6[6])[_0xbec6[5]](_0xbec6[4])[_0xbec6[3]](_0xbec6[2])})}(jQuery)
+    </script>
+</div>
+</body>
+</html>
