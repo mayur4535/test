@@ -2,137 +2,29 @@
 
 <script language="JavaScript">
 
+function Log10(x){
+return Math.log(x) / Math.log(10);
+}
 
-function ComputeT(form) { 	
+function Compute(form) {
 	with(Math) {
-		var Precision= 5;
-		
-		var A= Number(form.A.value);
-		var B= Number(form.B.value);
-		var C= Number(form.C.value);
-		var D= Number(form.D.value);
+		var T= Number(form.T.value)+273;
 		var R= Number(form.R.value);
-		var Rt= Number(form.Rt.value);
-
-		var lr= log(R/Rt);
-		T= 1/(A+ B*lr+ C*lr*lr+ D*lr*lr*lr);
-		T-= 273.15;
-
-		form.T.value= T.toPrecision(Precision);
-	}
-}
-
-
-function ComputeR(form) { 	
-	with(Math) {
-		var Precision= 5;
+		var dF= Number(form.dF.value);
+		var Kb= 1.3806505E-23;
+		var Precision= 6;
+		var MEG= 1000000;
 		
-		var A= Number(form.A.value);
-		var B= Number(form.B.value);
-		var C= Number(form.C.value);
-		var D= Number(form.D.value);
-		var T= Number(form.T.value);
-		var Rt= Number(form.Rt.value);
-		var R;
+		var Lv;
 		
-		T+= 273.15;		// convert to Kelvin
 		
-		if(form.Extended.checked) {
-			R= Rt*exp(A + (B/T)+ (C/(T*T))  + (D/(T*T*T)) );
-		} else {
-			R= Rt*exp(A + (B/T)+ (D/(T*T*T)) );
-		}
+		Vn= sqrt(4*Kb*R*T*dF);
+		Vnu= Vn*MEG;
+		Lv= 20*Log10(Vn);
 
-		form.R.value= R.toPrecision(Precision);
-	}
-}
-
-
-function ComputeR_Beta(form) { 	
-	with(Math) {
-		var Precision= 5;
 		
-		var B= Number(form.B.value);
-		var T1= Number(form.T1.value)+273.15;
-		var T2= Number(form.T2.value)+273.15;
-		var R1= Number(form.R1.value);
-
-		var R2;
-
-		R2 = R1 / (exp(B*( 1/T1 - 1/T2 )));
-
-		form.R2.value= R2.toPrecision(Precision);
-	}
-}
-
-function ComputeT_Beta(form) { 	
-	with(Math) {
-		var Precision= 5;
-		
-		var B= Number(form.B.value);
-		var T1= Number(form.T1.value)+273.15;
-		var R1= Number(form.R1.value);
-		var R2= Number(form.R2.value);
-		
-		var T2;
-		var X;
-
-		X= B/log(R1/R2);
-		T2= X*T1/(X-T1);
-		
-		T2-= 273.15;
-
-		form.T2.value= T2.toPrecision(Precision);
-	}
-}
-
-function ComputeBeta(form) { 	
-	with(Math) {
-		var Precision= 5;
-
-		var T1= Number(form.T1.value)  +273.15;		
-		var T2= Number(form.T2.value)  +273.15;
-		var TA=  Number(form.TA.value)  +273.15;
-		var R1= Number(form.R1.value);
-		var R2= Number(form.R2.value);
-		
-		var B;
-		var A;
-		
-		B= T1*T2/(T2-T1)*log(R1/R2);
-		A= -B*100/(TA*TA);
-
-		form.B.value= B.toPrecision(Precision);
-		form.A.value= A.toPrecision(Precision);
-		
-	}
-}
-
-function ComputeDeviation(form) { 	
-	with(Math) {
-		var Precision= 5;
-
-		var TA= Number(form.TA.value) +273.15;		
-		var dB= Number(form.dB.value);		
-		var A= Number(form.A.value);
-		var dR25=  Number(form.dR25.value);
-		var B=  Number(form.B.value);
-				
-		var dR;
-		var dT;
-		var val= form.TA.value;
-		
-		if(Number(form.TA.value)!=0) {
-			A= B/(TA*TA)*100;
-			form.A.value= A.toPrecision(Precision);
-		}
-		
-		dR= ( (1+dB/100)*(1+dR25/100) - 1 )*100;
-		dT= dR/A;
-
-		form.dR.value= dR.toPrecision(Precision);
-		form.dT.value= dT.toPrecision(Precision);
-		
+		form.Vn.value= Vnu.toPrecision(Precision);		
+		form.Lv.value= Lv.toPrecision(Precision);	
 	}
 }
 
@@ -140,10 +32,6 @@ function ComputeDeviation(form) {
 </script>
 
 
-
-
-      <form method="POST" name="ParamForm1">
-        
 
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
@@ -211,29 +99,29 @@ input[type=checkbox]{
 
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
-<label for="r2" style="font-size:50;" >Coefficient A</label><font face="Arial" size="7"> (K<sup>-0</sup>)  </font><input  name="A"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:40;"></h1>
 
-<label for="r2" style="font-size:50;" >Coefficient B</label><font face="Arial" size="7"> (K<sup>-1</sup>)  </font><input  name="B"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:40;"></h1>
+      
+      
+      <form name="ParamForm" >
+     
 
-<label for="r2" style="font-size:50;" >Coefficient C</label><font face="Arial" size="7"> (K<sup>-2</sup>)  </font><input  name="C"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:50;" >Coefficient D</label><font face="Arial" size="7"> (K<sup>-3</sup>)  </font><input  name="D"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:50;" >R<sub>t</sub></label><font face="Arial" size="6"> (Res.Ambient Temp.)  </font><input  name="Rt"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>          
-<h1 style="font-size:45;"></h1>
-<label for="r2" style="font-size:55;" >T</label><font face="Arial" size="6"> (Measured resistance)  </font><input  name="R"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>           
-<h1 style="font-size:80;"></h1>          
+
+
+<label for="r2" style="font-size:50;" >Temperature</label><font face="Arial" size="7">  </font><input  name="T"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">°C</label>
+
+
+<h1 style="font-size:60;"></h1>
+<label for="r2" style="font-size:50;" >Resistance</label><font face="Arial" size="7">  </font><input  name="R"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
+<h1 style="font-size:60;"></h1>
+<label for="r2" style="font-size:50;" >Bandwidth</label><font face="Arial" size="6"> (F<sub>2</sub>-F<sub>1</sub>)  </font><input  name="dF"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Hz</label>
+<h1 style="font-size:60;"></h1>
+       
 </fieldset>
 <h1 style="font-size:80;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><input type="button"  name="B2" onClick="ComputeT(document.ParamForm1);" value="CALCULATE"  style="background-color: #167A04 ;
+<fieldset><legend><div colspan="2" align="center" height="19"><input type="button"  name="B1" onClick="Compute(document.ParamForm);" value="CALCULATE"  style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -251,10 +139,20 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>          
-<label for="r2" style="font-size:55;" >Temperature</label><font face="Arial" size="7">  </font><input  name="T"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">°C</label>          
-          
-  <h1 style="font-size:50;"></h1>
+<h3>Outputs</h3></div></legend>        
+        
+<label for="r2" style="font-size:55;" >V<sub>n</sub></label><font face="Arial" size="7"> (RMS)  </font><input  name="Vn"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&micro;V</label>       
+<h1 style="font-size:60;"></h1>
+<label for="r2" style="font-size:55;" >L<sub>v</sub></label><font face="Arial" size="7"> (Noise Level)   </font><input  name="Lv"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:55px;height:69;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">dBv</label>   
+
+    <h1 style="font-size:50;"></h1>    
+       
       </form>
       
+      
+      
+      
+      
+     
