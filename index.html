@@ -1,3 +1,4 @@
+
 <script>
 
 function gSetRange(v, ch) {
@@ -243,8 +244,7 @@ function spCalculate() {
    var valu2 = Number(document.CalcSPZ.Valu2.value);  // Reactance-C-L Text Field
    var valu3 = Number(document.CalcSPZ.Valu3.value);  // Frequency Text Field
      if ((unit != 1) && (valu3 == 0)) {
-      alert("You must specify a frequency when you\n" + 
-            "choose Capacitance or Inductance.");
+      ;
       }
    else {
       switch(unit + (8 * sp)) {
@@ -365,7 +365,7 @@ input[type=checkbox]{
             </option></select>
 
 <h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:55;" >Resistance<font face="Arial" size="6">  </font></label><input type="text" name="Valu1"  size="20" maxlength="10" tabindex="2"   class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Resistance<font face="Arial" size="6">  </font></label><input type="number" name="Valu1"  size="20" maxlength="10" tabindex="2"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 <select name="Mult1" tabindex="3" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ</option><option value="1" selected=""> Ω</option></select>
 
@@ -377,7 +377,7 @@ input[type=checkbox]{
                </option><option value="2">Capacitance
                </option><option value="4">Inductance
             </option></select>
-<input type="text" name="Valu2"  maxlength="10" tabindex="5"   class="intro"  style="position: absolute;   text-align
+<input type="number" name="Valu2"  maxlength="10" tabindex="5"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 
 <select name="Mult2" tabindex="6" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value="1000">KΩ</option><option value="1" selected=""> Ω</option></select>
@@ -385,7 +385,7 @@ input[type=checkbox]{
 
 <h1 style="font-size:1;"></h1>
 
-<label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6">  </font></label><input type="text" name="Valu3"  size="20" maxlength="10" tabindex="7"   class="intro"  style="position: absolute;   text-align
+<label for="r2" style="font-size:55;" >Frequency<font face="Arial" size="6">  </font></label><input type="number" name="Valu3"  size="20" maxlength="10" tabindex="7"   class="intro"  style="position: absolute;   text-align
 :center;width:274; right: 165px;"class="form-control"  />
 <select name="Mult3" tabindex="8" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
 
@@ -418,7 +418,7 @@ input[type=checkbox]{
 
 
 <label for="r2" style="font-size:55;" >R
-                     Series</label><font face="Arial" size="6"> </font><input type="text" name="rSeries"  size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+                     Series</label><font face="Arial" size="6"> </font><input type="number" name="rSeries"  size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
 :center;right: 10px;"class="form-control" type="text" />	
 
 
@@ -432,30 +432,30 @@ input[type=checkbox]{
 <h1 style="font-size:50;"></h1>
 
 <label for="r2" style="font-size:55;" >X
-                     Series</label><font face="Arial" size="6"> </font><input type="text" name="xSeries" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+                     Series</label><font face="Arial" size="6"> </font><input type="number" name="xSeries" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
 :center;right: 10px;"class="form-control" type="text" />	
 
 <h1 style="font-size:50;"></h1>
 
 <label for="r2" style="font-size:55;" >X
-                     Parallel</label><font face="Arial" size="6"> </font><input type="text" name="xParallel" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+                     Parallel</label><font face="Arial" size="6"> </font><input type="number" name="xParallel" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
 :center;right: 10px;"class="form-control" type="text" />	
 
 
 <h1 style="font-size:50;"></h1>
 
-<label for="r2" style="font-size:55;" >Series</label><font face="Arial" size="6"> (Component)  </font><input type="text" name="sComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+<label for="r2" style="font-size:55;" >Series</label><font face="Arial" size="6"> (Component)  </font><input type="number" name="sComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
 :center;right: 10px;"class="form-control" type="text" />
 
 
 <h1 style="font-size:50;"></h1>
 
-<label for="r2" style="font-size:55;" >Parallel </label><font face="Arial" size="6">(Component) </font><input type="text" name="pComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+<label for="r2" style="font-size:55;" >Parallel </label><font face="Arial" size="6">(Component) </font><input type="number" name="pComponent" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
 :center;right: 10px;"class="form-control" type="text" />
 
 <h1 style="font-size:50;"></h1>
 
-<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> </font><input type="text" name="frequency" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
+<label for="r2" style="font-size:55;" >Frequency</label><font face="Arial" size="6"> </font><input type="number" name="frequency" value="" size="20" readonly=""  class="intro"  style="position: absolute;   width:430; text-align
 :center;right: 10px;"class="form-control" type="text" />
 
 
