@@ -1,24 +1,25 @@
 
 
-<script language="JavaScript">
-	function Compute(form) {
-		with (Math) {
-			var RC = Number(form.RC.value);
-			var Beta = Number(form.Beta.value);
-			var VBE = Number(form.VBE.value);
-			var VP = Number(form.VP.value);
-			var Precision = 2;
-
-			RB = (VP - VBE) * Beta * RC / VP;
-
-			form.RB.value = RB.toFixed(Precision);
-		}
-	}
-</script>
-
-				<form name="ParamForm" action="" method="post">
-			
-					<table height="174" border="1" class="tools-details">
+<SCRIPT language="javascript" type="text/javascript">
+function calc()
+{
+R=Number(document.calculator.number1.value);
+Cj=Number(document.calculator.number2.value);
+Rs=Number(document.calculator.number3.value);
+Ls=Number(document.calculator.number4.value);
+Cj = (Cj * (Math.pow(10,-12)));
+Ls= (Ls*(Math.pow(10,-9)));
+m1= ((R/Rs)-1);
+c1 = ( ( 1/(2*(Math.PI)*R*Cj) ) * (Math.pow(m1,0.5)) );
+m2 = R*Cj ;
+m3 =  ( (1/(Ls*Cj)) - ( 1/(Math.pow(m2,2))) );
+c2  = ( ( 1/(2*3.14) ) * (Math.pow(m3,0.5)) );
+c1 = ( c1/ (Math.pow(10,6)));
+document.calculator.resistive_frequency.value=c1;
+c2 = ( c2/ (Math.pow(10,6)));
+document.calculator.resonant_frequency.value=c2;
+}
+</SCRIPT>
 
 
 
@@ -90,20 +91,22 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
-<label for="r2" style="font-size:55;" >R<sub>C</sub></label><font face="Arial" size="6">  (Resistance of Collector)  </font><input  name="RC"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >V<sub>IN</sub></label><font face="Arial" size="6">    </font><input  name="VP"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >B</label><font face="Arial" size="6">(Main Current Gain)    </font><input  name="Beta"  class="intro"  style="position: absolute;   width:430; text-align
-:center;right: 10px;"class="form-control" type="number" />
+
+<FORM name="calculator">
+
+<label for="r2" style="font-size:55;" >R</label><font face="Arial" size="6"> (Negative Resistance) </font><input  name="number1"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
 <h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:55;" >V<sub>BE</sub></label><font face="Arial" size="6"> (Base-Emitter Voltage)    </font><input  name="VBE"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<label for="r2" style="font-size:55;" >C<sub>J</sub></label><font face="Arial" size="6"> (Junction capcitance) </font><input  name="number2"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">pF</label>
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >R</label><font face="Arial" size="6"> (Series Resistance) </font><input  name="number3"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
 <h1 style="font-size:50;"></h1>
-</fieldset>	<h1 style="font-size:80;"></h1>						
-<fieldset><legend><div colspan="2" align="center" height="19"><input name="button" type="button" onclick="Compute(document.ParamForm)"  value="CALCULATE" " style="background-color: #167A04 ;
+<label for="r2" style="font-size:55;" >L</label><font face="Arial" size="6"> (Series Inductance) </font><input  name="number4"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">H</label>
+<h1 style="font-size:50;"></h1></fieldset><h1 style="font-size:80;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -120,12 +123,17 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>							
-<label for="r2" style="font-size:55;" >RB<sub>BE</sub></label><font face="Arial" size="6"> (Base-Resistance)    </font><input  name="RB" class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
-<h1 style="font-size:50;"></h1>					
-				</form>
-				
+<h3>Outputs</h3></div></legend>
+<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Resistive Frequency) </font><input  name="resistive_frequency"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">MH<sub>z</label>
+<h1 style="font-size:50;"></h1>
+<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Self Resonant Frequency) </font><input  name="resonant_frequency"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">MH<sub>z</label>
+<h1 style="font-size:50;"></h1>
 
-                            
-       
+
+
+
+
+</FORM>
+
