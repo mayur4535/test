@@ -1,26 +1,25 @@
 
-
 <SCRIPT language="javascript" type="text/javascript">
 function calc()
 {
-R=Number(document.calculator.number1.value);
-Cj=Number(document.calculator.number2.value);
-Rs=Number(document.calculator.number3.value);
-Ls=Number(document.calculator.number4.value);
-Cj = (Cj * (Math.pow(10,-12)));
-Ls= (Ls*(Math.pow(10,-9)));
-m1= ((R/Rs)-1);
-c1 = ( ( 1/(2*(Math.PI)*R*Cj) ) * (Math.pow(m1,0.5)) );
-m2 = R*Cj ;
-m3 =  ( (1/(Ls*Cj)) - ( 1/(Math.pow(m2,2))) );
-c2  = ( ( 1/(2*3.14) ) * (Math.pow(m3,0.5)) );
-c1 = ( c1/ (Math.pow(10,6)));
-document.calculator.resistive_frequency.value=c1;
-c2 = ( c2/ (Math.pow(10,6)));
-document.calculator.resonant_frequency.value=c2;
+C=Number(document.calculator.number1.value);
+Vb=Number(document.calculator.number2.value);
+V=Number(document.calculator.number3.value);
+Rs=Number(document.calculator.number4.value);
+F=Number(document.calculator.number5.value);
+m=Number(document.calculator.number6.value);
+K=1;
+m1= (Vb-V);
+c1= ( (C*K)/(Math.pow(m1,m)) );
+//lambda=( (3* (Math.pow(10,8)))/(Fr*(Math.pow(10,9))) );
+c2 =   ( 1/ (2*(Math.PI)*Rs*c1* (Math.pow(10,-12))) );
+c2 =  (c2/(Math.pow(10,6)));
+c3 = (c2 / F ) ;
+document.calculator.diode_capacitance.value=c1;
+document.calculator.diode_cutoff_frequency.value=c2;
+document.calculator.quality_factor.value=c3;
 }
 </SCRIPT>
-
 
 
 
@@ -92,20 +91,30 @@ input[type=checkbox]{
 <h3>Input</h3></div></legend>
 
 
+
 <FORM name="calculator">
 
-<label for="r2" style="font-size:55;" >R</label><font face="Arial" size="6"> (Negative Resistance) </font><input  name="number1"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:55;" >C<sub>J</sub></label><font face="Arial" size="6"> (Junction capcitance) </font><input  name="number2"  class="intro"  style="position: absolute;   width:300; text-align
+<label for="r2" style="font-size:55;" >C<sub>d</sub></label><font face="Arial" size="6"> (Diode Capacitance 0V) </font><input  name="number1"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">pF</label>
+<h1 style="font-size:30;"></h1>
+
+<label for="r2" style="font-size:55;" >V<sub>b</sub></label><font face="Arial" size="6"> (Barrier voltage ) </font><input  name="number2"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >V<sub></sub></label><font face="Arial" size="6"> (Applied reverse bias potential) </font><input  name="number3"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
 <h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >R</label><font face="Arial" size="6"> (Series Resistance) </font><input  name="number3"  class="intro"  style="position: absolute;   width:300; text-align
+<label for="r2" style="font-size:55;" >R<sub>s</sub></label><font face="Arial" size="6"> (Series resistance) </font><input  name="number4"  class="intro"  style="position: absolute;   width:300; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:55;" >L</label><font face="Arial" size="6"> (Series Inductance) </font><input  name="number4"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">H</label>
-<h1 style="font-size:50;"></h1></fieldset><h1 style="font-size:80;"></h1>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >F<sub></sub></label><font face="Arial" size="6"> (Operating Frequency) </font><input  name="number5"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">MH<sub>z</label>
+<h1 style="font-size:43;"></h1>
+<label for="r2" style="font-size:55;" >m Factor<sub></sub></label><font face="Arial" size="6">  </font><input  name="number6"  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:30;"></h1>
+</fieldset>
+<h1 style="font-size:80;"></h1>
 <fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
   border: 1;
   align:center;
@@ -124,16 +133,18 @@ input[type=checkbox]{
 
 
 <h3>Outputs</h3></div></legend>
-<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Resistive Frequency) </font><input  name="resistive_frequency"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">MH<sub>z</label>
-<h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:55;" >F</label><font face="Arial" size="6"> (Self Resonant Frequency) </font><input  name="resonant_frequency"  class="intro"  style="position: absolute;   width:300; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">MH<sub>z</label>
-<h1 style="font-size:50;"></h1>
 
 
+<label for="r2" style="font-size:55;" >Diode</label><font face="Arial" size="6"> (Capacitance) </font><input  name="diode_capacitance"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">F</label>
+<h1 style="font-size:50;"></h1>
+<label for="r2" style="font-size:55;" >frequency</label><font face="Arial" size="6"> (Cutoff) </font><input  name="diode_cutoff_frequency"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:50px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">MH<sub>z</label>
+<h1 style="font-size:50;"></h1>
+<label for="r2" style="font-size:55;" >QF</label><font face="Arial" size="6"> (Quality Factor) </font><input  name="quality_factor"  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="number" />
+<h1 style="font-size:30;"></h1>
 
 
 
 </FORM>
-
