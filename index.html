@@ -43,13 +43,16 @@
     border:2px solid #aaa;
     border-radius:4px;
     margin: 10px 0;
-    outline:none;
+    outline:none;text-align:center;
     width:500;right:100;
     position:absolute;
     box-sizing:border-box;
     transition:.3s;
 }
-
+.bootstrap3-legacy .form-control:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
 
 .bootstrap3-legacy .form-control[disabled]{
 	cursor:not-allowed
@@ -166,12 +169,12 @@ input[type=checkbox]{
 <div class="col-sm-12 col-xs-12">
 <div class='col-sm-4 col-xs-12'>
 <div class="form-group">
-<label for="num">Select Resistors No.</label>
+<label for="num">No. Resistors </label>
 </div>
 </div>
 <div class="col-sm-4 col-xs-8">
 <div class="form-group text-center">
-<input type="number" class="form-control" text-align="center"id="num" placeholder="Number of Resistors" value="2">
+<input type="number" class="form-control" style="position:absolute; right:10; width:590; text-align:center;" text-align="center"id="num" placeholder="Number of Resistors" value="2">
 </div>
 </div>
 <div class="col-sm-4 col-xs-4">
