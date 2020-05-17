@@ -1,37 +1,24 @@
 
 
 <script language="JavaScript">
-
 	function Compute(form) {
 		with (Math) {
-			var GIGA = 1000000000;
-			var MEGA = 1000000;
-			var KILO = 1000;
+			var RC = Number(form.RC.value);
+			var Beta = Number(form.Beta.value);
+			var VBE = Number(form.VBE.value);
+			var VP = Number(form.VP.value);
+			var Precision = 2;
 
-			var VDD = Number(form.VDD.value);
-			var VRS = Number(form.VRS.value);
-			var Vp = Number(form.Vp.value);
-			var IDSS = Number(form.IDSS.value);
-			var Precision = 3;
+			RB = (VP - VBE) * Beta * RC / VP;
 
-			VGS = -VRS;
-			IDS = IDSS * (1 - VGS / Vp) * (1 - VGS / Vp);
-			RS = -VGS / IDS * KILO;
-
-
-			form.IDS.value = IDS.toFixed(Precision);
-			form.VGS.value = VGS.toFixed(Precision);
-			form.RS.value = RS.toFixed(Precision);
+			form.RB.value = RB.toFixed(Precision);
 		}
 	}
-
-
-
-
 </script>
 
-
-
+				<form name="ParamForm" action="" method="post">
+			
+					<table height="174" border="1" class="tools-details">
 
 
 
@@ -103,37 +90,20 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
- 
-
-
-
-
-  <form action="" method="post" name="ParamForm" id="ParamForm">
-
-
-	
-
-<div id="tool_output_container" class="form-group">
-<label for="r2" style="font-size:50;" >VDD</label><font face="Arial" size="7"></font><input  name="VDD"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">V</label>
-<h1 style="font-size:60;"></h1>
-<label for="r2" style="font-size:40;" >V<sub>RS</sub></label><font face="Arial" size="7"> (Desired)</font><input  name="VRS"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">V</label>
+<label for="r2" style="font-size:55;" >R<sub>C</sub></label><font face="Arial" size="6">  (Resistance of Collector)  </font><input  name="RC"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >V<sub>IN</sub></label><font face="Arial" size="6">    </font><input  name="VP"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:40;"></h1>
+<label for="r2" style="font-size:55;" >B</label><font face="Arial" size="6">(Main Current Gain)    </font><input  name="Beta"  class="intro"  style="position: absolute;   width:430; text-align
+:center;right: 10px;"class="form-control" type="number" />
 <h1 style="font-size:50;"></h1>
-<label for="r2" style="font-size:50;" >V<sub>P</sub> Or V<sub>GS</sub></label><font face="Arial" size="7">(Off)</font><input  name="Vp"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">V</label>
-<h1 style="font-size:0;"></h1>
-<font face="Arial"  align="center "style= " text-align:center;" size="5"> (Negative Pinch / off voltage / cut-off voltage)</font>
-<h1 style="font-size:10;"></h1>
-<label for="r2" style="font-size:50;" >I<sub>DSS</sub></sub></label><font face="Arial" size="5">(zero gate voltage drain current)</font><input  name="IDSS"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">mA</label>
-<h1 style="font-size:50;"></h1>	
-		
-</fieldset>
-<div class="row">
-<div class="col-sm-12">
-<div class="col-sm-4 form-group">&nbsp;</div>
-<div class="col-sm-4 form-group"><fieldset><legend><div colspan="2" align="center" height="19"><input name="button" type="button" onclick="Compute(document.ParamForm)"value="CALCULATE" " style="background-color: #167A04 ;
+<label for="r2" style="font-size:55;" >V<sub>BE</sub></label><font face="Arial" size="6"> (Base-Emitter Voltage)    </font><input  name="VBE"  class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+<h1 style="font-size:50;"></h1>
+</fieldset>	<h1 style="font-size:80;"></h1>						
+<fieldset><legend><div colspan="2" align="center" height="19"><input name="button" type="button" onclick="Compute(document.ParamForm)"  value="CALCULATE" " style="background-color: #167A04 ;
   border: 1;
   align:center;
   color: white;
@@ -150,19 +120,12 @@ input[type=checkbox]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></div></legend>		
-		
-<div id="tool_output_container" class="form-group">
-<label for="r2" style="font-size:50;" >I<sub>DS</sub></label><font face="Arial" size="7"> </font><input  name="IDS" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">mA</label>
-<h1 style="font-size:50;"></h1>		
-<label for="r2" style="font-size:50;" >R<sub>S</sub></label><font face="Arial" size="7"> </font><input  name="RS" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">&Omega;</label>
-<h1 style="font-size:50;"></h1>		
-<label for="r2" style="font-size:50;" >V<sub>GS</sub></label><font face="Arial" size="7"> </font><input  name="VGS" class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 160px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">V</label>
+<h3>Outputs</h3></div></legend>							
+<label for="r2" style="font-size:55;" >RB<sub>BE</sub></label><font face="Arial" size="6"> (Base-Resistance)    </font><input  name="RB" class="intro"  style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ; height:68; position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">K&Omega;</label>
 <h1 style="font-size:50;"></h1>					
-		 
-		
-  </form>
-  
+				</form>
+				
+
+                            
+       
