@@ -1,1310 +1,255 @@
+<style>
 
-        
-                    <script src="//cdn.optimizely.com/js/346228540.js" async type="text/javascript"></script>
-        <title>
-            Conversion Calculator Parallel and Series Resistor | DigiKey
-        </title>
-        <style type="text/css">body * .flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
 
+
+
+
+
+
+
+
+
+
+@media (min-width:768px){
+	.bootstrap3-legacy .col-sm-1,.bootstrap3-legacy .col-sm-2,.bootstrap3-legacy .col-sm-4,.bootstrap3-legacy .col-sm-6,.bootstrap3-legacy .col-sm-10,.bootstrap3-legacy .col-sm-12{
+		float:left
 }
-    .dk-container ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .dk-container .header-wrap {
-        padding: 0 0 10px;
-        border-bottom: solid 1px #ccc;
-    }
-
-/* include when related-products-mod is included in ejs
-    .dk-container .content {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 3fr 2em 1fr;
-        -ms-grid-rows: 1fr;
-        grid-template-columns: 3fr 1fr;
-        grid-gap: 2em;
-    }
-
-        .dk-container .content .calculator-mod {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-            -ms-grid-column-span: 1;
-        }
-
-        .dk-container .content .related-products-mod {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-*/
-.dk-breadcrumb ol {
-    color: #222;
-    list-style: none;
-    padding-left: 0;
-    font-size: 12px;
-    line-height: .8;
+	.bootstrap3-legacy .col-sm-12{
+		width:100%
 }
-
-    .dk-breadcrumb ol li {
-        color: #222;
-        display: -webkit-inline-flex;
-        display: inline-flex;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
-        margin-right: 8px;
-        margin-top: 0;
-        font-weight: 700;
-        line-height: 2;
-    }
-
-        .dk-breadcrumb ol li:last-child {
-            font-weight: 400;
-        }
-
-        .dk-breadcrumb ol li a {
-            color: #222;
-            text-decoration: none;
-        }
-
-        .dk-breadcrumb ol li:after {
-            font-family: dk,icomoon;
-            content: " \F105";
-            white-space: pre;
-            font-size: 1em;
-        }
-
-        .dk-breadcrumb ol li:last-child:after {
-            content: "";
-        }
-
-.dk-container .header-wrap .dk-icon-border {
-    height: 41px;
-    max-width: 43px;
-    margin: 0 9px 0 0;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #CC0000;
+	.bootstrap3-legacy .col-sm-10{
+		width:83.33333333%
 }
-.rtl .dk-container .header-wrap .dk-icon-border {
-    height: 41px;
-    max-width: 43px;
-    margin: 0 0 0 9px;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #CC0000;
+	.bootstrap3-legacy .col-sm-6{
+		width:50%
 }
-
-.dk-container .header-wrap .dk-icon {
-    margin-right: 1em;
-    height: 50px;
-    width: 80px;
+	.bootstrap3-legacy .col-sm-4{
+		width:33.33333333%
 }
-
-@media screen and (max-width: 767px) {
-    .dk-container .header-wrap .headline-title {
-        display: inline;
-    }
+	.bootstrap3-legacy .col-sm-2{
+		width:16.66666667%
 }
-
-@media (max-width: 991px) {
-    .dk-container .header-wrap .pull-right {
-        clear: both;
-        float: none !important;
-        padding: 12px 0 0;
-    }
+	.bootstrap3-legacy .col-sm-1{
+		width:8.33333333%
 }
-
-.dk-container .header-wrap .btn-actions {
-    margin: 0;
-    font-size: 0;
-}
-
-    .dk-container .header-wrap .btn-actions li {
-        display: inline-block;
-        padding: 0 5px;
-        font-size: 14px;
-    }
-
-@media (max-width: 991px) {
-    .dk-container .header-wrap .btn-actions li:first-child {
-        padding-left: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .dk-container .header-wrap .btn-actions li {
-        padding-bottom: 20px;
-    }
-}
-
-.dk-container .header-wrap .btn-actions li a {
-    display: inline-block;
-    padding: 10px 20px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    border-radius: 30px;
-    border: 1px solid #ccc;
-}
-
-    .dk-container .header-wrap .btn-actions li a:hover {
-        border: 1px solid #cc2500;
-    }
-
-.dk-container .header-wrap .btn-actions li .fa {
-    padding: 0 2px 0 0;
-    color: #cc2500;
-}
-
-@media (max-width: 767px) {
-    .dk-container .header-wrap .pull-left, .dk-container .header-wrap .pull-right {
-        float: none !important;
-    }
-}
-
-.dk-container .single-dk-calc-cont {
-    padding: 20px 0 0;
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont {
-        display: table;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .single-dk-calc-cont {
-        padding: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap {
-        display: table-cell;
-        vertical-align: top;
-    }
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 1.5em 2em;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: -webkit-min-content;
-        -ms-grid-rows: min-content;
-        grid-template-rows: min-content;
-        grid-gap: 2em;
-    }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-}
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        padding: 1.5em 1em;
-        margin: 0;
-        border: 0;
-        border-radius: 0;
-    }
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-output {
-    padding: 15px;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
-    position: absolute;
-    z-index: 5;
-    right: 0;
-    padding: 10px 0 10px 7px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    width: 45px;
-    border-radius: 0 4px 4px 0;
-    border: 1px solid #CCCCCC;
-    font-size: 13px;
-}
-.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .bg-black .input-dropdown {
-border-radius: 24px !important;
-}
-
-.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    right: auto;
-    padding: 10px 7px 10px 4px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    width: 45px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #CCCCCC;
-    font-size: 13px;
-}
-
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown:focus {
-        outline: 0;
-    }
-
-
-.dk-container .related-tools-wrap {
-    padding: 30px 0 0;
-}
-
-    .dk-container .related-tools-wrap h2 {
-        margin: 0;
-        padding: 0 0 10px;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .dk-container .related-tools-wrap ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
-        grid-template-columns: repeat(4, 1fr);
-        -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: 2em;
-    }
-
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 5;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 7;
-        }
-
-
-
-.dk-container .related-tools-wrap ul li a {
-    display: block;
-    padding: 15px;
-    color: #222;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-    .dk-container .related-tools-wrap ul li a .dkc-related_img {
-        max-height: 45px;
-    }
-
-    .dk-container .related-tools-wrap ul li a:hover, .dk-container .related-tools-wrap ul li a:focus {
-        text-decoration: none;
-        border: 2px solid #cc2500;
-    }
-
-    .dk-container .related-tools-wrap ul li a:hover,
-    .dk-container .related-tools-wrap ul li a:focus {
-        text-decoration: none;
-        border: 2px solid #cc2500;
-    }
-
-.dk-container .related-tools-wrap ul li span {
-    display: block;
-    padding: 10px 0 0;
-    margin-top: auto;
-}
-
-.dk-container .input-headline {
-    display: block;
-    margin: 0 0 5px 0;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: left;
-}
-.rtl .dk-container .input-headline {
-    display: block;
-    margin: 0 0 5px 0;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: right;
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .input-headline {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        -ms-grid-rows: 1fr 2em 1fr;
-        -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-    .dk-container .related-tools-wrap ul {
-        -ms-grid-columns: 1fr 2em 1fr;
-        -ms-grid-rows: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 3;
-        }
-}
-
-@media (max-width: 450px) {
-    .dk-container .related-tools-wrap ul {
-        -ms-grid-columns: 1fr;
-        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr;
-        grid-template-columns: 1fr;
-    }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 5;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 7;
-            -ms-grid-column: 1;
-        }
-}
-
-.dk-container .inputs .calculator-input {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 45px;
-    grid-template-columns: 1fr 45px;
-    -ms-grid-rows: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'input dd';
-    margin-bottom: 15px;
 }
 
 
-    .dk-container .inputs .calculator-input input {
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        grid-area: input;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        border: 1px solid #ddd;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        width: 100%;
-        min-width: 10ch;
-        -webkit-appearance: textfield;
-        appearance: textfield;
-        border-radius: 4px 0 0 4px;
-        border-right: none;
-    }
-    .rtl .dk-container .inputs .calculator-input input {
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        grid-area: input;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        border: 1px solid #ddd;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        width: 100%;
-        min-width: 10ch;
-        -webkit-appearance: textfield;
-        appearance: textfield;
-        border-radius: 0 4px 4px 0;
-        border-right: solid 1px #ddd;
-        border-left: none;
-    }
-    .dk-container .inputs .calculator-input .input-dropdown::-ms-expand {
-        display: none;
-    }
 
-    .dk-container .inputs .calculator-input .input-dropdown:focus {
-        outline: 0;
-    }
-
-    .dk-container .inputs .calculator-input .input-label, .dk-container .calculator-input .input-dropdown {
-        -ms-grid-row: 1;
-        -ms-grid-column: 2;
-        grid-area: dd;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        border-radius: 0 4px 4px 0;
-        background-color: #f4f4f4;
-        border: 1px solid #CCCCCC;
-        text-align: center;
-        display: inline-block;
-    }
-
-    .dk-container .inputs .calculator-input .input-dropdown {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
-        background-position: right 1px center;
-        background-repeat: no-repeat;
-        background-size: 1.25ex;
-        background-origin: content-box;
-        padding-left: 0.5em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
-    .rtl .dk-container .inputs .calculator-input .input-dropdown {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
-        background-position: left 1px center;
-        background-repeat: no-repeat;
-        background-size: 1.25ex;
-        background-origin: content-box;
-        padding-left: 0.5em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
-
-.dk-container .calculator-input {
-    position: relative;
-    display: inline-block;
-    width: 100%;
+.bootstrap3-legacy .form-control{
+	 width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: px 0;
+    outline:none;
+    width:500;right:10;
+    position:absolute;
+    box-sizing:border-box;
+    transition:.3s;
 }
 
-    .dk-container .calculator-input .input-label {
-        position: absolute;
-        z-index: 5;
-        right: 0;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        width: 45px;
-        border-radius: 0 3px 3px 0;
-        background-color: #F2F1F6;
-        border: 1px solid #CCCCCC;
-        text-align: center;
-        font-size: 13px;
-    }
 
-    .dk-container .calculator-input .input-answer {
-        left: 15px;
-        right: auto;
-        border-radius: 4px 0 0 4px;
-        position: absolute;
-        height: 40px;
-        padding: 12px 8px 2px 8px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: #fff;
-    }
-    .rtl .dk-container .calculator-input .input-answer {
-        right: 15px;
-        left: auto;
-        border-radius: 4px 0 0 4px;
-        position: absolute;
-        height: 40px;
-        padding: 12px 8px 2px 8px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: #fff;
-    }
-
-    .dk-container .calculator-input input[type='number'] {
-        -moz-appearance: textfield;
-    }
-
-    .dk-container .calculator-input input {
-        -webkit-appearance: none;
-        border: 1px solid #CCCCCC;
-        border-radius: 3px;
-        padding: 0px 5px 0px 5px;
-        max-width: 100%;
-        width: 100%;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        margin-bottom: 15px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        color: #333333;
-    }
-
-        .dk-container .calculator-input input::-webkit-input-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input::-moz-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input:-ms-input-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input:-moz-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-    .dk-container .calculator-input.bg-black .input-label {
-        color: #FFF;
-        border: 0;
-        background: none;
-    }
-
-    .dk-container .calculator-input.bg-black input {
-        padding: 0 30px;
-        background: #333;
-        color: #fff;
-        border: none;
-        text-align: center;
-        border: none;
-        border-radius: 20px;
-        opacity: 1;
-    }
-
-        .dk-container .calculator-input.bg-black input::-webkit-input-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input::-moz-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input:-ms-input-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input:-moz-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-
-/*! CSS Used from: http://localhost:1337/public/css/conversion-calculator-parallel-and-series-resistor.css */
-.dk-container .single-headline-desc .other-calc-button {
-    margin: 35px 0 0;
-    padding: 10px 29px;
-    font-size: 13px;
-    border-radius: 0px;
-    border: 1px solid #CCC;
-    background: #FFF;
-    color: #333;
-    display: inline-block;
-    text-decoration: none;
+.bootstrap3-legacy .form-control[disabled]{
+	cursor:not-allowed
 }
 
-    .dk-container .single-headline-desc .other-calc-button .fa {
-        padding-left: 5px;
-    }
-
-@media (max-width: 767px) {
-    .dk-container .single-headline-desc .other-calc-button {
-        max-width: 100%;
-        padding: 10px;
-    }
-}
-
-.dk-container .single-headline-desc .other-calc-button:hover {
-    border: 1px solid #cc2500;
-}
-
-.dk-container .single-dk-calc-cont .inner-box .calc-type {
-    display: inline-flex;
-    list-style: none;
-    margin: 0;
-    padding: 8px;
-    border-radius: 30px;
-    border: 1px solid #DDD;
-    background: #f2f1f6;
-    width: 100%;
-}
-
-    .dk-container .single-dk-calc-cont .inner-box .calc-type li {
-        padding: 0 0 0 9px;
-        margin: 0;
-        width: calc(98%/2);
-    }
-
-        .dk-container .single-dk-calc-cont .inner-box .calc-type li a {
-            cursor: pointer;
-            border: 2px solid #CCC;
-            color: #ccc;
-            padding: 10px;
-            display: block;
-            background: #fff;
-            text-align: center;
-            border-radius: 30px;
-            text-decoration: none;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            font-size: 13px;
-        }
-
-            .dk-container .single-dk-calc-cont .inner-box .calc-type li a.selected {
-                border: 2px solid #cc2500 !important;
-                color: #333;
-            }
-
-
-
-.dk-container .single-dk-calc-cont .inner-box [data-section],
-.dk-container .single-dk-calc-cont .inner-box .inputs > div {
-    display: none;
-}
-
-    .dk-container .single-dk-calc-cont .inner-box [data-section].active,
-    .dk-container .single-dk-calc-cont .inner-box .inputs > div.active {
-        display: block;
-    }
-
-.dk-container .single-dk-calc-cont .inner-box .buttons {
-    display: inline-flex !important;
-    width: 100%;
-    margin-bottom: 20px;
+.bootstrap3-legacy .form-group{
+	margin-bottom:15px
 }
 
 
 
 </style>
-           
 
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<style>
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
+}
+
+body {
+  display: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body {
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+}
+
+body { 
+  background: ; 
+}
+.intro{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
     
-
-
-
-
-   
     
-
-
-   
-                    
-                       
-
-
-       
-         
+    box-sizing:border-box;
+    transition:.3s;
+  }
   
-        
-    <div class="dk-container">
+  .intro:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
 
+.ids{
+     border: 2px solid red;
+  padding: 10px;
+  border-radius: 50px 20px;}
+
+input[type=checkbox]{
+    width: 120px; 
+    height: 120px; 
+   
+  }
+</style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+
+
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Input</h3></div></legend>
+
+
+
+
+
+
+
+
+<div class="mx-4">
+<div class="bootstrap3-legacy">
+<div class="container-fluid">
+<form id="tool-form">
+<div class="row">
+
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="num">Number of Resistors</label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
+<input type="number" class="form-control" id="num" placeholder="Enter Number of Resistors" value="2">
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group" id="num-error">
+
+</div>
+</div>
+</div>
+</div>
+<div id="resistor-container">
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="r1">R<sub>1</sub></label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
+<input type="number" class="form-control" id="r1" placeholder="Enter Resistor 1">
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+(‎Ω)
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
+<label for="r2">R<sub>2</sub></label>
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group text-center">
+<input type="number" class="form-control" id="r2" placeholder="Enter Resistor 2">
+</div>
+</div>
+<div class="col-sm-4 col-xs-4">
+<div class="form-group">
+(‎Ω)
+</div>
+</div>
+</div>
+</div>
+</div>
+</form></fieldset>
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-4 form-group">&nbsp;</div>
+<div class="col-sm-4 form-group"><fieldset><legend><div colspan="2" align="center" height="19"><input type="button" id="calculate" class="btn btn-theme"  value="Calculate" " style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
  
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;">
+</div></legend></fieldset>
+
+<fieldset><legend><div colspan="2" align="center" height="19">
 
 
-  
+<h3>Outputs</h3></div></legend>
 
-      <div class="single-dk-calc-cont">
-        <div class="dk-calc-wrap">
-          <div class="inner-box">
-            <div class="calculator-col col-md-6">
-              <ul class="calc-type">
-                <li>
-                  <a class="type-selector selected" id="parallel-selector">Parallel Resistor</a>
-                </li>
-                <li>
-                  <a class="type-selector" id="series-selector">Series Resistor</a>
-                </li>
-              </ul>
+<div class="col-sm-12 col-xs-12">
+<div class='col-sm-4 col-xs-12'>
+<div class="form-group">
 
-              <div id="parallel-section" class="parallel active" data-section="parallel">
-                <h3 class="unit-title">Parallel Resistor</h3>
-                <div class="inputs">
-                  <div class="parallel active" id="parallel1">
-                    <span class="input-headline">R1</span>
-                    <div class="calculator-input">
-                      <select id="Punit1" title="Ohm" onchange="Parallel()" name="Punit1" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres1" id="pres1" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel active" id="parallel2">
-                    <span class="input-headline">R2</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit2" onchange="Parallel()" name="Punit2" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres2" id="pres2" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel3">
-                    <span class="input-headline">R3</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit3" onchange="Parallel()" name="Punit3" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres3" id="pres3" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel4">
-                    <span class="input-headline">R4</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit4" onchange="Parallel()" name="Punit4" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres4" id="pres4" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel5">
-                    <span class="input-headline">R5</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit5" onchange="Parallel()" name="Punit5" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres5" id="pres5" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel6">
-                    <span class="input-headline">R6</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit6" onchange="Parallel()" name="Punit6" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres6" id="pres6" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel7">
-                    <span class="input-headline">R7</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit7" onchange="Parallel()" name="Punit7" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres7" id="pres7" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel8">
-                    <span class="input-headline">R8</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit8" onchange="Parallel()" name="Punit8" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres8" id="pres8" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel9">
-                    <span class="input-headline">R9</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit9" onchange="Parallel()" name="Punit9" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres9" id="pres9" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel10">
-                    <span class="input-headline">R10</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit10" onchange="Parallel()" name="Punit10" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres10" id="pres10" type="number">
-                                </div>
-                  </div>
-
-                  <div class="buttons">
-                    <button type="button" class="dk-btn__primary addmore" href="#">Add Resistors</button>
-                    <button type="button" class="dk-btn__primary" disabled="disabled" href="#">
-                      Remove Resistor
-                    </button>
-                  </div>
-
-                </div>
-                <div class="prT">
-                  <span class="input-headline">Total Parallel Resistance</span>
-                  <div class="calculator-input bg-black">
-                    <select title="Ohm" id="PunitT" onchange="Parallel()" name="PunitT" class="input-dropdown">
-                      <option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e-3">kΩ
-                      <option title="Megaohm" value="1e-6">MΩ
-                    </select>
-                    <span class="input-answer">=</span>
-                    <input name="presT" id="presT" type="number" class="answer" readonly="">
-                            </div>
-                </div>
-              </div>
-
-              <div class="series" id="series-section" data-section="series">
-                <h3 class="unit-title">Series Resistor</h3>
-                <div class="inputs">
-                  <div class="series active" id="series1">
-                    <span class="input-headline">R1</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit1" onchange="Series()" name="Sunit1" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres1" id="sres1" type="number">
-                                </div>
-                  </div>
-                  <div class="series active" id="series2">
-                    <span class="input-headline">R2</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit2" onchange="Series()" name="Sunit2" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres2" id="sres2" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series3">
-                    <span class="input-headline">R3</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit3" onchange="Series()" name="Sunit3" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres3" id="sres3" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series4">
-                    <span class="input-headline">R4</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit4" onchange="Series()" name="Sunit4" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres4" id="sres4" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series5">
-                    <span class="input-headline">R5</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit5" onchange="Series()" name="Sunit5" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres5" id="sres5" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series6">
-                    <span class="input-headline">R6</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit6" onchange="Series()" name="Sunit6" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres6" id="sres6" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series7">
-                    <span class="input-headline">R7</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit7" onchange="Series()" name="Sunit7" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres7" id="sres7" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series8">
-                    <span class="input-headline">R8</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit8" onchange="Series()" name="Sunit8" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres8" id="sres8" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series9">
-                    <span class="input-headline">R9</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit9" onchange="Series()" name="Sunit9" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres9" id="sres9" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series10">
-                    <span class="input-headline">R10</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit10" onchange="Series()" name="Sunit10" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="sres10" id="sres10" type="number">
-                </div>
-                  </div>
-
-                  <div class="buttons">
-                    <button type="button" class="dk-btn__primary addmore" href="#">Add Resistors</button>
-                    <button type="button" class="dk-btn__primary" disabled="disabled" href="#">
-                      Remove Resistor
-                    </button>
-                  </div>
-                </div>
-                <div class="srT">
-                  <span class="input-headline">Total Series Resistance</span>
-                  <div class="calculator-input bg-black">
-                    <select title="Ohm" id="SunitT" onchange="Series()" name="SunitT" class="input-dropdown">
-                      <option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e+3">kΩ
-                      <option title="Megaohm" value="1e+6">MΩ
-                    </select>
-                    <span class="input-answer">=</span>
-                    <input name="sresT" id="sresT" type="number" class="answer" readonly="">
-                            </div>
-                </div>
-              </div>
-            </div>
-
-            
-
-<script type="text/javascript">// Clear values when refresh
-$('.dk-container input[type=number]').val('');
-
-$(".calculator-col .buttons button").click(function () {
-    const container = $(this).closest(".calculator-col .inputs");
-    $(container).find("button").prop("disabled", false);
-    if ($(this).hasClass("addmore")) {
-        $(container).find(">div").filter(':hidden:first').addClass('active');
-        if ($(container).find(">div").filter(':hidden').length === 0) {
-            $(this).prop("disabled", true);
-        }
-    }
-    else {
-        const res = $(container).find(".active:last").removeClass('active');
-        $(res).find("input").val("");
-        if ($(res).hasClass("series")) {
-            Series();
-        }
-        else {
-            Parallel();
-        }
-        if ($(container).find('.active').length === 2) {
-            $(this).prop('disabled', true);
-        }
-    }
-});
-
-$(".type-selector").click(function () {
-    const selType = $(this).attr("id").replace("-selector", "");
-    $(".type-selector").removeClass('selected');
-    $(this).addClass('selected');
-    $("[data-section]").removeClass("active");
-    $("[data-section=" + selType + "]").addClass("active");
-});
+</div>
+</div>
+<div class="col-sm-4 col-xs-8">
+<div class="form-group has-warning">
+<label for="r2" style="font-size:50;" >Resistance</label><font face="Arial" size="7">  </font><input  id="a1"  class="intro"  style="position: absolute;   width:400; text-align
+:center;right: 160px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:130px;">&Omega;</label>
 
 
-var pr1Input = document.getElementById("pres1");
-var pr2Input = document.getElementById("pres2");
-var pr3Input = document.getElementById("pres3");
-var pr4Input = document.getElementById("pres4");
-var pr5Input = document.getElementById("pres5");
-var pr6Input = document.getElementById("pres6");
-var pr7Input = document.getElementById("pres7");
-var pr8Input = document.getElementById("pres8");
-var pr9Input = document.getElementById("pres9");
-var pr10Input = document.getElementById("pres10");
-
-var sr1Input = document.getElementById("sres1");
-var sr2Input = document.getElementById("sres2");
-var sr3Input = document.getElementById("sres3");
-var sr4Input = document.getElementById("sres4");
-var sr5Input = document.getElementById("sres5");
-var sr6Input = document.getElementById("sres6");
-var sr7Input = document.getElementById("sres7");
-var sr8Input = document.getElementById("sres8");
-var sr9Input = document.getElementById("sres9");
-var sr10Input = document.getElementById("sres10");
-
-function Parallel() {
-    var pR1 = 1 / (document.getElementById("pres1").value * document.getElementById("Punit1").value);
-    var pR2 = 1 / (document.getElementById("pres2").value * document.getElementById("Punit2").value);
-    var pR3 = 1 / (document.getElementById("pres3").value * document.getElementById("Punit3").value);
-    var pR4 = 1 / (document.getElementById("pres4").value * document.getElementById("Punit4").value);
-    var pR5 = 1 / (document.getElementById("pres5").value * document.getElementById("Punit5").value);
-    var pR6 = 1 / (document.getElementById("pres6").value * document.getElementById("Punit6").value);
-    var pR7 = 1 / (document.getElementById("pres7").value * document.getElementById("Punit7").value);
-    var pR8 = 1 / (document.getElementById("pres8").value * document.getElementById("Punit8").value);
-    var pR9 = 1 / (document.getElementById("pres9").value * document.getElementById("Punit9").value);
-    var pR10 = 1 / (document.getElementById("pres10").value * document.getElementById("Punit10").value);
-
-    if (document.getElementById("pres1").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / pR1);
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres2").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres3").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres4").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres5").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres6").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres7").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres8").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres9").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8 + pR9));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres10").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8 + pR9 + pR10));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-}
-
-function Series() {
-    var sR1 = 1 * (document.getElementById("sres1").value * document.getElementById("Sunit1").value);
-    var sR2 = 1 * (document.getElementById("sres2").value * document.getElementById("Sunit2").value);
-    var sR3 = 1 * (document.getElementById("sres3").value * document.getElementById("Sunit3").value);
-    var sR4 = 1 * (document.getElementById("sres4").value * document.getElementById("Sunit4").value);
-    var sR5 = 1 * (document.getElementById("sres5").value * document.getElementById("Sunit5").value);
-    var sR6 = 1 * (document.getElementById("sres6").value * document.getElementById("Sunit6").value);
-    var sR7 = 1 * (document.getElementById("sres7").value * document.getElementById("Sunit7").value);
-    var sR8 = 1 * (document.getElementById("sres8").value * document.getElementById("Sunit8").value);
-    var sR9 = 1 * (document.getElementById("sres9").value * document.getElementById("Sunit9").value);
-    var sR10 = 1 * (document.getElementById("sres10").value * document.getElementById("Sunit10").value);
-    var srT = document.getElementById("SunitT").value * (sR1 + sR2 + sR3 + sR4 + sR5 + sR6 + sR7 + sR8 + sR9 + sR10);
-    document.getElementById("sresT").value = parseFloat(srT.toFixed(10));
-}
-
-$('#sres1, #sres2, #sres3, #sres4, #sres5, #sres6, #sres7, #sres8, #sres9, #sres10').on('keypress', function (event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if (valid.includes(input)) {
-        event.preventDefault();
-    }
-});
-
-$('#pres1, #pres2, #pres3, #pres4, #pres5, #pres6, #pres7, #pres8, #pres9, #pres10').on('keypress', function (event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if (valid.includes(input)) {
-        event.preventDefault();
-    }
-});
-
-
-pr1Input.addEventListener("keyup", Parallel);
-pr2Input.addEventListener("keyup", Parallel);
-pr3Input.addEventListener("keyup", Parallel);
-pr4Input.addEventListener("keyup", Parallel);
-pr5Input.addEventListener("keyup", Parallel);
-pr6Input.addEventListener("keyup", Parallel);
-pr7Input.addEventListener("keyup", Parallel);
-pr8Input.addEventListener("keyup", Parallel);
-pr9Input.addEventListener("keyup", Parallel);
-pr10Input.addEventListener("keyup", Parallel);
-
-sr1Input.addEventListener("keyup", Series);
-sr2Input.addEventListener("keyup", Series);
-sr3Input.addEventListener("keyup", Series);
-sr4Input.addEventListener("keyup", Series);
-sr5Input.addEventListener("keyup", Series);
-sr6Input.addEventListener("keyup", Series);
-sr7Input.addEventListener("keyup", Series);
-sr8Input.addEventListener("keyup", Series);
-sr9Input.addEventListener("keyup", Series);
-sr10Input.addEventListener("keyup", Series);
-
-$('#Punit1, #Punit2, #Punit3, #Punit4, #Punit5, #Punit6, #Punit7, #Punit8, #Punit9, #Punit10, #PunitT').change(function () {
-    const title = $(this).find("option:selected").attr("title");
-    $(this).attr("title", title);
-});
-
-$('#Sunit1, #Sunit2, #Sunit3, #Sunit4, #Sunit5, #Sunit6, #Sunit7, #Sunit8, #Sunit9, #Sunit10, #SunitT').change(function () {
-    const title = $(this).find("option:selected").attr("title");
-    $(this).attr("title", title);
-});
-
-$(function () {
-    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function (event) {
-        event.preventDefault();
-        $this = $(this);
-    });
-
-    $('option').each(function (index) {
-        var text = $(this).text();
-        if (text == 'Ω') {
-            $(this).attr('title', 'ohms');
-        } else if (text == 'kΩ') {
-            $(this).attr('title', 'kiloohms');
-        } else if (text == 'MΩ') {
-            $(this).attr('title', 'megaohms');
-        }
-    });
-
-    // Custom modal
-    $('.modal-image').on('click', function () {
-        location.hash = '#modal';
-        $('body').addClass('overflow-hidden');
-        $('#imageModal').addClass('open-modal');
-        $('#the-img-modal').attr('src', $(this).attr('src'));
-        $('#caption').text(this.alt);
-    });
-
-    // Close the modal
-    $('.close-modal, #the-img-modal, #imageModal').on('click', function () {
-        history.replaceState({}, document.title, window.location.href.split('#')[0]);
-        $('body').removeClass('overflow-hidden');
-        $('#imageModal').removeClass('open-modal');
-
-        document.body.style.zoom = "100%";
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    var calcInputs = document.querySelectorAll('.calculator input');
-    for (var i = 0; i < calcInputs.length; i++) {
-        calcInputs[i].addEventListener("keypress", function (e) {
-            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
-                return;
-            } else {
-                e.preventDefault();
-            }
-        });
-    };
-});</script>
+</div>
+</div>
+<h1 style="font-size:50;"></h1>
+<script type="text/javascript">
+var _0x199d=["\x75\x73\x65\x20\x73\x74\x72\x69\x63\x74","\x68\x61\x73\x2D\x65\x72\x72\x6F\x72","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x64\x69\x76","\x63\x6C\x6F\x73\x65\x73\x74","\x64\x69\x73\x61\x62\x6C\x65\x64","\x61\x74\x74\x72","\x76\x61\x6C","\x69\x73\x4E\x75\x6D\x65\x72\x69\x63","\x61\x64\x64\x43\x6C\x61\x73\x73","","\x65\x61\x63\x68","\x23\x74\x6F\x6F\x6C\x2D\x66\x6F\x72\x6D\x20\x3A\x69\x6E\x70\x75\x74","\x6B\x65\x79\x75\x70","\x68\x61\x73\x2D\x73\x75\x63\x63\x65\x73\x73","\x68\x61\x73\x2D\x77\x61\x72\x6E\x69\x6E\x67","\x23\x61\x6E\x73\x77\x65\x72\x2D\x66\x69\x65\x6C\x64\x73\x20\x3A\x69\x6E\x70\x75\x74","\x23\x63\x61\x6C\x63\x75\x6C\x61\x74\x65","\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x23\x6E\x75\x6D","\x23\x72","\x74\x6F\x46\x69\x78\x65\x64","\x23\x61\x31","\x6F\x6E","\x65\x6D\x70\x74\x79","\x23\x6E\x75\x6D\x2D\x65\x72\x72\x6F\x72","\x23\x72\x65\x73\x69\x73\x74\x6F\x72\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x72\x6F\x77\x22\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x63\x6F\x6C\x2D\x73\x6D\x2D\x31\x32\x22\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x63\x6F\x6C\x2D\x73\x6D\x2D\x34\x22\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x6F\x72\x6D\x2D\x67\x72\x6F\x75\x70\x22\x3E\x3C\x6C\x61\x62\x65\x6C\x20\x66\x6F\x72\x3D\x22\x72","\x22\x3E\x52\x3C\x73\x75\x62\x3E","\x3C\x2F\x73\x75\x62\x3E\x3C\x2F\x6C\x61\x62\x65\x6C\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x63\x6F\x6C\x2D\x73\x6D\x2D\x34\x22\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x6F\x72\x6D\x2D\x67\x72\x6F\x75\x70\x20\x74\x65\x78\x74\x2D\x63\x65\x6E\x74\x65\x72\x22\x3E\x3C\x69\x6E\x70\x75\x74\x20\x74\x79\x70\x65\x3D\x22\x6E\x75\x6D\x62\x65\x72\x22\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x6F\x72\x6D\x2D\x63\x6F\x6E\x74\x72\x6F\x6C\x22\x20\x69\x64\x3D\x22\x72","\x22\x20\x70\x6C\x61\x63\x65\x68\x6F\x6C\x64\x65\x72\x3D\x22\x45\x6E\x74\x65\x72\x20\x52\x65\x73\x69\x73\x74\x6F\x72\x20","\x22\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x63\x6F\x6C\x2D\x73\x6D\x2D\x34\x22\x3E\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x6F\x72\x6D\x2D\x67\x72\x6F\x75\x70\x22\x3E\x28\u200E\u03A9\x29\x3C\x2F\x64\x69\x76\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x2F\x64\x69\x76\x3E\x3C\x2F\x64\x69\x76\x3E","\x61\x70\x70\x65\x6E\x64","\x62\x69\x6E\x64","\x23\x72\x65\x73\x69\x73\x74\x6F\x72\x2D\x63\x6F\x6E\x74\x61\x69\x6E\x65\x72\x20\x3A\x69\x6E\x70\x75\x74","\x6D\x61\x74\x63\x68\x48\x65\x69\x67\x68\x74","\x2E\x62\x6C\x6F\x63\x6B\x2D\x31","\x3C\x69\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x65\x78\x74\x2D\x64\x61\x6E\x67\x65\x72\x22\x3E\x49\x6E\x70\x75\x74\x20\x6E\x75\x6D\x62\x65\x72\x20\x6F\x6E\x6C\x79\x20\x61\x6E\x64\x20\x67\x72\x65\x61\x74\x65\x72\x20\x74\x68\x61\x6E\x20\x32\x2E\x3C\x2F\x69\x3E"];!function(_0x956bx1){_0x199d[0];function _0x956bx2(){_0x956bx1(_0x199d[12])[_0x199d[13]](function(){_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[2]](_0x199d[1]),_0x956bx3(),_0x956bx5[_0x199d[6]](_0x199d[5],!1),_0x956bx1[_0x199d[8]](_0x956bx1(this)[_0x199d[7]]())=== !1?(_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[9]](_0x199d[1]),_0x956bx5[_0x199d[6]](_0x199d[5],!1)):_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[2]](_0x199d[1]),_0x956bx4= 0,_0x956bx1(_0x199d[12])[_0x199d[11]](function(){_0x199d[10]!= _0x956bx1(this)[_0x199d[7]]()&& _0x956bx1[_0x199d[8]](_0x956bx1(this)[_0x199d[7]]())!== !1|| _0x956bx4++}),_0x956bx4> 0&& _0x956bx5[_0x199d[6]](_0x199d[5],!0)})}function _0x956bx3(){_0x956bx1(_0x199d[16])[_0x199d[11]](function(){_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[2]](_0x199d[14]),_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[9]](_0x199d[15]),_0x956bx1(this)[_0x199d[7]](_0x199d[10])})}var _0x956bx4,_0x956bx5=_0x956bx1(_0x199d[17]);_0x956bx1(_0x199d[12])[_0x199d[13]](function(){_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[2]](_0x199d[1]),_0x956bx3(),_0x956bx5[_0x199d[6]](_0x199d[5],!1),_0x956bx1[_0x199d[8]](_0x956bx1(this)[_0x199d[7]]())=== !1?(_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[9]](_0x199d[1]),_0x956bx5[_0x199d[6]](_0x199d[5],!1)):_0x956bx1(this)[_0x199d[4]](_0x199d[3])[_0x199d[2]](_0x199d[1]),_0x956bx4= 0,_0x956bx1(_0x199d[12])[_0x199d[11]](function(){_0x199d[10]!= _0x956bx1(this)[_0x199d[7]]()&& _0x956bx1[_0x199d[8]](_0x956bx1(this)[_0x199d[7]]())!== !1|| _0x956bx4++}),_0x956bx4> 0&& _0x956bx5[_0x199d[6]](_0x199d[5],!0)}),_0x956bx5[_0x199d[24]](_0x199d[18],function(_0x956bx2){_0x956bx2[_0x199d[19]]();var _0x956bx3,_0x956bx4,_0x956bx5,_0x956bx6,_0x956bx7=parseFloat(_0x956bx1(_0x199d[20])[_0x199d[7]]());for(_0x956bx6= 0,_0x956bx4= 1;_0x956bx7>= _0x956bx4;_0x956bx4++){_0x956bx5= 1/ parseFloat(_0x956bx1(_0x199d[21]+ _0x956bx4)[_0x199d[7]]()),_0x956bx6+= _0x956bx5};_0x956bx3= 1/ _0x956bx6,_0x956bx1(_0x199d[23])[_0x199d[7]](parseFloat(_0x956bx3)[_0x199d[22]](2))}),_0x956bx1(_0x199d[20])[_0x199d[24]](_0x199d[13],function(){var _0x956bx3=parseFloat(_0x956bx1(this)[_0x199d[7]]());if(_0x956bx1(_0x199d[26])[_0x199d[25]](),_0x956bx1(_0x199d[27])[_0x199d[25]](),_0x956bx3> 1){var _0x956bx4,_0x956bx6,_0x956bx7=_0x199d[10];for(_0x956bx4= 1;_0x956bx3>= _0x956bx4;_0x956bx4++){_0x956bx6= _0x199d[28]+ _0x956bx4+ _0x199d[29]+ _0x956bx4+ _0x199d[30]+ _0x956bx4+ _0x199d[31]+ _0x956bx4+ _0x199d[32],_0x956bx7+= _0x956bx6};_0x956bx1(_0x199d[27])[_0x199d[33]](_0x956bx7),_0x956bx1(_0x199d[35])[_0x199d[11]](function(){_0x956bx1(this)[_0x199d[34]](_0x199d[13],_0x956bx2)}),_0x956bx1(_0x199d[37])[_0x199d[36]]()}else {_0x956bx5[_0x199d[6]](_0x199d[5],!0),_0x956bx1(_0x199d[26])[_0x199d[33]](_0x199d[38])}})}(jQuery)
+    </script>
+</div>
+</div>
+<script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#tool_submit').on('click',function () {
+                            ga('send', 'event', 'calc-use', 'https://www.allaboutcircuits.com/tools/parallel-resistance-calculator', 'https://www.allaboutcircuits.com/tools/parallel-resistance-calculator');
+                        });
+                    });
+                </script>
