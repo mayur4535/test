@@ -357,8 +357,8 @@ border-radius: 24px !important;
 
 .dk-container .input-headline {
     display: block;
-    margin: 0 0 5px 0;
-    font-size: 13px;
+    margin: 5px 5px -70px 50px;
+    font-size: 70px;
     font-weight: bold;
     text-align: left;
 }
@@ -474,9 +474,10 @@ border-radius: 24px !important;
     outline:none;
     position:absolute;
 right:80;
-    
+    text-align:center;
     box-sizing:border-box;
     transition:.3s;
+   
     }
 
 
@@ -1148,27 +1149,68 @@ input[type=checkbox]{
                   </div>
 
                   <div class="buttons">
-                    <button type="button" class="dk-btn__primary addmore" href="#">Add Resistors</button>
-                    <button type="button" class="dk-btn__primary" disabled="disabled" href="#">
-                      Remove Resistor
-                    </button>
+
+
+<fieldset><legend>
+
+
+
+
+
+                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+ 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 40px 2px;
+  cursor: pointer;">+ Resistors</button>
+                    <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
+ 
+ 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;">
+                      - Resistor
+                    </button></legend></fieldset>
                   </div>
 
                 </div>
-                <div class="prT">
-                  <span class="input-headline">Total Parallel Resistance</span>
+                
+
+
+
+
+
+<fieldset><legend>
+
+<h3>Outputs</h3></legend>
+         
                   <div class="calculator-input bg-black">
-                    <select title="Ohm" id="PunitT" onchange="Parallel()" name="PunitT" class="input-dropdown">
+                    <select title="Ohm" id="PunitT" onchange="Parallel()" name="PunitT"  style="position:absolute; right:10;"class="input-dropdown">
                       <option title="Ohm" value="1" selected="selected">Ω
                       <option title="Kilohm" value="1e-3">kΩ
                       <option title="Megaohm" value="1e-6">MΩ
                     </select>
-                    <span class="input-answer">=</span>
+                    
                     <input name="presT" id="presT" type="number" class="answer" readonly="">
                             </div>
                 </div>
               </div>
 
+
+
+<div ="series////////////////////////////////////////////////////////////////////////////////////></div>
               <div class="series" id="series-section" data-section="series">
                 <h3 class="unit-title">Series Resistor</h3>
                 <div class="inputs">
@@ -1283,13 +1325,23 @@ input[type=checkbox]{
                 </div>
                   </div>
 
-                  <div class="buttons">
+                  
+
+
+
+<div class="buttons">
+
                     <button type="button" class="dk-btn__primary addmore" href="#">Add Resistors</button>
                     <button type="button" class="dk-btn__primary" disabled="disabled" href="#">
                       Remove Resistor
                     </button>
                   </div>
-                </div>
+                
+
+
+
+
+</div>
                 <div class="srT">
                   <span class="input-headline">Total Series Resistance</span>
                   <div class="calculator-input bg-black">
