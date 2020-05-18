@@ -1161,15 +1161,7 @@ input[type=checkbox]{
                       <input placeholder="Enter Resistor..." name="pres10" id="pres10" type="number">
                                 </div>
                   </div>
-
-                  <div class="buttons">
-
-
-
-
-
-
-<div class="gg">
+<div class="buttons"><div class="gg">
                     <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ Resistors</button>
                    
 
@@ -1180,17 +1172,15 @@ input[type=checkbox]{
 
 
 
-
-
-
-
-<fieldset><legend><div colspan="2" align="center" height="19">
+ <div class="prT">
+                  <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>
+                  <div class="calculator-input">
 
          
-                  <div class="calculator-input bg-black">
+                 
 
 <label for="r2" style="font-size:50;" >Output<font face="Arial" size="3"></font></label><input name="presT" id="presT" type="number" class="answer" readonly=""   style="position: absolute;   text-align
 :center;width:465; right: 145px;"class="form-control"  />
@@ -1218,8 +1208,8 @@ input[type=checkbox]{
 
 
 <div ="series////////////////////////////////////////////////////////////////////////////////////></div>
-              <div class="series" id="series-section" data-section="series">
-                <h3 class="unit-title">Series Resistor</h3>
+              <div class="series" id="series-section" data-section="series"><fieldset><legend>
+                <h3 class="unit-title">Series Resistor</h3></legend>
                 <div class="inputs">
                   <div class="series active" id="series1">
                     <span class="input-headline">R1</span>
@@ -1337,11 +1327,13 @@ input[type=checkbox]{
 
 
 <div class="buttons">
+<div class="gg">
+                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ Resistors</button>
+                   
 
-                    <button type="button" class="dk-btn__primary addmore" href="#">Add Resistors</button>
-                    <button type="button" class="dk-btn__primary" disabled="disabled" href="#">
-                      Remove Resistor
-                    </button>
+
+
+ <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- Resistor </button></div>
                   </div>
                 
 
@@ -1350,15 +1342,20 @@ input[type=checkbox]{
 
 </div>
                 <div class="srT">
-                  <span class="input-headline">Total Series Resistance</span>
-                  <div class="calculator-input bg-black">
-                    <select title="Ohm" id="SunitT" onchange="Series()" name="SunitT" class="input-dropdown">
-                      <option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e+3">kΩ
-                      <option title="Megaohm" value="1e+6">MΩ
+               <fieldset><legend><div colspan="2" align="center" height="19">
+
+
+<h3>Outputs</h3></div></legend>   
+                  <div class="calculator-input">
+                   <label for="r2" style="font-size:50; color:white;" >Output<font face="Arial" size="3"></font></label><input name="sresT" id="sresT" type="number" class="answer" readonly=""   style="position: absolute;   text-align
+:center;width:465; right: 145px;"class="form-control"  />
+
+
+<select title="Ohm" id="SunitT" onchange="Series()" name="SunitT" style="padding: 5px ; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:2px solid #aaa;">
+<option title="Ohm" value="1" selected="selected">Ω
+                      <option title="Kilohm" value="1e-3">kΩ
+                      <option title="Megaohm" value="1e-6">MΩ
                     </select>
-                    <span class="input-answer">=</span>
-                    <input name="sresT" id="sresT" type="number" class="answer" readonly="">
                             </div>
                 </div>
               </div>
