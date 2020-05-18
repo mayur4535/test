@@ -1,318 +1,100 @@
 
-<script>
-/* resistors.js, search standard resistor series for resistors best maching desired values and ratios.
-   This file is referenced by resistors.html. */
-
-// E12 and E24 are traditional series and not well defined mathematically
-var E12 = new Array(1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2);
-var E24 = new Array(1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1);
-var Es = new Array(1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1);		// Will hold selected resistor series
-var inputMultiplier = 1;	// Default is Ohm, multiplier 1
-var ratiotype = 0;			// Select 0: R1/R2, 1: R1/(R1+R2)	
-
-
-function pageLoaded()
-{
-  document.getElementById("series12").checked = true;	// Select E12 by default
-  serclick( 12 );
-  document.getElementById("Rres").checked = true;		// R1/R2
-  document.getElementById("recipCheck").checked = false;
+<script type="text/javascript">
+// 
+function roundNumber(num, dec) {
+	var result = Math.round( Math.round( num * Math.pow( 10, dec + 1 ) ) / Math.pow( 10, 1 ) ) / Math.pow(10,dec);
+	return result;
 }
 
-function serclick( ser )	// User selected series
-{
-//  Es = new Array();
-  if( ser == 12 )
-    Es = E12;
-  else if( ser == 24 )
-    Es = E24;
-  else	// Compute E48 or E96 series
-    for( i=0; i<ser; i++ )
-      Es[i] = (Math.pow( 10, i/ser )).toFixed( 2 );
+function parse(val, scale){
+	var l = parseFloat(val);
+
+	if(scale == "Pico") 	l /= 1000000000000;
+	if(scale == "Nano")		l /= 1000000000;
+	if(scale == "Micro")	l /= 1000000;
+	if(scale == "Mili")		l /= 1000;
+	
+	if(scale == "Kilo")		l *= 1000;
+	if(scale == "Mega")		l *= 1000000;
+	if(scale == "Giga")		l *= 1000000000;	
+	
+	return l;
 }
 
-function multclick( ml )	// User selected multiplier; 1, 1E3, or 1E6
-{
-  inputMultiplier = ml;
-}
+function compute_v(){
+	var r1 = parse($("#r1_v").val(), $("#r1Scale_v").val());
+	var r2 = parse($("#r2_v").val(), $("#r2Scale_v").val());
 
-function ratioclick( type )	// User selected ratio type
-{
-	ratiotype = type;
-	updateReciprocal();
-	updateEqResRatio();
-}
+	var vreg=0;
+	if($("#regulador_v").val() == "LM317"){
+		vreg = 1.25;
+	}else if($("#regulador_v").val() == "7805"){
+		vreg = 5;
+	}else if($("#regulador_v").val() == "7808"){
+		vreg = 8;
+	}else if($("#regulador_v").val() == "7812"){
+		vreg = 12;
+	}else if($("#regulador_v").val() == "7824"){
+		vreg = 24;
+	}
+	
+	var vout = vreg*(1+r2/r1);
 
-function updateEqResRatio()
-{
-	if( ratiotype == 0 )	// Resistor ratio
-		document.getElementById("equRratio").innerHTML = "";
-	else					// Voltage divider
-	{
-		var locrat = document.getElementById("Rratio").value;	// Desired ratio
-		if( document.getElementById("recipCheck").checked )		// Inverse?
-			locrat = 1.0 - locrat;								// Invert
-		document.getElementById("equRratio").innerHTML = "Search for equivalent resistor ratio: <span style='color:red'>" + (locrat / (1.0 - locrat)) + "</span>";
+	$("#vout_v").val(roundNumber(vout,3) );
+	
+	if(vout<1){
+		$("#vout_v").val(roundNumber(vout*1000,3) + " mV");
 	}
 }
 
-function updateReciprocal()
-{
-	if( document.getElementById("recipCheck").checked )
-	{
-		if( ratiotype == 0 )	// Resistor ratio
-			document.getElementById("reciprocal").innerHTML = (1.0/document.getElementById("Rratio").value).toPrecision(4);
-		else					// Voltage divider
-			document.getElementById("reciprocal").innerHTML = (1.0 - document.getElementById("Rratio").value).toPrecision(4);
+function compute_i(){
+	var r = parse($("#r_i").val(), $("#rScale_i").val());
+
+	var vreg=0;
+	if($("#regulador_i").val() == "LM317"){
+		vreg = 1.25;
+	}else if($("#regulador_i").val() == "7805"){
+		vreg = 5;
+	}else if($("#regulador_i").val() == "7808"){
+		vreg = 8;
+	}else if($("#regulador_i").val() == "7812"){
+		vreg = 12;
+	}else if($("#regulador_i").val() == "7824"){
+		vreg = 24;
 	}
-	else
-		document.getElementById("reciprocal").innerHTML = "";
+	
+	var iout = vreg/r;
+
+	$("#iout_i").val(roundNumber(iout,3) + " amps");
+	
+	if(iout<1){
+		$("#iout_i").val(roundNumber(iout*1000,3) );
+	}
+	
+	var pout = vreg*iout;
+
+	$("#pout_i").val(roundNumber(pout,3) + " watts");
+	
+	if(pout<1){
+		$("#pout_i").val(roundNumber(pout*1000,3) );
+	}	
+	
 }
-
-function reciprocalclick( checked )	// 1/Ratio or (1 - Ratio)
-{
-	updateReciprocal();
-	updateEqResRatio();
+document.onreadystatechange = function () {
+	if (document.readyState == "complete") {
+		$("#reguladorf_v input").keyup(compute_v);
+		$("#reguladorf_v select").change(compute_v);
+		compute_v();	
+		$("#reguladorf_i input").keyup(compute_i);
+		$("#reguladorf_i select").change(compute_i);
+		compute_i();	
+	}
 }
-
-function toEng( r )	// Reduce displayed value to Mohm or Kohm if possible
-{
-  if( r >= 1000000 )
-  {
-     r /= 1000000;
-     valstr = " M";
-  }
-  else if( r >= 1000 )
-  {
-    r /= 1000;
-    valstr = " K";
-  }
-  else
-    valstr = " ";
-  r = Math.round( 100*r ) / 100; // Eliminate ugly rounding errors in the algorithm
-  return r.toString() + valstr + String.fromCharCode( 937 );
-}
-
-function findFirstLower( res )	// Find first value < res in series
-{
-  if( res < 1 ) // Not less than one Ohm
-    res = 1;
-  var man = Math.log( res ) / Math.LN10; // Base 10 logarithm
-  var exp = Math.floor( man );  // Round down
-  man = Math.floor( (man - exp) * Es.length ); // Index into series
-  exp = Math.pow( 10, exp );
-  return new Array( man, exp ); // return index into series and multiplier
-}
-
-function findNextHigher( res )	// Find next higher value in series
-{
-  var ret = new Array( 2 );
-  if( res[0] < (Es.length - 1) ) // In same decade?
-  { // Yes
-    ret[0] = res[0] + 1; // Next index in series
-    ret[1] = res[1];  // Keep same multiplier
-  }
-  else
-  { // No, go to next decade
-    ret[0] = 0; // First index into next decade
-    ret[1] = res[1] * 10; // Next decade
-  }
-  return ret; // Return index into series and multiplier
-}
-
-function findBestMatch( res )	// Which produces less error, the low value or high value?
-{
-  var rlow = findFirstLower( res );
-  var rhigh = findNextHigher( rlow );
-
-  var errl = (Es[rlow[0]]*rlow[1] - res) / res;
-  var errh = (Es[rhigh[0]]*rhigh[1] - res) / res;
-  if( Math.abs( errh ) < Math.abs( errl ) )
-    return rhigh;
-  else
-    return rlow;
-}
-
-function findBestSer( res )	// Find a series combination with the least error compared to res
-{
-  var thisRA = findFirstLower( res/2 );	// First value for R1
-  var R1 = Es[thisRA[0]]*thisRA[1]; // Compute R1 resistance from index and multiplier
-  var bestErr = 1E9; var bestR1; var bestR2; var err;
-  do
-  {
-    R2A = findBestMatch( res - R1 ); // Find best matching R2
-    R2 = Es[R2A[0]]*R2A[1]; // Compute R2 resistance from index and multiplier
-    err = R1 + R2 - res;	// Compute resistance error of series combination
-    if( Math.abs( err ) < Math.abs( bestErr ) ) // Is the present combination the best yet?
-    {
-      bestR1 = R1;		// Yes, save R1 and R2 and their error
-      bestR2 = R2;
-      bestErr = err;
-    }
-    thisRA = findNextHigher( thisRA ); // Pick next higher R1
-    R1 = Es[thisRA[0]]*thisRA[1];
-  } while( R1 < res ); // Quit when R1 >= res
-  return new Array( bestR1, bestR2 ); // Return best series combination
-}
-
-function findBestPar( res )	// Find a parallel combination with the least error compared to res
-{
-  var thisRA = findFirstLower( res );	// First value for R1
-  var R1 = Es[thisRA[0]]*thisRA[1];
-  var bestErr = 1E9; var bestR1; var bestR2; var err;
-  do
-  {
-    if( R1 != res ) // Avoid dividing by zero
-    {
-      R2A = findBestMatch( 1/(1/res - 1/R1) ); // Compute ideal R2 resistance needed and find best match
-      R2 = Es[R2A[0]]*R2A[1]; // Compute R2 resistance from index and multiplier
-      if( R2 < 1E9 ) // Don't use values >= 1 GOhm
-      {
-        err = R1*R2/(R1 + R2) - res;	// Compute resistance error of parallel combination
-        if( Math.abs( err ) < Math.abs( bestErr ) ) // Is the present combination the best yet?
-        {
-          bestR1 = R1;		// Yes, save R1 and R2 and their error
-          bestR2 = R2;
-          bestErr = err;
-        }
-      }
-    }
-    thisRA = findNextHigher( thisRA ); // Pick next higher R1
-    R1 = Es[thisRA[0]]*thisRA[1];
-  } while( R1 <= 2*res ); // Quit when R1 > 2 times desired resistance 
-  return new Array( bestR1, bestR2 ); // Return best parallel combination
-}
-
-function round100A( R )
-{
-  R[0] = Math.round( 100*R[0] ) / 100;
-  R[1] = Math.round( 100*R[1] ) / 100;
-  return R;
-}
-
-function valCalc() // Find best matching single resistor, series, and parallel combination
-{
-  var dres = document.getElementById("Rvalue").value * inputMultiplier; // Desired resistance
-  var bestR = findBestMatch( dres );
-  bestR = Math.round( 100*Es[bestR[0]]*bestR[1] ) / 100;
-  var err = (bestR - dres) / dres;
-  document.getElementById("singleR").value = toEng( bestR );
-  document.getElementById("singErr").innerHTML = (100*err).toFixed( 2 ) + " %";
-
-  bestR = round100A( findBestSer( dres ) ); // Series
-  document.getElementById("ser1").value = toEng( bestR[0] );
-  document.getElementById("ser2").value = toEng( bestR[1] );
-  document.getElementById("serVal").value = toEng( bestR[0] + bestR[1] );
-  err = (bestR[0] + bestR[1] - dres) / dres;
-  document.getElementById("serErr").innerHTML = (100*err).toFixed( 2 ) + " %";
-
-  bestR = round100A( findBestPar( dres ) ); // Parallel
-  document.getElementById("par1").value = toEng( bestR[0] );
-  document.getElementById("par2").value = toEng( bestR[1] );
-  document.getElementById("parVal").value = toEng( bestR[0]*bestR[1]/(bestR[0] + bestR[1]) );
-  err = (bestR[0]*bestR[1]/(bestR[0] + bestR[1]) - dres) / dres;
-  document.getElementById("parErr").innerHTML = (100*err).toFixed( 2 ) + " %";
-}
-
-function ratioCalc() // Find best combination or resistors to realize desired ratio
-{
-  var dratio = document.getElementById("Rratio").value; // Desired ratio
-  if( document.getElementById("recipCheck").checked )	// Inverse checked?
-  {
-    if( document.getElementById("Rvolt").checked )
-    	dratio = 1.0 - dratio;
-    else
-    	dratio = 1.0/dratio;
-  }
-  if( document.getElementById("Rvolt").checked )		// Voltage divider selected?
-    dratio = dratio / (1.0 - dratio);					// Compute new resistor ratio
-  updateReciprocal();
-  updateEqResRatio();
-  // document.getElementById("debug").innerHTML = dratio;
-  var exp = Math.floor( Math.log( Math.sqrt( dratio*1E9 ) ) / Math.LN10 ); // Exponent center point of ratio
-  exp = Math.round( Math.pow( 10, exp ) );
-  var ratio; var err; var bestSingleErr = 1E9; var bestSerErr = 1E9; var bestParErr = 1E9; // Initialize with really bad errors
-  for( i in Es ) // For each value in series...
-  {
-    rNum = Math.round( Es[i]*exp ); // Try this resistor for numerator
-    rDen = rNum / dratio; // Denominator is ideally this to match numerator
-
-    /* Single resistor ratio */
-    rSingleA = findBestMatch( rDen ); // index and multiplier of best match
-    rSingle = Es[rSingleA[0]]*rSingleA[1]; // Compute resistance of best match
-    ratio = rNum / rSingle; // Actual ratio
-    err = ratio > dratio ? ratio / dratio : dratio / ratio; // Geometric distance
-    if( err < bestSingleErr ) // Is this the best one yet?
-    {
-      bestSingleErr = err; // Yes, save best error, numerator, and denominator
-      bestSingleRNum = rNum;
-      bestSingleRDen = rSingle;
-    }
-
-    /* Series resistor ratio */
-    rGroupA = findBestSer( rDen );
-    ratio = rNum / (rGroupA[0] + rGroupA[1]);
-    err = ratio > dratio ? ratio / dratio : dratio / ratio; // Geometric distance
-    if( err < bestSerErr )
-    {
-      bestSerErr = err;
-      bestSeriesRNum = rNum;
-      bestSeriesRDen1 = rGroupA[0];
-      bestSeriesRDen2 = rGroupA[1];
-    }
-
-    /* Parallel resistor ratio */
-    rGroupA = findBestPar( rDen );
-    ratio = rNum * (rGroupA[0] + rGroupA[1]) / (rGroupA[0] * rGroupA[1]);
-    err = ratio > dratio ? ratio / dratio : dratio / ratio; // Geometric distance
-    if( err < bestParErr )
-    {
-      bestParErr = err;
-      bestParRNum = rNum;
-      bestParRDen1 = rGroupA[0];
-      bestParRDen2 = rGroupA[1];
-    }
-  }
-  /* Output results */
-  bestSingleRNum = Math.round( 100*bestSingleRNum ) / 100;
-  bestSingleRDen = Math.round( 100*bestSingleRDen ) / 100;
-  document.getElementById("ratioSingle1").value = toEng( bestSingleRNum );
-  document.getElementById("ratioSingle2").value = toEng( bestSingleRDen );
-  ratio = bestSingleRNum / bestSingleRDen;
-  document.getElementById("ratioSingleVal").value = ratio.toPrecision(4);
-    if(dratio > 0)
-  document.getElementById("ratioSingleErr").innerHTML = (100*(bestSingleErr - 1)).toFixed( 2 ) + " %";
-  else
-  document.getElementById("ratioSingleErr").innerHTML = " "; 
-
-  bestSeriesRNum = Math.round( 100*bestSeriesRNum ) / 100;
-  bestSeriesRDen1 = Math.round( 100*bestSeriesRDen1) / 100;
-  bestSeriesRDen2 = Math.round( 100*bestSeriesRDen2) / 100;
-  document.getElementById("ratioSeries1").value = toEng( bestSeriesRNum );
-  document.getElementById("ratioSeries2").value = toEng( bestSeriesRDen1 );
-  document.getElementById("ratioSeries3").value = toEng( bestSeriesRDen2 );
-  ratio = bestSeriesRNum / (bestSeriesRDen1 + bestSeriesRDen2);
-  document.getElementById("ratioSerVal").value = ratio.toPrecision(4);
-    if(dratio > 0)
-  document.getElementById("ratioSerErr").innerHTML = (100*(bestSerErr - 1)).toFixed( 2 ) + " %";
-  else
-  document.getElementById("ratioSerErr").innerHTML = " "; 
-
-  bestParRNum = Math.round( 100*bestParRNum) / 100;
-  bestParRDen1 = Math.round( 100*bestParRDen1) / 100;
-  bestParRDen2 = Math.round( 100*bestParRDen2) / 100;
-  document.getElementById("ratioPar1").value = toEng( bestParRNum );
-  document.getElementById("ratioPar2").value = toEng( bestParRDen1 );
-  document.getElementById("ratioPar3").value = toEng( bestParRDen2 );
-  ratio = bestParRNum * (bestParRDen1 + bestParRDen2) / (bestParRDen1 * bestParRDen2);
-  document.getElementById("ratioParVal").value = ratio.toPrecision(4);
-  if(dratio > 0)
-  document.getElementById("ratioParErr").innerHTML = (100*(bestParErr - 1)).toFixed( 2 ) + " %";
-  else
-  document.getElementById("ratioParErr").innerHTML = " "; 
-    // document.getElementById("debug").innerHTML = rDen;
-}
+//
 </script>
+
+
+
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
@@ -332,19 +114,19 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 50px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
 }
 
 body { 
   background: ; 
 }
 .intro{
-     text-align:center;
-    font-size: 40px;
-    width:140;   
-    border:none;
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
     border-radius:4px;
-   
+    margin: 8px 0;
     outline:none;
     
     
@@ -363,50 +145,21 @@ body {
   border-radius: 50px 20px;}
 
 input[type=checkbox]{
-    width: 50px; 
-    height: 50px;
-    margin:0px 0px 10px 10px; 
+    width: 120px; 
+    height: 120px; 
    
   }
-
-
-
-input[type=radio]{
-    width: 50px; 
-    height: 50px;
-    margin:10px 10px 10px 10px; 
-   
-  }
-.gg {
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-   margin:10px 10px 10px 10px; }
-.ff{
-  align:center;
- border-radius: 25px;
-  border: 2px solid #73AD21;
-   margin:10px 10px 10px 10px; 
-}  
-.intro1{
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  .intro1:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-
 </style>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+
+
+
 
 
 <div id="borderimg">
@@ -416,106 +169,87 @@ input[type=radio]{
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
+<form action="" id="reguladorf_v">
+
+<label for="r2" style="font-size:55;" >R<sub>1</sub><font face="Arial" size="6"> </font></label><input type="number" id="r1_v" value="25" class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="r1Scale_v" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option></option>
+<option selected="selected">Kilo</option>
+<option>Mega</option>
+</select>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >R<sub>2</sub><font face="Arial" size="6"> </font></label><input type="number" id="r2_v"  value="25" class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="r2Scale_v" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option></option>
+<option selected="selected">Kilo</option>
+<option>Mega</option>
+</select>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >Select Regulator<font face="Arial" size="6"> </font></label>
+<select class="form-control" id="regulador_v" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
+<option selected="selected">LM317</option>
+<option>7805</option>
+<option>7808</option>
+<option>7812</option>
+<option>7824</option>
+</select>
+</fieldset>
+
+<fieldset><legend><div colspan="2" align="center" height="19">
+
+ 
+<h3>Outputs</h3></div></legend>
+<label for="r2" style="font-size:55;" >V<sub>Out</sub></label><font face="Arial" size="7">  </font><input  id="vout_v"  class="intro"    style="position: absolute;   width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
+
+</form>
+</fieldset>
 
 
 
-<div class="indent" onload(serclick(24);)>
-<form action=""> 
 
-<div class="gg" align="center">
-<input type="radio" name="series" id="series12" value="12" onclick="serclick( this.value ); valCalc();"> E12 </font>
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>current Input</h3></div></legend>
 
-
- <input type="radio" checked="checked" name="series" id="series24" value="24" onclick="serclick( this.value ); valCalc();"> E24 </font>
- <input type="radio" name="series" id="series48" value="48" onclick="serclick( this.value ); valCalc();"> E48 </font>
-
-<input type="radio" name="series" id="series96" value="96" onclick="serclick( this.value ); valCalc();"> E96 </font><br></div>
-</form></div>
+<form action="" id="reguladorf_i">
 
 
+<label for="r2" style="font-size:55;" >R<sub>1</sub><font face="Arial" size="6"> </font></label><input type="number" id="r_i"  value="50" class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 165px;"class="form-control"  />
+<select class="form-control" id="rScale_i" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:148px;border-radius:4px; border:2px solid #aaa;">
+<option selected="selected"></option>
+<option>Kilo</option>
+<option>Mega</option>
+</select>
 
-<div class="gg">
-<div class="indent" align="left"><form action="">
-
-
- <input type="radio" checked="checked" name="ratios" id="Rres" value="0" onclick="ratioclick( this.value ); ratioCalc();"> Resistor ratio 
-<font size="6">R1/R2</font><br> 
-<input type="radio" name="ratios" id="Rvolt" value="1" onclick="ratioclick( this.value ); ratioCalc();">
- Voltage divider <font size="6">R1 / (R1+R2)</font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font size="6"> valid range: 0.0 < ratio < 1.0</font><br></form></div> </div>
-
-<label for="r2" style="font-size:55;" >
- Desired ratio<font face="Arial" size="6"> </font></label><input type="text" id="Rratio" size="10" value="0.345" oninput="ratioCalc()"  class="intro1"  style="position: absolute;   text-align
-:center;width:274; right: 105px;"class="form-control"  />
-
-<h1 style="font-size:80;"></h1>
-<div style="position:absolute; right:105;">
- <input type="checkbox" id="recipCheck" onClick="reciprocalclick( this.checked ); ratioCalc();"> <label for="r2" style="font-size:55;" >
-Inverse<font face="Arial" size="6"></label><br><span style="color:red; font-size:50;" id="reciprocal"></span></div>
-
-<h1 style="font-size:270;"></h1>
-
-
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >Select Regulator<font face="Arial" size="6"> </font></label>
+<select class="form-control" id="regulador_i" style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
+<option selected="selected">LM317</option>
+<option>7805</option>
+<option>7808</option>
+<option>7812</option>
+<option>7824</option>
+</select>
 </fieldset>
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h1 style="font-size:70;">Output</h1></div></legend>
 
 
+<h3>Outputs</h3></div></legend>
 
-<span id="equRratio"></span> <br><div class="indent">
-
-
-
-<div class="gg" align="center"><div class="gg">
-<font size="50">Single</font></div> <input type="text" class="intro"id="ratioSingle1" size="8" class="resistor-output">
-<font size="50">&#247;</font>
-<input type="text" id="ratioSingle2" class="intro" size="8" class="resistor-output">
+<label for="r2" style="font-size:55;" >I<sub>Out</sub></label><font face="Arial" size="7">  </font><input  id="iout_i"   class="intro"  style="position: absolute; width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mA</label>
+<h1 style="font-size:30;"></h1>
+<label for="r2" style="font-size:55;" >P<sub>r</sub></label><font face="Arial" size="7">  </font><input  id="pout_i"   class="intro"  style="position: absolute; width:300; text-align
+:center;right: 140px;"class="form-control" type="text" /><label align="middle"style="padding: 5px ;  position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">mW</label>
 
 
-
-<font size="50">=</font> 
-<input type="text" id="ratioSingleVal" class="intro"  size="8" class="resistor-output">
-
-
-
-
-
-</div>
-
-<font  style="position:absolute;right:150;color:red;">ERROR</font><span  style="position:absolute;right:30;color:red;" id="ratioSingleErr"></span>
-<br>
-
-
-<div class="gg" align="center"><div class="gg">
-<font size="50">Series</font></div>
- <input type="text" id="ratioSeries1" size="8" class="intro">
-<font size="50">&#247; (</font>
-<input type="text" id="ratioSeries2" size="8" class="intro">
-<font size="50">+</font>
-<input type="text" id="ratioSeries3" size="8" class="intro">
-<font size="50">) =</font>
-<input type="text" id="ratioSerVal" size="8" class="intro">
-
-</div>
-<font  style="position:absolute;right:150;color:red;">ERROR</font><span  style="position:absolute;right:30;color:red;" id="ratioSerErr"></span>
-<br>
-<div class="gg" align="center"><div class="gg">
-<font size="50">Parallel</font> </div>
-<input type="text" id="ratioPar1" size="8" class="intro">
-
-<font size="50">&#247; (</font> 
-
-<input type="text" id="ratioPar2" size="8" class="intro">
-
-<font size="50">//</font> 
-<input type="text" id="ratioPar3" size="8" class="intro">
-<font size="50">) =</font> 
-<input type="text" id="ratioParVal" size="8" class="intro"></div>
-<font  style="position:absolute;right:150;color:red;">ERROR</font><span  style="position:absolute;right:30;color:red;" id="ratioParErr"></span>
-<h1 style="font-size:80;"></h1>
+</form>
 </fieldset>
 
 
-
-
+ 
