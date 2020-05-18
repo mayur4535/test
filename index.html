@@ -1,1624 +1,344 @@
 
-        <style type="text/css">body * .flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+<script>
+/* resistors.js, search standard resistor series for resistors best maching desired values and ratios.
+   This file is referenced by resistors.html. */
 
-}
-    .dk-container ul {
-        list-style: none;
-        padding: 0;
-    }
+// E12 and E24 are traditional series and not well defined mathematically
+var E12 = new Array(1.0, 1.2, 1.5, 1.8, 2.2, 2.7, 3.3, 3.9, 4.7, 5.6, 6.8, 8.2);
+var E24 = new Array(1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1);
+var Es = new Array(1.0, 1.1, 1.2, 1.3, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.7, 3.0, 3.3, 3.6, 3.9, 4.3, 4.7, 5.1, 5.6, 6.2, 6.8, 7.5, 8.2, 9.1);		// Will hold selected resistor series
+var inputMultiplier = 1;	// Default is Ohm, multiplier 1
+var ratiotype = 0;			// Select 0: R1/R2, 1: R1/(R1+R2)	
 
-    .dk-container .header-wrap {
-        padding: 0 0 10px;
-        border-bottom: solid 1px #ccc;
-    }
 
-/* include when related-products-mod is included in ejs
-    .dk-container .content {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 3fr 2em 1fr;
-        -ms-grid-rows: 1fr;
-        grid-template-columns: 3fr 1fr;
-        grid-gap: 2em;
-    }
-
-        .dk-container .content .calculator-mod {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-            -ms-grid-column-span: 1;
-        }
-
-        .dk-container .content .related-products-mod {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-*/
-.dk-breadcrumb ol {
-    color: #222;
-    list-style: none;
-    padding-left: 0;
-    font-size: 12px;
-    line-height: .8;
+function pageLoaded()
+{
+  document.getElementById("series12").checked = true;	// Select E12 by default
+  serclick( 12 );
+  document.getElementById("Rres").checked = true;		// R1/R2
+  document.getElementById("recipCheck").checked = false;
 }
 
-    .dk-breadcrumb ol li {
-        color: #222;
-        display: -webkit-inline-flex;
-        display: inline-flex;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
-        margin-right: 8px;
-        margin-top: 0;
-        font-weight: 700;
-        line-height: 2;
-    }
-
-        .dk-breadcrumb ol li:last-child {
-            font-weight: 400;
-        }
-
-        .dk-breadcrumb ol li a {
-            color: #222;
-            text-decoration: none;
-        }
-
-        .dk-breadcrumb ol li:after {
-            font-family: dk,icomoon;
-            content: " \F105";
-            white-space: pre;
-            font-size: 1em;
-        }
-
-        .dk-breadcrumb ol li:last-child:after {
-            content: "";
-        }
-
-.dk-container .header-wrap .dk-icon-border {
-    height: 41px;
-    max-width: 43px;
-    margin: 0 9px 0 0;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #CC0000;
-}
-.rtl .dk-container .header-wrap .dk-icon-border {
-    height: 41px;
-    max-width: 43px;
-    margin: 0 0 0 9px;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #CC0000;
+function serclick( ser )	// User selected series
+{
+//  Es = new Array();
+  if( ser == 12 )
+    Es = E12;
+  else if( ser == 24 )
+    Es = E24;
+  else	// Compute E48 or E96 series
+    for( i=0; i<ser; i++ )
+      Es[i] = (Math.pow( 10, i/ser )).toFixed( 2 );
 }
 
-.dk-container .header-wrap .dk-icon {
-    margin-right: 1em;
-    height: 50px;
-    width: 80px;
+function multclick( ml )	// User selected multiplier; 1, 1E3, or 1E6
+{
+  inputMultiplier = ml;
 }
 
-@media screen and (max-width: 767px) {
-    .dk-container .header-wrap .headline-title {
-        display: inline;
-    }
+function ratioclick( type )	// User selected ratio type
+{
+	ratiotype = type;
+	updateReciprocal();
+	updateEqResRatio();
 }
 
-@media (max-width: 991px) {
-    .dk-container .header-wrap .pull-right {
-        clear: both;
-        float: none !important;
-        padding: 12px 0 0;
-    }
+function updateEqResRatio()
+{
+	if( ratiotype == 0 )	// Resistor ratio
+		document.getElementById("equRratio").innerHTML = "";
+	else					// Voltage divider
+	{
+		var locrat = document.getElementById("Rratio").value;	// Desired ratio
+		if( document.getElementById("recipCheck").checked )		// Inverse?
+			locrat = 1.0 - locrat;								// Invert
+		document.getElementById("equRratio").innerHTML = "Search for equivalent resistor ratio: <span style='color:red'>" + (locrat / (1.0 - locrat)) + "</span>";
+	}
 }
 
-.dk-container .header-wrap .btn-actions {
-    margin: 0;
-    font-size: 0;
+function updateReciprocal()
+{
+	if( document.getElementById("recipCheck").checked )
+	{
+		if( ratiotype == 0 )	// Resistor ratio
+			document.getElementById("reciprocal").innerHTML = (1.0/document.getElementById("Rratio").value).toPrecision(4);
+		else					// Voltage divider
+			document.getElementById("reciprocal").innerHTML = (1.0 - document.getElementById("Rratio").value).toPrecision(4);
+	}
+	else
+		document.getElementById("reciprocal").innerHTML = "";
 }
 
-    .dk-container .header-wrap .btn-actions li {
-        display: inline-block;
-        padding: 0 5px;
-        font-size: 14px;
-    }
-
-@media (max-width: 991px) {
-    .dk-container .header-wrap .btn-actions li:first-child {
-        padding-left: 0;
-    }
+function reciprocalclick( checked )	// 1/Ratio or (1 - Ratio)
+{
+	updateReciprocal();
+	updateEqResRatio();
 }
 
-@media (max-width: 767px) {
-    .dk-container .header-wrap .btn-actions li {
-        padding-bottom: 20px;
-    }
-}
-
-.dk-container .header-wrap .btn-actions li a {
-    display: inline-block;
-    padding: 10px 20px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    border-radius: 30px;
-    border: 1px solid #ccc;
-}
-
-    .dk-container .header-wrap .btn-actions li a:hover {
-        border: 1px solid #cc2500;
-    }
-
-.dk-container .header-wrap .btn-actions li .fa {
-    padding: 0 2px 0 0;
-    color: #cc2500;
-}
-
-@media (max-width: 767px) {
-    .dk-container .header-wrap .pull-left, .dk-container .header-wrap .pull-right {
-        float: none !important;
-    }
-}
-
-.dk-container .single-dk-calc-cont {
-    padding: 20px 0 0;
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont {
-        display: table;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .single-dk-calc-cont {
-        padding: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap {
-        display: table-cell;
-        vertical-align: top;
-    }
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 1.5em 2em;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: -webkit-min-content;
-        -ms-grid-rows: min-content;
-        grid-template-rows: min-content;
-        grid-gap: 2em;
-    }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-}
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        padding: 1.5em 1em;
-        margin: 0;
-        border: 0;
-        border-radius: 0;
-    }
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-output {
-    padding: 15px;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
-    position: absolute;
-    z-index: 5;
-    right: 0;
-    padding: 10px 0 10px 7px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    width: 45px;
-    border-radius: 0 4px 4px 0;
-    border: 1px solid #CCCCCC;
-    font-size: 13px;
-}
-.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .bg-black .input-dropdown {
-border-radius: 24px !important;
-}
-
-.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
-    position: absolute;
-    z-index: 5;
-    left: 0;
-    right: auto;
-    padding: 10px 7px 10px 4px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    width: 45px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #CCCCCC;
-    font-size: 13px;
-}
-
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown:focus {
-        outline: 0;
-    }
-
-
-.dk-container .related-tools-wrap {
-    padding: 30px 0 0;
-}
-
-    .dk-container .related-tools-wrap h2 {
-        margin: 0;
-        padding: 0 0 10px;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .dk-container .related-tools-wrap ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
-        grid-template-columns: repeat(4, 1fr);
-        -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: 2em;
-    }
-
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 5;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 7;
-        }
-
-
-
-.dk-container .related-tools-wrap ul li a {
-    display: block;
-    padding: 15px;
-    color: #222;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-    .dk-container .related-tools-wrap ul li a .dkc-related_img {
-        max-height: 45px;
-    }
-
-    .dk-container .related-tools-wrap ul li a:hover, .dk-container .related-tools-wrap ul li a:focus {
-        text-decoration: none;
-        border: 2px solid #cc2500;
-    }
-
-    .dk-container .related-tools-wrap ul li a:hover,
-    .dk-container .related-tools-wrap ul li a:focus {
-        text-decoration: none;
-        border: 2px solid #cc2500;
-    }
-
-.dk-container .related-tools-wrap ul li span {
-    display: block;
-    padding: 10px 0 0;
-    margin-top: auto;
-}
-
-.dk-container .input-headline {
-    display: block;
-    margin: 5px 5px -70px 50px;
-    font-size: 70px;
-    font-weight: bold;
-    text-align: left;
-}
-.rtl .dk-container .input-headline {
-    display: block;
-    margin: 0 0 5px 0;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: right;
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .input-headline {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        -ms-grid-rows: 1fr 2em 1fr;
-        -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-    .dk-container .related-tools-wrap ul {
-        -ms-grid-columns: 1fr 2em 1fr;
-        -ms-grid-rows: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 3;
-        }
-}
-
-@media (max-width: 450px) {
-    .dk-container .related-tools-wrap ul {
-        -ms-grid-columns: 1fr;
-        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr;
-        grid-template-columns: 1fr;
-    }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 5;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 7;
-            -ms-grid-column: 1;
-        }
-}
-
-.dk-container .inputs .calculator-input {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 45px;
-    grid-template-columns: 1fr 45px;
-    -ms-grid-rows: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'input dd';
-    margin-bottom: 0px;
-}
-  .input original{}
-
-    .dk-container .inputs .calculator-input input {
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        grid-area: input;
-        width:400;   
-    height:80; 
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: px 0;
-    outline:none;
-    position:absolute;
-right:80;
-    text-align:center;
-    box-sizing:border-box;
-    transition:.3s;
-   
-    }
-
-
-
-
-
-
-
-
-    .rtl .dk-container .inputs .calculator-input input {
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        grid-area: input;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        border: 1px solid #ddd;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        width: 100%;
-        min-width: 10ch;
-        -webkit-appearance: textfield;
-        appearance: textfield;
-        border-radius: 0 4px 4px 0;
-        border-right: solid 1px #ddd;
-        border-left: none;
-    }
-    .dk-container .inputs .calculator-input .input-dropdown::-ms-expand {
-        display: none;
-    }
-
-    .dk-container .inputs .calculator-input .input-dropdown:focus {
-        outline: 0;
-    }
-     .dropdownori{}
-
-
-    .dk-container .inputs .calculator-input .input-label, .dk-container .calculator-input .input-dropdown {
-        -ms-grid-row: 1;
-        -ms-grid-column: 2;
-        grid-area: dd;
-        width:150;    
-    font-size: 58px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 0px -70px;
-    outline:none;
-  
-    
-    box-sizing:border-box;
-    transition:.3s;
-    }
-
-    .dk-container .inputs .calculator-input .input-dropdown {
-       
-        background-position: right 110px center;
-        background-repeat: no-repeat;
-        background-size: 1;
-        background-origin: content-box;
-        padding-left: 0.7em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
-    .rtl .dk-container .inputs .calculator-input .input-dropdown {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
-        background-position: left 1px center;
-        background-repeat: no-repeat;
-        background-size: 1.25ex;
-        background-origin: content-box;
-        padding-left: 0.5em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
-
-.dk-container .calculator-input {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-
-
-
-
-
-
-
-}
-
-    .dk-container .calculator-input .input-label {
-        position: absolute;
-        z-index: 5;
-        right: 0;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        width: 45px;
-        border-radius: 0 3px 3px 0;
-        background-color: #F2F1F6;
-        border: 1px solid #CCCCCC;
-        text-align: center;
-        font-size: 13px;
-    }
-
-    .dk-container .calculator-input .input-answer {
-        left: 15px;
-        right: auto;
-        border-radius: 4px 0 0 4px;
-        position: absolute;
-        height: 40px;
-        padding: 12px 8px 2px 8px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: #fff;
-    }
-    .rtl .dk-container .calculator-input .input-answer {
-        right: 15px;
-        left: auto;
-        border-radius: 4px 0 0 4px;
-        position: absolute;
-        height: 40px;
-        padding: 12px 8px 2px 8px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: #fff;
-    }
-
-    .dk-container .calculator-input input[type='number'] {
-        -moz-appearance: textfield;
-    }
-
-    .dk-container .calculator-input input {
-        -webkit-appearance: none;
-        border: 1px solid #CCCCCC;
-        border-radius: 3px;
-        padding: 0px 5px 0px 5px;
-        
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        margin-bottom: 15px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 80px;
-        color: #333333;
-font-size:60;
-    }
-
-        .dk-container .calculator-input input::-webkit-input-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input::-moz-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input:-ms-input-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input:-moz-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-    .dk-container .calculator-input.bg-black .input-label {
-        color: #FFF;
-        border: 0;
-        background: none;
-    }
-        .result{}
-
-    .dk-container .calculator-input.bg-black input {
-         width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    position:absolute;
-    right:400;
-    box-sizing:border-box;
-    transition:.3s;
-    }
-
-        .dk-container .calculator-input.bg-black input::-webkit-input-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input::-moz-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input:-ms-input-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input:-moz-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-
-/*! CSS Used from: http://localhost:1337/public/css/conversion-calculator-parallel-and-series-resistor.css */
-.dk-container .single-headline-desc .other-calc-button {
-    margin: 35px 0 0;
-    padding: 10px 29px;
-    font-size: 13px;
-    border-radius: 0px;
-    border: 1px solid #CCC;
-    background: #FFF;
-    color: #333;
-    display: inline-block;
-    text-decoration: none;
-}
-
-    .dk-container .single-headline-desc .other-calc-button .fa {
-        padding-left: 5px;
-    }
-
-@media (max-width: 767px) {
-    .dk-container .single-headline-desc .other-calc-button {
-        max-width: 100%;
-        padding: 10px;
-    }
-}
-
-.dk-container .single-headline-desc .other-calc-button:hover {
-    border: 1px solid #cc2500;
-}
-
-.dk-container .single-dk-calc-cont .inner-box .calc-type {
-    display: inline-flex;
-    list-style: none;
-    margin: 0;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid ;
-    background: lightgreen;
-    width: 100%; height:80;
-}  
-
-    .dk-container .single-dk-calc-cont .inner-box .calc-type li {
-        padding: 0 0 0 9px;
-        margin: 0;
-        width: calc(98%/2);
-    }
-
-        .dk-container .single-dk-calc-cont .inner-box .calc-type li a {
-            cursor: pointer;
-            border: 2px solid #CCC;
-            color: #ccc;
-            padding: 20px;
-            display: block;
-            background: lightyellow;
-            text-align: center;
-            
-            border-radius: 10px;
-            text-decoration: none;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            font-size: 13px;
-            
-            
-        }
-
-            .dk-container .single-dk-calc-cont .inner-box .calc-type li a.selected {
-                border: 2px solid black !important;
-                color: #333;
-            }
-
-
-
-.dk-container .single-dk-calc-cont .inner-box [data-section],
-.dk-container .single-dk-calc-cont .inner-box .inputs > div {
-    display: none;
-}
-
-    .dk-container .single-dk-calc-cont .inner-box [data-section].active,
-    .dk-container .single-dk-calc-cont .inner-box .inputs > div.active {
-        display: block;
-    }
-
-.dk-container .single-dk-calc-cont .inner-box .buttons {
-    display: inline-flex !important;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-    .dk-container .single-dk-calc-cont .inner-box .buttons button {
-    }
-
-        .dk-container .single-dk-calc-cont .inner-box .buttons button.disabled {
-            cursor: default;
-            color: #eee;
-            background-color: #ccc;
-        }
-
-.dk-container .single-dk-calc-cont .inner-box .answer {
-    margin: 0;
-}
-
-.dk-container .single-dk-calc-cont .inner-box .res-img {
-    position: relative;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #EEE;
-    background: #FFF;
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background: #f2f1f6;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-}
-
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula .formula-title {
-        margin: 0 0 20px;
-        padding: 0 0 4px;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        border-bottom: 1px solid #ccc;
-    }
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
-        margin: 30px 0 20px;
-    }
-}
-
-
-.dk-container .calculator-input.bg-black select {
-    margin: 0 18px 0 0;
-    color: #FFF;
-    border: 0 !important;
-    background-color: #333 !important;
-}
-
-.modal-image {
-    cursor: pointer;
-}
-
-.overflow-hidden {
-    overflow: hidden !important;
-}
-
-.custom-modal {
-    display: none;
-    overflow: auto;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: 100px 20px;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-    .custom-modal.open-modal {
-        display: block;
-    }
-
-    .custom-modal .the-img-modal {
-        cursor: pointer;
-        margin: auto;
-        display: block;
-        max-width: 700px;
-    }
-
-@media (max-width: 700px) {
-    .custom-modal .the-img-modal {
-        width: 100%;
-    }
-}
-
-.custom-modal #caption {
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 10px 0;
-    color: #ccc;
-    text-align: center;
-}
-
-.custom-modal .the-img-modal, .custom-modal #caption {
-    -webkit-animation-name: zoom;
-    animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-duration: 0.6s;
-}
-
-.custom-modal .close-modal {
-    cursor: pointer;
-    position: absolute;
-    top: 25px;
-    right: 65px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #FFF;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-}
-
-@media (max-width: 767px) {
-    .custom-modal .close-modal {
-        right: 23px;
-    }
-}
-
-.custom-modal .close-modal:hover, .custom-modal .close-modal:focus {
-    color: #BE0003;
-}
-
-.pdf-icon {
-    background-image: url("../img/pdf-icon.png");
-    background-size: cover;
-    width: 17px;
-    background-repeat: no-repeat;
-    height: 18px;
-    vertical-align: top;
-    display: inline-block;
-}
-</style>
-<style>
-#borderimg { 
-  border: 10px solid transparent;
-  padding: 10px;
-  width: 100%;
-  hight: 100%;
-  border-image-source: url();  
-  border-image-slice: 30;
-}
-
-body {
-  display: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
-}
-
-body { 
-  background: ; 
-}
-.intro{
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
+function toEng( r )	// Reduce displayed value to Mohm or Kohm if possible
+{
+  if( r >= 1000000 )
+  {
+     r /= 1000000;
+     valstr = " M";
   }
-  
-  .intro:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
+  else if( r >= 1000 )
+  {
+    r /= 1000;
+    valstr = " K";
   }
+  else
+    valstr = " ";
+  r = Math.round( 100*r ) / 100; // Eliminate ugly rounding errors in the algorithm
+  return r.toString() + valstr + String.fromCharCode( 937 );
+}
 
-.ids{
-     border: 2px solid red;
-  padding: 10px;
-  border-radius: 50px 20px;}
+function findFirstLower( res )	// Find first value < res in series
+{
+  if( res < 1 ) // Not less than one Ohm
+    res = 1;
+  var man = Math.log( res ) / Math.LN10; // Base 10 logarithm
+  var exp = Math.floor( man );  // Round down
+  man = Math.floor( (man - exp) * Es.length ); // Index into series
+  exp = Math.pow( 10, exp );
+  return new Array( man, exp ); // return index into series and multiplier
+}
 
-input[type=checkbox]{
-    width: 120px; 
-    height: 120px; 
-   
+function findNextHigher( res )	// Find next higher value in series
+{
+  var ret = new Array( 2 );
+  if( res[0] < (Es.length - 1) ) // In same decade?
+  { // Yes
+    ret[0] = res[0] + 1; // Next index in series
+    ret[1] = res[1];  // Keep same multiplier
   }
-.gg{
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 20px;
-  margin: 60px 0px 0px 120px;
- 
- 
+  else
+  { // No, go to next decade
+    ret[0] = 0; // First index into next decade
+    ret[1] = res[1] * 10; // Next decade
+  }
+  return ret; // Return index into series and multiplier
 }
 
-
-</style>       
-
-
-    
-
-   
-  
-
-
-   
-
-
-   
-
-
-   
-            
-
-
-   
-
-
-   
-
-
-    
-                                          
-                    
-
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">     
-    
-        
-    <div class="dk-container">
-  
- 
-
-      
-      <div class="single-dk-calc-cont">
-        
-          <div class="inner-box">
-            <div class="calculator-col col-md-6">
-              <ul class="calc-type">
-                <li>
-                  <a class="type-selector selected" style="font-size:30;"id="parallel-selector"><b>Parallel Resistor</b></a>
-                </li>
-                <li>
-                  <a class="type-selector" style="font-size:30;"id="series-selector"><b>Series Resistor</b></a>
-                </li>
-              </ul>
-
-
-
-
-
-              <div id="parallel-section" class="parallel active" data-section="parallel">
-
-
-
-
-
-
-<fieldset><legend>
-
-
-                <h3 class="unit-title">Parallel Resistor</h3></legend>
-                
-
-
-
-<div class="inputs">
-                  <div class="parallel active" id="parallel1">
-                    <span class="input-headline">R<sub>1</sub></span>
-                    <div class="calculator-input">
-
-
-                      <select id="Punit1" title="Ohm" onchange="Parallel()" name="Punit1" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres1" id="pres1" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel active" id="parallel2">
-                    <span class="input-headline">R<sub>2</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit2" onchange="Parallel()" name="Punit2" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres2" id="pres2" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel3">
-                    <span class="input-headline">R<sub>3</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit3" onchange="Parallel()" name="Punit3" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres3" id="pres3" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel4">
-                    <span class="input-headline">R<sub>4</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit4" onchange="Parallel()" name="Punit4" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="Enter Resistor..." name="pres4" id="pres4" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel5">
-                    <span class="input-headline">R<sub>5</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit5" onchange="Parallel()" name="Punit5" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres5" id="pres5" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel6">
-                    <span class="input-headline">R<sub>6</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit6" onchange="Parallel()" name="Punit6" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres6" id="pres6" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel7">
-                    <span class="input-headline">R<sub>7</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit7" onchange="Parallel()" name="Punit7" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres7" id="pres7" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel8">
-                    <span class="input-headline">R<sub>8</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit8" onchange="Parallel()" name="Punit8" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres8" id="pres8" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel9">
-                    <span class="input-headline">R<sub>9</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit9" onchange="Parallel()" name="Punit9" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres9" id="pres9" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel10">
-                    <span class="input-headline">R<sub>10</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit10" onchange="Parallel()" name="Punit10" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres10" id="pres10" type="number">
-                                </div>
-                  </div>
-<div class="buttons"><div class="gg">
-                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ Resistor</button>
-                   
-
-
-
- <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- Resistor </button></div>   </div> </div>
-                
-
-
-
- <div class="prT">
-                  <fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>
-                  <div class="calculator-input">
-
-         
-                 
-
-<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="presT" id="presT" type="number" class="answer" readonly=""   style="position: absolute;  border:2px solid #aaa;
-    border-radius:4px; text-align
-:center;width:465; right: 145px;"class="form-control"  />
-
-
-<select title="Ohm" id="PunitT" onchange="Parallel()" name="PunitT" style="padding: 5px ; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:2px solid #aaa;">
-<option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e-3">kΩ
-                      <option title="Megaohm" value="1e-6">MΩ
-                    </select>
-
-
-                   
-                      
-                    
-                    
-                          
-
-
-
-  </div>
-                </div>
-              </div>
-
-
-
-<div ="series////////////////////////////////////////////////////////////////////////////////////></div>
-              <div class="series" id="series-section" data-section="series"><fieldset><legend>
-                <h3 class="unit-title">Series Resistor</h3></legend>
-                <div class="inputs">
-                  <div class="series active" id="series1">
-                    <span class="input-headline">R<sub>1</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit1" onchange="Series()" name="Sunit1" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres1" id="sres1" type="number">
-                                </div>
-                  </div>
-                  <div class="series active" id="series2">
-                    <span class="input-headline">R<sub>2</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit2" onchange="Series()" name="Sunit2" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres2" id="sres2" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series3">
-                    <span class="input-headline">R<sub>3</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit3" onchange="Series()" name="Sunit3" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres3" id="sres3" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series4">
-                    <span class="input-headline">R<sub>4</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit4" onchange="Series()" name="Sunit4" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres4" id="sres4" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series5">
-                    <span class="input-headline">R<sub>5</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit5" onchange="Series()" name="Sunit5" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres5" id="sres5" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series6">
-                    <span class="input-headline">R<sub>6</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit6" onchange="Series()" name="Sunit6" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres6" id="sres6" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series7">
-                    <span class="input-headline">R<sub>7</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit7" onchange="Series()" name="Sunit7" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres7" id="sres7" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series8">
-                    <span class="input-headline">R<sub>8</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit8" onchange="Series()" name="Sunit8" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres8" id="sres8" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series9">
-                    <span class="input-headline">R<sub>9</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit9" onchange="Series()" name="Sunit9" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres9" id="sres9" type="number">
-                                </div>
-                  </div>
-                  <div class="series" id="series10">
-                    <span class="input-headline">R<sub>10</sub></span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Sunit10" onchange="Series()" name="Sunit10" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="sres10" id="sres10" type="number">
-                </div>
-                  </div>
-
-                  
-
-
-
-<div class="buttons">
-<div class="gg">
-                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ Resistor</button>
-                   
-
-
-
- <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- Resistor </button></div>
-                  </div>
-                
-
-
-
-
-</div>
-                <div class="srT">
-               <fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>   
-                  <div class="calculator-input">
-                   <label for="r2" style="font-size:50; color:white;" >Output<font face="Arial" size="3"></font></label><input name="sresT" id="sresT" type="number" class="answer" readonly=""   style="position: absolute;   text-align
-:center; border:2px solid #aaa;
-    border-radius:4px;width:465; right: 145px;"class="form-control"  />
-
-
-<select title="Ohm" id="SunitT" onchange="Series()" name="SunitT" style="padding: 5px ; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:2px solid #aaa;">
-<option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e-3">kΩ
-                      <option title="Megaohm" value="1e-6">MΩ
-                    </select>
-                            </div>
-                </div>
-              </div>
-            </div>
-
-            
-                  
-               
-                  
-
-
-                  
-            
-                  
-
-
-                
-
-              
-             
-
-
-    
-       
-
-
-
-<script type="text/javascript"  src="//www.digikey.com/-/media/Designer/EnavGDPR/JS/consent.js?la=en-US&amp;ts=6989ad49-2321-48fc-8c92-7598c16dfd50"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Header/ENav%20Pieces/Search%20Bar/Default/Javascript/enavsearchbar.js?la=en-US&amp;ts=04d6ec72-d217-4a20-848f-51b4c09e9284"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Resources/js/comcn-highlights.js?la=en-US&amp;ts=4c61ee47-a52b-4ad7-92b7-84f27d578c7c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/marketoformsminified.js?la=en-US&amp;ts=e62ed6eb-bae2-45f7-8430-3d56ea78307f"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Misc/MktoEmailSignup/Javascript/mktoemail.js?la=en-US&amp;ts=b0c32eba-df6f-47f5-b988-35f1fa5532d5"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/egain.js?la=en-US&amp;ts=63453230-376d-4106-8daa-cee31f588952"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/oneTag.js?la=en-US&amp;ts=c7fc7b16-2a23-4498-833d-86395a4b531c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/jquery1101min.js?ts=72608b7b-9de9-44de-8633-9e1f286fc613"></script><script type="text/javascript">// Clear values when refresh
-$('.dk-container input[type=number]').val('');
-
-$(".calculator-col .buttons button").click(function () {
-    const container = $(this).closest(".calculator-col .inputs");
-    $(container).find("button").prop("disabled", false);
-    if ($(this).hasClass("addmore")) {
-        $(container).find(">div").filter(':hidden:first').addClass('active');
-        if ($(container).find(">div").filter(':hidden').length === 0) {
-            $(this).prop("disabled", true);
-        }
-    }
-    else {
-        const res = $(container).find(".active:last").removeClass('active');
-        $(res).find("input").val("");
-        if ($(res).hasClass("series")) {
-            Series();
-        }
-        else {
-            Parallel();
-        }
-        if ($(container).find('.active').length === 2) {
-            $(this).prop('disabled', true);
-        }
-    }
-});
-
-$(".type-selector").click(function () {
-    const selType = $(this).attr("id").replace("-selector", "");
-    $(".type-selector").removeClass('selected');
-    $(this).addClass('selected');
-    $("[data-section]").removeClass("active");
-    $("[data-section=" + selType + "]").addClass("active");
-});
-
-
-var pr1Input = document.getElementById("pres1");
-var pr2Input = document.getElementById("pres2");
-var pr3Input = document.getElementById("pres3");
-var pr4Input = document.getElementById("pres4");
-var pr5Input = document.getElementById("pres5");
-var pr6Input = document.getElementById("pres6");
-var pr7Input = document.getElementById("pres7");
-var pr8Input = document.getElementById("pres8");
-var pr9Input = document.getElementById("pres9");
-var pr10Input = document.getElementById("pres10");
-
-var sr1Input = document.getElementById("sres1");
-var sr2Input = document.getElementById("sres2");
-var sr3Input = document.getElementById("sres3");
-var sr4Input = document.getElementById("sres4");
-var sr5Input = document.getElementById("sres5");
-var sr6Input = document.getElementById("sres6");
-var sr7Input = document.getElementById("sres7");
-var sr8Input = document.getElementById("sres8");
-var sr9Input = document.getElementById("sres9");
-var sr10Input = document.getElementById("sres10");
-
-function Parallel() {
-    var pR1 = 1 / (document.getElementById("pres1").value * document.getElementById("Punit1").value);
-    var pR2 = 1 / (document.getElementById("pres2").value * document.getElementById("Punit2").value);
-    var pR3 = 1 / (document.getElementById("pres3").value * document.getElementById("Punit3").value);
-    var pR4 = 1 / (document.getElementById("pres4").value * document.getElementById("Punit4").value);
-    var pR5 = 1 / (document.getElementById("pres5").value * document.getElementById("Punit5").value);
-    var pR6 = 1 / (document.getElementById("pres6").value * document.getElementById("Punit6").value);
-    var pR7 = 1 / (document.getElementById("pres7").value * document.getElementById("Punit7").value);
-    var pR8 = 1 / (document.getElementById("pres8").value * document.getElementById("Punit8").value);
-    var pR9 = 1 / (document.getElementById("pres9").value * document.getElementById("Punit9").value);
-    var pR10 = 1 / (document.getElementById("pres10").value * document.getElementById("Punit10").value);
-
-    if (document.getElementById("pres1").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / pR1);
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres2").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres3").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres4").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres5").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres6").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres7").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres8").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres9").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8 + pR9));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres10").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8 + pR9 + pR10));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
+function findBestMatch( res )	// Which produces less error, the low value or high value?
+{
+  var rlow = findFirstLower( res );
+  var rhigh = findNextHigher( rlow );
+
+  var errl = (Es[rlow[0]]*rlow[1] - res) / res;
+  var errh = (Es[rhigh[0]]*rhigh[1] - res) / res;
+  if( Math.abs( errh ) < Math.abs( errl ) )
+    return rhigh;
+  else
+    return rlow;
 }
 
-function Series() {
-    var sR1 = 1 * (document.getElementById("sres1").value * document.getElementById("Sunit1").value);
-    var sR2 = 1 * (document.getElementById("sres2").value * document.getElementById("Sunit2").value);
-    var sR3 = 1 * (document.getElementById("sres3").value * document.getElementById("Sunit3").value);
-    var sR4 = 1 * (document.getElementById("sres4").value * document.getElementById("Sunit4").value);
-    var sR5 = 1 * (document.getElementById("sres5").value * document.getElementById("Sunit5").value);
-    var sR6 = 1 * (document.getElementById("sres6").value * document.getElementById("Sunit6").value);
-    var sR7 = 1 * (document.getElementById("sres7").value * document.getElementById("Sunit7").value);
-    var sR8 = 1 * (document.getElementById("sres8").value * document.getElementById("Sunit8").value);
-    var sR9 = 1 * (document.getElementById("sres9").value * document.getElementById("Sunit9").value);
-    var sR10 = 1 * (document.getElementById("sres10").value * document.getElementById("Sunit10").value);
-    var srT = document.getElementById("SunitT").value * (sR1 + sR2 + sR3 + sR4 + sR5 + sR6 + sR7 + sR8 + sR9 + sR10);
-    document.getElementById("sresT").value = parseFloat(srT.toFixed(10));
+function findBestSer( res )	// Find a series combination with the least error compared to res
+{
+  var thisRA = findFirstLower( res/2 );	// First value for R1
+  var R1 = Es[thisRA[0]]*thisRA[1]; // Compute R1 resistance from index and multiplier
+  var bestErr = 1E9; var bestR1; var bestR2; var err;
+  do
+  {
+    R2A = findBestMatch( res - R1 ); // Find best matching R2
+    R2 = Es[R2A[0]]*R2A[1]; // Compute R2 resistance from index and multiplier
+    err = R1 + R2 - res;	// Compute resistance error of series combination
+    if( Math.abs( err ) < Math.abs( bestErr ) ) // Is the present combination the best yet?
+    {
+      bestR1 = R1;		// Yes, save R1 and R2 and their error
+      bestR2 = R2;
+      bestErr = err;
+    }
+    thisRA = findNextHigher( thisRA ); // Pick next higher R1
+    R1 = Es[thisRA[0]]*thisRA[1];
+  } while( R1 < res ); // Quit when R1 >= res
+  return new Array( bestR1, bestR2 ); // Return best series combination
 }
 
-$('#sres1, #sres2, #sres3, #sres4, #sres5, #sres6, #sres7, #sres8, #sres9, #sres10').on('keypress', function (event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if (valid.includes(input)) {
-        event.preventDefault();
-    }
-});
-
-$('#pres1, #pres2, #pres3, #pres4, #pres5, #pres6, #pres7, #pres8, #pres9, #pres10').on('keypress', function (event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if (valid.includes(input)) {
-        event.preventDefault();
-    }
-});
-
-
-pr1Input.addEventListener("keyup", Parallel);
-pr2Input.addEventListener("keyup", Parallel);
-pr3Input.addEventListener("keyup", Parallel);
-pr4Input.addEventListener("keyup", Parallel);
-pr5Input.addEventListener("keyup", Parallel);
-pr6Input.addEventListener("keyup", Parallel);
-pr7Input.addEventListener("keyup", Parallel);
-pr8Input.addEventListener("keyup", Parallel);
-pr9Input.addEventListener("keyup", Parallel);
-pr10Input.addEventListener("keyup", Parallel);
-
-sr1Input.addEventListener("keyup", Series);
-sr2Input.addEventListener("keyup", Series);
-sr3Input.addEventListener("keyup", Series);
-sr4Input.addEventListener("keyup", Series);
-sr5Input.addEventListener("keyup", Series);
-sr6Input.addEventListener("keyup", Series);
-sr7Input.addEventListener("keyup", Series);
-sr8Input.addEventListener("keyup", Series);
-sr9Input.addEventListener("keyup", Series);
-sr10Input.addEventListener("keyup", Series);
-
-$('#Punit1, #Punit2, #Punit3, #Punit4, #Punit5, #Punit6, #Punit7, #Punit8, #Punit9, #Punit10, #PunitT').change(function () {
-    const title = $(this).find("option:selected").attr("title");
-    $(this).attr("title", title);
-});
-
-$('#Sunit1, #Sunit2, #Sunit3, #Sunit4, #Sunit5, #Sunit6, #Sunit7, #Sunit8, #Sunit9, #Sunit10, #SunitT').change(function () {
-    const title = $(this).find("option:selected").attr("title");
-    $(this).attr("title", title);
-});
-
-$(function () {
-    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function (event) {
-        event.preventDefault();
-        $this = $(this);
-    });
-
-    $('option').each(function (index) {
-        var text = $(this).text();
-        if (text == 'Ω') {
-            $(this).attr('title', 'ohms');
-        } else if (text == 'kΩ') {
-            $(this).attr('title', 'kiloohms');
-        } else if (text == 'MΩ') {
-            $(this).attr('title', 'megaohms');
+function findBestPar( res )	// Find a parallel combination with the least error compared to res
+{
+  var thisRA = findFirstLower( res );	// First value for R1
+  var R1 = Es[thisRA[0]]*thisRA[1];
+  var bestErr = 1E9; var bestR1; var bestR2; var err;
+  do
+  {
+    if( R1 != res ) // Avoid dividing by zero
+    {
+      R2A = findBestMatch( 1/(1/res - 1/R1) ); // Compute ideal R2 resistance needed and find best match
+      R2 = Es[R2A[0]]*R2A[1]; // Compute R2 resistance from index and multiplier
+      if( R2 < 1E9 ) // Don't use values >= 1 GOhm
+      {
+        err = R1*R2/(R1 + R2) - res;	// Compute resistance error of parallel combination
+        if( Math.abs( err ) < Math.abs( bestErr ) ) // Is the present combination the best yet?
+        {
+          bestR1 = R1;		// Yes, save R1 and R2 and their error
+          bestR2 = R2;
+          bestErr = err;
         }
-    });
+      }
+    }
+    thisRA = findNextHigher( thisRA ); // Pick next higher R1
+    R1 = Es[thisRA[0]]*thisRA[1];
+  } while( R1 <= 2*res ); // Quit when R1 > 2 times desired resistance 
+  return new Array( bestR1, bestR2 ); // Return best parallel combination
+}
 
-    // Custom modal
-    $('.modal-image').on('click', function () {
-        location.hash = '#modal';
-        $('body').addClass('overflow-hidden');
-        $('#imageModal').addClass('open-modal');
-        $('#the-img-modal').attr('src', $(this).attr('src'));
-        $('#caption').text(this.alt);
-    });
+function round100A( R )
+{
+  R[0] = Math.round( 100*R[0] ) / 100;
+  R[1] = Math.round( 100*R[1] ) / 100;
+  return R;
+}
 
-    // Close the modal
-    $('.close-modal, #the-img-modal, #imageModal').on('click', function () {
-        history.replaceState({}, document.title, window.location.href.split('#')[0]);
-        $('body').removeClass('overflow-hidden');
-        $('#imageModal').removeClass('open-modal');
+function valCalc() // Find best matching single resistor, series, and parallel combination
+{
+  var dres = document.getElementById("Rvalue").value * inputMultiplier; // Desired resistance
+  var bestR = findBestMatch( dres );
+  bestR = Math.round( 100*Es[bestR[0]]*bestR[1] ) / 100;
+  var err = (bestR - dres) / dres;
+  document.getElementById("singleR").value = toEng( bestR );
+  document.getElementById("singErr").innerHTML = (100*err).toFixed( 2 ) + " %";
 
-        document.body.style.zoom = "100%";
-    });
-});
+  bestR = round100A( findBestSer( dres ) ); // Series
+  document.getElementById("ser1").value = toEng( bestR[0] );
+  document.getElementById("ser2").value = toEng( bestR[1] );
+  document.getElementById("serVal").value = toEng( bestR[0] + bestR[1] );
+  err = (bestR[0] + bestR[1] - dres) / dres;
+  document.getElementById("serErr").innerHTML = (100*err).toFixed( 2 ) + " %";
 
-document.addEventListener("DOMContentLoaded", function () {
-    var calcInputs = document.querySelectorAll('.calculator input');
-    for (var i = 0; i < calcInputs.length; i++) {
-        calcInputs[i].addEventListener("keypress", function (e) {
-            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
-                return;
-            } else {
-                e.preventDefault();
-            }
-        });
-    };
-});</script>
+  bestR = round100A( findBestPar( dres ) ); // Parallel
+  document.getElementById("par1").value = toEng( bestR[0] );
+  document.getElementById("par2").value = toEng( bestR[1] );
+  document.getElementById("parVal").value = toEng( bestR[0]*bestR[1]/(bestR[0] + bestR[1]) );
+  err = (bestR[0]*bestR[1]/(bestR[0] + bestR[1]) - dres) / dres;
+  document.getElementById("parErr").innerHTML = (100*err).toFixed( 2 ) + " %";
+}
+
+function ratioCalc() // Find best combination or resistors to realize desired ratio
+{
+  var dratio = document.getElementById("Rratio").value; // Desired ratio
+  if( document.getElementById("recipCheck").checked )	// Inverse checked?
+  {
+    if( document.getElementById("Rvolt").checked )
+    	dratio = 1.0 - dratio;
+    else
+    	dratio = 1.0/dratio;
+  }
+  if( document.getElementById("Rvolt").checked )		// Voltage divider selected?
+    dratio = dratio / (1.0 - dratio);					// Compute new resistor ratio
+  updateReciprocal();
+  updateEqResRatio();
+  // document.getElementById("debug").innerHTML = dratio;
+  var exp = Math.floor( Math.log( Math.sqrt( dratio*1E9 ) ) / Math.LN10 ); // Exponent center point of ratio
+  exp = Math.round( Math.pow( 10, exp ) );
+  var ratio; var err; var bestSingleErr = 1E9; var bestSerErr = 1E9; var bestParErr = 1E9; // Initialize with really bad errors
+  for( i in Es ) // For each value in series...
+  {
+    rNum = Math.round( Es[i]*exp ); // Try this resistor for numerator
+    rDen = rNum / dratio; // Denominator is ideally this to match numerator
+
+    /* Single resistor ratio */
+    rSingleA = findBestMatch( rDen ); // index and multiplier of best match
+    rSingle = Es[rSingleA[0]]*rSingleA[1]; // Compute resistance of best match
+    ratio = rNum / rSingle; // Actual ratio
+    err = ratio > dratio ? ratio / dratio : dratio / ratio; // Geometric distance
+    if( err < bestSingleErr ) // Is this the best one yet?
+    {
+      bestSingleErr = err; // Yes, save best error, numerator, and denominator
+      bestSingleRNum = rNum;
+      bestSingleRDen = rSingle;
+    }
+
+    /* Series resistor ratio */
+    rGroupA = findBestSer( rDen );
+    ratio = rNum / (rGroupA[0] + rGroupA[1]);
+    err = ratio > dratio ? ratio / dratio : dratio / ratio; // Geometric distance
+    if( err < bestSerErr )
+    {
+      bestSerErr = err;
+      bestSeriesRNum = rNum;
+      bestSeriesRDen1 = rGroupA[0];
+      bestSeriesRDen2 = rGroupA[1];
+    }
+
+    /* Parallel resistor ratio */
+    rGroupA = findBestPar( rDen );
+    ratio = rNum * (rGroupA[0] + rGroupA[1]) / (rGroupA[0] * rGroupA[1]);
+    err = ratio > dratio ? ratio / dratio : dratio / ratio; // Geometric distance
+    if( err < bestParErr )
+    {
+      bestParErr = err;
+      bestParRNum = rNum;
+      bestParRDen1 = rGroupA[0];
+      bestParRDen2 = rGroupA[1];
+    }
+  }
+  /* Output results */
+  bestSingleRNum = Math.round( 100*bestSingleRNum ) / 100;
+  bestSingleRDen = Math.round( 100*bestSingleRDen ) / 100;
+  document.getElementById("ratioSingle1").value = toEng( bestSingleRNum );
+  document.getElementById("ratioSingle2").value = toEng( bestSingleRDen );
+  ratio = bestSingleRNum / bestSingleRDen;
+  document.getElementById("ratioSingleVal").value = ratio.toPrecision(4);
+    if(dratio > 0)
+  document.getElementById("ratioSingleErr").innerHTML = (100*(bestSingleErr - 1)).toFixed( 2 ) + " %";
+  else
+  document.getElementById("ratioSingleErr").innerHTML = " "; 
+
+  bestSeriesRNum = Math.round( 100*bestSeriesRNum ) / 100;
+  bestSeriesRDen1 = Math.round( 100*bestSeriesRDen1) / 100;
+  bestSeriesRDen2 = Math.round( 100*bestSeriesRDen2) / 100;
+  document.getElementById("ratioSeries1").value = toEng( bestSeriesRNum );
+  document.getElementById("ratioSeries2").value = toEng( bestSeriesRDen1 );
+  document.getElementById("ratioSeries3").value = toEng( bestSeriesRDen2 );
+  ratio = bestSeriesRNum / (bestSeriesRDen1 + bestSeriesRDen2);
+  document.getElementById("ratioSerVal").value = ratio.toPrecision(4);
+    if(dratio > 0)
+  document.getElementById("ratioSerErr").innerHTML = (100*(bestSerErr - 1)).toFixed( 2 ) + " %";
+  else
+  document.getElementById("ratioSerErr").innerHTML = " "; 
+
+  bestParRNum = Math.round( 100*bestParRNum) / 100;
+  bestParRDen1 = Math.round( 100*bestParRDen1) / 100;
+  bestParRDen2 = Math.round( 100*bestParRDen2) / 100;
+  document.getElementById("ratioPar1").value = toEng( bestParRNum );
+  document.getElementById("ratioPar2").value = toEng( bestParRDen1 );
+  document.getElementById("ratioPar3").value = toEng( bestParRDen2 );
+  ratio = bestParRNum * (bestParRDen1 + bestParRDen2) / (bestParRDen1 * bestParRDen2);
+  document.getElementById("ratioParVal").value = ratio.toPrecision(4);
+  if(dratio > 0)
+  document.getElementById("ratioParErr").innerHTML = (100*(bestParErr - 1)).toFixed( 2 ) + " %";
+  else
+  document.getElementById("ratioParErr").innerHTML = " "; 
+    // document.getElementById("debug").innerHTML = rDen;
+}
+</script>
+
+
+
+
+
+
+
+
+<div class="indent" onload(serclick(24);)>
+<form action=""> 
+<input type="radio" name="series" id="series12" value="12" onclick="serclick( this.value ); valCalc();"> E12 </font><br>
+ <input type="radio" checked="checked" name="series" id="series24" value="24" onclick="serclick( this.value ); valCalc();"> E24 </font><br>
+ <input type="radio" name="series" id="series48" value="48" onclick="serclick( this.value ); valCalc();"> E48 </font><br> 
+
+<input type="radio" name="series" id="series96" value="96" onclick="serclick( this.value ); valCalc();"> E96 </font><br>
+</form></div>
+
+<div class="indent"><form action="">
+ <input type="radio" checked="checked" name="ratios" id="Rres" value="0" onclick="ratioclick( this.value ); ratioCalc();"> Resistor ratio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="-1">R1/R2</font><br> 
+<input type="radio" name="ratios" id="Rvolt" value="1" onclick="ratioclick( this.value ); ratioCalc();">
+ Voltage divider &nbsp;&nbsp;&nbsp;&nbsp;<font size="-1">R1 / (R1+R2)&nbsp;&nbsp;</font><font size="-3"> valid range: 0.0 < ratio < 1.0</font><br></form></div> <br>
+
+
+ Desired ratio: <input type="text" id="Rratio" size="10" value="0.345" oninput="ratioCalc()" class="resistor-input"><input type="checkbox" id="recipCheck" onClick="reciprocalclick( this.checked ); ratioCalc();">Inverse <span class="smallout" id="reciprocal"></span>
+
+
+
+<span id="equRratio"></span> <br><div class="indent"><table><tr><td>Single:</td><td><input type="text" id="ratioSingle1" size="8" class="resistor-output"></td><td>&#247;</td><td><input type="text" id="ratioSingle2" size="8" class="resistor-output"></td><td></td><td></td><td> =</td><td><input type="text" id="ratioSingleVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioSingleErr"></div></td></tr><tr><td>Series:</td><td><input type="text" id="ratioSeries1" size="8" class="resistor-output"></td><td> &#247; (</td><td><input type="text" id="ratioSeries2" size="8" class="resistor-output"></td><td> +</td><td><input type="text" id="ratioSeries3" size="8" class="resistor-output"></td><td>) =</td><td><input type="text" id="ratioSerVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioSerErr"></div></td></tr><tr><td>Parallel:</td><td><input type="text" id="ratioPar1" size="8" class="resistor-output"></td><td>&#247; (</td><td><input type="text" id="ratioPar2" size="8" class="resistor-output"></td><td>//</td><td><input type="text" id="ratioPar3" size="8" class="resistor-output"></td><td>) =</td><td><input type="text" id="ratioParVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioParErr"></div></td></tr></table> <br></div>
