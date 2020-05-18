@@ -342,7 +342,7 @@ body {
     width:130px;    
     font-size: 40px;
        
-    border:2px solid #aaa;
+    border:none;
     border-radius:4px;
    
     outline:none;
@@ -440,26 +440,34 @@ Inverse<font face="Arial" size="6"></label><br><span style="color:red; font-size
 </div>
 </fieldset>
 
-<fieldset><legend><div colspan="2" align="center" height="19">
+<fieldset><legend>
 
-
-<h3>Outputs</h3></div></legend>
+<h3>Outputs</h3></legend>
 
 
 
 
 <span id="equRratio"></span> <br><div class="indent">
 
-<font size="50">Single</font> <input type="text" class="intro"id="ratioSingle1" size="8" class="resistor-output">
+
+
+<div class="gg" align="center"><div class="gg">
+<font size="50">Single</font></div> <input type="text" class="intro"id="ratioSingle1" size="8" class="resistor-output">
 <font size="50">&#247;</font>
 <input type="text" id="ratioSingle2" class="intro" size="8" class="resistor-output">
 
-<font size="50">&#247;</font>
-<input type="text"  class="intro" size="8" value="dummy"class="resistor-output">
-<font size="50">=</font>
-<input type="text" id="ratioSingleVal" class="intro"  size="8" class="resistor-output">
 
-error <div class="smallout" id="ratioSingleErr"></div>
+
+<font size="50">=</font> 
+<input type="text" id="ratioSingleVal" class="intro"  size="8" class="resistor-output">
+<font  style="position:absolute;right:150;color:red;">ERROR</font><span  style="position:absolute;right:30;color:red;" id="ratioSingleErr"></span>
+
+
+
+
+</div>
+
+
 <br>
 <font size="50">Series</font> <input type="text" id="ratioSeries1" size="8" class="intro">
 <font size="50">&#247; (</font>
@@ -469,7 +477,7 @@ error <div class="smallout" id="ratioSingleErr"></div>
 <font size="50">) =</font>
 <input type="text" id="ratioSerVal" size="8" class="intro">
 
-error <div class="smallout" id="ratioSerErr"></div>
+error <span class="smallout" id="ratioSerErr"></span>
 
 <br>
 
