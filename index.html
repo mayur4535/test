@@ -314,31 +314,143 @@ function ratioCalc() // Find best combination or resistors to realize desired ra
 }
 </script>
 
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<style>
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
+}
+
+body {
+  display: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body {
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+}
+
+body { 
+  background: ; 
+}
+.intro{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  .intro:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+.ids{
+     border: 2px solid red;
+  padding: 10px;
+  border-radius: 50px 20px;}
+
+input[type=checkbox]{
+    width: 50px; 
+    height: 50px;
+    margin:0px 0px 10px 10px; 
+   
+  }
 
 
 
+input[type=radio]{
+    width: 50px; 
+    height: 50px;
+    margin:10px 10px 10px 10px; 
+   
+  }
+.gg {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+   margin:10px 10px 10px 10px; }
+.ff{
+  align:center;
+ border-radius: 25px;
+  border: 2px solid #73AD21;
+   margin:10px 10px 10px 10px; 
+}  
+
+
+</style>
+
+
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
+
+
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Input</h3></div></legend>
 
 
 
 
 <div class="indent" onload(serclick(24);)>
 <form action=""> 
-<input type="radio" name="series" id="series12" value="12" onclick="serclick( this.value ); valCalc();"> E12 </font><br>
- <input type="radio" checked="checked" name="series" id="series24" value="24" onclick="serclick( this.value ); valCalc();"> E24 </font><br>
- <input type="radio" name="series" id="series48" value="48" onclick="serclick( this.value ); valCalc();"> E48 </font><br> 
 
-<input type="radio" name="series" id="series96" value="96" onclick="serclick( this.value ); valCalc();"> E96 </font><br>
+<div class="gg" align="center">
+<input type="radio" name="series" id="series12" value="12" onclick="serclick( this.value ); valCalc();"> E12 </font>
+
+
+ <input type="radio" checked="checked" name="series" id="series24" value="24" onclick="serclick( this.value ); valCalc();"> E24 </font>
+ <input type="radio" name="series" id="series48" value="48" onclick="serclick( this.value ); valCalc();"> E48 </font>
+
+<input type="radio" name="series" id="series96" value="96" onclick="serclick( this.value ); valCalc();"> E96 </font><br></div>
 </form></div>
 
-<div class="indent"><form action="">
- <input type="radio" checked="checked" name="ratios" id="Rres" value="0" onclick="ratioclick( this.value ); ratioCalc();"> Resistor ratio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<font size="-1">R1/R2</font><br> 
+
+<div class="gg" align="center" ><font class="">select input</font>
+<div class="gg">
+<div class="indent" align="left"><form action="">
+
+
+ <input type="radio" checked="checked" name="ratios" id="Rres" value="0" onclick="ratioclick( this.value ); ratioCalc();"> Resistor ratio 
+<font size="6">R1/R2</font><br> 
 <input type="radio" name="ratios" id="Rvolt" value="1" onclick="ratioclick( this.value ); ratioCalc();">
- Voltage divider &nbsp;&nbsp;&nbsp;&nbsp;<font size="-1">R1 / (R1+R2)&nbsp;&nbsp;</font><font size="-3"> valid range: 0.0 < ratio < 1.0</font><br></form></div> <br>
+ Voltage divider <font size="6">R1 / (R1+R2)</font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font size="6"> valid range: 0.0 < ratio < 1.0</font><br></form></div> </div>
+
+<label for="r2" style="font-size:55;" >
+ Desired ratio<font face="Arial" size="6"> </font></label><input type="text" id="Rratio" size="10" value="0.345" oninput="ratioCalc()"  class="intro"  style="position: absolute;   text-align
+:center;width:274; right: 105px;"class="form-control"  />
+
+<h1 style="font-size:80;"></h1>
+<div style="position:absolute; right:105;">
+ <input type="checkbox" id="recipCheck" onClick="reciprocalclick( this.checked ); ratioCalc();"> <label for="r2" style="font-size:55;" >
+Inverse<font face="Arial" size="6"></label><br><span style="color:red; font-size:50;" id="reciprocal"></span></div>
+
+<h1 style="font-size:270;"></h1>
+
+</div>
+</fieldset>
+
+<fieldset><legend><div colspan="2" align="center" height="19">
 
 
- Desired ratio: <input type="text" id="Rratio" size="10" value="0.345" oninput="ratioCalc()" class="resistor-input"><input type="checkbox" id="recipCheck" onClick="reciprocalclick( this.checked ); ratioCalc();">Inverse <span class="smallout" id="reciprocal"></span>
+<h3>Outputs</h3></div></legend>
 
 
 
-<span id="equRratio"></span> <br><div class="indent"><table><tr><td>Single:</td><td><input type="text" id="ratioSingle1" size="8" class="resistor-output"></td><td>&#247;</td><td><input type="text" id="ratioSingle2" size="8" class="resistor-output"></td><td></td><td></td><td> =</td><td><input type="text" id="ratioSingleVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioSingleErr"></div></td></tr><tr><td>Series:</td><td><input type="text" id="ratioSeries1" size="8" class="resistor-output"></td><td> &#247; (</td><td><input type="text" id="ratioSeries2" size="8" class="resistor-output"></td><td> +</td><td><input type="text" id="ratioSeries3" size="8" class="resistor-output"></td><td>) =</td><td><input type="text" id="ratioSerVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioSerErr"></div></td></tr><tr><td>Parallel:</td><td><input type="text" id="ratioPar1" size="8" class="resistor-output"></td><td>&#247; (</td><td><input type="text" id="ratioPar2" size="8" class="resistor-output"></td><td>//</td><td><input type="text" id="ratioPar3" size="8" class="resistor-output"></td><td>) =</td><td><input type="text" id="ratioParVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioParErr"></div></td></tr></table> <br></div>
+
+<span id="equRratio"></span> <br><div class="indent">
+
+
+<span> type="text" id="ratioSingle1"></p> <p type="text" id="ratioSingle2"></p>
+
+<table><tr><td>Single:</td><td><input type="text" id="ratioSingle1" size="8" class="resistor-output"></td><td>&#247;</td><td><input type="text" id="ratioSingle2" size="8" class="resistor-output"></td><td></td><td></td><td> =</td><td><input type="text" id="ratioSingleVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioSingleErr"></div></td></tr><tr><td>Series:</td><td><input type="text" id="ratioSeries1" size="8" class="resistor-output"></td><td> &#247; (</td><td><input type="text" id="ratioSeries2" size="8" class="resistor-output"></td><td> +</td><td><input type="text" id="ratioSeries3" size="8" class="resistor-output"></td><td>) =</td><td><input type="text" id="ratioSerVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioSerErr"></div></td></tr><tr><td>Parallel:</td><td><input type="text" id="ratioPar1" size="8" class="resistor-output"></td><td>&#247; (</td><td><input type="text" id="ratioPar2" size="8" class="resistor-output"></td><td>//</td><td><input type="text" id="ratioPar3" size="8" class="resistor-output"></td><td>) =</td><td><input type="text" id="ratioParVal" size="8" class="resistor-output"></td><td><div class="smallout" id="ratioParErr"></div></td></tr></table> <br></div>
