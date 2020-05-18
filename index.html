@@ -332,7 +332,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 40px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 50px;
 }
 
 body { 
@@ -387,7 +387,24 @@ input[type=radio]{
   border: 2px solid #73AD21;
    margin:10px 10px 10px 10px; 
 }  
-
+.intro1{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  .intro1:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
 
 </style>
 
@@ -416,7 +433,7 @@ input[type=radio]{
 </form></div>
 
 
-<div class="gg" align="center" ><font class="">select input</font>
+
 <div class="gg">
 <div class="indent" align="left"><form action="">
 
@@ -427,7 +444,7 @@ input[type=radio]{
  Voltage divider <font size="6">R1 / (R1+R2)</font><br>&nbsp;&nbsp;&nbsp;&nbsp;<font size="6"> valid range: 0.0 < ratio < 1.0</font><br></form></div> </div>
 
 <label for="r2" style="font-size:55;" >
- Desired ratio<font face="Arial" size="6"> </font></label><input type="text" id="Rratio" size="10" value="0.345" oninput="ratioCalc()"  class="intro"  style="position: absolute;   text-align
+ Desired ratio<font face="Arial" size="6"> </font></label><input type="text" id="Rratio" size="10" value="0.345" oninput="ratioCalc()"  class="intro1"  style="position: absolute;   text-align
 :center;width:274; right: 105px;"class="form-control"  />
 
 <h1 style="font-size:80;"></h1>
@@ -437,12 +454,12 @@ Inverse<font face="Arial" size="6"></label><br><span style="color:red; font-size
 
 <h1 style="font-size:270;"></h1>
 
-</div>
+
 </fieldset>
 
 
 <fieldset><legend><div colspan="2" align="center" height="19">
-<h1 style="font-size:80;">Output</h1></div></legend>
+<h1 style="font-size:70;">Output</h1></div></legend>
 
 
 
