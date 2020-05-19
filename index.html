@@ -108,7 +108,10 @@ border-radius: 25px;
   height: 150px;
   font-size:40px;
   color:white;
-
+}id[myDIV1]
+<style>
+id="myDIV1"{display: none;}
+</style>
 </style>
 
 
@@ -117,8 +120,8 @@ border-radius: 25px;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
 <div class="tab">
-  <button class=  "tablinks" onclick="myFunction()"><font class="tab1">BATTERY SERIES/PARELLEL</font></button>
-  <button class="tablinks" onclick="myFunction1()"><font class="tab1">BATTERY CHARGING/DIS.</font></button>
+  <button class=  "tablinks" onclick="myFunction()"><font class="tab1">SERIES/PARELLEL</font></button>
+  <button class="tablinks" onclick="myFunction1()"><font class="tab1">CHARGING/DIS.</font></button>
 
 </div>
 
@@ -144,9 +147,9 @@ border-radius: 25px;
 :center;right: 10px;"class="form-control" type="number" />
 <h1 style="font-size:40;" align="center">or</h1>	
 
-<label for="r2" style="font-size:50;" >Currant</label><font face="Arial" size="6"> (Charge or discharge) </font><input name="current" id="current" onchange="calculate_all()"  class="intro"  style="position: absolute;   width:250; text-align
+<label for="r2" style="font-size:50;" >Currant</label><font face="Arial" size="6"> (Charge or Dis) </font><input name="current" id="current" onchange="calculate_all()"  class="intro"  style="position: absolute;   width:250; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label><div id="par">	
-<h1 style="font-size:50;" align="center"></h1>	<div id="myDIV1">
+<h1 style="font-size:50;" align="center"></h1>	<div id="myDIV1" class="intro1">
 <label for="r2" style="font-size:50;" >Series</label><font face="Arial" size="6"> (No. Of Batteries) </font><input name="nbserie" id="nbserie"  class="intro"  style="position: absolute;   width:380; text-align
 :center;right: 10px;"class="form-control" type="number" />
 													
@@ -186,8 +189,8 @@ border-radius: 25px;
 <label for="r2" style="font-size:50;" >discharge</label><font face="Arial" size="6"> (In Minute) </font><input name="timemin" id="timemin"  class="intro"  style="position: absolute;   width:280; text-align
 :center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">m</label>
 <h1 style="font-size:50;" align="center"></h1>	
-<div id="myDIV"><div>
-<label for="r2" style="font-size:50;" >Batteries</label><font face="Arial" size="6"> (No. of Connected) </font><span id="totalnbbatteries"  class="intro"  style="position: absolute; font-size:59px;   width:410; text-align 
+<div id="myDIV" class="intro1"><div>
+<label for="r2" style="font-size:50;" >Batteries</label><font face="Arial" size="6"> (Connected) </font><span id="totalnbbatteries"  class="intro"  style="position: absolute; font-size:59px;   width:410; text-align 
 :center; height:80; right: 10px;"class="form-control" type="number" /><span>
 	</div><div>
 <h1 style="font-size:50;" align="center"></h1>
