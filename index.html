@@ -1,11 +1,10 @@
 
-											
-									
-									
 
 
 
-
+ <script>function calculateVal(){var geometry=document.getElementById('geometry').value;var coilUnits=document.getElementById('coilUnits').value;var diameter=document.getElementById('diamIn').value;var coilLength=document.getElementById('lengthIn').value;var intDiam=document.getElementById('innDiamIn').value;var coilDepth=diameter-intDiam;var mlfsDiam=diameter-intDiam*0.5;var nTurns=document.getElementById('nTurnsIn').value;var lUnits=document.getElementById('lUnits').value;document.getElementById('laygLabel').innerHTML="";if(geometry==1){document.getElementById('a3').innerHTML="Coil Diameter";document.getElementById('lengthRow').style.display='table';document.getElementById('intDiamRow').style.display='none';document.getElementById('rsltDiv').innerHTML=(0.5*diameter*coilUnits*0.5*diameter*coilUnits*nTurns*nTurns/(9*0.5*diameter*coilUnits+10*coilLength*coilUnits)*lUnits).toFixed(3);document.getElementById('laygRow1').innerHTML="("+(0.5*diameter*coilUnits).toFixed(3)+" Inches)² × ("+nTurns+" Turns)² ÷ (9 × "+(0.5*diameter*coilUnits).toFixed(3)+" Inches + 10 × "+(coilLength*coilUnits).toFixed(3)+" Inches)";document.getElementById('laygRow2').innerHTML="≈ "+(0.5*diameter*coilUnits*0.5*diameter*coilUnits).toFixed(3)+" × "+nTurns*nTurns+" ÷ ("+(9*0.5*diameter*coilUnits).toFixed(3)+" + "+(10*coilLength*coilUnits).toFixed(3)+")";document.getElementById('laygRow3').innerHTML="Self-Inductance ≈ "+(0.5*diameter*coilUnits*0.5*diameter*coilUnits*nTurns*nTurns).toFixed(3)+" ÷ "+(9*0.5*diameter*coilUnits+10*coilLength*coilUnits).toFixed(3)+" = "+(0.5*diameter*coilUnits*0.5*diameter*coilUnits*nTurns*nTurns/(9*0.5*diameter*coilUnits+10*coilLength*coilUnits)).toFixed(3)+" µH";}
+else if(geometry==3){document.getElementById('a3').innerHTML="Outer Diameter";document.getElementById('lengthRow').style.display='none';document.getElementById('intDiamRow').style.display='table';document.getElementById('rsltDiv').innerHTML=(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits*nTurns*nTurns/(8*0.5*mlfsDiam*coilUnits+11*coilDepth*coilUnits)*lUnits).toFixed(3);document.getElementById('laygRow1').innerHTML="("+(0.5*mlfsDiam*coilUnits).toFixed(3)+" Inches)² × ("+nTurns+" Turns)² ÷ (8 × "+(0.5*mlfsDiam*coilUnits).toFixed(3)+" Inches + 11 × "+(coilDepth*coilUnits).toFixed(3)+" Inches)";document.getElementById('laygRow2').innerHTML="≈ "+(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits).toFixed(3)+" × "+nTurns*nTurns+" ÷ ("+(8*0.5*mlfsDiam*coilUnits).toFixed(3)+" + "+(11*coilDepth*coilUnits).toFixed(3)+")";document.getElementById('laygRow3').innerHTML="Self-Inductance ≈ "+(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits*nTurns*nTurns).toFixed(3)+" ÷ "+(8*0.5*mlfsDiam*coilUnits+11*coilDepth*coilUnits).toFixed(3)+" = "+(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits*nTurns*nTurns/(8*0.5*mlfsDiam*coilUnits+11*coilDepth*coilUnits)).toFixed(3)+" µH";}else{document.getElementById('a3').innerHTML="Outer Diameter";document.getElementById('lengthRow').style.display='table';document.getElementById('intDiamRow').style.display='table';document.getElementById('rsltDiv').innerHTML=(0.8*(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits*nTurns*nTurns)/(6*0.5*mlfsDiam*coilUnits+9*coilLength*coilUnits+10*coilDepth*coilUnits)*lUnits).toFixed(3);document.getElementById('laygRow1').innerHTML="0.8 × ("+(0.5*mlfsDiam*coilUnits).toFixed(3)+" Inches)² × ("+nTurns+" Turns)² ÷ (6 × "+(0.5*mlfsDiam*coilUnits).toFixed(3)+" Inches + 9 × "+(coilLength*coilUnits).toFixed(3)+" Inches + 10 × "+(coilDepth*coilUnits).toFixed(3)+" Inches)";document.getElementById('laygRow2').innerHTML="≈ 0.8 × "+(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits).toFixed(3)+" × "+nTurns*nTurns+" ÷ ("+(6*0.5*mlfsDiam*coilUnits).toFixed(3)+" + "+(9*coilLength*coilUnits).toFixed(3)+" + "+(10*coilDepth*coilUnits).toFixed(3)+")";document.getElementById('laygRow3').innerHTML="Self-Inductance ≈ "+(0.8*(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits*nTurns*nTurns)).toFixed(3)+" ÷ "+(6*0.5*mlfsDiam*coilUnits+9*coilLength*coilUnits+10*coilDepth*coilUnits).toFixed(3)+" = "+(0.8*(0.5*mlfsDiam*coilUnits*0.5*mlfsDiam*coilUnits*nTurns*nTurns)/(6*0.5*mlfsDiam*coilUnits+9*coilLength*coilUnits+10*coilDepth*coilUnits)).toFixed(3)+" µH";}
+if(coilUnits==0.0393700787402){document.getElementById('c4').innerHTML="mm";document.getElementById('c5').innerHTML="mm";}else if(coilUnits==0.393700787402){document.getElementById('c4').innerHTML="cm";document.getElementById('c5').innerHTML="cm";}else if(coilUnits==39.3700787402){document.getElementById('c4').innerHTML="Metres";document.getElementById('c5').innerHTML="Metres";}else if(coilUnits==1){document.getElementById('c4').innerHTML="Inches";document.getElementById('c5').innerHTML="Inches";}else if(coilUnits==12){document.getElementById('c4').innerHTML="Feet";document.getElementById('c5').innerHTML="Feet";}}</script> 
 
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <style>
@@ -60,72 +59,12 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 10px solid #ccc;
- 
-  background-color: #f1f1f1;
-  text-align:center;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  
-  float:center;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 15px;
-  transition: 0.3s;
-  font-size: 70px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #c4cc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  align:center;
-}
-.tab1 {
-border-radius: 25px;
-  background: #167A04;
-  padding: 20px; 
-  width: 100px;
-  height: 150px;
-  font-size:40px;
-  color:white;
-}id[myDIV1]
-<style>
-id="myDIV1"{display: none;}
-</style>
 </style>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-<div class="tab">
-  <button class=  "tablinks" onclick="myFunction()"><font class="tab1">SERIES/PARELLEL</font></button>
-  <button class="tablinks" onclick="myFunction1()"><font class="tab1">CHARGING/DIS.</font></button>
-
-</div>
-
-
 <div id="borderimg">
     <borderimg id="control-label" style="width:100%; height:500px;">
 
@@ -133,34 +72,49 @@ id="myDIV1"{display: none;}
 <fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Input</h3></div></legend>
 
-	<form>
 
 
-<label for="r2" style="font-size:50;" >Voltage</label><font face="Arial" size="6"> (One Battery Voltage)  </font><input name="voltage" id="voltage"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label>
-<h1 style="font-size:50;"></h1>		
-<label for="r2" style="font-size:50;" >Capacity</label><font face="Arial" size="6"> (One Battery)  </font><input name="capacityAh" id="capacityAh"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">AH</label>
-<h1 style="font-size:50;"></h1>	
 
-<label for="r2" style="font-size:50;" >C- Rate</label><font face="Arial" size="6">  </font><input name="c-rate" id="c-rate" onchange="calculate_all()" class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" />
-<h1 style="font-size:40;" align="center">or</h1>	
+<form>
 
-<label for="r2" style="font-size:50;" >Currant</label><font face="Arial" size="6"> (Charge or Dis) </font><input name="current" id="current" onchange="calculate_all()"  class="intro"  style="position: absolute;   width:250; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label><div id="par">	
-<h1 style="font-size:50;" align="center"></h1>	<div id="myDIV1" class="intro1">
-<label for="r2" style="font-size:50;" >Series</label><font face="Arial" size="6"> (No. Of Batteries) </font><input name="nbserie" id="nbserie"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" />
-													
-<h1 style="font-size:50;" align="center"></h1>	
-<label for="r2" style="font-size:50;" >Parallel</label><font face="Arial" size="6"> (No. Of Batteries) </font><input name="nbparallel" id="nbparallel"  class="intro"  style="position: absolute;   width:380; text-align
-:center;right: 10px;"class="form-control" type="number" /></div></div>
-<h1 style="font-size:40;" align="center"></h1>															 
-</fieldset>
-<h1 style="font-size:80;"></h1>		
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT TYPE="button" VALUE=" Calculate " 
-   onClick="calculate_all()" " style="background-color: #167A04 ;
+
+<label for="r2" style="font-size:55;" >Coil Geometry<font face="Arial" size="6"> </font></label>
+<select class="form-control" id=geometry onchange=calculateVal() style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
+<option value=1 selected>Single-Layer Solenoid</option><option value=2>Multi-Layer Solenoid</option><option value=3>Flat Spiral</option> </select>
+
+<h1 style="font-size:50;"></h1>
+
+
+
+
+<div id=calcRow1 class=calcRow><div id=a3 class=lbl>Coil Diameter</div>
+<div id=numUniCont class=numUniCont><div id=b3 class=valInput> 
+<input id=diamIn type=number min=0 onchange=calculateVal() class="intro" style="position: absolute; margin:-70px 0;  text-align
+:center;width:274; right: 165px;" required=required></div><div id=c3 class=unitsDiv>
+
+ <select id=coilUnits  style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;margin:-70px 0;width:148px;border-radius:4px; border:2px solid #aaa;" ><option value=0.0393700787402 selected>mm</option><option value=0.393700787402>cm</option><option value=39.3700787402>Metres</option><option value=1>Inches</option><option value=12>Feet</option> </select>
+</div></div></div>
+
+<h1 style="font-size:35;"></h1>
+
+
+<div id=intDiamRow class=calcRow><div id=a4 class=lbl>Internal Diameter</div>
+<div id=numUniCont class=numUniCont><div id=b4 class=valInput> <input id=innDiamIn type=number min=0 required=required class="intro" style="position: absolute; margin:-70px 0;  text-align
+:center;width:274; right: 165px;"></div><div id=c4 style="padding: 5px ;  position: absolute;right: 10px;font-size:59px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:-70px 0; width:134px;" >mm</div></div></div>
+<h1 style="font-size:35;"></h1>
+<div id=lengthRow class=calcRow><div id=a5 class=lbl>Coil Length</div>
+<div id=numUniContRow2 class=numUniCont><div id=b5 class=valInput> <input id=lengthIn type=number min=0  required=required class="intro" style="position: absolute; margin:-70px 0;  text-align
+:center;width:274; right: 165px;" ></div><div id=c5 style="padding: 5px ;  position: absolute;right: 10px;font-size:59px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:-70px 0; width:134px;">mm</div></div></div>
+
+
+<h1 style="font-size:35;"></h1>
+<div id=calcRow4 class=calcRow><div id=a6 class=lbl>Number Of Turns</div><div id=numUniContRow4 class=numUniCont><div id=b6 class=valInput> <input id=nTurnsIn type=number min=0  required=required class="intro" style="position: absolute; margin:-70px 0;  text-align
+:center;width:430; right: 10px;"></div></div></div>
+
+<h1 style="font-size:35;"></h1>
+</fieldset><h1 style="font-size:35;"></h1>
+<fieldset><legend><div colspan="2" align="center" height="19"><input onClick="calculateVal()
+"  type="button" value="Calculate" " style="background-color: #167A04 ; 
   border: 1;
   align:center;
   color: white;
@@ -172,135 +126,18 @@ id="myDIV1"{display: none;}
   font-size: 70px;
   margin: 4px 2px;
   cursor: pointer;">
-</div></legend></fieldset>	
-		
-<fieldset><legend>
+</div></legend></fieldset>
+
+<fieldset><legend><div colspan="2" align="center" height="19">
 
 
-<h3>Outputs</h3></legend>													
-													
-												
-<label for="r2" style="font-size:50;" >Capacity</label><font face="Arial" size="6"> (One Battery) </font><input name="capacityWh" id="capacityWh"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Wh</label>
-<h1 style="font-size:50;" align="center"></h1>													
-<label for="r2" style="font-size:50;" >discharge</label><font face="Arial" size="6"> (In Hours) </font><input name="time" id="time"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">h</label>
-<h1 style="font-size:50;" align="center"></h1>													
-<label for="r2" style="font-size:50;" >discharge</label><font face="Arial" size="6"> (In Minute) </font><input name="timemin" id="timemin"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-control" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">m</label>
-<h1 style="font-size:50;" align="center"></h1>	
-<div id="myDIV" class="intro1"><div>
-<label for="r2" style="font-size:50;" >Batteries</label><font face="Arial" size="6"> (Connected) </font><span id="totalnbbatteries"  class="intro"  style="position: absolute; font-size:59px;   width:410; text-align 
-:center; height:80; right: 10px;"class="form-control" type="number" /><span>
-	</div><div>
-<h1 style="font-size:50;" align="center"></h1>
-<label for="r2" style="font-size:50;" >Voltege</label><font face="Arial" size="6"> (Storage) </font><input name="voltsystem" id="voltsystem"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-cont" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">V</label></div>
-
-<h1 style="font-size:50;" align="center"></h1>		
-<div>
-<label for="r2" style="font-size:50;" >Current</label><font face="Arial" size="6"> (Storage) </font><input name="currentsystem" id="currentsystem"  class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-cont" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">A</label>
-<h1 style="font-size:50;" align="center"></h1>	
-<label for="r2" style="font-size:50;" >Capacity</label><font face="Arial" size="5"> (Storage Energy) </font><input name="capacitysystemAh" id="capacitysystemAh"   class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-cont" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:59px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">Ah</label>
-<h1 style="font-size:50;" align="center"></h1>	
-<label for="r2" style="font-size:50;" >Capacity</label><font face="Arial" size="5"> (Storage Energy) </font><input name="capacitysystemkWh" id="capacitysystemkWh"   class="intro"  style="position: absolute;   width:280; text-align
-:center;right: 140px;"class="form-cont" type="number" /><label align="middle"style="padding: 5px ;  height:70;position: absolute;right: 10px;font-size:49px;   border:2px solid #aaa;border-radius:4px;margin:8px 0; width:110px;">kWh</label></div>
-<h1 style="font-size:40;" align="center"></h1>	
-
-
-
-            </form>
-			
+<h3>Outputs</h3></div></legend>
+<div id=calcRow5 class=calcRow><div id=a7 class=lbl>Self-Inductance</div><div id=numUniContRow5 class=numUniCont><div id="rsltDiv" class="intro" style="position: absolute;margin:-70px 0; height:83;  width:350; text-align
+:center;right: 165px;" ></div>
+<div id=c7 class=unitsDiv> <select id=lUnits onchange=calculateVal() style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;margin:-70px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value=1000000>pH</option><option value=1000>nH</option><option value=1 selected>µH</option><option value=0.001>mH</option><option value=0.000001>Henry</option> </select></div></div></div>
 
 
 
 
 
-<script>
-
- var x = document.getElementById("myDIV");
- var y = document.getElementById("myDIV1");
-function myFunction() {
- 
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "block";
-  }
- if (y.style.display === "none") {
-    y.style.display = "block";
-  } else {
-    y.style.display = "block";
-  }
-
-}
-function myFunction1() {
- 
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "none";
-  }
-if (y.style.display === "block") {
-    y.style.display = "none";
-  } else {
-    y.style.display = "none";
-  }
-}
-
-
-
-</script>
-								
-<script>
-
-<!-- Battery  -->
-
-function calculate_batt()
-{ 
-var CapacityBattWh=document.getElementById('voltage').value*document.getElementById('capacityAh').value;
-document.getElementById('capacityWh').value=CapacityBattWh;
-var current=document.getElementById('capacityAh').value*document.getElementById('c-rate').value;
-document.getElementById('current').value=current;
-var time=document.getElementById('capacityAh').value/document.getElementById('current').value;
-document.getElementById('time').value=time;
-document.getElementById('timemin').value=(document.getElementById('time').value*60).toFixed(0);
-
-}	
-
-function calculate_crate()
-{ 
-document.getElementById('c-rate').value=document.getElementById('current').value/document.getElementById('capacityAh').value;
-calculate_all();
-}	
-
-function calculate_storage()
-{ 
-var voltsystem=document.getElementById('voltage').value*document.getElementById('nbserie').value;
-document.getElementById('voltsystem').value=voltsystem.toFixed(0);
-var currentsystem=document.getElementById('current').value*document.getElementById('nbparallel').value;
-document.getElementById('currentsystem').value=currentsystem;
-var totalnbbatteries=document.getElementById('nbserie').value*document.getElementById('nbparallel').value;
-document.getElementById('totalnbbatteries').innerHTML=totalnbbatteries;
-var capacitysystemAh=document.getElementById('capacityAh').value*document.getElementById('nbparallel').value;
-document.getElementById('capacitysystemAh').value=capacitysystemAh.toFixed(0);
-document.getElementById('capacitysystemkWh').value=document.getElementById('capacityAh').value*document.getElementById('voltage').value*totalnbbatteries/1000;
-
-
-var weighttotal=document.getElementById('weightbatt').value*totalnbbatteries;
-document.getElementById('weighttotal').innerHTML=weighttotal;
-var weightunit=document.getElementById('weightunit').value;
-document.getElementById('weightunit2').innerHTML=weightunit;
-
-}	
-
-function calculate_all()
-{ 
-calculate_batt();
-calculate_storage();
-}	
-
-
-</script>
+<div id=laygLabel class=laygLabel ></div></form>
