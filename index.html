@@ -24,7 +24,7 @@ body {
   width: 100%;
 }
 body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 50px;
 }
 
 body { 
@@ -80,9 +80,9 @@ input[type=checkbox]{
 
 <label for="r2" style="font-size:55;" >Coil Geometry<font face="Arial" size="6"> </font></label>
 <select class="form-control" id=geometry onchange=calculateVal() style="padding: 5px ;  position: absolute;right: 10px;font-size:58px;margin:8px 0;width:430px;border-radius:4px; border:2px solid #aaa;">
-<option value=1 selected>Single-Layer Solenoid</option><option value=2>Multi-Layer Solenoid</option><option value=3>Flat Spiral</option> </select>
+<option value=1 selected>SingleLayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solenoid</option><option value=2>MultiLayer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solenoid</option><option value=3>Flat Spiral</option> </select>
 
-<h1 style="font-size:50;"></h1>
+<h1 style="font-size:70;"></h1>
 
 
 
@@ -95,19 +95,19 @@ input[type=checkbox]{
  <select id=coilUnits  style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;margin:-70px 0;width:148px;border-radius:4px; border:2px solid #aaa;" ><option value=0.0393700787402 selected>mm</option><option value=0.393700787402>cm</option><option value=39.3700787402>Metres</option><option value=1>Inches</option><option value=12>Feet</option> </select>
 </div></div></div>
 
-<h1 style="font-size:35;"></h1>
+<h1 style="font-size:50;"></h1>
 
 
 <div id=intDiamRow class=calcRow><div id=a4 class=lbl>Internal Diameter</div>
 <div id=numUniCont class=numUniCont><div id=b4 class=valInput> <input id=innDiamIn type=number min=0 required=required class="intro" style="position: absolute; margin:-70px 0;  text-align
 :center;width:274; right: 165px;"></div><div id=c4 style="padding: 5px ;  position: absolute;right: 10px;font-size:59px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:-70px 0; width:134px;" >mm</div></div></div>
-<h1 style="font-size:35;"></h1>
+<h1 style="font-size:50;"></h1>
 <div id=lengthRow class=calcRow><div id=a5 class=lbl>Coil Length</div>
 <div id=numUniContRow2 class=numUniCont><div id=b5 class=valInput> <input id=lengthIn type=number min=0  required=required class="intro" style="position: absolute; margin:-70px 0;  text-align
 :center;width:274; right: 165px;" ></div><div id=c5 style="padding: 5px ;  position: absolute;right: 10px;font-size:59px; text-align:center;  border:2px solid #aaa;border-radius:4px;margin:-70px 0; width:134px;">mm</div></div></div>
 
 
-<h1 style="font-size:35;"></h1>
+<h1 style="font-size:50;"></h1>
 <div id=calcRow4 class=calcRow><div id=a6 class=lbl>Number Of Turns</div><div id=numUniContRow4 class=numUniCont><div id=b6 class=valInput> <input id=nTurnsIn type=number min=0  required=required class="intro" style="position: absolute; margin:-70px 0;  text-align
 :center;width:430; right: 10px;"></div></div></div>
 
@@ -132,7 +132,7 @@ input[type=checkbox]{
 
 
 <h3>Outputs</h3></div></legend>
-<div id=calcRow5 class=calcRow><div id=a7 class=lbl>Self-Inductance</div><div id=numUniContRow5 class=numUniCont><div id="rsltDiv" class="intro" style="position: absolute;margin:-70px 0; height:83;  width:350; text-align
+<div id=calcRow5 class=calcRow><div id=a7 class=lbl>Self-Inductance</div><div id=numUniContRow5 class=numUniCont><div id="rsltDiv" class="intro" style=" font-face:arial;position: absolute;margin:-70px 0; height:83;  width:350; text-align
 :center;right: 165px;" ></div>
 <div id=c7 class=unitsDiv> <select id=lUnits onchange=calculateVal() style="padding: 5px ;  position: absolute;right: 10px;font-size:61px;margin:-70px 0;width:148px;border-radius:4px; border:2px solid #aaa;"><option value=1000000>pH</option><option value=1000>nH</option><option value=1 selected>µH</option><option value=0.001>mH</option><option value=0.000001>Henry</option> </select></div></div></div>
 
