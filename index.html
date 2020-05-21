@@ -1,152 +1,561 @@
-
-<SCRIPT language="javascript" type="text/javascript">
-function calc()
-{
-n=Number(document.calculator.number1.value);
-Vin=Number(document.calculator.number2.value);
-Vref=Number(document.calculator.number3.value);
-n1= Math.pow(2,n);
-d_out=  ((n1*Vin)/Vref);
-d_out=Math.floor(d_out);
-number=d_out;
-bin =" ";
-while (number >0)
-{
-bin = ( (number%2) + bin) ;
-number = Math.floor(number/2);
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
-b_out= bin;
-document.calculator.Num_Digital_output.value=d_out;
-document.calculator.Binary_output.value=b_out;
-}
-</SCRIPT>
+</script>
+
+
+
+<body>
 
 
 
 
 
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-<style>
-#borderimg { 
-  border: 10px solid transparent;
-  padding: 10px;
-  width: 100%;
-  hight: 100%;
-  border-image-source: url();  
-  border-image-slice: 30;
-}
-
-body {
-  display: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
-}
-
-body { 
-  background: ; 
-}
-.intro{
-    width:200;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
-  
-  .intro:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
-  }
-
-.ids{
-     border: 2px solid red;
-  padding: 10px;
-  border-radius: 50px 20px;}
-
-input[type=checkbox]{
-    width: 120px; 
-    height: 120px; 
-   
-  }
-</style>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">
-
-
-<fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Input</h3></div></legend>
-
-
-
-
-
-
-<FORM name="calculator">
-
-
-<label for="r2" style="font-size:50;" >Bits</label><font face="Arial" size="6"> (Numbers) </font><input name="number1" class="intro"  style="position: absolute;   width:400; text-align
-:center;right: 10px;"class="form-control" type="text" />
-
-
-
-<h1 style="font-size:50;"></h1>
-
-<label for="r2" style="font-size:50;" >V<sub>IN</sub></label><font face="Arial" size="6"> (Analog Voltage) </font><input name="number2" class="intro"  style="position: absolute;   width:400; text-align
-:center;right: 10px;"class="form-control" type="text" />
-
-
-
-<h1 style="font-size:38;"></h1>
-
-<label for="r2" style="font-size:50;" >R<sub>V</sub></label><font face="Arial" size="6"> (Reference voltage) </font><input name="number3" class="intro"  style="position: absolute;   width:400; text-align
-:center;right: 10px;"class="form-control" type="text" />
-
-
-
-<h1 style="font-size:40;"></h1></fieldset><h1 style="font-size:80;"></h1>
-<fieldset><legend><div colspan="2" align="center" height="19"><INPUT type="button" value="CALCULATE" onclick="javascript:calc();" style="background-color: #167A04 ;
-  border: 1;
-  align:center;
-  color: white;
  
-  padding: 10px 200px;
-  text-align: center;
+
+
+
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+   
+  
+  
+  
+  
+  
+  
+  }
+}
+</script>
+
+<style>
+.mid {background-color:yellow;margin-left:auto;margin-right:auto;display:block;background-color: red ;
+color:red;  
+border: 5;
+  color: white;
+
+ width:50;
+ height:40;
   text-decoration: none;
-  display: inline-block;
-  font-size: 70px;
-  margin: 4px 2px;
-  cursor: pointer;">
-</div></legend></fieldset>
-
-<fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>
-
-<label for="r2" style="font-size:55;" >Numeric</label><font face="Arial" size="7"> (Digital) </font><input name="Num_Digital_output" class="intro"  style="position: absolute;   width:430; text-align
-:center;right: 10px;"class="form-control" type="text" />
-<h1 style="font-size:40;"></h1>
-<label for="r2" style="font-size:55;" >Binary</label><font face="Arial" size="7"> (Digital) </font><input name="Binary_output" class="intro"  style="position: absolute;   width:430; text-align
-:center;right: 10px;"class="form-control" type="text" />
-<h1 style="font-size:25;"></h1>
+  border-radius: 12px;
+  font-size: 25px;
+  position: absolute;
+  left: 5px;
+  top:101;
+  font-weight: bold;
+  cursor: pointer;"
+}
 
 
+.body{text-size:100px;}
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 
 
-</FORM>
 
+
+
+
+
+/* End extract */
+html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}.w3-serif{font-family:serif}
+
+
+
+
+                                                                                border
+
+.w3-btn,
+.w3-button{
+
+font-size:50px;
+border-radius: 25px;
+  background: #73AD21;
+  inpaddg: 2px;
+  width: 200px;
+  height: 100px;
+text-align:center;
+
+}
+
+.w3-btn,
+.w3-button1{
+border:none;
+display:inline-block;
+padding:1px 1px;
+font-size:50px;
+vertical-align:middle;
+Horizontal-align:middle;
+overflow:hidden;
+text-decoration:none;
+color:inherit;
+background-color:inherit;
+cursor:pointer;
+white-space:nowrap;
+text-align:LEFT;
+}
+
+
+
+
+
+
+
+
+.w3-modal{z-index:3;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4)}
+
+
+
+.w3-modal-content{margin:auto;background-color:#fff;position:relati;padding:0;outline:0;width:6000px}
+
+
+
+
+.w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
+.w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
+
+
+@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
+
+
+
+.w3-display-topmiddle{position:absolute;left:50%;top:0;transform:translate(-50%,0%);-ms-transform:translate(-50%,0%)}
+
+.w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}.w3-display-hover{display:none}
+
+
+
+
+
+.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
+.w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}
+.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#fff!important}
+
+
+                                               border colour 
+.w3-black,.w3-hover-black:hover{color:#fff!important;background-color:red!important}
+
+</style>
+<style>
+.bg{ background-color:e6e9ee;
+     }
+.w3-button{background:;
+          WIDTH:100%}
+.w3-modal-content{width:98%;}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+ 
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Country's names.." title="Type in a name">
+
+<ul id="myUL">
+  
+  
+
+
+</start>
+<li><a href="#">
+
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
+<img align="left" src="https://github.com/mayur4535/electroic/blob/master/5/image/flag/1.gif?raw=true" class="w3-border" alt="Norway" style="padding:px;width:50px;"><font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">Afghanistan</font></button></a>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      
+      <div class="w3-container">
+        
+<button class="mid" style="align:center;"onclick="document.getElementById('id01').style.display='none'">X</button>
+ <table id="customers">
+
+ <tr> 
+<td colspan="4" style="text-align:center; font-size:20px; background-color:grey;color:white;"><b>Plug Type</td></tr>
+
+<tr style="text-align:center; font-size:20px; background-color:#BBB;">
+<td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/c.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:120;"><br><b><font style="font-size:20px; text-align:center;">Type-C 2.5A</font></td>
+<td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/f.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:120;"><br><b><font style="font-size:20px; text-align:center;">Type-F 16A</font></td>
+</tr>
+
+     <table id="customers"><HR>
+  <tr>
+<td align="middle"style="font-size:15px; text-align:center; font-size:20px; background-color:darkgrey;"><b>Single Phase Voltage</td><td align="middle"style="font-size:20px; background-color:lightgrey; ">220V</td></tr>
+    <td align="middle"style="font-size:15px; text-align:center; font-size:20px; background-color:darkgrey;"><b>Three Phase Voltage</td><td align="middle"style="font-size:20px; background-color:lightgrey; ">380V</td></tr>
+
+  <tr>
+    <td align="middle"style="font-size:20px;background-color:darkgrey;"><b>Frequency</td><td align="middle"style="font-size:20px;background-color:lightgrey;">50Hz</td>
+  </tr>
+
+</11111>
+
+<table id="customers">
+
+<tr>
+<hr>
+<td colspan="3" style="text-align:center; font-size:20px; color:white; background-color:grey;">Wiring Colour</td>
+</tr>
+ <table id="customers">
+
+
+<tbody>
+<tr>
+  <td colspan="6"align="middle" style="background-color:#CDCDCD  ;color:red;"><b>THREE
+  PHASE</td>
+ </tr>
+ <tr style="background-color:#CDCDCD  ;">
+  <td align="middle"><b>L1</td>
+  <td align="middle"><b>L2</td>
+  <td align="middle"><b>L3</td>
+  <td align="middle"><b>N</td>
+  <td align="middle" colspan="2"><b>E</td>
+ </tr> 
+ <tr style="background-color:#CDCDCD   ;">
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/red.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/yellow.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/dblue.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/black.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/gy.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/green.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/bar.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+ </tr>
+ <table id="customers">
+ <tr>
+  <td colspan="6"align="middle" style="background-color:#B2B2B2 ;color:red;"><b>SINGLE PHASE</td>
+ </tr>
+ <tr style="background-color:#B2B2B2 ;">
+  <td align="middle" colspan="2"><b>L</td>
+  <td align="middle" colspan="2"><b>N</td>
+  <td align="middle" colspan="2"><b>E</td>
+ </tr>
+ <tr style="background-color:#B2B2B2 ;">
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/red.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/black.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/gy.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/green.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+ </tr>
+ <table id="customers">
+ <tr>
+  <td colspan="6"align="middle" style="background-color:#9C9A9A; color:red;"><b>DC</td>
+ </tr>
+ <tr style="background-color:#9C9A9A;">
+  <td align="middle" colspan="2"><b>+P</td>
+  <td align="middle" colspan="2"><b>-N</td>
+  <td align="middle" colspan="2"><b>E</td>
+ </tr>
+ <tr style="background-color:#9C9A9A;">
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/red.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/black.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/gy.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/green.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+ </tr>
+
+
+</tbody></table>
+</1111>
+
+</close>
+</table>
+
+
+
+</table>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></li>
+
+
+</cuntry-2>
+<li><a href="#">
+
+<button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
+<img align="left" src="https://github.com/mayur4535/electroic/blob/master/5/image/flag/2.gif?raw=true" class="w3-border" alt="Norway" style="padding:px;width:50px;"><font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">Albania</font></button></a>
+
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+     
+      <div class="w3-container">
+        
+<button class="mid" style="align:center;"onclick="document.getElementById('id02').style.display='none'">X</button>
+ <table id="customers">
+
+ <tr> 
+<td colspan="4" style="text-align:center; font-size:20px; background-color:grey;color:white;"><b>Plug Type</td></tr>
+
+<tr style="text-align:center; font-size:20px; background-color:#BBB;">
+<td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/c.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:120;"><br><b><font style="font-size:20px; text-align:center;">Type-C 2.5A</font></td>
+<td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/f.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:120;"><br><b><font style="font-size:20px; text-align:center;">Type-F 16A</font></td>
+</tr>
+
+     <table id="customers"><HR>
+  <tr>
+<td align="middle"style="font-size:15px; text-align:center; font-size:20px; background-color:darkgrey;"><b>Single Phase Voltage</td><td align="middle"style="font-size:20px; background-color:lightgrey; ">220V</td></tr>
+    <td align="middle"style="font-size:15px; text-align:center; font-size:20px; background-color:darkgrey;"><b>Three Phase Voltage</td><td align="middle"style="font-size:20px; background-color:lightgrey; ">380V</td></tr>
+
+  <tr>
+    <td align="middle"style="font-size:20px;background-color:darkgrey;"><b>Frequency</td><td align="middle"style="font-size:20px;background-color:lightgrey;">50Hz</td>
+  </tr>
+
+</cut hear>
+
+
+ <table id="customers">
+<hr>
+<tr>
+<td colspan="3" style="text-align:center; font-size:20px; color:white; background-color:grey;">Wiring Colour</td>
+</tr>
+ <table id="customers">
+
+
+<tbody>
+<tr>
+  <td colspan="6"align="middle" style="background-color:#CDCDCD  ;color:red;"><b>THREE
+  PHASE</td>
+ </tr>
+ <tr style="background-color:#CDCDCD  ;">
+  <td align="middle"><b>L1</td>
+  <td align="middle"><b>L2</td>
+  <td align="middle"><b>L3</td>
+  <td align="middle"><b>N</td>
+  <td align="middle" colspan="2"><b>E</td>
+ </tr>
+ <tr style="background-color:#CDCDCD   ;">
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/brown.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/black.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/grey.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/dblue.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/gy.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+ </tr>
+ <table id="customers">
+ <tr>
+  <td colspan="6"align="middle" style="background-color:#B2B2B2 ;color:red;"><b>SINGLE PHASE</td>
+ </tr>
+ <tr style="background-color:#B2B2B2 ;">
+  <td align="middle" colspan="2"><b>L</td>
+  <td align="middle" colspan="2"><b>N</td>
+  <td align="middle" colspan="2"><b>E</td>
+ </tr>
+ <tr style="background-color:#B2B2B2 ;">
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/black.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/red.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/brown.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/gy.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+ </tr>
+ <table id="customers">
+ <tr>
+  <td colspan="6"align="middle" style="background-color:#9C9A9A; color:red;"><b>DC</td>
+ </tr>
+ <tr style="background-color:#9C9A9A;">
+  <td align="middle" colspan="2"><b>+P</td>
+  <td align="middle" colspan="2"><b>-N</td>
+  <td align="middle" colspan="2"><b>E</td>
+ </tr>
+ <tr style="background-color:#9C9A9A;">
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/red.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/white.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/black.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+  <td align="middle" colspan="2"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/green.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/gy.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;">or
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/cable/bar.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:25;"></td>
+ </tr>
+
+
+</tbody></table>
+
+
+</cut hear>
+
+
+</table>
+
+
+
+</table>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></li>
+  
+
+
+
+ <table id="customers">
+<thead>
+<tr>
+<th>Alpine Pin</th>
+<th>Acura Pin</th>
+<th>Name</th>
+<th>Function</th>
+<th>Wire (ext)</th>
+<th>Wire (int)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>8</td>
+<td>GND</td>
+<td>Ground</td>
+<td>black</td>
+<td>orange</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6</td>
+<td>BATT</td>
+<td>+12V</td>
+<td>yellow</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>ACC</td>
+<td>Accessory</td>
+<td>red</td>
+<td>white</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>BUS</td>
+<td>Bus</td>
+<td>green</td>
+<td>red</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>B.G</td>
+<td>Bus Ground</td>
+<td>black</td>
+<td>orange</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>R</td>
+<td>Right Signal</td>
+<td>red</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>S.G</td>
+<td>Signal Ground</td>
+<td>black</td>
+<td>white</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td>L</td>
+<td>Left Signal</td>
+<td>white</td>
+<td>red</td>
+</tr>
+<tr>
+<td>Shell</td>
+<td>Shell</td>
+<td>Chassis</td>
+<td>Chassis Ground</td>
+<td>black</td>
+<td>Chassis</td>
+</tr>
+</tbody>
+</table>
+
+
+
+</ul>
+</body>
+</html>
