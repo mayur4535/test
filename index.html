@@ -729,35 +729,63 @@ tr:hover {background-color: #ddd;}
 <table>
 <th align="center">XLR Audio 3 Pin Male/Female </th>
 </table>
-
-    <table>
-<thead>
-<tr>
-<th>Pin Number</th>
-<th>Signal Name</th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>Ground-Shield</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>Positive-HOT</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Negative-Cold</td>
-</tr>
-<tr>
-
-</tbody>
+<hr>
+<table>
+<th align="center">Balanced Audio (3 pole XLR)</th>
 </table>
 
-
+   <table >
+	<tbody>
+		<tr>
+			<th><strong>Pin</strong></th>
+			<th><strong>Signal</strong></th>
+			<th><strong></strong></th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Ground / Screen / Earth</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>In phase / +ve / Hot</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Out of phase / -ve / Cold</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+<hr>
+<table>
+<th align="center">Unbalanced Audio (3 pole XLR)</th>
+</table>
+<table>
+	<tbody>
+		<tr>
+			<th><strong>Pin</strong></th>
+			<th><strong>Signal</strong></th>
+			<th><strong></strong></th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Ground / Screen</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Signal</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Ground / Screen (connect to pin 1)</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
 <end////////////////////////////////////////>
 
      
@@ -799,33 +827,390 @@ tr:hover {background-color: #ddd;}
 <th align="center">XLR Audio-Lighting 4 Pin Male/Female </th>
 </table>
 
-    <table>
-<thead>
-<tr>
-<th>Pin Number</th>
-<th>Signal Name</th>
-</tr>
-</thead>
-<tbody>
+   <table>
+	<tbody>
+		<tr>
+			<th>Application</th>
+			<th>Pin 1</th>
+			<th>Pin 2</th>
+			<th>Pin 3</th>
+			<th>Pin 4</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>12V generic power source</td>
+			<td>Ground</td>
+			<td>NC or Ground</td>
+			<td>NC or +12V</td>
+			<td>+12V</td>
+			<td>11 to 18V range, widely used for broadcast equipment<br>
+			Female on power source, male on device</td>
+		</tr>
+		<tr>
+			<td>AMX 192</td>
+			<td>screen (analogue 0V)</td>
+			<td>clock +</td>
+			<td>analogue multiplex</td>
+			<td>clock -</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Canford Talkback 1cct headset</td>
+			<td>Mic earth/scr</td>
+			<td>Mic signal</td>
+			<td>Earphones earth/scr</td>
+			<td>Earphones signal</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Clearcom talkback headset</td>
+			<td>Mic earth/scr</td>
+			<td>Mic signal</td>
+			<td>Earphones earth/scr</td>
+			<td>Earphones signal</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Diversitronics (analogue) superstrobes</td>
+			<td>signal</td>
+			<td>ground</td>
+			<td>supply (+ve)</td>
+			<td>not used</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Pyro Pack Control</td>
+			<td>channel 1</td>
+			<td>channel 2</td>
+			<td>channel 3</td>
+			<td>common</td>
+			<td>&nbsp;case to case ground for PP 1 use</td>
+		</tr>
+		<tr>
+			<td>Rosco gobo rotator</td>
+			<td>Forward A</td>
+			<td>Reverse A</td>
+			<td>Forward B</td>
+			<td>Reverse B</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Scroller (generic)</td>
+			<td>ground</td>
+			<td>-ve data</td>
+			<td>+ve data</td>
+			<td>+24VDC or +48VDC power</td>
+			<td>NOT Wybron!</td>
+		</tr>
+		<tr>
+			<td>Telex Audiocom and RTS intercom headset</td>
+			<td>Mic ground</td>
+			<td>Mic signal</td>
+			<td>Speaker ground</td>
+			<td>Speaker signal</td>
+			<td>Male on beltpack/station, Female on headset (RTS has it reversed often)</td>
+		</tr>
+		<tr>
+			<td>Wybron Scroller</td>
+			<td>+24v DC</td>
+			<td>-ve data</td>
+			<td>+ve data</td>
+			<td>ground</td>
+			<td>non standard!</td>
+		</tr>
+		<tr>
+			<td>dc power of pro broadcast gear</td>
+			<td>negative</td>
+			<td>n/c</td>
+			<td>n/c</td>
+			<td>positive (+12V)</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Audeze LCD-2/3 pin out</td>
+			<td>
+			<p>Channel +</p>
+			</td>
+			<td>
+			<p>Channel-</p>
 
-<tr>
-<td>1</td>
-<td>Ground-Shield</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>Positive-HOT</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Negative-Cold</td>
-</tr>
-<tr>
-
-</tbody>
+			<p>&nbsp;</p>
+			</td>
+			<td>Channel -</td>
+			<td>Channel +</td>
+			<td>Mini-XLR only. One channel</td>
+		</tr>
+	</tbody>
 </table>
 
+
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li> 
+<li><a href="#">
+
+<button onclick="document.getElementById('id06').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">XLR Audio 5 Pin Male/Female </font></button></a>
+
+  <div id="id06" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id06').style.display='none'">X</button>
+<div align="center" class="table1">
+
+
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/audio/6.jpg?raw=true" >
+
+
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
+
+<table>
+<th align="center">XLR Audio-Lighting 5 Pin Male/Female </th>
+</table>
+
+    <table>
+	<tbody>
+		<tr>
+			<th><strong>Application</strong></th>
+			<th><strong>Pin 1</strong></th>
+			<th><strong>Pin 2</strong></th>
+			<th><strong>Pin 3</strong></th>
+			<th><strong>Pin 4</strong></th>
+			<th><strong>Pin 5</strong></th>
+			<th><strong>Notes</strong></th>
+		</tr>
+		<tr>
+			<td>AVAB</td>
+			<td>Signal<br>
+			Ground</td>
+			<td>Data -</td>
+			<td>Data +</td>
+			<td>No<br>
+			Connection</td>
+			<td>No<br>
+			Connection</td>
+			<td>AVAB Digital protocol<br>
+			256 Channels</td>
+		</tr>
+		<tr>
+			<td>CCT Regal II (Dimmer Control)</td>
+			<td>0 Volts</td>
+			<td>DMX<br>
+			Data -</td>
+			<td>DMX<br>
+			Data +</td>
+			<td>12V AC<br>
+			Desk Supply from dimmers</td>
+			<td>No<br>
+			Connection</td>
+			<td>Using external PSU disconnects Pin4 internally</td>
+		</tr>
+		<tr>
+			<td>CCT Regal II (Coloursette Control)</td>
+			<td>0 Volts</td>
+			<td>DMX<br>
+			Data -</td>
+			<td>DMX<br>
+			Data +</td>
+			<td>12V AC<br>
+			Desk Supply from PSU</td>
+			<td>No<br>
+			Connection</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>CMX</td>
+			<td>Signal<br>
+			Ground</td>
+			<td>Data -</td>
+			<td>Data +</td>
+			<td>No<br>
+			Connection</td>
+			<td>No<br>
+			Connection</td>
+			<td>Colortran Digital protocol<br>
+			512 Channels</td>
+		</tr>
+		<tr>
+			<td>DMX512</td>
+			<td>Screen</td>
+			<td>Data -<br>
+			Primary</td>
+			<td>Data +<br>
+			Primary</td>
+			<td>Data -<br>
+			Secondary</td>
+			<td>Data +<br>
+			Secondary</td>
+			<td>USITT digital multiplex - Pins 4&amp;5 have no standard use<br>
+			512 channels</td>
+		</tr>
+		<tr>
+			<td>PMX</td>
+			<td>Screen</td>
+			<td>Signal</td>
+			<td>Signal<br>
+			Earth</td>
+			<td>No<br>
+			Connection</td>
+			<td>Power<br>
+			+18-25VDC</td>
+			<td>Pulsar multiplex<br>
+			Based on EIA-232 standard</td>
+		</tr>
+		<tr>
+			<td>SMX</td>
+			<td>Screen</td>
+			<td>Data&nbsp;-</td>
+			<td>Data +</td>
+			<td>No<br>
+			Connection</td>
+			<td>No<br>
+			Connection</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Strand Colour<br>
+			Call Scroller</td>
+			<td>DMX&nbsp;OV</td>
+			<td>DMX +</td>
+			<td>DMX&nbsp;-</td>
+			<td>OV Power</td>
+			<td>+V Power</td>
+			<td>Early versions used an XLR4 with the screen carrying the +V power</td>
+		</tr>
+		<tr>
+			<td>Generic&nbsp;stereo intercom broadcast headset</td>
+			<td>Mic<br>
+			Screen</td>
+			<td>Mic<br>
+			Signal</td>
+			<td>Headphone<br>
+			Screen</td>
+			<td>Headphone<br>
+			Signal Left</td>
+			<td>Headphone<br>
+			Signal Right</td>
+			<td>Used by Clearcom, RTS, Telex Audiocom,&nbsp;Sony, Philips and Ikegami</td>
+		</tr>
+		<tr>
+			<td>Broadcast Sound</td>
+			<td>Screen/GND</td>
+			<td>
+			<p>Channel 1 Hot</p>
+			</td>
+			<td>
+			<p>Channel 1 Cold</p>
+			</td>
+			<td>
+			<p>Channel 2 Hot</p>
+			</td>
+			<td>
+			<p>Channel 2 Cold</p>
+			</td>
+			<td>2 Balanced Audio Channels</td>
+		</tr>
+	</tbody>
+</table>
+
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li> 
+<li><a href="#">
+
+<button onclick="document.getElementById('id07').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">XLR Audio 6 Pin Male/Female </font></button></a>
+
+  <div id="id07" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id07').style.display='none'">X</button>
+<div align="center" class="table1">
+
+
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/audio/7.jpg?raw=true" >
+
+
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
+
+<table>
+<th align="center">XLR Audio-Lighting 6 Pin Male/Female </th>
+</table>
+
+    <table>
+	<tbody>
+		<tr>
+			<th>Application</th>
+			<th>Pin 1</th>
+			<th>Pin 2</th>
+			<th>Pin 3</th>
+			<th>Pin 4</th>
+			<th>Pin 5</th>
+			<th>Pin 6</th>
+			<th>Notes</th>
+		</tr>
+		<tr>
+			<td>Canford Talkback multicircuit backbone</td>
+			<td>earth/scr</td>
+			<td>+24V DC</td>
+			<td>audio 1</td>
+			<td>audio 2</td>
+			<td>audio 3</td>
+			<td>audio 4</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Compulite Riggers Remote</td>
+			<td>ground</td>
+			<td>data from remote</td>
+			<td>data to remote</td>
+			<td>+12V</td>
+			<td>-12V</td>
+			<td>not used</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Strand GSX / LBX riggers remote</td>
+			<td>earth/scr</td>
+			<td>+10V</td>
+			<td>data +485</td>
+			<td>data -485</td>
+			<td>232 Rx</td>
+			<td>232 Tx</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
 
 <end////////////////////////////////////////>
 
