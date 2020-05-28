@@ -3,6 +3,7 @@
 
 
 
+
 <script>
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
@@ -301,7 +302,7 @@ tr:hover {background-color: #ddd;}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Audio connectors" title="Type in a name">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search PC connectors" title="Type in a name">
 
 <ul id="myUL">
   
@@ -309,7 +310,7 @@ tr:hover {background-color: #ddd;}
 <li><a href="#">
 
 <button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RCA Video Connector</font></button></a>
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Apple dock Pinout</font></button></a>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
@@ -317,7 +318,7 @@ tr:hover {background-color: #ddd;}
 <div align="center" class="table1">
 
 
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/1.jpg?raw=true" >
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/1.jpg?raw=true" >
 
 
 
@@ -333,32 +334,225 @@ tr:hover {background-color: #ddd;}
 <start/////////////////////////////////////>
 
 <table>
-<th align="center">RCA Video Connector</th>
+<th align="center">Apple dock Pinout</th>
 </table>
 
-  <table>
-<thead>
-<tr>
-<th>Pin Number</th>
-<th>Signal Name</th>
-</tr>
-</thead>
-<tbody>
+  <table >
+	<tbody>
+		<tr>
+			<th><strong>Pin</strong></th>
+			<th><strong>Signal</strong></th>
+			<th><strong>Description</strong></th>
+			<th>From Mobile pin numbering*</th>
+		</tr>
+		<tr>
+			<td><strong>1</strong></td>
+			<td>GND</td>
+			<td>Ground (-), internally connected with Pin 2 on iPod motherboard</td>
+			<td>30</td>
+		</tr>
+		<tr>
+			<td><strong>2</strong></td>
+			<td>GND</td>
+			<td>Audio &amp; Video ground (-), internally connected with Pin 1 on iPod motherboard</td>
+			<td>29</td>
+		</tr>
+		<tr>
+			<td><strong>3</strong></td>
+			<td>Right</td>
+			<td>Line Out - R (+) (Audio output, right channel)</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td><strong>4</strong></td>
+			<td>Left</td>
+			<td>Line Out - L(+) (Audio output, left channel)</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td><strong>5</strong></td>
+			<td>Right In</td>
+			<td>Line In - R (+)</td>
+			<td>26</td>
+		</tr>
+		<tr>
+			<td><strong>6</strong></td>
+			<td>
+			<p>Left In</p>
+			</td>
+			<td>Line In - L (+)</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td><strong>7</strong></td>
+			<td>?</td>
+			<td>&nbsp;</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td><strong>8</strong></td>
+			<td>Video Out</td>
+			<td>
+			<p>Composite video output (only when slideshow active on iPod Photo)</p>
 
-<tr>
-<td>1</td>
-<td>Tip=Signal</td>
-</tr>
+			<p><em>or Component Video Pb</em></p>
+			</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td><strong>9</strong></td>
+			<td>S-Video Chrominance output</td>
+			<td>
+			<p>for iPod Color, Photo only</p>
 
-<tr>
-<td>2</td>
-<td>Sleave=Ground/Shield</td>
-</tr>
+			<p><em>or Component Video Y</em></p>
+			</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td><strong>10</strong></td>
+			<td>S-Video Luminance output</td>
+			<td>
+			<p>for iPod Color, Photo only</p>
 
-</tbody>
-</table>
+			<p><em>or Component Video Pr</em></p>
+			</td>
+			<td>21</td>
+		</tr>
+		<tr>
+			<td><strong>11</strong></td>
+			<td>AUDIO_SW</td>
+			<td>If connected to GND the iPhone sends audio signals through pin 3-4, otherwise it uses onboard speaker.&nbsp;</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td><strong>12</strong></td>
+			<td>Tx</td>
+			<td>ipod sending line, Serial TxD</td>
+			<td>19</td>
+		</tr>
+		<tr>
+			<td><strong>13</strong></td>
+			<td>Rx</td>
+			<td>
+			<p>ipod receiving line, Serial RxD</p>
+			</td>
+			<td>18</td>
+		</tr>
+		<tr>
+			<td><strong>14</strong></td>
+			<td>RSVD</td>
+			<td>Reserved</td>
+			<td>17</td>
+		</tr>
+		<tr>
+			<td><strong>15</strong></td>
+			<td>GND</td>
+			<td>Ground (-), internally connected with pin 16 on iPod motherboard</td>
+			<td>16</td>
+		</tr>
+		<tr>
+			<td><strong>16</strong></td>
+			<td>GND</td>
+			<td>USB GND (-), internally connected with pin 15 on iPod motherboard</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<td><strong>17</strong></td>
+			<td>RSVD</td>
+			<td>Reserved</td>
+			<td>14</td>
+		</tr>
+		<tr>
+			<td><strong>18</strong></td>
+			<td>3.3V</td>
+			<td>3.3V Power (+)<br>
+			Stepped up to provide +5 VDC to USB on iPod Camera Connector. If iPod is put to sleep while Camera Connector is present, +5 VDC at this pin slowly drains back to 0 VDC.</td>
+			<td>13</td>
+		</tr>
+		<tr>
+			<td><strong>19,20</strong></td>
+			<td>+12V</td>
+			<td>Firewire Power 12 VDC (+)</td>
+			<td>11,12</td>
+		</tr>
+		<tr>
+			<td><strong>21</strong></td>
+			<td>Accessory Indicator/Serial enable</td>
+			<td>
+			<p>Different resistances indicate accessory type:<br>
+			1kOhm - iPod docking station, beeps when connected<br>
+			10kOhm - Takes some iPods into photo import mode</p>
 
-</tbody>
+			<p><em>6.8 kΩ -&nbsp;Serial port mode. Pin 11-13 are TTL level. Requires MAX232 chip to convert to RS232 levels.</em><br>
+			68kOhm - makes iPhone 3g send audio through line-out without any messages<br>
+			500kOhm - related to serial communication / used to enable serial communications Used in Dension Ice Link Plus car interface<br>
+			&nbsp; 1MOhm - Belkin auto adaptor, iPod shuts down automatically when power disconnected Connecting pin 21 to ground with a 1MOhm resistor does stop the ipod when power (i.e. Firewire-12V) is cut. Looks to be that when this pin is grounded it closes a switch so that on loss of power the Ipod shuts off. Dock has the same Resistor.</p>
+			</td>
+			<td>10</td>
+		</tr>
+		<tr>
+			<td><strong>22</strong></td>
+			<td>TPA (-)</td>
+			<td>FireWire Data TPA (-)</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td><strong>23</strong></td>
+			<td>5 VDC (+)</td>
+			<td>USB Power 5 VDC (+)</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td><strong>24</strong></td>
+			<td>TPA (+)</td>
+			<td>FireWire Data TPA (+)</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<td><strong>25</strong></td>
+			<td>Data (-)</td>
+			<td>USB Data (-)</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td><strong>26</strong></td>
+			<td>TPB (-)</td>
+			<td>FireWire Data TPB (-)</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td><strong>27</strong></td>
+			<td>Data (+)</td>
+			<td>
+			<p>USB Data (+)<br>
+			Pins 25 and 27 may be used in different manner. To force the <strong>iPod 5G</strong> to charge in any case, when USB Power 5 VDC (pin 23) is fed, 25 must be connected to 5V through a 10kOhm resistor, and 27 must be connected to the Ground (for example: pin 1) with a 10kOhm resistor.</p>
+
+			<p>iPod 5G can also be forced to charge by attaching the data + and the data - pins to the 5v via a 10k Ohm resistor ( BOTH PINS) and connecting pin 16 to the 5v (ground). (Confirmed working with iPod 5G 20GB). This provides 500mA of current for charging. For quicker charing, up to 1A, see below.</p>
+
+			<p><strong>To charge an iPhone, 3G, 3GS, 4 / iPod Touch, 2nd gen, 3rd, 4th or Ipod Classic (6th Gen)</strong>, usb data- (25) should be at 2.8v, usb data+(27) should be at 2.0v. This can be done with a few simple resistors: 33k to +5v (23) and 22k to gnd(16) to obtain 2v and 33k to +5v and 47k to gnd to obtain 2.8v. This is a notification to the iphone that it is connected to the external charger and may drain amps from the usb.</p>
+
+			<p><strong>To charge iPod Nano</strong> pins 25 and 27 should be tied together and then connected to a 10K ohm resistor, and the other side of this resistors then needs to be connected to 5v power.</p>
+
+			<p>It's also possible to charge the iPod's or iPhone's battery to make use the of internal +3.3v output (18) terminal to connect the USB Data + (27) thru a 47k ohms resistor and the USB Data- (25) thru a 47k resistor to the USB Power source +5v (23). &nbsp;This way the USB function is still useable for normal operations and makes it easier the fit in a plug. The resistors are not to critical 2x 150k's still work.</p>
+
+			<p>Added correction: iPod 2.1A charger advertises 2.8V on D+ and 2.0V on D-. &nbsp;Tying either wire to 5V could damage the target - use resistors tied to 5.1V and ground to be safe.</p>
+			</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td><strong>28</strong></td>
+			<td>TPB (+)</td>
+			<td>FireWire Data TPB (+)</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td><strong>29,30</strong></td>
+			<td>GND</td>
+			<td>FireWire Ground (-)</td>
+			<td>1,2</td>
+		</tr>
+	</tbody>
 </table>
 <end////////////////////////////////////////>
 
@@ -372,7 +566,7 @@ tr:hover {background-color: #ddd;}
 <li><a href="#">
 
 <button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">S - Video Connector</font></button></a>
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX/BTX 12V 4 Pin Connector</font></button></a>
 
   <div id="id02" class="w3-modal">
     <div class="w3-modal-content">
@@ -380,7 +574,7 @@ tr:hover {background-color: #ddd;}
 <div align="center" class="table1">
 
 
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/2.jpg?raw=true" >
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/2.jpg?raw=true" >
 
 
 
@@ -396,37 +590,44 @@ tr:hover {background-color: #ddd;}
 <start/////////////////////////////////////>
 
 <table>
-<th align="center">S - Video Connector Pinouts</th>
+<th align="center">ATX / BTX motherboards Powersuppply 12V</th>
 </table>
 
- <table>
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>GND</td>
-			<td>Ground (Y)</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>GND</td>
-			<td>Ground (C)</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Y</td>
-			<td>Intensity (Luma)</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>C</td>
-			<td>Color (Chroma)</td>
-		</tr>
-	</tbody>
+  <table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Name</th>
+<th>Color</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>COM</td>
+<td>black</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>2</td>
+<td>COM</td>
+<td>black</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>3</td>
+<td>+12VDC</td>
+<td>yellow</td>
+<td>+12 VDC</td>
+</tr>
+<tr>
+<td>4</td>
+<td>+12VDC</td>
+<td>yellow</td>
+<td>+12 VDC</td>
+</tr>
+</tbody>
 </table>
 <end////////////////////////////////////////>
 
@@ -436,12 +637,12 @@ tr:hover {background-color: #ddd;}
       </footer>
     
   </div>
-</div></li>  
+</div></li>
  
 <li><a href="#">
 
 <button onclick="document.getElementById('id03').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">SCART Connector</font></button></a>
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX power supply 20 Pin connector</font></button></a>
 
   <div id="id03" class="w3-modal">
     <div class="w3-modal-content">
@@ -449,7 +650,7 @@ tr:hover {background-color: #ddd;}
 <div align="center" class="table1">
 
 
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/3.jpg?raw=true" >
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/3.jpg?raw=true" >
 
 
 
@@ -465,168 +666,140 @@ tr:hover {background-color: #ddd;}
 <start/////////////////////////////////////>
 
 <table>
-<th align="center">SCART Connector Pinouts</th>
+<th align="center">ATX power supply 20 Pin connector</th>
 </table>
 
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-<th>Signal Level</th>
-<th>Impedance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>AOR</td>
-<td>Audio Out Right</td>
-<td>0.5 V rms</td>
-<td>&lt;1k ohm</td>
-</tr>
-<tr>
-<td>2</td>
-<td>AIR</td>
-<td>Audio In Right</td>
-<td>0.5 V rms</td>
-<td>&gt;10k ohm</td>
-</tr>
-<tr>
-<td>3</td>
-<td>AOL</td>
-<td>Audio Out Left + Mono</td>
-<td>0.5 V rms</td>
-<td>&lt;1k ohm</td>
-</tr>
-<tr>
-<td>4</td>
-<td>AGND</td>
-<td>Audio Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>B GND</td>
-<td>RGB Blue Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>AIL</td>
-<td>Audio In Left + Mono</td>
-<td>0.5 V rms</td>
-<td>&gt;10k ohm</td>
-</tr>
-<tr>
-<td>7</td>
-<td>B</td>
-<td>RGB Blue In</td>
-<td>0.7 V</td>
-<td>75 ohm</td>
-</tr>
-<tr>
-<td>8</td>
-<td>SWTCH</td>
-<td>Audio/RGB switch / 16:9</td>
-<td>12V = 4:3; 0V = 16:9</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>G GND</td>
-<td>RGB Green Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>CLKOUT</td>
-<td>Data 2: Clockpulse Out (Unavailable ??)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>11</td>
-<td>G</td>
-<td>RGB Green In</td>
-<td>0.7 V</td>
-<td>75 ohm</td>
-</tr>
-<tr>
-<td>12</td>
-<td>DATA</td>
-<td>Data 1: Data Out (Unavailable ??)</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>13</td>
-<td>R GND</td>
-<td>RGB Red Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>14</td>
-<td>DATAGND</td>
-<td>Data Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>15</td>
-<td>R</td>
-<td>RGB Red In / Chrominance</td>
-<td>0.7 V (Chrom.: 0.3 V burst)</td>
-<td>75 ohm</td>
-</tr>
-<tr>
-<td>16</td>
-<td>BLNK</td>
-<td>Blanking Signal</td>
-<td>1-3 V=RGB, 0-0.4 V=Composite</td>
-<td>75 ohm</td>
-</tr>
-<tr>
-<td>17</td>
-<td>VGND</td>
-<td>Composite Video Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>18</td>
-<td>BLNKGND</td>
-<td>Blanking Signal Ground</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>19</td>
-<td>VOUT</td>
-<td>Composite Video Out</td>
-<td>1 V</td>
-<td>75 ohm</td>
-</tr>
-<tr>
-<td>20</td>
-<td>VIN</td>
-<td>Composite Video In / Luminance</td>
-<td>1 V</td>
-<td>75 ohm</td>
-</tr>
-<tr>
-<td>21</td>
-<td>SHIELD</td>
-<td>Ground/Shield (Chassis)</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+  <table>
+	<tbody>
+		<tr>
+			<th style="text-align:left">Pin</th>
+			<th style="text-align:left">Name</th>
+			<th style="text-align:left">Color</th>
+			<th style="text-align:left">Description</th>
+		</tr>
+		<tr>
+			<td style="text-align:left">1</td>
+			<td style="text-align:left">3.3V</td>
+			<td style="text-align:left">Orange</td>
+			<td style="text-align:left">+3.3 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">2</td>
+			<td style="text-align:left">3.3V</td>
+			<td style="text-align:left">Orange</td>
+			<td style="text-align:left">+3.3 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">3</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">4</td>
+			<td style="text-align:left">5V</td>
+			<td style="text-align:left">Red</td>
+			<td style="text-align:left">+5 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">5</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">6</td>
+			<td style="text-align:left">5V</td>
+			<td style="text-align:left">Red</td>
+			<td style="text-align:left">+5 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">7</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">8</td>
+			<td style="text-align:left">PWR_OK</td>
+			<td style="text-align:left">Gray</td>
+			<td style="text-align:left">Power Ok is a status signal generated by the power supply to notify the computer that the DC operating voltages are within the ranges required for proper computer operation (+5 VDC when power is Ok when PSU is turned ON)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">9</td>
+			<td style="text-align:left">5VSB</td>
+			<td style="text-align:left">Purple</td>
+			<td>
+			<p>+5 VDC Standby Voltage (max 10mA) 500mA or more typical</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">10</td>
+			<td style="text-align:left">12V</td>
+			<td style="text-align:left">Yellow</td>
+			<td style="text-align:left">+12 VDC (may sometimes have a colored stripe to indicate which rail it's on)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">11</td>
+			<td style="text-align:left">3.3V</td>
+			<td style="text-align:left">Orange</td>
+			<td style="text-align:left">+3.3 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">12</td>
+			<td style="text-align:left">-12V</td>
+			<td style="text-align:left">Blue</td>
+			<td style="text-align:left">-12 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">13</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">14</td>
+			<td style="text-align:left">/PS_ON</td>
+			<td style="text-align:left">Green</td>
+			<td style="text-align:left">Power Supply On (active low). Short this pin to GND to switch power supply ON, disconnect from GND to switch OFF.</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">15</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">16</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">17</td>
+			<td style="text-align:left">COM</td>
+			<td style="text-align:left">Black</td>
+			<td style="text-align:left">Ground</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">18</td>
+			<td style="text-align:left">-5V</td>
+			<td style="text-align:left">White</td>
+			<td style="text-align:left">-5 VDC (2002 v1.2 made optional, 2004 v2.01 removed from specification)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">19</td>
+			<td style="text-align:left">5V</td>
+			<td style="text-align:left">Red</td>
+			<td style="text-align:left">+5 VDC</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">20</td>
+			<td style="text-align:left">5V</td>
+			<td style="text-align:left">Red</td>
+			<td style="text-align:left">+5 VDC</td>
+		</tr>
+	</tbody>
 </table>
 <end////////////////////////////////////////>
 
@@ -640,7 +813,7 @@ tr:hover {background-color: #ddd;}
 <li><a href="#">
 
 <button onclick="document.getElementById('id04').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">VGA Connector 15 PIN</font></button></a>
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX power supply 24 Pin connector</font></button></a>
 
   <div id="id04" class="w3-modal">
     <div class="w3-modal-content">
@@ -648,7 +821,7 @@ tr:hover {background-color: #ddd;}
 <div align="center" class="table1">
 
 
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/4.jpg?raw=true" >
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/4.jpg?raw=true" >
 
 
 
@@ -664,113 +837,163 @@ tr:hover {background-color: #ddd;}
 <start/////////////////////////////////////>
 
 <table>
-<th align="center">VGA Connector 15 PIN</th>
+<th align="center">ATX power supply 24 Pin connector</th>
 </table>
 
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>RED</td>
-<td>OUT</td>
-<td>Red Video (75 ohm, 0.7 V p-p)</td>
-</tr>
-<tr>
-<td>2</td>
-<td>GREEN</td>
-<td>OUT</td>
-<td>Green Video (75 ohm, 0.7 V p-p)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>BLUE</td>
-<td>OUT</td>
-<td>Blue Video (75 ohm, 0.7 V p-p)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ID2</td>
-<td>IN</td>
-<td>Monitor ID Bit 2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>GND</td>
-<td>-</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>6</td>
-<td>RGND</td>
-<td>-</td>
-<td>Red Ground</td>
-</tr>
-<tr>
-<td>7</td>
-<td>GGND</td>
-<td>-</td>
-<td>Green Ground</td>
-</tr>
-<tr>
-<td>8</td>
-<td>BGND</td>
-<td>-</td>
-<td>Blue Ground</td>
-</tr>
-<tr>
-<td>9</td>
-<td>KEY</td>
-<td>-</td>
-<td>Key (No pin)</td>
-</tr>
-<tr>
-<td>10</td>
-<td>SGND</td>
-<td>-</td>
-<td>Sync Ground</td>
-</tr>
-<tr>
-<td>11</td>
-<td>ID0</td>
-<td>IN</td>
-<td>Monitor ID Bit 0<br>
-GND=Color; NC=Mono</td>
-</tr>
-<tr>
-<td>12</td>
-<td>ID1 or SDA</td>
-<td>IN</td>
-<td>Monitor ID Bit 1<br>
-NC=Color; GND=Mono<br>
-Some systems only uses ID0 for monitor ID</td>
-</tr>
-<tr>
-<td>13</td>
-<td>HSYNC or CSYNC</td>
-<td>OUT</td>
-<td>Horizontal Sync (or Composite Sync)</td>
-</tr>
-<tr>
-<td>14</td>
-<td>VSYNC</td>
-<td>OUT</td>
-<td>Vertical Sync</td>
-</tr>
-<tr>
-<td>15</td>
-<td>ID3 or SCL</td>
-<td>IN</td>
-<td>Monitor ID Bit 3</td>
-</tr>
-</tbody>
+  <table>
+	<tbody>
+		<tr>
+			<th>Pin</th>
+			<th>Name</th>
+			<th>Color<br>
+			&nbsp;</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>3.3V</td>
+			<td>Orange</td>
+			<td>+3.3 VDC</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>3.3V</td>
+			<td>Orange</td>
+			<td>+3.3 VDC</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5V</td>
+			<td>Red</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>5V</td>
+			<td>Red</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>PWR_OK</td>
+			<td>Gray</td>
+			<td>Power Ok is a status signal generated by the power supply to notify the computer that the DC operating voltages are within the ranges required for proper computer operation (+5 VDC when power is Ok)</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>5VSB</td>
+			<td>Purple</td>
+			<td>+5 VDC Standby Voltage (max 10mA, max 2A in ATX 2.2 spec)</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>12V</td>
+			<td>Yellow</td>
+			<td>+12 VDC</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>12V</td>
+			<td>Yellow</td>
+			<td>+12 VDC</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>3.3V</td>
+			<td>Orange</td>
+			<td>+3.3 VDC</td>
+		</tr>
+		<tr>
+			<td>13</td>
+			<td>3.3V</td>
+			<td>Orange</td>
+			<td>+3.3 VDC.&nbsp;ATX V2.3 / EPS12V V2.92 both define that the PSU has to use remote sensing to compensate cable drops on the 3.3V line. Because of this there is an additional brown cable crimped together with the orange cable either to pin 13 (ATX) or pin 1 (EPS12V).</td>
+		</tr>
+		<tr>
+			<td>14</td>
+			<td>-12V</td>
+			<td>Blue</td>
+			<td>-12 VDC</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>/PS_ON</td>
+			<td>Green</td>
+			<td>Power Supply On (active low). Short this pin to GND to switch power supply ON, disconnect from GND to switch OFF.</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>-5V</td>
+			<td>White</td>
+			<td>-5 VDC&nbsp; (this is optional on newer ATX-2 supplies, it is for use with older AT class expansion cards and can be omitted on newer units)</td>
+		</tr>
+		<tr>
+			<td>21</td>
+			<td>+5V</td>
+			<td>Red</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>22</td>
+			<td>+5V</td>
+			<td>Red</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>23</td>
+			<td>+5V</td>
+			<td>Red</td>
+			<td>+5 VDC</td>
+		</tr>
+		<tr>
+			<td>24</td>
+			<td>COM</td>
+			<td>Black</td>
+			<td>Ground</td>
+		</tr>
+	</tbody>
 </table>
 <end////////////////////////////////////////>
 
@@ -782,10 +1005,11 @@ Some systems only uses ID0 for monitor ID</td>
   </div>
 </div></li>
 
+
 <li><a href="#">
 
 <button onclick="document.getElementById('id05').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">DVI-A 24+5 PIN Analog</font></button></a>
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX AUX connector Type-1</font></button></a>
 
   <div id="id05" class="w3-modal">
     <div class="w3-modal-content">
@@ -793,7 +1017,7 @@ Some systems only uses ID0 for monitor ID</td>
 <div align="center" class="table1">
 
 
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/5.jpg?raw=true" >
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/5.jpg?raw=true" >
 
 
 
@@ -808,137 +1032,54 @@ Some systems only uses ID0 for monitor ID</td>
 
 <start/////////////////////////////////////>
 
-
 <table>
-<th align="center">DVI-A 24+5 PIN Analog</th>
+<th align="center">ATX AUX connector Type-1</th>
 </table>
 
-<table>
-<thead>
-
-<tr>
-<th>Pin</th>
-<th>Signal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>2</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>3</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>4</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>5</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>6</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>7</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>8</td>
-<td>ANALOG VERT. SYNC</td>
-</tr>
-<tr>
-<td>9</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>10</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>11</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>12</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>13</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>14</td>
-<td>+5V POWER</td>
-</tr>
-<tr>
-<td>15</td>
-<td>GND</td>
-</tr>
-<tr>
-<td>16</td>
-<td>HOT PLUG DETECT</td>
-</tr>
-<tr>
-<td>17</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>18</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>19</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>20</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>21</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>22</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>23</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>24</td>
-<td>N/C</td>
-</tr>
-<tr>
-<td>C1</td>
-<td>ANALOG RED</td>
-</tr>
-<tr>
-<td>C2</td>
-<td>ANALOG GREEN</td>
-</tr>
-<tr>
-<td>C3</td>
-<td>ANALOG BLUE</td>
-</tr>
-<tr>
-<td>C4</td>
-<td>ANALOG HORZ SYNC</td>
-</tr>
-<tr>
-<td>C5</td>
-<td>ANALOG GROUND</td>
-</tr>
-</tbody>
+  <table>
+	<tbody>
+		<tr>
+			<th>Pin</th>
+ 			<th>Name</th>
+                         <th>Colour</th>
+			
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Ground</td>
+			<td>Black</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Ground</td>
+			<td>Black</td>
+			
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Ground</td>
+			<td>Black</td>
+			
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>+3.3V</td>
+			<td>Orange</td>
+			
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>+3.3V</td>
+			<td>Orange</td>
+			
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>+5V</td>
+			<td>Red</td>
+		</tr>
+		
+	</tbody>
 </table>
 <end////////////////////////////////////////>
 
@@ -949,630 +1090,6 @@ Some systems only uses ID0 for monitor ID</td>
     
   </div>
 </div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id06').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">DVI-D 24 PIN Digital</font></button></a>
-
-  <div id="id06" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id06').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/6.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<table>
-<th align="center">DVI-D 24 PIN Digital</th>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>T.M.D.S DATA 2-</td>
-</tr>
-<tr>
-<td>2</td>
-<td>T.M.D.S DATA 2+</td>
-</tr>
-<tr>
-<td>3</td>
-<td>T.M.D.S DATA <sup>2</sup>⁄<sub>4</sub> SHIELD</td>
-</tr>
-<tr>
-<td>4</td>
-<td>T.M.D.S DATA 4-</td>
-</tr>
-<tr>
-<td>5</td>
-<td>T.M.D.S DATA 4+</td>
-</tr>
-<tr>
-<td>6</td>
-<td>DDC CLOCK</td>
-</tr>
-<tr>
-<td>7</td>
-<td>DDC DATA</td>
-</tr>
-<tr>
-<td>8</td>
-<td>ANALOG VERT. SYNC</td>
-</tr>
-<tr>
-<td>9</td>
-<td>T.M.D.S DATA 1-</td>
-</tr>
-<tr>
-<td>10</td>
-<td>T.M.D.S DATA 1+</td>
-</tr>
-<tr>
-<td>11</td>
-<td>T.M.D.S DATA <sup>1</sup>⁄<sub>3</sub> SHIELD</td>
-</tr>
-<tr>
-<td>12</td>
-<td>T.M.D.S DATA 3-</td>
-</tr>
-<tr>
-<td>13</td>
-<td>T.M.D.S DATA 3+</td>
-</tr>
-<tr>
-<td>14</td>
-<td>+5V POWER</td>
-</tr>
-<tr>
-<td>15</td>
-<td>GND</td>
-</tr>
-<tr>
-<td>16</td>
-<td>HOT PLUG DETECT</td>
-</tr>
-<tr>
-<td>17</td>
-<td>T.M.D.S DATA 0-</td>
-</tr>
-<tr>
-<td>18</td>
-<td>T.M.D.S DATA 0+</td>
-</tr>
-<tr>
-<td>19</td>
-<td>T.M.D.S DATA 0/5 SHIELD</td>
-</tr>
-<tr>
-<td>20</td>
-<td>T.M.D.S DATA 5-</td>
-</tr>
-<tr>
-<td>21</td>
-<td>T.M.D.S DATA 5+</td>
-</tr>
-<tr>
-<td>22</td>
-<td>T.M.D.S CLOCK SHIELD</td>
-</tr>
-<tr>
-<td>23</td>
-<td>T.M.D.S CLOCK+</td>
-</tr>
-<tr>
-<td>24</td>
-<td>T.M.D.S CLOCK-</td>
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id07').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">DVI-I 24+5 Analog+Digital</font></button></a>
-
-  <div id="id07" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id07').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/7.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<table>
-<th align="center">DVI-I 24+5 Pin Analog+Digital</th>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>T.M.D.S DATA 2-</td>
-</tr>
-<tr>
-<td>2</td>
-<td>T.M.D.S DATA 2+</td>
-</tr>
-<tr>
-<td>3</td>
-<td>T.M.D.S DATA <sup>2</sup>⁄<sub>4</sub> SHIELD</td>
-</tr>
-<tr>
-<td>4</td>
-<td>T.M.D.S DATA 4-</td>
-</tr>
-<tr>
-<td>5</td>
-<td>T.M.D.S DATA 4+</td>
-</tr>
-<tr>
-<td>6</td>
-<td>DDC CLOCK</td>
-</tr>
-<tr>
-<td>7</td>
-<td>DDC DATA</td>
-</tr>
-<tr>
-<td>8</td>
-<td>ANALOG VERT. SYNC</td>
-</tr>
-<tr>
-<td>9</td>
-<td>T.M.D.S DATA 1-</td>
-</tr>
-<tr>
-<td>10</td>
-<td>T.M.D.S DATA 1+</td>
-</tr>
-<tr>
-<td>11</td>
-<td>T.M.D.S DATA <sup>1</sup>⁄<sub>3</sub> SHIELD</td>
-</tr>
-<tr>
-<td>12</td>
-<td>T.M.D.S DATA 3-</td>
-</tr>
-<tr>
-<td>13</td>
-<td>T.M.D.S DATA 3+</td>
-</tr>
-<tr>
-<td>14</td>
-<td>+5V POWER</td>
-</tr>
-<tr>
-<td>15</td>
-<td>GND</td>
-</tr>
-<tr>
-<td>16</td>
-<td>HOT PLUG DETECT</td>
-</tr>
-<tr>
-<td>17</td>
-<td>T.M.D.S DATA 0-</td>
-</tr>
-<tr>
-<td>18</td>
-<td>T.M.D.S DATA 0+</td>
-</tr>
-<tr>
-<td>19</td>
-<td>T.M.D.S DATA 0/5 SHIELD</td>
-</tr>
-<tr>
-<td>20</td>
-<td>T.M.D.S DATA 5-</td>
-</tr>
-<tr>
-<td>21</td>
-<td>T.M.D.S DATA 5+</td>
-</tr>
-<tr>
-<td>22</td>
-<td>T.M.D.S CLOCK SHIELD</td>
-</tr>
-<tr>
-<td>23</td>
-<td>T.M.D.S CLOCK+</td>
-</tr>
-<tr>
-<td>24</td>
-<td>T.M.D.S CLOCK-</td>
-</tr>
-<tr>
-<td>C1</td>
-<td>ANALOG RED</td>
-</tr>
-<tr>
-<td>C2</td>
-<td>ANALOG GREEN</td>
-</tr>
-<tr>
-<td>C3</td>
-<td>ANALOG BLUE</td>
-</tr>
-<tr>
-<td>C4</td>
-<td>ANALOG HORZ SYNC</td>
-</tr>
-<tr>
-<td>C5</td>
-<td>ANALOG GROUND</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id08').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">HDMI Connector Type- A and B</font></button></a>
-
-  <div id="id08" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id08').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/Video/8.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<table>
-<th align="center">HDMI Connector Pinouts Type-A</th>
-</table>
-
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>TMDS Data2+</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>TMDS Data2 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>TMDS Data2–</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>TMDS Data1+</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>TMDS Data1 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>TMDS Data1–</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>TMDS Data0+</td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>TMDS Data0 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>TMDS Data0–</td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>TMDS Clock+</td>
-<td></td>
-</tr>
-<tr>
-<td>11</td>
-<td>TMDS Clock Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>12</td>
-<td>TMDS Clock–</td>
-<td></td>
-</tr>
-<tr>
-<td>13</td>
-<td>CEC</td>
-<td></td>
-</tr>
-<tr>
-<td>14</td>
-<td>Reserved</td>
-<td>N.C. on device</td>
-</tr>
-<tr>
-<td>15</td>
-<td>SCL</td>
-<td></td>
-</tr>
-<tr>
-<td>16</td>
-<td>SDA</td>
-<td></td>
-</tr>
-<tr>
-<td>17</td>
-<td>DDC/CEC Ground</td>
-<td></td>
-</tr>
-<tr>
-<td>18</td>
-<td>+5 V Power</td>
-<td></td>
-</tr>
-<tr>
-<td>19</td>
-<td>Hot Plug Detect</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<table>
-<th align="center">HDMI Connector Pinouts Type-B</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>TMDS Data2+</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>TMDS Data2 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>TMDS Data2-</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>TMDS Data1+</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>TMDS Data1 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>6</td>
-<td>TMDS Data1-</td>
-<td></td>
-</tr>
-<tr>
-<td>7</td>
-<td>TMDS Data0+</td>
-<td></td>
-</tr>
-<tr>
-<td>8</td>
-<td>TMDS Data0 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>9</td>
-<td>TMDS Data0-</td>
-<td></td>
-</tr>
-<tr>
-<td>10</td>
-<td>TMDS Clock+</td>
-<td></td>
-</tr>
-<tr>
-<td>11</td>
-<td>TMDS Clock Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>12</td>
-<td>TMDS Clock-</td>
-<td></td>
-</tr>
-<tr>
-<td>13</td>
-<td>TMDS Data5+</td>
-<td></td>
-</tr>
-<tr>
-<td>14</td>
-<td>TMDS Data5 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>15</td>
-<td>TMDS Data5-</td>
-<td></td>
-</tr>
-<tr>
-<td>16</td>
-<td>TMDS Data4+</td>
-<td></td>
-</tr>
-<tr>
-<td>17</td>
-<td>TMDS Data4 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>18</td>
-<td>TMDS Data4-</td>
-<td></td>
-</tr>
-<tr>
-<td>19</td>
-<td>TMDS Data3+</td>
-<td></td>
-</tr>
-<tr>
-<td>20</td>
-<td>TMDS Data3 Shield</td>
-<td></td>
-</tr>
-<tr>
-<td>21</td>
-<td>TMDS Data3-</td>
-<td></td>
-</tr>
-<tr>
-<td>22</td>
-<td>CEC</td>
-<td></td>
-</tr>
-<tr>
-<td>23</td>
-<td>Reserved</td>
-<td>(N.C. on device)</td>
-</tr>
-<tr>
-<td>24</td>
-<td>Reserved</td>
-<td>(N.C. on device)</td>
-</tr>
-<tr>
-<td>25</td>
-<td>SCL</td>
-<td></td>
-</tr>
-<tr>
-<td>26</td>
-<td>SDA</td>
-<td></td>
-</tr>
-<tr>
-<td>27</td>
-<td>DDC/CEC Ground</td>
-<td></td>
-</tr>
-<tr>
-<td>28</td>
-<td>+5V</td>
-<td></td>
-</tr>
-<tr>
-<td>29</td>
-<td>Hot Plug Detect</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
 
 </ul>
 </body>
