@@ -1,9 +1,5 @@
 
-
-
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
@@ -21,11 +17,31 @@ function myFunction() {
         }
     }
 }
-</script>
+
+$('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    var src = $(this).attr('src');
+    var modal;
+    function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
+    modal = $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        removeModal();
+    }).appendTo('body');
+    //handling ESC
+    $('body').on('keyup.modal-close', function(e){
+      if(e.key==='Escape'){ removeModal(); } 
+    });
+});
+  </script>
 
 
 
-<body>
 
 
 
@@ -298,271 +314,19 @@ tr:hover {background-color: #ddd;}
 </style>
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search PC connectors" title="Type in a name">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Country's names.." title="Type in a name">
 
 <ul id="myUL">
   
- 
-<li><a href="#">
-
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Apple dock Pinout</font></button></a>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id01').style.display='none'">X</button>
-<div align="center" class="table1">
+  
 
 
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/1.jpg?raw=true" >
+</start>
 
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Apple dock Pinout</th>
-</table>
-
-  <table >
-	<tbody>
-		<tr>
-			<th><strong>Pin</strong></th>
-			<th><strong>Signal</strong></th>
-			<th><strong>Description</strong></th>
-			<th>From Mobile pin numbering*</th>
-		</tr>
-		<tr>
-			<td><strong>1</strong></td>
-			<td>GND</td>
-			<td>Ground (-), internally connected with Pin 2 on iPod motherboard</td>
-			<td>30</td>
-		</tr>
-		<tr>
-			<td><strong>2</strong></td>
-			<td>GND</td>
-			<td>Audio &amp; Video ground (-), internally connected with Pin 1 on iPod motherboard</td>
-			<td>29</td>
-		</tr>
-		<tr>
-			<td><strong>3</strong></td>
-			<td>Right</td>
-			<td>Line Out - R (+) (Audio output, right channel)</td>
-			<td>28</td>
-		</tr>
-		<tr>
-			<td><strong>4</strong></td>
-			<td>Left</td>
-			<td>Line Out - L(+) (Audio output, left channel)</td>
-			<td>27</td>
-		</tr>
-		<tr>
-			<td><strong>5</strong></td>
-			<td>Right In</td>
-			<td>Line In - R (+)</td>
-			<td>26</td>
-		</tr>
-		<tr>
-			<td><strong>6</strong></td>
-			<td>
-			<p>Left In</p>
-			</td>
-			<td>Line In - L (+)</td>
-			<td>25</td>
-		</tr>
-		<tr>
-			<td><strong>7</strong></td>
-			<td>?</td>
-			<td>&nbsp;</td>
-			<td>24</td>
-		</tr>
-		<tr>
-			<td><strong>8</strong></td>
-			<td>Video Out</td>
-			<td>
-			<p>Composite video output (only when slideshow active on iPod Photo)</p>
-
-			<p><em>or Component Video Pb</em></p>
-			</td>
-			<td>23</td>
-		</tr>
-		<tr>
-			<td><strong>9</strong></td>
-			<td>S-Video Chrominance output</td>
-			<td>
-			<p>for iPod Color, Photo only</p>
-
-			<p><em>or Component Video Y</em></p>
-			</td>
-			<td>22</td>
-		</tr>
-		<tr>
-			<td><strong>10</strong></td>
-			<td>S-Video Luminance output</td>
-			<td>
-			<p>for iPod Color, Photo only</p>
-
-			<p><em>or Component Video Pr</em></p>
-			</td>
-			<td>21</td>
-		</tr>
-		<tr>
-			<td><strong>11</strong></td>
-			<td>AUDIO_SW</td>
-			<td>If connected to GND the iPhone sends audio signals through pin 3-4, otherwise it uses onboard speaker.&nbsp;</td>
-			<td>20</td>
-		</tr>
-		<tr>
-			<td><strong>12</strong></td>
-			<td>Tx</td>
-			<td>ipod sending line, Serial TxD</td>
-			<td>19</td>
-		</tr>
-		<tr>
-			<td><strong>13</strong></td>
-			<td>Rx</td>
-			<td>
-			<p>ipod receiving line, Serial RxD</p>
-			</td>
-			<td>18</td>
-		</tr>
-		<tr>
-			<td><strong>14</strong></td>
-			<td>RSVD</td>
-			<td>Reserved</td>
-			<td>17</td>
-		</tr>
-		<tr>
-			<td><strong>15</strong></td>
-			<td>GND</td>
-			<td>Ground (-), internally connected with pin 16 on iPod motherboard</td>
-			<td>16</td>
-		</tr>
-		<tr>
-			<td><strong>16</strong></td>
-			<td>GND</td>
-			<td>USB GND (-), internally connected with pin 15 on iPod motherboard</td>
-			<td>15</td>
-		</tr>
-		<tr>
-			<td><strong>17</strong></td>
-			<td>RSVD</td>
-			<td>Reserved</td>
-			<td>14</td>
-		</tr>
-		<tr>
-			<td><strong>18</strong></td>
-			<td>3.3V</td>
-			<td>3.3V Power (+)<br>
-			Stepped up to provide +5 VDC to USB on iPod Camera Connector. If iPod is put to sleep while Camera Connector is present, +5 VDC at this pin slowly drains back to 0 VDC.</td>
-			<td>13</td>
-		</tr>
-		<tr>
-			<td><strong>19,20</strong></td>
-			<td>+12V</td>
-			<td>Firewire Power 12 VDC (+)</td>
-			<td>11,12</td>
-		</tr>
-		<tr>
-			<td><strong>21</strong></td>
-			<td>Accessory Indicator/Serial enable</td>
-			<td>
-			<p>Different resistances indicate accessory type:<br>
-			1kOhm - iPod docking station, beeps when connected<br>
-			10kOhm - Takes some iPods into photo import mode</p>
-
-			<p><em>6.8 kΩ -&nbsp;Serial port mode. Pin 11-13 are TTL level. Requires MAX232 chip to convert to RS232 levels.</em><br>
-			68kOhm - makes iPhone 3g send audio through line-out without any messages<br>
-			500kOhm - related to serial communication / used to enable serial communications Used in Dension Ice Link Plus car interface<br>
-			&nbsp; 1MOhm - Belkin auto adaptor, iPod shuts down automatically when power disconnected Connecting pin 21 to ground with a 1MOhm resistor does stop the ipod when power (i.e. Firewire-12V) is cut. Looks to be that when this pin is grounded it closes a switch so that on loss of power the Ipod shuts off. Dock has the same Resistor.</p>
-			</td>
-			<td>10</td>
-		</tr>
-		<tr>
-			<td><strong>22</strong></td>
-			<td>TPA (-)</td>
-			<td>FireWire Data TPA (-)</td>
-			<td>9</td>
-		</tr>
-		<tr>
-			<td><strong>23</strong></td>
-			<td>5 VDC (+)</td>
-			<td>USB Power 5 VDC (+)</td>
-			<td>8</td>
-		</tr>
-		<tr>
-			<td><strong>24</strong></td>
-			<td>TPA (+)</td>
-			<td>FireWire Data TPA (+)</td>
-			<td>7</td>
-		</tr>
-		<tr>
-			<td><strong>25</strong></td>
-			<td>Data (-)</td>
-			<td>USB Data (-)</td>
-			<td>6</td>
-		</tr>
-		<tr>
-			<td><strong>26</strong></td>
-			<td>TPB (-)</td>
-			<td>FireWire Data TPB (-)</td>
-			<td>5</td>
-		</tr>
-		<tr>
-			<td><strong>27</strong></td>
-			<td>Data (+)</td>
-			<td>
-			<p>USB Data (+)<br>
-			Pins 25 and 27 may be used in different manner. To force the <strong>iPod 5G</strong> to charge in any case, when USB Power 5 VDC (pin 23) is fed, 25 must be connected to 5V through a 10kOhm resistor, and 27 must be connected to the Ground (for example: pin 1) with a 10kOhm resistor.</p>
-
-			<p>iPod 5G can also be forced to charge by attaching the data + and the data - pins to the 5v via a 10k Ohm resistor ( BOTH PINS) and connecting pin 16 to the 5v (ground). (Confirmed working with iPod 5G 20GB). This provides 500mA of current for charging. For quicker charing, up to 1A, see below.</p>
-
-			<p><strong>To charge an iPhone, 3G, 3GS, 4 / iPod Touch, 2nd gen, 3rd, 4th or Ipod Classic (6th Gen)</strong>, usb data- (25) should be at 2.8v, usb data+(27) should be at 2.0v. This can be done with a few simple resistors: 33k to +5v (23) and 22k to gnd(16) to obtain 2v and 33k to +5v and 47k to gnd to obtain 2.8v. This is a notification to the iphone that it is connected to the external charger and may drain amps from the usb.</p>
-
-			<p><strong>To charge iPod Nano</strong> pins 25 and 27 should be tied together and then connected to a 10K ohm resistor, and the other side of this resistors then needs to be connected to 5v power.</p>
-
-			<p>It's also possible to charge the iPod's or iPhone's battery to make use the of internal +3.3v output (18) terminal to connect the USB Data + (27) thru a 47k ohms resistor and the USB Data- (25) thru a 47k resistor to the USB Power source +5v (23). &nbsp;This way the USB function is still useable for normal operations and makes it easier the fit in a plug. The resistors are not to critical 2x 150k's still work.</p>
-
-			<p>Added correction: iPod 2.1A charger advertises 2.8V on D+ and 2.0V on D-. &nbsp;Tying either wire to 5V could damage the target - use resistors tied to 5.1V and ground to be safe.</p>
-			</td>
-			<td>4</td>
-		</tr>
-		<tr>
-			<td><strong>28</strong></td>
-			<td>TPB (+)</td>
-			<td>FireWire Data TPB (+)</td>
-			<td>3</td>
-		</tr>
-		<tr>
-			<td><strong>29,30</strong></td>
-			<td>GND</td>
-			<td>FireWire Ground (-)</td>
-			<td>1,2</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
 <li><a href="#">
 
 <button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
@@ -3062,20 +2826,7 @@ $('img[data-enlargable]').addClass('img-enlargable').click(function(){
     });
 });
   </script>
-<script>
-window.onscroll = function() {myFunction()};
 
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
 
 </head>
 <body>
