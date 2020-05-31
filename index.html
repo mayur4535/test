@@ -31,7 +31,7 @@ $('img[data-enlargable]').addClass('img-enlargable').click(function(){
         zIndex:'10000',
         top:'0', left:'0',
         cursor: 'zoom-out'
-    }).click(function(){ 
+    }).click(function(){
         removeModal();
     }).appendTo('body');
     //handling ESC
@@ -5325,107 +5325,537 @@ other devices to operate in remote mode.</td>
 <table>
 <th align="center">Serial ATA 7 Pin Data Power pinout</th>
 </table>
-<table>
+<table >
 	<tbody>
 		<tr>
-			<th style="text-align:center">Pin</th>
-			<th style="text-align:center">Signal</th>
-			<th style="text-align:center">Description</th>
-			<th style="text-align:center">PSU Color Wire</th>
+			<th>Pin</th>
+			<th>Name</th>
+			<th>Function</th>
 		</tr>
 		<tr>
-			<td style="text-align:center">1</td>
-			<td style="text-align:center">+3.3VDC</td>
-			<td style="text-align:center">3.3&nbsp;V Power</td>
-			<td style="text-align:center">orange</td>
+			<td>1</td>
+			<td>GND</td>
+			<td>Ground</td>
 		</tr>
 		<tr>
-			<td style="text-align:center">2</td>
-			<td style="text-align:center">+3.3VDC</td>
-			<td style="text-align:center">3.3&nbsp;V Power</td>
-			<td style="text-align:center">orange</td>
+			<td>2</td>
+			<td>A+</td>
+			<td>Transmit+</td>
 		</tr>
 		<tr>
-			<td style="text-align:center">3</td>
-			<td style="text-align:center">+3.3VDC</td>
-			<td style="text-align:center">Enter/exit Power Disable (PWDIS) mode<br>
-			(3.3&nbsp;V Power, Pre-charge prior to SATA 3.3)</td>
-			<td style="text-align:center">orange</td>
+			<td>3</td>
+			<td>A-</td>
+			<td>Transmit-</td>
 		</tr>
 		<tr>
-			<td style="text-align:center">4</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
+			<td>4</td>
+			<td>GND</td>
+			<td>Ground</td>
 		</tr>
 		<tr>
-			<td style="text-align:center">5</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
+			<td>5</td>
+			<td>B-</td>
+			<td>Receive-</td>
 		</tr>
 		<tr>
-			<td style="text-align:center">6</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
+			<td>6</td>
+			<td>B+</td>
+			<td>Receive+</td>
 		</tr>
 		<tr>
-			<td style="text-align:center">7</td>
-			<td style="text-align:center">+5VDC</td>
-			<td style="text-align:center">5&nbsp;V Power, Pre-charge</td>
-			<td style="text-align:center">red</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">8</td>
-			<td style="text-align:center">+5VDC</td>
-			<td style="text-align:center">5&nbsp;V Power</td>
-			<td style="text-align:center">red</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">9</td>
-			<td style="text-align:center">+5VDC</td>
-			<td style="text-align:center">5&nbsp;V Power</td>
-			<td style="text-align:center">red</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">10</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">11</td>
-			<td style="text-align:center">Optional</td>
-			<td style="text-align:center">Staggered spinup/activity</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">12</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">13</td>
-			<td style="text-align:center">+12VDC</td>
-			<td style="text-align:center">12&nbsp;V Power, Pre-charge</td>
-			<td style="text-align:center">yellow</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">14</td>
-			<td style="text-align:center">+12VDC</td>
-			<td style="text-align:center">12&nbsp;V Power</td>
-			<td style="text-align:center">yellow</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">15</td>
-			<td style="text-align:center">+12VDC</td>
-			<td style="text-align:center">12&nbsp;V Power</td>
-			<td style="text-align:center">yellow</td>
+			<td>7</td>
+			<td>GND</td>
+			<td>Coding Notch</td>
 		</tr>
 	</tbody>
 </table>
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li>
+<li><a href="#">
+
+<button onclick="document.getElementById('id45').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Apple Thunderbolt pinout</font></button></a>
+
+  <div id="id45" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id45').style.display='none'">X</button>
+<div align="center" class="table1">
+
+
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/45.jpg?raw=true" >
+
+
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
+
+<table>
+<th align="center">Apple Thunderbolt pinout</th>
+</table>
+<table >
+	<tbody>
+		<tr>
+			<th>Pin<br>
+			Number</th>
+			<th>Pin<br>
+			Name</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>HPD</td>
+			<td>&nbsp;Hot plug detect</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>HS0TX+</td>
+			<td>&nbsp;HighSpeed transmit 0 (positive)</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>HS0RX+</td>
+			<td>&nbsp;HighSpeed receive 0 (positive)</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>HS0TX-</td>
+			<td>&nbsp;HighSpeed transmit 0 (negative)</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>HS0RX-</td>
+			<td>&nbsp;HighSpeed receive 0 (negative)</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+<tr>
+			<td>8</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>&nbsp;LSR2P TX</td>
+			<td>LowSpeed transmit</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>GND</td>
+			<td>&nbsp;Ground (reserved)</td>
+		</tr>
+		<tr>
+			<td>11</td>
+			<td>&nbsp;LSP2R RX</td>
+			<td>LowSpeed receive</td>
+		</tr>
+		<tr>
+			<td>12</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+<tr>
+			<td>13</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+<tr>
+			<td>14</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>15</td>
+			<td>&nbsp;HS1TX+</td>
+			<td>HighSpeed transmit 1 (positive)</td>
+		</tr>
+		<tr>
+			<td>16</td>
+			<td>&nbsp;HS1RX+</td>
+			<td>HighSpeed receive 1 (positive)</td>
+		</tr>
+		<tr>
+			<td>17</td>
+			<td>&nbsp;HS1TX-</td>
+			<td>HighSpeed transmit 1 (negative)</td>
+		</tr>
+		<tr>
+			<td>18</td>
+			<td>&nbsp;HS1RX-</td>
+			<td>HighSpeed receive 1 (negative)</td>
+		</tr>
+		<tr>
+			<td>19</td>
+			<td>GND</td>
+			<td>Ground</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>&nbsp;DPPWR&nbsp;<br>
+			&nbsp;</td>
+			<td>Power</td>
+		</tr>
+	</tbody>
+</table>
+
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li>
+
+<li><a href="#">
+
+<button onclick="document.getElementById('id46').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB 3.0 A Pinout</font></button></a>
+
+  <div id="id46" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id46').style.display='none'">X</button>
+<div align="center" class="table1">
+
+
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/46.jpg?raw=true" >
+
+
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
+
+<table>
+<th align="center">USB 3.0 A Pinout</th>
+</table>
+<table border="1" cellpadding="3" cellspacing="0">
+	<tbody>
+		<tr>
+			<th>Pin
+			</th>
+			<th>
+			Name</th>
+                        <th>Colour</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>VBus</td>
+                         <td>Red</td>
+			<td>+5V Power</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>USB D-</td>
+                        <td>White</td>
+			<td rowspan="2">&nbsp;USB 2.0 data</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>USB D+</td>
+                        <td>Green</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>GND</td>
+                      <td>Black</td>
+			<td>&nbsp;Ground for power return</td>
+		</tr>
+<tr>
+			<td>5</td>
+			<td>StdA_SSTX-</td>
+                            <td>Blue</td>
+			<td>&nbsp;SuperSpeed transmitter</td>
+		</tr>
+<tr>
+			<td>6</td>
+			<td>StdA_SSTX+</td>
+                        <td>Yellow</td>
+			<td>&nbsp;SuperSpeed transmitter</td>
+		</tr>
+<tr>
+			<td>7</td>
+			<td>GND_DRAIN</td>
+                          <td>-</td>
+			<td>&nbsp;Ground for signal return</td>
+		</tr>
+		
+		<tr>
+			<td>8</td>
+			<td>StdA_SSRX-</td>
+                            <td>Purple</td>
+			<td>&nbsp;SuperSpeed receiver</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>StdA_SSRX+</td>
+                       <td>Orange</td>
+			<td>&nbsp;SuperSpeed receiver</td>
+		</tr>
+		
+		
+	</tbody>
+</table>
+
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li>
+
+<li><a href="#">
+
+<button onclick="document.getElementById('id47').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB 3.0 B Pinout</font></button></a>
+
+  <div id="id47" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id47').style.display='none'">X</button>
+<div align="center" class="table1">
+
+
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/47.jpg?raw=true" >
+
+
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
+
+<table>
+<th align="center">USB 3.0 B Pinout</th>
+</table>
+<table border="1" cellpadding="3" cellspacing="0">
+	<tbody>
+		<tr>
+			<th>Pin
+			</th>
+			<th>
+			Name</th>
+                        <th>Colour</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>VBus</td>
+                         <td>Red</td>
+			<td>+5V Power</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>USB D-</td>
+                        <td>White</td>
+			<td rowspan="2">&nbsp;USB 2.0 data</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>USB D+</td>
+                        <td>Green</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>GND</td>
+                      <td>Black</td>
+			<td>&nbsp;Ground for power return</td>
+		</tr>
+<tr>
+			<td>5</td>
+			<td>StdA_SSTX-</td>
+                            <td>Blue</td>
+			<td>&nbsp;SuperSpeed transmitter</td>
+		</tr>
+<tr>
+			<td>6</td>
+			<td>StdA_SSTX+</td>
+                        <td>Yellow</td>
+			<td>&nbsp;SuperSpeed transmitter</td>
+		</tr>
+<tr>
+			<td>7</td>
+			<td>GND_DRAIN</td>
+                          <td>-</td>
+			<td>&nbsp;Ground for signal return</td>
+		</tr>
+		
+		<tr>
+			<td>8</td>
+			<td>StdA_SSRX-</td>
+                            <td>Purple</td>
+			<td>&nbsp;SuperSpeed receiver</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>StdA_SSRX+</td>
+                       <td>Orange</td>
+			<td>&nbsp;SuperSpeed receiver</td>
+		</tr>
+		
+		
+	</tbody>
+</table>
+
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li>
+
+<li><a href="#">
+
+<button onclick="document.getElementById('id48').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB 3.0 B Powered Pinout</font></button></a>
+
+  <div id="id48" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id48').style.display='none'">X</button>
+<div align="center" class="table1">
+
+
+<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/48.jpg?raw=true" >
+
+
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
+
+<table>
+<th align="center">USB 3.0 B Powered  Pinout</th>
+</table>
+<table border="1" cellpadding="3" cellspacing="0">
+	<tbody>
+		<tr>
+			<th>Pin
+			</th>
+			<th>
+			Name</th>
+                        <th>Colour</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>VBus</td>
+                         <td>Red</td>
+			<td>+5V Power</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>USB D-</td>
+                        <td>White</td>
+			<td rowspan="2">&nbsp;USB 2.0 data</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>USB D+</td>
+                        <td>Green</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>GND</td>
+                      <td>Black</td>
+			<td>&nbsp;Ground for power return</td>
+		</tr>
+<tr>
+			<td>5</td>
+			<td>StdA_SSTX-</td>
+                            <td>Blue</td>
+			<td>&nbsp;SuperSpeed transmitter</td>
+		</tr>
+<tr>
+			<td>6</td>
+			<td>StdA_SSTX+</td>
+                        <td>Yellow</td>
+			<td>&nbsp;SuperSpeed transmitter</td>
+		</tr>
+<tr>
+			<td>7</td>
+			<td>GND_DRAIN</td>
+                          <td>-</td>
+			<td>&nbsp;Ground for signal return</td>
+		</tr>
+		
+		<tr>
+			<td>8</td>
+			<td>StdA_SSRX-</td>
+                            <td>Purple</td>
+			<td>&nbsp;SuperSpeed receiver</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>StdA_SSRX+</td>
+                       <td>Orange</td>
+			<td>&nbsp;SuperSpeed receiver</td>
+		</tr>
+ <tr>
+			<td>10</td>
+			<td>DPWR</td>
+                       <td>-</td>
+			<td>&nbsp;Power provided by device</td>
+		</tr>
+<tr>
+			<td>11</td>
+			<td>DGND</td>
+                       <td>-</td>
+			<td>&nbsp;Ground return for DPWR</td>
+		</tr>
+		
+		
+	</tbody>
+</table>
+
 <end////////////////////////////////////////>
 
      
