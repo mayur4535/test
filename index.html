@@ -1,6463 +1,1577 @@
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+
+        <style type="text/css">body * .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+}
+
+    .dk-container ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dk-container .header-wrap {
+        padding: 0 0 10px;
+        border-bottom: solid 1px #ccc;
+    }
+
+/* include when related-products-mod is included in ejs
+    .dk-container .content {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 3fr 2em 1fr;
+        -ms-grid-rows: 1fr;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 2em;
+    }
+
+        .dk-container .content .calculator-mod {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            -ms-grid-column-span: 1;
         }
+
+        .dk-container .content .related-products-mod {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+        }
+*/
+.dk-breadcrumb ol {
+    color: #222;
+    list-style: none;
+    padding-left: 0;
+    font-size: 12px;
+    line-height: .8;
+}
+
+    .dk-breadcrumb ol li {
+        color: #222;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        margin-right: 8px;
+        margin-top: 0;
+        font-weight: 700;
+        line-height: 2;
+    }
+
+        .dk-breadcrumb ol li:last-child {
+            font-weight: 400;
+        }
+
+        .dk-breadcrumb ol li a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        .dk-breadcrumb ol li:after {
+            font-family: dk,icomoon;
+            content: " \F105";
+            white-space: pre;
+            font-size: 1em;
+        }
+
+        .dk-breadcrumb ol li:last-child:after {
+            content: "";
+        }
+
+.dk-container .header-wrap .dk-icon-border {
+    height: 41px;
+    max-width: 43px;
+    margin: 0 9px 0 0;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #CC0000;
+}
+.rtl .dk-container .header-wrap .dk-icon-border {
+    height: 41px;
+    max-width: 43px;
+    margin: 0 0 0 9px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #CC0000;
+}
+
+.dk-container .header-wrap .dk-icon {
+    margin-right: 1em;
+    height: 50px;
+    width: 80px;
+}
+
+.dk-container .header-wrap .headline-title {
+
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .header-wrap .headline-title {
+
     }
 }
 
-$('img[data-enlargable]').addClass('img-enlargable').click(function(){
-    var src = $(this).attr('src');
-    var modal;
-    function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
-    modal = $('<div>').css({
-        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center', 
-        backgroundSize: 'contain', 
-        width:'100%', height:'100%',
-        position:'fixed',
-        zIndex:'10000',
-        top:'0', left:'0',
-        cursor: 'zoom-out'
-    }).click(function(){
-        removeModal();
-    }).appendTo('body');
-    //handling ESC
-    $('body').on('keyup.modal-close', function(e){
-      if(e.key==='Escape'){ removeModal(); } 
+@media (max-width: 991px) {
+    .dk-container .header-wrap .pull-right {
+        clear: both;
+        float: none !important;
+        padding: 12px 0 0;
+    }
+}
+
+.dk-container .header-wrap .btn-actions {
+    margin: 0;
+    font-size: 0;
+}
+
+    .dk-container .header-wrap .btn-actions li {
+        display: inline-block;
+        padding: 0 5px;
+        font-size: 14px;
+    }
+
+@media (max-width: 991px) {
+    .dk-container .header-wrap .btn-actions li:first-child {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .dk-container .header-wrap .btn-actions li {
+        padding-bottom: 20px;
+    }
+}
+
+.dk-container .header-wrap .btn-actions li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+}
+
+    .dk-container .header-wrap .btn-actions li a:hover {
+        border: 1px solid #cc2500;
+    }
+
+.dk-container .header-wrap .btn-actions li .fa {
+    padding: 0 2px 0 0;
+    color: #cc2500;
+}
+
+@media (max-width: 767px) {
+    .dk-container .header-wrap .pull-left, .dk-container .header-wrap .pull-right {
+        float: none !important;
+    }
+}
+
+.dk-container .single-dk-calc-cont {
+    padding: 20px 0 0;
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont {
+        display: table;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .single-dk-calc-cont {
+        padding: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap {
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+@media (min-width: 768px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 1.5em 2em;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 2em 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: -webkit-min-content;
+        -ms-grid-rows: -webkit-min-content;
+        -ms-grid-rows: min-content;
+        grid-template-rows: min-content;
+        grid-gap: 2em;
+    }
+
+        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+        }
+}
+
+@media (max-width: 767px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
+        padding: 1.5em 1em;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-output {
+    padding: 15px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    padding: 10px 0 10px 7px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    width: 45px;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid #CCCCCC;
+    font-size: 13px;
+}
+.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
+    position: absolute;
+    z-index: 5;
+    right: inherit;
+    left: 0;
+    padding: 10px 0 10px 7px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    width: 45px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #CCCCCC;
+    font-size: 13px;
+}
+
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown:focus {
+        outline: 0;
+    }
+
+
+.dk-container .related-tools-wrap {
+    padding: 30px 0 0;
+}
+
+    .dk-container .related-tools-wrap h2 {
+        margin: 0;
+        padding: 0 0 10px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .dk-container .related-tools-wrap ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 2em;
+    }
+
+
+.dk-container .related-tools-wrap ul > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.dk-container .related-tools-wrap ul > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.dk-container .related-tools-wrap ul > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+.dk-container .related-tools-wrap ul > *:nth-child(4) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 7;
+}
+
+.dk-container .related-tools-wrap ul li a {
+    display: block;
+    padding: 15px;
+    color: #222;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+    .dk-container .related-tools-wrap ul li a .dkc-related_img {
+        max-height: 45px;
+    }
+
+    .dk-container .related-tools-wrap ul li a:hover, .dk-container .related-tools-wrap ul li a:focus {
+        text-decoration: none;
+        border: 2px solid #cc2500;
+    }
+
+    .dk-container .related-tools-wrap ul li a:hover,
+    .dk-container .related-tools-wrap ul li a:focus {
+        text-decoration: none;
+        border: 2px solid #cc2500;
+    }
+
+.dk-container .related-tools-wrap ul li span {
+    display: block;
+    padding: 10px 0 0;
+    margin-top: auto;
+}
+
+.dk-container .input-headline {
+    display: block;
+    margin: 5px 5px -70px 50px;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: left;
+}
+.rtl .dk-container .input-headline {
+    display: block;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .input-headline {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
+        -ms-grid-rows: 1fr 2em 1fr;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+
+        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
+        }
+
+    .dk-container .related-tools-wrap ul {
+        -ms-grid-columns: 1fr 2em 1fr;
+        -ms-grid-rows: 1fr 2em 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(2) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+        }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(3) {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(4) {
+            -ms-grid-row: 3;
+            -ms-grid-column: 3;
+        }
+}
+
+@media screen and (max-width: 450px) {
+    .dk-container .related-tools-wrap ul {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr;
+        grid-template-columns: 1fr;
+    }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(1) {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(2) {
+            -ms-grid-row: 3;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(3) {
+            -ms-grid-row: 5;
+            -ms-grid-column: 1;
+        }
+
+        .dk-container .related-tools-wrap ul > *:nth-child(4) {
+            -ms-grid-row: 7;
+            -ms-grid-column: 1;
+        }
+}
+
+.dk-container .inputs .calculator-input {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 45px;
+    grid-template-columns: 1fr 45px;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'input dd';
+    margin-bottom: 0px;
+}
+  .input original{}
+
+    .dk-container .inputs .calculator-input input {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-area: input;
+        width:400;   
+    height:80; 
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: px 0;
+    outline:none;
+    position:absolute;
+right:80;
+    text-align:center;
+    box-sizing:border-box;
+    transition:.3s;
+    }
+    .rtl .dk-container .inputs .calculator-input input {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        grid-area: input;
+        padding: 10px 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 40px;
+        border: 1px solid #ddd;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        width: 100%;
+        min-width: 10ch;
+        -webkit-appearance: textfield;
+        appearance: textfield;
+        border-radius: 0 4px 4px 0;
+        border-right: solid 1px #ddd;
+        border-left: none;
+    }
+    .dk-container .inputs .calculator-input .input-dropdown::-ms-expand {
+        display: none;
+    }
+
+    .dk-container .inputs .calculator-input .input-dropdown:focus {
+        outline: 0;
+    }
+
+    .dk-container .inputs .calculator-input .input-label, .dk-container .calculator-input .input-dropdown {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+        grid-area: dd; font-size:50;
+        padding: 5px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 40px;
+       
+       
+ border:2px solid #aaa;
+    border-radius:4px;
+        text-align: center; margin: 0px -70px;
+        display: inline-block; height:80;width:120;
+    }
+
+    .dk-container .inputs .calculator-input .input-dropdown {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
+        background-position: right 1px center;
+        background-repeat: no-repeat;
+        background-size: 0.5ex;
+        background-origin: content-box;
+        padding-left: em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .rtl .dk-container .inputs .calculator-input .input-dropdown {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
+        background-position: left 1px center;
+        background-repeat: no-repeat;
+        background-size: 1.25ex;
+        background-origin: content-box;
+        padding-left: 0.5em;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+
+.dk-container .calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+    .dk-container .calculator-input .input-label {
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        padding: 10px 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 40px;
+        width: 45px;
+        border-radius: 0 3px 3px 0;
+        background-color: #F2F1F6;
+        border: 1px solid #CCCCCC;
+        text-align: center;
+        
+    }
+
+    .dk-container .calculator-input .input-answer {
+        left: 15px;
+        right: auto; font-size: 60px;
+        border-radius: 4px 0 0 4px;
+        position: absolute;
+        height: 40px;
+        padding: 12px 8px 2px 8px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-weight: bold;
+        color: #fff; 
+    }
+    .rtl .dk-container .calculator-input .input-answer {
+        right: 15px;
+        left: auto;
+        border-radius: 4px 0 0 4px;
+        position: absolute;
+        height: 40px;
+        padding: 12px 8px 2px 8px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-weight: bold;
+        color: #fff; 
+    }
+
+    .dk-container .calculator-input input[type='number'] {
+        -moz-appearance: textfield; font-size: 60px;
+    }
+
+    .dk-container .calculator-input input {
+        -webkit-appearance: none;
+        border: 1px solid #CCCCCC;
+        border-radius: 3px;
+        padding: 0px 5px 0px 5px;
+        max-width: 100%;
+        width: 100%;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        margin-bottom: 15px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 40px;
+        color: #333333; font-size: 60px;
+    }
+
+        .dk-container .calculator-input input::-webkit-input-placeholder {
+            opacity: 0.5;
+            color: #333333;
+        }
+
+        .dk-container .calculator-input input::-moz-placeholder {
+            opacity: 0.5;
+            color: #333333;
+        }
+
+        .dk-container .calculator-input input:-ms-input-placeholder {
+            opacity: 0.5;
+            color: #333333;
+        }
+
+        .dk-container .calculator-input input:-moz-placeholder {
+            opacity: 0.5;
+            color: #333333;
+        }
+
+    .dk-container .calculator-input.bg-black .input-label {
+        color: #FFF;
+        border: 0;
+        background: none;
+    }
+
+    .dk-container .calculator-input.bg-black input {
+        padding: 0 30px;
+        background: #333;
+        color: #fff;
+        border: none;
+        text-align: center;
+        border: none;
+        border-radius: 20px;
+        opacity: 1;
+    }
+
+        .dk-container .calculator-input.bg-black input::-webkit-input-placeholder {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .dk-container .calculator-input.bg-black input::-moz-placeholder {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .dk-container .calculator-input.bg-black input:-ms-input-placeholder {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .dk-container .calculator-input.bg-black input:-moz-placeholder {
+            color: #fff;
+            opacity: 1;
+        }
+.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .bg-black .input-dropdown {
+    border-radius: 24px !important;
+}
+
+
+/*! CSS Used from: http://localhost:1337/public/css/conversion-calculator-parallel-and-series-resistor.css */
+.dk-container .single-headline-desc .other-calc-button {
+    margin: 35px 0 0;
+    padding: 10px 29px;
+    font-size: 13px;
+    border-radius: 0px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    color: #333;
+    display: inline-block;
+    text-decoration: none;
+}
+
+    .dk-container .single-headline-desc .other-calc-button .fa {
+        padding-left: 5px;
+    }
+
+@media (max-width: 767px) {
+    .dk-container .single-headline-desc .other-calc-button {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+.dk-container .single-headline-desc .other-calc-button:hover {
+    border: 1px solid #cc2500;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .calc-type {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid ;
+    background: lightgreen;
+    width: 100%; height:80;
+}  
+
+    .dk-container .single-dk-calc-cont .inner-box .calc-type li {
+        padding: 0 0 0 9px;
+        margin: 0;
+        width: calc(98%/2);
+    }
+
+        .dk-container .single-dk-calc-cont .inner-box .calc-type li a {
+            cursor: pointer;
+            border: 2px solid #CCC;
+            color: #ccc;
+            padding: 20px;
+            display: block;
+            background: lightyellow;
+            text-align: center;
+            
+            border-radius: 10px;
+            text-decoration: none;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 13px;
+            
+            
+        }
+
+            .dk-container .single-dk-calc-cont .inner-box .calc-type li a.selected {
+                border: 2px solid black !important;
+                color: #333;
+            }
+
+
+.dk-container .single-dk-calc-cont .unit-title {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.dk-container .single-dk-calc-cont .inner-box [data-section],
+.dk-container .single-dk-calc-cont .inner-box .inputs > div {
+    display: none;
+}
+
+    .dk-container .single-dk-calc-cont .inner-box [data-section].active,
+    .dk-container .single-dk-calc-cont .inner-box .inputs > div.active {
+        display: block;
+    }
+
+.dk-container .single-dk-calc-cont .inner-box .buttons {
+    display: inline-flex !important;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+    .dk-container .single-dk-calc-cont .inner-box .buttons button {
+    }
+
+.dk-container .single-dk-calc-cont .inner-box .answer {
+    margin: 0;
+}
+
+.dk-container .single-dk-calc-cont .inner-box .res-img {
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #EEE;
+    background: #FFF;
+}
+
+.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: #f2f1f6;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+}
+
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula .formula-title {
+        margin: 0 0 20px;
+        padding: 0 0 4px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula .formula-desc svg {
+        max-width: 300px;
+        width: 100%;
+    }
+
+@media (max-width: 767px) {
+    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
+        margin: 30px 0 20px;
+    }
+}
+
+*/</style>
+<style>
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
+}
+
+body {
+  display: row;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+body {
+    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
+}
+
+body { 
+  background: ; 
+}
+.intro{
+    width:200;    
+    font-size: 60px;
+    padding: 5px ;    
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin: 8px 0;
+    outline:none;
+    
+    
+    box-sizing:border-box;
+    transition:.3s;
+  }
+  
+  .intro:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+  }
+
+.ids{
+     border: 2px solid red;
+  padding: 10px;
+  border-radius: 50px 20px;}
+
+input[type=checkbox]{
+    width: 120px; 
+    height: 120px; 
+   
+  }
+.gg{
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  margin: 60px 0px 0px 120px;
+ 
+ 
+}
+
+
+</style>       
+               
+
+
+
+
+       
+
+
+
+
+
+
+
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">    
+
+
+
+   
+
+
+
+        
+
+
+      
+    <div class="dk-container">
+  
+ 
+
+      
+      <div class="single-dk-calc-cont">
+        
+          <div class="inner-box">
+            <div class="calculator-col col-md-6">
+              
+              <ul class="calc-type">
+                <li>
+                  <a class="type-selector selected" style="font-size:30;" id="series-selector"><b>Parallel  Inductance</b></a>
+                </li>
+                <li>
+                  <a class="type-selector" style="font-size:30;"  id="parallel-selector"><b>Series Inductance</b></a>
+                </li>
+              </ul>
+              <div id="series-section" class="series active" data-section="series">
+<fieldset><legend>
+
+
+                <h3 class="unit-title" style="font-size:60; margin:60px; 0px 0px 0px">Parallel  Inductance</h3></legend>
+                <div class="inputs">
+
+                  <div class="series active" id="series1">
+                    <span class="input-headline">L<sub>1</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit1" title="Microfarad" onchange="Series()" name="Sunit1" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="scap1" id="scap1" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series active" id="series2">
+                    <span class="input-headline">L<sub>2</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit2" title="Microfarad" onchange="Series()" name="Sunit2" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="scap2" id="scap2" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series3">
+                    <span class="input-headline">L<sub>3</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit3" title="Microfarad" onchange="Series()" name="Sunit3" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                      
+                      </select>
+                      <input placeholder="" name="scap3" id="scap3" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series4">
+                    <span class="input-headline">L<sub>4</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit4" title="Microfarad" onchange="Series()" name="Sunit4" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="scap4" id="scap4" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series5">
+                    <span class="input-headline">L<sub>5</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit5" title="Microfarad" onchange="Series()" name="Sunit5" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="scap5" id="scap5" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series6">
+                    <span class="input-headline">L<sub>6</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit6" title="Microfarad" onchange="Series()" name="Sunit6" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="scap6" id="scap6" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series7">
+                    <span class="input-headline">L<sub>7</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit7" title="Microfarad" onchange="Series()" name="Sunit7" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="scap7" id="scap7" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series8">
+                    <span class="input-headline">L<sub>8</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit8" title="Microfarad" onchange="Series()" name="Sunit8" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="scap8" id="scap8" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series9">
+                    <span class="input-headline">L<sub>9</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit9" title="Microfarad" onchange="Series()" name="Sunit9" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="scap9" id="scap9" type="number">
+                           </div>
+                  </div>
+
+                  <div class="series" id="series10">
+                    <span class="input-headline">L<sub>10</sub></span>
+                    <div class="calculator-input">
+                      <select id="Sunit10" title="Microfarad" onchange="Series()" name="Sunit10" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="scap10" id="scap10" type="number">
+                           </div>
+                  </div>
+
+                  <div class="buttons">
+<div class="gg">
+                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">+ <BR>Inductance</button>
+                   
+
+
+
+ <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">- <BR>Inductance </button></div>
+
+
+
+
+                   
+                  </div>
+                </div>
+                <div class="scT">
+              <fieldset><legend><div colspan="2" align="center" height="19">
+
+
+<h3>Outputs</h3></div></legend>   
+                  <div class="calculator-input">
+<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="scapT" id="scapT" type="text" class="answer" readonly=""  style="position: absolute;  border:2px solid #aaa;height:80;
+    border-radius:4px; text-align
+:center;width:465; right: 145px;"class="form-control"  />
+
+
+<select id="SunitT" title="Microfarad" onchange="Series()" name="SunitT" class="input-dropdown" style="padding: 5px ; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:2px solid #aaa;">
+<option title="Microfarad" value="1e-6" selected="selected">μH
+                      <option title="Farad" value="1">H
+                      <option title="Millifarad" value="1e-3">mH
+                      <option title="Nanofarad" value="1e-9">nH
+                      
+                    </select>
+
+                   
+                      
+                   
+                   
+                        </div>
+                </div>
+              </div>
+
+              
+
+
+
+
+
+
+
+
+
+
+<div id="parallel-section" class="parallel" data-section="parallel">
+               <fieldset><legend> <h3 class="unit-title"  style="font-size:60; margin:60px; 0px 0px 0px" >Series Inductance</h3></legend>
+                <div class="inputs">
+
+                  <div class="parallel active" id="parallel1">
+                    <span class="input-headline">L<sub>1</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit1" title="Microfarad" onchange="Parallel()" name="Punit1" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                    
+                      </select>
+                      <input placeholder="" name="pcap1" id="pcap1" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel active" id="parallel2">
+                    <span class="input-headline">L<sub>2</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit2" title="Microfarad" onchange="Parallel()" name="Punit2" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="pcap2" id="pcap2" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel3">
+                    <span class="input-headline">L<sub>3</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit3" title="Microfarad" onchange="Parallel()" name="Punit3" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="pcap3" id="pcap3" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel4">
+                    <span class="input-headline">L<sub>4</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit4" title="Microfarad" onchange="Parallel()" name="Punit4" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="pcap4" id="pcap4" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel5">
+                    <span class="input-headline">L<sub>5</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit5" title="Microfarad" onchange="Parallel()" name="Punit5" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="pcap5" id="pcap5" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel6">
+                    <span class="input-headline">L<sub>6</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit6" title="Microfarad" onchange="Parallel()" name="Punit6" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="pcap6" id="pcap6" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel7">
+                    <span class="input-headline">L<sub>7</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit7" title="Microfarad" onchange="Parallel()" name="Punit7" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="pcap7" id="pcap7" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel8">
+                    <span class="input-headline">L<sub>8</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit8" title="Microfarad" onchange="Parallel()" name="Punit8" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="pcap8" id="pcap8" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel9">
+                    <span class="input-headline">L<sub>9</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit9" title="Microfarad" onchange="Parallel()" name="Punit9" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                       
+                      </select>
+                      <input placeholder="" name="pcap9" id="pcap9" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel10">
+                    <span class="input-headline">L<sub>10</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit10" title="Microfarad" onchange="Parallel()" name="Punit10" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μH
+                        <option title="Farad" value="1">H
+                        <option title="Millifarad" value="1e-3">mH
+                        <option title="Nanofarad" value="1e-9">nH
+                        
+                      </select>
+                      <input placeholder="" name="pcap10" id="pcap10" type="number">
+                      </div>
+                  </div>
+
+                  <div class="buttons">
+<div class="gg">
+                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">+ <BR>Inductance</button>
+                   
+
+
+
+ <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">- <BR>Inductance </button></div> 
+
+
+                   
+                  </div>
+
+                </div>
+                <div class="prT">
+               <fieldset><legend><div colspan="2" align="center" height="19">
+
+
+<h3>Outputs</h3></div></legend>
+                  <div class="calculator-input">
+
+<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="pcapT" id="pcapT" type="text" class="answer" readonly=""   style="position: absolute;  border:2px solid #aaa;height:80;
+    border-radius:4px; text-align
+:center;width:465; right: 145px;"class="form-control"  />
+
+
+<select id="PunitT" title="Microfarad" onchange="Parallel()" name="PunitT" class="input-dropdown" style="padding: 5px ; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:2px solid #aaa;">
+ <option title="Microfarad" value="1e-6" selected="selected">μH
+                      <option title="Farad" value="1">H
+                      <option title="Millifarad" value="1e-3">mH
+                      <option title="Nanofarad" value="1e-9">nH
+                     
+                    </select>
+
+
+
+                   
+                     
+                                          </div>
+                </div>
+              </div>
+
+            </div>
+
+<script type="text/javascript"  src="//www.digikey.com/-/media/Designer/EnavGDPR/JS/consent.js?la=en-US&amp;ts=6989ad49-2321-48fc-8c92-7598c16dfd50"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Header/ENav%20Pieces/Search%20Bar/Default/Javascript/enavsearchbar.js?la=en-US&amp;ts=04d6ec72-d217-4a20-848f-51b4c09e9284"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Resources/js/comcn-highlights.js?la=en-US&amp;ts=4c61ee47-a52b-4ad7-92b7-84f27d578c7c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/marketoformsminified.js?la=en-US&amp;ts=e62ed6eb-bae2-45f7-8430-3d56ea78307f"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Misc/MktoEmailSignup/Javascript/mktoemail.js?la=en-US&amp;ts=b0c32eba-df6f-47f5-b988-35f1fa5532d5"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/egain.js?la=en-US&amp;ts=63453230-376d-4106-8daa-cee31f588952"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/oneTag.js?la=en-US&amp;ts=c7fc7b16-2a23-4498-833d-86395a4b531c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/jquery1101min.js?ts=72608b7b-9de9-44de-8633-9e1f286fc613"></script><script type="text/javascript">// Clear values when refresh
+$('.dk-container input[type=number]').val('');
+
+$(".type-selector").click(function () {
+    const selType = $(this).attr("id").replace("-selector", "");
+    $(".type-selector").removeClass('selected');
+    $(this).addClass('selected');
+    $("[data-section]").removeClass("active");
+    $("[data-section=" + selType + "]").addClass("active");
+});
+
+$(".calculator-col .buttons button").click(function () {
+    const container = $(this).closest(".calculator-col .inputs");
+    $(container).find("button").prop("disabled", false);
+    if ($(this).hasClass("addmore")) {
+        $(container).find(">div").filter(':hidden:first').addClass('active');
+        if ($(container).find(">div").filter(':hidden').length === 0) {
+            $(this).prop("disabled", true);
+        }
+    }
+    else {
+        const res = $(container).find(".active:last").removeClass('active');
+        $(res).find("input").val("");
+        if ($(res).hasClass("series")) {
+            Series();
+        }
+        else {
+            Parallel();
+        }
+        if ($(container).find('.active').length === 2) {
+            $(this).prop('disabled', true);
+        }
+    }
+});
+
+var sc1Input = document.getElementById("scap1");
+var sc2Input = document.getElementById("scap2");
+var sc3Input = document.getElementById("scap3");
+var sc4Input = document.getElementById("scap4");
+var sc5Input = document.getElementById("scap5");
+var sc6Input = document.getElementById("scap6");
+var sc7Input = document.getElementById("scap7");
+var sc8Input = document.getElementById("scap8");
+var sc9Input = document.getElementById("scap9");
+var sc10Input = document.getElementById("scap10");
+
+var pc1Input = document.getElementById("pcap1");
+var pc2Input = document.getElementById("pcap2");
+var pc3Input = document.getElementById("pcap3");
+var pc4Input = document.getElementById("pcap4");
+var pc5Input = document.getElementById("pcap5");
+var pc6Input = document.getElementById("pcap6");
+var pc7Input = document.getElementById("pcap7");
+var pc8Input = document.getElementById("pcap8");
+var pc9Input = document.getElementById("pcap9");
+var pc10Input = document.getElementById("pcap10");
+
+function Series()    
+{     
+   var sC1 = 1 / (document.getElementById("scap1").value * document.getElementById("Sunit1").value);
+   var sC2 = 1 / (document.getElementById("scap2").value * document.getElementById("Sunit2").value);
+   var sC3 = 1 / (document.getElementById("scap3").value * document.getElementById("Sunit3").value);
+   var sC4 = 1 / (document.getElementById("scap4").value * document.getElementById("Sunit4").value);
+   var sC5 = 1 / (document.getElementById("scap5").value * document.getElementById("Sunit5").value);
+   var sC6 = 1 / (document.getElementById("scap6").value * document.getElementById("Sunit6").value);
+   var sC7 = 1 / (document.getElementById("scap7").value * document.getElementById("Sunit7").value);
+   var sC8 = 1 / (document.getElementById("scap8").value * document.getElementById("Sunit8").value);
+   var sC9 = 1 / (document.getElementById("scap9").value * document.getElementById("Sunit9").value);
+   var sC10 = 1 / (document.getElementById("scap10").value * document.getElementById("Sunit10").value);
+   
+   if (document.getElementById("scap1").value!= "") {
+   var TSC = 1 / document.getElementById("SunitT").value * (1 / sC1);
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap2").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap3").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap4").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap5").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap6").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap7").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap8").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap9").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8 + sC9));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap10").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8 + sC9 + sC10));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+}
+
+function Parallel()    
+{     
+   var pC1 = 1 * (document.getElementById("pcap1").value * document.getElementById("Punit1").value);
+   var pC2 = 1 * (document.getElementById("pcap2").value * document.getElementById("Punit2").value);
+   var pC3 = 1 * (document.getElementById("pcap3").value * document.getElementById("Punit3").value);
+   var pC4 = 1 * (document.getElementById("pcap4").value * document.getElementById("Punit4").value);
+   var pC5 = 1 * (document.getElementById("pcap5").value * document.getElementById("Punit5").value);
+   var pC6 = 1 * (document.getElementById("pcap6").value * document.getElementById("Punit6").value);
+   var pC7 = 1 * (document.getElementById("pcap7").value * document.getElementById("Punit7").value);
+   var pC8 = 1 * (document.getElementById("pcap8").value * document.getElementById("Punit8").value);
+   var pC9 = 1 * (document.getElementById("pcap9").value * document.getElementById("Punit9").value);
+   var pC10 = 1 * (document.getElementById("pcap10").value * document.getElementById("Punit10").value);
+    var pcT = (pC1 + pC2 + pC3 + pC4 + pC5 + pC6 + pC7 + pC8 + pC9 + pC10) / document.getElementById("PunitT").value;
+   document.getElementById("pcapT").value = convertToExpo(pcT);
+}
+
+function convertToExpo(value){
+	var res = value;
+	var len = parseFloat( value )
+
+	if( len.toString().length > 4 || value >= 1e3){
+		if (value >= 1e3) {
+	        res = parseFloat(value).toExponential(2);
+	    } 
+	    else if(res >= 1 && res < 1e3) {
+	        res = parseFloat(parseFloat(value).toFixed(3));
+	    } 
+	    else if (res < 1 && res > 0) {
+	        res = parseFloat(parseFloat(value).toPrecision(3));
+	    } else if ( res < 1 ) {
+			res = parseFloat(value).toPrecision(3);
+		}
+	}
+	
+    return res;
+}
+
+$('#Punit1, #Punit2, #Punit3, #Punit4, #Punit5, #Punit6, #Punit7, #Punit8, #Punit9, #Punit10, #PunitT').change(function () {
+    const title = $(this).find("option:selected").attr("title");
+    $(this).attr("title", title);
+});
+
+$('#Sunit1, #Sunit2, #Sunit3, #Sunit4, #Sunit5, #Sunit6, #Sunit7, #Sunit8, #Sunit9, #Sunit10, #SunitT').change(function () {
+    const title = $(this).find("option:selected").attr("title");
+    $(this).attr("title", title);
+});
+
+
+$('#scap1, #scap2, #scap3, #scap4, #scap5, #scap6, #scap7, #scap8, #scap9, #scap10').on('keypress', function(event) {
+    var input = event.which;
+    var valid = [101, 69];
+
+    if(valid.includes(input)) {
+        event.preventDefault();
+    } 
+});
+
+$('#pcap1, #pcap2, #pcap3, #pcap4, #pcap5, #pcap6, #pcap7, #pcap8, #pcap9, #pcap10').on('keypress', function(event) {
+    var input = event.which;
+    var valid = [101, 69];
+
+    if(valid.includes(input)) {
+        event.preventDefault();
+    } 
+});
+
+
+sc1Input.addEventListener ("keyup", Series);
+sc2Input.addEventListener ("keyup", Series);
+sc3Input.addEventListener ("keyup", Series);
+sc4Input.addEventListener ("keyup", Series);
+sc5Input.addEventListener ("keyup", Series);
+sc6Input.addEventListener ("keyup", Series);
+sc7Input.addEventListener ("keyup", Series);
+sc8Input.addEventListener ("keyup", Series);
+sc9Input.addEventListener ("keyup", Series);
+sc10Input.addEventListener ("keyup", Series);
+
+pc1Input.addEventListener ("keyup", Parallel);
+pc2Input.addEventListener ("keyup", Parallel);
+pc3Input.addEventListener ("keyup", Parallel);
+pc4Input.addEventListener ("keyup", Parallel);
+pc5Input.addEventListener ("keyup", Parallel);
+pc6Input.addEventListener ("keyup", Parallel);
+pc7Input.addEventListener ("keyup", Parallel);
+pc8Input.addEventListener ("keyup", Parallel);
+pc9Input.addEventListener ("keyup", Parallel);
+pc10Input.addEventListener ("keyup", Parallel);
+
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+
+    $('option').each(function(index) {
+        var text = $(this).text();
+        if (text == 'F') {
+            $(this).attr('title','farad');
+        } else if (text == 'mF') {
+            $(this).attr('title','millifarad');
+        } else if (text == 'μF') {
+            $(this).attr('title','microfarad');
+        } else if (text == 'nF') {
+            $(this).attr('title','nanofarad');
+        } else if (text == 'pF') { 
+            $(this).attr('title','picofarad');
+        }
+    });
+
+    // Custom modal
+    $('.modal-image').on('click', function () {
+        location.hash = '#modal';
+        $('body').addClass('overflow-hidden');
+        $('#imageModal').addClass('open-modal');
+        $('#the-img-modal').attr('src', $(this).attr('src'));
+        $('#caption').text(this.alt);
+    });
+
+    // Close the modal
+    $('.close-modal, #the-img-modal, #imageModal').on('click', function () {
+        history.replaceState({}, document.title, window.location.href.split('#')[0]);
+        $('body').removeClass('overflow-hidden');
+        $('#imageModal').removeClass('open-modal');
+
+        document.body.style.zoom = "100%";
     });
 });
-  </script>
-
-
-
-
-
-
-
-
  
-
-
-
-
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-   
-  
-  
-  
-  
-  
-  
-  }
-}
-</script>
-
-<style>
-
-.mid {
-	background-color:yellow;
-	margin:-80px 10px 10px 10px;
-	display:block;
-	background-color: red ;
-	color:red;
-	border: 5;
-	color: white;
-	width:50;
-	height:40;
-	text-decoration: none;
-	border-radius: 12px;
-	font-size: 25px;
-	position: absolute;
-	left: 5px;
-	top:101;
-	font-weight: bold;
-	cursor: pointer;
-	"
-}
-.body{
-	text-size:100px;
-}
-#customers {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-#customers td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-#customers tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-#customers tr:hover {
-	background-color: #ddd;
-}
-html{
-	box-sizing:border-box
-}
-*,*:before,*:after{
-	box-sizing:inherit
-}
-/* End extract */
-html,body{
-	font-family:Verdana,sans-serif;
-	font-size:15px;
-	line-height:1.5
-}
-html{
-	overflow-x:hidden
-}
-h1{
-	font-size:36px
-}
-h2{
-	font-size:30px
-}
-h3{
-	font-size:24px
-}
-h4{
-	font-size:20px
-}
-h5{
-	font-size:18px
-}
-h6{
-	font-size:16px
-}
-.w3-serif{
-	font-family:serif
-}
-border.w3-btn,.w3-button{
-	font-size:50px;
-	border-radius: 25px;
-	background: #73AD21;
-	inpaddg: 2px;
-	width: 200px;
-	height: 100px;
-	text-align:center;
-}
-.w3-btn,.w3-button1{
-	border:none;
-	display:inline-block;
-	padding:1px 1px;
-	font-size:50px;
-	vertical-align:middle;
-	Horizontal-align:middle;
-	overflow:hidden;
-	text-decoration:none;
-	color:inherit;
-	background-color:inherit;
-	cursor:pointer;
-	white-space:nowrap;
-	text-align:LEFT;
-}
-.w3-modal{
-	z-index:3;
-	display:none;
-	padding-top:100px;
-	position:fixed;
-	left:0;
-	top:0;
-	width:100%;
-	height:100%;
-	overflow:auto;
-	background-color:rgb(0,0,0);
-	background-color:rgba(0,0,0,0.4)
-}
-.w3-modal-content{
-	margin:-30px 10px 10px 10px;
-	
-	
-	
-}
-
-@media (min-width:601px){
-	.w3-col.m1{
-		width:8.33333%
-}
-	.w3-col.m2{
-		width:16.66666%
-}
-	.w3-col.m3,.w3-quarter{
-		width:24.99999%
-}
-	.w3-col.m4,.w3-third{
-		width:33.33333%
-}
-	.w3-display-topmiddle{
-		position:absolute;
-		left:50%;
-		top:0;
-		transform:translate(-50%,0%);
-		-ms-transform:translate(-50%,0%)
-}
-	.w3-display-container:hover .w3-display-hover{
-		display:block
-}
-	.w3-display-container:hover span.w3-display-hover{
-		display:inline-block
-}
-	.w3-display-hover{
-		display:none
-}
-	.w3-teal,.w3-hover-teal:hover{
-		color:#fff!important;
-		background-color:#009688!important
-}
-	.w3-yellow,.w3-hover-yellow:hover{
-		color:#000!important;
-		background-color:#ffeb3b!important
-}
-	.w3-white,.w3-hover-white:hover{
-		color:#000!important;
-		background-color:#fff!important
-}
-	border colour.w3-black,.w3-hover-black:hover{
-		color:#fff!important;
-		background-color:red!important
-}
-	
-</style>
-
-
-
-<style>
-.bg{ background-color:e6e9ee;
-     }
-.w3-button{background:;
-          WIDTH:100%}
-
-</style>
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
- 
-}
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-table1{align:center;}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 2px solid #ddd;
-  background:white;
-  
-  font-weight: bold;
-}
-th{background-color:lightgreen;
- }
-th, td {
-  text-align: left;
-  padding: 8px;
-   
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-tr:hover {background-color: #ddd;}
-</style>
-</head>
-<body>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search PC Connector names.." title="Type in a name">
-
-<ul id="myUL">
-  
-  
-
-
-</start>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX/BTX 12V 4 Pin Connector</font></button></a>
-
-  <div id="id02" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id02').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/2.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">ATX / BTX motherboards Powersuppply 12V</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Color</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>COM</td>
-<td>black</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>COM</td>
-<td>black</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>3</td>
-<td>+12VDC</td>
-<td>yellow</td>
-<td>+12 VDC</td>
-</tr>
-<tr>
-<td>4</td>
-<td>+12VDC</td>
-<td>yellow</td>
-<td>+12 VDC</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
- 
-<li><a href="#">
-
-<button onclick="document.getElementById('id03').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX power supply 20 Pin connector</font></button></a>
-
-  <div id="id03" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id03').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/3.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">ATX power supply 20 Pin connector</th>
-</table>
-
-  <table>
-	<tbody>
-		<tr>
-			<th style="text-align:left">Pin</th>
-			<th style="text-align:left">Name</th>
-			<th style="text-align:left">Color</th>
-			<th style="text-align:left">Description</th>
-		</tr>
-		<tr>
-			<td style="text-align:left">1</td>
-			<td style="text-align:left">3.3V</td>
-			<td style="text-align:left">Orange</td>
-			<td style="text-align:left">+3.3 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">2</td>
-			<td style="text-align:left">3.3V</td>
-			<td style="text-align:left">Orange</td>
-			<td style="text-align:left">+3.3 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">3</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">4</td>
-			<td style="text-align:left">5V</td>
-			<td style="text-align:left">Red</td>
-			<td style="text-align:left">+5 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">5</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">6</td>
-			<td style="text-align:left">5V</td>
-			<td style="text-align:left">Red</td>
-			<td style="text-align:left">+5 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">7</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">8</td>
-			<td style="text-align:left">PWR_OK</td>
-			<td style="text-align:left">Gray</td>
-			<td style="text-align:left">Power Ok is a status signal generated by the power supply to notify the computer that the DC operating voltages are within the ranges required for proper computer operation (+5 VDC when power is Ok when PSU is turned ON)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">9</td>
-			<td style="text-align:left">5VSB</td>
-			<td style="text-align:left">Purple</td>
-			<td>
-			<p>+5 VDC Standby Voltage (max 10mA) 500mA or more typical</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">10</td>
-			<td style="text-align:left">12V</td>
-			<td style="text-align:left">Yellow</td>
-			<td style="text-align:left">+12 VDC (may sometimes have a colored stripe to indicate which rail it's on)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">11</td>
-			<td style="text-align:left">3.3V</td>
-			<td style="text-align:left">Orange</td>
-			<td style="text-align:left">+3.3 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">12</td>
-			<td style="text-align:left">-12V</td>
-			<td style="text-align:left">Blue</td>
-			<td style="text-align:left">-12 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">13</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">14</td>
-			<td style="text-align:left">/PS_ON</td>
-			<td style="text-align:left">Green</td>
-			<td style="text-align:left">Power Supply On (active low). Short this pin to GND to switch power supply ON, disconnect from GND to switch OFF.</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">15</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">16</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">17</td>
-			<td style="text-align:left">COM</td>
-			<td style="text-align:left">Black</td>
-			<td style="text-align:left">Ground</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">18</td>
-			<td style="text-align:left">-5V</td>
-			<td style="text-align:left">White</td>
-			<td style="text-align:left">-5 VDC (2002 v1.2 made optional, 2004 v2.01 removed from specification)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">19</td>
-			<td style="text-align:left">5V</td>
-			<td style="text-align:left">Red</td>
-			<td style="text-align:left">+5 VDC</td>
-		</tr>
-		<tr>
-			<td style="text-align:left">20</td>
-			<td style="text-align:left">5V</td>
-			<td style="text-align:left">Red</td>
-			<td style="text-align:left">+5 VDC</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id04').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX power supply 24 Pin connector</font></button></a>
-
-  <div id="id04" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id04').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/4.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">ATX power supply 24 Pin connector</th>
-</table>
-
-  <table>
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Color<br>
-			&nbsp;</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>3.3V</td>
-			<td>Orange</td>
-			<td>+3.3 VDC</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>3.3V</td>
-			<td>Orange</td>
-			<td>+3.3 VDC</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>5V</td>
-			<td>Red</td>
-			<td>+5 VDC</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>5V</td>
-			<td>Red</td>
-			<td>+5 VDC</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>PWR_OK</td>
-			<td>Gray</td>
-			<td>Power Ok is a status signal generated by the power supply to notify the computer that the DC operating voltages are within the ranges required for proper computer operation (+5 VDC when power is Ok)</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>5VSB</td>
-			<td>Purple</td>
-			<td>+5 VDC Standby Voltage (max 10mA, max 2A in ATX 2.2 spec)</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>12V</td>
-			<td>Yellow</td>
-			<td>+12 VDC</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>12V</td>
-			<td>Yellow</td>
-			<td>+12 VDC</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>3.3V</td>
-			<td>Orange</td>
-			<td>+3.3 VDC</td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>3.3V</td>
-			<td>Orange</td>
-			<td>+3.3 VDC.&nbsp;ATX V2.3 / EPS12V V2.92 both define that the PSU has to use remote sensing to compensate cable drops on the 3.3V line. Because of this there is an additional brown cable crimped together with the orange cable either to pin 13 (ATX) or pin 1 (EPS12V).</td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>-12V</td>
-			<td>Blue</td>
-			<td>-12 VDC</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>/PS_ON</td>
-			<td>Green</td>
-			<td>Power Supply On (active low). Short this pin to GND to switch power supply ON, disconnect from GND to switch OFF.</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>-5V</td>
-			<td>White</td>
-			<td>-5 VDC&nbsp; (this is optional on newer ATX-2 supplies, it is for use with older AT class expansion cards and can be omitted on newer units)</td>
-		</tr>
-		<tr>
-			<td>21</td>
-			<td>+5V</td>
-			<td>Red</td>
-			<td>+5 VDC</td>
-		</tr>
-		<tr>
-			<td>22</td>
-			<td>+5V</td>
-			<td>Red</td>
-			<td>+5 VDC</td>
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>+5V</td>
-			<td>Red</td>
-			<td>+5 VDC</td>
-		</tr>
-		<tr>
-			<td>24</td>
-			<td>COM</td>
-			<td>Black</td>
-			<td>Ground</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id05').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX AUX connector Type-1</font></button></a>
-
-  <div id="id05" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id05').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/5.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">ATX AUX connector Type-1</th>
-</table>
-
-  <table>
-	<tbody>
-		<tr>
-			<th>Pin</th>
- 			<th>Name</th>
-                         <th>Colour</th>
-			
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Ground</td>
-			<td>Black</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Ground</td>
-			<td>Black</td>
-			
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Ground</td>
-			<td>Black</td>
-			
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>+3.3V</td>
-			<td>Orange</td>
-			
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>+3.3V</td>
-			<td>Orange</td>
-			
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>+5V</td>
-			<td>Red</td>
-		</tr>
-		
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id06').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATX AUX Power connector Type-2</font></button></a>
-
-  <div id="id06" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id06').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/6.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">ATX AUX Power connector Type-2</th>
-</table>
-
-  <table >
-    <tbody>
-        <tr>
-            <th>Pin</th>
-            <th>Name</th>
-            <th width="16">&nbsp;</th>
-            <th>Color</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>COM</td>
-            <td align="center" width="16" bgcolor="#000000">&nbsp;</td>
-            <td>Black</td>
-            <td>Ground</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>COM</td>
-            <td align="center" width="16" bgcolor="#000000">&nbsp;</td>
-            <td>Black</td>
-            <td>Ground</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>COM</td>
-            <td align="center" width="16" bgcolor="#000000">&nbsp;</td>
-            <td>Black</td>
-            <td>Ground</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>3.3V</td>
-            <td align="center" width="16" bgcolor="#FF7F00">&nbsp;</td>
-            <td>Orange</td>
-            <td>+3.3 VDC</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>3.3V</td>
-            <td align="center" width="16" bgcolor="#FF7F00">&nbsp;</td>
-            <td>Orange</td>
-            <td>+3.3 VDC</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>5V</td>
-            <td align="center" width="16" bgcolor="#FF0000">&nbsp;</td>
-            <td>Red</td>
-            <td>+5 VDC</td>
-        </tr>
-    </tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id07').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">CGA Connector Female</font></button></a>
-
-  <div id="id07" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id07').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/7.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">CGA Connector Female</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>3</td>
-<td>R</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>4</td>
-<td>G</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>Blue</td>
-</tr>
-<tr>
-<td>6</td>
-<td>I</td>
-<td>Intensity</td>
-</tr>
-<tr>
-<td>7</td>
-<td>RES</td>
-<td>Reserved</td>
-</tr>
-<tr>
-<td>8</td>
-<td>HSYNC</td>
-<td>Horizontal Sync</td>
-</tr>
-<tr>
-<td>9</td>
-<td>VSYNC</td>
-<td>Vertical Sync</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id08').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">CGA Connector Male</font></button></a>
-
-  <div id="id08" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id08').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/8.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">CGA Connector Male</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>3</td>
-<td>R</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>4</td>
-<td>G</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>5</td>
-<td>B</td>
-<td>Blue</td>
-</tr>
-<tr>
-<td>6</td>
-<td>I</td>
-<td>Intensity</td>
-</tr>
-<tr>
-<td>7</td>
-<td>RES</td>
-<td>Reserved</td>
-</tr>
-<tr>
-<td>8</td>
-<td>HSYNC</td>
-<td>Horizontal Sync</td>
-</tr>
-<tr>
-<td>9</td>
-<td>VSYNC</td>
-<td>Vertical Sync</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id09').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Displayport Connector </font></button></a>
-
-  <div id="id09" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id09').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/9.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Displayport Connector</th>
-</table>
-
-  <table>
-	<tbody>
-		<tr>
-			<th rowspan="2">
-			<p>Pin Number</p>
-			</th>
-			<th colspan="2">
-			<p>Transmitting end</p>
-			</th>
-			<th colspan="2">
-			<p>Receiving end</p>
-			</th>
-		</tr>
-		<tr>
-			<th>Pin Name</th>
-			<th>Description</th>
-			<th>Pin Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>ML_Lane <strong>0 (p)</strong></td>
-			<td>Lane 0 (positive)</td>
-			<td>ML_Lane <strong>3 (n)</strong></td>
-			<td>Lane 3 (negative)</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>GND</td>
-			<td colspan="3">Ground</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>ML_Lane <strong>0 (n)</strong></td>
-			<td>Lane 0 (negative)</td>
-			<td>ML_Lane <strong>3 (p)</strong></td>
-			<td>Lane 3 (positive)</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>ML_Lane <strong>1 (p)</strong></td>
-			<td>Lane 1 (positive)</td>
-			<td>ML_Lane <strong>2 (n)</strong></td>
-			<td>Lane 2 (negative)</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>GND</td>
-			<td colspan="3">Ground</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>ML_Lane <strong>1 (n)</strong></td>
-			<td>Lane 1 (negative)</td>
-			<td>ML_Lane <strong>2 (p)</strong></td>
-			<td>Lane 2 (positive)</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>ML_Lane <strong>2 (p)</strong></td>
-			<td>Lane 2 (positive)</td>
-			<td>ML_Lane <strong>1 (n)</strong></td>
-			<td>Lane 1 (negative)</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>GND</td>
-			<td colspan="3">Ground</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>ML_Lane <strong>2 (n)</strong></td>
-			<td>Lane 2 (negative)</td>
-			<td>ML_Lane <strong>1 (p)</strong></td>
-			<td>Lane 1 (positive)</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>ML_Lane <strong>3 (p)</strong></td>
-			<td>Lane 3 (positive)</td>
-			<td>ML_Lane <strong>0 (n)</strong></td>
-			<td>Lane 0 (negative)</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>GND</td>
-			<td colspan="3">Ground</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>ML_Lane <strong>3 (n)</strong></td>
-			<td>Lane 3 (negative)</td>
-			<td>ML_Lane <strong>0 (p)</strong></td>
-			<td>Lane 0 (positive)</td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>CONFIG1</td>
-			<td colspan="3">connected to Ground. &nbsp;Pins 13 and 14 may either be<br>
-			directly connected to ground or connected to<br>
-			ground through a pulldown device.&nbsp;</td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>CONFIG2</td>
-			<td colspan="3">connected to Ground</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>AUX CH (p)</td>
-			<td colspan="3">Auxiliary Channel (positive)</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>GND</td>
-			<td colspan="3">Ground</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>AUX CH (n)</td>
-			<td colspan="3">Auxiliary Channel (negative)</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>Hot Plug</td>
-			<td colspan="3">Hot Plug Detect</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>Return</td>
-			<td colspan="3">Return for Power</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>DP_PWR</td>
-			<td colspan="3">Power for connector (3.3 V 500 mA)</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id10').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">EGA Connector Female </font></button></a>
-
-  <div id="id10" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id10').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/10.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">EGA Connector Female</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>SR</td>
-<td>Secondary Red</td>
-</tr>
-<tr>
-<td>3</td>
-<td>PR</td>
-<td>Primary Red</td>
-</tr>
-<tr>
-<td>4</td>
-<td>PG</td>
-<td>Primary Green</td>
-</tr>
-<tr>
-<td>5</td>
-<td>PB</td>
-<td>Primary Blue</td>
-</tr>
-<tr>
-<td>6</td>
-<td>SG/I</td>
-<td>Secondary Green / Intensity</td>
-</tr>
-<tr>
-<td>7</td>
-<td>SB</td>
-<td>Secondary Blue</td>
-</tr>
-<tr>
-<td>8</td>
-<td>H</td>
-<td>Horizontal Sync</td>
-</tr>
-<tr>
-<td>9</td>
-<td>V</td>
-<td>Vertical Sync</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id11').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">EGA Connector Male </font></button></a>
-
-  <div id="id11" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id11').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/11.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">EGA Connector Male</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>SR</td>
-<td>Secondary Red</td>
-</tr>
-<tr>
-<td>3</td>
-<td>PR</td>
-<td>Primary Red</td>
-</tr>
-<tr>
-<td>4</td>
-<td>PG</td>
-<td>Primary Green</td>
-</tr>
-<tr>
-<td>5</td>
-<td>PB</td>
-<td>Primary Blue</td>
-</tr>
-<tr>
-<td>6</td>
-<td>SG/I</td>
-<td>Secondary Green / Intensity</td>
-</tr>
-<tr>
-<td>7</td>
-<td>SB</td>
-<td>Secondary Blue</td>
-</tr>
-<tr>
-<td>8</td>
-<td>H</td>
-<td>Horizontal Sync</td>
-</tr>
-<tr>
-<td>9</td>
-<td>V</td>
-<td>Vertical Sync</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id12').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ESATA Connector</font></button></a>
-
-  <div id="id12" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id12').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/12.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">ESATA Connector</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td><strong>1</strong></td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td>A+</td>
-<td>Transmit +</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td>A-</td>
-<td>Transmit -</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td><strong>5</strong></td>
-<td>B-</td>
-<td>Receive -</td>
-</tr>
-<tr>
-<td><strong>6</strong></td>
-<td>B+</td>
-<td>Receive +</td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td>GND</td>
-<td>Ground</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id13').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Firewire 4 Pin Connector</font></button></a>
-
-  <div id="id13" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id13').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/13.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Firewire 4 Pin Connector</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal Name</th>
-<th>Description</th>
-<th>Colour</th>
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td><strong>1</strong></td>
-<td>TPB-</td>
-<td>Twisted-pair B, differential signals</td>
-<td>Orange</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td>TPB+</td>
-<td>Twisted-pair B, differential signals</td>
-<td>Blue</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td>TPA-</td>
-<td>Twisted-pair A, differential signals</td>
-<td>Red</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td>TPA+</td>
-<td>Twisted-pair A, differential signals</td>
-<td>Green</td>
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id14').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Firewire 6 Pin Connector</font></button></a>
-
-  <div id="id14" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id14').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/14.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Firewire 6 Pin Connector</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal Name</th>
-<th>Description</th>
-<th>Colour</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>1</strong></td>
-<td>Power</td>
-<td>Unregulated DC: 30 V no load</td>
-<td>White</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td>Ground</td>
-<td>Ground return for power and inner cable shield</td>
-<td>Black</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td>TPB-</td>
-<td>Twisted-pair B, differential signals</td>
-<td>Orange</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td>TPB+</td>
-<td>Twisted-pair B, differential signals</td>
-<td>Blue</td>
-</tr>
-<tr>
-<td><strong>5</strong></td>
-<td>TPA-</td>
-<td>Twisted-pair A, differential signals</td>
-<td>Red</td>
-</tr>
-<tr>
-<td><strong>6</strong></td>
-<td>TPA+</td>
-<td>Twisted-pair A, differential signals</td>
-<td>Green</td>
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id15').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Firewire 9 Pin Connector</font></button></a>
-
-  <div id="id15" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id15').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/15.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Firewire 9 Pin Connector</th>
-</table>
-
-  <table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Signal Name</th>
-<th>Description</th>
-<th>Colour</th>
-</tr>
-</thead>
-<tbody>
-
-
-<tr>
-<td><strong>1</strong></td>
-<td>TPB-</td>
-<td>Twisted-pair B, differential signals</td>
-<td>Orange</td>
-</tr>
-<tr>
-<td><strong>2</strong></td>
-<td>TPB+</td>
-<td>Twisted-pair B, differential signals</td>
-<td>Blue</td>
-</tr>
-<tr>
-<td><strong>3</strong></td>
-<td>TPA-</td>
-<td>Twisted-pair A, differential signals</td>
-<td>Red</td>
-</tr>
-<tr>
-<td><strong>4</strong></td>
-<td>TPA+</td>
-<td>Twisted-pair A, differential signals</td>
-<td>Green</td>
-</tr><tr>
-<td><strong>5</strong></td>
-<td>A shield</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td><strong>6</strong></td>
-<td>Ground</td>
-<td>Ground return for power and inner cable shield</td>
-<td>Black</td>
-</tr>
-<tr>
-<td><strong>7</strong></td>
-<td>NC</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td><strong>8</strong></td>
-<td>Power</td>
-<td>Unregulated DC: 30 V no load</td>
-<td>White</td>
-</tr>
-<tr>
-<td><strong>9</strong></td>
-<td>B shield</td>
-<td>-</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id16').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Gameport Male Connector</font></button></a>
-
-  <div id="id16" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id16').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/16.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Gameport Male Joystick Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>+5V</td>
-<td>OUT</td>
-<td>+5 VDC</td>
-</tr>
-<tr>
-<td>2</td>
-<td>/B1</td>
-<td>IN</td>
-<td>Button 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>X1</td>
-<td>IN</td>
-<td>Joystick 1 - X</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>-</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>5</td>
-<td>GND</td>
-<td>-</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Y1</td>
-<td>IN</td>
-<td>Joystick 1 - Y</td>
-</tr>
-<tr>
-<td>7</td>
-<td>/B2</td>
-<td>IN</td>
-<td>Button 2</td>
-</tr>
-<tr>
-<td>8</td>
-<td>+5V</td>
-<td>OUT</td>
-<td>+5 VDC</td>
-</tr>
-<tr>
-<td>9</td>
-<td>+5V</td>
-<td>OUT</td>
-<td>+5 VDC</td>
-</tr>
-<tr>
-<td>10</td>
-<td>/B4</td>
-<td>IN</td>
-<td>Button 4</td>
-</tr>
-<tr>
-<td>11</td>
-<td>X2</td>
-<td>IN</td>
-<td>Joystick 2 - X</td>
-</tr>
-<tr>
-<td>12</td>
-<td>MIDITXD</td>
-<td>OUT</td>
-<td>MIDI Transmit</td>
-</tr>
-<tr>
-<td>13</td>
-<td>Y2</td>
-<td>IN</td>
-<td>Joystick 2 - Y</td>
-</tr>
-<tr>
-<td>14</td>
-<td>/B3</td>
-<td>IN</td>
-<td>Button 3</td>
-</tr>
-<tr>
-<td>15</td>
-<td>+5 VDC</td>
-<td>IN</td>
-<td>+5 VDC </td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id17').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Gameport Female Connector</font></button></a>
-
-  <div id="id17" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id17').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/17.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Gameport Female Joystick Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>+5V</td>
-<td>OUT</td>
-<td>+5 VDC</td>
-</tr>
-<tr>
-<td>2</td>
-<td>/B1</td>
-<td>IN</td>
-<td>Button 1</td>
-</tr>
-<tr>
-<td>3</td>
-<td>X1</td>
-<td>IN</td>
-<td>Joystick 1 - X</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>-</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>5</td>
-<td>GND</td>
-<td>-</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Y1</td>
-<td>IN</td>
-<td>Joystick 1 - Y</td>
-</tr>
-<tr>
-<td>7</td>
-<td>/B2</td>
-<td>IN</td>
-<td>Button 2</td>
-</tr>
-<tr>
-<td>8</td>
-<td>+5V</td>
-<td>OUT</td>
-<td>+5 VDC</td>
-</tr>
-<tr>
-<td>9</td>
-<td>+5V</td>
-<td>OUT</td>
-<td>+5 VDC</td>
-</tr>
-<tr>
-<td>10</td>
-<td>/B4</td>
-<td>IN</td>
-<td>Button 4</td>
-</tr>
-<tr>
-<td>11</td>
-<td>X2</td>
-<td>IN</td>
-<td>Joystick 2 - X</td>
-</tr>
-<tr>
-<td>12</td>
-<td>MIDITXD</td>
-<td>OUT</td>
-<td>MIDI Transmit</td>
-</tr>
-<tr>
-<td>13</td>
-<td>Y2</td>
-<td>IN</td>
-<td>Joystick 2 - Y</td>
-</tr>
-<tr>
-<td>14</td>
-<td>/B3</td>
-<td>IN</td>
-<td>Button 3</td>
-</tr>
-<tr>
-<td>15</td>
-<td>+5 VDC</td>
-<td>IN</td>
-<td>+5 VDC </td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id18').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">IEEE-488 Connector</font></button></a>
-
-  <div id="id18" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id18').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/18.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">IEEE-488 Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>PIN</th>
-<th>Signal</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Data I/O 1</td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td>Data I/O 2</td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td>Data I/O 3</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>Data I/O 4</td>
-<td></td>
-</tr>
-<tr>
-<td>5</td>
-<td>EOI</td>
-<td>End Or Indentify has two uses. EOI is asserted on the last byte
-of a data transfer. This signals all devices that no more data
-should be expected on the transfer.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>DAV</td>
-<td>Data Valid is a handshake line indicating that the active
-talker has placed data on the data lines.</td>
-</tr>
-<tr>
-<td>7</td>
-<td>NRFD</td>
-<td>Not Ready For Data is a handshake line indicating that one or
-more active listeners is not ready for more data. Note the active
-talker should then wait before sending any more data on the
-bus.</td>
-</tr>
-<tr>
-<td>8</td>
-<td>NDAC</td>
-<td>Not Data Accepted is a handshake line indocating that one or
-more active listeners has not accepted the current data byte. Note
-the active talker should leave the current byte asserted on the
-data lines until it has been accepted ot timed out.</td>
-</tr>
-<tr>
-<td>9</td>
-<td>IFC</td>
-<td>Interface Clear is under the exclusive control of the system
-controller. When it is active high all devices on the bus are
-returned to an idle state and the bus is cleared</td>
-</tr>
-<tr>
-<td>10</td>
-<td>SRQ</td>
-<td>Service Request can be set by a devive on the interface to
-indicate it is in need of service. SRQ could be set at the
-completion of a task. E.g. finished doing a measurement, or when an
-error as occurred.</td>
-</tr>
-<tr>
-<td>11</td>
-<td>ATN</td>
-<td>Attention is used primarily to differentiate between command
-mode and data mode. When ATN is TRUE (I.E. Active high) information
-on the bus is a command and when ATN is FALSE (Active LOW) the
-information on the bus is data.</td>
-</tr>
-<tr>
-<td>12</td>
-<td>SHIELD GROUND</td>
-<td>(Earth)</td>
-</tr>
-<tr>
-<td>13</td>
-<td>Data I/O 5</td>
-<td></td>
-</tr>
-<tr>
-<td>14</td>
-<td>Data I/O 6</td>
-<td></td>
-</tr>
-<tr>
-<td>15</td>
-<td>Data I/O 7</td>
-<td></td>
-</tr>
-<tr>
-<td>16</td>
-<td>Data I/O 8</td>
-<td></td>
-</tr>
-<tr>
-<td>17</td>
-<td>REN</td>
-<td>Remote Enable may be set by the system controller to allow
-other devices to operate in remote mode.</td>
-</tr>
-<tr>
-<td>18</td>
-<td>P/O Twisted pair with DAV</td>
-<td>Ground DAV </td>
-</tr>
-<tr>
-<td>19</td>
-<td>P/O Twisted pair with NRFD</td>
-<td>Ground NRFD</td>
-</tr>
-<tr>
-<td>20</td>
-<td>P/O Twisted pair with NDAC</td>
-<td>Ground NDAC</td>
-</tr>
-<tr>
-<td>21</td>
-<td>P/O Twisted pair with IFC</td>
-<td>Ground IFC</td>
-</tr>
-<tr>
-<td>22</td>
-<td>P/O Twisted pair with SRQ</td>
-<td>Ground SRQ</td>
-</tr>
-<tr>
-<td>23</td>
-<td>P/O Twisted pair with ATN</td>
-<td>Ground ATN</td>
-</tr>
-<tr>
-<td>24</td>
-<td>SIGNAL GROUND</td>
-<td>Logical Ground</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id19').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Keyboard Mac Female Connector</font></button></a>
-
-  <div id="id19" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id19').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/19.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Keyboard Mac Female Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>PIN</th>
-<th>Signal</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>Ground</td>
-
-</tr>
-<tr>
-<td>2</td>
-<td>Keyboard Clock (KBD1)</td>
-
-</tr>
-<tr>
-<td>3</td>
-<td>Keyboard Data (KBD2)</td>
-
-</tr>
-<tr>
-<td>4</td>
-<td>+5 VDC</td>
-
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id20').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Keyboard Mac Male Connector</font></button></a>
-
-  <div id="id20" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id20').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/20.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Keyboard Mac Male Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>PIN</th>
-<th>Signal</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>Ground</td>
-
-</tr>
-<tr>
-<td>2</td>
-<td>Keyboard Clock (KBD1)</td>
-
-</tr>
-<tr>
-<td>3</td>
-<td>Keyboard Data (KBD2)</td>
-
-</tr>
-<tr>
-<td>4</td>
-<td>+5 VDC</td>
-
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id21').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Keyboard PC DIN Male Connector</font></button></a>
-
-  <div id="id21" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id21').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/21.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Keyboard PC DIN Male Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>PIN</th>
-<th>Signal</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>Clock (CLK/CTS)</td>
-
-</tr>
-<tr>
-<td>2</td>
-<td>Data (RxD/TxD/RTS)</td>
-
-</tr>
-<tr>
-<td>3</td>
-<td>Ground</td>
-
-</tr>
-<tr>
-<td>4</td>
-<td>+5 VDC</td>
-
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id22').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Keyboard PC DIN Female Connector</font></button></a>
-
-  <div id="id22" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id22').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/22.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Keyboard PC DIN Female Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>PIN</th>
-<th>Signal</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>Clock (CLK/CTS)</td>
-
-</tr>
-<tr>
-<td>2</td>
-<td>Data (RxD/TxD/RTS)</td>
-
-</tr>
-<tr>
-<td>3</td>
-<td>Ground</td>
-
-</tr>
-<tr>
-<td>4</td>
-<td>+5 VDC</td>
-
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id23').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Keyboard PC-PS2 Connector</font></button></a>
-
-  <div id="id23" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id23').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/23.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Keyboard PC-PS2 Connector</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>PIN</th>
-<th>Signal</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>Data (RxD/TxD/RTS) </td>
-
-</tr>
-<tr>
-<td>2</td>
-<td>NC</td>
-
-</tr>
-<tr>
-<td>3</td>
-<td>Ground</td>
-
-</tr>
-<tr>
-<td>4</td>
-<td>+5 VDC</td>
-
-</tr>
-</tr>
-<tr>
-<td>5</td>
-<td>Clock (CLK/CTS)</td>
-
-</tr>
-<tr>
-<td>6</td>
-<td>NC</td>
-
-</tr>
-
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id24').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Apple Lightning connector pinout</font></button></a>
-
-  <div id="id24" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id24').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/24.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Apple Lightning connector pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin<br>
-			Number</th>
-			<th>Pin<br>
-			Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>GND</td>
-			<td>ground</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>L0p</td>
-			<td>lane 0 positive</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>L0n</td>
-			<td>lane 0 negative</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>ID0</td>
-			<td>identification/control 0</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>PWR</td>
-			<td>power (charger or battery)</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>L1n</td>
-			<td>lane 1 negative</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>L1p</td>
-			<td>lane 1 positive</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>ID1</td>
-			<td>identification/control 1</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id25').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MIDI IN Female connector pinout</font></button></a>
-
-  <div id="id25" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id25').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/25.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">MIDI Input Female connector pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>n/c</td>
-			<td>Not connected</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>connected to shield</td>
-			<td>Not connected</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>n/c</td>
-			<td>Not connected</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>CSRC</td>
-			<td>Current Source / Recive data (IN)</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>CSINK</td>
-			<td>Current Sink / Loop Return (IN)</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id26').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MIDI IN Male connector pinout</font></button></a>
-
-  <div id="id26" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id26').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/26.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">MIDI Input Male connector pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>n/c</td>
-			<td>Not connected</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>connected to shield</td>
-			<td>Not connected</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>n/c</td>
-			<td>Not connected</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>CSRC</td>
-			<td>Current Source / Recive data (IN)</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>CSINK</td>
-			<td>Current Sink / Loop Return (IN)</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id27').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MIDI Out Female connector pinout</font></button></a>
-
-  <div id="id27" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id27').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/27.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">MIDI Out Female connector pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Loop Return</td>
-			<td>THROUGH</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Ground</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Transmit data </td>
-			<td>THROUGH</td>
-		</tr>
-<tr>
-			<td>4</td>
-			<td>CSINK</td>
-			<td>Current Sink / Loop Return (Out)</td>
-		</tr>
-
-		<tr>
-			<td>5</td>
-			<td>CSRC</td>
-			<td>Current Source / Recive data (Out)</td>
-		</tr>
-		
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id28').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MIDI Out Male connector pinout</font></button></a>
-
-  <div id="id28" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id28').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/28.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">MIDI Out Male connector pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Loop Return</td>
-			<td>THROUGH</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Ground</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Transmit data </td>
-			<td>THROUGH</td>
-		</tr>
-<tr>
-			<td>4</td>
-			<td>CSINK</td>
-			<td>Current Sink / Loop Return (Out)</td>
-		</tr>
-
-		<tr>
-			<td>5</td>
-			<td>CSRC</td>
-			<td>Current Source / Recive data (Out)</td>
-		</tr>
-		
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id29').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MINI Displayport connector pinout</font></button></a>
-
-  <div id="id29" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id29').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/29.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">MINI Displayport connector pinout</th>
-</table>
-<table >
-
-<tbody>
-<th>Pin</th>
-<th>Name</th>
-<th>Discription</th>
-<tr>
-<td style="">1</td>
-</td><td style="">GND
-</td><td style="">Ground
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">2</td><td style="">Hot&nbsp;Plug&nbsp;Detect
-</td><td style="">Hot Plug Detect
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">3</td><td style="">ML_Lane&nbsp;0&nbsp;(p)
-</td><td style="">Lane 0 (positive)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">4</td><td style="">CONFIG1
-</td><td style="">CONFIG1
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">5</td><td style="">ML_Lane&nbsp;0&nbsp;(n)
-</td><td style="">Lane 0 (negative)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">6</td><td style="">CONFIG2
-</td><td style="">CONFIG2
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">7</td><td style="">GND
-</td><td style="">Ground
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">8</td><td style="">GND
-</td><td style="">Ground
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">9</td><td style="">ML_Lane&nbsp;1&nbsp;(p)
-</td><td style="">Lane 1 (positive)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">10</td><td style="">ML_Lane&nbsp;3&nbsp;(p)
-</td><td style="">Lane 3 (positive)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">11</td><td style="">ML_Lane&nbsp;1&nbsp;(n)
-</td><td style="">Lane 1 (negative)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">12</td><td style="">ML_Lane&nbsp;3&nbsp;(n)
-</td><td style="">Lane 3 (negative)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">13</td><td style="">GND
-</td><td style="">Ground
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">14</td><td style="">GND
-</td><td style="">Ground
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">15</td><td style="">ML_Lane&nbsp;2&nbsp;(p)
-</td><td style="">Lane 2 (positive)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">16</td><td style="">AUX_CH&nbsp;(p)
-</td><td style="">Auxiliary Channel (positive)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">17</td><td style="">ML_Lane&nbsp;2&nbsp;(n)
-</td><td style="">Lane 2 (negative)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">18</td><td style="">AUX_CH&nbsp;(n)
-</td><td style="">Auxiliary Channel (negative)
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">19</td><td style="">GND
-</td><td style="">Ground
-</td><td style="">
-</td></tr>
-<tr style="">
-<td style="">20</td><td style="">DP_PWR
-</td><td style="">Power for connector
-</td><td style="">
-</td></tr></tbody></table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id30').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MINI - DVI Female connector pinout</font></button></a>
-
-  <div id="id30" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id30').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/30.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">MINI - DVI Female connector pinout</th>
-</table>
-<table>
-	<tbody>
-		<tr>
-			<th>Pin
-			</th>
-			<th>
-			Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Dat2_P</td>
-			<td>&nbsp;Data 2 +</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Dat2_N</td>
-			<td>&nbsp;Data 2 -</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Dat1_P</td>
-			<td>&nbsp;Data 1 +</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Dat1_N</td>
-			<td>&nbsp;Data 1 -</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>Dat0_P</td>
-			<td>&nbsp;Data 0 +</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>Dat0_N</td>
-			<td>&nbsp;Data 0 -</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>CLK_P</td>
-			<td>&nbsp;Clock +</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>CLK_N</td>
-			<td>&nbsp;Clock -</td>
-		</tr>
-                <tr>
-			<td>9</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>10</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>11</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>12</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>13</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>14</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>15</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-<tr>
-			<td>16</td>
-			<td>DGND</td>
-			<td>&nbsp;Digital Signal Ground</td>
-		</tr>
-		
-		<tr>
-			<td>17</td>
-			<td>+5V</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>DCC_DAT</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>spare</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;20</td>
-			<td>&nbsp;BLUE</td>
-			<td>&nbsp;Analogue blue</td>
-		</tr>
-  <tr>
-			<td>&nbsp;21</td>
-			<td>&nbsp;N/A</td>
-			<td>&nbsp;Not Connected</td>
-		</tr>
-		<tr>
-			<td>22&nbsp;</td>
-			<td>&nbsp;GREEN</td>
-			<td>&nbsp;Analogue green</td>
-		</tr>
-		<tr>
-			<td>&nbsp;23</td>
-			<td>&nbsp;N/A</td>
-			<td>&nbsp;Not Connected</td>
-		</tr>
-		<tr>
-			<td>&nbsp;24</td>
-			<td>&nbsp;RED</td>
-			<td>&nbsp;&nbsp;Analogue red</td>
-		</tr>
-		<tr>
-			<td>25<br>
-			&nbsp;</td>
-			<td>&nbsp;Detect</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>26&nbsp;</td>
-			<td>&nbsp;DCC_CLK</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>27<br>
-			&nbsp;</td>
-			<td>&nbsp;spare</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;28</td>
-			<td>&nbsp;DGND</td>
-			<td>&nbsp;Digital ground</td>
-		</tr>
-		<tr>
-			<td>29&nbsp;</td>
-			<td>&nbsp;HSYNC</td>
-			<td>&nbsp;Horizontal sync</td>
-		</tr>
- <tr>
-			<td>&nbsp;30</td>
-			<td>&nbsp;DGND</td>
-			<td>&nbsp;Digital ground</td>
-		</tr>
-		<tr>
-			<td>&nbsp;31</td>
-			<td>&nbsp;VSYNC</td>
-			<td>&nbsp;Vertical sync</td>
-		</tr>
-<tr>
-			<td>&nbsp;32</td>
-			<td>&nbsp;DGND</td>
-			<td>&nbsp;Digital ground</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id31').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Mouse PC-PS2 connector pinout</font></button></a>
-
-  <div id="id31" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id31').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/31.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Mouse PC-PS2 connector pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>DATA</td>
-<td>IN/OUT</td>
-<td>Key Data</td>
-</tr>
-<tr>
-<td>2</td>
-<td>n/c</td>
-<td>-</td>
-<td>Not connected</td>
-</tr>
-<tr>
-<td>3</td>
-<td>GND</td>
-<td>——</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>4</td>
-<td>VCC</td>
-<td>OUT</td>
-<td>Power , +5 VDC</td>
-</tr>
-<tr>
-<td>5</td>
-<td>CLK</td>
-<td>OUT</td>
-<td>Clock</td>
-</tr>
-<tr>
-<td>6</td>
-<td>n/c</td>
-<td>-</td>
-<td>Not connected</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id32').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Parallel ATA (EIDE) connector pinout</font></button></a>
-
-  <div id="id32" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id32').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/32.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Parallel ATA (EIDE) connector pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Dir</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>/RESET</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>Reset</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>DD7</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 7</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>DD8</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 8</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>DD6</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 6</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>DD9</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 9</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>DD5</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 5</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>DD10</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 10</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>DD4</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 4</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>DD11</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 11</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>DD3</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 3</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>DD12</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 12</td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>DD2</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 2</td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>DD13</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 13</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>DD1</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 1</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>DD14</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 14</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>DD0</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 0</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>DD15</td>
-			<td><img alt="<->" src="/images/arrowlr.gif" style="height:9px; width:32px"></td>
-			<td>Data 15</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>KEY</td>
-			<td>-</td>
-			<td>Key (Pin missing)</td>
-		</tr>
-		<tr>
-			<td>21</td>
-			<td>DMARQ</td>
-			<td>?</td>
-			<td>DMA Request</td>
-		</tr>
-		<tr>
-			<td>22</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>/DIOW</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>Write Strobe</td>
-		</tr>
-		<tr>
-			<td>24</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>25</td>
-			<td>/DIOR</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>Read Strobe</td>
-		</tr>
-		<tr>
-			<td>26</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>27</td>
-			<td>IORDY</td>
-			<td><img alt="<--" src="/images/arrowl.gif" style="height:9px; width:32px"></td>
-			<td>I/O Ready</td>
-		</tr>
-		<tr>
-			<td>28</td>
-			<td>SPSYNC:CSEL</td>
-			<td>?</td>
-			<td>Spindle Sync or Cable Select</td>
-		</tr>
-		<tr>
-			<td>29</td>
-			<td>/DMACK</td>
-			<td>?</td>
-			<td>DMA Acknowledge</td>
-		</tr>
-		<tr>
-			<td>30</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>31</td>
-			<td>INTRQ</td>
-			<td><img alt="<--" src="/images/arrowl.gif" style="height:9px; width:32px"></td>
-			<td>Interrupt Request</td>
-		</tr>
-		<tr>
-			<td>32</td>
-			<td>/IOCS16</td>
-			<td>?</td>
-			<td>IO ChipSelect 16</td>
-		</tr>
-		<tr>
-			<td>33</td>
-			<td>DA1</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>Address 1</td>
-		</tr>
-		<tr>
-			<td>34</td>
-			<td>PDIAG</td>
-			<td>?</td>
-			<td>Passed Diagnostics. Used for 80-pin cable detect.</td>
-		</tr>
-		<tr>
-			<td>35</td>
-			<td>DA0</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>Address 0</td>
-		</tr>
-		<tr>
-			<td>36</td>
-			<td>DA2</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>Address 2</td>
-		</tr>
-		<tr>
-			<td>37</td>
-			<td>/IDE_CS0</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>(1F0-1F7)</td>
-		</tr>
-		<tr>
-			<td>38</td>
-			<td>/IDE_CS1</td>
-			<td><img alt="-->" src="/images/arrowr.gif" style="height:9px; width:32px"></td>
-			<td>(3F6-3F7)</td>
-		</tr>
-		<tr>
-			<td>39</td>
-			<td>/ACTIVE</td>
-			<td><img alt="<--" src="/images/arrowl.gif" style="height:9px; width:32px"></td>
-			<td>Led driver</td>
-		</tr>
-		<tr>
-			<td>40</td>
-			<td>GND</td>
-			<td><img alt="---" src="/images/arrow.gif" style="height:9px; width:32px"></td>
-			<td>Ground</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id33').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">PC Drive / Laufwerk Type 2 pinout</font></button></a>
-
-  <div id="id33" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id33').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/33.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">PC Drive / Laufwerk Type 2 pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Colour</th>
-			
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>12V</td>
-			<td>Yellow</td>
-			
-		</tr>
-		
-		<tr>
-			<td>2</td>
-			<td>Ground</td>
-			<td>Black</td>
-			
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Ground</td>
-			<td>Black</td>
-			
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>+5V</td>
-			<td>Red</td>
-			
-		</tr>
-		
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id35').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Printer Female Connector pinout</font></button></a>
-
-  <div id="id35" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id35').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/35.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Printer Female Connector pinout</th>
-</table>
-<table >
-<tbody><tr><th colstart="1" align="center" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>Pin</b><!--mstheme--></font></th>
-    <th colstart="3" align="center" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>Centronics Pin</b><!--mstheme--></font></th>
-    <th colstart="3" align="center" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>Signal Description</b><!--mstheme--></font></th>
-    <th colstart="5" align="center" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>Signal Direction<br>
-      (at the PC)</b><!--mstheme--></font></th> 
-    <th colstart="6" align="center"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>Signal Function</b><!--mstheme--></font></td></th>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">1<!--mstheme--></font></td>
-    <td colstart="3" align="center" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">1<!--mstheme--></font></td>
-    <td colstart="3" align="center" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">STROBE<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Clocks data<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">2<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">2<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 0<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">3<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">3<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 1<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td></tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">4<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">4<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 2<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">5<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">5<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 3<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">6<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">6<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 4<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">7<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">7<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 5<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">8<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">8<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 6<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">9<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">9<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">DATA Bit 7<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Data line<!--mstheme--></font></td>
-</tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">10<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">10<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">ACKNLG<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Input<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Acknowledge receipt of data<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">11<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">11<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">BUSY<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Input<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Printer is busy<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">12<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">12<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">POUT<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Input<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Printer is out of paper<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">13<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">13<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">SEL<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Input<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Pinter is online<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">14<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">14<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">Auto Feed XT<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Autofeed<!--mstheme--></font></td></tr>
-<tr><td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">15<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">32<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">FAULT<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Input<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Indicates printer fault (or when printer is offline)<!--mstheme--></font></td></tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">16<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">31<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">Input Prime or INIT<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Resets printer, clears printer buffer and initializes it<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">17<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">36<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">SLCT IN<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">Output<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">TTL high level<!--mstheme--></font></td>
-</tr>
-<tr>
-  <td align="CENTER" colstart="1" width="51"><!--mstheme--><font face="Arial, Arial, Helvetica">18-25<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">16, 17, 19-30, 33<!--mstheme--></font></td>
-    <td align="CENTER" colstart="3" width="110"><!--mstheme--><font face="Arial, Arial, Helvetica">Ground<!--mstheme--></font></td>
-    <td align="CENTER" colstart="5" width="105"><!--mstheme--><font face="Arial, Arial, Helvetica">N/A<!--mstheme--></font></td>
-    <td colstart="6"><!--mstheme--><font face="Arial, Arial, Helvetica">Ground reference for signal pins 1-12, in most cables as
-      twisted pairs.<!--mstheme--></font></td>
-</tr>
-</tbody></table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id34').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">PC Drive / Laufwerk Type 1 pinout</font></button></a>
-
-  <div id="id34" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id34').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/34.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">PC Drive / Laufwerk Type 1 pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Colour</th>
-			
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>12V</td>
-			<td>Yellow</td>
-			
-		</tr>
-		
-		<tr>
-			<td>2</td>
-			<td>Ground</td>
-			<td>Black</td>
-			
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Ground</td>
-			<td>Black</td>
-			
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>+5V</td>
-			<td>Red</td>
-			
-		</tr>
-		
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id36').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-232 25-PIN Female Pinout</font></button></a>
-
-  <div id="id36" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id36').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/36.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-232 25-PIN Female Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>ITU-T</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GND</td>
-<td>101</td>
-<td>-</td>
-<td>AA: Protective Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>TXD</td>
-<td>103</td>
-<td>OUT</td>
-<td>BA: Transmit Data</td>
-</tr>
-<tr>
-<td>3</td>
-<td>RXD</td>
-<td>104</td>
-<td>IN</td>
-<td>BB: Receive Data</td>
-</tr>
-<tr>
-<td>4</td>
-<td>RTS</td>
-<td>105</td>
-<td>OUT</td>
-<td>CA: Request to Send</td>
-</tr>
-<tr>
-<td>5</td>
-<td>CTS</td>
-<td>106</td>
-<td>IN</td>
-<td>CB: Clear to Send</td>
-</tr>
-<tr>
-<td>6</td>
-<td>DSR</td>
-<td>107</td>
-<td>IN</td>
-<td>CC: Data Set Ready</td>
-</tr>
-<tr>
-<td>7</td>
-<td>GND</td>
-<td>102</td>
-<td>-</td>
-<td>AB: Signal Ground</td>
-</tr>
-<tr>
-<td>8</td>
-<td>CD</td>
-<td>109</td>
-<td>IN</td>
-<td>CF: Carrier Detect</td>
-</tr>
-<tr>
-<td>9</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>RESERVED - Positive test</td>
-</tr>
-<tr>
-<td>10</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>RESERVED - Negative test</td>
-</tr>
-<tr>
-<td>11</td>
-<td>STF</td>
-<td>126</td>
-<td>OUT</td>
-<td>Select Transmit Channel</td>
-</tr>
-<tr>
-<td>12</td>
-<td>S.CD</td>
-<td>122</td>
-<td>IN</td>
-<td>SCF: Secondary Carrier Detect</td>
-</tr>
-<tr>
-<td>13</td>
-<td>S.CTS</td>
-<td>121</td>
-<td>IN</td>
-<td>SCB: Secondary Clear to Send</td>
-</tr>
-<tr>
-<td>14</td>
-<td>S.TXD</td>
-<td>118</td>
-<td>OUT</td>
-<td>SBA: Secondary Transmit Data</td>
-</tr>
-<tr>
-<td>15</td>
-<td>TCK</td>
-<td>114</td>
-<td>IN</td>
-<td>DB: Transmission Signal Element Timing</td>
-</tr>
-<tr>
-<td>16</td>
-<td>S.RXD</td>
-<td>119</td>
-<td>IN</td>
-<td>SBB: Secondary Receive Data</td>
-</tr>
-<tr>
-<td>17</td>
-<td>RCK</td>
-<td>115</td>
-<td>IN</td>
-<td>DD: Receiver Signal Element Timing</td>
-</tr>
-<tr>
-<td>18</td>
-<td>LL</td>
-<td>141</td>
-<td>OUT</td>
-<td>Local Loop Control</td>
-</tr>
-<tr>
-<td>19</td>
-<td>S.RTS</td>
-<td>120</td>
-<td>OUT</td>
-<td>SCA: Secondary Request to Send</td>
-</tr>
-<tr>
-<td>20</td>
-<td>DTR</td>
-<td>108</td>
-<td>OUT</td>
-<td>CD: Data Terminal Ready</td>
-</tr>
-<tr>
-<td>21</td>
-<td>RL</td>
-<td>140</td>
-<td>OUT</td>
-<td>Remote Loop Control</td>
-</tr>
-<tr>
-<td>22</td>
-<td>RI</td>
-<td>125</td>
-<td>IN</td>
-<td>CE: Ring Indicator</td>
-</tr>
-<tr>
-<td>23</td>
-<td>DSR</td>
-<td><sup>111</sup>⁄<sub>112</sub></td>
-<td>OUT</td>
-<td>CH/CI: Data Signal Rate Selector</td>
-</tr>
-<tr>
-<td>24</td>
-<td>XCK</td>
-<td>113</td>
-<td>OUT</td>
-<td>DA: Transmit Signal Element Timing</td>
-</tr>
-<tr>
-<td>25</td>
-<td>TI</td>
-<td>142</td>
-<td>IN</td>
-<td>Test Indicator</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id37').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-232 25-PIN Male Pinout</font></button></a>
-
-  <div id="id37" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id37').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/37.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-232 25-PIN Male Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>ITU-T</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>GND</td>
-<td>101</td>
-<td>-</td>
-<td>AA: Protective Ground</td>
-</tr>
-<tr>
-<td>2</td>
-<td>TXD</td>
-<td>103</td>
-<td>OUT</td>
-<td>BA: Transmit Data</td>
-</tr>
-<tr>
-<td>3</td>
-<td>RXD</td>
-<td>104</td>
-<td>IN</td>
-<td>BB: Receive Data</td>
-</tr>
-<tr>
-<td>4</td>
-<td>RTS</td>
-<td>105</td>
-<td>OUT</td>
-<td>CA: Request to Send</td>
-</tr>
-<tr>
-<td>5</td>
-<td>CTS</td>
-<td>106</td>
-<td>IN</td>
-<td>CB: Clear to Send</td>
-</tr>
-<tr>
-<td>6</td>
-<td>DSR</td>
-<td>107</td>
-<td>IN</td>
-<td>CC: Data Set Ready</td>
-</tr>
-<tr>
-<td>7</td>
-<td>GND</td>
-<td>102</td>
-<td>-</td>
-<td>AB: Signal Ground</td>
-</tr>
-<tr>
-<td>8</td>
-<td>CD</td>
-<td>109</td>
-<td>IN</td>
-<td>CF: Carrier Detect</td>
-</tr>
-<tr>
-<td>9</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>RESERVED - Positive test</td>
-</tr>
-<tr>
-<td>10</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>RESERVED - Negative test</td>
-</tr>
-<tr>
-<td>11</td>
-<td>STF</td>
-<td>126</td>
-<td>OUT</td>
-<td>Select Transmit Channel</td>
-</tr>
-<tr>
-<td>12</td>
-<td>S.CD</td>
-<td>122</td>
-<td>IN</td>
-<td>SCF: Secondary Carrier Detect</td>
-</tr>
-<tr>
-<td>13</td>
-<td>S.CTS</td>
-<td>121</td>
-<td>IN</td>
-<td>SCB: Secondary Clear to Send</td>
-</tr>
-<tr>
-<td>14</td>
-<td>S.TXD</td>
-<td>118</td>
-<td>OUT</td>
-<td>SBA: Secondary Transmit Data</td>
-</tr>
-<tr>
-<td>15</td>
-<td>TCK</td>
-<td>114</td>
-<td>IN</td>
-<td>DB: Transmission Signal Element Timing</td>
-</tr>
-<tr>
-<td>16</td>
-<td>S.RXD</td>
-<td>119</td>
-<td>IN</td>
-<td>SBB: Secondary Receive Data</td>
-</tr>
-<tr>
-<td>17</td>
-<td>RCK</td>
-<td>115</td>
-<td>IN</td>
-<td>DD: Receiver Signal Element Timing</td>
-</tr>
-<tr>
-<td>18</td>
-<td>LL</td>
-<td>141</td>
-<td>OUT</td>
-<td>Local Loop Control</td>
-</tr>
-<tr>
-<td>19</td>
-<td>S.RTS</td>
-<td>120</td>
-<td>OUT</td>
-<td>SCA: Secondary Request to Send</td>
-</tr>
-<tr>
-<td>20</td>
-<td>DTR</td>
-<td>108</td>
-<td>OUT</td>
-<td>CD: Data Terminal Ready</td>
-</tr>
-<tr>
-<td>21</td>
-<td>RL</td>
-<td>140</td>
-<td>OUT</td>
-<td>Remote Loop Control</td>
-</tr>
-<tr>
-<td>22</td>
-<td>RI</td>
-<td>125</td>
-<td>IN</td>
-<td>CE: Ring Indicator</td>
-</tr>
-<tr>
-<td>23</td>
-<td>DSR</td>
-<td><sup>111</sup>⁄<sub>112</sub></td>
-<td>OUT</td>
-<td>CH/CI: Data Signal Rate Selector</td>
-</tr>
-<tr>
-<td>24</td>
-<td>XCK</td>
-<td>113</td>
-<td>OUT</td>
-<td>DA: Transmit Signal Element Timing</td>
-</tr>
-<tr>
-<td>25</td>
-<td>TI</td>
-<td>142</td>
-<td>IN</td>
-<td>Test Indicator</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id38').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-232 9-PIN Female Pinout</font></button></a>
-
-  <div id="id38" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id38').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/38.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-232 9-PIN Female Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>DE9 Pin</th>
-<th>IDC 10 Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>CD</td>
-<td>IN</td>
-<td>Carrier Detect</td>
-</tr>
-<tr>
-<td>2</td>
-<td>3</td>
-<td>RXD</td>
-<td>IN</td>
-<td>Receive Data</td>
-</tr>
-<tr>
-<td>3</td>
-<td>5</td>
-<td>TXD</td>
-<td>OUT</td>
-<td>Transmit Data</td>
-</tr>
-<tr>
-<td>4</td>
-<td>7</td>
-<td>DTR</td>
-<td>OUT</td>
-<td>Data Terminal Ready</td>
-</tr>
-<tr>
-<td>5</td>
-<td>9</td>
-<td>GND</td>
-<td>-</td>
-<td>System Ground</td>
-</tr>
-<tr>
-<td>6</td>
-<td>2</td>
-<td>DSR</td>
-<td>IN</td>
-<td>Data Set Ready</td>
-</tr>
-<tr>
-<td>7</td>
-<td>4</td>
-<td>RTS</td>
-<td>OUT</td>
-<td>Request to Send</td>
-</tr>
-<tr>
-<td>8</td>
-<td>6</td>
-<td>CTS</td>
-<td>IN</td>
-<td>Clear to Send</td>
-</tr>
-<tr>
-<td>9</td>
-<td>8</td>
-<td>RI</td>
-<td>IN</td>
-<td>Ring Indicator</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id39').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-232 9-PIN Male Pinout</font></button></a>
-
-  <div id="id39" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id39').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/39.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-232 9-PIN Male Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>DE9 Pin</th>
-<th>IDC 10 Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>CD</td>
-<td>IN</td>
-<td>Carrier Detect</td>
-</tr>
-<tr>
-<td>2</td>
-<td>3</td>
-<td>RXD</td>
-<td>IN</td>
-<td>Receive Data</td>
-</tr>
-<tr>
-<td>3</td>
-<td>5</td>
-<td>TXD</td>
-<td>OUT</td>
-<td>Transmit Data</td>
-</tr>
-<tr>
-<td>4</td>
-<td>7</td>
-<td>DTR</td>
-<td>OUT</td>
-<td>Data Terminal Ready</td>
-</tr>
-<tr>
-<td>5</td>
-<td>9</td>
-<td>GND</td>
-<td>-</td>
-<td>System Ground</td>
-</tr>
-<tr>
-<td>6</td>
-<td>2</td>
-<td>DSR</td>
-<td>IN</td>
-<td>Data Set Ready</td>
-</tr>
-<tr>
-<td>7</td>
-<td>4</td>
-<td>RTS</td>
-<td>OUT</td>
-<td>Request to Send</td>
-</tr>
-<tr>
-<td>8</td>
-<td>6</td>
-<td>CTS</td>
-<td>IN</td>
-<td>Clear to Send</td>
-</tr>
-<tr>
-<td>9</td>
-<td>8</td>
-<td>RI</td>
-<td>IN</td>
-<td>Ring Indicator</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id40').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-422 9-PIN Female Pinout</font></button></a>
-
-  <div id="id40" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id40').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/40.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-422 9-PIN Female Pinout</th>
-</table>
-<table>
-		<tbody>
-			<tr align="center" bgcolor="#E6E6E6">
-				<th align="center" width="30">
-					Pin</th>
-				<th>
-					Signal</th>
-				<th>
-					Description</th>
-			</tr>
-			<tr>
-				<td align="center">
-					1</td>
-				<td>
-					GND</td>
-				<td>
-					Shield</td>
-			</tr>
-			<tr>
-				<td align="center">
-					2</td>
-				<td>
-					RTS+</td>
-				<td>
-					Request To Send +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					3</td>
-				<td>
-					RTS-</td>
-				<td>
-					Request To Send -</td>
-			</tr>
-			<tr>
-				<td align="center">
-					4</td>
-				<td>
-					TXD+</td>
-				<td>
-					Transmit Data +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					5</td>
-				<td>
-					TXD-</td>
-				<td>
-					Transmit Data -</td>
-			</tr>
-			<tr>
-				<td align="center">
-					6</td>
-				<td>
-					CTS+</td>
-				<td>
-					Clear To Send +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					7</td>
-				<td>
-					CTS-</td>
-				<td>
-					Clear To Send -</td>
-			</tr>
-			<tr>
-				<td align="center">
-					8</td>
-				<td>
-					RXD+</td>
-				<td>
-					Received Data +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					9</td>
-				<td>
-					RXD-</td>
-				<td>
-					Received Data</td>
-			</tr>
-		</tbody>
-	</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id41').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-422 9-PIN Male Pinout</font></button></a>
-
-  <div id="id41" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id41').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/41.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-422 9-PIN Male Pinout</th>
-</table>
-<table>
-		<tbody>
-			<tr align="center" bgcolor="#E6E6E6">
-				<th align="center" width="30">
-					Pin</th>
-				<th>
-					Signal</th>
-				<th>
-					Description</th>
-			</tr>
-			<tr>
-				<td align="center">
-					1</td>
-				<td>
-					GND</td>
-				<td>
-					Shield</td>
-			</tr>
-			<tr>
-				<td align="center">
-					2</td>
-				<td>
-					RTS+</td>
-				<td>
-					Request To Send +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					3</td>
-				<td>
-					RTS-</td>
-				<td>
-					Request To Send -</td>
-			</tr>
-			<tr>
-				<td align="center">
-					4</td>
-				<td>
-					TXD+</td>
-				<td>
-					Transmit Data +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					5</td>
-				<td>
-					TXD-</td>
-				<td>
-					Transmit Data -</td>
-			</tr>
-			<tr>
-				<td align="center">
-					6</td>
-				<td>
-					CTS+</td>
-				<td>
-					Clear To Send +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					7</td>
-				<td>
-					CTS-</td>
-				<td>
-					Clear To Send -</td>
-			</tr>
-			<tr>
-				<td align="center">
-					8</td>
-				<td>
-					RXD+</td>
-				<td>
-					Received Data +</td>
-			</tr>
-			<tr>
-				<td align="center">
-					9</td>
-				<td>
-					RXD-</td>
-				<td>
-					Received Data</td>
-			</tr>
-		</tbody>
-	</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id42').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">RS-422 MAC Female Pinout</font></button></a>
-
-  <div id="id42" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id42').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/42.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">RS-422 MAC Female Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Dir</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>HSKo</td>
-<td>OUT</td>
-<td>Output Handshake</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HSKi/CLK</td>
-<td>IN</td>
-<td>Input Handshake or External Clock</td>
-</tr>
-<tr>
-<td>3</td>
-<td>TXD-</td>
-<td>OUT</td>
-<td>Transmit Data (-)</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>-</td>
-<td>Ground</td>
-</tr>
-<tr>
-<td>5</td>
-<td>RXD-</td>
-<td>IN</td>
-<td>Receive Data (-)</td>
-</tr>
-<tr>
-<td>6</td>
-<td>TXD+</td>
-<td>OUT</td>
-<td>Transmit Data (+)</td>
-</tr>
-<tr>
-<td>7</td>
-<td>GPi</td>
-<td>IN</td>
-<td>General Purpose Input</td>
-</tr>
-<tr>
-<td>8</td>
-<td>RXD+</td>
-<td>IN</td>
-<td>Receive Data (+)</td>
-</tr>
-</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id43').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Serial ATA 15 Pin Power Pinout</font></button></a>
-
-  <div id="id43" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id43').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/43.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Serial ATA 15 Pin Power pinout</th>
-</table>
-<table>
-	<tbody>
-		<tr>
-			<th style="text-align:center">Pin</th>
-			<th style="text-align:center">Signal</th>
-			<th style="text-align:center">Description</th>
-			<th style="text-align:center">PSU Color Wire</th>
-		</tr>
-		<tr>
-			<td style="text-align:center">1</td>
-			<td style="text-align:center">+3.3VDC</td>
-			<td style="text-align:center">3.3&nbsp;V Power</td>
-			<td style="text-align:center">orange</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">2</td>
-			<td style="text-align:center">+3.3VDC</td>
-			<td style="text-align:center">3.3&nbsp;V Power</td>
-			<td style="text-align:center">orange</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">3</td>
-			<td style="text-align:center">+3.3VDC</td>
-			<td style="text-align:center">Enter/exit Power Disable (PWDIS) mode<br>
-			(3.3&nbsp;V Power, Pre-charge prior to SATA 3.3)</td>
-			<td style="text-align:center">orange</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">4</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">5</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">6</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">7</td>
-			<td style="text-align:center">+5VDC</td>
-			<td style="text-align:center">5&nbsp;V Power, Pre-charge</td>
-			<td style="text-align:center">red</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">8</td>
-			<td style="text-align:center">+5VDC</td>
-			<td style="text-align:center">5&nbsp;V Power</td>
-			<td style="text-align:center">red</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">9</td>
-			<td style="text-align:center">+5VDC</td>
-			<td style="text-align:center">5&nbsp;V Power</td>
-			<td style="text-align:center">red</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">10</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">11</td>
-			<td style="text-align:center">Optional</td>
-			<td style="text-align:center">Staggered spinup/activity</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">12</td>
-			<td style="text-align:center">GND</td>
-			<td style="text-align:center">Ground</td>
-			<td style="text-align:center">black</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">13</td>
-			<td style="text-align:center">+12VDC</td>
-			<td style="text-align:center">12&nbsp;V Power, Pre-charge</td>
-			<td style="text-align:center">yellow</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">14</td>
-			<td style="text-align:center">+12VDC</td>
-			<td style="text-align:center">12&nbsp;V Power</td>
-			<td style="text-align:center">yellow</td>
-		</tr>
-		<tr>
-			<td style="text-align:center">15</td>
-			<td style="text-align:center">+12VDC</td>
-			<td style="text-align:center">12&nbsp;V Power</td>
-			<td style="text-align:center">yellow</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id44').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Serial ATA 7 Pin Data Pinout</font></button></a>
-
-  <div id="id44" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id44').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/44.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Serial ATA 7 Pin Data Power pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin</th>
-			<th>Name</th>
-			<th>Function</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>A+</td>
-			<td>Transmit+</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>A-</td>
-			<td>Transmit-</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>B-</td>
-			<td>Receive-</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>B+</td>
-			<td>Receive+</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>GND</td>
-			<td>Coding Notch</td>
-		</tr>
-	</tbody>
-</table>
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id45').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Apple Thunderbolt pinout</font></button></a>
-
-  <div id="id45" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id45').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/45.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">Apple Thunderbolt pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin<br>
-			Number</th>
-			<th>Pin<br>
-			Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>HPD</td>
-			<td>&nbsp;Hot plug detect</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>HS0TX+</td>
-			<td>&nbsp;HighSpeed transmit 0 (positive)</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>HS0RX+</td>
-			<td>&nbsp;HighSpeed receive 0 (positive)</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>HS0TX-</td>
-			<td>&nbsp;HighSpeed transmit 0 (negative)</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>HS0RX-</td>
-			<td>&nbsp;HighSpeed receive 0 (negative)</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-<tr>
-			<td>8</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>&nbsp;LSR2P TX</td>
-			<td>LowSpeed transmit</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>GND</td>
-			<td>&nbsp;Ground (reserved)</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>&nbsp;LSP2R RX</td>
-			<td>LowSpeed receive</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-<tr>
-			<td>13</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-<tr>
-			<td>14</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>&nbsp;HS1TX+</td>
-			<td>HighSpeed transmit 1 (positive)</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>&nbsp;HS1RX+</td>
-			<td>HighSpeed receive 1 (positive)</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>&nbsp;HS1TX-</td>
-			<td>HighSpeed transmit 1 (negative)</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>&nbsp;HS1RX-</td>
-			<td>HighSpeed receive 1 (negative)</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>GND</td>
-			<td>Ground</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>&nbsp;DPPWR&nbsp;<br>
-			&nbsp;</td>
-			<td>Power</td>
-		</tr>
-	</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id46').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB 3.0 A Pinout</font></button></a>
-
-  <div id="id46" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id46').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/46.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB 3.0 A Pinout</th>
-</table>
-<table border="1" cellpadding="3" cellspacing="0">
-	<tbody>
-		<tr>
-			<th>Pin
-			</th>
-			<th>
-			Name</th>
-                        <th>Colour</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>VBus</td>
-                         <td>Red</td>
-			<td>+5V Power</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>USB D-</td>
-                        <td>White</td>
-			<td rowspan="2">&nbsp;USB 2.0 data</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>USB D+</td>
-                        <td>Green</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>GND</td>
-                      <td>Black</td>
-			<td>&nbsp;Ground for power return</td>
-		</tr>
-<tr>
-			<td>5</td>
-			<td>StdA_SSTX-</td>
-                            <td>Blue</td>
-			<td>&nbsp;SuperSpeed transmitter</td>
-		</tr>
-<tr>
-			<td>6</td>
-			<td>StdA_SSTX+</td>
-                        <td>Yellow</td>
-			<td>&nbsp;SuperSpeed transmitter</td>
-		</tr>
-<tr>
-			<td>7</td>
-			<td>GND_DRAIN</td>
-                          <td>-</td>
-			<td>&nbsp;Ground for signal return</td>
-		</tr>
-		
-		<tr>
-			<td>8</td>
-			<td>StdA_SSRX-</td>
-                            <td>Purple</td>
-			<td>&nbsp;SuperSpeed receiver</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>StdA_SSRX+</td>
-                       <td>Orange</td>
-			<td>&nbsp;SuperSpeed receiver</td>
-		</tr>
-		
-		
-	</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id47').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB 3.0 B Pinout</font></button></a>
-
-  <div id="id47" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id47').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/47.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB 3.0 B Pinout</th>
-</table>
-<table border="1" cellpadding="3" cellspacing="0">
-	<tbody>
-		<tr>
-			<th>Pin
-			</th>
-			<th>
-			Name</th>
-                        <th>Colour</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>VBus</td>
-                         <td>Red</td>
-			<td>+5V Power</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>USB D-</td>
-                        <td>White</td>
-			<td rowspan="2">&nbsp;USB 2.0 data</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>USB D+</td>
-                        <td>Green</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>GND</td>
-                      <td>Black</td>
-			<td>&nbsp;Ground for power return</td>
-		</tr>
-<tr>
-			<td>5</td>
-			<td>StdA_SSTX-</td>
-                            <td>Blue</td>
-			<td>&nbsp;SuperSpeed transmitter</td>
-		</tr>
-<tr>
-			<td>6</td>
-			<td>StdA_SSTX+</td>
-                        <td>Yellow</td>
-			<td>&nbsp;SuperSpeed transmitter</td>
-		</tr>
-<tr>
-			<td>7</td>
-			<td>GND_DRAIN</td>
-                          <td>-</td>
-			<td>&nbsp;Ground for signal return</td>
-		</tr>
-		
-		<tr>
-			<td>8</td>
-			<td>StdA_SSRX-</td>
-                            <td>Purple</td>
-			<td>&nbsp;SuperSpeed receiver</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>StdA_SSRX+</td>
-                       <td>Orange</td>
-			<td>&nbsp;SuperSpeed receiver</td>
-		</tr>
-		
-		
-	</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id48').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB 3.0 B Powered Pinout</font></button></a>
-
-  <div id="id48" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id48').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/48.jpg?raw=true" >
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB 3.0 B Powered  Pinout</th>
-</table>
-<table>
-	<tbody>
-		<tr>
-			<th>Pin
-			</th>
-			<th>
-			Name</th>
-                        <th>Colour</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>VBus</td>
-                         <td>Red</td>
-			<td>+5V Power</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>USB D-</td>
-                        <td>White</td>
-			<td rowspan="2">&nbsp;USB 2.0 data</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>USB D+</td>
-                        <td>Green</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>GND</td>
-                      <td>Black</td>
-			<td>&nbsp;Ground for power return</td>
-		</tr>
-<tr>
-			<td>5</td>
-			<td>StdA_SSTX-</td>
-                            <td>Blue</td>
-			<td>&nbsp;SuperSpeed transmitter</td>
-		</tr>
-<tr>
-			<td>6</td>
-			<td>StdA_SSTX+</td>
-                        <td>Yellow</td>
-			<td>&nbsp;SuperSpeed transmitter</td>
-		</tr>
-<tr>
-			<td>7</td>
-			<td>GND_DRAIN</td>
-                          <td>-</td>
-			<td>&nbsp;Ground for signal return</td>
-		</tr>
-		
-		<tr>
-			<td>8</td>
-			<td>StdA_SSRX-</td>
-                            <td>Purple</td>
-			<td>&nbsp;SuperSpeed receiver</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>StdA_SSRX+</td>
-                       <td>Orange</td>
-			<td>&nbsp;SuperSpeed receiver</td>
-		</tr>
- <tr>
-			<td>10</td>
-			<td>DPWR</td>
-                       <td>-</td>
-			<td>&nbsp;Power provided by device</td>
-		</tr>
-<tr>
-			<td>11</td>
-			<td>DGND</td>
-                       <td>-</td>
-			<td>&nbsp;Ground return for DPWR</td>
-		</tr>
-		
-		
-	</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id49').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB Type-C Pinout</font></button></a>
-
-  <div id="id49" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id49').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/49.jpg?raw=true" > 
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB Type-C Pinout Powered  Pinout</th>
-</table>
-<table >
-	<tbody>
-		<tr>
-			<th>Pin
-			</th>
-			<th>
-			Name</th>
-			<th>Description</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>&nbsp;A1</td>
-			<td>GND</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>&nbsp;A2</td>
-			<td>&nbsp; TX1+</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>A3</td>
-			<td>TX1-</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>A4</td>
-			<td>&nbsp; VBUS</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>&nbsp;A5</td>
-			<td>&nbsp; CC1</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>&nbsp; A6</td>
-			<td>&nbsp; D+</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>&nbsp; A7</td>
-			<td>&nbsp; D-</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>&nbsp; A8</td>
-			<td>&nbsp; SBU1</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>&nbsp; A9</td>
-			<td>&nbsp; VBUS</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>&nbsp; A10</td>
-			<td>&nbsp; RX2-</td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td>&nbsp; A11</td>
-			<td>&nbsp; RX2+</td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td>&nbsp; A12</td>
-			<td>&nbsp; GND</td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td>&nbsp; B1</td>
-			<td>&nbsp; GND</td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td>&nbsp; B2</td>
-			<td>&nbsp;&nbsp;TX2+</td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td>&nbsp; B3</td>
-			<td>&nbsp;&nbsp;TX2-</td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td>&nbsp; B4</td>
-			<td>&nbsp; VBUS</td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td>&nbsp; B5</td>
-			<td>CC2</td>
-		</tr>
-		<tr>
-			<td>18</td>
-			<td>&nbsp; B6</td>
-			<td>&nbsp; D+</td>
-		</tr>
-		<tr>
-			<td>19</td>
-			<td>&nbsp; B7</td>
-			<td>&nbsp; D-</td>
-		</tr>
-		<tr>
-			<td>20</td>
-			<td>&nbsp; B8</td>
-			<td>&nbsp; SBU2</td>
-		</tr>
-		<tr>
-			<td>21</td>
-			<td>&nbsp; B9</td>
-			<td>&nbsp; VBUS</td>
-		</tr>
-		<tr>
-			<td>22</td>
-			<td>&nbsp; B10</td>
-			<td>&nbsp; RX1-</td>
-		</tr>
-		<tr>
-			<td>23</td>
-			<td>&nbsp; B11</td>
-			<td>RX1+</td>
-		</tr>
-		<tr>
-			<td>24</td>
-			<td>&nbsp; B12</td>
-			<td>&nbsp; GND</td>
-		</tr>
-	</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id50').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB A Male Pinout</font></button></a>
-
-  <div id="id50" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id50').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/50.jpg?raw=true" > 
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB A Male Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-<th>Color</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>VCC</td>
-<td>+5 VDC</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>2</td>
-<td>D-</td>
-<td>Data -</td>
-<td>White</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D+</td>
-<td>Data +</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>Ground</td>
-<td>Black</td>
-</tr>
-</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id51').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB A Female Pinout</font></button></a>
-
-  <div id="id51" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id51').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/51.jpg?raw=true" > 
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB A Female Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-<th>Color</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>VCC</td>
-<td>+5 VDC</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>2</td>
-<td>D-</td>
-<td>Data -</td>
-<td>White</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D+</td>
-<td>Data +</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>Ground</td>
-<td>Black</td>
-</tr>
-</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id52').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB B Male Pinout</font></button></a>
-
-  <div id="id52" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id52').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/52.jpg?raw=true" > 
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB A Male Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-<th>Color</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>VCC</td>
-<td>+5 VDC</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>2</td>
-<td>D-</td>
-<td>Data -</td>
-<td>White</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D+</td>
-<td>Data +</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>Ground</td>
-<td>Black</td>
-</tr>
-</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id53').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB B Female Pinout</font></button></a>
-
-  <div id="id53" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id53').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/53.jpg?raw=true" > 
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB A Female Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-<th>Color</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>VCC</td>
-<td>+5 VDC</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>2</td>
-<td>D-</td>
-<td>Data -</td>
-<td>White</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D+</td>
-<td>Data +</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>4</td>
-<td>GND</td>
-<td>Ground</td>
-<td>Black</td>
-</tr>
-</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id54').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">USB Micro A Pinout</font></button></a>
-
-  <div id="id54" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id54').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-<img data-enlargable width="100" style=" width:250; border-radius: 10px; margin:10px;"  src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/pc/54.jpg?raw=true" > 
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-<table>
-<th align="center">USB Micro A Pinout</th>
-</table>
-<table>
-<thead>
-<tr>
-<th>Pin</th>
-<th>Name</th>
-<th>Description</th>
-<th>Color</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>VCC</td>
-<td>+5 VDC</td>
-<td>Red</td>
-</tr>
-<tr>
-<td>2</td>
-<td>D-</td>
-<td>Data -</td>
-<td>White</td>
-</tr>
-<tr>
-<td>3</td>
-<td>D+</td>
-<td>Data +</td>
-<td>Green</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ID</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<td>5</td>
-<td>GND</td>
-<td>Ground</td>
-<td>Black</td>
-</tr>
-</tbody>
-</table>
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-</ul>
-</body>
+document.addEventListener("DOMContentLoaded", function(){
+    var calcInputs = document.querySelectorAll('.calculator input');
+    for (var i = 0; i < calcInputs.length; i++) {
+        calcInputs[i].addEventListener("keypress", function(e) {
+            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
+                return;   
+            } else {
+                e.preventDefault();
+            }
+        });
+    };
+});</script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/cobrowse.js?la=en-US&amp;ts=5fcc3c08-20c2-4003-b73f-e4c3395595a1" defer></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/footer.js?la=en-US&amp;ts=6f429221-f908-493d-b9a8-e01df6d866a0" defer></script>                
+    <input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="8B48970CEEA548B789875D3D1A865482">
+<script type="text/javascript" >var _cf = _cf || []; _cf.push(['_setFsp', true]);  _cf.push(['_setBm', true]); _cf.push(['_setAu', '/resources/71595cb038196eaa49e07641795f9d']); </script><script type="text/javascript"  src="/resources/71595cb038196eaa49e07641795f9d"></script></body>
 </html>
 
- <script>
-$('img[data-enlargable]').addClass('img-enlargable').click(function(){
-    var src = $(this).attr('src');
-    var modal;
-    function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
-    modal = $('<div>').css({
-        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
-        backgroundSize: 'contain',
-        width:'100%', height:'100%',
-        position:'fixed',
-        zIndex:'10000',
-        top:'0', left:'0',
-        cursor: 'zoom-out'
-    }).click(function(){
-        removeModal();
-    }).appendTo('body');
-    //handling ESC
-    $('body').on('keyup.modal-close', function(e){
-      if(e.key==='Escape'){ removeModal(); } 
-    });
-});
-  </script>
-
-
-</head>
-<body>
-
-
-
-
-
-
- 
