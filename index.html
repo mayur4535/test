@@ -1,2171 +1,330 @@
 
-
-
-
-
-
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-</script>
-
-
-
-<body>
-
-
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
  
 
 
 
+<Button style="width:90%; border: none; width: 30px;HEIGHT:90;   position: absolute;
+  top: 106px;
+  left:101px;"id="first" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; HEIGHT:90; width: 30px; 
+ 
+  border: none;
+  border-radius: ;
+  top: 106px;
+  left: 130px;"id="second" ></Button>
+<Button style="fwidth:90%;
+   position: absolute;  border: none; width: 22px; height:90; 
+  top: 106px;
+  left: 170px;}
+.f5{width:90%"id="third" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; height:90px; width: 20px;
+  border: none;
+  border-radius: ;
+  top: 106px;
+  left: 190px;" id="fourth" ></Button>
+
+
+ 
+ 
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/diode4.png?raw=true" alt="Paris" ">
+
+<div class="cd">
+<table class="bom"  style="font-size:15px;  ">
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result1"></h3></td></tr>
+</table></div>
+
+
+
+  <div class="container">
+<table class="cal" style="font-size:15px;">
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>3Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>4Band</td></tr>
+<tr><td> 
 
 
 
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
 
+   
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  <select name="" id="firstColumn">
+    <option  class="black"></option>
+  <option value="AA" class="black" >Black</option>
+  
+  <option value="BA" class="red" >Red</option>
+
+  
+</select></td><td>
+
+    <select name=""  id="secondColumn">
+    <option  class="black"></option>
+  <option value="X" class="black" >Black</option>
+  
+  <option value="S" class="red" >Red</option>
+  
+  <option value="T" class="yellow">Yellow</option>
+  <option value="V" class="green">Green</option>
+  <option value="W" class="blue">Blue</option>
+ 
+  <option value="Y" class="grey">Grey</option>
+  <option value="Z" class="white">White</option>
+</select></td><td>
+
+    <select name=""  id="thirdColumn">
+   <option  class="black"></option>
+  <option value="0" class="black" >Black</option>
+  <option value="1" class="brown" >Brown</option>
+  <option value="2" class="red" >Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
    
   
-  
-  
-  
-  
-  
-  }
-}
-</script>
+</select></td><td>
 
-<style>
-
-.mid {
-	background-color:yellow;
-	margin:-80px 10px 10px 10px;
-	display:block;
-	background-color: red ;
-	color:red;
-	border: 5;
-	color: white;
-	width:50;
-	height:40;
-	text-decoration: none;
-	border-radius: 12px;
-	font-size: 25px;
-	position: absolute;
-	left: 5px;
-	top:101;
-	font-weight: bold;
-	cursor: pointer;
-	"
-}
-.body{
-	text-size:100px;
-}
-#customers {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-#customers td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-#customers tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-#customers tr:hover {
-	background-color: #ddd;
-}
-html{
-	box-sizing:border-box
-}
-*,*:before,*:after{
-	box-sizing:inherit
-}
-/* End extract */
-html,body{
-	font-family:Verdana,sans-serif;
-	font-size:15px;
-	line-height:1.5
-}
-html{
-	overflow-x:hidden
-}
-h1{
-	font-size:36px
-}
-h2{
-	font-size:30px
-}
-h3{
-	font-size:24px
-}
-h4{
-	font-size:20px
-}
-h5{
-	font-size:18px
-}
-h6{
-	font-size:16px
-}
-.w3-serif{
-	font-family:serif
-}
-border.w3-btn,.w3-button{
-	font-size:50px;
-	border-radius: 25px;
-	background: #73AD21;
-	inpaddg: 2px;
-	width: 200px;
-	height: 100px;
-	text-align:center;
-}
-.w3-btn,.w3-button1{
-	border:none;
-	display:inline-block;
-	padding:1px 1px;
-	font-size:50px;
-	vertical-align:middle;
-	Horizontal-align:middle;
-	overflow:hidden;
-	text-decoration:none;
-	color:inherit;
-	background-color:inherit;
-	cursor:pointer;
-	white-space:nowrap;
-	text-align:LEFT;
-}
-.w3-modal{
-	z-index:3;
-	display:none;
-	padding-top:100px;
-	position:fixed;
-	left:0;
-	top:0;
-	width:100%;
-	height:100%;
-	overflow:auto;
-	background-color:rgb(0,0,0);
-	background-color:rgba(0,0,0,0.4)
-}
-.w3-modal-content{
-	margin:-30px 10px 10px 10px;
-	
-	
-	
-}
-
-@media (min-width:601px){
-	.w3-col.m1{
-		width:8.33333%
-}
-	.w3-col.m2{
-		width:16.66666%
-}
-	.w3-col.m3,.w3-quarter{
-		width:24.99999%
-}
-	.w3-col.m4,.w3-third{
-		width:33.33333%
-}
-	.w3-display-topmiddle{
-		position:absolute;
-		left:50%;
-		top:0;
-		transform:translate(-50%,0%);
-		-ms-transform:translate(-50%,0%)
-}
-	.w3-display-container:hover .w3-display-hover{
-		display:block
-}
-	.w3-display-container:hover span.w3-display-hover{
-		display:inline-block
-}
-	.w3-display-hover{
-		display:none
-}
-	.w3-teal,.w3-hover-teal:hover{
-		color:#fff!important;
-		background-color:#009688!important
-}
-	.w3-yellow,.w3-hover-yellow:hover{
-		color:#000!important;
-		background-color:#ffeb3b!important
-}
-	.w3-white,.w3-hover-white:hover{
-		color:#000!important;
-		background-color:#fff!important
-}
-	border colour.w3-black,.w3-hover-black:hover{
-		color:#fff!important;
-		background-color:red!important
-}
-	
-</style>
-<style>
-.bg{ background-color:e6e9ee;
-     }
-.w3-button{background:;
-          WIDTH:100%}
-
-</style>
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
+    <select name="" id="fourthColumn">
+  <option  class="black"></option>
  
-}
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-table1{align:center;}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 2px solid #ddd;
-  background:white;
-  
-  font-weight: bold;
-}
-th{background-color:lightgreen;
- }
-th, td {
-  text-align: left;
-  padding: 8px;
-   
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-tr:hover {background-color: #ddd;}
-</style>
-</head>
-<body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Adafruit Boards Pinouts" title="Type in a name">
-
-<ul id="myUL">
-  
- 
-<li><a href="#">
-
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino UNO</font></button></a>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id01').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/1.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Leonardo</font></button></a>
-
-  <div id="id02" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id02').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/2.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id03').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino DUE</font></button></a>
-
-  <div id="id03" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id03').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/3.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id04').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Esplora</font></button></a>
-
-  <div id="id04" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id04').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/4.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id05').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Mega 2560</font></button></a>
-
-  <div id="id05" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id05').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/5.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id06').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino ADK</font></button></a>
-
-  <div id="id06" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id06').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/6.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id07').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Ethernet</font></button></a>
-
-  <div id="id07" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id07').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/7.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id08').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Mini</font></button></a>
-
-  <div id="id08" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id08').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/8.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id09').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Micro</font></button></a>
-
-  <div id="id09" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id09').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/9.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id010').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Nano V2</font></button></a>
-
-  <div id="id010" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id010').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/10.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id011').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Nano V3</font></button></a>
-
-  <div id="id011" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id011').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/11.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0150').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Pro</font></button></a>
-
-  <div id="id0150" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0150').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/50.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id012').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Pro Mini</font></button></a>
-
-  <div id="id012" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id012').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/12.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id013').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Pro Micro</font></button></a>
-
-  <div id="id013" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id013').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/13.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id014').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Fio</font></button></a>
-
-  <div id="id014" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id014').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/14.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id015').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Tre (Shield)</font></button></a>
-
-  <div id="id015" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id015').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/15.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id016').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Duemilanove</font></button></a>
-
-  <div id="id016" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id016').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/16.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id017').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Zero</font></button></a>
-
-  <div id="id017" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id017').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/17.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id019').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Lilypad</font></button></a>
-
-  <div id="id019" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id019').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/19.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0120').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Lilypad USB</font></button></a>
-
-  <div id="id0120" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0120').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/20.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id0128').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Lilypad Simple</font></button></a>
-
-  <div id="id0128" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0128').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/28.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0153').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Lilypad Simple Snap</font></button></a>
-
-  <div id="id0153" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0153').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/53.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0121').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Genuini 101</font></button></a>
-
-  <div id="id0121" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0121').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/21.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0122').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Gemma</font></button></a>
-
-  <div id="id0122" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0122').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/22.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0123').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino MKR1000</font></button></a>
-
-  <div id="id0123" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0123').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/23.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0124').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino MKR Zero</font></button></a>
-
-  <div id="id0124" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0124').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/24.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0125').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino YUN</font></button></a>
-
-  <div id="id0125" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0125').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/25.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0126').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino YUN Mini</font></button></a>
-
-  <div id="id0126" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0126').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/26.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0127').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Arduino Robot</font></button></a>
-
-  <div id="id0127" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0127').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/27.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id0129').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 1.0</font></button></a>
-
-  <div id="id0129" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0129').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/29.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0130').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy <b>++</b> 1.0</font></button></a>
-
-  <div id="id0130" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0130').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/30.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0131').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 2.0</font></button></a>
-
-  <div id="id0131" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0131').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/31.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0132').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy <b>++</b> 2.0</font></button></a>
-
-  <div id="id0132" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0132').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/32.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0133').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 3.0</font></button></a>
-
-  <div id="id0133" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0133').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/33.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0134').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 3.1</font></button></a>
-
-  <div id="id0134" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0134').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/34.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0135').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy LC</font></button></a>
-
-  <div id="id0135" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0135').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/35.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0136').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 3.2</font></button></a>
-
-  <div id="id0136" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0136').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/36.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0137').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 3.5</font></button></a>
-
-  <div id="id0137" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0137').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/37.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0138').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 3.6</font></button></a>
-
-  <div id="id0138" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0138').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/38.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0139').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 4.0</font></button></a>
-
-  <div id="id0139" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0139').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/39.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0140').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Tensy 4.1</font></button></a>
-
-  <div id="id0140" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0140').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/40.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0141').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATmega 1248P P/Isp</font></button></a>
-
-  <div id="id0141" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0141').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/41.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0142').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATmega 1248P V2 P/Isp</font></button></a>
-
-  <div id="id0142" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0142').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/42.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0143').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATmega 2560 </font></button></a>
-
-  <div id="id0143" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0143').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/43.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0144').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATmega 328</font></button></a>
-
-  <div id="id0144" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0144').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/44.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0145').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATmega 32U4</font></button></a>
-
-  <div id="id0145" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0145').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/45.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0146').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATmega 644P P/Isp</font></button></a>
-
-  <div id="id0146" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0146').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/46.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0147').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATTiny Generic P/Isp</font></button></a>
-
-  <div id="id0147" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0147').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/47.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0148').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ATTiny 84 ATTiny 44 P/Isp</font></button></a>
-
-  <div id="id0148" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0148').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/48.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0149').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Sparkfun Microview 328</font></button></a>
-
-  <div id="id0149" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0149').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/49.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id0151').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">
-
-$9 ARDUINO Compatible</font></button></a>
-
-  <div id="id0151" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0151').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/51.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id0152').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ARIA G25 (ACME System)</font></button></a>
-
-  <div id="id0152" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id0152').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/arduino/52.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
+   <option value="0" class="black" >Black</option>
+  <option value="1" class="brown" >Brown</option>
+  <option value="2" class="red" >Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+</select></td>
+
+</div>
 
 
   
-
-</ul>
 </body>
+
 </html>
 
- <script>
-$('img[data-enlargable]').addClass('img-enlargable').click(function(){
-    var src = $(this).attr('src');
-    var modal;
-    function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
-    modal = $('<div>').css({
-        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
-        backgroundSize: 'contain',
-        width:'100%', height:'100%',
-        position:'fixed',
-        zIndex:'10000',
-        top:'0', left:'0',
-        cursor: 'zoom-out'
-    }).click(function(){
-        removeModal();
-    }).appendTo('body');
-    //handling ESC
-    $('body').on('keyup.modal-close', function(e){
-      if(e.key==='Escape'){ removeModal(); } 
-    });
-});
-  </script>
-</head>
-<body>
 
 
 
+<script>
 
+function calculate(columnFirst, columnSecond, columnThird) {
 
-
+  var columnFirst = document.getElementById('firstColumn').value;
+  var columnSecond = document.getElementById('secondColumn').value;
+  var columnThird = document.getElementById('thirdColumn').value;
+  var columnFourth = document.getElementById('fourthColumn').value;
+   
  
+}
+
+let select = document.querySelectorAll("select");
+
+
+select.forEach(function (element,){
+  element.addEventListener("change", function() {
+      // console.log(this)
+      let listOption = this.options[this.selectedIndex].id;
+      this.style.backgroundColor = listOption;
+      if (listOption == "black" || listOption == "blue") {
+        this.style.color = "white";
+      } else {
+        this.style.color = "black";
+      }
+      showResult();
+
+  })
+})
+ 
+
+function showResult() {
+  let calculationResult = calculate();
+  let columnFirst = document.getElementById('firstColumn').value;
+  let columnSecond = document.getElementById('secondColumn').value;
+  let columnThird = document.getElementById('thirdColumn').value;
+  let columnFourth = document.getElementById('fourthColumn').value;
+   
+      
+
+ {
+document.getElementById("result1").innerHTML= columnFirst +columnSecond+columnThird+ columnFourth;
+}
+
+
+}
+
+</script>
+
+
+<script>
+$("#firstColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#firstColumn").attr("class", color);
+    $("#first").attr("class", color);
+    
+});
+
+$("#secondColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#secondColumn").attr("class", color);
+    $("#second").attr("class", color);
+    
+});
+
+$("#thirdColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#thirdColumn").attr("class", color);
+    $("#third").attr("class", color);
+    
+});
+
+$("#fourthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fourthColumn").attr("class", color);
+    $("#fourth").attr("class", color);
+    
+});
+
+$("#fifthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fifthColumn").attr("class", color);
+    $("#fifth").attr("class", color);
+    
+});
+
+$("#type").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#type").attr("class", color);
+    $("#type1").attr("class", color);
+    
+});
+
+
+
+
+
+
+
+</script>
+ 
+
+<style>
+.cd {
+  
+}
+img {width:250;
+  margin-left:15;  
+   position: absolute;
+  top: 100px;
+  left:40px;
+ opacity:;
+  
+} 
+.bom{
+  margin-left:10;  
+   position: absolute;
+  top: 310px;
+  left:42px; 
+ opacity:;
+ border-radius: 25px;
+  border: 2px solid #73AD21;
+  
+  width:250px; 
+  height: 100px; 
+}
+.black {
+    background-color: black;
+}
+.brown {
+    background-color: brown;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.white {
+    background-color: white;
+}
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: silver;
+}
+
+
+
+
+
+.ff{
+   position: absolute; border: none; width: 20px;
+  top:5px;
+  
+  margin: center;}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: "Montserrat";
+}
+
+
+.container {
+position:absolute;
+  bottom:10;
+  margin: ;
+ 
+}
+
+select {
+  display: inline-block;
+  margin-left: 18px;
+  width:60;
+  height: 100px;
+  text-align:center ;
+  background-color: black;
+  color: white;
+  -webkit-appearance: none;
+  
+  padding-left: 10px; 
+}
+  
+ 
+</style>
