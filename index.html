@@ -1,4 +1,197 @@
+<style>
 
+
+
+
+
+
+
+
+
+
+
+.leftpinsym, .rightpinnum, .righttoppinnum, .rightbottompinnum
+{
+  text-align: right;
+}
+
+.rightpinsym, .leftpinnum, .lefttoppinnum, leftbottompinnum
+{
+  text-align: left;
+}
+
+.leftpinnum, .rightpinnum
+{
+  min-width: 30px;
+  padding: 5px;
+}
+
+.leftpinnum
+{
+  border: 0;
+  border-left: 1px solid black;
+}
+
+.rightpinnum
+{
+  border: 0;
+  border-right: 1px solid black;
+}
+
+.lefttoppinnum, .righttoppinnum
+{
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.leftbottompinnum, .rightbottompinnum
+{
+  border: 0;
+  border-top: 1px solid black;
+}
+
+#dpindiagram
+{
+  float: center;
+  /*border: 1px solid red;*/
+ /* padding: 10px 2% 10px 2%;*/
+ /*	margin: 20px 1% 20px 2%;*/
+  width: 40%;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  width: 40%;
+}
+
+html>body #dpindiagram
+{margin-left:auto; 
+  margin-right:auto;
+  
+}
+
+
+#dpindiagramwide
+{
+}
+
+#dspecs, #dnotes
+{
+  clear: both;
+  margin-top: 10px;
+}
+
+.spcaption, .note
+{
+  font-style: italic;
+  font-size: 80%;
+}
+
+.specstable
+{
+}
+
+.neg
+{
+  text-decoration: overline;
+}
+
+.searchdiv
+{
+  text-align: center;
+  margin: 20px;
+  display: block;
+}
+
+.searchbox
+{
+  padding: 10px;
+  text-align: center;
+}
+
+.searchbox input
+{
+  font-size: 12pt;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.footer
+{
+  text-align: center;
+  width: 0 auto;
+}
+
+/*#dpintable
+{
+  /*float: right;
+  padding: 10px 2% 10px 2%;
+  border: 1px solid red;
+  margin: 20px 2% 20px 1%;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  width: 41%;
+}
+
+html>body #dpintable
+{
+  width: 41%;
+}*/
+#loaders
+{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loadbutton
+{
+  background: #e0e0e0;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+textarea.yaml
+{
+  font-family: monospace;
+  padding: 3px;
+  font-size: 12pt;
+  background: #f0f0f0;
+/*  overflow: scroll;*/
+}
+
+#editor
+{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#editortips
+{
+  display: none;
+  color: #808080;
+  font-style: italic;
+  font-size: 75%;
+}
+
+#editortips code
+{
+  font-weight: bold;
+}
+
+span.tip
+{
+  color: #808080;
+  font-style: italic;
+  font-size: smaller;
+}
+
+#errors
+{
+  background: #ffa0a0;
+  padding: 20px;
+}
+</style>
 
 
 
@@ -279,7 +472,7 @@ table {
   width: 100%;
   border: 2px solid #ddd;
   background:white;
-  
+ 
   font-weight: bold;
 }
 th{background-color:lightgreen;
@@ -329,245 +522,7 @@ tr:hover {background-color: #ddd;}
 
 
 <start/////////////////////////////////////>
-<style>
-body
-{
-  background: white;
-  color: black;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 12pt;
-}
 
-a:link, a:visited { color: #0000CC; }
-a:hover { color: #6666CC; }
-
-h1, h2, h3
-{
-  margin: 10px;
-}
-
-h1
-{ 
-  font-size: 300%;
-}
-
-.pintable, .specstable
-{
-  border-collapse: collapse;
-}
-
-.pintable td, .specstable td
-{
-  border: 1px solid black;
-  padding: 3px;
-  vertical-align: top;
-}
-
-.pintable th, .specstable th
-{
-  border: 1px solid black;
-  border-bottom: 3px solid black;
-  padding: 3px;
-}
-
-.pindiagram
-{
-  border-collapse: collapse;
-  margin: 10 auto;
-}
-
-.leftpinsym
-{
-  padding-right: 5px;
-}
-
-.rightpinsym
-{
-  padding-left: 5px;
-}
-
-.leftpinsym, .rightpinnum, .righttoppinnum, .rightbottompinnum
-{
-  text-align: right;
-}
-
-.rightpinsym, .leftpinnum, .lefttoppinnum, leftbottompinnum
-{
-  text-align: left;
-}
-
-.leftpinnum, .rightpinnum
-{
-  min-width: 30px;
-  padding: 5px;
-}
-
-.leftpinnum
-{
-  border: 0;
-  border-left: 1px solid black;
-}
-
-.rightpinnum
-{
-  border: 0;
-  border-right: 1px solid black;
-}
-
-.lefttoppinnum, .righttoppinnum
-{
-  border: 0;
-  border-bottom: 1px solid black;
-}
-
-.leftbottompinnum, .rightbottompinnum
-{
-  border: 0;
-  border-top: 1px solid black;
-}
-
-#dpindiagram
-{
-  float: left;
-  /*border: 1px solid red;*/
- /* padding: 10px 2% 10px 2%;*/
- /*	margin: 20px 1% 20px 2%;*/
-  width: 40%;
-  voice-family: "\"}\"";
-  voice-family: inherit;
-  width: 40%;
-}
-
-html>body #dpindiagram
-{margin-left:auto; 
-  margin-right:auto;
-  
-}
-
-
-#dpindiagramwide
-{
-}
-
-#dspecs, #dnotes
-{
-  clear: both;
-  margin-top: 10px;
-}
-
-.spcaption, .note
-{
-  font-style: italic;
-  font-size: 80%;
-}
-
-.specstable
-{
-}
-
-.neg
-{
-  text-decoration: overline;
-}
-
-.searchdiv
-{
-  text-align: center;
-  margin: 20px;
-  display: block;
-}
-
-.searchbox
-{
-  padding: 10px;
-  text-align: center;
-}
-
-.searchbox input
-{
-  font-size: 12pt;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-.footer
-{
-  text-align: center;
-  width: 0 auto;
-}
-
-/*#dpintable
-{
-  /*float: right;
-  padding: 10px 2% 10px 2%;
-  border: 1px solid red;
-  margin: 20px 2% 20px 1%;
-  voice-family: "\"}\"";
-  voice-family: inherit;
-  width: 41%;
-}
-
-html>body #dpintable
-{
-  width: 41%;
-}*/
-#loaders
-{
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.loadbutton
-{
-  background: #e0e0e0;
-  padding: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-textarea.yaml
-{
-  font-family: monospace;
-  padding: 3px;
-  font-size: 12pt;
-  background: #f0f0f0;
-/*  overflow: scroll;*/
-}
-
-#editor
-{
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-#editortips
-{
-  display: none;
-  color: #808080;
-  font-style: italic;
-  font-size: 75%;
-}
-
-#editortips code
-{
-  font-weight: bold;
-}
-
-span.tip
-{
-  color: #808080;
-  font-style: italic;
-  font-size: smaller;
-}
-
-#errors
-{
-  background: #ffa0a0;
-  padding: 20px;
-}
-</style>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><HTML><HEAD><LINK rel="stylesheet" href="/chipdb/style.css"><TITLE>555 - Timer - msarnoff.org ChipDB</TITLE></HEAD><BODY onload=""><H1>555</H1><H3>Timer</H3><P><A href="http://www.datasheetcatalog.org/datasheet/philips/NE_SA_SE555_C_2.pdf" target="_blank">PDF datasheet</A></P><DIV id="dpindiagram"><TABLE class="pindiagram"><TR><TD class="leftpinsym">&nbsp;</TD><TD class="lefttoppinnum">&nbsp;</TD><TD class="righttoppinnum">&nbsp;</TD><TD class="rightpinsym">&nbsp;</TD></TR><TR><TD class="leftpinsym">GND</TD><TD class="leftpinnum">1&nbsp;&bull;</TD><TD class="rightpinnum">8</TD><TD class="rightpinsym">Vcc</TD></TR><TR><TD class="leftpinsym">TRIG</TD><TD class="leftpinnum">2</TD><TD class="rightpinnum">7</TD><TD class="rightpinsym">DIS</TD></TR><TR><TD class="leftpinsym">OUT</TD><TD class="leftpinnum">3</TD><TD class="rightpinnum">6</TD><TD class="rightpinsym">THR</TD></TR><TR><TD class="leftpinsym"><span class="neg">RESET</span></TD><TD class="leftpinnum">4</TD><TD class="rightpinnum">5</TD><TD class="rightpinsym">CV</TD></TR><TR><TD class="leftpinsym">&nbsp;</TD><TD class="leftbottompinnum">&nbsp;</TD><TD class="rightbottompinnum">&nbsp;</TD><TD class="rightpinsym">&nbsp;</TD></TR></TABLE></DIV><DIV id="dpintable"><TABLE class="pintable"><TR><TH style="min-width:50px;">Pin</TH><TH style="min-width:100px;">Symbol</TH><TH style="min-width:250px;">Description</TH></TR><TR><TD>1</TD><TD>GND</TD><TD>ground</TD></TR><TR><TD>2</TD><TD>TRIG</TD><TD>trigger</TD></TR><TR><TD>3</TD><TD>OUT</TD><TD>output</TD></TR><TR><TD>4</TD><TD><span class="neg">RESET</span></TD><TD>reset (active low)</TD></TR><TR><TD>5</TD><TD>CV</TD><TD>control voltage</TD></TR><TR><TD>6</TD><TD>THR</TD><TD>threshold</TD></TR><TR><TD>7</TD><TD>DIS</TD><TD>discharge</TD></TR><TR><TD>8</TD><TD>Vcc</TD><TD>supply voltage</TD></TR></TABLE></DIV><DIV id="dspecs"><H3>Specifications</H3><SPAN class="spcaption">(typical values under recommended operating conditions, unless specified)</SPAN><TABLE class="specstable"><TR><TH style="min-width:300px;">Parameter</TH><TH>Value</TH><TH style="width:70px;">Unit</TH></TR><TR><TD>Maximum supply voltage</TD><TD style="text-align:right;">18</TD><TD>V</TD></TR><TR><TD>Maximum output current (NE555)</TD><TD style="text-align:right;">200</TD><TD>mA</TD></TR><TR><TD>Power dissipation</TD><TD style="text-align:right;">600</TD><TD>mW</TD></TR></TABLE></DIV><BR><DIV id="notes"><H3>Notes</H3><UL><LI>In monostable mode, pulse width &asymp; 1.1RC</LI><LI>In astable mode, frequency = 1/(0.693*C*(R1+2*R2))</LI><LI>In astable mode, pulse high time = 0.693*(R1+R2)*C</LI><LI>In astable mode, pulse low time = 0.693*R2*C</LI></UL></DIV><P class="note"><B>Note: </B>Data is maintained by an independent source and accuracy is not guaranteed. Check with the manufacturer's datasheet for up-to-date information.</P><DIV class="searchdiv"><FORM METHOD="get" ACTION="search.cgi" class="searchbox" name="searchform" ENCTYPE="application/x-www-form-urlencoded"><INPUT TYPE="text" NAME="q" VALUE="555" SIZE="20" MAXLENGTH="32"><INPUT TYPE="submit" VALUE="Search"><BR><INPUT TYPE="radio" NAME="w" VALUE="p" CHECKED>Part number<INPUT TYPE="radio" NAME="w" VALUE="k">Keyword</FORM></DIV><DIV class="footer"><P><A href="/chipdb/">ChipDB main page</A>&nbsp;&nbsp;|&nbsp&nbsp;<A href="/chipdb/list">Full part list</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="https://github.com/74hc595/chipdb/">GitHub</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="mailto:matt.sarnoff@ZZZgmailZZZ.com (remove Z&#39;s)">Feedback</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="http://www.msarnoff.org">Matt Sarnoff</A> 2009-2013</P></DIV></BODY></HTML>
 
