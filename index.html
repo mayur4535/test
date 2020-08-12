@@ -1,3 +1,334 @@
+
+
+
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+<body>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+   
+  
+  
+  
+  
+  
+  
+  }
+}
+</script>
+
+<style>
+
+.mid {
+	background-color:yellow;
+	margin:-80px 10px 10px 10px;
+	display:block;
+	background-color: red ;
+	color:red;
+	border: 5;
+	color: white;
+	width:50;
+	height:40;
+	text-decoration: none;
+	border-radius: 12px;
+	font-size: 25px;
+	position: absolute;
+	left: 5px;
+	top:101;
+	font-weight: bold;
+	cursor: pointer;
+	"
+}
+.body{
+	text-size:100px;
+}
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+#customers tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+#customers tr:hover {
+	background-color: #ddd;
+}
+html{
+	box-sizing:border-box
+}
+*,*:before,*:after{
+	box-sizing:inherit
+}
+/* End extract */
+html,body{
+	font-family:Verdana,sans-serif;
+	font-size:15px;
+	line-height:1.5
+}
+html{
+	overflow-x:hidden
+}
+h1{
+	font-size:36px
+}
+h2{
+	font-size:30px
+}
+h3{
+	font-size:24px
+}
+h4{
+	font-size:20px
+}
+h5{
+	font-size:18px
+}
+h6{
+	font-size:16px
+}
+.w3-serif{
+	font-family:serif
+}
+border.w3-btn,.w3-button{
+	font-size:50px;
+	border-radius: 25px;
+	background: #73AD21;
+	inpaddg: 2px;
+	width: 200px;
+	height: 100px;
+	text-align:center;
+}
+.w3-btn,.w3-button1{
+	border:none;
+	display:inline-block;
+	padding:1px 1px;
+	font-size:50px;
+	vertical-align:middle;
+	Horizontal-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:inherit;
+	background-color:inherit;
+	cursor:pointer;
+	white-space:nowrap;
+	text-align:LEFT;
+}
+.w3-modal{
+	z-index:3;
+	display:none;
+	padding-top:100px;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.4)
+}
+.w3-modal-content{
+	margin:-30px 10px 10px 10px;
+	
+	
+	
+}
+
+@media (min-width:601px){
+	.w3-col.m1{
+		width:8.33333%
+}
+	.w3-col.m2{
+		width:16.66666%
+}
+	.w3-col.m3,.w3-quarter{
+		width:24.99999%
+}
+	.w3-col.m4,.w3-third{
+		width:33.33333%
+}
+	.w3-display-topmiddle{
+		position:absolute;
+		left:50%;
+		top:0;
+		transform:translate(-50%,0%);
+		-ms-transform:translate(-50%,0%)
+}
+	.w3-display-container:hover .w3-display-hover{
+		display:block
+}
+	.w3-display-container:hover span.w3-display-hover{
+		display:inline-block
+}
+	.w3-display-hover{
+		display:none
+}
+	.w3-teal,.w3-hover-teal:hover{
+		color:#fff!important;
+		background-color:#009688!important
+}
+	.w3-yellow,.w3-hover-yellow:hover{
+		color:#000!important;
+		background-color:#ffeb3b!important
+}
+	.w3-white,.w3-hover-white:hover{
+		color:#000!important;
+		background-color:#fff!important
+}
+	border colour.w3-black,.w3-hover-black:hover{
+		color:#fff!important;
+		background-color:red!important
+}
+	
+</style>
+<style>
+.bg{ background-color:e6e9ee;
+     }
+.w3-button{background:;
+          WIDTH:100%}
+
+</style>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+ 
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+table1{align:center;}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 2px solid #ddd;
+  background:white;
+  
+  font-weight: bold;
+}
+th{background-color:lightgreen;
+ }
+th, td {
+  text-align: left;
+  padding: 8px;
+   
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+tr:hover {background-color: #ddd;}
+</style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Texas Instruments Pinouts" title="Type in a name">
+
+<ul id="myUL">
+  
+ 
+<li><a href="#">
+
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
+<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">MSP-432P401R</font></button></a>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+<button class="mid" style="align:center;"onclick="document.getElementById('id01').style.display='none'">X</button> 
+<div align="center" class="table1">
+
+
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+<start/////////////////////////////////////>
 <style>
 body
 {
@@ -238,3 +569,50 @@ span.tip
 </style>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><HTML><HEAD><LINK rel="stylesheet" href="/chipdb/style.css"><TITLE>555 - Timer - msarnoff.org ChipDB</TITLE></HEAD><BODY onload=""><H1>555</H1><H3>Timer</H3><P><A href="http://www.datasheetcatalog.org/datasheet/philips/NE_SA_SE555_C_2.pdf" target="_blank">PDF datasheet</A></P><DIV id="dpindiagram"><TABLE class="pindiagram"><TR><TD class="leftpinsym">&nbsp;</TD><TD class="lefttoppinnum">&nbsp;</TD><TD class="righttoppinnum">&nbsp;</TD><TD class="rightpinsym">&nbsp;</TD></TR><TR><TD class="leftpinsym">GND</TD><TD class="leftpinnum">1&nbsp;&bull;</TD><TD class="rightpinnum">8</TD><TD class="rightpinsym">Vcc</TD></TR><TR><TD class="leftpinsym">TRIG</TD><TD class="leftpinnum">2</TD><TD class="rightpinnum">7</TD><TD class="rightpinsym">DIS</TD></TR><TR><TD class="leftpinsym">OUT</TD><TD class="leftpinnum">3</TD><TD class="rightpinnum">6</TD><TD class="rightpinsym">THR</TD></TR><TR><TD class="leftpinsym"><span class="neg">RESET</span></TD><TD class="leftpinnum">4</TD><TD class="rightpinnum">5</TD><TD class="rightpinsym">CV</TD></TR><TR><TD class="leftpinsym">&nbsp;</TD><TD class="leftbottompinnum">&nbsp;</TD><TD class="rightbottompinnum">&nbsp;</TD><TD class="rightpinsym">&nbsp;</TD></TR></TABLE></DIV><DIV id="dpintable"><TABLE class="pintable"><TR><TH style="min-width:50px;">Pin</TH><TH style="min-width:100px;">Symbol</TH><TH style="min-width:250px;">Description</TH></TR><TR><TD>1</TD><TD>GND</TD><TD>ground</TD></TR><TR><TD>2</TD><TD>TRIG</TD><TD>trigger</TD></TR><TR><TD>3</TD><TD>OUT</TD><TD>output</TD></TR><TR><TD>4</TD><TD><span class="neg">RESET</span></TD><TD>reset (active low)</TD></TR><TR><TD>5</TD><TD>CV</TD><TD>control voltage</TD></TR><TR><TD>6</TD><TD>THR</TD><TD>threshold</TD></TR><TR><TD>7</TD><TD>DIS</TD><TD>discharge</TD></TR><TR><TD>8</TD><TD>Vcc</TD><TD>supply voltage</TD></TR></TABLE></DIV><DIV id="dspecs"><H3>Specifications</H3><SPAN class="spcaption">(typical values under recommended operating conditions, unless specified)</SPAN><TABLE class="specstable"><TR><TH style="min-width:300px;">Parameter</TH><TH>Value</TH><TH style="width:70px;">Unit</TH></TR><TR><TD>Maximum supply voltage</TD><TD style="text-align:right;">18</TD><TD>V</TD></TR><TR><TD>Maximum output current (NE555)</TD><TD style="text-align:right;">200</TD><TD>mA</TD></TR><TR><TD>Power dissipation</TD><TD style="text-align:right;">600</TD><TD>mW</TD></TR></TABLE></DIV><BR><DIV id="notes"><H3>Notes</H3><UL><LI>In monostable mode, pulse width &asymp; 1.1RC</LI><LI>In astable mode, frequency = 1/(0.693*C*(R1+2*R2))</LI><LI>In astable mode, pulse high time = 0.693*(R1+R2)*C</LI><LI>In astable mode, pulse low time = 0.693*R2*C</LI></UL></DIV><P class="note"><B>Note: </B>Data is maintained by an independent source and accuracy is not guaranteed. Check with the manufacturer's datasheet for up-to-date information.</P><DIV class="searchdiv"><FORM METHOD="get" ACTION="search.cgi" class="searchbox" name="searchform" ENCTYPE="application/x-www-form-urlencoded"><INPUT TYPE="text" NAME="q" VALUE="555" SIZE="20" MAXLENGTH="32"><INPUT TYPE="submit" VALUE="Search"><BR><INPUT TYPE="radio" NAME="w" VALUE="p" CHECKED>Part number<INPUT TYPE="radio" NAME="w" VALUE="k">Keyword</FORM></DIV><DIV class="footer"><P><A href="/chipdb/">ChipDB main page</A>&nbsp;&nbsp;|&nbsp&nbsp;<A href="/chipdb/list">Full part list</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="https://github.com/74hc595/chipdb/">GitHub</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="mailto:matt.sarnoff@ZZZgmailZZZ.com (remove Z&#39;s)">Feedback</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A href="http://www.msarnoff.org">Matt Sarnoff</A> 2009-2013</P></DIV></BODY></HTML>
+
+<end////////////////////////////////////////>
+
+     
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    
+  </div>
+</div></li>
+
+
+</ul>
+</body>
+</html>
+
+ <script>
+$('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    var src = $(this).attr('src');
+    var modal;
+    function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
+    modal = $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        removeModal();
+    }).appendTo('body');
+    //handling ESC
+    $('body').on('keyup.modal-close', function(e){
+      if(e.key==='Escape'){ removeModal(); } 
+    });
+});
+  </script>
+</head>
+<body>
+
+
+ 
+
+
+
+ 
