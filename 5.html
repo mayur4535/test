@@ -1,0 +1,340 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+
+<Button style="width:90%;
+   position: absolute; border: none; padding:10px; width: 155px; 
+  top: 30px;
+  left: 98px;"id="first" ></Button>
+<Button style="width:90%; border: none; width: 198px;HEIGHT:20;   position: absolute; 
+  top: 60px;
+  left:78px;"id="second" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; HEIGHT:20; width: 223px; 
+ 
+  border: none;
+  border-radius: ;
+  top: 89px;
+  left: 65px;"id="third" ></Button>
+<Button style="fwidth:90%;
+   position: absolute;  border: none; width: 230px; height:20;
+  top: 118px;
+  left: 62px;}
+.f5{width:90%"id="third" ></Button>
+<Button style="width:90%;
+   position: absolute; border: none; height:20px; width: 230px; 
+  border: none;
+  border-radius: ;
+  top: 145px;
+  left: 62px;" id="fourth" ></Button>
+
+
+ 
+ 
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/DISKCAP1.png?raw=true" alt="Paris" ">
+
+<div class="cd">
+<table class="bom"  style="font-size:15px;  ">
+<tr ><td   align="middle" style="font-size:25px;" ><h3 id="result"></h3></td><td align="middle"><h3 id="temp1"></h3></td><td align="middle"><h3 id="result1"></h3></td></tr>
+</table></div>
+
+
+
+  <div class="container">
+<table class="cal" style="font-size:15px;">
+<tr><td align="middle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2Band</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mult</td></tr>
+<tr><td> 
+
+
+
+
+
+   
+
+  <select name="" id="firstColumn">
+    <option  class="black"></option>
+  <option value="0" class="black" >Black</option>
+  <option value="10" class="brown" >Brown</option>
+  <option value="20" class="red" >Red</option>
+  <option value="30" class="orange">Orange</option>
+  <option value="40" class="yellow">Yellow</option>
+  <option value="50" class="green">Green</option>
+  <option value="60" class="blue">Blue</option>
+  <option value="70" class="violet">Violet</option>
+  <option value="80" class="grey">Grey</option>
+  <option value="90" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select></td><td>
+
+    <select name=""  id="secondColumn">
+    <option  class="black"></option>
+  <option value="0" class="black">Black</option>
+  <option value="1" class="brown">Brown</option>
+  <option value="2" class="red">Red</option>
+  <option value="3" class="orange">Orange</option>
+  <option value="4" class="yellow">Yellow</option>
+  <option value="5" class="green">Green</option>
+  <option value="6" class="blue">Blue</option>
+  <option value="7" class="violet">Violet</option>
+  <option value="8" class="grey">Grey</option>
+  <option value="9" class="white">White</option>
+  <option value="0" class="gold">Gold</option>
+  <option value="0" class="silver">Silver</option>
+</select></td><td>
+
+    <select name=""  id="thirdColumn">
+   <option  class="black"></option>
+  <option value="1" class="black">Black</option>
+  <option value="10" class="brown">Brown</option>
+  <option value="100" class="red">Red</option>
+  <option value="1000" class="orange">Orange</option>
+  <option value="10000" class="yellow">Yellow</option>
+  <option value="100000" class="green">Green</option>
+  <option value="1000000" class="blue">Blue</option>
+  <option value="10000000" class="violet">Violet</option>
+  <option value="1000000000" class="grey">Grey</option>
+  <option value="100000000000" class="white">White</option>
+  <option value="100000000000" class="gold">Gold</option>
+  <option value="1000000000" class="silver">Silver</option> 
+  
+</select></td>
+
+</div>
+
+
+  
+</body>
+
+</html>
+
+
+
+
+<script>
+
+function calculate(columnFirst, columnSecond, columnThird) {
+
+  var columnFirst = document.getElementById('firstColumn').value;
+  var columnSecond = document.getElementById('secondColumn').value;
+  var columnThird = document.getElementById('thirdColumn').value;
+ 
+  var wynik;
+
+  if (columnThird == 0) {
+    wynik = parseInt(columnFirst) + parseInt(columnSecond);
+  } else {
+    wynik = (parseInt(columnFirst) + parseInt(columnSecond)) * parseInt(columnThird);
+  }
+  return wynik;
+}
+
+let select = document.querySelectorAll("select");
+
+
+select.forEach(function (element,){
+  element.addEventListener("change", function() {
+      // console.log(this)
+      let listOption = this.options[this.selectedIndex].id;
+      this.style.backgroundColor = listOption;
+      if (listOption == "black" || listOption == "blue") {
+        this.style.color = "white";
+      } else {
+        this.style.color = "black";
+      }
+      showResult();
+
+  })
+})
+ 
+
+function showResult() {
+  let calculationResult = calculate();
+  
+      
+
+  let digitCount = calculationResult.toString().length;
+  if (digitCount >= 4 && digitCount < 7) {
+    document.getElementById("result").innerHTML =  calculate() / 1000 + " nf";
+  } else if (digitCount >= 7 && digitCount <= 9) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000 + " μF";
+  } 
+  else if (digitCount >= 10 && digitCount <= 11) {
+    document.getElementById("result").innerHTML =  calculate() / 100000000000 + " pF";
+  }
+else if (digitCount >= 12 && digitCount <= 13) {
+    document.getElementById("result").innerHTML =  calculate() / 1000000000000 + " pF";
+  }
+else {
+    document.getElementById("result").innerHTML =  calculate() + " pf";
+  }
+}
+
+</script>
+
+
+<script>
+$("#firstColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#firstColumn").attr("class", color);
+    $("#first").attr("class", color);
+    
+});
+
+$("#secondColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#secondColumn").attr("class", color);
+    $("#second").attr("class", color);
+    
+});
+
+$("#thirdColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#thirdColumn").attr("class", color);
+    $("#third").attr("class", color);
+    
+});
+
+$("#fourthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fourthColumn").attr("class", color);
+    $("#fourth").attr("class", color);
+    
+});
+
+$("#fifthColumn").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#fifthColumn").attr("class", color);
+    $("#fifth").attr("class", color);
+    
+});
+
+$("#type").change(function(){
+    var color = $("option:selected", this).attr("class");
+    $("#type").attr("class", color);
+    $("#type1").attr("class", color);
+    
+});
+
+
+
+
+
+
+
+</script>
+ 
+
+<style>
+.cd {
+  
+}
+img {width:250;
+  margin-left:10;  
+   position: absolute;
+  top: 10px;
+  left:40px;
+ opacity:;
+  
+} 
+.bom{
+  margin-left:10;  
+   position: absolute;
+  top: 300px;
+  left:42px; 
+ opacity:;
+ border-radius: 25px;
+  border: 2px solid #73AD21;
+  
+  width:250px; 
+  height: 100px; 
+}
+.black {
+    background-color: black;
+}
+.brown {
+    background-color: brown;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.violet {
+    background-color: violet;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.white {
+    background-color: white;
+}
+.gold {
+    background-color: gold;
+}
+.silver {
+    background-color: silver;
+}
+
+
+
+
+
+.ff{
+   position: absolute; border: none; width: 20px;
+  top:5px;
+  
+  margin: center;}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  font-family: "Montserrat";
+}
+
+
+.container {
+position:absolute;
+  bottom:10;
+  margin: ;
+ 
+}
+
+select {
+  display: inline-block;
+  margin-left: 29px;
+  width:70.7;
+  height: 100px;
+  text-align:center ;
+  background-color: black;
+  color: white;
+  -webkit-appearance: none;
+  
+  padding-left: 10px;
+}
+ 
+ 
+</style>
