@@ -102,89 +102,8 @@ function clear_field(field) {
 
 function c() {
 
-   t = 20;//default percentage
-
-   v = 3;//default voltage
-
-   nF = 1000;
-
-   uF = nF*nF;
-
-   n1 = eval(document.colorSelect.first.selectedIndex);
-
-   n2 = eval(document.colorSelect.second.selectedIndex);
-
-   n3 = eval(document.colorSelect.mult.selectedIndex);
-
-   v1 = eval(document.colorSelect.volt.selectedIndex);
-
-   idx =eval(document.colorSelect.tol.selectedIndex);
-
-
-
-// percentage tolerance
-
-   if(idx == 1) t = 10;
-
-   if(idx == 2) t = 5;
-
-
-
-// voltage
-
-   if(v1 == 1) v = 6.3;
-
-   if(v1 == 2) v = 10;
-
-   if(v1 == 3) v = 16;
-
-   if(v1 == 4) v = 20;
-
-   if(v1 == 5) v = 25;
-
-   if(v1 == 6) v = 35;
-
-  
-
-   factor = ((n1 * 10)+n2)*(Math.pow(10,n3));
-
-   if(factor == "") return;
-
-
-
-   if(factor < nF) fact = "pF";
-
-   if((factor >= nF) && (factor < uF)) {
-
-      factor = factor/nF;
-
-      fact = "nF";
-
-   }
-
-   if(factor >= uF) {
-
-      factor = factor/uF;
-
-      fact = "uF";
-
-   }
-
-   r1 = factor - ((t * factor)/100);
-
-   r2 = factor + ((t * factor)/100);
-
-   r1 = parseInt((r1*100)+0.5)/100;
-
-   r2 = parseInt((r2*100)+0.5)/100;
-
    
 
-   txt = " "+r1+" to "+r2+" "+fact;
-
-   txt = txt + "    ("+factor+" "+fact+"  ±"+t+"%) " +v+ " V";
-
-   document.colorSelect.capval.value = txt;
 
 }
 
@@ -324,7 +243,7 @@ img {width:300;
   height: 15px;"></button>
 <button class="f3" name="band8" ></button>
 
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/tenta.png?raw=true" alt="Paris" ">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/tenta1.png?raw=true" alt="Paris" ">
 
 <div class="container"> 
 <table  style="border: px solid #ddd;">
@@ -332,7 +251,7 @@ img {width:300;
 <tr><td  align="middle"><b>1Band</td><td  align="middle"><b>2Band</td><td  align="middle"><b>Mult</td><td  align="middle"><b>Voltege</td><td  align="middle"><b>Tol</td></tr>
 <tr>
 <td>
-<select  name="first" value="0" OnClick="c()" onChange="calcResistance(this)" >
+<select  name="first" value="0"  onChange="calcResistance(this)" >
 
 <option value="0" style="color: white; background: black;">Black</option>
 <option value="1" style="color: white; background: #583030;" >Brown</option>
@@ -345,7 +264,7 @@ img {width:300;
 <option value="8" style="color: white; background: gray;"selected>Gray</option>
 <option value="9" style="color: black; background: white;">White</option>
 </select></td><td>
-<select  name="second" value="2" OnClick="c()" onChange="calcResistance(this)" >
+<select  name="second" value="2"  onChange="calcResistance(this)" >
 
 <option value="0" style="color: white; background: black;">Black</option>
 <option value="1" style="color: white; background: #583030;" >Brown</option>
@@ -361,7 +280,7 @@ img {width:300;
 
 
 
-<select  name="mult" value="1" OnClick="c()" onChange="calcResistance(this)" >
+<select  name="mult" value="1"  onChange="calcResistance(this)" >
 
 <option value="8" style="color: white; background: gray;"selected>Gray</option>
 <option value="9" style="color: black; background: white;">White</option>
@@ -371,7 +290,7 @@ img {width:300;
  
 
 </select></td><td>
-<select name="volt" value="0" OnClick="c()" onChange="calcResistance(this)" >
+<select name="volt" value="0"  onChange="calcResistance(this)" >
 
 <option value="9" style="color: black; background: white;">White </option>
 
@@ -390,7 +309,7 @@ img {width:300;
 
 
 
-<select  name="tol" value="0" OnClick="c()" onChange="calcResistance(this)" >
+<select  name="tol" value="0"  onChange="calcResistance(this)" >
  
 
 <option value="1" style="color: white; background: #583030;"selected>Brown</option>
@@ -428,6 +347,90 @@ function calcResistance(input) {
     mult = document.colorSelect.mult.value;
     tol = document.colorSelect.tol.value;
     volt = document.colorSelect.volt.value;
+
+    t = 20;//default percentage
+
+   v = 3;//default voltage
+
+   nF = 1000;
+
+   uF = nF*nF;
+
+   n1 = eval(document.colorSelect.first.selectedIndex);
+
+   n2 = eval(document.colorSelect.second.selectedIndex);
+
+   n3 = eval(document.colorSelect.mult.selectedIndex);
+
+   v1 = eval(document.colorSelect.volt.selectedIndex);
+
+   idx =eval(document.colorSelect.tol.selectedIndex);
+
+
+// percentage tolerance
+
+   if(idx == 1) t = 10;
+
+   if(idx == 2) t = 5;
+
+
+
+// voltage
+
+   if(v1 == 1) v = 6.3;
+
+   if(v1 == 2) v = 10;
+
+   if(v1 == 3) v = 16;
+
+   if(v1 == 4) v = 20;
+
+   if(v1 == 5) v = 25;
+
+   if(v1 == 6) v = 35;
+
+  
+
+   factor = ((n1 * 10)+n2)*(Math.pow(10,n3));
+
+   if(factor == "") return;
+
+
+
+   if(factor < nF) fact = "pF";
+
+   if((factor >= nF) && (factor < uF)) {
+
+      factor = factor/nF;
+
+      fact = "nF";
+
+   }
+
+   if(factor >= uF) {
+
+      factor = factor/uF;
+
+      fact = "uF";
+
+   }
+
+   r1 = factor - ((t * factor)/100);
+
+   r2 = factor + ((t * factor)/100);
+
+   r1 = parseInt((r1*100)+0.5)/100;
+
+   r2 = parseInt((r2*100)+0.5)/100;
+
+   
+
+   txt = " "+r1+" to "+r2+" "+fact;
+
+   txt = txt + "    ("+factor+" "+fact+"  ±"+t+"%) " +v+ " V";
+
+   document.colorSelect.capval.value = txt;
+
      
     
    
