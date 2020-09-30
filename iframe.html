@@ -559,10 +559,7 @@ function setTol(choice) {
 	
 
 <style>
-.abs {
-position:absolute;
-  bottom:10;
-  margin: ;}
+
 
 select {
   display: inline-block;
@@ -606,7 +603,10 @@ img {width:75%;
   width:50px;
   margin-left: auto;
   margin-right: auto;}
-
+}
+as {
+  
+}
 
 </style>
 
@@ -618,17 +618,23 @@ img {width:75%;
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
 
 
 
 
 <form action="#" name="generator">
-<div class="s">
-<table>
+<div  class="s" style="position:absolute;
+  top:10;
+  margin: ;">
+<table >
 <tbody>
 
-<td colspan="2">
+<td colspan="2" >
 
 <input onclick="setvar('3')" name="V" id="11" type="button" value="3 BAND" style=" background-color: #167A04 ; border: 1; color: white;   text-align: center; text-decoration: none; display: inline-block;
                font-size: 20px; margin: 4px 2px;"/></td>
@@ -646,20 +652,28 @@ img {width:75%;
 </div>
 
 
-<div class="OnLineCalculate">
-<img src="https://github.com/mayur4535/electroic/blob/master/5/image/res.png?raw=true" alt="Paris" ">
+<div class="OnLineCalculate" >
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/res.png?raw=true" style="width:500;
+  margin-left:10;  
+   position: absolute;
+  top: 100px;
+  left:20px;
+ opacity:;" >
 <div id="canvas-box"><canvas class="d" id="canvas">Update your browser!</canvas></div>
 <div class=f1>
-
+<input  id="L" size="15px" type="text" style="border-radius: 25px;font-size: 20px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+    "/>
 
 <table class="abs">
 <tbody>
-<tr><th style="text-align: center;" colspan="4"></th></tr>
+<tr><th  colspan="4"></th></tr>
 <tr>
-<td id="First">First</td>
-<td id="Second">Second</td>
-<td id="Third">Third</td>
-<td id="Forth">Forth</td>
+<td style="text-align: center;" id="First">First</td>
+<td style="text-align: center;"id="Second">Second</td>
+<td style="text-align: center;"id="Third">Third</td>
+<td style="text-align: center;"id="Forth">Forth</td>
 </tr>
 <tr>
 <td id="firstDigit"><select id="tensSelect" style="background-color: black; color: white;" name="tensSelect" size="1"><option style="background-color: black; color: white;" value="black">black</option><option style="background-color: brown; color: white;" value="brown">brown</option><option style="background-color: red; color: white;" value="red">red</option><option style="background-color: orange; color: black;" value="orange">orange</option><option style="background-color: yellow; color: black;" value="yellow">yellow</option><option style="background-color: green; color: white;" value="green">green</option><option style="background-color: blue; color: white;" value="blue">blue</option><option style="background-color: darkviolet; color: white;" value="violet">violet</option><option style="background-color: gray; color: white;" value="gray">gray</option><option style="background-color: white; color: black;" value="white">white</option></select></td>
