@@ -20,7 +20,14 @@
   
   
   
-<style>
+<style>#borderimg { 
+  border: 10px solid transparent;
+  padding: 10px;
+  width: 100%;
+  hight: 100%;
+  border-image-source: url();  
+  border-image-slice: 30;
+}
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -177,7 +184,8 @@ top:100;}
 </script>
 
 
-</head>
+</head><div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;">
 
 <body translate="no" >
   <div class="container">
@@ -237,7 +245,7 @@ top:100;}
       <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#AAA"/>
     </g>
   </svg>
-</div>
+</div></borderimg>
     <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
