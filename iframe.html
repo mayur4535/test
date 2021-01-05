@@ -1,1099 +1,366 @@
 
 
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
 
-
-
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-</script>
-
-
-
-<body>
-
-
-
-
-
- 
-
-
-
-
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-   
+  <title>CodePen - Daily Grind #10 (7-segment)</title>
   
   
   
   
-  
-  
-  }
-}
-</script>
-
 <style>
-
-.mid {
-	background-color:yellow;
-	margin:-80px 10px 10px 10px;
-	display:block;
-	background-color: red ;
-	color:red;
-	border: 5;
-	color: white;
-	width:50;
-	height:40;
-	text-decoration: none;
-	border-radius: 12px;
-	font-size: 25px;
-	position: absolute;
-	left: 5px;
-	top:101;
-	font-weight: bold;
-	cursor: pointer;
-	"
-}
-.body{
-	text-size:100px;
-}
-#customers {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-#customers td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-#customers tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-#customers tr:hover {
-	background-color: #ddd;
-}
-html{
-	box-sizing:border-box
-}
-*,*:before,*:after{
-	box-sizing:inherit
-}
-/* End extract */
-html,body{
-	font-family:Verdana,sans-serif;
-	font-size:15px;
-	line-height:1.5
-}
-html{
-	overflow-x:hidden
-}
-h1{
-	font-size:36px
-}
-h2{
-	font-size:30px
-}
-h3{
-	font-size:24px
-}
-h4{
-	font-size:20px
-}
-h5{
-	font-size:18px
-}
-h6{
-	font-size:16px
-}
-.w3-serif{
-	font-family:serif
-}
-border.w3-btn,.w3-button{
-	font-size:50px;
-	border-radius: 25px;
-	background: #73AD21;
-	inpaddg: 2px;
-	width: 200px;
-	height: 100px;
-	text-align:center;
-}
-.w3-btn,.w3-button1{
-	border:none;
-	display:inline-block;
-	padding:1px 1px;
-	font-size:50px;
-	vertical-align:middle;
-	Horizontal-align:middle;
-	overflow:hidden;
-	text-decoration:none;
-	color:inherit;
-	background-color:inherit;
-	cursor:pointer;
-	white-space:nowrap;
-	text-align:LEFT;
-}
-.w3-modal{
-	z-index:3;
-	display:none;
-	padding-top:100px;
-	position:fixed;
-	left:0;
-	top:0;
-	width:100%;
-	height:100%;
-	overflow:auto;
-	background-color:red;
-	background-color:white
-}
-.w3-modal-content{
-	margin:-30px 10px 10px 10px;
-	
-	
-	
-}
-
-@media (min-width:601px){
-	.w3-col.m1{
-		width:8.33333%
-}
-	.w3-col.m2{
-		width:16.66666%
-}
-	.w3-col.m3,.w3-quarter{
-		width:24.99999%
-}
-	.w3-col.m4,.w3-third{
-		width:33.33333%
-}
-	.w3-display-topmiddle{
-		position:absolute;
-		left:50%;
-		top:0;
-		transform:translate(-50%,0%);
-		-ms-transform:translate(-50%,0%)
-}
-	.w3-display-container:hover .w3-display-hover{
-		display:block
-}
-	.w3-display-container:hover span.w3-display-hover{
-		display:inline-block
-}
-	.w3-display-hover{
-		display:none
-}
-	.w3-teal,.w3-hover-teal:hover{
-		color:#fff!important;
-		background-color:#009688!important
-}
-	.w3-yellow,.w3-hover-yellow:hover{
-		color:#000!important;
-		background-color:#ffeb3b!important
-}
-	.w3-white,.w3-hover-white:hover{
-		color:#000!important;
-		background-color:#fff!important
-}
-	border colour.w3-black,.w3-hover-black:hover{
-		color:#fff!important;
-		background-color:red!important
-}
-	
-</style>
-<style>
-.bg{ background-color:ew
-     }
-.w3-button{background:;
-          WIDTH:100%}
-
-</style>
-
-<style>
-* {
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+body { background: grey;
+ 
 }
 
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.container {
+ 
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 25px #fff;
+ 
+  position: relative;
+
+ 
+ 
 }
 
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
+input {
+  position: absolute;
+  visibility: hidden;
+}
+
+#nav_slide {
+  width: 30px;
+  top: 90px;
+  height: 270px;
+  left: 300px;
+  position: absolute;
+  z-index: 99;
+  cursor: default;
+  background: transparent;
+  z-index: 1000;
+}
+
+label {
   display: block;
- 
+  position: relative;
+  margin-left: 10px;
+  padding: 15px 30px 15px 50px;
+  border-radius: 100px;
+  color: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-table1{align:center;}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 2px solid #ddd;
-  background:white;
-  
-  font-weight: ;
-}
-th{background-color:lightgreen;
- }
-th, td {
-  text-align: left;
-  padding: 8px;
-   
+label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 7.5px;
+  bottom: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  transition: background-color 0.2s;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
-tr:hover {background-color: #ddd;}
+svg {
+  position: absolute;
+  left: 15%;
+  top: 17.5%;
+  transition: all 0.2s ease;
+}
+svg polygon {
+  transition: all 0.2s ease;
+}
+
+input:checked + label {
+  background-color: transparent;
+}
+
+input:checked + label::before {
+  background-color: #F44336;
+}
+
+.seg1:checked ~ svg polygon#a {
+  fill: #0066ff;
+}
+
+.seg2:checked ~ svg polygon#b {
+  fill: #0066ff;
+}
+
+.seg3:checked ~ svg polygon#c {
+  fill: #0066ff;
+}
+
+.seg4:checked ~ svg polygon#d {
+  fill: #0066ff;
+}
+
+.seg5:checked ~ svg polygon#e {
+  fill: #0066ff;
+}
+
+.seg6:checked ~ svg polygon#f {
+  fill: #0066ff;
+}
+
+.seg7:checked ~ svg polygon#g {
+  fill: #0066ff;
+}
+
+.seg1:checked ~ svg.a {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.seg2:checked ~ svg.b {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.seg3:checked ~ svg.c {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.seg4:checked ~ svg.d {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.seg5:checked ~ svg.e {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.seg6:checked ~ svg.f {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.seg7:checked ~ svg.g {
+  filter: drop-shadow(1px 1px 40px #0066ff);
+}
+
+.a{position:absolute;
+top:100;}
 </style>
-</head>
-<body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Onion Omega Pinouts" title="Type in a name">
-
-<ul id="myUL">
-  
- 
-<li><a href="#">
-
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Basic Electrical Engineering</font></button></a>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id01').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-<table>
-
-
-                  
-                                            
-                                         
-                                   
-                          
-                                    
-                                       <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-1" href="#electrical-current-formulas" title="Electrical Current Formulas">Electrical Current Formulas</a></li>
-                                       <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-2" href="#voltage-or-electrical-potential-formulas" title="Voltage or Electrical Potential Formulas">Voltage or Electrical Potential Formulas</a></li>
-                                       <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-3" href="#electric-power-formulas" title="Electric Power Formulas">Electric Power Formulas</a></li>
-                                       <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-4" href="#electrical-resistance-formulas" title="Electrical Resistance Formulas">Electrical Resistance Formulas</a></li>
-                                       <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-5" href="#other-additional-electrical-quantities-formulas" title="Other Additional Electrical Quantities Formulas">Other Additional Electrical Quantities Formulas</a></li>
-                                    </ul>
-                                 </nav>
-                              </div>
-                              <h3 style="text-align: justify;"><span class="ez-toc-section" id="electrical-current-formulas"></span><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18pt;"><strong>Electrical Current Formulas</strong></span><span class="ez-toc-section-end"></span></h3>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Electrical Current Formulas in DC Circuit</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = V/R</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = P/V</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = √P/R</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Electrical Current Formulas in Single Phase AC Circuit</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                               
-                              </div>
-                              
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = P / (V x Cosθ)</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = (V/Z)</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Electrical Current Formulas in Three Phase AC Circuit</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = P / √3 x V x Cosθ</span></li>
-                              </ul>
-                              <h3 style="text-align: justify;"><span class="ez-toc-section" id="voltage-or-electrical-potential-formulas"></span><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18pt;"><strong>Voltage or Electrical Potential Formulas</strong></span><span class="ez-toc-section-end"></span></h3>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Electrical Potential or Voltage Formula in DC Circuits</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V = I x R</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V = P / I</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V = √ (P x R)</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Voltage or Electrical Potential Formulas in Single Phase AC Circuits</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V = P/(I x Cosθ)</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V = I x Z</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Voltage Formulas in Three Phase AC Circuits</strong></span></p>
-                          
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>L</sub> = √3 V<sub>PH</sub> or V<sub>L</sub> = √3 E<sub>PH</sub>     &#8230;     [Star Connection</a>]</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>L</sub> = V<sub>PH</sub>     &#8230;     []</span></li>
-                              </ul>
-                              <h3 style="text-align: justify;"><span class="ez-toc-section" id="electric-power-formulas"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 18pt;"><strong><span style="color: #ff0000;">Electric Power Formulas</span></strong></span><span class="ez-toc-section-end"></span></h3>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Power Formulas in DC Circuits</strong></span></p>
-                              
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = V x I</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P =  I<sup>2</sup> x R</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = V<sup>2</sup>/R</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Power Formulas in Single Phase AC Circuits</strong></span></p>
-                              
-                              
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = V x I Cosθ</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = I<sup>2</sup> x R Cosθ</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = (V<sup>2</sup>/R) Cosθ</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Power Formulas in Three Phase AC Circuits</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = √3 x V<sub>L</sub> x I<sub>L</sub> Cosθ</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = 3 x V<sub>P</sub> x I<sub>P</sub> Cosθ</span></li>
-                              </ul>
-                              <h3 style="text-align: justify;"><span class="ez-toc-section" id="electrical-resistance-formulas"></span><span style="color: #ff0000; font-family: arial, helvetica, sans-serif; font-size: 18pt;"><strong>Electrical Resistance Formulas</strong></span><span class="ez-toc-section-end"></span></h3>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Electrical Resistance &amp; Impedance Formulas in DC Circuits</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">R = V/I</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">R = P/I<sup>2</sup></span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">R = V<sup>2</sup>/P</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="color: #0000ff; font-family: arial, helvetica, sans-serif;"><strong>Electrical Resistance &amp; Impedance Formulas in AC Circuits</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">In AC Circuits (capacitive or inductive load), Resistance = Impedance i.e., R = Z</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <div class='code-block code-block-4' style='margin: 8px 0; clear: both;'>
-                                 <amp-ad
-                                    layout="responsive"
-                                    width=600
-                                    height=320
-                                    type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"
-                                    data-ad-slot="6439334124"> </amp-ad>
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">Z<sup>2</sup> = R<sup>2</sup> + X<sup>2</sup> … In case of resistance and reactance</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">Z = √(R<sup>2</sup> + X<sub>L</sub><sup>2</sup>) … In case of Inductive load</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">Z = √(R<sup>2</sup> + X<sub>C</sub><sup>2</sup>) … In case of Capacitive load</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">Z = √(R<sup>2</sup> + (X<sub>L</sub>– X<sub>C</sub>)<sup>2</sup>… In case of both inductive and capacitive loads.</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Impedance is the resistance of AC circuits i.e. resistive, captative and inductive circuit (already mentioned above). Where &#8220;Z&#8221; is the impedance in ohms, &#8220;R&#8221; is resistance in Ohms and &#8220;X&#8221; is the reactances in Ohms.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Good to know:</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <ul style="text-align: justify;">
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">I = Current in Amperes (A)</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V = Voltage in Volts (V)</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">P = Power in Watts (W)</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">R = Resistance in Ohm (Ω)</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">Z = impedance = Resistance of AC Circuits in Ohms</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">Cosθ = Power factor</a> = Phase difference between voltage and current in AC circuits</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>PH</sub> = Phase Voltage</span></li>
-                                 <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>L</sub> = Line Voltage</span></li>
-                              </ul>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Also,</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">X<sub>L </sub>= Inductive reactance</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">X<sub>L </sub>= 2<span style="font-family: 'times new roman', times, serif;">π<em>f</em></span>L…Where L = Inductance in Henry</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">And;</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">X<sub>C</sub> = Capacitive reactance</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">X<sub>C</sub> = 1/2<span style="font-family: 'times new roman', times, serif;">π<em>f</em></span>C… Where C = Capacitance in Farads.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p>Also, ω = <span style="font-family: arial, helvetica, sans-serif;">2<span style="font-family: 'times new roman', times, serif;">π<em>f</em></span></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">[/box]</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                             
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">The following table shows the current, voltage, power and resistance equations and formulas in DC and 1-Φ &amp; 3-Φ AC circuits.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <table style="width: 100%; height: 601px;">
-                                 <tbody>
-                                    <tr style="height: 38px;">
-                                       <td style="height: 38px; width: 12.375%; text-align: center; background: lightgreen;" width="99"><span style="color: black; font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 12pt;">Name</span></strong></span></td>
-                                       <td style="height: 38px; width: 24.375%; text-align: center; background: lightgreen;" width="195"><span style="color: black; font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 12pt;">DC</span></strong></span></td>
-                                       <td style="height: 38px; width: 31.875%; text-align: center;  background: lightgreen;" width="255"><span style="color: black; font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 12pt;">Single Phase AC</span></strong></span></td>
-                                       <td style="height: 38px; width: 31.125%; text-align: center;  background: lightgreen;" width="249"><span style="color: black; font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 12pt;">Three Phase AC</span></strong></span></td>
-                                    </tr>
-                                    <tr style="height: 135px;">
-                                       <td style="height: 135px; width: 12.375%; text-align: center;" width="99">
-                                          <span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Current </span></p>
-                                          <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                             <amp-auto-ads type="adsense"
-                                                data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                                          </div>
-                                          <p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">(I)</span>
-                                       </td>
-                                       <td style="height: 135px; width: 24.375%;" width="195">
-                                        
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">I = V/R</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">I = P/V</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">I = √P/R</span></li>
-                                         
-                                       </td>
-                                       <td style="height: 135px; width: 31.875%;" width="255">
-                                       
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">I = P / (V x Cosθ)</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">I = (V/Z)</span></li>
-                                          
-                                       </td>
-                                       <td style="height: 135px; width: 31.125%;" width="249">
-                                       
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">I = P / √3 x V x Cosθ</span></li>
-                                         
-                                       </td>
-                                    </tr>
-                                    <tr style="height: 135px;">
-                                       <td style="height: 135px; width: 12.375%; text-align: center;" width="99">
-                                          <span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Voltage </span></p>
-                                          <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                             <amp-auto-ads type="adsense"
-                                                data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                                          </div>
-                                          <p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">(V)</span>
-                                       </td>
-                                       <td style="height: 135px; width: 24.375%;" width="195">
-                                         
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V = I x R</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V = P / I</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V = √ (P x R)</span></li>
-                                      
-                                       </td>
-                                       <td style="height: 135px; width: 31.875%;" width="255">
-                                        
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V = P/(I x Cosθ)</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V = I / Z</span></li>
-                                         
-                                       </td>
-                                       <td style="height: 135px; width: 31.125%;" width="249">
-                                          
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V<sub>L</sub> = √3 V<sub>PH</sub> or V<sub>L</sub> = √3 E<sub>PH</sub></span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">V<sub>L</sub> = V<sub>PH</sub></span></li>
-                                          
-                                       </td>
-                                    </tr>
-                                    <tr style="height: 159px;">
-                                       <td style="height: 159px; width: 12.375%; text-align: center;" width="99">
-                                          <span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Power </span></p>
-                                          
-                                          <p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">(P)</span>
-                                       </td>
-                                       <td style="height: 159px; width: 24.375%;" width="195">
-                                        
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = IV </span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = I<sup>2</sup>R</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = V<sup>2</sup>/R</span></li>
-                                       
-                                       </td>
-                                       <td style="height: 159px; width: 31.875%;" width="255">
-                                      
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = V x I x Cosθ</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = I<sup>2</sup> x R x Cosθ</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = (V<sup>2</sup>/R) x Cosθ</span></li>
-                                         
-                                       </td>
-                                       <td style="height: 159px; width: 31.125%;" width="249">
-                                         
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = √3 V<sub>L</sub> I<sub>L</sub> CosФ</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">P = 3 V<sub>Ph</sub> I<sub>Ph</sub> CosФ</span></li>
-                                       
-                                       </td>
-                                    </tr>
-                                    <tr style="height: 134px;">
-                                       <td style="height: 134px; width: 12.375%; text-align: center;" width="99">
-                                          <span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Resistance </span></p>
-                                          
-                                          <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                             <amp-auto-ads type="adsense"
-                                                data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                                          </div>
-                                          <p><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">(R)</span>
-                                       </td>
-                                       <td style="height: 134px; width: 24.375%;" width="195">
-                                        
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">R = V/I</span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">R = P/I<sup>2</sup></span></li>
-                                             <li><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">R = V<sup>2</sup>/P</span></li>
-                                          
-                                       </td>
-                                       <td style="height: 134px; width: 63%;" colspan="2" width="504">
-                                         
-                                             <li style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Z = √(R<sup>2</sup> + X<sub>L</sub><sup>2</sup>)</span></li>
-                                             <li style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Z = √(R<sup>2</sup> + X<sub>C</sub><sup>2</sup>)</span></li>
-                                             <li style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;">Z = √(R<sup>2</sup> + (X<sub>L</sub>– X<sub>C</sub>)<sup>2</sup></span></li>
-                                          
-                                       </td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                              <h3 style="text-align: justify;"><span class="ez-toc-section" id="other-additional-electrical-quantities-formulas"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 18pt;"><strong>Other Additional Electrical Quantities Formulas</strong></span><span class="ez-toc-section-end"></span></h3>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Conductance:</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><strong>G = 1 / R </strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">It is the reciprocal (i.e. inverse) of resistance. The unit of conductance is Siemen or Mho and represented by the symbol of &#8220;G&#8221; or &#8220;℧&#8221;.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 <amp-auto-ads type="adsense"
-                                    data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Capacitance: </strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><strong>C = Q / V</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                              
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where &#8220;C&#8221; is capacitance in farads,  &#8220;Q&#8221; is charge</a> in coulombs, and &#8220;V&#8221; is voltage in volts. The unit of capacitance is Farad &#8220;F&#8221; or microfarad &#8220;μF&#8221;.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Inductance:</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><strong>V<sub>L</sub> = -L (di / dt)</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where &#8220;L&#8221; is inductance in Henrys, &#8220;V<sub>L</sub>&#8221; is the instantaneous voltage across the inductor in volts and &#8220;di/dt&#8221; is the rate of changes in current in Amperes per second. The unit of Inductance &#8220;L&#8221; is Henrys &#8220;H&#8221;. It is also known as Ohm&#8217;s law</a> for inductance.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Charge:</strong></span></p>
-                              
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <p style="text-align: center;"><strong><span style="font-family: arial, helvetica, sans-serif;">Q = C x V</span></strong></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where &#8220;Q&#8221; is the charge in coulombs, &#8220;C&#8221; is the capacitance in farads and &#8220;V&#8221; is the voltage in Volts.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Frequency:</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><strong><em><span style="font-family: 'times new roman', times, serif;">f</span></em> = 1 / T</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Time Period</strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                 
-                              </div>
-                              <div class='code-block code-block-4' style='margin: 8px 0; clear: both;'>
-                              
-                              </div>
-                              <p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;"><strong>T = 1 / <em><span style="font-family: 'times new roman', times, serif;">f</span></em></strong></span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                        
-                              </div>
-                              <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where &#8220;<em><span style="font-family: 'times new roman', times, serif;">f</span></em>&#8221; is frequency in Hertz (Hz) and &#8220;T&#8221; is the time periods in seconds.</span></p>
-                              <div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-                                
-                              </div>
-                              
-                           <div class="clearfix"></div>
-                           <script id="tie-schema-json" type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","dateCreated":"2020-10-07T05:33:45+05:00","datePublished":"2020-10-07T05:33:45+05:00","dateModified":"2020-10-09T01:27:25+05:00","headline":"Basic Electrical Engineering Formulas and Equations","name":"Basic Electrical Engineering Formulas and Equations","keywords":"Analyzing Electric Circuits,Capacitance,Current,Electrical Equations,Electrical Formulas,Electronics Formulas,Inductance,Power,Resistance,Voltage","url":"https:\/\/www.electricaltechnology.org\/2020\/10\/electrical-engineering-formulas.html","description":"Basic Voltage, Current, Power and Resistance Formulas in AC and DC Circuits Following are the electrical engineering formulas and equations for the basic quantities i.e. current, voltage, power, resis","copyrightYear":"2020","articleSection":"Alternating Current,Basic Concepts,DC Circuits,Electric Circuit Analysis,Electrical Formulas &amp; Equations,Single Phase AC Circuits,Three Phase AC Circuits","articleBody":"Basic Voltage, Current, Power and Resistance Formulas in AC and DC Circuits\r\nFollowing are the electrical engineering formulas and equations for the basic quantities i.e. current, voltage, power, resistance and impedance in both DC and AC circuits (single phase and three phase).\r\n\r\nElectrical Current Formulas\r\nElectrical Current Formulas in DC Circuit\r\n\r\n\r\n \tI = V\/R\r\n \tI = P\/V\r\n \tI = \u221aP\/R\r\n\r\nElectrical Current Formulas in Single Phase AC Circuit\r\n\r\n\r\n \tI = P \/ (V x Cos\u03b8)\r\n \tI = (V\/Z)\r\n\r\nElectrical Current Formulas in Three Phase AC Circuit\r\n\r\n\r\n \tI = P \/ \u221a3 x V x Cos\u03b8\r\n\r\nVoltage or Electrical Potential Formulas\r\nElectrical Potential or Voltage Formula in DC Circuits\r\n\r\n\r\n \tV = I x R\r\n \tV = P \/ I\r\n \tV = \u221a (P x R)\r\n\r\nVoltage or Electrical Potential Formulas in Single Phase AC Circuits\r\n\r\n\r\n \tV = P\/(I x Cos\u03b8)\r\n \tV = I x Z\r\n\r\nVoltage Formulas in Three Phase AC Circuits\r\n\r\n\r\n \tVL\u00a0= \u221a3 VPH\u00a0or VL\u00a0= \u221a3 EPH\u00a0 \u00a0 \u00a0...\u00a0 \u00a0 \u00a0[Star Connection]\r\n \tVL\u00a0= VPH\u00a0 \u00a0 \u00a0...\u00a0 \u00a0 \u00a0[Delta Connection]\r\n\r\nElectric Power Formulas\r\nPower Formulas in DC Circuits\r\n\r\n\r\n \tP = V x I\r\n \tP =\u00a0 I2 x R\r\n \tP = V2\/R\r\n\r\nPower Formulas in Single Phase AC Circuits\r\n\r\n\r\n \tP 
-
+  <script>
+  window.console = window.console || function(t) {};
 </script>
-                           
-
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Ohm's,Kirchhoff's,Coulombs's Laws </font></button></a>
-
-  <div id="id02" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id02').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-     
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-<div id="ez-toc-container" class="ez-toc-v2_0_11 counter-hierarchy counter-decimal">
-   <div class="ez-toc-title-container">
-      
-      
-      <span class="ez-toc-title-toggle"><a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a></span>
-   </div>
-   <nav>
-      
-         <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-1" href="#ohm%e2%80%99s-law-formulas" title="Ohm&#8217;s Law Formulas">Ohm&#8217;s Law Formulas</a></li>
-         <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-2" href="#kirchhoff%e2%80%99s-current-law-%e2%80%93-kcl" title="Kirchhoff&#8217;s Current Law &#8211; KCL">Kirchhoff&#8217;s Current Law &#8211; KCL</a></li>
-         <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-3" href="#kirchhoff%e2%80%99s-voltage-law-%e2%80%93-kvl" title="Kirchhoff&#8217;s Voltage Law &#8211; KVL">Kirchhoff&#8217;s Voltage Law &#8211; KVL</a></li>
-         <li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-4" href="#coulomb%e2%80%99s-law" title="Coulomb&#8217;s Law">Coulomb&#8217;s Law</a></li>
- 
-   </nav>
-</div>
-<h3 style="text-align: justify;"><span class="ez-toc-section" id="ohm%e2%80%99s-law-formulas"></span><strong><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;">Ohm&#8217;s Law Formulas</span></strong><span class="ez-toc-section-end"></span></h3>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Ohm’s law</a> shows the relationship between current “I” &amp; the voltage “V”</a> where the resistance “R” is a constant in an electrical circuit.</span></p>
-
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Ohm&#8217;s Law in DC Circuits</strong></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">I = V/R            For current</a> calculation</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">V = IR             For voltage</a> calculation</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">R = V/I            For resistance</a> calculation</span></li>
-</ul>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong>Ohm&#8217;s Law in AC Circuits</strong></span></p>
-
-
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">I = V/Z             For current calculation</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">V = IZ              For voltage calculation</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">Z = V/I             For impedance calculation</span></li>
-</ul>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;"><em>I = Current in Amperes (A)</em></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;"><em>V = Voltage in Volts (V)</em></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;"><em>R = Resistance in Ohms (Ω)</em></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;"><em>Z = Impedance in Ohms (Ω)</em></span></li>
-</ul>
-<h3 style="text-align: justify;"><span class="ez-toc-section" id="kirchhoff%e2%80%99s-current-law-%e2%80%93-kcl"></span><span id="kirchhoffs-current-law" style="font-family: arial, helvetica, sans-serif; font-size: 14pt;"><strong>Kirchhoff&#8217;s Current Law &#8211; KCL</strong></span><span class="ez-toc-section-end"></span></h3>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Summation of all currents entering a node or junction is <strong>0</strong>. Or the sum of entering and leaving currents  at a point is zero. In other words, the current entering at a point is equal to the current leaving that point.</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div> 
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/1.png?raw=true"><img class="aligncenter size-full wp-image-23264 visible full-visible lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/1.png?raw=true" alt="Kirchhoff’s Current Law" width="282" height="97" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/1.png?raw=true" /></a></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;">∑I<sub>Entering</sub> = ∑I<sub>Leaving</sub></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;">∑I = 0</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<div class='code-block code-block-3' style='margin: 8px 0; clear: both;'>
-   <amp-ad
-      layout="responsive"
-      width=600
-      height=320
-      type="adsense"
-      data-ad-client="ca-pub-8891203701650283"
-      data-ad-slot="4492970822"> </amp-ad>
-</div>
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">Current entering the node is denoted with positive sign (+).</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">Current leaving the node is written with a negative sign (-).</span></li>
-</ul>
-<h3 style="text-align: justify;"><span class="ez-toc-section" id="kirchhoff%e2%80%99s-voltage-law-%e2%80%93-kvl"></span><span id="kirchhoffs-voltage-law" style="font-family: arial, helvetica, sans-serif; font-size: 14pt;"><strong>Kirchhoff&#8217;s Voltage Law &#8211; KVL</strong></span><span class="ez-toc-section-end"></span></h3>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Summation of all potential differences in a circuit loop is <strong>0</strong>. The product of I &#8220;Current&#8221; and R &#8220;Resistance&#8221; in a closed path (also known as mesh) located in a network is equal to the applied EMF.</span></p>
-
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/2.png?raw=true"><img class="aligncenter size-full wp-image-23265 visible full-visible lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/2.png?raw=true" alt="Kirchhoff’s Voltage Law" width="277" height="98" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/2.png?raw=true" /></a></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<p style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif;">∑<sub>IR</sub> = ∑<sub>E</sub></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">You may find more about KVL &amp; KCL Here</a>.</span></li>
-</ul>
-<h3 class="toggle-head" style="text-align: justify;"><span class="ez-toc-section" id="coulomb%e2%80%99s-law"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;">Coulomb&#8217;s Law</span><span class="ez-toc-section-end"></span></h3>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">It provides the force of attraction or repulsion between two charges</a> or charged bodies.</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/3.png?raw=true"><img class="aligncenter size-full wp-image-24513 visible full-visible lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/3.png?raw=true" alt="Coulomb’s Law" width="111" height="58" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/3.png?raw=true" /></a></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">or</span><br /> <span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/4.png?raw=true"><img class="aligncenter size-full wp-image-23267 visible full-visible lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/4.png?raw=true" alt="Coulomb’s constant" width="124" height="65" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/4.png?raw=true" /></a></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<ul >
-   <li><span style="font-family: arial, helvetica, sans-serif;">F = force of repulsion or attraction between charges</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">ε<sub>0</sub> = permittivity in space</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">ε<sub>r</sub> = relative permittivity of material</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">q<sub>1</sub>, q<sub>2</sub> = 1<sup>st</sup> &amp; 2<sup>nd</sup> amount of charge respectively in coulombs</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">r = Distance between the charges in meters</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">k = constant</span></li>
-
-<p style="text-align: justify;">
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id03').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">VDR & CDR Formulas</font></button></a>
-
-  <div id="id03" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id03').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-<div id="ez-toc-container" class="ez-toc-v2_0_11 counter-hierarchy counter-decimal">
-   <div class="ez-toc-title-container">
-      
-      <span class="ez-toc-title-toggle"><a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a></span>
-   </div>
-   <nav>
-   
-        
-            <a class="ez-toc-link ez-toc-heading-1" href="#voltage-divider-rule-(vdr)" title="Voltage Divider Rule (VDR)">Voltage Divider Rule (VDR)</a>
-           
-               <ul><li class="ez-toc-heading-level-4"><a class="ez-toc-link ez-toc-heading-2" href="#voltage-divider-rule-for-dc-circuit" title="Voltage Divider Rule For DC Circuit:">Voltage Divider Rule For DC Circuit:</a>
-               <li class="ez-toc-page-1 ez-toc-heading-level-4"><a class="ez-toc-link ez-toc-heading-3" href="#voltage-divider-rule-for-ac-circuit" title="Voltage Divider Rule For AC Circuit: 
-                  ">Voltage Divider Rule For AC Circuit: </a></ul>
-        
-         
-         <li class="ez-toc-page-1 ez-toc-heading-level-3">
-            <a class="ez-toc-link ez-toc-heading-4" href="#current-divider-rule-(cdr)" title="Current Divider Rule (CDR)">Current Divider Rule (CDR)</a>
-          <ul>
-               <li class="ez-toc-heading-level-4"><a class="ez-toc-link ez-toc-heading-5" href="#current-divider-rule-for-dc-circuit" title="Current Divider Rule For DC Circuit:">Current Divider Rule For DC Circuit:</a>
-               <li class="ez-toc-page-1 ez-toc-heading-level-4"><a class="ez-toc-link ez-toc-heading-6" href="#current-divider-rule-for-ac-circuit" title="Current Divider Rule For AC Circuit:">Current Divider Rule For AC Circuit:</a></ul>
-         
-     
-      
-   </nav>
-</div>
-<h3 style="text-align: justify;"><span class="ez-toc-section" id="voltage-divider-rule-(vdr)"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;">Voltage Divider Rule (VDR)</span><span class="ez-toc-section-end"></span></h3>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">VDR or Voltage Divider Rule</a> is only applicable when there is more than one resistances or impedances in series. In the parallel combination</a> of resistors, the voltage remains the same.</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<h4 style="text-align: justify;"><span class="ez-toc-section" id="voltage-divider-rule-for-dc-circuit"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;"><strong>Voltage Divider Rule For DC Circuit</strong>:</span><span class="ez-toc-section-end"></span></h4>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/5.png?raw=true"><img class="aligncenter size-full wp-image-23260 visible full-visible lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/5.png?raw=true" alt="Voltage Divider Rule For DC Circuit" width="229" height="55" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/5.png?raw=true" /></a></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>n</sub> = Voltage across Resistor R<sub>n</sub></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>s</sub> = Supplied voltage or total voltage across resistance network</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">R<sub>n</sub> = Resistance</a> of resistors</a>, where n = 1,2,3..</span></li>
-</ul>
-<h4 style="text-align: justify;"><span class="ez-toc-section" id="voltage-divider-rule-for-ac-circuit"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;"><strong>Voltage Divider Rule For AC Circuit</strong>:</span><br /> <span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/6.png?raw=true"><img class="aligncenter size-full wp-image-23261 visible full-visible lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/6.png?raw=true" alt="Voltage divider for AC Circuit" width="226" height="58" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/6.png?raw=true" /></a></span><span class="ez-toc-section-end"></span></h4>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>n</sub> = Voltage across Impedance Z<sub>n</sub></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">V<sub>s</sub> = Supplied voltage or total voltage across impedance network</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">Z<sub>n</sub> = Impedance, where n = 1,2,3..</span></li>
-</ul>
-<h3 class="toggle-head" style="text-align: justify;"><span class="ez-toc-section" id="current-divider-rule-(cdr)"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;">Current Divider Rule (CDR)</span><span class="ez-toc-section-end"></span></h3>
-<div class="toggle-content">
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">CDR or Current Divider Rule is only applicable when the resistance network is connected in a parallel combination. In series combination, the current remains the same through the resistance network.</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<h4 style="text-align: justify;"><span class="ez-toc-section" id="current-divider-rule-for-dc-circuit"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;"><strong>Current Divider Rule For DC Circuit</strong>:</span><span class="ez-toc-section-end"></span></h4>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true"><img class="aligncenter size-full wp-image-23262 visible full-visible lazyautosizes ls-is-cached lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true" sizes="225px" srcset="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true 225w, https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true 220w" alt="Current Divider For DC Circuit" width="225" height="57" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true" data-srcset="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true 225w, https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/7.png?raw=true 220w" data-sizes="auto" /></a></span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;">Where</span></p>
-<div class='code-block code-block-5' style='margin: 8px 0; clear: both;'>
-   <amp-auto-ads type="adsense"
-      data-ad-client="ca-pub-8891203701650283"> </amp-auto-ads>
-</div>
-
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">I<sub>n</sub> = current through Resistor R<sub>n</sub></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">I<sub>s</sub> = Supplied current or total current through the resistance network</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">R<sub>n</sub> = Resistance of resistor, where n = 1,2,3..</span></li>
-</ul>
-<h4 style="text-align: justify;"><span class="ez-toc-section" id="current-divider-rule-for-ac-circuit"></span><span style="font-family: arial, helvetica, sans-serif; font-size: 14pt;"><strong>Current Divider Rule For AC Circuit</strong>:</span><span class="ez-toc-section-end"></span></h4>
-<p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><a href="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true"><img class="aligncenter size-full wp-image-23263 visible full-visible lazyautosizes ls-is-cached lazyloaded" title="" src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true" sizes="222px" srcset="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true 222w, https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true 220w" alt="Current Divider For AC Circuit" width="222" height="53" data-src="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true" data-srcset="https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true 222w, https://github.com/mayur4535/electroic/blob/master/5/image/formula/ohm/8.png?raw=true 220w" data-sizes="auto" /></a></span><br /> <span style="font-family: arial, helvetica, sans-serif;">Where</span></p>
 
   
-<ul style="text-align: justify;">
-   <li><span style="font-family: arial, helvetica, sans-serif;">I<sub>n</sub> = Current through Impedance Z<sub>n</sub></span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">I<sub>s</sub> = Supplied current or total current through impedance network</span></li>
-   <li><span style="font-family: arial, helvetica, sans-serif;">Z<sub>n</sub> = Impedance, where n = 1,2,3..</span></li>
-</ul>
-
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-<li><a href="#">
-
-<button onclick="document.getElementById('id04').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">Onion Omega 2</font></button></a>
-
-  <div id="id04" class="w3-modal">
-    <div class="w3-modal-content">
-<button class="mid" style="align:center;"onclick="document.getElementById('id04').style.display='none'">X</button>
-<div align="center" class="table1">
-
-
-      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/pinout/onion/2.jpg?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
-<hr>
- 
-
-
-
-
-
-
-
-
-
-
-<start/////////////////////////////////////>
-
-
-
-<end////////////////////////////////////////>
-
-     
-        <footer class="w3-container w3-teal">
-        <p></p> 
-      </footer>
-    
-  </div>
-</div></li>
-
-
   
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
 
 
-
-</ul>
-</body>
-</html>
-
- <script>
-$('img[data-enlargable]').addClass('img-enlargable').click(function(){
-    var src = $(this).attr('src');
-    var modal;
-    function removeModal(){ modal.remove(); $('body').off('keyup.modal-close'); }
-    modal = $('<div>').css({
-        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
-        backgroundSize: 'contain',
-        width:'100%', height:'100%',
-        position:'fixed',
-        zIndex:'10000',
-        top:'0', left:'0',
-        cursor: 'zoom-out'
-    }).click(function(){
-        removeModal();
-    }).appendTo('body');
-    //handling ESC
-    $('body').on('keyup.modal-close', function(e){
-      if(e.key==='Escape'){ removeModal(); } 
-    });
-});
-  </script>
 </head>
-<body>
+
+<body translate="no" >
+  <div class="container">
+
+<p >
+<input id="seg1" class="seg1" type="checkbox" name="seg1">
+<label for="seg1">A</label></td><td>
+  <input id="seg2" class="seg2" type="checkbox"></td><td>
+<label for="seg2">B</label>
+   <input id="seg3" class="seg3" type="checkbox"></td><td>
+<label for="seg3">C</label>
+   <input id="seg4" class="seg4" type="checkbox"></td><td>
+<label for="seg4">D</label>
+   <input id="seg5" class="seg5" type="checkbox"></td><td>
+<label for="seg5">E</label>
+   <input id="seg6" class="seg6" type="checkbox"></td><td>
+<label for="seg6">F</label>
+   <input id="seg7" class="seg7" type="checkbox"></td><td>
+<label for="seg7">G</label></td><td>
+  <input id="countUp" class="countUp" type="checkbox" name="countUp"></td><td>
+<label for="countUp">CountUp</label></td><td></table>
 
 
 
+<svg class="a" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+<g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#AAA"/>
+</g>
+</svg>
+  <svg class="b" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+    <g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+      <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#AAA"/>
+    </g>
+  </svg>
+    <svg class="c" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+    <g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+      <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#AAA"/>
+    </g>
+  </svg>
+    <svg class="d" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+    <g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+      <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#AAA"/>
+    </g>
+  </svg>
+    <svg class="e" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+    <g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+      <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#AAA"/>
+    </g>
+  </svg>
+    <svg class="f" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+    <g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+      <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#AAA"/>
+    </g>
+  </svg>
+    <svg class="g" xmlns="http://www.w3.org/2000/svg" width="192px" height="320px" viewBox="-1 -1 12 20">
+    <g id="bdefg" style="fill-rule:evenodd; stroke:#333; stroke-width:0.25; stroke-opacity:0; stroke-linecap:butt; stroke-linejoin:miter;">
+      <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#AAA"/>
+    </g>
+  </svg>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script id="rendered-js" >
+$(document).ready(function () {
+  let seg = [$('#seg1'), $('#seg2'), $('#seg3'), $('#seg4'), $('#seg5'), $('#seg6'), $('#seg7')];
+
+  let arrFunc = [
+  zero = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", true),
+    seg[5].prop("checked", true),
+    seg[6].prop("checked", false);
+  },
+  one = function () {
+    seg[0].prop("checked", false),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", false),
+    seg[4].prop("checked", false),
+    seg[5].prop("checked", false),
+    seg[6].prop("checked", false);
+  },
+  two = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", false),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", true),
+    seg[5].prop("checked", false),
+    seg[6].prop("checked", true);
+  },
+  three = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", false),
+    seg[5].prop("checked", false),
+    seg[6].prop("checked", true);
+  },
+  four = function () {
+    seg[0].prop("checked", false),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", false),
+    seg[4].prop("checked", false),
+    seg[5].prop("checked", true),
+    seg[6].prop("checked", true);
+  },
+  five = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", false),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", false),
+    seg[5].prop("checked", true),
+    seg[6].prop("checked", true);
+  },
+  six = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", false),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", true),
+    seg[5].prop("checked", true),
+    seg[6].prop("checked", true);
+  },
+  seven = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", false),
+    seg[4].prop("checked", false),
+    seg[5].prop("checked", false),
+    seg[6].prop("checked", false);
+  },
+  eight = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", true),
+    seg[5].prop("checked", true),
+    seg[6].prop("checked", true);
+  },
+  nine = function () {
+    seg[0].prop("checked", true),
+    seg[1].prop("checked", true),
+    seg[2].prop("checked", true),
+    seg[3].prop("checked", true),
+    seg[4].prop("checked", false),
+    seg[5].prop("checked", true),
+    seg[6].prop("checked", true);
+  }];
 
 
 
+  $('#countUp').change(function () {
+    if ($(this).is(':checked')) {
+      var i = 0,
+      timer = setInterval(function () {
+        arrFunc[i]();
+        i += 1;
+        if (i >= arrFunc.length) {
+          i = 0;
+        }
+        $('#countUp').change(function () {
+          clearInterval(timer);
+        });
+      }, 1000);
+    }
+  });
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
  
