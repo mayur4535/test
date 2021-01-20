@@ -1,4 +1,6 @@
 
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
         <style type="text/css">body * .flex {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -708,7 +710,7 @@ right:80;
     margin: 0;
     padding: 5px;
     border-radius: 10px;
-    border: 3px solid ;
+    border: 2px solid ;
     background: lightgreen;
     width: 100%; height:80;
 }  
@@ -864,20 +866,42 @@ input[type=checkbox]{
    
   }
 .gg{
-  border-radius: 2px;
+  border-radius: 1px;
   border: 2px solid #73AD21;
   padding: 20px;
-  margin: 60px 0px 0px 130px;
+  margin: 60px 0px 0px 120px;
  
  
 }
 
 
-</style>  <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+</style>       
+               
+
+
+
+
+       
+
+
+
+
+
+
+
 <div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;"> 
+    <borderimg id="control-label" style="width:100%; height:500px;">    
 
 
+
+   
+
+
+
+        
+
+
+      
     <div class="dk-container">
   
  
@@ -890,328 +914,201 @@ input[type=checkbox]{
               
               <ul class="calc-type">
                 <li>
-                  <a class="type-selector selected" style="font-size:30;" id="series-selector"><b>Series Resistor</b></a>
+                  <a class="type-selector selected" style="font-size:30;" id="series-selector"><b>Series Capacitor</b></a>
                 </li>
                 <li>
-                  <a class="type-selector" style="font-size:30;"  id="parallel-selector"><b>Parallel Resistor</b></a>
+                  <a class="type-selector" style="font-size:30;"  id="parallel-selector"><b>Parallel Capacitor</b></a>
                 </li>
               </ul>
-              <div id="parallel-section" class="parallel" data-section="parallel">
-               <fieldset><legend> <h3 class="unit-title"  style="font-size:60; margin:60px; 0px 0px 0px" >Parallel Resistor</h3></legend>
-                
-
-                 <div class="inputs">
-                  <div class="parallel active" id="parallel1">
-                    <span class="input-headline">R1</span>
-                    <div class="calculator-input">
-                      <select id="Punit1" title="Ohm" onchange="Parallel()" name="Punit1" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres1" id="pres1" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel active" id="parallel2">
-                    <span class="input-headline">R2</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit2" onchange="Parallel()" name="Punit2" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres2" id="pres2" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel3">
-                    <span class="input-headline">R3</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit3" onchange="Parallel()" name="Punit3" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres3" id="pres3" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel4">
-                    <span class="input-headline">R4</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit4" onchange="Parallel()" name="Punit4" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres4" id="pres4" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel5">
-                    <span class="input-headline">R5</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit5" onchange="Parallel()" name="Punit5" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres5" id="pres5" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel6">
-                    <span class="input-headline">R6</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit6" onchange="Parallel()" name="Punit6" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres6" id="pres6" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel7">
-                    <span class="input-headline">R7</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit7" onchange="Parallel()" name="Punit7" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres7" id="pres7" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel8">
-                    <span class="input-headline">R8</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit8" onchange="Parallel()" name="Punit8" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres8" id="pres8" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel9">
-                    <span class="input-headline">R9</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit9" onchange="Parallel()" name="Punit9" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres9" id="pres9" type="number">
-                                </div>
-                  </div>
-                  <div class="parallel" id="parallel10">
-                    <span class="input-headline">R10</span>
-                    <div class="calculator-input">
-                      <select title="Ohm" id="Punit10" onchange="Parallel()" name="Punit10" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
-                      </select>
-                      <input placeholder="" name="pres10" id="pres10" type="number">
-                                </div>
-                  </div>
-
-                   <div class="buttons">
-<div class="gg">
-                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ Resistor</button>
-                   
-
-
-
- <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- Resistor </button></div> 
-
-
-                   
-                  </div>
-
-                </div></fieldset>
-
-
-                <div class="prT">
-                  <fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>
-                  <div class="calculator-input bg-white">
-
-<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font>
-                    <select title="Ohm" id="PunitT" onchange="Parallel()" name="PunitT" class="input-dropdown" style="padding: 5px ; height:79.5px; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:3px solid #aaa;">
-                      <option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e-3">kΩ
-                      <option title="Megaohm" value="1e-6">MΩ
-                    </select>
-                    <span class="input-answer">=</span>
-                    <input name="presT" id="presT" type="number" class="answer" readonly=""  style="position: absolute;  border:3px solid #aaa;height:80;
-    border-radius:4px; text-align
-:center;width:465; right: 145px;"class="form-control"  />
-                            </div>
-                </div>
-              </div> 
-
- 
-
-
-
-
-
               <div id="series-section" class="series active" data-section="series">
 <fieldset><legend>
 
 
                 <h3 class="unit-title" style="font-size:60; margin:60px; 0px 0px 0px">Input</h3></legend>
                 <div class="inputs">
+
                   <div class="series active" id="series1">
-                    <span class="input-headline">R1</span>
+                    <span class="input-headline">C<sub>1</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit1" onchange="Series()" name="Sunit1" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit1" title="Microfarad" onchange="Series()" name="Sunit1" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres1" id="sres1" type="number">
-                                </div>
+                      <input placeholder="" name="scap1" id="scap1" type="number">
+                           </div>
                   </div>
+
                   <div class="series active" id="series2">
-                    <span class="input-headline">R2</span>
+                    <span class="input-headline">C<sub>2</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit2" onchange="Series()" name="Sunit2" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit2" title="Microfarad" onchange="Series()" name="Sunit2" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres2" id="sres2" type="number">
-                                </div>
+                      <input placeholder="" name="scap2" id="scap2" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series3">
-                    <span class="input-headline">R3</span>
+                    <span class="input-headline">C<sub>3</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit3" onchange="Series()" name="Sunit3" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit3" title="Microfarad" onchange="Series()" name="Sunit3" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres3" id="sres3" type="number">
-                                </div>
+                      <input placeholder="" name="scap3" id="scap3" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series4">
-                    <span class="input-headline">R4</span>
+                    <span class="input-headline">C<sub>4</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit4" onchange="Series()" name="Sunit4" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit4" title="Microfarad" onchange="Series()" name="Sunit4" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres4" id="sres4" type="number">
-                                </div>
+                      <input placeholder="" name="scap4" id="scap4" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series5">
-                    <span class="input-headline">R5</span>
+                    <span class="input-headline">C<sub>5</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit5" onchange="Series()" name="Sunit5" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit5" title="Microfarad" onchange="Series()" name="Sunit5" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres5" id="sres5" type="number">
-                                </div>
+                      <input placeholder="" name="scap5" id="scap5" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series6">
-                    <span class="input-headline">R6</span>
+                    <span class="input-headline">C<sub>6</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit6" onchange="Series()" name="Sunit6" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit6" title="Microfarad" onchange="Series()" name="Sunit6" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres6" id="sres6" type="number">
-                                </div>
+                      <input placeholder="" name="scap6" id="scap6" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series7">
-                    <span class="input-headline">R7</span>
+                    <span class="input-headline">C<sub>7</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit7" onchange="Series()" name="Sunit7" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit7" title="Microfarad" onchange="Series()" name="Sunit7" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres7" id="sres7" type="number">
-                                </div>
+                      <input placeholder="" name="scap7" id="scap7" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series8">
-                    <span class="input-headline">R8</span>
+                    <span class="input-headline">C<sub>8</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit8" onchange="Series()" name="Sunit8" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit8" title="Microfarad" onchange="Series()" name="Sunit8" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres8" id="sres8" type="number">
-                                </div>
+                      <input placeholder="" name="scap8" id="scap8" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series9">
-                    <span class="input-headline">R9</span>
+                    <span class="input-headline">C<sub>9</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit9" onchange="Series()" name="Sunit9" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit9" title="Microfarad" onchange="Series()" name="Sunit9" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres9" id="sres9" type="number">
-                                </div>
+                      <input placeholder="" name="scap9" id="scap9" type="number">
+                           </div>
                   </div>
+
                   <div class="series" id="series10">
-                    <span class="input-headline">R10</span>
+                    <span class="input-headline">C<sub>10</sub></span>
                     <div class="calculator-input">
-                      <select title="Ohm" id="Sunit10" onchange="Series()" name="Sunit10" class="input-dropdown">
-                        <option title="Ohm" value="1" selected="selected">Ω
-                        <option title="Kilohm" value="1e+3">kΩ
-                        <option title="Megaohm" value="1e+6">MΩ
+                      <select id="Sunit10" title="Microfarad" onchange="Series()" name="Sunit10" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
                       </select>
-                      <input placeholder="" name="sres10" id="sres10" type="number">
-                </div>
+                      <input placeholder="" name="scap10" id="scap10" type="number">
+                           </div>
                   </div>
- <div class="buttons">
+
+                  <div class="buttons">
 <div class="gg">
-                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ Resistor</button>
+                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ capacitor</button>
                    
 
 
 
- <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- Resistor </button></div> 
+ <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- capacitor </button></div>
+
+
 
 
                    
                   </div>
-
                 </div></fieldset>
-                <div class="srT">
-<fieldset><legend><div colspan="2" align="center" height="19"> 
+                <div class="scT">
+              <fieldset><legend><div colspan="2" align="center" height="19">
 
 
 <h3>Outputs</h3></div></legend>   
-                 
-                  <div class="calculator-input bg-white"> <label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font>
-                    <select title="Ohm" id="SunitT" onchange="Series()" name="SunitT" class="input-dropdown" style="padding: 5px ; height:79.5px;color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:3px solid #aaa;">
-                      <option title="Ohm" value="1" selected="selected">Ω
-                      <option title="Kilohm" value="1e-3">kΩ
-                      <option title="Megaohm" value="1e-6">MΩ
-                    </select>
-                   
-                    <input name="sresT" id="sresT" type="number" class="answer" readonly="" style="position: absolute; height:79.5px; border:3px solid #aaa;height:80;
+                  <div class="calculator-input">
+<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="scapT" id="scapT" type="text" class="answer" readonly=""  style="position: absolute;  border:3px solid #aaa;height:80;
     border-radius:4px; text-align
 :center;width:465; right: 145px;"class="form-control"  />
-                            </div>
+
+
+<select id="SunitT" title="Microfarad" onchange="Series()" name="SunitT" class="input-dropdown" style="padding: 5px ; color:red; height:80px;position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:
+3px solid #aaa;">
+<option title="Microfarad" value="1e-6" selected="selected">μF
+                      <option title="Farad" value="1">F
+                      <option title="Millifarad" value="1e-3">mF
+                      <option title="Nanofarad" value="1e-9">nF
+                      <option title="Picofarad" value="1e-12">pF
+                    </select>
+
+                   
+                      
+                   
+                   
+                        </div>
                 </div>
               </div>
-            </div>
-
-            
-
-                  
-
-
-                  
 
               
 
@@ -1222,8 +1119,206 @@ input[type=checkbox]{
 
 
 
-<script type="text/javascript">utag_data = {"content_search_keywords":"","content_search_filters":"","page_site":"IN","page_language":"en","wt_use_udo":"true","page_title":"Conversion Calculator Parallel and Series Resistor","page_content_group":"Resources","page_content_sub_group":"Calculator Library","page_type":"COV","page_sub_type":"PSR","page_id":"{B2655DB8-21C0-4083-A856-0243E7C4A865}","translated_content":"en"};</script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Global/EnavHeaderMVC/JS/global.js?la=en-IN&amp;ts=8d5c0ca7-011e-404c-9c11-3723b8022a3c"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Header/ENav%20Update/Javascript/countryselector.js?la=en-IN&amp;ts=13e21e46-8fb0-474e-8f7d-38e9c643a8b4"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Header/ENav%20Update/Javascript/enavheadercombined.js?la=en-IN&amp;ts=11148a12-8609-4888-bb3b-ccf89e29893e"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Header/ENav%20Update/Javascript/flymenu-initialized.js?la=en-IN&amp;ts=ea36bcd5-e109-40d8-a8ed-001ab4ee301c"></script><script type="text/javascript">var __countryData = {"country":"India","flag":"//www.digikey.in/-/media/Images/Global/Flags/IN_Flag.png?ts=a5266fa8-981f-4806-bc3d-8b12658693c5","flagAlt":"India","regionInfo":[{"region":"Africa","links":[{"name":"South Africa","url":"//www.digikey.co.za","language":"en-za","countryCode":null}]},{"region":"Asia","links":[{"name":"China","url":"//www.digikey.cn","language":"zh-cn","countryCode":null},{"name":"Hong Kong","url":"//www.digikey.hk","language":"en-hk","countryCode":null},{"name":"India","url":"//www.digikey.in","language":"en-in","countryCode":null},{"name":"Japan","url":"//www.digikey.jp","language":"ja-jp","countryCode":null},{"name":"Malaysia","url":"//www.digikey.my","language":"en-my","countryCode":null},{"name":"Philippines","url":"//www.digikey.ph","language":"en-ph","countryCode":null},{"name":"Singapore","url":"//www.digikey.sg","language":"en-sg","countryCode":null},{"name":"South Korea","url":"//www.digikey.kr","language":"ko-kr","countryCode":null},{"name":"Taiwan","url":"//www.digikey.tw","language":"zh-tw","countryCode":null},{"name":"Thailand","url":"//www.digikey.co.th","language":"th-th","countryCode":null}]},{"region":"Australia","links":[{"name":"Australia","url":"//www.digikey.com.au","language":"en-au","countryCode":null},{"name":"New Zealand","url":"//www.digikey.co.nz","language":"en-nz","countryCode":null}]},{"region":"Europe","links":[{"name":"Austria","url":"//www.digikey.at","language":"de-at","countryCode":null},{"name":"Belgium","url":"//www.digikey.be","language":"nl-be","countryCode":null},{"name":"Bulgaria","url":"//www.digikey.bg","language":"en-bg","countryCode":null},{"name":"Czech Republic","url":"//www.digikey.cz","language":"cs-cz","countryCode":null},{"name":"Denmark","url":"//www.digikey.dk","language":"da-dk","countryCode":null},{"name":"Estonia","url":"//www.digikey.ee","language":"en-ee","countryCode":null},{"name":"Finland","url":"//www.digikey.fi","language":"fi-fi","countryCode":null},{"name":"France","url":"//www.digikey.fr","language":"fr-fr","countryCode":null},{"name":"Germany","url":"//www.digikey.de","language":"de-de","countryCode":null},{"name":"Greece","url":"//www.digikey.gr","language":"en-gr","countryCode":null},{"name":"Hungary","url":"//www.digikey.hu","language":"hu-hu","countryCode":null},{"name":"Ireland","url":"//www.digikey.ie","language":"en-ie","countryCode":null},{"name":"Italy","url":"//www.digikey.it","language":"it-it","countryCode":null},{"name":"Latvia","url":"//www.digikey.lv","language":"en-lv","countryCode":null},{"name":"Lithuania","url":"//www.digikey.lt","language":"en-lt","countryCode":null},{"name":"Luxembourg","url":"//www.digikey.lu","language":"en-lu","countryCode":null},{"name":"Netherlands","url":"//www.digikey.nl","language":"nl-nl","countryCode":null},{"name":"Norway","url":"//www.digikey.no","language":"no-no","countryCode":null},{"name":"Poland","url":"//www.digikey.pl","language":"pl-pl","countryCode":null},{"name":"Portugal","url":"//www.digikey.pt","language":"en-pt","countryCode":null},{"name":"Romania","url":"//www.digikey.ro","language":"ro-ro","countryCode":null},{"name":"Slovakia","url":"//www.digikey.sk","language":"en-sk","countryCode":null},{"name":"Slovenia","url":"//www.digikey.si","language":"en-si","countryCode":null},{"name":"Spain","url":"//www.digikey.es","language":"es-es","countryCode":null},{"name":"Sweden","url":"//www.digikey.se","language":"sv-se","countryCode":null},{"name":"Switzerland","url":"//www.digikey.ch","language":"de-ch","countryCode":null},{"name":"United Kingdom","url":"//www.digikey.co.uk","language":"en-gb","countryCode":null}]},{"region":"Middle East","links":[{"name":"Israel","url":"//www.digikey.co.il","language":"he-il","countryCode":null}]},{"region":"North America","links":[{"name":"Canada","url":"//www.digikey.ca","language":"en-ca","countryCode":null},{"name":"Mexico","url":"//www.digikey.com.mx","language":"es-mx","countryCode":null},{"name":"United States","url":"//www.digikey.com","language":"en-us","countryCode":null}]}]};</script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/EnavGDPR/JS/consent.js?la=en-IN&amp;ts=6989ad49-2321-48fc-8c92-7598c16dfd50"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Header/Banners/Javascript/banner.js?la=en-IN&amp;ts=9c978820-bc8d-4c88-963c-216bb3f114b7"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Header/ENav%20Pieces/Search%20Bar/Default/Javascript/enavsearchbar.js?la=en-IN&amp;ts=0574600f-08c7-4e29-8b14-6953d2196ff1"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Resources/js/comcn-highlights.js?la=en-IN&amp;ts=4c61ee47-a52b-4ad7-92b7-84f27d578c7c"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Global/JS/marketoformsminified.js?la=en-IN&amp;ts=e62ed6eb-bae2-45f7-8430-3d56ea78307f"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Misc/MktoEmailSignup/Javascript/mktoemail.js?la=en-IN&amp;ts=b0c32eba-df6f-47f5-b988-35f1fa5532d5"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Shared/Egain/JS/egain.js?la=en-IN&amp;ts=b5da27e1-fa8e-4958-b484-6c475bb4d0f5"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Shared/Egain/JS/oneTag.js?la=en-IN&amp;ts=c7fc7b16-2a23-4498-833d-86395a4b531c"></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Global/JS/jquery1101min.js?ts=72608b7b-9de9-44de-8633-9e1f286fc613"></script><script type="text/javascript">// Clear values when refresh
+
+
+<div id="parallel-section" class="parallel" data-section="parallel">
+               <fieldset><legend> <h3 class="unit-title"  style="font-size:60; margin:60px; 0px 0px 0px" >Input</h3></legend>
+                <div class="inputs">
+
+                  <div class="parallel active" id="parallel1">
+                    <span class="input-headline">C<sub>1</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit1" title="Microfarad" onchange="Parallel()" name="Punit1" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap1" id="pcap1" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel active" id="parallel2">
+                    <span class="input-headline">C<sub>2</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit2" title="Microfarad" onchange="Parallel()" name="Punit2" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap2" id="pcap2" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel3">
+                    <span class="input-headline">C<sub>3</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit3" title="Microfarad" onchange="Parallel()" name="Punit3" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap3" id="pcap3" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel4">
+                    <span class="input-headline">C<sub>4</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit4" title="Microfarad" onchange="Parallel()" name="Punit4" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap4" id="pcap4" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel5">
+                    <span class="input-headline">C<sub>5</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit5" title="Microfarad" onchange="Parallel()" name="Punit5" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap5" id="pcap5" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel6">
+                    <span class="input-headline">C<sub>6</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit6" title="Microfarad" onchange="Parallel()" name="Punit6" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap6" id="pcap6" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel7">
+                    <span class="input-headline">C<sub>7</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit7" title="Microfarad" onchange="Parallel()" name="Punit7" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap7" id="pcap7" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel8">
+                    <span class="input-headline">C<sub>8</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit8" title="Microfarad" onchange="Parallel()" name="Punit8" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap8" id="pcap8" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel9">
+                    <span class="input-headline">C<sub>9</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit9" title="Microfarad" onchange="Parallel()" name="Punit9" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF 
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap9" id="pcap9" type="number">
+                      </div>
+                  </div>
+
+                  <div class="parallel" id="parallel10">
+                    <span class="input-headline">C<sub>10</sub></span>
+                    <div class="calculator-input">
+                      <select id="Punit10" title="Microfarad" onchange="Parallel()" name="Punit10" class="input-dropdown">
+                        <option title="Microfarad" value="1e-6" selected="selected">μF
+                        <option title="Farad" value="1">F
+                        <option title="Millifarad" value="1e-3">mF
+                        <option title="Nanofarad" value="1e-9">nF
+                        <option title="Picofarad" value="1e-12">pF
+                      </select>
+                      <input placeholder="" name="pcap10" id="pcap10" type="number">
+                      </div>
+                  </div>
+
+                  <div class="buttons">
+<div class="gg">
+                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">+ capacitor</button>
+                   
+
+
+
+ <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 70px;margin: 4px 2px;cursor:pointer;">- capacitor </button></div> 
+
+
+                   
+                  </div>
+
+                </div></fieldset>
+                <div class="prT">
+               <fieldset><legend><div colspan="2" align="center" height="19">
+
+
+<h3>Outputs</h3></div></legend>
+                  <div class="calculator-input">
+
+<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="pcapT" id="pcapT" type="text" class="answer" readonly=""   style="position: absolute;  border:3px solid #aaa;height:80;
+    border-radius:4px; text-align
+:center;width:465; right: 145px;"class="form-control"  />
+
+
+<select id="PunitT" title="Microfarad" onchange="Parallel()" name="PunitT" class="input-dropdown" style="padding: 5px ; color:red; position: absolute;height:80px;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:3px solid #aaa;">
+ <option title="Microfarad" value="1e-6" selected="selected">μF
+                      <option title="Farad" value="1">F
+                      <option title="Millifarad" value="1e-3">mF
+                      <option title="Nanofarad" value="1e-9">nF
+                      <option title="Picofarad" value="1e-12">pF
+                    </select>
+
+
+
+                   
+                     
+                                          </div>
+                </div>
+              </div>
+
+            </div>
+
+<script type="text/javascript"  src="//www.digikey.com/-/media/Designer/EnavGDPR/JS/consent.js?la=en-US&amp;ts=6989ad49-2321-48fc-8c92-7598c16dfd50"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Header/ENav%20Pieces/Search%20Bar/Default/Javascript/enavsearchbar.js?la=en-US&amp;ts=04d6ec72-d217-4a20-848f-51b4c09e9284"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Resources/js/comcn-highlights.js?la=en-US&amp;ts=4c61ee47-a52b-4ad7-92b7-84f27d578c7c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/marketoformsminified.js?la=en-US&amp;ts=e62ed6eb-bae2-45f7-8430-3d56ea78307f"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Misc/MktoEmailSignup/Javascript/mktoemail.js?la=en-US&amp;ts=b0c32eba-df6f-47f5-b988-35f1fa5532d5"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/egain.js?la=en-US&amp;ts=63453230-376d-4106-8daa-cee31f588952"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/oneTag.js?la=en-US&amp;ts=c7fc7b16-2a23-4498-833d-86395a4b531c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/jquery1101min.js?ts=72608b7b-9de9-44de-8633-9e1f286fc613"></script><script type="text/javascript">// Clear values when refresh
 $('.dk-container input[type=number]').val('');
+
+$(".type-selector").click(function () {
+    const selType = $(this).attr("id").replace("-selector", "");
+    $(".type-selector").removeClass('selected');
+    $(this).addClass('selected');
+    $("[data-section]").removeClass("active");
+    $("[data-section=" + selType + "]").addClass("active");
+});
 
 $(".calculator-col .buttons button").click(function () {
     const container = $(this).closest(".calculator-col .inputs");
@@ -1249,155 +1344,128 @@ $(".calculator-col .buttons button").click(function () {
     }
 });
 
-$(".type-selector").click(function () {
-    const selType = $(this).attr("id").replace("-selector", "");
-    $(".type-selector").removeClass('selected');
-    $(this).addClass('selected');
-    $("[data-section]").removeClass("active");
-    $("[data-section=" + selType + "]").addClass("active");
-});
+var sc1Input = document.getElementById("scap1");
+var sc2Input = document.getElementById("scap2");
+var sc3Input = document.getElementById("scap3");
+var sc4Input = document.getElementById("scap4");
+var sc5Input = document.getElementById("scap5");
+var sc6Input = document.getElementById("scap6");
+var sc7Input = document.getElementById("scap7");
+var sc8Input = document.getElementById("scap8");
+var sc9Input = document.getElementById("scap9");
+var sc10Input = document.getElementById("scap10");
 
+var pc1Input = document.getElementById("pcap1");
+var pc2Input = document.getElementById("pcap2");
+var pc3Input = document.getElementById("pcap3");
+var pc4Input = document.getElementById("pcap4");
+var pc5Input = document.getElementById("pcap5");
+var pc6Input = document.getElementById("pcap6");
+var pc7Input = document.getElementById("pcap7");
+var pc8Input = document.getElementById("pcap8");
+var pc9Input = document.getElementById("pcap9");
+var pc10Input = document.getElementById("pcap10");
 
-var pr1Input = document.getElementById("pres1");
-var pr2Input = document.getElementById("pres2");
-var pr3Input = document.getElementById("pres3");
-var pr4Input = document.getElementById("pres4");
-var pr5Input = document.getElementById("pres5");
-var pr6Input = document.getElementById("pres6");
-var pr7Input = document.getElementById("pres7");
-var pr8Input = document.getElementById("pres8");
-var pr9Input = document.getElementById("pres9");
-var pr10Input = document.getElementById("pres10");
-
-var sr1Input = document.getElementById("sres1");
-var sr2Input = document.getElementById("sres2");
-var sr3Input = document.getElementById("sres3");
-var sr4Input = document.getElementById("sres4");
-var sr5Input = document.getElementById("sres5");
-var sr6Input = document.getElementById("sres6");
-var sr7Input = document.getElementById("sres7");
-var sr8Input = document.getElementById("sres8");
-var sr9Input = document.getElementById("sres9");
-var sr10Input = document.getElementById("sres10");
-
-function Parallel() {
-    var pR1 = 1 / (document.getElementById("pres1").value * document.getElementById("Punit1").value);
-    var pR2 = 1 / (document.getElementById("pres2").value * document.getElementById("Punit2").value);
-    var pR3 = 1 / (document.getElementById("pres3").value * document.getElementById("Punit3").value);
-    var pR4 = 1 / (document.getElementById("pres4").value * document.getElementById("Punit4").value);
-    var pR5 = 1 / (document.getElementById("pres5").value * document.getElementById("Punit5").value);
-    var pR6 = 1 / (document.getElementById("pres6").value * document.getElementById("Punit6").value);
-    var pR7 = 1 / (document.getElementById("pres7").value * document.getElementById("Punit7").value);
-    var pR8 = 1 / (document.getElementById("pres8").value * document.getElementById("Punit8").value);
-    var pR9 = 1 / (document.getElementById("pres9").value * document.getElementById("Punit9").value);
-    var pR10 = 1 / (document.getElementById("pres10").value * document.getElementById("Punit10").value);
-
-    if (document.getElementById("pres1").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / pR1);
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres2").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres3").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres4").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres5").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres6").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres7").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres8").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres9").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8 + pR9));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
-
-    if (document.getElementById("pres10").value != "") {
-        var TPR = document.getElementById("PunitT").value * (1 / (pR1 + pR2 + pR3 + pR4 + pR5 + pR6 + pR7 + pR8 + pR9 + pR10));
-        document.getElementById("presT").value = parseFloat(TPR.toFixed(10));
-    }
+function Series()    
+{     
+   var sC1 = 1 / (document.getElementById("scap1").value * document.getElementById("Sunit1").value);
+   var sC2 = 1 / (document.getElementById("scap2").value * document.getElementById("Sunit2").value);
+   var sC3 = 1 / (document.getElementById("scap3").value * document.getElementById("Sunit3").value);
+   var sC4 = 1 / (document.getElementById("scap4").value * document.getElementById("Sunit4").value);
+   var sC5 = 1 / (document.getElementById("scap5").value * document.getElementById("Sunit5").value);
+   var sC6 = 1 / (document.getElementById("scap6").value * document.getElementById("Sunit6").value);
+   var sC7 = 1 / (document.getElementById("scap7").value * document.getElementById("Sunit7").value);
+   var sC8 = 1 / (document.getElementById("scap8").value * document.getElementById("Sunit8").value);
+   var sC9 = 1 / (document.getElementById("scap9").value * document.getElementById("Sunit9").value);
+   var sC10 = 1 / (document.getElementById("scap10").value * document.getElementById("Sunit10").value);
+   
+   if (document.getElementById("scap1").value!= "") {
+   var TSC = 1 / document.getElementById("SunitT").value * (1 / sC1);
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap2").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap3").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap4").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap5").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap6").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap7").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap8").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap9").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8 + sC9));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
+   
+   if (document.getElementById("scap10").value!= "") {
+       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8 + sC9 + sC10));
+   document.getElementById("scapT").value = convertToExpo(TSC);
+   }
 }
 
-function Series() {
-    var sR1 = 1 * (document.getElementById("sres1").value * document.getElementById("Sunit1").value);
-    var sR2 = 1 * (document.getElementById("sres2").value * document.getElementById("Sunit2").value);
-    var sR3 = 1 * (document.getElementById("sres3").value * document.getElementById("Sunit3").value);
-    var sR4 = 1 * (document.getElementById("sres4").value * document.getElementById("Sunit4").value);
-    var sR5 = 1 * (document.getElementById("sres5").value * document.getElementById("Sunit5").value);
-    var sR6 = 1 * (document.getElementById("sres6").value * document.getElementById("Sunit6").value);
-    var sR7 = 1 * (document.getElementById("sres7").value * document.getElementById("Sunit7").value);
-    var sR8 = 1 * (document.getElementById("sres8").value * document.getElementById("Sunit8").value);
-    var sR9 = 1 * (document.getElementById("sres9").value * document.getElementById("Sunit9").value);
-    var sR10 = 1 * (document.getElementById("sres10").value * document.getElementById("Sunit10").value);
-    var srT = document.getElementById("SunitT").value * (sR1 + sR2 + sR3 + sR4 + sR5 + sR6 + sR7 + sR8 + sR9 + sR10);
-    document.getElementById("sresT").value = parseFloat(srT.toFixed(10));
+function Parallel()    
+{     
+   var pC1 = 1 * (document.getElementById("pcap1").value * document.getElementById("Punit1").value);
+   var pC2 = 1 * (document.getElementById("pcap2").value * document.getElementById("Punit2").value);
+   var pC3 = 1 * (document.getElementById("pcap3").value * document.getElementById("Punit3").value);
+   var pC4 = 1 * (document.getElementById("pcap4").value * document.getElementById("Punit4").value);
+   var pC5 = 1 * (document.getElementById("pcap5").value * document.getElementById("Punit5").value);
+   var pC6 = 1 * (document.getElementById("pcap6").value * document.getElementById("Punit6").value);
+   var pC7 = 1 * (document.getElementById("pcap7").value * document.getElementById("Punit7").value);
+   var pC8 = 1 * (document.getElementById("pcap8").value * document.getElementById("Punit8").value);
+   var pC9 = 1 * (document.getElementById("pcap9").value * document.getElementById("Punit9").value);
+   var pC10 = 1 * (document.getElementById("pcap10").value * document.getElementById("Punit10").value);
+    var pcT = (pC1 + pC2 + pC3 + pC4 + pC5 + pC6 + pC7 + pC8 + pC9 + pC10) / document.getElementById("PunitT").value;
+   document.getElementById("pcapT").value = convertToExpo(pcT);
 }
 
-$('#sres1, #sres2, #sres3, #sres4, #sres5, #sres6, #sres7, #sres8, #sres9, #sres10').on('keypress', function (event) {
-    var input = event.which;
-    var valid = [101, 69];
+function convertToExpo(value){
+	var res = value;
+	var len = parseFloat( value )
 
-    if (valid.includes(input)) {
-        event.preventDefault();
-    }
-});
-
-$('#pres1, #pres2, #pres3, #pres4, #pres5, #pres6, #pres7, #pres8, #pres9, #pres10').on('keypress', function (event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if (valid.includes(input)) {
-        event.preventDefault();
-    }
-});
-
-
-pr1Input.addEventListener("keyup", Parallel);
-pr2Input.addEventListener("keyup", Parallel);
-pr3Input.addEventListener("keyup", Parallel);
-pr4Input.addEventListener("keyup", Parallel);
-pr5Input.addEventListener("keyup", Parallel);
-pr6Input.addEventListener("keyup", Parallel);
-pr7Input.addEventListener("keyup", Parallel);
-pr8Input.addEventListener("keyup", Parallel);
-pr9Input.addEventListener("keyup", Parallel);
-pr10Input.addEventListener("keyup", Parallel);
-
-sr1Input.addEventListener("keyup", Series);
-sr2Input.addEventListener("keyup", Series);
-sr3Input.addEventListener("keyup", Series);
-sr4Input.addEventListener("keyup", Series);
-sr5Input.addEventListener("keyup", Series);
-sr6Input.addEventListener("keyup", Series);
-sr7Input.addEventListener("keyup", Series);
-sr8Input.addEventListener("keyup", Series);
-sr9Input.addEventListener("keyup", Series);
-sr10Input.addEventListener("keyup", Series);
+	if( len.toString().length > 4 || value >= 1e3){
+		if (value >= 1e3) {
+	        res = parseFloat(value).toExponential(2);
+	    } 
+	    else if(res >= 1 && res < 1e3) {
+	        res = parseFloat(parseFloat(value).toFixed(3));
+	    } 
+	    else if (res < 1 && res > 0) {
+	        res = parseFloat(parseFloat(value).toPrecision(3));
+	    } else if ( res < 1 ) {
+			res = parseFloat(value).toPrecision(3);
+		}
+	}
+	
+    return res;
+}
 
 $('#Punit1, #Punit2, #Punit3, #Punit4, #Punit5, #Punit6, #Punit7, #Punit8, #Punit9, #Punit10, #PunitT').change(function () {
     const title = $(this).find("option:selected").attr("title");
@@ -1409,20 +1477,67 @@ $('#Sunit1, #Sunit2, #Sunit3, #Sunit4, #Sunit5, #Sunit6, #Sunit7, #Sunit8, #Suni
     $(this).attr("title", title);
 });
 
-$(function () {
-    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function (event) {
+
+$('#scap1, #scap2, #scap3, #scap4, #scap5, #scap6, #scap7, #scap8, #scap9, #scap10').on('keypress', function(event) {
+    var input = event.which;
+    var valid = [101, 69];
+
+    if(valid.includes(input)) {
+        event.preventDefault();
+    } 
+});
+
+$('#pcap1, #pcap2, #pcap3, #pcap4, #pcap5, #pcap6, #pcap7, #pcap8, #pcap9, #pcap10').on('keypress', function(event) {
+    var input = event.which;
+    var valid = [101, 69];
+
+    if(valid.includes(input)) {
+        event.preventDefault();
+    } 
+});
+
+
+sc1Input.addEventListener ("keyup", Series);
+sc2Input.addEventListener ("keyup", Series);
+sc3Input.addEventListener ("keyup", Series);
+sc4Input.addEventListener ("keyup", Series);
+sc5Input.addEventListener ("keyup", Series);
+sc6Input.addEventListener ("keyup", Series);
+sc7Input.addEventListener ("keyup", Series);
+sc8Input.addEventListener ("keyup", Series);
+sc9Input.addEventListener ("keyup", Series);
+sc10Input.addEventListener ("keyup", Series);
+
+pc1Input.addEventListener ("keyup", Parallel);
+pc2Input.addEventListener ("keyup", Parallel);
+pc3Input.addEventListener ("keyup", Parallel);
+pc4Input.addEventListener ("keyup", Parallel);
+pc5Input.addEventListener ("keyup", Parallel);
+pc6Input.addEventListener ("keyup", Parallel);
+pc7Input.addEventListener ("keyup", Parallel);
+pc8Input.addEventListener ("keyup", Parallel);
+pc9Input.addEventListener ("keyup", Parallel);
+pc10Input.addEventListener ("keyup", Parallel);
+
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
         event.preventDefault();
         $this = $(this);
     });
 
-    $('option').each(function (index) {
+    $('option').each(function(index) {
         var text = $(this).text();
-        if (text == 'Ω') {
-            $(this).attr('title', 'ohms');
-        } else if (text == 'kΩ') {
-            $(this).attr('title', 'kiloohms');
-        } else if (text == 'MΩ') {
-            $(this).attr('title', 'megaohms');
+        if (text == 'F') {
+            $(this).attr('title','farad');
+        } else if (text == 'mF') {
+            $(this).attr('title','millifarad');
+        } else if (text == 'μF') {
+            $(this).attr('title','microfarad');
+        } else if (text == 'nF') {
+            $(this).attr('title','nanofarad');
+        } else if (text == 'pF') { 
+            $(this).attr('title','picofarad');
         }
     });
 
@@ -1444,20 +1559,20 @@ $(function () {
         document.body.style.zoom = "100%";
     });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
+ 
+document.addEventListener("DOMContentLoaded", function(){
     var calcInputs = document.querySelectorAll('.calculator input');
     for (var i = 0; i < calcInputs.length; i++) {
-        calcInputs[i].addEventListener("keypress", function (e) {
+        calcInputs[i].addEventListener("keypress", function(e) {
             if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
-                return;
+                return;   
             } else {
                 e.preventDefault();
             }
         });
     };
-});</script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/cobrowse.js?la=en-IN&amp;ts=5fcc3c08-20c2-4003-b73f-e4c3395595a1" defer></script><script type="text/javascript"  src="//www.digikey.in/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/footer.js?la=en-IN&amp;ts=cc7c82a7-4758-42c6-9c13-ba87efac8758" defer></script>                
-    <input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="B2655DB821C04083A8560243E7C4A865">
-<script type="text/javascript" >var _cf = _cf || []; _cf.push(['_setFsp', true]);  _cf.push(['_setBm', true]);  _cf.push(['_setAu', '/content/0ef7d535cbrn244aefe8c43a75915d48']); </script><script type="text/javascript"  src="/content/0ef7d535cbrn244aefe8c43a75915d48"></script></body>
+});</script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/cobrowse.js?la=en-US&amp;ts=5fcc3c08-20c2-4003-b73f-e4c3395595a1" defer></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/footer.js?la=en-US&amp;ts=6f429221-f908-493d-b9a8-e01df6d866a0" defer></script>                
+    <input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="8B48970CEEA548B789875D3D1A865482">
+<script type="text/javascript" >var _cf = _cf || []; _cf.push(['_setFsp', true]);  _cf.push(['_setBm', true]); _cf.push(['_setAu', '/resources/71595cb038196eaa49e07641795f9d']); </script><script type="text/javascript"  src="/resources/71595cb038196eaa49e07641795f9d"></script></body>
 </html>
 
