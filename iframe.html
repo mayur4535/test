@@ -1,818 +1,20 @@
 
+<div class="detail"><div class="calcbox"><script type="text/javascript"><!--
+function calculate() {
+ var c = new Number(); var a,b,m,u,ua,ia,ib,oa,ob;ia=parseFloat(document.calculator.ia.value);u=document.calculator.uia.options[document.calculator.uia.selectedIndex].value;ua=u.split(":",3);m=parseFloat(ua[0]);b=parseFloat(ua[1]);a=parseFloat(ua[2]);if(m == 0 && a == 0 && b == 0) { return false; };ia=Math.pow(((ia-a)/m),(1/b));
+ib=parseFloat(document.calculator.ib.value);u=document.calculator.uib.options[document.calculator.uib.selectedIndex].value;ua=u.split(":",3);m=parseFloat(ua[0]);b=parseFloat(ua[1]);a=parseFloat(ua[2]);if(m == 0 && a == 0 && b == 0) { return false; };ib=Math.pow(((ib-a)/m),(1/b));
+
+oa = 0.5*ia*ib*ib;
+ob = ia*ib;
+u=document.calculator.uoa.options[document.calculator.uoa.selectedIndex].value;ua=u.split(":",3);m=parseFloat(ua[0]);b=parseFloat(ua[1]);a=parseFloat(ua[2]);if(m == 0 && a == 0 && b == 0) { return false; };oa=Math.pow(oa,b)*m+a;
+if(oa.toPrecision) { oa=oa.toPrecision(6); } document.calculator.oa.value = oa;u=document.calculator.uob.options[document.calculator.uob.selectedIndex].value;ua=u.split(":",3);m=parseFloat(ua[0]);b=parseFloat(ua[1]);a=parseFloat(ua[2]);if(m == 0 && a == 0 && b == 0) { return false; };ob=Math.pow(ob,b)*m+a;
+if(ob.toPrecision) { ob=ob.toPrecision(6); } document.calculator.ob.value = ob;
+ return false;
+}
+// --></script>
+
+
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-
-        <style type="text/css">body * .flex {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-
-}
-
-    .dk-container ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .dk-container .header-wrap {
-        padding: 0 0 10px;
-        border-bottom: solid 1px #ccc;
-    }
-
-/* include when related-products-mod is included in ejs
-    .dk-container .content {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 3fr 2em 1fr;
-        -ms-grid-rows: 1fr;
-        grid-template-columns: 3fr 1fr;
-        grid-gap: 2em;
-    }
-
-        .dk-container .content .calculator-mod {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-            -ms-grid-column-span: 1;
-        }
-
-        .dk-container .content .related-products-mod {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-*/
-.dk-breadcrumb ol {
-    color: #222;
-    list-style: none;
-    padding-left: 0;
-    font-size: 12px;
-    line-height: .8;
-}
-
-    .dk-breadcrumb ol li {
-        color: #222;
-        display: -webkit-inline-flex;
-        display: inline-flex;
-        -webkit-align-items: center;
-        align-items: center;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
-        margin-right: 8px;
-        margin-top: 0;
-        font-weight: 700;
-        line-height: 2;
-    }
-
-        .dk-breadcrumb ol li:last-child {
-            font-weight: 400;
-        }
-
-        .dk-breadcrumb ol li a {
-            color: #222;
-            text-decoration: none;
-        }
-
-        .dk-breadcrumb ol li:after {
-            font-family: dk,icomoon;
-            content: " \F105";
-            white-space: pre;
-            font-size: 1em;
-        }
-
-        .dk-breadcrumb ol li:last-child:after {
-            content: "";
-        }
-
-.dk-container .header-wrap .dk-icon-border {
-    height: 41px;
-    max-width: 43px;
-    margin: 0 9px 0 0;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #CC0000;
-}
-.rtl .dk-container .header-wrap .dk-icon-border {
-    height: 41px;
-    max-width: 43px;
-    margin: 0 0 0 9px;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #CC0000;
-}
-
-.dk-container .header-wrap .dk-icon {
-    margin-right: 1em;
-    height: 50px;
-    width: 80px;
-}
-
-.dk-container .header-wrap .headline-title {
-
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .header-wrap .headline-title {
-
-    }
-}
-
-@media (max-width: 991px) {
-    .dk-container .header-wrap .pull-right {
-        clear: both;
-        float: none !important;
-        padding: 12px 0 0;
-    }
-}
-
-.dk-container .header-wrap .btn-actions {
-    margin: 0;
-    font-size: 0;
-}
-
-    .dk-container .header-wrap .btn-actions li {
-        display: inline-block;
-        padding: 0 5px;
-        font-size: 14px;
-    }
-
-@media (max-width: 991px) {
-    .dk-container .header-wrap .btn-actions li:first-child {
-        padding-left: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .dk-container .header-wrap .btn-actions li {
-        padding-bottom: 20px;
-    }
-}
-
-.dk-container .header-wrap .btn-actions li a {
-    display: inline-block;
-    padding: 10px 20px;
-    font-weight: 700;
-    color: #333;
-    text-decoration: none;
-    border-radius: 30px;
-    border: 1px solid #ccc;
-}
-
-    .dk-container .header-wrap .btn-actions li a:hover {
-        border: 1px solid #cc2500;
-    }
-
-.dk-container .header-wrap .btn-actions li .fa {
-    padding: 0 2px 0 0;
-    color: #cc2500;
-}
-
-@media (max-width: 767px) {
-    .dk-container .header-wrap .pull-left, .dk-container .header-wrap .pull-right {
-        float: none !important;
-    }
-}
-
-.dk-container .single-dk-calc-cont {
-    padding: 20px 0 0;
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont {
-        display: table;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .single-dk-calc-cont {
-        padding: 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap {
-        display: table-cell;
-        vertical-align: top;
-    }
-}
-
-@media (min-width: 768px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 1.5em 2em;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: -webkit-min-content;
-        -ms-grid-rows: -webkit-min-content;
-        -ms-grid-rows: min-content;
-        grid-template-rows: min-content;
-        grid-gap: 2em;
-    }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-}
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        padding: 1.5em 1em;
-        margin: 0;
-        border: 0;
-        border-radius: 0;
-    }
-
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-output {
-    padding: 15px;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
-    position: absolute;
-    z-index: 5;
-    right: 0;
-    padding: 10px 0 10px 7px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    width: 45px;
-    border-radius: 0 4px 4px 0;
-    border: 1px solid #CCCCCC;
-    font-size: 13px;
-}
-.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown {
-    position: absolute;
-    z-index: 5;
-    right: inherit;
-    left: 0;
-    padding: 10px 0 10px 7px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 40px;
-    width: 45px;
-    border-radius: 4px 0 0 4px;
-    border: 1px solid #CCCCCC;
-    font-size: 13px;
-}
-
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calculator-input .input-dropdown:focus {
-        outline: 0;
-    }
-
-
-.dk-container .related-tools-wrap {
-    padding: 30px 0 0;
-}
-
-    .dk-container .related-tools-wrap h2 {
-        margin: 0;
-        padding: 0 0 10px;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .dk-container .related-tools-wrap ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 1fr 2em 1fr 2em 1fr 2em 1fr;
-        grid-template-columns: repeat(4, 1fr);
-        -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-        grid-gap: 2em;
-    }
-
-
-.dk-container .related-tools-wrap ul > *:nth-child(1) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-}
-
-.dk-container .related-tools-wrap ul > *:nth-child(2) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-}
-
-.dk-container .related-tools-wrap ul > *:nth-child(3) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 5;
-}
-
-.dk-container .related-tools-wrap ul > *:nth-child(4) {
-    -ms-grid-row: 1;
-    -ms-grid-column: 7;
-}
-
-.dk-container .related-tools-wrap ul li a {
-    display: block;
-    padding: 15px;
-    color: #222;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-    .dk-container .related-tools-wrap ul li a .dkc-related_img {
-        max-height: 45px;
-    }
-
-    .dk-container .related-tools-wrap ul li a:hover, .dk-container .related-tools-wrap ul li a:focus {
-        text-decoration: none;
-        border: 2px solid #cc2500;
-    }
-
-    .dk-container .related-tools-wrap ul li a:hover,
-    .dk-container .related-tools-wrap ul li a:focus {
-        text-decoration: none;
-        border: 2px solid #cc2500;
-    }
-
-.dk-container .related-tools-wrap ul li span {
-    display: block;
-    padding: 10px 0 0;
-    margin-top: auto;
-}
-
-.dk-container .input-headline {
-    display: block;
-    margin: 5px 5px -70px 50px;
-    font-size: 70px;
-    font-weight: bold;
-    text-align: left;
-}
-.rtl .dk-container .input-headline {
-    display: block;
-    margin: 0 0 5px 0;
-    font-size: 13px;
-    font-weight: bold;
-    text-align: right;
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .input-headline {
-        font-size: 13px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box {
-        -ms-grid-rows: 1fr 2em 1fr;
-        -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .single-dk-calc-cont .dk-calc-wrap .inner-box > *:nth-child(2) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-    .dk-container .related-tools-wrap ul {
-        -ms-grid-columns: 1fr 2em 1fr;
-        -ms-grid-rows: 1fr 2em 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 3;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 3;
-        }
-}
-
-@media screen and (max-width: 450px) {
-    .dk-container .related-tools-wrap ul {
-        -ms-grid-columns: 1fr;
-        -ms-grid-rows: 1fr 2em 1fr 2em 1fr 2em 1fr;
-        grid-template-columns: 1fr;
-    }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(1) {
-            -ms-grid-row: 1;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(2) {
-            -ms-grid-row: 3;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(3) {
-            -ms-grid-row: 5;
-            -ms-grid-column: 1;
-        }
-
-        .dk-container .related-tools-wrap ul > *:nth-child(4) {
-            -ms-grid-row: 7;
-            -ms-grid-column: 1;
-        }
-}
-
-.dk-container .inputs .calculator-input {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 45px;
-    grid-template-columns: 1fr 45px;
-    -ms-grid-rows: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'input dd';
-    margin-bottom: 0px;
-}
-  .input original{}
-
-    .dk-container .inputs .calculator-input input {
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        grid-area: input;
-        width:400;   
-    height:80; 
-    font-size: 60px;
-    padding: 5px ;    
-    border:2px solid #aaa;
-    border-radius:4px;
-    margin: px 0;
-    outline:none;
-    position:absolute;
-right:80;
-    text-align:center;
-    box-sizing:border-box;
-    transition:.3s;
-    }
-    .rtl .dk-container .inputs .calculator-input input {
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        grid-area: input;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        border: 1px solid #ddd;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-        width: 100%;
-        min-width: 10ch;
-        -webkit-appearance: textfield;
-        appearance: textfield;
-        border-radius: 0 4px 4px 0;
-        border-right: solid 1px #ddd;
-        border-left: none;
-    }
-    .dk-container .inputs .calculator-input .input-dropdown::-ms-expand {
-        display: none;
-    }
-
-    .dk-container .inputs .calculator-input .input-dropdown:focus {
-        outline: 0;
-    }
-
-    .dk-container .inputs .calculator-input .input-label, .dk-container .calculator-input .input-dropdown {
-        -ms-grid-row: 1;
-        -ms-grid-column: 2;
-        grid-area: dd; font-size:50;
-        padding: 5px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-       
-       
- border:2px solid #aaa;
-    border-radius:4px;
-        text-align: center; margin: 0px -70px;
-        display: inline-block; height:80;width:120;
-    }
-
-    .dk-container .inputs .calculator-input .input-dropdown {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
-        background-position: right 1px center;
-        background-repeat: no-repeat;
-        background-size: 0.5ex;
-        background-origin: content-box;
-        padding-left: em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
-    .rtl .dk-container .inputs .calculator-input .input-dropdown {
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsSAAALEgHS3X78AAAAuElEQVRIie3WWw3DMAwF0NsiaIJgDEZhEEohDAphEAZhEAZhEDYippDKVdVq6yPO1lhVlfvnD+tIli258N5DM6WqlsFDgIUxpgLwBHBObL0BXBh8KWADyiM9KWGcisFGEbyWRHQH4BQwx1a3pQqo643xLBKiA4bvw0+AfmATcGN0gs2CG6Gz2CL4J7qIrYI/oqtYEIxEg5gIFKIiTAwGUDHGiX6irLU1gFtfNkT0iOnPX1sGdw4CaAESg2cDBgmWTAAAAABJRU5ErkJggg==);
-        background-position: left 1px center;
-        background-repeat: no-repeat;
-        background-size: 1.25ex;
-        background-origin: content-box;
-        padding-left: 0.5em;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        appearance: none;
-    }
-
-
-.dk-container .calculator-input {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-    .dk-container .calculator-input .input-label {
-        position: absolute;
-        z-index: 5;
-        right: 0;
-        padding: 10px 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        width: 45px;
-        border-radius: 0 3px 3px 0;
-        background-color: #F2F1F6;
-        border: 1px solid #CCCCCC;
-        text-align: center;
-        
-    }
-
-    .dk-container .calculator-input .input-answer {
-        left: 15px;
-        right: auto; font-size: 60px;
-        border-radius: 4px 0 0 4px;
-        position: absolute;
-        height: 40px;
-        padding: 12px 8px 2px 8px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: #fff; 
-    }
-    .rtl .dk-container .calculator-input .input-answer {
-        right: 15px;
-        left: auto;
-        border-radius: 4px 0 0 4px;
-        position: absolute;
-        height: 40px;
-        padding: 12px 8px 2px 8px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        font-weight: bold;
-        color: #fff; 
-    }
-
-    .dk-container .calculator-input input[type='number'] {
-        -moz-appearance: textfield; font-size: 60px;
-    }
-
-    .dk-container .calculator-input input {
-        -webkit-appearance: none;
-        border: 1px solid #CCCCCC;
-        border-radius: 3px;
-        padding: 0px 5px 0px 5px;
-        max-width: 100%;
-        width: 100%;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        margin-bottom: 15px;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 40px;
-        color: #333333; font-size: 60px;
-    }
-
-        .dk-container .calculator-input input::-webkit-input-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input::-moz-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input:-ms-input-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-        .dk-container .calculator-input input:-moz-placeholder {
-            opacity: 0.5;
-            color: #333333;
-        }
-
-    .dk-container .calculator-input.bg-black .input-label {
-        color: #FFF;
-        border: 0;
-        background: none;
-    }
-
-    .dk-container .calculator-input.bg-black input {
-        padding: 0 30px;
-        background: #333;
-        color: #fff;
-        border: none;
-        text-align: center;
-        border: none;
-        border-radius: 20px;
-        opacity: 1;
-    }
-
-        .dk-container .calculator-input.bg-black input::-webkit-input-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input::-moz-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input:-ms-input-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-
-        .dk-container .calculator-input.bg-black input:-moz-placeholder {
-            color: #fff;
-            opacity: 1;
-        }
-.rtl .dk-container .single-dk-calc-cont .dk-calc-wrap .bg-black .input-dropdown {
-    border-radius: 24px !important;
-}
-
-
-/*! CSS Used from: http://localhost:1337/public/css/conversion-calculator-parallel-and-series-resistor.css */
-.dk-container .single-headline-desc .other-calc-button {
-    margin: 35px 0 0;
-    padding: 10px 29px;
-    font-size: 13px;
-    border-radius: 0px;
-    border: 1px solid #CCC;
-    background: #FFF;
-    color: #333;
-    display: inline-block;
-    text-decoration: none;
-}
-
-    .dk-container .single-headline-desc .other-calc-button .fa {
-        padding-left: 5px;
-    }
-
-@media (max-width: 767px) {
-    .dk-container .single-headline-desc .other-calc-button {
-        max-width: 100%;
-        padding: 10px;
-    }
-}
-
-.dk-container .single-headline-desc .other-calc-button:hover {
-    border: 1px solid #cc2500;
-}
-
-.dk-container .single-dk-calc-cont .inner-box .calc-type {
-    display: inline-flex;
-    list-style: none;
-    margin: 0;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid ;
-    background: lightgreen;
-    width: 100%; height:80;
-}  
-
-    .dk-container .single-dk-calc-cont .inner-box .calc-type li {
-        padding: 0 0 0 9px;
-        margin: 0;
-        width: calc(98%/2);
-    }
-
-        .dk-container .single-dk-calc-cont .inner-box .calc-type li a {
-            cursor: pointer;
-            border: 2px solid #CCC;
-            color: #ccc;
-            padding: 20px;
-            display: block;
-            background: lightyellow;
-            text-align: center;
-            
-            border-radius: 10px;
-            text-decoration: none;
-            border: 1px solid #ccc;
-            cursor: pointer;
-            font-size: 13px;
-            
-            
-        }
-
-            .dk-container .single-dk-calc-cont .inner-box .calc-type li a.selected {
-                border: 2px solid black !important;
-                color: #333;
-            }
-
-
-.dk-container .single-dk-calc-cont .unit-title {
-    margin: 0 0 20px;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 24px;
-}
-
-.dk-container .single-dk-calc-cont .inner-box [data-section],
-.dk-container .single-dk-calc-cont .inner-box .inputs > div {
-    display: none;
-}
-
-    .dk-container .single-dk-calc-cont .inner-box [data-section].active,
-    .dk-container .single-dk-calc-cont .inner-box .inputs > div.active {
-        display: block;
-    }
-
-.dk-container .single-dk-calc-cont .inner-box .buttons {
-    display: inline-flex !important;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-    .dk-container .single-dk-calc-cont .inner-box .buttons button {
-    }
-
-.dk-container .single-dk-calc-cont .inner-box .answer {
-    margin: 0;
-}
-
-.dk-container .single-dk-calc-cont .inner-box .res-img {
-    position: relative;
-    padding: 5px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid #EEE;
-    background: #FFF;
-}
-
-.dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    background: #f2f1f6;
-    border: 1px solid #EEE;
-    border-radius: 5px;
-}
-
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula .formula-title {
-        margin: 0 0 20px;
-        padding: 0 0 4px;
-        font-size: 14px;
-        font-weight: 700;
-        text-transform: uppercase;
-        border-bottom: 1px solid #ccc;
-    }
-
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula .formula-desc svg {
-        max-width: 300px;
-        width: 100%;
-    }
-
-@media (max-width: 767px) {
-    .dk-container .single-dk-calc-cont .dk-calc-wrap .calc-formula {
-        margin: 30px 0 20px;
-    }
-}
-
-*/</style>
 <style>
 #borderimg { 
   border: 10px solid transparent;
@@ -836,11 +38,11 @@ body {
 body { 
   background: ; 
 }
-.intro{
+.intro{text-align:center;
     width:200;    
     font-size: 60px;
     padding: 5px ;    
-    border:2px solid #aaa;
+    border:3px solid #aaa;
     border-radius:4px;
     margin: 8px 0;
     outline:none;
@@ -865,713 +67,132 @@ input[type=checkbox]{
     height: 120px; 
    
   }
-.gg{
-  border-radius: 1px;
-  border: 2px solid #73AD21;
-  padding: 20px;
-  margin: 60px 0px 0px 120px;
- 
- 
-}
+</style>
 
 
-</style>       
-               
+<form onsubmit="return calculate()" name="calculator" action="">
+
+<div id="borderimg">
+    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>
+<fieldset><legend><div colspan="2" align="center" height="19">
+<h3>Inputs</h3></div></legend>
 
 
+<label><font>Capacitance</sub> </font><font face="Arial" size="5"> </font></label><INPUT   name="ia" size="17" class="intro"  style="position: absolute;   width:290; right: 152px;"class="form-control" type="number" />
+       
 
-
+<select style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;  text-align:center; height:68.5; border:3px solid #aaa;border-radius:4px;margin:8px 0;height:85px; width:130px;" name="uia" onchange="calculate();" class="infield">
+<option value="1:1:0" selected="selected">F</option>
+<option value="1000000000000:1:0" >pF</option>
+<option value="1000000000:1:0" >nF</option>
+<option value="1000000:1:0" >&micro;F</option>
+<option value="1000:1:0" >mF</option>
+</select>
        
 
 
 
 
 
+ <h1 style="font-size:45px;"></h1>
 
 
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;">    
+<label><font>Voltage</sub> </font><font face="Arial" size="5"> </font></label><INPUT  onblur="calculate();"  name="ib" size="17" class="intro"  style="position: absolute;   width:290; right: 152px;"class="form-control" type="number" />
 
+<select name="uib" onchange="calculate();" class="infield" style="padding: 5px ;  position: absolute;right: 10px;font-size:60px;  text-align:center; height:68.5; border:3px solid #aaa;border-radius:4px;margin:8px 0;height:85px; width:130px;">
+<option value="1:1:0" selected="selected">V</option>
+<option value="1000000000:1:0" >nV</option>
+<option value="1000000:1:0" >&micro;V</option>
+<option value="1000:1:0" >mV</option>
+<option value="0.001:1:0" >kV</option>
+<option value="0.000001:1:0" >MV</option>
+<option value="0.000000001:1:0" >GV</option>
+</select>
 
+ <h1 style="font-size:45px;"></h1>
 
-   
-
-
-
-        
-
-
-      
-    <div class="dk-container">
-  
+</fieldset>
+<br>
+ <fieldset><legend><div colspan="2" align="center" height="19"><input type="Button"  onclick="return calculate()" value="Calculate" style="background-color: #167A04 ;
+  border: 1;
+  align:center;
+  color: white;
  
-
-      
-      <div class="single-dk-calc-cont">
-        
-          <div class="inner-box">
-            <div class="calculator-col col-md-6">
-              
-              <ul class="calc-type">
-                <li>
-                  <a class="type-selector selected" style="font-size:30;" id="series-selector"><b>Parallel  Inductance</b></a>
-                </li>
-                <li>
-                  <a class="type-selector" style="font-size:30;"  id="parallel-selector"><b>Series Inductance</b></a>
-                </li>
-              </ul>
-              <div id="series-section" class="series active" data-section="series">
-<fieldset><legend>
-
-
-                <h3 class="unit-title" style="font-size:60; margin:60px; 0px 0px 0px">Input</h3></legend>
-                <div class="inputs">
-
-                  <div class="series active" id="series1">
-                    <span class="input-headline">L<sub>1</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit1" title="Microfarad" onchange="Series()" name="Sunit1" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="scap1" id="scap1" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series active" id="series2">
-                    <span class="input-headline">L<sub>2</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit2" title="Microfarad" onchange="Series()" name="Sunit2" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="scap2" id="scap2" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series3">
-                    <span class="input-headline">L<sub>3</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit3" title="Microfarad" onchange="Series()" name="Sunit3" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                      
-                      </select>
-                      <input placeholder="" name="scap3" id="scap3" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series4">
-                    <span class="input-headline">L<sub>4</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit4" title="Microfarad" onchange="Series()" name="Sunit4" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="scap4" id="scap4" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series5">
-                    <span class="input-headline">L<sub>5</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit5" title="Microfarad" onchange="Series()" name="Sunit5" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="scap5" id="scap5" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series6">
-                    <span class="input-headline">L<sub>6</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit6" title="Microfarad" onchange="Series()" name="Sunit6" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="scap6" id="scap6" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series7">
-                    <span class="input-headline">L<sub>7</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit7" title="Microfarad" onchange="Series()" name="Sunit7" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="scap7" id="scap7" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series8">
-                    <span class="input-headline">L<sub>8</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit8" title="Microfarad" onchange="Series()" name="Sunit8" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="scap8" id="scap8" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series9">
-                    <span class="input-headline">L<sub>9</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit9" title="Microfarad" onchange="Series()" name="Sunit9" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="scap9" id="scap9" type="number">
-                           </div>
-                  </div>
-
-                  <div class="series" id="series10">
-                    <span class="input-headline">L<sub>10</sub></span>
-                    <div class="calculator-input">
-                      <select id="Sunit10" title="Microfarad" onchange="Series()" name="Sunit10" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="scap10" id="scap10" type="number">
-                           </div>
-                  </div>
-
-                  <div class="buttons">
-<div class="gg">
-                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">+ <BR>Inductance</button>
-                   
-
-
-
- <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">- <BR>Inductance </button></div>
-
-
-
-
-                   
-                  </div>
-                </div>
-                <div class="scT"></fieldset>
-              <fieldset><legend><div colspan="2" align="center" height="19">
-
-
-<h3>Outputs</h3></div></legend>   
-                  <div class="calculator-input">
-<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="scapT" id="scapT" type="text" class="answer" readonly=""  style="position: absolute;  border:3px solid #aaa;height:80;
-    border-radius:4px; text-align
-:center;width:465; right: 145px;"class="form-control"  />
-
-
-<select id="SunitT" title="Microfarad" onchange="Series()" name="SunitT" class="input-dropdown" style="padding: 5px ; height:80px; color:red; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:3px solid #aaa;">
-<option title="Microfarad" value="1e-6" selected="selected">μH
-                      <option title="Farad" value="1">H
-                      <option title="Millifarad" value="1e-3">mH
-                      <option title="Nanofarad" value="1e-9">nH
-                      
-                    </select>
-
-                   
-                      
-                   
-                   
-                        </div>
-                </div>
-              </div>
-
-              
+  padding: 10px 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 70px;
+  margin: 4px 2px;
+  cursor: pointer;"></legend></fieldset>
 
 
 
 
 
 
-
-
-
-
-<div id="parallel-section" class="parallel" data-section="parallel">
-               <fieldset><legend> <h3 class="unit-title"  style="font-size:60; margin:60px; 0px 0px 0px" >Input</h3></legend>
-                <div class="inputs">
-
-                  <div class="parallel active" id="parallel1">
-                    <span class="input-headline">L<sub>1</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit1" title="Microfarad" onchange="Parallel()" name="Punit1" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                    
-                      </select>
-                      <input placeholder="" name="pcap1" id="pcap1" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel active" id="parallel2">
-                    <span class="input-headline">L<sub>2</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit2" title="Microfarad" onchange="Parallel()" name="Punit2" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="pcap2" id="pcap2" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel3">
-                    <span class="input-headline">L<sub>3</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit3" title="Microfarad" onchange="Parallel()" name="Punit3" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="pcap3" id="pcap3" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel4">
-                    <span class="input-headline">L<sub>4</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit4" title="Microfarad" onchange="Parallel()" name="Punit4" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="pcap4" id="pcap4" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel5">
-                    <span class="input-headline">L<sub>5</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit5" title="Microfarad" onchange="Parallel()" name="Punit5" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="pcap5" id="pcap5" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel6">
-                    <span class="input-headline">L<sub>6</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit6" title="Microfarad" onchange="Parallel()" name="Punit6" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="pcap6" id="pcap6" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel7">
-                    <span class="input-headline">L<sub>7</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit7" title="Microfarad" onchange="Parallel()" name="Punit7" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="pcap7" id="pcap7" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel8">
-                    <span class="input-headline">L<sub>8</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit8" title="Microfarad" onchange="Parallel()" name="Punit8" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="pcap8" id="pcap8" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel9">
-                    <span class="input-headline">L<sub>9</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit9" title="Microfarad" onchange="Parallel()" name="Punit9" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                       
-                      </select>
-                      <input placeholder="" name="pcap9" id="pcap9" type="number">
-                      </div>
-                  </div>
-
-                  <div class="parallel" id="parallel10">
-                    <span class="input-headline">L<sub>10</sub></span>
-                    <div class="calculator-input">
-                      <select id="Punit10" title="Microfarad" onchange="Parallel()" name="Punit10" class="input-dropdown">
-                        <option title="Microfarad" value="1e-6" selected="selected">μH
-                        <option title="Farad" value="1">H
-                        <option title="Millifarad" value="1e-3">mH
-                        <option title="Nanofarad" value="1e-9">nH
-                        
-                      </select>
-                      <input placeholder="" name="pcap10" id="pcap10" type="number">
-                      </div>
-                  </div>
-
-                  <div class="buttons">
-<div class="gg">
-                    <button type="button" class="dk-btn__primary addmore" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">+ <BR>Inductance</button>
-                   
-
-
-
- <button type="button" class="dk-btn__primary" disabled="disabled" href="#" style="background-color: #167A04 ;border: 1;align:center;color: white;width:300; font-size: 50px;margin: 4px 2px;cursor:pointer;">- <BR>Inductance </button></div> 
-
-
-                   
-                  </div>
-
-                </div>
-                <div class="prT"></fieldset>
-               <fieldset><legend><div colspan="2" align="center" height="19">
-
-
+<fieldset><legend><div colspan="2" align="center" height="19">
 <h3>Outputs</h3></div></legend>
-                  <div class="calculator-input">
-
-<label for="r2" style="font-size:50;color:white;" >Output<font face="Arial" size="3"></font></label><input name="pcapT" id="pcapT" type="text" class="answer" readonly=""   style="position: absolute;  border:3px solid #aaa;height:80;
-    border-radius:4px; text-align
-:center;width:465; right: 145px;"class="form-control"  />
-
-
-<select id="PunitT" title="Microfarad" onchange="Parallel()" name="PunitT" class="input-dropdown" style="padding: 5px ; color:red;height:80px; position: absolute;right: 10px;font-size:58px;margin:0px 0;width:130px;border-radius:4px; border:3px solid #aaa;">
- <option title="Microfarad" value="1e-6" selected="selected">μH
-                      <option title="Farad" value="1">H
-                      <option title="Millifarad" value="1e-3">mH
-                      <option title="Nanofarad" value="1e-9">nH
-                     
-                    </select>
 
 
 
-                   
-                     
-                                          </div>
-                </div>
-              </div>
+<label><font>Stored energy</sub> </font><font face="Arial" size="5"> </font></label><INPUT name="oa" size="17" class="intro"  style="position: absolute;   width:290; right: 152px;"class="form-control" type="number" />
+<select name="uoa" onchange="calculate();" class="outfield" style="padding: 5px ;  position: absolute;right: 10px;font-size:55px;  text-align:center; height:68.5; border:3px solid #aaa;border-radius:4px;margin:8px 0;height:85px; width:130px;" >
 
-            </div>
+<option value="1:1:0" selected="selected">J</option>
+<option value="0:1:0" >- SI UNITS -</option>
+<option value="1000000000:1:0" >nJ</option>
+<option value="1000000:1:0" >&micro;J</option>
+<option value="1000:1:0" >mJ</option>
+<option value="0.001:1:0" >kJ</option>
+<option value="0.000001:1:0" >MJ</option>
+<option value="0.000000001:1:0" >GJ</option>
+<option value="0:1:0" >-- IMPERIAL --</option>
+<option value="0.238845897:1:0" >cal</option>
+<option value="0.000238845897:1:0" >kcal</option>
+<option value="0.737562149:1:0" >ft&sdot;pdf</option>
+<option value="0.237303604:1:0" >ft&sdot;pdl</option>
+<option value="0.000948317:1:0" >BTU</option>
+<option value="0:1:0" >- SCIENTIFIC -</option>
+<option value="6.2415115443e18:1:0" >eV</option>
+<option value="6.2415115443e15:1:0" >keV</option>
+<option value="2.2937126584e17:1:0" >Hartrees (au)</option>
+<option value="6.02214179e20:1:0" >kJ/mol</option>
+<option value="5.03411820099269e22:1:0" >wavenumber</option>
+<option value="1.50919066933814e30:1:0" >kHz photon</option>
+<option value="1.50919066933814e27:1:0" >MHz photon</option>
+<option value="1.50919066933814e24:1:0" >GHz photon</option>
+<option value="1.50919066933814e21:1:0" >THz photon</option>
+<option value="1.9864452126e-16:-1:0" >nm photon</option>
+<option value="119623730.702772:-1:0" >nm mole of ph.</option>
+<option value="0:1:0" >--- OTHER ---</option>
+<option value="10000000:1:0" >erg</option>
+<option value="0.000000277777777777778:1:0" >kWh</option>
+<option value="0.0000000001633986928:1:0" >barrels of oil</option>
+<option value="0.000000000034120842375:1:0" >tons of coal</option>
+<option value="0.00000000023900573614:1:0" >tons of TNT</option>
+<option value="0.00000000000023900573614:1:0" >ktons of TNT</option>
+<option value="2.3900573614e-16:1:0" >Mtons of TNT</option>
+<option value="1.1950286807e-18:1:0" >Krakatoas</option>
+</select>
 
-<script type="text/javascript"  src="//www.digikey.com/-/media/Designer/EnavGDPR/JS/consent.js?la=en-US&amp;ts=6989ad49-2321-48fc-8c92-7598c16dfd50"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Header/ENav%20Pieces/Search%20Bar/Default/Javascript/enavsearchbar.js?la=en-US&amp;ts=04d6ec72-d217-4a20-848f-51b4c09e9284"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Resources/js/comcn-highlights.js?la=en-US&amp;ts=4c61ee47-a52b-4ad7-92b7-84f27d578c7c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/marketoformsminified.js?la=en-US&amp;ts=e62ed6eb-bae2-45f7-8430-3d56ea78307f"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Misc/MktoEmailSignup/Javascript/mktoemail.js?la=en-US&amp;ts=b0c32eba-df6f-47f5-b988-35f1fa5532d5"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/egain.js?la=en-US&amp;ts=63453230-376d-4106-8daa-cee31f588952"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Shared/Egain/JS/oneTag.js?la=en-US&amp;ts=c7fc7b16-2a23-4498-833d-86395a4b531c"></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Global/JS/jquery1101min.js?ts=72608b7b-9de9-44de-8633-9e1f286fc613"></script><script type="text/javascript">// Clear values when refresh
-$('.dk-container input[type=number]').val('');
+ <h1 style="font-size:45px;"></h1>
 
-$(".type-selector").click(function () {
-    const selType = $(this).attr("id").replace("-selector", "");
-    $(".type-selector").removeClass('selected');
-    $(this).addClass('selected');
-    $("[data-section]").removeClass("active");
-    $("[data-section=" + selType + "]").addClass("active");
-});
-
-$(".calculator-col .buttons button").click(function () {
-    const container = $(this).closest(".calculator-col .inputs");
-    $(container).find("button").prop("disabled", false);
-    if ($(this).hasClass("addmore")) {
-        $(container).find(">div").filter(':hidden:first').addClass('active');
-        if ($(container).find(">div").filter(':hidden').length === 0) {
-            $(this).prop("disabled", true);
-        }
-    }
-    else {
-        const res = $(container).find(".active:last").removeClass('active');
-        $(res).find("input").val("");
-        if ($(res).hasClass("series")) {
-            Series();
-        }
-        else {
-            Parallel();
-        }
-        if ($(container).find('.active').length === 2) {
-            $(this).prop('disabled', true);
-        }
-    }
-});
-
-var sc1Input = document.getElementById("scap1");
-var sc2Input = document.getElementById("scap2");
-var sc3Input = document.getElementById("scap3");
-var sc4Input = document.getElementById("scap4");
-var sc5Input = document.getElementById("scap5");
-var sc6Input = document.getElementById("scap6");
-var sc7Input = document.getElementById("scap7");
-var sc8Input = document.getElementById("scap8");
-var sc9Input = document.getElementById("scap9");
-var sc10Input = document.getElementById("scap10");
-
-var pc1Input = document.getElementById("pcap1");
-var pc2Input = document.getElementById("pcap2");
-var pc3Input = document.getElementById("pcap3");
-var pc4Input = document.getElementById("pcap4");
-var pc5Input = document.getElementById("pcap5");
-var pc6Input = document.getElementById("pcap6");
-var pc7Input = document.getElementById("pcap7");
-var pc8Input = document.getElementById("pcap8");
-var pc9Input = document.getElementById("pcap9");
-var pc10Input = document.getElementById("pcap10");
-
-function Series()    
-{     
-   var sC1 = 1 / (document.getElementById("scap1").value * document.getElementById("Sunit1").value);
-   var sC2 = 1 / (document.getElementById("scap2").value * document.getElementById("Sunit2").value);
-   var sC3 = 1 / (document.getElementById("scap3").value * document.getElementById("Sunit3").value);
-   var sC4 = 1 / (document.getElementById("scap4").value * document.getElementById("Sunit4").value);
-   var sC5 = 1 / (document.getElementById("scap5").value * document.getElementById("Sunit5").value);
-   var sC6 = 1 / (document.getElementById("scap6").value * document.getElementById("Sunit6").value);
-   var sC7 = 1 / (document.getElementById("scap7").value * document.getElementById("Sunit7").value);
-   var sC8 = 1 / (document.getElementById("scap8").value * document.getElementById("Sunit8").value);
-   var sC9 = 1 / (document.getElementById("scap9").value * document.getElementById("Sunit9").value);
-   var sC10 = 1 / (document.getElementById("scap10").value * document.getElementById("Sunit10").value);
-   
-   if (document.getElementById("scap1").value!= "") {
-   var TSC = 1 / document.getElementById("SunitT").value * (1 / sC1);
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap2").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap3").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap4").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap5").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap6").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap7").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap8").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap9").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8 + sC9));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-   
-   if (document.getElementById("scap10").value!= "") {
-       var TSC = 1 / document.getElementById("SunitT").value * (1 / (sC1 + sC2 + sC3 + sC4 + sC5 + sC6 + sC7 + sC8 + sC9 + sC10));
-   document.getElementById("scapT").value = convertToExpo(TSC);
-   }
-}
-
-function Parallel()    
-{     
-   var pC1 = 1 * (document.getElementById("pcap1").value * document.getElementById("Punit1").value);
-   var pC2 = 1 * (document.getElementById("pcap2").value * document.getElementById("Punit2").value);
-   var pC3 = 1 * (document.getElementById("pcap3").value * document.getElementById("Punit3").value);
-   var pC4 = 1 * (document.getElementById("pcap4").value * document.getElementById("Punit4").value);
-   var pC5 = 1 * (document.getElementById("pcap5").value * document.getElementById("Punit5").value);
-   var pC6 = 1 * (document.getElementById("pcap6").value * document.getElementById("Punit6").value);
-   var pC7 = 1 * (document.getElementById("pcap7").value * document.getElementById("Punit7").value);
-   var pC8 = 1 * (document.getElementById("pcap8").value * document.getElementById("Punit8").value);
-   var pC9 = 1 * (document.getElementById("pcap9").value * document.getElementById("Punit9").value);
-   var pC10 = 1 * (document.getElementById("pcap10").value * document.getElementById("Punit10").value);
-    var pcT = (pC1 + pC2 + pC3 + pC4 + pC5 + pC6 + pC7 + pC8 + pC9 + pC10) / document.getElementById("PunitT").value;
-   document.getElementById("pcapT").value = convertToExpo(pcT);
-}
-
-function convertToExpo(value){
-	var res = value;
-	var len = parseFloat( value )
-
-	if( len.toString().length > 4 || value >= 1e3){
-		if (value >= 1e3) {
-	        res = parseFloat(value).toExponential(2);
-	    } 
-	    else if(res >= 1 && res < 1e3) {
-	        res = parseFloat(parseFloat(value).toFixed(3));
-	    } 
-	    else if (res < 1 && res > 0) {
-	        res = parseFloat(parseFloat(value).toPrecision(3));
-	    } else if ( res < 1 ) {
-			res = parseFloat(value).toPrecision(3);
-		}
-	}
-	
-    return res;
-}
-
-$('#Punit1, #Punit2, #Punit3, #Punit4, #Punit5, #Punit6, #Punit7, #Punit8, #Punit9, #Punit10, #PunitT').change(function () {
-    const title = $(this).find("option:selected").attr("title");
-    $(this).attr("title", title);
-});
-
-$('#Sunit1, #Sunit2, #Sunit3, #Sunit4, #Sunit5, #Sunit6, #Sunit7, #Sunit8, #Sunit9, #Sunit10, #SunitT').change(function () {
-    const title = $(this).find("option:selected").attr("title");
-    $(this).attr("title", title);
-});
+<label><font>Stored charge</sub> </font><font face="Arial" size="5"> </font></label><INPUT name="ob" size="17" class="intro"  style="position: absolute;   width:290; right: 152px;"class="form-control" type="number" />
+<select name="uob" onchange="calculate();" class="outfield" style="padding: 5px ;  position: absolute;right: 10px;font-size:55px;  text-align:center; height:68.5; border:3px solid #aaa;border-radius:4px;margin:8px 0;height:85px; width:130px;" >
 
 
-$('#scap1, #scap2, #scap3, #scap4, #scap5, #scap6, #scap7, #scap8, #scap9, #scap10').on('keypress', function(event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if(valid.includes(input)) {
-        event.preventDefault();
-    } 
-});
-
-$('#pcap1, #pcap2, #pcap3, #pcap4, #pcap5, #pcap6, #pcap7, #pcap8, #pcap9, #pcap10').on('keypress', function(event) {
-    var input = event.which;
-    var valid = [101, 69];
-
-    if(valid.includes(input)) {
-        event.preventDefault();
-    } 
-});
 
 
-sc1Input.addEventListener ("keyup", Series);
-sc2Input.addEventListener ("keyup", Series);
-sc3Input.addEventListener ("keyup", Series);
-sc4Input.addEventListener ("keyup", Series);
-sc5Input.addEventListener ("keyup", Series);
-sc6Input.addEventListener ("keyup", Series);
-sc7Input.addEventListener ("keyup", Series);
-sc8Input.addEventListener ("keyup", Series);
-sc9Input.addEventListener ("keyup", Series);
-sc10Input.addEventListener ("keyup", Series);
-
-pc1Input.addEventListener ("keyup", Parallel);
-pc2Input.addEventListener ("keyup", Parallel);
-pc3Input.addEventListener ("keyup", Parallel);
-pc4Input.addEventListener ("keyup", Parallel);
-pc5Input.addEventListener ("keyup", Parallel);
-pc6Input.addEventListener ("keyup", Parallel);
-pc7Input.addEventListener ("keyup", Parallel);
-pc8Input.addEventListener ("keyup", Parallel);
-pc9Input.addEventListener ("keyup", Parallel);
-pc10Input.addEventListener ("keyup", Parallel);
-
-
-$(function() {
-    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
-        event.preventDefault();
-        $this = $(this);
-    });
-
-    $('option').each(function(index) {
-        var text = $(this).text();
-        if (text == 'F') {
-            $(this).attr('title','farad');
-        } else if (text == 'mF') {
-            $(this).attr('title','millifarad');
-        } else if (text == 'μF') {
-            $(this).attr('title','microfarad');
-        } else if (text == 'nF') {
-            $(this).attr('title','nanofarad');
-        } else if (text == 'pF') { 
-            $(this).attr('title','picofarad');
-        }
-    });
-
-    // Custom modal
-    $('.modal-image').on('click', function () {
-        location.hash = '#modal';
-        $('body').addClass('overflow-hidden');
-        $('#imageModal').addClass('open-modal');
-        $('#the-img-modal').attr('src', $(this).attr('src'));
-        $('#caption').text(this.alt);
-    });
-
-    // Close the modal
-    $('.close-modal, #the-img-modal, #imageModal').on('click', function () {
-        history.replaceState({}, document.title, window.location.href.split('#')[0]);
-        $('body').removeClass('overflow-hidden');
-        $('#imageModal').removeClass('open-modal');
-
-        document.body.style.zoom = "100%";
-    });
-});
+<option value="1:1:0" selected="selected">C</option>
+<option value="0:1:0" >- SI UNITS -</option>
+<option value="1000000:1:0" >&micro;C</option>
+<option value="1:1:0" >mC</option>
+<option value="0.001:1:0" >kC</option>
+<option value="0.000001:1:0" >MC</option>
+<option value="0:1:0" >--- OTHER ---</option>
+<option value="6.2415097445e18:1:0" >e</option>
+<option value="0.00001036426899:1:0" >Faraday</option>
+</select>
  
-document.addEventListener("DOMContentLoaded", function(){
-    var calcInputs = document.querySelectorAll('.calculator input');
-    for (var i = 0; i < calcInputs.length; i++) {
-        calcInputs[i].addEventListener("keypress", function(e) {
-            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
-                return;   
-            } else {
-                e.preventDefault();
-            }
-        });
-    };
-});</script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/cobrowse.js?la=en-US&amp;ts=5fcc3c08-20c2-4003-b73f-e4c3395595a1" defer></script><script type="text/javascript"  src="//www.digikey.com/-/media/Designer/Footer/Footer%20Redesign/MVC/JS/footer.js?la=en-US&amp;ts=6f429221-f908-493d-b9a8-e01df6d866a0" defer></script>                
-    <input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="8B48970CEEA548B789875D3D1A865482">
-<script type="text/javascript" >var _cf = _cf || []; _cf.push(['_setFsp', true]);  _cf.push(['_setBm', true]); _cf.push(['_setAu', '/resources/71595cb038196eaa49e07641795f9d']); </script><script type="text/javascript"  src="/resources/71595cb038196eaa49e07641795f9d"></script></body>
-</html>
-
+ <h1 style="font-size:45px;"></h1>
