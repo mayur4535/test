@@ -1,4 +1,305 @@
 
+
+
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+<body>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+   
+  
+  
+  
+  
+  
+  
+  }
+}
+</script>
+
+<style>
+
+.mid {
+	background-color:yellow;
+	margin:-80px 10px 10px 10px;
+	display:block;
+	background-color: red ;
+	color:red;
+	border: 5;
+	color: white;
+	width:50;
+	height:40;
+	text-decoration: none;
+	border-radius: 12px;
+	font-size: 25px;
+	position: absolute;
+	left: 5px;
+	top:101;
+	font-weight: bold;
+	cursor: pointer;
+	"
+}
+.body{
+	text-size:100px;
+}
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+#customers tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+#customers tr:hover {
+	background-color: #ddd;
+}
+html{
+	box-sizing:border-box
+}
+*,*:before,*:after{
+	box-sizing:inherit
+}
+/* End extract */
+html,body{
+	font-family:Verdana,sans-serif;
+	font-size:15px;
+	line-height:1.5
+}
+html{
+	overflow-x:hidden
+}
+h1{
+	font-size:36px
+}
+h2{
+	font-size:30px
+}
+h3{
+	font-size:24px
+}
+h4{
+	font-size:20px
+}
+h5{
+	font-size:18px
+}
+h6{
+	font-size:16px
+}
+.w3-serif{
+	font-family:serif
+}
+border.w3-btn,.w3-button{
+	font-size:50px;
+	border-radius: 25px;
+	background: #73AD21;
+	inpaddg: 2px;
+	width: 200px;
+	height: 100px;
+	text-align:center;
+}
+.w3-btn,.w3-button1{
+	border:none;
+	display:inline-block;
+	padding:1px 1px;
+	font-size:50px;
+	vertical-align:middle;
+	Horizontal-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:inherit;
+	background-color:inherit;
+	cursor:pointer;
+	white-space:nowrap;
+	text-align:LEFT;
+}
+.w3-modal{
+	z-index:3;
+	display:none;
+	padding-top:100px;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.4)
+}
+.w3-modal-content{
+	margin:-30px 10px 10px 10px;
+	
+	
+	
+}
+
+@media (min-width:601px){
+	.w3-col.m1{
+		width:8.33333%
+}
+	.w3-col.m2{
+		width:16.66666%
+}
+	.w3-col.m3,.w3-quarter{
+		width:24.99999%
+}
+	.w3-col.m4,.w3-third{
+		width:33.33333%
+}
+	.w3-display-topmiddle{
+		position:absolute;
+		left:50%;
+		top:0;
+		transform:translate(-50%,0%);
+		-ms-transform:translate(-50%,0%)
+}
+	.w3-display-container:hover .w3-display-hover{
+		display:block
+}
+	.w3-display-container:hover span.w3-display-hover{
+		display:inline-block
+}
+	.w3-display-hover{
+		display:none
+}
+	.w3-teal,.w3-hover-teal:hover{
+		color:#fff!important;
+		background-color:#009688!important
+}
+	.w3-yellow,.w3-hover-yellow:hover{
+		color:#000!important;
+		background-color:#ffeb3b!important
+}
+	.w3-white,.w3-hover-white:hover{
+		color:#000!important;
+		background-color:#fff!important
+}
+	border colour.w3-black,.w3-hover-black:hover{
+		color:#fff!important;
+		background-color:red!important
+}
+	
+</style>
+<style>
+.bg{ background-color:e6e9ee;
+     }
+.w3-button{background:;
+          WIDTH:100%}
+
+</style>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+ 
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+table1{align:center;}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 2px solid #ddd;
+  background:white;
+  
+  font-weight: ;
+}
+th{background-color:lightgreen;
+ }
+th, td {
+  text-align: left;
+  padding: 8px;
+   
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+tr:hover {background-color: #ddd;}
+</style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,20 +309,20 @@
 
 <script>function tagmngMain(){document.getElementById("banokbtn").onclick=function(){onOK()};var e=getCookie("RTConsent");null==e?isCal()||isEER()?(setBanner(),runTags("1111")):runTags("1111"):runTags(e);var t=document.getElementsByClassName("adslot_1"),n=document.getElementsByClassName("adslot_2"),o=document.getElementsByClassName("adslot_3");t.length>0&&(t[0].style.display="none"),n.length>0&&(n[0].style.display="none"),o.length>0&&(o[0].style.display="none")}function loadScripts(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=UA-2665076-2",document.head.appendChild(e)}function getCookie(e){var t=("; "+document.cookie).split("; "+e+"=");if(2==t.length)return t.pop().split(";").shift()}function setCookie(e,t,n){var o="";if(n){var a=new Date;a.setTime(a.getTime()+24*n*60*60*1e3),o="; expires="+a.toUTCString()}document.cookie=e+"="+(t||"")+o+"; path=/"}function isCal(){try{if("undefined"!=typeof Intl&&"function"==typeof Intl.DateTimeFormat&&"function"==typeof Intl.DateTimeFormat().resolvedOptions)return"America/Los_Angeles"===Intl.DateTimeFormat().resolvedOptions().timeZone;var e=(new Date).getTimezoneOffset();return e<=480&&e>=420}catch(e){return console.error(e),!0}}function isEER(){try{if("undefined"!=typeof Intl&&"function"==typeof Intl.DateTimeFormat&&"function"==typeof Intl.DateTimeFormat().resolvedOptions)return"Europe/"===Intl.DateTimeFormat().resolvedOptions().timeZone.substring(0,7);var e=(new Date).getTimezoneOffset();return e>=-240&&e<=0}catch(e){return console.error(e),!0}}function setAnalytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","UA-2665076-2")}function setAds(e){e&&((adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1),(adsbygoogle=window.adsbygoogle||[]).push({}),(adsbygoogle=window.adsbygoogle||[]).push({}),(adsbygoogle=window.adsbygoogle||[]).push({})}function setBanner(){document.getElementById("banner").style.display="block"}function runTags(e){"1"==e[0]&&setAnalytics()}function onOK(){document.getElementById("banner").style.display="none",setCookie("RTConsent","1111",365)}function OnSubFb(){ref=document.feedback,ref.URL.value=document.URL,""==ref.Message.value?alert("Please enter your message"):ref.submit()}loadScripts(),"loading"!==document.readyState?tagmngMain():window.addEventListener("DOMContentLoaded",function(){tagmngMain()});</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="/lib/rapidz.css">
-<link rel="apple-touch-icon" sizes="180x180" href="/lib/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" href="/lib/favicon/favicon-32x32.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/lib/favicon/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/lib/favicon/manifest.json">
-<link rel="mask-icon" href="/lib/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/lib/favicon/favicon.ico">
+<link rel="stylesheet" type="text/css" ="/lib/rapidz.css">
+<link rel="apple-touch-icon" sizes="180x180" ="/lib/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" ="/lib/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" ="/lib/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" ="/lib/favicon/manifest.json">
+<link rel="mask-icon" ="/lib/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" ="/lib/favicon/favicon.ico">
 <meta name="msapplication-config" content="/lib/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 <meta name="format-detection" content="telephone=no">
 
 <title>ASCII Table - ASCII codes,hex,decimal,binary,html</title>
 <meta content="ASCII table, ASCII character codes chart, hex/decimal/binary/HTML." name="description">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<link rel="stylesheet" ="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <style>
    h1 { font-size:1.6rem; }
    h2 { font-size:1.4rem; }
@@ -93,14 +394,7 @@
 <form autocomplete="off">
 <table id="tbl1" class="table table-striped table-responsive">
 <thead>
-<tr>
-<th scope="col"><input type="number" min="0" step="1" id="dec" class="form-control"></th>
-<th scope="col"><input type="text" id="hex" class="form-control"></th>
-<th scope="col">&nbsp;</th>
-<th scope="col">&nbsp;</th>
-<th scope="col"><input type="text" id="char" class="form-control" autofocus></th>
-<th scope="col"><button type="reset" title="Reset" class="btn btn-light" onclick="OnReset()"><span>&times;</span> Reset</button></th>
-</tr>
+
 <tr>
 <th scope="col">Dec</th>
 <th scope="col">Hex</th>
@@ -446,6 +740,325 @@
 
 </form>
 
+<h2>Character set</h2>
+<table class="wikitable chset nounderlines nowrap" border="1" frame="box" style="text-align: center; font-family: monospace; border-collapse: collapse">
+<caption><span style="font-family: sans-serif">ASCII (1977/1986)</span>
+</caption>
+<tbody><tr style="background:#EEE">
+<th style="width:1.6em;height:1.6em">
+</th>
+<th style="width:3.4em">_0
+</th>
+<th style="width:3.4em">_1
+</th>
+<th style="width:3.4em">_2
+</th>
+<th style="width:3.4em">_3
+</th>
+<th style="width:3.4em">_4
+</th>
+<th style="width:3.4em">_5
+</th>
+<th style="width:3.4em">_6
+</th>
+<th style="width:3.4em">_7
+</th>
+<th style="width:3.4em">_8
+</th>
+<th style="width:3.4em">_9
+</th>
+<th style="width:3.4em">_A
+</th>
+<th style="width:3.4em">_B
+</th>
+<th style="width:3.4em">_C
+</th>
+<th style="width:3.4em">_D
+</th>
+<th style="width:3.4em">_E
+</th>
+<th style="width:3.4em">_F
+</th></tr>
+<tr>
+<th style="height:4em;background:#EEE">0_<br>0
+</th>
+<td style="background-color: #efffbb;"><span style="font-size: large"><style data-mw-deduplicate="TemplateStyles:r920966791">.mw-parser-output span.smallcaps{font-variant:small-caps}.mw-parser-output span.smallcaps-smaller{font-size:85%}</style><span class="smallcaps smallcaps-smaller"><a ="/wiki/Null_character" title="Null character">NUL</a></span></span><small><br>0000</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Start_of_heading" class="mw-redirect" title="Start of heading">SOH</a></span></span><small><br>0001</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Start_of_text" class="mw-redirect" title="Start of text">STX</a></span></span><small><br>0002</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/End_of_text" class="mw-redirect" title="End of text">ETX</a></span></span><small><br>0003</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/End_of_transmission_character" class="mw-redirect" title="End of transmission character">EOT</a></span></span><small><br>0004</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Enquiry_character" title="Enquiry character">ENQ</a></span></span><small><br>0005</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Acknowledge_character" class="mw-redirect" title="Acknowledge character">ACK</a></span></span><small><br>0006</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Bell_character" title="Bell character">BEL</a></span></span><small><br>0007</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Backspace" title="Backspace">BS</a></span></span><small><br>0008</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Horizontal_tabulation" class="mw-redirect" title="Horizontal tabulation">HT</a></span></span><small><br>0009</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Line_feed" class="mw-redirect" title="Line feed">LF</a></span></span><small><br>000A</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Vertical_tabulation" class="mw-redirect" title="Vertical tabulation">VT</a></span></span><small><br>000B</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Form_feed" class="mw-redirect" title="Form feed">FF</a></span></span><small><br>000C</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Carriage_return" title="Carriage return">CR</a></span></span><small><br>000D</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Shift_out" class="mw-redirect" title="Shift out">SO</a></span></span><small><br>000E</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Shift_in" class="mw-redirect" title="Shift in">SI</a></span></span><small><br>000F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">1_<br>16
+</th>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Data_link_escape" class="mw-redirect" title="Data link escape">DLE</a></span></span><small><br>0010</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Device_Control_1" class="mw-redirect" title="Device Control 1">DC1</a></span></span><small><br>0011</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Device_Control_2" class="mw-redirect" title="Device Control 2">DC2</a></span></span><small><br>0012</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Device_Control_3" class="mw-redirect" title="Device Control 3">DC3</a></span></span><small><br>0013</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Device_Control_4" class="mw-redirect" title="Device Control 4">DC4</a></span></span><small><br>0014</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Negative_acknowledge_character" class="mw-redirect" title="Negative acknowledge character">NAK</a></span></span><small><br>0015</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Synchronous_idle" class="mw-redirect" title="Synchronous idle">SYN</a></span></span><small><br>0016</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/End_of_transmission_block" class="mw-redirect" title="End of transmission block">ETB</a></span></span><small><br>0017</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Cancel_character" title="Cancel character">CAN</a></span></span><small><br>0018</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/End_of_medium" class="mw-redirect" title="End of medium">EM</a></span></span><small><br>0019</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Substitute_character" title="Substitute character">SUB</a></span></span><small><br>001A</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Escape_character" title="Escape character">ESC</a></span></span><small><br>001B</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/File_separator" class="mw-redirect" title="File separator">FS</a></span></span><small><br>001C</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Group_separator" class="mw-redirect" title="Group separator">GS</a></span></span><small><br>001D</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Record_separator" class="mw-redirect" title="Record separator">RS</a></span></span><small><br>001E</small>
+</td>
+<td style="background-color: #efffbb; border-width: 3px; border: medium solid gray;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Unit_separator" class="mw-redirect" title="Unit separator">US</a></span></span><small><br>001F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">2_<br>32
+</th>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Space_character" class="mw-redirect" title="Space character">SP</a></span></span><small><br>0020</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Exclamation_mark" title="Exclamation mark">!</a></span><small><br>0021</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Quotation_mark" title="Quotation mark">"</a></span><small><br>0022</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Number_sign" title="Number sign">#</a></span><small><br>0023</small>
+</td>
+<td style="background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Dollar_sign" title="Dollar sign">$</a></span><small><br>0024</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Percent_sign" title="Percent sign">%</a></span><small><br>0025</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Ampersand" title="Ampersand">&amp;</a></span><small><br>0026</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Apostrophe" title="Apostrophe">'</a></span><small><br>0027</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Left_parenthesis" class="mw-redirect" title="Left parenthesis">(</a></span><small><br>0028</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Right_parenthesis" class="mw-redirect" title="Right parenthesis">)</a></span><small><br>0029</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Asterisk" title="Asterisk">*</a></span><small><br>002A</small>
+</td>
+<td style="background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Plus_sign" class="mw-redirect" title="Plus sign">+</a></span><small><br>002B</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Comma_(punctuation)" class="mw-redirect" title="Comma (punctuation)">,</a></span><small><br>002C</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Hyphen-minus" title="Hyphen-minus">-</a></span><small><br>002D</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Full_stop" title="Full stop">.</a></span><small><br>002E</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Slash_(punctuation)" title="Slash (punctuation)">/</a></span><small><br>002F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">3_<br>48
+</th>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/0" title="0">0</a></span><small><br>0030</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/1" title="1">1</a></span><small><br>0031</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/2" title="2">2</a></span><small><br>0032</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/3" title="3">3</a></span><small><br>0033</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/4" title="4">4</a></span><small><br>0034</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/5" title="5">5</a></span><small><br>0035</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/6" title="6">6</a></span><small><br>0036</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/7" title="7">7</a></span><small><br>0037</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/8" title="8">8</a></span><small><br>0038</small>
+</td>
+<td style="background:#FFF4F4;"><span style="font-size: large; font-family: serif"><a ="/wiki/9" title="9">9</a></span><small><br>0039</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Colon_(punctuation)" title="Colon (punctuation)">:</a></span><small><br>003A</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Semicolon" title="Semicolon">;</a></span><small><br>003B</small>
+</td>
+<td style="background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Less-than_sign" title="Less-than sign">&lt;</a></span><small><br>003C</small>
+</td>
+<td style="background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Equal_sign" class="mw-redirect" title="Equal sign">=</a></span><small><br>003D</small>
+</td>
+<td style="background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Greater-than_sign" title="Greater-than sign">&gt;</a></span><small><br>003E</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Question_mark" title="Question mark">?</a></span><small><br>003F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">4_<br>64
+</th>
+<td style="border-width:3px;border:medium solid gray;background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/@" class="mw-redirect" title="@">@</a></span><small><br>0040</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/A" title="A">A</a></span><small><br>0041</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/B" title="B">B</a></span><small><br>0042</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/C" title="C">C</a></span><small><br>0043</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/D" title="D">D</a></span><small><br>0044</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/E" title="E">E</a></span><small><br>0045</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/F" title="F">F</a></span><small><br>0046</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/G" title="G">G</a></span><small><br>0047</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/H" title="H">H</a></span><small><br>0048</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/I" title="I">I</a></span><small><br>0049</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/J" title="J">J</a></span><small><br>004A</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/K" title="K">K</a></span><small><br>004B</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/L" title="L">L</a></span><small><br>004C</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/M" title="M">M</a></span><small><br>004D</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/N" title="N">N</a></span><small><br>004E</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/O" title="O">O</a></span><small><br>004F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">5_<br>80
+</th>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/P" title="P">P</a></span><small><br>0050</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Q" title="Q">Q</a></span><small><br>0051</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/R" title="R">R</a></span><small><br>0052</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/S" title="S">S</a></span><small><br>0053</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/T" title="T">T</a></span><small><br>0054</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/U" title="U">U</a></span><small><br>0055</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/V" title="V">V</a></span><small><br>0056</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/W" title="W">W</a></span><small><br>0057</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/X" title="X">X</a></span><small><br>0058</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Y" title="Y">Y</a></span><small><br>0059</small>
+</td>
+<td style="background: #FFF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Z" title="Z">Z</a></span><small><br>005A</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Left_square_bracket" class="mw-redirect" title="Left square bracket">[</a></span><small><br>005B</small>
+</td>
+<td style="border-width:3px;border:medium solid gray;background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Backslash" title="Backslash">\</a></span><small><br>005C</small>
+</td>
+<td style="background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Right_square_bracket" class="mw-redirect" title="Right square bracket">]</a></span><small><br>005D</small>
+</td>
+<td style="border-width:3px;border:medium solid gray;background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Caret" title="Caret">^</a></span><small><br>005E</small>
+</td>
+<td style="border-width:3px;border:medium solid gray;background:#E4F4FF;"><span style="font-size: large; font-family: serif"><a ="/wiki/Underscore" title="Underscore">_</a></span><small><br>005F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">6_<br>96
+</th>
+<td style="border-width:3px;border:medium solid gray;background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Grave_accent" title="Grave accent">`</a></span><small><br>0060</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/A" title="A">a</a></span><small><br>0061</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/B" title="B">b</a></span><small><br>0062</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/C" title="C">c</a></span><small><br>0063</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/D" title="D">d</a></span><small><br>0064</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/E" title="E">e</a></span><small><br>0065</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/F" title="F">f</a></span><small><br>0066</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/G" title="G">g</a></span><small><br>0067</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/H" title="H">h</a></span><small><br>0068</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/I" title="I">i</a></span><small><br>0069</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/J" title="J">j</a></span><small><br>006A</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/K" title="K">k</a></span><small><br>006B</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/L" title="L">l</a></span><small><br>006C</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/M" title="M">m</a></span><small><br>006D</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/N" title="N">n</a></span><small><br>006E</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/O" title="O">o</a></span><small><br>006F</small>
+</td></tr>
+<tr>
+<th style="height:4em;background:#EEE">7_<br>112
+</th>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/P" title="P">p</a></span><small><br>0070</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/Q" title="Q">q</a></span><small><br>0071</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/R" title="R">r</a></span><small><br>0072</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/S" title="S">s</a></span><small><br>0073</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/T" title="T">t</a></span><small><br>0074</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/U" title="U">u</a></span><small><br>0075</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/V" title="V">v</a></span><small><br>0076</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/W" title="W">w</a></span><small><br>0077</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/X" title="X">x</a></span><small><br>0078</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/Y" title="Y">y</a></span><small><br>0079</small>
+</td>
+<td style="background: #E8E8E8; background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/Z" title="Z">z</a></span><small><br>007A</small>
+</td>
+<td style="background:#B7D7E7; background-image: linear-gradient(45deg, #E4F4FF 25%, transparent 25%), linear-gradient(-45deg, #E4F4FF 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #E4F4FF 75%), linear-gradient(-45deg, transparent 75%, #E4F4FF 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/Left_curly_bracket" class="mw-redirect" title="Left curly bracket">{</a></span><small><br>007B</small>
+</td>
+<td style="border-width:3px;border:medium solid gray;background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/Vertical_bar" title="Vertical bar">|</a></span><small><br>007C</small>
+</td>
+<td style="background:#B7D7E7; background-image: linear-gradient(45deg, #E4F4FF 25%, transparent 25%), linear-gradient(-45deg, #E4F4FF 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #E4F4FF 75%), linear-gradient(-45deg, transparent 75%, #E4F4FF 75%); background-size: 12px 12px; background-position: 0 0, 0 6px, 6px -6px, -6px 0px;"><span style="font-size: large; font-family: serif"><a ="/wiki/Right_curly_bracket" class="mw-redirect" title="Right curly bracket">}</a></span><small><br>007D</small>
+</td>
+<td style="border-width:3px;border:medium solid gray;background:#fff5c2;"><span style="font-size: large; font-family: serif"><a ="/wiki/~" class="mw-redirect" title="~">~</a></span><small><br>007E</small>
+</td>
+<td style="background-color: #efffbb;"><span style="font-size: large"><link rel="mw-deduplicated-inline-style" ="mw-data:TemplateStyles:r920966791"><span class="smallcaps smallcaps-smaller"><a ="/wiki/Delete_character" title="Delete character">DEL</a></span></span><small><br>007F</small>
+</td></tr></tbody></table>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -624,3 +1237,5 @@
 </body>
 
 </html>
+
+
