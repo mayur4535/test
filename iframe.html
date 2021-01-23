@@ -1,372 +1,771 @@
-<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
-<style>
-#borderimg { 
-  border: 10px solid transparent;
-  padding: 10px;
-  width: 100%;
-  hight: 100%;
-  border-image-source: url();  
-  border-image-slice: 30;
-}
 
-body {
-  display: row;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-body {
-    font-family: 'Aclonica'; color:#404040; text-shadow: 0 0 30px white; font-size: 60px;
-}
 
-body { 
-  background: ; 
+
+
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
-.intro{text-align:center;
-    width:250;    
-    font-size: 60px;
-    padding: 5px ;    
-    border:3px solid #aaa;
-    border-radius:4px;
-    margin: 8px 0;
-    outline:none;
-    
-    
-    box-sizing:border-box;
-    transition:.3s;
-  }
+</script>
+
+
+
+<body>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+   
   
-  .intro:focus{
-    border-color:dodgerBlue;
-    box-shadow:0 0 8px 0 dodgerBlue;
+  
+  
+  
+  
+  
   }
+}
+</script>
 
-.ids{
-     border: 2px solid red;
-  padding: 10px;
-  border-radius: 50px 20px;}
+<style>
 
-input[type=checkbox]{
-    width: 120px; 
-    height: 120px; 
+.mid {
+	background-color:yellow;
+	margin:-80px 10px 10px 10px;
+	display:block;
+	background-color: red ;
+	color:red;
+	border: 5;
+	color: white;
+	width:50;
+	height:40;
+	text-decoration: none;
+	border-radius: 12px;
+	font-size: 25px;
+	position: absolute;
+	left: 5px;
+	top:101;
+	font-weight: bold;
+	cursor: pointer;
+	"
+}
+.body{
+	text-size:100px;
+}
+#customers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+#customers tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+#customers tr:hover {
+	background-color: #ddd;
+}
+html{
+	box-sizing:border-box
+}
+*,*:before,*:after{
+	box-sizing:inherit
+}
+/* End extract */
+html,body{
+	font-family:Verdana,sans-serif;
+	font-size:15px;
+	line-height:1.5
+}
+html{
+	overflow-x:hidden
+}
+h1{
+	font-size:36px
+}
+h2{
+	font-size:30px
+}
+h3{
+	font-size:24px
+}
+h4{
+	font-size:20px
+}
+h5{
+	font-size:18px
+}
+h6{
+	font-size:16px
+}
+.w3-serif{
+	font-family:serif
+}
+border.w3-btn,.w3-button{
+	font-size:50px;
+	border-radius: 25px;
+	background: #73AD21;
+	inpaddg: 2px;
+	width: 200px;
+	height: 100px;
+	text-align:center;
+}
+.w3-btn,.w3-button1{
+	border:none;
+	display:inline-block;
+	padding:1px 1px;
+	font-size:50px;
+	vertical-align:middle;
+	Horizontal-align:middle;
+	overflow:hidden;
+	text-decoration:none;
+	color:inherit;
+	background-color:inherit;
+	cursor:pointer;
+	white-space:nowrap;
+	text-align:LEFT;
+}
+.w3-modal{
+	z-index:3;
+	display:none;
+	padding-top:100px;
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,0.4)
+}
+.w3-modal-content{
+	margin:-30px 10px 10px 10px;
+	
+	
+	
+}
+
+@media (min-width:601px){
+	.w3-col.m1{
+		width:8.33333%
+}
+	.w3-col.m2{
+		width:16.66666%
+}
+	.w3-col.m3,.w3-quarter{
+		width:24.99999%
+}
+	.w3-col.m4,.w3-third{
+		width:33.33333%
+}
+	.w3-display-topmiddle{
+		position:absolute;
+		left:50%;
+		top:0;
+		transform:translate(-50%,0%);
+		-ms-transform:translate(-50%,0%)
+}
+	.w3-display-container:hover .w3-display-hover{
+		display:block
+}
+	.w3-display-container:hover span.w3-display-hover{
+		display:inline-block
+}
+	.w3-display-hover{
+		display:none
+}
+	.w3-teal,.w3-hover-teal:hover{
+		color:#fff!important;
+		background-color:#009688!important
+}
+	.w3-yellow,.w3-hover-yellow:hover{
+		color:#000!important;
+		background-color:#ffeb3b!important
+}
+	.w3-white,.w3-hover-white:hover{
+		color:#000!important;
+		background-color:#fff!important
+}
+	border colour.w3-black,.w3-hover-black:hover{
+		color:#fff!important;
+		background-color:red!important
+}
+	
+</style>
+<style>
+.bg{ background-color:e6e9ee;
+     }
+.w3-button{background:;
+          WIDTH:100%}
+
 </style>
 
-
-<script LANGUAGE="JavaScript">
-
-<!--  
-
-
-
-// CED subroutine for cleaning up JavaScript rounding errors 
-
-// to any reasonable number of decimal places 5/5/1997 last mod 2/19/2004
-
-// round for decimal of (value of precision) places, default is 3
-
-// This routine can be used to pass a number and a number for precision
-
-// or just a number only, that is to be rounded to a set number of decimal
-
-// places. This routine supports leading and trailing zeros, leading and
-
-// trailing spaces, and padding. To prevent errors, pass variables as a string.
-
-
-
-function perRound(num, precision) {
-
-        var precision = 3; //default value if not passed from caller, change if desired
-
-        // remark if passed from caller
-
-        precision = parseInt(precision); // make certain the decimal precision is an integer
-
-    var result1 = num * Math.pow(10, precision);
-
-    var result2 = Math.round(result1);
-
-    var result3 = result2 / Math.pow(10, precision);
-
-    return zerosPad(result3, precision);
-
+<style>
+* {
+  box-sizing: border-box;
 }
 
-
-
-function zerosPad(rndVal, decPlaces) {
-
-    var valStrg = rndVal.toString(); // Convert the number to a string
-
-    var decLoc = valStrg.indexOf("."); // Locate the decimal point
-
-    // check for a decimal 
-
-    if (decLoc == -1) {
-
-        decPartsecnum = 0; // If no decimal, then all decimal places will be padded with 0s
-
-        // If decPlaces is greater than zero, add a decimal point
-
-        valStrg += decPlaces > 0 ? "." : "";
-
-    }
-
-    else {
-
-        decPartsecnum = valStrg.secnumgth - decLoc - 1; // If there is a decimal already, only the needed decimal places will be padded with 0s
-
-    }
-
-     var totalPad = decPlaces - decPartsecnum;    // Calculate the number of decimal places that need to be padded with 0s
-
-    if (totalPad > 0) {
-
-        // Pad the string with 0s
-
-        for (var cntrVal = 1; cntrVal <= totalPad; cntrVal++) 
-
-            valStrg += "0";
-
-        }
-
-    return valStrg;
-
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
 
-// send the value in as "num" in a variable
-
-
-
-// clears field of default value
-
-function clear_field(field) {
-
-                if (field.value==field.defaultValue) {
-
-                        field.value=''
-
-                }
-
-        }
-
-function CloseR(Rval, IEASeries){
-    //IEASeries = 192 for 0.1% standard values;
-    //IEASeries = 96 for 1% standard values;
-    if(Rval <= 0){
-        return 0;
-    }
-    Expo = Math.floor(Math.log(Rval) / Math.log(10));
-    Mant = Rval / Math.pow(10,Expo);
-    x = Math.floor(IEASeries * Math.log(Mant) / Math.log(10));
-    min_dist = 1000;
-    for (i = (x - 1) ; i <= (x + 1); i++ )
-    {
-        y = (Math.pow(10, (i / IEASeries))).toFixed(2);
-        dist = Math.abs(Mant - y);
-        if(dist < min_dist){
-            min_dist = dist;
-            closest = i;
-        }
-    }
-    x = (Math.pow(10, (closest / IEASeries))).toFixed(2);
-    y = Math.pow(10, Expo);
-    return x*y;
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-function E_6(Val){
-    if(Val <= 0){
-        return 0;
-    }
-    Clist = "1,1.5,2.2,3.3,4.7,6.8,10";
-    Vals = Clist.split(",") //convert to zero based array;
-    n = Vals.length
-    //find mantissa &#038; exponent of Val;
-    Expo = Math.floor(Math.log(Val) / Math.log(10));
-    Mant = Val / Math.pow(10,Expo);
-    min_dist = 1000;
-    for (i = 0; i<=  n; i++){
-        dist = Math.abs(Mant - Vals[i]);
-        if(dist < min_dist){
-            min_dist = dist;
-            closest = i;
-        }
-    }
-    return Vals[closest] * Math.pow(10,Expo);
-}
-function E_12(Val){
-    if(Val <= 0){
-        return 0;
-    }
-    Clist = "1,1.2,1.5,1.8,2.2,2.7,3.3,3.9,4.7,5.6,6.8,8.2,10";
-    Vals = Clist.split(",") //convert to zero based array;
-    n = Vals.length
-    //find mantissa &#038; exponent of Val;
-    Expo = Math.floor(Math.log(Val) / Math.log(10));
-    Mant = Val / Math.pow(10,Expo);
-    min_dist = 1000;
-    for (i = 0; i<=  n; i++){
-        dist = Math.abs(Mant - Vals[i]);
-        if(dist < min_dist){
-            min_dist = dist;
-            closest = i;
-        }
-    }
-    return Vals[closest] * Math.pow(10,Expo);
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+ 
 }
 
-function E_24(Val){
-    if(Val <= 0){
-        return 0;
-    }
-    Clist = "1,1.1,1.2,1.3,1.5,1.6,1.8,2.0,2.2,2.4,2.7,3.0,3.3,3.6,3.9,4.3,4.7,5.1,5.6,6.2,6.8,7.5,8.2,9.1,10" //2% &#038;& 5% vals;
-    Vals = Clist.split(",") //convert to zero based array;
-    n = Vals.length
-    //find mantissa &#038; exponent of Val;
-    Expo = Math.floor(Math.log(Val) / Math.log(10));
-    Mant = Val / Math.pow(10,Expo);
-    min_dist = 1000;
-    for (i = 0; i<=  n; i++){
-        dist = Math.abs(Mant - Vals[i]);
-        if(dist < min_dist){
-            min_dist = dist;
-            closest = i;
-        }
-    }
-    return Vals[closest] * Math.pow(10,Expo);
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+table1{align:center;}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 2px solid #ddd;
+  background:white;
+  
+  font-weight: ;
+}
+th{background-color:lightgreen;
+ }
+th, td {
+  text-align: left;
+  padding: 8px;
+   
 }
 
-function E_48(Val){
-    return CloseR(Val, 48).toPrecision(3);
-}
-
-function E_96(Val){
-    return CloseR(Val, 96).toPrecision(3);
-}
-
-function E_192(Val){
-    return CloseR(Val, 192).toPrecision(3);
-}
-
-function Significant(x, d){
-    //rounds x to d significant digits;
-    if(x == 0){
-        return 0;
-    }
-    y = Math.log(Math.abs(x)) / Math.log(10);
-    if(Math.abs(Math.floor(y) - y) < 0.000000000000001){
-        y = Math.floor(y);
-    }
-    e = Math.floor(y);
-    m = x / Math.pow(10, e);
-    m = (m).toFixed(d - 1);
-    return m * Math.pow(10, e);
-}
-
-function Find(){
- v=document.getElementById("Text1").value;
- v6=E_6(v).toPrecision(3);
- v12=E_12(v).toPrecision(3);
- v24=E_24(v).toPrecision(3);
- v48=E_48(v);
- v96=E_96(v);
- v192=E_192(v);
-
- e6=(100*(v6-v)/v).toPrecision(3)  + "%";
- e12=(100*(v12-v)/v).toPrecision(3)  + "%";
- e24=(100*(v24-v)/v).toPrecision(3)  + "%";
- e48=(100*(v48-v)/v).toPrecision(3)  + "%";
- e96=(100*(v96-v)/v).toPrecision(3)  + "%";
- e192=(100*(v192-v)/v).toPrecision(3)  + "%";
- document.getElementById("Text2").value=v6;
- document.getElementById("Text3").value=v12;
- document.getElementById("Text4").value=v24;
- document.getElementById("Text5").value=v48;
- document.getElementById("Text6").value=v96;
- document.getElementById("Text7").value=v192;
-
- document.getElementById("Text8").value=e6;
- document.getElementById("Text9").value=e12;
- document.getElementById("Text10").value=e24;
- document.getElementById("Text11").value=e48;
- document.getElementById("Text12").value=e96;
- document.getElementById("Text13").value=e192;
-
-}
-
-//  -->
-
-</SCRIPT>
-
-<div id="borderimg">
-    <borderimg id="control-label" style="width:100%; height:500px;"></borderimg>							  
-
-
-<fieldset><legend><div colspan="2" align="center" height="19">
-<h3>Inputs</h3></div></legend>
-
-<label><font></sub> </font><font face="Arial" size=""> Desired Resistor Value</font></label><INPUT   id="Text1" name="Text1" onKeyUp="Find()" size="17" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="number" />
-      
+tr:nth-child(even){background-color: #f2f2f2}
+tr:hover {background-color: #ddd;}
+</style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-        <h1 style="font-size:80px;"></h1>
-
- <label style="padding: 5px ;  position: absolute;left: 70px;font-size:40px;  text-align:center; height:68.5;  ">EIA Series</label> 
- <label style="padding: 5px ;  position: absolute;right: 295px;font-size:40px;  text-align:center; height:68.5;  ">Closest Value</label> 
- <label style="padding: 5px ;  position: absolute;right: 90px;font-size:40px;  text-align:center; height:68.5;  ">Error</label> 
-
- <h1 style="font-size:170px;"></h1>
-<label><font>E6</sub> </font><font face="Arial" size=""></font></label>
-<INPUT   id="Text8" name="Text8" size="17" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="text" />
-<INPUT  id="Text2" name="Text2"   size="17" class="intro"  style="position: absolute;   width:280; right: 305px;"class="form-control" type="text" />
 
 
- <h1 style="font-size:50px;"></h1>
-<label><font>E12</sub> </font><font face="Arial" size=""></font></label>
-<INPUT    id="Text9" name="Text9" size="17" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="text" />
-<INPUT   id="Text3" name="Text3"   size="17" class="intro"  style="position: absolute;   width:280; right: 305px;"class="form-control" type="text" />
+<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+	
+<h2>Standard Capacitor Values</h2>
+
+</tr>
+<tr class="header h-common" style="font-size: 11px">
+<th style="font-size:20">pF</td>
+<th style="font-size:20">pF</td>
+<th style="font-size:20">pF</td>
+<th style="font-size:20">pF</td>
+<th style="font-size:20">µF</td>
+<th style="font-size:20">µF</td>
+<th style="font-size:20">µF</td>
+<th style="font-size:20">µF</td>
+<th style="font-size:20">µF</td>
+<th style="font-size:20">µF</td>
+<th style="font-size:20">µF</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>10</td>
+<td>100</td>
+<td>1000</td>
+<td>0.01</td>
+<td>0.1</td>
+<td>1.0</td>
+<td>10</td>
+<td>100</td>
+<td>1000</td>
+<td>10,000</td>
+</tr>
+<tr>
+<td>1.1</td>
+<td>11</td>
+<td>110</td>
+<td>1100</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>12</td>
+<td>120</td>
+<td>1200</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>13</td>
+<td>130</td>
+<td>1300</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>15</td>
+<td>150</td>
+<td>1500</td>
+<td>0.015</td>
+<td>0.15</td>
+<td>1.5</td>
+<td>15</td>
+<td>150</td>
+<td>1500</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>1.6</td>
+<td>16</td>
+<td>160</td>
+<td>1600</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>1.8</td>
+<td>18</td>
+<td>180</td>
+<td>1800</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>20</td>
+<td>200</td>
+<td>2000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>22</td>
+<td>220</td>
+<td>2200</td>
+<td>0.022</td>
+<td>0.22</td>
+<td>2.2</td>
+<td>22</td>
+<td>220</td>
+<td>2200</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td>24</td>
+<td>240</td>
+<td>2400</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td>27</td>
+<td>270</td>
+<td>2700</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3.0</td>
+<td>30</td>
+<td>300</td>
+<td>3000</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>33</td>
+<td>330</td>
+<td>3300</td>
+<td>0.033</td>
+<td>0.33</td>
+<td>3.3</td>
+<td>33</td>
+<td>330</td>
+<td>3300</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>36</td>
+<td>360</td>
+<td>3600</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>3.9</td>
+<td>39</td>
+<td>390</td>
+<td>3900</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>43</td>
+<td>430</td>
+<td>4300</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td>47</td>
+<td>470</td>
+<td>4700</td>
+<td>0.047</td>
+<td>0.47</td>
+<td>4.7</td>
+<td>47</td>
+<td>470</td>
+<td>4700</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>5.1</td>
+<td>51</td>
+<td>510</td>
+<td>5100</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>5.6</td>
+<td>56</td>
+<td>560</td>
+<td>5600</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>62</td>
+<td>620</td>
+<td>6200</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>6.8</td>
+<td>68</td>
+<td>680</td>
+<td>6800</td>
+<td>0.068</td>
+<td>0.68</td>
+<td>6.8</td>
+<td>68</td>
+<td>680</td>
+<td>6800</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>7.5</td>
+<td>75</td>
+<td>750</td>
+<td>7500</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>8.2</td>
+<td>82</td>
+<td>820</td>
+<td>8200</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>9.1</td>
+<td>91</td>
+<td>910</td>
+<td>9100</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
+<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+
+<h2>Common Capacitor Working Voltages (DC)</h2>
 
 
- <h1 style="font-size:50px;"></h1>				
-			
-<label><font>E24</sub> </font><font face="Arial" size=""></font></label>
-<INPUT    id="Text10" name="Text10" size="17" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="text" />
-<INPUT   id="Text4" name="Text4"   size="17" class="intro"  style="position: absolute;   width:280; right: 305px;"class="form-control" type="text" />
+</tr>
+
+<th>Ceramic</td>
+<th>Electrolytic</td>
+<th>Tantalum</td>
+<th>Mylar<br>(Polyester)</td>
+<th>Mylar<br>(Metal Film)</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>10V</td>
+<td>10V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>16V</td>
+<td>16V</td>
+<td>16V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>20V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>25V</td>
+<td>25V</td>
+<td>25V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>35V</td>
+<td>35V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>50V</td>
+<td>50V</td>
+<td>50V</td>
+<td>50V</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>63V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>100V</td>
+<td>100V</td>
+<td>&nbsp;</td>
+<td>100V</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>160V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>200V</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>250V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>250V</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>350V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>400V</td>
+<td>400V</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>450V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>600V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>630V</td>
+</tr>
+<tr>
+<td>1000V</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
 
 
- <h1 style="font-size:50px;"></h1>
-
-<label><font>E48</sub> </font><font face="Arial" size=""></font></label>
-<INPUT    id="Text11" name="Text11" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="text" />
-<INPUT   id="Text5" name="Text5" size="17"   size="17" class="intro"  style="position: absolute;   width:280; right: 305px;"class="form-control" type="text" />
-
-
- <h1 style="font-size:50px;"></h1>
-				
-<label><font>E96</sub> </font><font face="Arial" size=""></font></label>
-<INPUT   id="Text12" name="Text12"  size="17" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="text" />
-<INPUT   id="Text6" name="Text6"   size="17" class="intro"  style="position: absolute;   width:280; right: 305px;"class="form-control" type="text" />
-
-
- <h1 style="font-size:50px;"></h1>			
-
-<label><font>E192</sub> </font><font face="Arial" size=""></font></label>
-<INPUT    id="Text13" name="Text13" size="17" class="intro"  style="position: absolute;   width:280; right: 10px;"class="form-control" type="text" />
-<INPUT   id="Text7" name="Text7"   size="17" class="intro"  style="position: absolute;   width:280; right: 305px;"class="form-control" type="text" />
-
-
- <h1 style="font-size:50px;"></h1>
-
-				
-			
-
-
-
-				
-			
-
-
-
-			
 
