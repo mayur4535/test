@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <script>
 function myFunction() {
     var input, filter, ul, li, a, i, txtValue;
@@ -297,352 +291,266 @@ tr:hover {background-color: #ddd;}
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<h3>ITU Bands</h3>
-
-<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
-
-
-
-
-<tbody><tr style="text-align:center;">
-<th>Band name</th>
-<th>Abbreviation</th>
-<th>ITU band number</th>
-<th>Frequency and Wavelength</th>
-<th>Example Uses
-</th></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Extremely_low_frequency" title="Extremely low frequency">Extremely low frequency</a></td>
-<td>ELF</td>
-<td>1</td>
-<td>3–30&#160;Hz<br />100,000–10,000&#160;km</td>
-<td><a ="/wiki/Communication_with_submarines" title="Communication with submarines">Communication with submarines</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Super_low_frequency" title="Super low frequency">Super low frequency</a></td>
-<td>SLF</td>
-<td>2</td>
-<td>30–300&#160;Hz<br />10,000–1,000&#160;km</td>
-<td>Communication with submarines
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Ultra_low_frequency" title="Ultra low frequency">Ultra low frequency</a></td>
-<td>ULF</td>
-<td>3</td>
-<td>300–3,000&#160;Hz<br />1,000–100&#160;km</td>
-<td>Submarine communication, <a ="/wiki/Through_the_earth_mine_communications" class="mw-redirect" title="Through the earth mine communications">communication within mines</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Very_low_frequency" title="Very low frequency">Very low frequency</a></td>
-<td>VLF</td>
-<td>4</td>
-<td>3–30&#160;kHz<br />100–10&#160;km</td>
-<td><a ="/wiki/Radio_navigation" title="Radio navigation">Navigation</a>, <a ="/wiki/Radio_clock" title="Radio clock">time signals</a>, submarine communication, wireless <a ="/wiki/Heart_rate_monitor" title="Heart rate monitor">heart rate monitors</a>, <a ="/wiki/Geophysics" title="Geophysics">geophysics</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Low_frequency" title="Low frequency">Low frequency</a></td>
-<td>LF</td>
-<td>5</td>
-<td>30–300&#160;kHz<br />10–1&#160;km</td>
-<td>Navigation, <a ="/wiki/Radio_clock" title="Radio clock">time signals</a>, AM <a ="/wiki/Longwave" title="Longwave">longwave</a> broadcasting (Europe and parts of Asia), <a ="/wiki/RFID" class="mw-redirect" title="RFID">RFID</a>, <a ="/wiki/Amateur_radio" title="Amateur radio">amateur radio</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Medium_frequency" title="Medium frequency">Medium frequency</a></td>
-<td>MF</td>
-<td>6</td>
-<td>300–3,000&#160;kHz<br />1,000–100&#160;m</td>
-<td><a ="/wiki/AM_broadcasting" title="AM broadcasting">AM</a> (medium-wave) broadcasts, amateur radio, <a ="/wiki/Avalanche_transceiver" title="Avalanche transceiver">avalanche beacons</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/High_frequency" title="High frequency">High frequency</a></td>
-<td>HF</td>
-<td>7</td>
-<td>3–30&#160;MHz<br />100–10&#160;m</td>
-<td><a ="/wiki/Shortwave" class="mw-redirect" title="Shortwave">Shortwave</a> broadcasts, <a ="/wiki/Citizens_band_radio" title="Citizens band radio">citizens band radio</a>, amateur radio and <a ="/wiki/Over-the-horizon" class="mw-redirect" title="Over-the-horizon">over-the-horizon</a> aviation communications, <a ="/wiki/RFID" class="mw-redirect" title="RFID">RFID</a>, <a ="/wiki/Over-the-horizon_radar" title="Over-the-horizon radar">over-the-horizon radar</a>, <a ="/wiki/Automatic_link_establishment" title="Automatic link establishment">automatic link establishment</a> (ALE) / <a ="/wiki/Near_Vertical_Incidence_Skywave" class="mw-redirect" title="Near Vertical Incidence Skywave">near-vertical incidence skywave</a> (NVIS) radio communications, <a ="/wiki/Marine_and_mobile_radio_telephony" class="mw-redirect" title="Marine and mobile radio telephony">marine and mobile radio telephony</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Very_high_frequency" title="Very high frequency">Very high frequency</a></td>
-<td>VHF</td>
-<td>8</td>
-<td>30–300&#160;MHz<br />10–1&#160;m</td>
-<td style="text-align:center;"><a ="/wiki/FM_broadcasting" title="FM broadcasting">FM</a>, <a ="/wiki/Television" title="Television">television</a> broadcasts, line-of-sight <a ="/wiki/Air_traffic_control" title="Air traffic control">ground-to-aircraft</a> and <a ="/wiki/Aviation_communication" title="Aviation communication">aircraft-to-aircraft communications</a>, land mobile and maritime mobile communications, amateur radio, <a ="/wiki/Weather_radio" title="Weather radio">weather radio</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Ultra_high_frequency" title="Ultra high frequency">Ultra high frequency</a></td>
-<td>UHF</td>
-<td>9</td>
-<td>300–3,000&#160;MHz<br />1–0.1&#160;m</td>
-<td style="text-align:center;">Television broadcasts, <a ="/wiki/Microwave_oven" title="Microwave oven">microwave oven</a>, <a ="/wiki/Microwave" title="Microwave">microwave</a> devices/communications, <a ="/wiki/Radio_astronomy" title="Radio astronomy">radio astronomy</a>, <a ="/wiki/Mobile_phone" title="Mobile phone">mobile phones</a>, <a ="/wiki/Wireless_LAN" title="Wireless LAN">wireless LAN</a>, <a ="/wiki/Bluetooth" title="Bluetooth">Bluetooth</a>, <a ="/wiki/ZigBee" class="mw-redirect" title="ZigBee">ZigBee</a>, <a ="/wiki/GPS" class="mw-redirect" title="GPS">GPS</a> and two-way radios such as land mobile, <a ="/wiki/Family_Radio_Service" title="Family Radio Service">FRS</a> and <a ="/wiki/GMRS" class="mw-redirect" title="GMRS">GMRS</a> radios, amateur radio, <a ="/wiki/Satellite_radio" title="Satellite radio">satellite radio</a>, Remote control Systems, <a ="/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast" class="mw-redirect" title="Automatic dependent surveillance – broadcast">ADSB</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Super_high_frequency" title="Super high frequency">Super high frequency</a></td>
-<td>SHF</td>
-<td>10</td>
-<td>3–30&#160;GHz<br />100–10&#160;mm</td>
-<td>Radio astronomy, microwave devices/communications, wireless LAN, <a ="/wiki/Dedicated_short-range_communications" title="Dedicated short-range communications">DSRC</a>, most modern <a ="/wiki/Radar" title="Radar">radars</a>, <a ="/wiki/Communications_satellite" title="Communications satellite">communications satellites</a>, cable and satellite television broadcasting, <a ="/wiki/Direct-broadcast_satellite" class="mw-redirect" title="Direct-broadcast satellite">DBS</a>, amateur radio, <a ="/wiki/Satellite_radio" title="Satellite radio">satellite radio</a>
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Extremely_high_frequency" title="Extremely high frequency">Extremely high frequency</a></td>
-<td>EHF</td>
-<td>11</td>
-<td>30–300&#160;GHz<br />10–1&#160;mm</td>
-<td>Radio astronomy, high-frequency <a ="/wiki/Microwave_radio_relay" class="mw-redirect" title="Microwave radio relay">microwave radio relay</a>, microwave <a ="/wiki/Remote_sensing" title="Remote sensing">remote sensing</a>, amateur radio, <a ="/wiki/Active_Denial_System" title="Active Denial System">directed-energy weapon</a>, <a ="/wiki/Millimeter_wave_scanner" title="Millimeter wave scanner">millimeter wave scanner</a>, wireless LAN (802.11ad)
-</td></tr>
-<tr style="text-align:center;">
-<td><a ="/wiki/Terahertz_radiation" title="Terahertz radiation">Terahertz</a> or <a ="/wiki/Tremendously_high_frequency" class="mw-redirect" title="Tremendously high frequency">Tremendously high frequency</a></td>
-<td>THz or THF</td>
-<td>12</td>
-<td>300–3,000&#160;GHz<br />1–0.1&#160;mm</td>
-<td>Experimental medical imaging to replace X-rays, ultrafast molecular dynamics, <a ="/wiki/Condensed-matter_physics" class="mw-redirect" title="Condensed-matter physics">condensed-matter physics</a>, <a ="/wiki/Terahertz_time-domain_spectroscopy" title="Terahertz time-domain spectroscopy">terahertz time-domain spectroscopy</a>, terahertz computing/communications, <a ="/wiki/Remote_sensing" title="Remote sensing">remote sensing</a>
-</td></tr></tbody></table>
-
-
-
-
-<h3>IEEE radar bands</h3>
 
 
 <table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+
+
+
 <tbody><tr>
-<th>Band<br />designation</th>
-<th>Frequency range</th>
-<th>Explanation of meaning of letters<br />
+<th>Blade size</th>
+<th>Blade group</th>
+<th>Dimensions <span class="nowrap">L × W × H</span></th>
+<th>Max current
 </th></tr>
 <tr>
-<td><a ="/wiki/High_frequency" title="High frequency">HF</a></td>
-<td>0.003 to 0.03&#160;GHz</td>
-<td>High Frequency<sup id="cite_ref-ieee_names_11-0" class="reference"><a ="#cite_note-ieee_names-11">&#91;11&#93;</a></sup>
+<td>Micro2</td>
+<td>APT, ATR</td>
+<td><span class="nowrap">9.1 × 3.8 × 15.3 mm</span></td>
+<td>5, 7.5, 10, 15, 20, 25, 30
 </td></tr>
 <tr>
-<td><a ="/wiki/Very_high_frequency" title="Very high frequency">VHF</a></td>
-<td>0.03 to 0.3&#160;GHz</td>
-<td>Very High Frequency<sup id="cite_ref-ieee_names_11-1" class="reference"><a ="#cite_note-ieee_names-11">&#91;11&#93;</a></sup>
+<td>Micro3</td>
+<td>ATL</td>
+<td><span class="nowrap">14.4 × 4.2 × 18.1 mm</span></td>
+<td>5, 7.5, 10, 15
 </td></tr>
 <tr>
-<td><a ="/wiki/Ultra_high_frequency" title="Ultra high frequency">UHF</a></td>
-<td>0.3 to 1&#160;GHz</td>
-<td>Ultra High Frequency<sup id="cite_ref-ieee_names_11-2" class="reference"><a ="#cite_note-ieee_names-11">&#91;11&#93;</a></sup>
+<td>LP-Mini<br>(low profile)</td>
+<td>APS, ATT</td>
+<td><span class="nowrap">10.9 × 3.81 × 8.73 mm</span></td>
+<td>2, 3, 4, 5, 7.5, 10, 15, 20, 25, 30
 </td></tr>
 <tr>
-<td><a ="/wiki/L_band_(IEEE)" class="mw-redirect" title="L band (IEEE)">L</a></td>
-<td>1 to 2&#160;GHz</td>
-<td>Long wave
+<td>Mini</td>
+<td>APM, ATM</td>
+<td><span class="nowrap">10.9 × 3.6 × 16.3 mm</span></td>
+<td>2, 3, 4, 5, 7.5, 10, 15, 20, 25, 30
 </td></tr>
 <tr>
-<td><a ="/wiki/S_band" title="S band">S</a></td>
-<td>2 to 4&#160;GHz</td>
-<td>Short wave
+<td>Regular</td>
+<td>APR, ATC,ATO,</a></sup> ATS</td>
+<td><span class="nowrap">19.1 × 5.1 × 18.5 mm</span></td>
+<td>0.5, 1, 2, 3, 4, 5, 7.5, 10, 15, 20, 25, 30, 35, 40
 </td></tr>
 <tr>
-<td><a ="/wiki/C_band_(IEEE)" title="C band (IEEE)">C</a></td>
-<td>4 to 8&#160;GHz</td>
-<td>Compromise between S and X
-</td></tr>
-<tr>
-<td><a ="/wiki/X_band" title="X band">X</a></td>
-<td>8 to 12&#160;GHz</td>
-<td>Used in World War II for <a ="/wiki/Fire-control_system" title="Fire-control system">fire control</a>, X for cross (as in <a ="/wiki/Crosshair" class="mw-redirect" title="Crosshair">crosshair</a>). Exotic.<sup id="cite_ref-Friedman2006_12-0" class="reference"><a ="#cite_note-Friedman2006-12">&#91;12&#93;</a></sup>
-</td></tr>
-<tr>
-<td><a ="/wiki/Ku_band" title="Ku band">K<sub>u</sub></a></td>
-<td>12 to 18&#160;GHz</td>
-<td>Kurz-under
-</td></tr>
-<tr>
-<td><a ="/wiki/K_band_(IEEE)" title="K band (IEEE)">K</a></td>
-<td>18 to 27&#160;GHz</td>
-<td>Kurz (German for 'short')
-</td></tr>
-<tr>
-<td><a ="/wiki/Ka_band" title="Ka band">K<sub>a</sub></a></td>
-<td>27 to 40&#160;GHz</td>
-<td>Kurz-above
-</td></tr>
-<tr>
-<td><a ="/wiki/V_band" title="V band">V</a></td>
-<td>40 to 75&#160;GHz</td>
-<td>
-</td></tr>
-<tr>
-<td><a ="/wiki/W_band" title="W band">W</a></td>
-<td>75 to 110&#160;GHz</td>
-<td>W follows V in the <a ="/wiki/Alphabet" title="Alphabet">alphabet</a><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">&#91;<i><a ="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (September 2018)">citation needed</span></a></i>&#93;</sup>
-</td></tr>
-<tr>
-<td><a ="/wiki/Millimeter_band" class="mw-redirect" title="Millimeter band">mm</a> or <a ="/wiki/G_band_(IEEE)" class="mw-redirect" title="G band (IEEE)">G</a></td>
-<td>110 to 300&#160;GHz&#8203;<sup id="cite_ref-13" class="reference"><a ="#cite_note-13">&#91;note 1&#93;</a></sup></td>
-<td>Millimeter<sup id="cite_ref-ieee_10-3" class="reference"><a ="#cite_note-ieee-10">&#91;10&#93;</a></sup>
+<td>Maxi</td>
+<td>APX</td>
+<td><span class="nowrap">29.2 × 8.5 × 34.3 mm</span></td>
+<td>20, 25, 30, 35, 40, 50, 60, 70, 80, 100, 120
 </td></tr></tbody></table>
-<div class="reflist" style="list-style-type: decimal;">
-<div class="mw-references-wrap"><ol class="references">
 
-
-
-
-
-<h3>EU, NATO, US ECM frequency</h3>
-
+<h3>Color Code</h3>
 <table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
 
-<tbody><tr bgcolor="#CCCCCC" align="center">
-<td bgcolor="lightyellow" colspan="6">NATO LETTER BAND DESIGNATION</a></sup><sup id="cite_ref-Friedman2006_12-1" class="reference"></a></sup><sup id="cite_ref-15" class="reference"></a></sup>
-</th>
-</tr>
-<tr align="center">
-<td bgcolor="lightblue" colspan="2" ><b>NEW NOMENCLATURE</b></td>
-<td bgcolor="#CCCCCC">
-</td>
-<td bgcolor="lightblue" colspan="2">OLD NOMENCLATURE</td>
-<td bgcolor="#CCCCCC">
+<tbody><tr>
+<th>Color</th>
+<th>Current rating</th>
+<th>Micro2</th>
+<th>Micro3</th>
+<th>LP<br>Mini</th>
+<th>Mini</th>
+<th>Reg</th>
+<th>Maxi
+</th></tr>
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #2D3092" title="#2D3092">&#65279;</span></span>&nbsp;<span class="nowrap">Dark blue</span></td>
+<td>0.5 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="Yes" style="background: darkblue; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2">
 </td></tr>
-<tr align="center">
-<th>BAND</td>
-<th>FREQUENCY (<a ="/wiki/MHz" class="mw-redirect" title="MHz">MHz</a>)</td>
-<td bgcolor="#CCCCCC">
-</td>
-<th>BAND</td>
-<th>FREQUENCY (MHz)</td>
-<td bgcolor="#CCCCCC">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #2B2E34" title="#2B2E34">&#65279;</span></span>&nbsp;Black</td>
+<td>1 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="Yes" style="background: black; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr bgcolor="#CCCCCC" align="center">
-
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #C4C4C6" title="#C4C4C6">&#65279;</span></span>&nbsp;Grey</td>
+<td>2 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="Yes" style="background: lightgrey; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: lightgrey; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: lightgrey; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr align="center">
-<td rowspan="3"><a ="/wiki/A_band_(NATO)" title="A band (NATO)"><b>A</b></a></td>
-<td rowspan="3">0 – 250</td>
-<td bgcolor="#CCCCCC" rowspan="3"></td>
-<td rowspan="2"><b>I</b></td>
-<td rowspan="2">100 – 150</td>
-<td bgcolor="#CCCCCC" rowspan="2"></td>
-</tr>
-<tr align="center">
-</tr>
-<tr align="center">
-<td><b>G</b></td>
-<td>150 – 225</td>
-<td bgcolor="#CCCCCC">
-</td>
-</tr>
-<tr align="center">
-<td><a ="/wiki/B_band_(NATO)" title="B band (NATO)"><b>B</b></a></td>
-<td>250 – 500</td>
-<td rowspan="1" bgcolor="#CCCCCC"></td>
-<td><b>P</b></td>
-<td>225 – 390</td>
-<td bgcolor="#CCCCCC"></td>
-<td>
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #A35DAE" title="#A35DAE">&#65279;</span></span>&nbsp;Violet</td>
+<td>3 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"></td>
+<td data-sort-value="Yes" style="background: #A35DAE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #A35DAE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #A35DAE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr align="center">
-<td rowspan="2"><a ="/wiki/C_band_(NATO)" title="C band (NATO)"><b>C</b></a></td>
-<td rowspan="2">500 – 1 000</td>
-<td rowspan="2" bgcolor="#CCCCCC">
-</td>
-<td rowspan="2"><b>L</b></td>
-<td rowspan="2">390 – 1 550</td>
-<td rowspan="2" bgcolor="#CCCCCC">
-</td>
-</tr>
-<tr align="center">
-</tr>
-<tr align="center">
-<td><a ="/wiki/D_band_(NATO)" title="D band (NATO)"><b>D</b></a></td>
-<td>1 000 – 2 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td rowspan="3"><b>S</b></td>
-<td rowspan="3">1 550 – 3 900
-</td>
-<td rowspan="3" bgcolor="#CCCCCC"></td>
-<td rowspan="3">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FC9BC9" title="#FC9BC9">&#65279;</span></span>&nbsp;Pink</td>
+<td>4 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #FC9BC9; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FC9BC9; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FC9BC9; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/E_band_(NATO)" title="E band (NATO)"><b>E</b></a></td>
-<td>2 000 – 3 000</td>
-<td bgcolor="#CCCCCC">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #DC924C" title="#DC924C">&#65279;</span></span>&nbsp;Tan</td>
+<td>5 A</td>
+<td data-sort-value="Yes" style="background: #DC924C; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #DC924C; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #DC924C; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #DC924C; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #DC924C; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/F_band_(NATO)" title="F band (NATO)"><b>F</b></a></td>
-<td>3 000 – 4 000</td>
-<td bgcolor="#CCCCCC">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #A95842" title="#A95842">&#65279;</span></span>&nbsp;Brown</td>
+<td>7.5 A</td>
+<td data-sort-value="Yes" style="background: #A95842; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #A95842; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #A95842; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #A95842; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #A95842; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/G_band_(NATO)" title="G band (NATO)"><b>G</b></a></td>
-<td>4 000 – 6 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td><b>C</b></td>
-<td>3 900 – 6 200</td>
-<td bgcolor="#CCCCCC"></td>
-<td>
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FF2D16" title="#FF2D16">&#65279;</span></span>&nbsp;Red</td>
+<td>10 A</td>
+<td data-sort-value="Yes" style="background: #FF2D16; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FF2D16; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FF2D16; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FF2D16; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FF2D16; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> 
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/H_band_(NATO)" title="H band (NATO)"><b>H</b></a></td>
-<td>6 000 – 8 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td rowspan="2"><b>X</b></td>
-<td rowspan="2">6 200 – 10 900</td>
-<td rowspan="2" bgcolor="#CCCCCC"></td>
-<td rowspan="2">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #009CCE" title="#009CCE">&#65279;</span></span>&nbsp;Blue</td>
+<td>15 A</td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/I_band_(NATO)" title="I band (NATO)"><b>I</b></a></td>
-<td>8 000 – 10 000</td>
-<td bgcolor="#CCCCCC">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FFEA3D" title="#FFEA3D">&#65279;</span></span>&nbsp;Yellow</td>
+<td>20 A</td>
+<td data-sort-value="Yes" style="background: #FFEA3D; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #FFEA3D; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FFEA3D; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FFEA3D; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FFEA3D; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/J_band_(NATO)" title="J band (NATO)"><b>J</b></a></td>
-<td>10 000 – 20 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td align="right"><span style="color:#800000;"><b>Ku</b></span></td>
-<td>10 900 – 20 000</td>
-<td rowspan="2" bgcolor="#CCCCCC"></td>
-<td rowspan="2">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FFF" title="#FFF">&#65279;</span></span>&nbsp;Transparent</td>
+<td>25 A</td>
+<td data-sort-value="Yes" style="background: #FFF; color: black; vertical-align: middle; text-align: center;" class="table-yes2">Clear</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #FFF; color: black; vertical-align: middle; text-align: center;" class="table-yes2">Clear</td>
+<td data-sort-value="Yes" style="background: #FFF; color: black; vertical-align: middle; text-align: center;" class="table-yes2">Clear</td>
+<td data-sort-value="Yes" style="background: #FFF; color: black; vertical-align: middle; text-align: center;" class="table-yes2">Clear</td>
+<td style="background:lightgrey; vertical-align:middle;text-align:center;" class="table-yes">
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/K_band_(NATO)" title="K band (NATO)"><b>K</b></a></td>
-<td>20 000 – 40 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td align="right"><span style="color:#800000;"><b>Ka</b></span></td>
-<td>20 000 – 36 000
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #55B18B" title="#55B18B">&#65279;</span></span>&nbsp;Green</td>
+<td>30 A</td>
+<td data-sort-value="Yes" style="background: #55B18B; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #55B18B; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #55B18B; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #55B18B; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #55B18B; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr align="center">
-<td rowspan="2"><a ="/wiki/L_band_(NATO)" title="L band (NATO)"><b>L</b></a></td>
-<td rowspan="2">40 000 – 60 000</td>
-<td rowspan="2" bgcolor="#CCCCCC"></td>
-<td><b>Q</b></td>
-<td>36 000 – 46 000</td>
-<td rowspan="2" bgcolor="#CCCCCC"></td>
-<td rowspan="2">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #008752" title="#008752">&#65279;</span></span>&nbsp;<span class="nowrap">Blue-green</span></td>
+<td>35 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #008752; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #008752; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #008752; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td style="background:#A95842;vertical-align:middle;text-align:center;" class="table-yes">
 </td></tr>
-<tr align="center">
-<td><b>V</b></td>
-<td>46 000 – 56 000
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FFB130" title="#FFB130">&#65279;</span></span>&nbsp;Orange</td>
+<td>40 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #FFB130; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FFB130; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FFB130; color: black; vertical-align: middle; text-align: center;" class="table-yes2"></td>
+<td data-sort-value="Yes" style="background: #FFB130; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr align="center">
-<td><a ="/wiki/M_band_(NATO)" title="M band (NATO)"><b>M</b></a></td>
-<td>60 000 – 100 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td><b>W</b></td>
-<td>56 000 – 100 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td>
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FF2D16" title="#FF2D16">&#65279;</span></span>&nbsp;Red</td>
+<td>50 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #FF2D16; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr bgcolor="#CCCCCC" align="center">
-
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #009CCE" title="#009CCE">&#65279;</span></span>&nbsp;Blue</td>
+<td>60 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #009CCE; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr align="center">
-<td colspan="5">US- MILITARY / <a ="/wiki/SACLANT" class="mw-redirect" title="SACLANT">SACLANT</a></td>
-<td bgcolor="#CCCCCC">
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #DC924C" title="#DC924C">&#65279;</span></span>&nbsp;<span class="nowrap">Amber/tan</span></td>
+<td>70 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #DC924C; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
 </td></tr>
-<tr align="center">
-<td><b>N</b></td>
-<td colspan="4">100 000 – 200 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td>
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #FFF" title="#FFF">&#65279;</span></span>&nbsp;Transparent</td>
+<td>80 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #FFF; color: black; vertical-align: middle; text-align: center;" class="table-yes2">Clear
 </td></tr>
-<tr align="center">
-<td><b>O</b></td>
-<td colspan="4">100 000 – 200 000</td>
-<td bgcolor="#CCCCCC"></td>
-<td>
-</td></tr></tbody></table>
-
-
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #A35DAE" title="#A35DAE">&#65279;</span></span>&nbsp;Violet</td>
+<td>100 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #A35DAE; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
+</td></tr>
+<tr>
+<td><span style="border:thin solid black"><span style="border-left:1.2em solid;border-left-color: #B31663" title="#B31663">&#65279;</span></span>&nbsp;Purple</td>
+<td>120 A</td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="No" style="background: #FFF; color:black; vertical-align: middle; text-align: center;" class="table-no2"> </td>
+<td data-sort-value="Yes" style="background: #B31663; color: black; vertical-align: middle; text-align: center;" class="table-yes2">
+</td></tr>
+</tbody></table>
