@@ -1,58 +1,3 @@
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-</script>
-
-
-
-<body>
-
-
-
-
-
- 
-
-
-
-
-
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-   
-  
-  
-  
-  
-  
-  
-  }
-}
-</script>
-
 <style>
 .mid {background-color:yellow;margin-left:auto;margin-right:auto;display:block;background-color: red ;
 color:red;  
@@ -65,28 +10,12 @@ border: 5;
   border-radius: 12px;
   font-size: 25px;
   position: fixed;
-  right: 30px;
+  right: 25px;
   top:50;
   font-weight: bold;
   cursor: pointer;"
 }
 
-
-.body{text-size:100px;}
-#customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 
 
@@ -104,37 +33,10 @@ h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-
 
                                                                                 border
 
-.w3-btn,
-.w3-button{
-
-font-size:50px;
-border-radius: 25px;
-  background: #73AD21;
-  inpaddg: 2px;
-  width: 200px;
-  height: 100px;
-text-align:center;
-
-}
-
-.w3-btn,
-.w3-button1{
-border:none;
-display:inline-block;
-padding:1px 1px;
-font-size:50px;
-vertical-align:middle;
-Horizontal-align:middle;
-overflow:hidden;
-text-decoration:none;
-color:inherit;
-background-color:inherit;
-cursor:pointer;
-white-space:nowrap;
-text-align:LEFT;
-}
+.w3-button{border:none;display:inline-block;padding:px px;font-size:50px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;position:absolute;}
 
 
+.w3-btn,.w3-button{border:none;display:inline-block;padding:px px;font-size:50px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
 
 
 
@@ -182,1848 +84,679 @@ text-align:LEFT;
           WIDTH:100%}
 .w3-modal-content{width:98%;}
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
- 
-}
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-</style>
-</head>
 <body>
+<div class=bg>
+<table border="1" width="100%" class="tools-details" style="border-color:#0000;">
 
 
-
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Thermocouple names.." title="Type in a name">
-
-<ul id="myUL">
-  
-  
-
-
-</start>
-<li><a href="#">
-
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">IEC584-3</font></button></a>
+  <tr>
+<td align="middle">
+   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>BASIC SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id01').style.display='none'">X</button>
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">IEC584-3 (INTERNATIONAL)</font>
-
-
-
-
-<////start>
-
- <table id="customers">
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="46" style="mso-width-source:userset;mso-width-alt:1682;width:35pt">
- <col width="200" style="mso-width-source:userset;mso-width-alt:7314;width:150pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/1.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/400°C &#9830; -454°F/752°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">- 6.258mV / 20.872mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr> 
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/2.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-210°C/1200°C &#9830; -346°F/2193°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-8.095mV / 69.553mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/3.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1000°C &#9830; -454°F/1832°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-9.835mV / 76.373mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/4.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1372°C &#9830; -454°F/2501°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-6.458mV / 54.886mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>N</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr-Si</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-Si-Mg</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/5.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1300°C &#9830; -450°F/2372°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-4.345mV / 47.513mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/6.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.235mV / 18.693mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/6.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.226mV / 21.103mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>B</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh30%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/7.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/820°C &#9830; -32°F/3308°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0mV / 13.820mV</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="46" style="width:35pt"></td>
-  <td width="200" style="width:150pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-
-<////end>
-
-
-
-
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/basic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
      
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li>
-
-
-<li><a href="#">
-
-<button onclick="document.getElementById('id02').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">IEC584-3<font  STYLE="COLOR:green; padding:1px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">(Intrinsically Safe)</font></font></button></a>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ANTENA.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id02" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id02').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>ANTENA SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id02').style.display='none'">X</button>
-
-
-
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">IEC584-3(Intrinsically Safe)(INTERNATIONAL)</font>
-
-<////start>
-
- <table id="customers">
- 
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="73" style="mso-width-source:userset;mso-width-alt:2669;width:55pt">
- <col width="170" style="mso-width-source:userset;mso-width-alt:6217;width:128pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/8.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/9.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/10.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/11.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
- <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>N</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr-Si</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-Si-Mg</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/12.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-<th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/13.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/13.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>B</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh30%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/14.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="73" style="width:55pt"></td>
-  <td width="170" style="width:128pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-<////end>
-
-
-
-
-     
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ant1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
+      
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id03').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">ANSI MC96.1</font></button></a>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/CAPECITOR.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id03" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id03').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>CAPACITOR SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id03').style.display='none'">X</button>
-
-
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">ANSI MC96.1 (US & CANADA)</font>
-
-<////start>
-
- <table id="customers">
-
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="68" style="mso-width-source:userset;mso-width-alt:2486;width:51pt">
- <col width="244" style="mso-width-source:userset;mso-width-alt:8923;width:183pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/15.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">270°C/400°C &#9830; -454°F/752°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">- 6.258mV / 20.872mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/16.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-210°C/1200°C &#9830; -346°F/2193°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-8.095mV / 69.553mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/17.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1000°C &#9830; -454°F/1832°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-9.835mV / 76.373mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
- <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/18.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1372°C &#9830; -454°F/2501°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-6.458mV / 54.886mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>N</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr-Si</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-Si-Mg</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/19.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1300°C &#9830; -450°F/2372°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-4.345mV / 47.513mV</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="68" style="width:51pt"></td>
-  <td width="244" style="width:183pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-<////end>
-
-
-
-
-     
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/capecitor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+      
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id04').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">ANSI MC96.1<font  STYLE="COLOR:green; padding:1px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">(Extension)</font></font></button></a>
+</div></td><td></td><tr>
+<td align="middle">
+   <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ATTEN.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id04" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id04').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>ATTENUATOR SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id04').style.display='none'">X</button>
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:20PX;Horizontal-align:middle;Vertical-align:middle;">ANSI MC96.1 (Extension) (US & CANADA)</font>
-
-
-
-
-<////start>
-
- <table id="customers">
-
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="64" style="width:48pt">
- <col width="201" style="mso-width-source:userset;mso-width-alt:7350;width:151pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/20.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/21.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/22.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/23.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>N</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr-Si</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-Si-Mg</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/24.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/25.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/25.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/200°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/392°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>B</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh30%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/26.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">0°C/100°C &#9830;<span style="mso-spacerun:yes">&nbsp;
-  </span>32°F/212°F</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="64" style="width:48pt"></td>
-  <td width="201" style="width:151pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-<////end>
-
-
-
-
-     
+       <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/atten1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id05').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">BS1843</font></button></a>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/OP AMP.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id05" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id05').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>OP-AMP & CIRCUITS SYMBOL</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id05').style.display='none'">X</button>
-
-
-
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">BS1843 (British,Czech)</font>
-
-<////start>
-
- <table id="customers">
-
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="64" style="width:48pt">
- <col width="195" style="mso-width-source:userset;mso-width-alt:7131;width:146pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/27.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/400°C &#9830; -454°F/752°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">- 6.258mV / 20.872mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/028.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-210°C/1200°C &#9830; -346°F/2193°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-8.095mV / 69.553mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/29.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1000°C &#9830; -454°F/1832°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-9.835mV / 76.373mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/030.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1372°C &#9830; -454°F/2501°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-6.458mV / 54.886mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>N</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr-Si</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-Si-Mg</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/30.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1300°C &#9830; -450°F/2372°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-4.345mV / 47.513mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/31.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.235mV / 18.693mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/31.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.226mV / 21.103mV</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="64" style="width:48pt"></td>
-  <td width="195" style="width:146pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-<////end>
-
-
-
-
-     
-        <footer class="w3-container w3-teal">
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/opamp1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
+<img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/opamp2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id06').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">DIN43710</font></button></a>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id06').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/CURRENT.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id06" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id06').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>ELECTRIC CURRENT SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id06').style.display='none'">X</button>
-
-
-
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">DIN43710 (German & Netherland)</font>
-
-<////start>
-
- <table id="customers">
-
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="46" style="mso-width-source:userset;mso-width-alt:1682;width:35pt">
- <col width="200" style="mso-width-source:userset;mso-width-alt:7314;width:150pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/32.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/400°C &#9830; -454°F/752°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">- 6.258mV / 20.872mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/33.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-210°C/1200°C &#9830; -346°F/2193°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-8.095mV / 69.553mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/34.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1000°C &#9830; -454°F/1832°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-9.835mV / 76.373mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/35.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1372°C &#9830; -454°F/2501°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-6.458mV / 54.886mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/36.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.235mV / 18.693mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/36.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.226mV / 21.103mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-    <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>B</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh30%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/37.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/820°C &#9830; -32°F/3308°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0mV / 13.820mV</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="46" style="width:35pt"></td>
-  <td width="200" style="width:150pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-
-<////end>
-
-
-
-
-     
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/current1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id07').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">NFC42-324</font></button></a>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id07').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/DIODE.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id07" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id07').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>DIODE SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id07').style.display='none'">X</button>
-
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">NFC42-324 (French)</font>
-
-
-
-<////start>
-
- <table id="customers">
-
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="46" style="mso-width-source:userset;mso-width-alt:1682;width:35pt">
- <col width="200" style="mso-width-source:userset;mso-width-alt:7314;width:150pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/38.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/400°C &#9830; -454°F/752°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">- 6.258mV / 20.872mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/39.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-210°C/1200°C &#9830; -346°F/2193°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-8.095mV / 69.553mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/40.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1000°C &#9830; -454°F/1832°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-9.835mV / 76.373mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
- <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/41.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1372°C &#9830; -454°F/2501°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-6.458mV / 54.886mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
- <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/42.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.235mV / 18.693mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/42.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.226mV / 21.103mV</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="46" style="width:35pt"></td>
-  <td width="200" style="width:150pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-<////end>
-
-
-
-
-     
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/diode1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li><li><a href="#">
-
-<button onclick="document.getElementById('id08').style.display='block'" class="w3-button1 w3-black" align="left">
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">JISC1610</font></button></a>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id08').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/CONNECTOR.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
 
   <div id="id08" class="w3-modal">
     <div class="w3-modal-content w3-card-4">
-      
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id08').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>CONNECTOR & PLUG SYMBOLS</h2>
+      </header>
       <div class="w3-container">
         
-<button class="mid" style="align:center;"onclick="document.getElementById('id08').style.display='none'">X</button>
-
-
-<font  STYLE="COLOR:green; padding:11px;FONT-SIZE:25PX;Horizontal-align:middle;Vertical-align:middle;">JISC1610 (Japanese)</font>
-
-
-
-
-<////start>
-
- <table id="customers">
-
- <colgroup><col width="221" style="mso-width-source:userset;mso-width-alt:8082;width:166pt">
- <col width="46" style="mso-width-source:userset;mso-width-alt:1682;width:35pt">
- <col width="200" style="mso-width-source:userset;mso-width-alt:7314;width:150pt">
- </colgroup><tbody><tr height="20" style="height:15.0pt">
- <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>T</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Cu</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/43.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/400°C &#9830; -454°F/752°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">- 6.258mV / 20.872mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
- <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>J</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Fe</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/44.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-210°C/1200°C &#9830; -346°F/2193°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-8.095mV / 69.553mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>E</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Cu-Ni</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/45.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1000°C &#9830; -454°F/1832°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-9.835mV / 76.373mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>K</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Ni-Cr</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>Ni-AI</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/46.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-270°C/1372°C &#9830; -454°F/2501°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-6.458mV / 54.886mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>S</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh10%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/47.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.235mV / 18.693mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>R</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh13%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/47.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/1768°C &#9830; -58°F/3214°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0.226mV / 21.103mV</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" colspan="3" style="height:15.0pt;mso-ignore:colspan"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <th colspan="3" height="20" class="xl65" width="467" style="height:15.0pt;width:351pt text-align:center; background-color:lightgreen;"><b>B</b></th>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td rowspan="2" height="40" class="xl66" style="height:30.0pt">Alloy Combination</td>
-  <td>Lead +</td>
-  <td>Pt-Rh30%</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Lead -</td>
-  <td>pt</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Image</td>
-  <td colspan="2" class="xl65"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/thorm/48.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:100;"></td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">Maximum T/C Grand Temp. Range</td>
-  <td colspan="2" class="xl65">-50°C/820°C &#9830; -32°F/3308°F</td>
- </tr>
- <tr height="20" style="height:15.0pt">
-  <td height="20" style="height:15.0pt">EMF (mV) Over Max Temp. Range</td>
-  <td colspan="2" class="xl65">-0mV / 13.820mV</td>
- </tr>
- <!--[if supportMisalignedColumns]-->
- <tr height="0" style="display:none">
-  <td width="221" style="width:166pt"></td>
-  <td width="46" style="width:35pt"></td>
-  <td width="200" style="width:150pt"></td>
- </tr>
- <!--[endif]-->
-</tbody></table>
-
-
-
-
-<////end>
-
-
-
-
-     
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/connector1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
         <footer class="w3-container w3-teal">
         <p></p> 
       </footer>
     </div>
   </div>
-</div></li>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id09').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/AV.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id09" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id09').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>AUDIO & VIDEO SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/av1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/av2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id010').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/FERRITE.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id010" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id010').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>FERRITE CORE SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/ferrite1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p>L</p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id011').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/filter.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id011" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id011').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>ELECTRONIC FILTERS SYMBOL</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/filters1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id012').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/fuses.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id012" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id012').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>FUSE SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/fuse1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id013').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/heatsink.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id013" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id013').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>	HEAT SOURCES & THERMAL GENERATORS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/heatsink1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id014').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/voltage.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id014" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id014').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>VOLTAGE SOURCES SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/voltage1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id015').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/batt.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id015" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id015').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>BATTERIES & CELL SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/battery1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id016').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/inductor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id016" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id016').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>INDUCTORS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/inductor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id017').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/lamp.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id017" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id017').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>LIGHT BULBS & LAMPS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/lamp1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id018').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id018" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id018').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>LOGIC CIRCUITS & GATES & FLIP-FLOP SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/gate3.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id019').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/motor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id019" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id019').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>MOTORS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/motor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/motor2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id020').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/crystel.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id020" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id020').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>PIZOELECTRIC CRYSTELS OSCILLATOR & RESONATORS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/crystel1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id021').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/actdc.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id021" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id021').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>POWER CONVERTERS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/converter1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id022').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/switch.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id022" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id022').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>POWER SWITCHS & SIMPLE SWITCHES SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/switch1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/switch2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%"> 
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id023').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/relay.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id023" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id023').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>RELAYS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/relay1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id024').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/resistor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id024" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id024').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>RESISTORS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/resistor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id025').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/sensor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id025" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id025').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>SENSORS & TRANSDUCERS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/sens1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id026').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/meter.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id026" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id026').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>METERS TESTING & CONTROLS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/meter1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id027').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/traic.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id027" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id027').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>THYRISTORS / TRAICS & DIACS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/traic1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id028').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/trans.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id028" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id028').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>TRANSFORMERS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transformer1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transformer2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id029').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transistor.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id029" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id029').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>TRANSISTORS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/transistor1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id030').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/igbt.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id030" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id030').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>TRANSISTORS MOSFET & IGFET SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/igbt1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">   
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+<tr>
+<td align="middle">
+   <button onclick="document.getElementById('id031').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/tube.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id031" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id031').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>VACCUMTUBES VALVES & ELECTRONTUBES SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/tube1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id032').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/WAVE.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id032" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id032').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>WAVEFORMS / PULSE WAVEFORMS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/wave1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/wave2.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td>
+<td align="middle">
+   <button onclick="document.getElementById('id033').style.display='block'" class="w3-button w3-black"><img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/winding.png?raw=true" class="w3-border" alt="Norway" style="padding:px;width:300;"></button>
+
+  <div id="id033" class="w3-modal">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id033').style.display='none'"                             
+        class="mid">&times;</span>
+        <h2>TRANSFORMERS WINDING & CONNECTIONS SYMBOLS</h2>
+      </header>
+      <div class="w3-container">
+        
+      <img src="https://github.com/mayur4535/electroic/blob/master/5/image/sbol/winding1.png?raw=true" class="w3-border" alt="Norway" style="padding:4px;width:100%">  
+        <footer class="w3-container w3-teal">
+        <p></p> 
+      </footer>
+    </div>
+  </div>
+</div></td><td></td></tr>
+
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
 
 
-</ul>
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+   
+  
+  
+  
+  
+  
+  
+  }
+}
+</script>
+
 </body>
 </html>
